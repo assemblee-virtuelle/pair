@@ -1,10 +1,10 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
 @prefix doap: <http://usefulinc.com/ns/doap#>.
 
 @prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix owl:  <http://www.w3.org/2002/07/owl#>.
 @prefix foaf:  <http://xmlns.com/foaf/0.1/>.
-# @prefix dc:  <http://purl.org/dc/elements/1.1/>.
 # @prefix dbo:  <http://dbpedia.org/ontology/>.
 # @prefix dbpedia:  <http://dbpedia.org/resource/>.
 # @prefix dbprop:  <http://dbpedia.org/property/>.
@@ -17,30 +17,50 @@
 # @prefix list:  <http://www.w3.org/2000/10/swap/list#>.
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#>.
 
+<> owl:imports doap: , foaf: , dc: .
 
 @prefix av: <http://www.assemblee-virtuelle.org/ontologies/v1.owl.n3#> .
+@prefix base: <http://www.assemblee-virtuelle.org/ontologies/v1.owl.n3#> .
 
 av:Project a owl:Class ;
 	rdfs:subclassOf doap:Project  ;
-	rdfs:label "projet"@fr ;
+	rdfs:label "Projet"@fr ;
 	rdfs:label ""@en ;
 	rdfs:comment "" .
 
-av:requireResource a owl:ObjectProperty ;
+av:Actor a owl:Class ;
+	owl:sameAs  foaf:Agent ;
+	rdfs:label "Acteur"@fr .
+
+av:Idea a owl:Class ;
+	rdfs:label "Idée"@fr .
+
+av:Resource  a owl:Class ;
+	rdfs:label "Ressource"@fr ;
+	rdfs:label "Resource"@en ;
+	rdfs:comment "" .
+
+
+# ==== Propriétés de Projet ====
+
+av:requiresResource a owl:ObjectProperty ;
 	rdfs:label "nécessite ressource"@fr ;
-	rdfs:label " resource"@en ;
+	rdfs:label " necessitates resource"@en ;
 	rdfs:comment "" ;
 	rdfs:domain av:Project ;
 	rdfs:range av:Resource .
+	
+# ==== Propriétés de Idée ====
 
-av:Resource  a owl:Class ;
-	rdfs:label "ressource"@fr ;
-	rdfs:label ""@en ;
-	rdfs:comment "" .
+av:opposedTo a owl:ObjectProperty ;
+	rdfs:label "opposé à"@fr ;
+	rdfs:range av:Idea .
 
+av:inspiredBy a owl:ObjectProperty ;
+	rdfs:label "inspiré par"@fr ;
+	rdfs:range av:Idea .
+	
+# av:p a owl:DatatypeProperty.
 
-av:p a owl:DatatypeProperty.
-
-av:Idea a owl:Class.
-
+	
 
