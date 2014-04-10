@@ -1,0 +1,46 @@
+@prefix doap: <http://usefulinc.com/ns/doap#>.
+
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl:  <http://www.w3.org/2002/07/owl#>.
+@prefix foaf:  <http://xmlns.com/foaf/0.1/>.
+# @prefix dc:  <http://purl.org/dc/elements/1.1/>.
+# @prefix dbo:  <http://dbpedia.org/ontology/>.
+# @prefix dbpedia:  <http://dbpedia.org/resource/>.
+# @prefix dbprop:  <http://dbpedia.org/property/>.
+# @prefix dbyago:  <http://dbpedia.org/class/yago/>.
+# @prefix void:  <http://rdfs.org/ns/void#>.
+# @prefix geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>.
+# @prefix gr:  <http://purl.org/goodrelations/v1#>.
+# @prefix log:  <http://www.w3.org/2000/10/swap/log#>.
+# @prefix string:  <http://www.w3.org/2000/10/swap/string#>.
+# @prefix list:  <http://www.w3.org/2000/10/swap/list#>.
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#>.
+
+
+@prefix av: <http://www.assemblee-virtuelle.org/ontologies/v1.owl.n3#> .
+
+av:Project a owl:Class ;
+	rdfs:subclassOf doap:Project  ;
+	rdfs:label "projet"@fr ;
+	rdfs:label ""@en ;
+	rdfs:comment "" .
+
+av:requireResource a owl:ObjectProperty ;
+	rdfs:label "nécessite ressource"@fr ;
+	rdfs:label " resource"@en ;
+	rdfs:comment "" ;
+	rdfs:domain av:Project ;
+	rdfs:range av:Resource .
+
+av:Resource  a owl:Class ;
+	rdfs:label "ressource"@fr ;
+	rdfs:label ""@en ;
+	rdfs:comment "" .
+
+
+av:p a owl:DatatypeProperty.
+
+av:Idea a owl:Class.
+
+
