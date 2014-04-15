@@ -27,12 +27,11 @@
 	cf https://basecamp.com/2588660/projects/5413946-plateforme-web-av/documents/5456204-concepts-de-base """.
 
 @prefix av: <http://www.assemblee-virtuelle.org/ontologies/v1.owl.n3#> .
-@prefix base: <http://www.assemblee-virtuelle.org/ontologies/v1.owl.n3#> .
+@base <http://www.assemblee-virtuelle.org/ontologies/v1.owl.n3> .
 
 av:Project a owl:Class ;
 	rdfs:subclassOf doap:Project  ;
 	rdfs:label "Projet"@fr ;
-	rdfs:label ""@en ;
 	rdfs:comment "Les projets et les acteurs sont assez bien couverts par des vocabulaires RDF, respectivement DOAP et FOAF+SIOC."
 .
 
@@ -51,7 +50,6 @@ catégories, thématiques : passer du micro au macro ( particulier au général 
 
 av:Resource  a owl:Class ;
 	rdfs:label "Ressource"@fr ;
-	rdfs:label "Resource"@en ;
 	rdfs:comment "Exemples de resources: documents, matérielles, services, financières, lieux, outils, networking (carnet)
 " .
 
@@ -60,7 +58,6 @@ av:Resource  a owl:Class ;
 
 av:requiresResource a owl:ObjectProperty ;
 	rdfs:label "nécessite ressource"@fr ;
-	rdfs:label " necessitates resource"@en ;
 	rdfs:comment "" ;
 	rdfs:domain av:Project ;
 	rdfs:range av:Resource .
