@@ -24,7 +24,9 @@
 	cf mail de Guillaume du 20 Mar 2014 11:42
 	avec "Prédicats ecosysteme" , la rose des vents de Guillaume,
 	et "Jalons - Cartographie sémantique des ecosystemes de PAIR"
-	cf https://basecamp.com/2588660/projects/5413946-plateforme-web-av/documents/5456204-concepts-de-base """.
+	cf https://basecamp.com/2588660/projects/5413946-plateforme-web-av/documents/5456204-concepts-de-base 
+	et mail envoyé par Guillaume le 23 mars 
+	PAIR : Projet – Acteur – Idée – Ressource. """.
 
 @prefix av: <http://www.assemblee-virtuelle.org/ontologies/v1.owl.n3#> .
 @base <http://www.assemblee-virtuelle.org/ontologies/v1.owl.n3> .
@@ -58,20 +60,59 @@ av:Resource  a owl:Class ;
 
 av:requiresResource a owl:ObjectProperty ;
 	rdfs:label "nécessite ressource"@fr ;
-	rdfs:comment "" ;
 	rdfs:domain av:Project ;
 	rdfs:range av:Resource .
 	
+# ==== Propriétés de Acteur ====
+
+av:contributes a owl:ObjectProperty ;
+	rdfs:label "contribue" ;
+	rdfs:domain av:Acteur ;
+	rdfs:range av:Project .
+
+av:supports a owl:ObjectProperty ;
+	rdfs:label "Soutient" ;
+	rdfs:domain av:Acteur ;
+	rdfs:range av:Project .
+
+
+av:opposedTo a owl:ObjectProperty ;
+	rdfs:label "S'oppose à" ;
+	rdfs:domain av:Acteur ;
+	rdfs:range av:Project .
+
 # ==== Propriétés de Idée ====
+# relation entre idées: opposition, compatibilité, convergence ...
 
 av:opposedTo a owl:ObjectProperty ;
 	rdfs:label "opposé à"@fr ;
-	rdfs:range av:Idea .
+	rdfs:range av:Idea ;
+	rdfs:domain av:Idea
+	.
 
 av:inspiredBy a owl:ObjectProperty ;
 	rdfs:label "inspiré par"@fr ;
-	rdfs:range av:Idea .
-	
+	rdfs:range av:Idea ;
+	rdfs:domain av:Idea .
+
+av:compatibility a owl:ObjectProperty ;
+	rdfs:label "compatible avec"@fr ;
+	rdfs:range av:Idea ;
+	rdfs:domain av:Idea .
+
+av:compatibleWith a owl:ObjectProperty ;
+	rdfs:label "compatible avec"@fr ;
+	rdfs:range av:Idea ;
+	rdfs:domain av:Idea .
+
+av:convergentWith  a owl:ObjectProperty ;
+	rdfs:label "convergent avec"@fr ;
+	rdfs:range av:Idea ;
+	rdfs:domain av:Idea .
+
+# ==== Propriétés de Ressource ====
+
+
 # av:p a owl:DatatypeProperty.
 
 	
