@@ -18,6 +18,8 @@
 # @prefix list:  <http://www.w3.org/2000/10/swap/list#>.
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#>.
 
+# TODO : cyril.lage@democratieouverte.org : A ce stade, nous imaginons que le référentiel sera composé de thèmes au sein desquelles les actions seront classées et détaillées par : une description dc:description ; une liste des experts du sujet (associations et entreprises) : à intégrer ; des sources d'information :  rdfs:seeAlso ; des exemples :  à intégrer  
+
 <> owl:imports doap: , foaf: , dc: , sioc: ;
 	rdfs:comment """Ontologie de l'Assemblée Virtuelle, en vue de la Plateforme web;
 	concepts de base: Projets, Acteurs, Idées, Ressources (PAIR)
