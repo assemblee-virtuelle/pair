@@ -1,0 +1,9 @@
+# exemples
+
+@prefix   : <http://www.assemblee-virtuelle.org/ontologies/v1.owl.n3#> .
+@prefix av: <http://www.assemblee-virtuelle.org/ontologies/v1.owl.n3#> .
+
+:jean a av:Actor;
+    av:opposedTo :bigdata .
+
+:bigdata a av:Idea .
