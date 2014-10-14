@@ -52,12 +52,12 @@ faits ? c'est plus un sujet (Dublin core) qu'une ressource ou une idée
 catégories, thématiques : passer du micro au macro ( particulier au général ) """
 .
 
+av:Actor owl:disjointWith av:Idea .
+av:Actor owl:disjointWith av:Project .
+
 av:Resource  a owl:Class ;
 	rdfs:label "Ressource"@fr ;
-	rdfs:comment "Exemples de resources: documents, matérielles, services, financières, lieux, outils, networking (carnet)
-" .
-
-
+	rdfs:comment "Exemples de resources: documents, matérielles, services, financières, lieux, outils, networking (carnet)" .  
 # ==== Propriétés de Projet ====
 
 av:requiresResource a owl:ObjectProperty ;
@@ -68,7 +68,8 @@ av:requiresResource a owl:ObjectProperty ;
 # ==== Propriétés de Acteur ====
 
 av:contributes a owl:ObjectProperty ;
-	rdfs:label "contribue" ;
+	rdfs:label "contribue"@fr ;
+    rdfs:label "contributes"@en;
 	rdfs:domain av:Acteur ;
 	rdfs:range av:Project .
 
@@ -88,8 +89,8 @@ av:opposedTo a owl:ObjectProperty ;
 
 av:opposedTo a owl:ObjectProperty ;
 	rdfs:label "opposé à"@fr ;
-	rdfs:range av:Idea ;
-	rdfs:domain av:Idea
+	rdfs:domain av:Idea ;
+	rdfs:range av:Idea 
 	.
 
 av:inspiredBy a owl:ObjectProperty ;
@@ -118,4 +119,9 @@ av:convergentWith  a owl:ObjectProperty ;
 # av:p a owl:DatatypeProperty.
 
 	
+#exemples
 
+:jean a av:Actor;
+    av:opposedTo :bigdata .
+
+:bigdata a av:Idea .
