@@ -33,7 +33,7 @@
 @prefix av: <#> .
 
 av:Project a owl:Class ;
-	rdfs:subclassOf doap:Project  ;
+	rdfs:subclassOf foaf:Project  ;
 	rdfs:label "Projet"@fr ;
 	rdfs:comment "Les projets et les acteurs sont assez bien couverts par des vocabulaires RDF, respectivement DOAP et FOAF+SIOC."
 .
@@ -57,13 +57,29 @@ av:Actor owl:disjointWith av:Project .
 av:Resource  a owl:Class ;
 	rdfs:label "Ressource"@fr ;
 	rdfs:comment "Exemples de resources: documents, matérielles, services, financières, lieux, outils, networking (carnet)" .  
+
 # ==== Propriétés de Projet ====
 
-av:requiresResource a owl:ObjectProperty ;
+av:requires a owl:ObjectProperty ;
 	rdfs:label "nécessite ressource"@fr ;
 	rdfs:domain av:Project ;
 	rdfs:range av:Resource .
-	
+ 
+av:participant a owl:ObjectProperty ;
+        rdfs:domain   av:Project ;
+        rdfs:label    "participant"@fr ;
+        rdfs:range    av:Actor .
+
+av:lead a owl:ObjectProperty ;
+        rdfs:domain   av:Project ;
+        rdfs:label    "responsable"@fr ;
+        rdfs:range  foaf:Person .
+
+av:concretise  a owl:ObjectProperty ;
+        rdfs:domain   av:Project ;
+        rdfs:label    "concretise" ;
+        rdfs:range    av:Idea .
+
 # ==== Propriétés de Acteur ====
 
 av:contributes a owl:ObjectProperty ;
@@ -77,28 +93,18 @@ av:supports a owl:ObjectProperty ;
 	rdfs:domain av:Acteur ;
 	rdfs:range av:Project .
 
-
-av:opposedTo a owl:ObjectProperty ;
-	rdfs:label "S'oppose à" ;
-	rdfs:domain av:Acteur ;
-	rdfs:range av:Project .
-
 # ==== Propriétés de Idée ====
+
 # relation entre idées: opposition, compatibilité, convergence ...
 
 av:opposedTo a owl:ObjectProperty ;
 	rdfs:label "opposé à"@fr ;
-	rdfs:domain av:Idea ;
-	rdfs:range av:Idea 
+	rdfs:domain [owl:unionOf( av:Idea av:Acteur )] ;
+	rdfs:range [owl:unionOf( av:Idea av:Project )]
 	.
 
 av:inspiredBy a owl:ObjectProperty ;
 	rdfs:label "inspiré par"@fr ;
-	rdfs:range av:Idea ;
-	rdfs:domain av:Idea .
-
-av:compatibility a owl:ObjectProperty ;
-	rdfs:label "compatible avec"@fr ;
 	rdfs:range av:Idea ;
 	rdfs:domain av:Idea .
 
