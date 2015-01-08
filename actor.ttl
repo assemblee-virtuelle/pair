@@ -16,12 +16,12 @@ av:Actor a owl:Class ;
 
 av:contributes a owl:ObjectProperty ;
 	rdfs:label "contribue"@fr ;
-	rdfs:domain av:Acteur ;
+	rdfs:domain av:Actor ;
 	rdfs:range av:Project .
 
 av:supports a owl:ObjectProperty ;
 	rdfs:label "Soutient"@fr ;
-	rdfs:domain av:Acteur ;
+	rdfs:domain av:Actor ;
 	rdfs:range av:Project .
 
 
