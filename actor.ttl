@@ -12,6 +12,10 @@ av:Actor a owl:Class ;
 	owl:sameAs  foaf:Agent ;
 	rdfs:label "Acteur"@fr .
 
+av:Person a owl:Class ;
+	owl:sameAs  foaf:Person ;
+	rdfs:label "Personne"@fr .
+
 # ==== Propriétés de Acteur ====
 
 av:contributes a owl:ObjectProperty ;
@@ -23,5 +27,4 @@ av:supports a owl:ObjectProperty ;
 	rdfs:label "Soutient"@fr ;
 	rdfs:domain av:Actor ;
 	rdfs:range av:Project .
-
 

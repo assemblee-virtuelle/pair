@@ -1,0 +1,48 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix form: <http://deductions-software.com/ontologies/forms.owl.ttl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix     : <http://xmlns.com/foaf/0.1/>.
+
+# specifications de formulaires pour AV
+
+<personForm>
+  form:classDomain av:Person ;
+  form:showProperties (
+	foaf:givenName foaf:familyName
+	foaf:homepage
+	# literal or resource
+	foaf:phone
+	# resource, multi-valued
+	foaf:img
+	foaf:topic_interest
+	foaf:knows
+	av:contributes
+	av:supports 
+  ) .
+
+<topic_interest>
+	:fieldAppliesToForm <personForm> ;
+	:fieldAppliesToProperty foaf:topic_interest ;
+	:widgetClass form:DBPediaLookup .
+
+<projectForm>
+  form:classDomain av:Project ;
+  form:showProperties (
+	rdfs:label rdfs:comment
+	foaf:homepage
+	foaf:maker
+	foaf:mbox
+	foaf:fundedBy
+	foaf:isPrimaryTopicOf
+	foaf:depiction
+	foaf:holdsAccount
+	dc:subject
+  ) .
+
+<dc_subject>
+	:fieldAppliesToForm <projectForm> ;
+	:fieldAppliesToProperty dc:subject ;
+	:widgetClass form:DBPediaLookup .
+
+
