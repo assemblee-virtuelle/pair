@@ -1,0 +1,39 @@
+@prefix sioc: <http://rdfs.org/sioc/ns#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix doap: <http://usefulinc.com/ns/doap#>.
+
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl:  <http://www.w3.org/2002/07/owl#>.
+@prefix foaf:  <http://xmlns.com/foaf/0.1/>.
+
+@prefix av: <#> .
+
+av:Project a owl:Class ;
+	rdfs:subclassOf foaf:Project  ;
+	rdfs:label "Projet"@fr ;
+	rdfs:comment "Les projets et les acteurs sont assez bien couverts par des vocabulaires RDF, respectivement DOAP et FOAF+SIOC."
+.
+
+# ==== Propriétés de Projet ====
+
+av:requires a owl:ObjectProperty ;
+	rdfs:label "nécessite ressource"@fr ;
+	rdfs:domain av:Project ;
+	rdfs:range av:Resource .
+ 
+av:participant a owl:ObjectProperty ;
+        rdfs:domain   av:Project ;
+        rdfs:label    "participant"@fr ;
+        rdfs:range    av:Actor .
+
+av:lead a owl:ObjectProperty ;
+        rdfs:domain   av:Project ;
+        rdfs:label    "responsable"@fr ;
+        rdfs:range  foaf:Person .
+
+av:concretise  a owl:ObjectProperty ;
+        rdfs:domain   av:Project ;
+        rdfs:label    "concretise" ;
+        rdfs:range    av:Idea .
+

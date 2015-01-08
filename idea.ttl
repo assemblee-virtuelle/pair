@@ -1,0 +1,46 @@
+@prefix sioc: <http://rdfs.org/sioc/ns#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix doap: <http://usefulinc.com/ns/doap#>.
+
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl:  <http://www.w3.org/2002/07/owl#>.
+@prefix foaf:  <http://xmlns.com/foaf/0.1/>.
+
+@prefix av: <#> .
+
+av:Idea a owl:Class ;
+	rdfs:label "Idée"@fr ;
+	rdfs:comment """ Exemples d'idées: Dév Dur, social, économie, écologie, réflexions , analyse , critique, proposition  (l'intention peut être projet ou non); 
+relation entre idées: opposition, compatibilité , convergence ...
+approche systémique ( et combinatoire )
+faits ? c'est plus un sujet (Dublin core) qu'une ressource ou une idée
+catégories, thématiques : passer du micro au macro ( particulier au général ) """
+.
+
+# ==== Propriétés de Idée ====
+
+# relation entre idées: opposition, compatibilité, convergence ...
+
+av:opposedTo a owl:ObjectProperty ;
+	rdfs:label "opposé à"@fr ;
+	rdfs:domain [owl:unionOf( av:Idea av:Acteur )] ;
+	rdfs:range [owl:unionOf( av:Idea av:Project )]
+	.
+
+av:inspiredBy a owl:ObjectProperty ;
+	rdfs:label "inspiré par"@fr ;
+	rdfs:range av:Idea ;
+	rdfs:domain av:Idea .
+
+av:compatibleWith a owl:ObjectProperty ;
+	rdfs:label "compatible avec"@fr ;
+	rdfs:range av:Idea ;
+	rdfs:domain av:Idea .
+
+av:convergentWith  a owl:ObjectProperty ;
+	rdfs:label "convergent avec"@fr ;
+	rdfs:range av:Idea ;
+	rdfs:domain av:Idea .
+
+
