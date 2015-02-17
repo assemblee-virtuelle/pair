@@ -1,6 +1,8 @@
 rdf pour PAIR
 ===
 
+[![Join the chat at https://gitter.im/assemblee-virtuelle/pair](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/assemblee-virtuelle/pair?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 contient des ontologies,
 des exemples de données,
 pour la modélisation PAIR ( Projet- Acteur - Idée - Resource ),
