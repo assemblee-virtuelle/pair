@@ -5,6 +5,7 @@
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix owl:  <http://www.w3.org/2002/07/owl#>.
 @prefix foaf:  <http://xmlns.com/foaf/0.1/>.
+@prefix cv: <http://rdfs.org/resume-rdf/cv.rdfs#>.
 
 @prefix av: <http://www.assemblee-virtuelle.org/ontologies/v1.owl#> .
 @base <http://www.assemblee-virtuelle.org/ontologies/v1.owl> .
@@ -16,6 +17,13 @@ av:Actor a owl:Class ;
 av:Person a owl:Class ;
 	owl:sameAs  foaf:Person ;
 	rdfs:label "Personne"@fr .
+
+# ==== Propriétés de Personne ====
+
+cv:hasSkill a owl:ObjectProperty ;
+	rdfs:label "compétence"@fr ;
+	rdfs:domain av:Person ;
+	rdfs:range cv:Skill .
 
 # ==== Propriétés de Acteur ====
 
