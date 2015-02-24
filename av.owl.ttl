@@ -9,11 +9,13 @@
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#>.
 
 @prefix av: <http://www.assemblee-virtuelle.org/ontologies/v1.owl#> .
-@base       <http://www.assemblee-virtuelle.org/ontologies/v1.owl> .
+# @base       <http://www.assemblee-virtuelle.org/ontologies/v1.owl> .
 
 # TODO : cyril.lage@democratieouverte.org : A ce stade, nous imaginons que le référentiel sera composé de thèmes au sein desquelles les actions seront classées et détaillées par : une description dc:description ; une liste des experts du sujet (associations et entreprises) : à intégrer ; des sources d'information :  rdfs:seeAlso ; des exemples :  à intégrer  
 
-<> owl:imports doap: , foaf: , dc: , sioc: ,
+# <>
+av:
+  owl:imports doap: , foaf: , dc: , sioc: ,
 	<project.ttl>, <actor.ttl>, <idea.ttl>, <resource.ttl> ;
 
 	rdfs:comment """Ontologie de l'Assemblée Virtuelle, en vue de la Plateforme web;
@@ -25,8 +27,7 @@
 	et mail envoyé par Guillaume le 23 mars 
 	PAIR : Projet – Acteur – Idée – Ressource. """.
 
-@prefix av: <#> .
-
+# @prefix av: <#> .
 
 av:Actor owl:disjointWith av:Idea .
 av:Actor owl:disjointWith av:Project .
