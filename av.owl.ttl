@@ -6,17 +6,10 @@
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix owl:  <http://www.w3.org/2002/07/owl#>.
 @prefix foaf:  <http://xmlns.com/foaf/0.1/>.
-# @prefix dbo:  <http://dbpedia.org/ontology/>.
-# @prefix dbpedia:  <http://dbpedia.org/resource/>.
-# @prefix dbprop:  <http://dbpedia.org/property/>.
-# @prefix dbyago:  <http://dbpedia.org/class/yago/>.
-# @prefix void:  <http://rdfs.org/ns/void#>.
-# @prefix geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>.
-# @prefix gr:  <http://purl.org/goodrelations/v1#>.
-# @prefix log:  <http://www.w3.org/2000/10/swap/log#>.
-# @prefix string:  <http://www.w3.org/2000/10/swap/string#>.
-# @prefix list:  <http://www.w3.org/2000/10/swap/list#>.
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#>.
+
+@prefix av: <http://www.assemblee-virtuelle.org/ontologies/v1.owl#> .
+@base       <http://www.assemblee-virtuelle.org/ontologies/v1.owl> .
 
 # TODO : cyril.lage@democratieouverte.org : A ce stade, nous imaginons que le référentiel sera composé de thèmes au sein desquelles les actions seront classées et détaillées par : une description dc:description ; une liste des experts du sujet (associations et entreprises) : à intégrer ; des sources d'information :  rdfs:seeAlso ; des exemples :  à intégrer  
 
