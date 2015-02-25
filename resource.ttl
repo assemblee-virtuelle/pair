@@ -16,3 +16,11 @@ av:Resource  a owl:Class ;
 
 # ==== Propriétés de Ressource ====
 
+av:managedBy  a owl:ObjectProperty ;
+        rdfs:domain   av:Resource ;
+        rdfs:label    "géré par"@fr ;
+        rdfs:range    foaf:Person .
+
+av:resourceCategory   a owl:ObjectProperty ;
+        rdfs:domain   av:Resource ;
+        rdfs:label    "catégorie de resource"@fr .

@@ -16,24 +16,37 @@ av:Actor a owl:Class ;
 
 av:Person a owl:Class ;
 	owl:subclassOf foaf:Person ;
+	owl:subclassOf av:Actor ;
 	rdfs:label "Personne"@fr .
+
+av:Organization a owl:Class ;
+	owl:subclassOf foaf:Organization ;
+	owl:subclassOf av:Actor ;
+	rdfs:label "Organisation"@fr .
 
 # ==== Propriétés de Personne ====
 
 cv:hasSkill a owl:ObjectProperty ;
 	rdfs:label "compétence"@fr ;
-	rdfs:domain av:Person ;
-	rdfs:range cv:Skill .
+	rdfs:domain foaf:Person .
+	# rdfs:range cv:Skill .
 
 # ==== Propriétés de Acteur ====
 
 av:contributes a owl:ObjectProperty ;
 	rdfs:label "contribue"@fr ;
 	rdfs:domain av:Actor ;
-	rdfs:range av:Project .
+	rdfs:range foaf:Project .
 
 av:supports a owl:ObjectProperty ;
 	rdfs:label "Soutient"@fr ;
 	rdfs:domain av:Actor ;
-	rdfs:range av:Project .
+	rdfs:range foaf:Project ;
+	rdfs:comment """
+	NOTES:
+	- foaf:Project is the simplest common denominator
+	- doap:Project is also a foaf:Project
+	""" .
+
+# ==== Propriétés de Organisation ====
 

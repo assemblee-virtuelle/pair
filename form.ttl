@@ -10,31 +10,6 @@
 
 # specifications de formulaires pour AV
 
-<personForm>
-  form:classDomain av:Person ;
-  form:showProperties (
-	foaf:givenName foaf:familyName
-	foaf:homepage
-	# literal or resource
-	foaf:phone
-	# resource, multi-valued
-	foaf:img
-	foaf:topic_interest
-	foaf:knows
-	av:contributes
-	av:supports 
-	cv:hasSkill
-  ) .
-
-<topic_interest>
-	:fieldAppliesToForm <personForm> ;
-	:fieldAppliesToProperty foaf:topic_interest ;
-	:widgetClass form:DBPediaLookup .
-<skill>
-	:fieldAppliesToForm <personForm> ;
-	:fieldAppliesToProperty cv:hasSkill ;
-	:widgetClass form:DBPediaLookup .
-
 <projectForm>
   form:classDomain av:Project ;
   form:showProperties (
@@ -46,12 +21,79 @@
 	foaf:isPrimaryTopicOf
 	foaf:depiction
 	foaf:holdsAccount
-	dc:subject
-  ) .
-
+	dc:subject	# DBPediaLookup
+	av:lead
+	av:concretise
+	av:requires
+) .
 <dc_subject>
 	:fieldAppliesToForm <projectForm> ;
 	:fieldAppliesToProperty dc:subject ;
+	:widgetClass form:DBPediaLookup .
+
+<OrganizationForm>
+  form:classDomain av:Organization ;
+  form:showProperties (
+	rdfs:label rdfs:comment
+	foaf:homepage
+	foaf:maker
+	foaf:mbox
+	dc:subject	# DBPediaLookup
+) .
+<dc_subject3>
+	:fieldAppliesToForm <OrganizationForm> ;
+	:fieldAppliesToProperty dc:subject ;
+	:widgetClass form:DBPediaLookup .
+
+
+<personForm>
+  form:classDomain av:Person ;
+  form:showProperties (
+	foaf:givenName foaf:familyName
+	foaf:homepage
+	# literal or resource
+	foaf:phone
+	# resource, multi-valued
+	foaf:img
+	foaf:topic_interest # DBPediaLookup
+	foaf:knows
+	av:contributes
+	av:supports 
+	cv:hasSkill	# DBPediaLookup
+) .
+<topic_interest>
+	:fieldAppliesToForm <personForm> ;
+	:fieldAppliesToProperty foaf:topic_interest ;
+	:widgetClass form:DBPediaLookup .
+<skill>
+	:fieldAppliesToForm <personForm> ;
+	:fieldAppliesToProperty cv:hasSkill ;
+	:widgetClass form:DBPediaLookup .
+
+<IdeaForm>
+  form:classDomain av:Idea  ;
+  form:showProperties (
+	rdfs:label rdfs:comment
+	dc:subject	# DBPediaLookup
+	av:inspiredBy
+	av:compatibleWith
+) .
+<dc_subject2>
+	:fieldAppliesToForm <IdeaForm> ;
+	:fieldAppliesToProperty dc:subject ;
+	:widgetClass form:DBPediaLookup .
+
+<RessourceForm>
+  form:classDomain av:Resource ;
+  form:showProperties (
+	rdfs:label rdfs:comment
+	av:managedBy
+	av:resourceCategory	# DBPediaLookup
+	foaf:homepage
+) .
+<resourceCategory_field>
+	:fieldAppliesToForm <RessourceForm> ;
+	:fieldAppliesToProperty av:resourceCategory ;
 	:widgetClass form:DBPediaLookup .
 
 

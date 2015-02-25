@@ -20,21 +20,21 @@ av:Project a owl:Class ;
 
 av:requires a owl:ObjectProperty ;
 	rdfs:label "nécessite ressource"@fr ;
-	rdfs:domain av:Project ;
+	rdfs:domain foaf:Project ;
 	rdfs:range av:Resource .
  
 av:participant a owl:ObjectProperty ;
-        rdfs:domain   av:Project ;
+        rdfs:domain   foaf:Project ;
         rdfs:label    "participant"@fr ;
-        rdfs:range    av:Actor .
+        rdfs:range    foaf:Actor .
 
 av:lead a owl:ObjectProperty ;
-        rdfs:domain   av:Project ;
+        rdfs:domain   foaf:Project ;
         rdfs:label    "responsable"@fr ;
-        rdfs:range  foaf:Person .
+        rdfs:range    foaf:Person .
 
 av:concretise  a owl:ObjectProperty ;
-        rdfs:domain   av:Project ;
+        rdfs:domain   foaf:Project ;
         rdfs:label    "concretise" ;
         rdfs:range    av:Idea .
 
