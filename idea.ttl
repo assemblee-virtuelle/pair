@@ -44,4 +44,8 @@ av:convergentWith  a owl:ObjectProperty ;
 	rdfs:range av:Idea ;
 	rdfs:domain av:Idea .
 
+av:supportedBy  a owl:ObjectProperty ;
+	rdfs:label "soutenue par"@fr ;
+	rdfs:range av:Idea ;
+	rdfs:domain foaf:Person .
 
