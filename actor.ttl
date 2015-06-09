@@ -26,10 +26,15 @@ av:Organization a owl:Class ;
 
 # ==== Propriétés de Personne ====
 
-cv:hasSkill a owl:ObjectProperty ;
-	rdfs:label "compétence"@fr ;
+av:linkedinId a owl:DatatypeProperty ;
+	rdfs:label "identifiant LinkedIn"@fr ;
 	rdfs:domain foaf:Person .
-	# rdfs:range cv:Skill .
+av:twitterId a owl:DatatypeProperty ;
+	rdfs:label "identifiant Twitter"@fr ;
+	rdfs:domain foaf:Person .
+av:facebookId a owl:DatatypeProperty ;
+	rdfs:label "identifiant Facebook"@fr ;
+	rdfs:domain foaf:Person .
 
 # ==== Propriétés de Acteur ====
 

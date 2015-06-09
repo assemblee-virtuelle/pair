@@ -38,3 +38,13 @@ av:concretise  a owl:ObjectProperty ;
         rdfs:label    "concrétise" ;
         rdfs:range    av:Idea .
 
+av:projectCategory   a owl:ObjectProperty ;
+        rdfs:domain   av:Project ;
+        rdfs:label    "catégorie de project"@fr ;
+	rdfs:range [ owl:oneOf ( av:software av:event av:society av:hardware ) ].
+
+av:software	rdfs:label "Espace"@fr .
+av:event	rdfs:label "Evènement"@fr .
+av:society	rdfs:label "Sociétal"@fr .
+av:hardware	rdfs:label "Matériel"@fr .
+

@@ -1,7 +1,10 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix dct: <http://purl.org/dc/terms/>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix form: <http://deductions-software.com/ontologies/forms.owl.ttl#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix cco: <http://purl.org/ontology/cco/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix cv: <http://rdfs.org/resume-rdf/cv.rdfs#>.
 @prefix     : <http://xmlns.com/foaf/0.1/>.
 
@@ -15,20 +18,21 @@
   form:showProperties (
 	rdfs:label rdfs:comment
 	foaf:homepage
+	av:projectCategory
 	foaf:maker
 	foaf:mbox
 	foaf:fundedBy
 	foaf:isPrimaryTopicOf
 	foaf:depiction
 	foaf:holdsAccount
-	dc:subject	# DBPediaLookup
+	dct:subject	# DBPediaLookup
 	av:lead
 	av:concretise
 	av:requires
 ) .
-<dc_subject>
+<projectForm-dc_subject>
 	:fieldAppliesToForm <projectForm> ;
-	:fieldAppliesToProperty dc:subject ;
+	:fieldAppliesToProperty dct:subject ;
 	:widgetClass form:DBPediaLookup .
 
 <OrganizationForm>
@@ -38,11 +42,11 @@
 	foaf:homepage
 	foaf:maker
 	foaf:mbox
-	dc:subject	# DBPediaLookup
+	dct:subject	# DBPediaLookup
 ) .
-<dc_subject3>
+<OrganizationForm-dc_subject3>
 	:fieldAppliesToForm <OrganizationForm> ;
-	:fieldAppliesToProperty dc:subject ;
+	:fieldAppliesToProperty dct:subject ;
 	:widgetClass form:DBPediaLookup .
 
 
@@ -52,35 +56,41 @@
 	foaf:givenName foaf:familyName
 	foaf:homepage
 	# literal or resource
+	foaf:mbox
 	foaf:phone
+	vcard:postal-code
+	av:linkedinId
+	av:twitterId
+	av:facebookId
 	# resource, multi-valued
 	foaf:img
 	foaf:topic_interest # DBPediaLookup
 	foaf:knows
 	av:contributes
 	av:supports 
-	cv:hasSkill	# DBPediaLookup
+	cco:expertise	# DBPediaLookup
 ) .
-<topic_interest>
+<personForm-topic_interest>
 	:fieldAppliesToForm <personForm> ;
 	:fieldAppliesToProperty foaf:topic_interest ;
 	:widgetClass form:DBPediaLookup .
-<skill>
+<personForm-skill>
 	:fieldAppliesToForm <personForm> ;
-	:fieldAppliesToProperty cv:hasSkill ;
+	:fieldAppliesToProperty cco:expertise ;
 	:widgetClass form:DBPediaLookup .
 
 <IdeaForm>
   form:classDomain av:Idea  ;
   form:showProperties (
 	rdfs:label rdfs:comment
-	dc:subject	# DBPediaLookup
+	dct:subject	# DBPediaLookup
 	av:inspiredBy
 	av:compatibleWith
+	av:ideaCategory
 ) .
-<dc_subject2>
+<IdeaForm-dc_subject2>
 	:fieldAppliesToForm <IdeaForm> ;
-	:fieldAppliesToProperty dc:subject ;
+	:fieldAppliesToProperty dct:subject ;
 	:widgetClass form:DBPediaLookup .
 
 <RessourceForm>
@@ -88,12 +98,13 @@
   form:showProperties (
 	rdfs:label rdfs:comment
 	av:managedBy
-	av:resourceCategory	# DBPediaLookup
+	av:resourceCategory
+	dct:subject	# DBPediaLookup
 	foaf:homepage
 ) .
-<resourceCategory_field>
+<RessourceForm-subject_field>
 	:fieldAppliesToForm <RessourceForm> ;
-	:fieldAppliesToProperty av:resourceCategory ;
+	:fieldAppliesToProperty	dct:subject ;
 	:widgetClass form:DBPediaLookup .
 
 

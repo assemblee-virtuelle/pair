@@ -7,6 +7,8 @@
 @prefix owl:  <http://www.w3.org/2002/07/owl#>.
 @prefix foaf:  <http://xmlns.com/foaf/0.1/>.
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#>.
+@prefix cco: <http://purl.org/ontology/cco/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 
 @prefix av: <http://www.assemblee-virtuelle.org/ontologies/v1.owl#> .
 # @base       <http://www.assemblee-virtuelle.org/ontologies/v1.owl> .
@@ -16,6 +18,7 @@
 # <>
 av:
   owl:imports doap: , foaf: , dc: , sioc: ,
+	cco: , vcard: ,
 	<project.ttl>, <actor.ttl>, <idea.ttl>, <resource.ttl> ;
 
 	rdfs:comment """Ontologie de l'Assemblée Virtuelle, en vue de la Plateforme web;

@@ -23,4 +23,10 @@ av:managedBy  a owl:ObjectProperty ;
 
 av:resourceCategory   a owl:ObjectProperty ;
         rdfs:domain   av:Resource ;
-        rdfs:label    "catégorie de resource"@fr .
+        rdfs:label    "catégorie de resource"@fr ;
+	rdfs:range [ owl:oneOf ( av:space av:good av:services av:competence ) ] .
+
+av:space	rdfs:label "Espace"@fr .
+av:good		rdfs:label "Bien tangible"@fr .
+av:services	rdfs:label "Services"@fr .
+av:competence	rdfs:label "Compétences"@fr .
