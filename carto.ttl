@@ -62,3 +62,26 @@ fl:quand  a owl:DatatypeProperty ;
         rdfs:comment   """lien vers une date, une durée, un horodatage, un intervalle de temps """@fr ;
         rdfs:label    "when"@en
 .
+
+fl:Qui a owl:Class ;
+	owl:sameClassAs av:Actor ;
+        rdfs:label    "Qui"@fr .
+
+fl:Quoi a owl:Class ;
+        rdfs:label    "quoi"@fr .
+
+fl:Pourquoi a owl:Class ;
+        rdfs:label    "pourquoi"@fr .
+
+fl:Ou a owl:Class ;
+        rdfs:label    "où"@fr .
+
+fl:Comment a owl:Class ;
+        rdfs:label    "comment"@fr .
+
+fl:Combien a owl:Class ;
+        rdfs:label    "combien"@fr .
+
+fl:Quand a owl:Class ;
+        rdfs:label    "quand"@fr .
+
