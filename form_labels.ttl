@@ -1,0 +1,72 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix form: <http://deductions-software.com/ontologies/forms.owl.ttl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix cco: <http://purl.org/ontology/cco/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix cv: <http://rdfs.org/resume-rdf/cv.rdfs#>.
+
+@prefix av: <http://www.assemblee-virtuelle.org/ontologies/v1.owl#> .
+@base <http://www.assemblee-virtuelle.org/ontologies/v1.owl> .
+
+# spécifications de formulaires pour AV : changements de labels par rapport aux vocabulaires d'origine
+
+# form:classDomain av:Project ;
+rdfs:label rdfs:label "nom"@fr .
+rdfs:comment rdfs:label "description"@fr .
+
+foaf:homepage rdfs:label "???"@fr .
+# av:projectCategory
+foaf:maker rdfs:label "???"@fr .
+foaf:mbox rdfs:label "???"@fr .
+foaf:fundedBy rdfs:label "???"@fr .
+foaf:isPrimaryTopicOf rdfs:label "???"@fr .
+foaf:depiction rdfs:label "???"@fr .
+foaf:holdsAccount rdfs:label "???"@fr .
+	# DBPediaLookup
+dct:subject rdfs:label "???"@fr .
+
+# form:classDomain av:Organization
+	foaf:homepage rdfs:label "???"@fr .
+	foaf:maker rdfs:label "???"@fr .
+	foaf:mbox rdfs:label "???"@fr .
+
+
+# form:classDomain av:Person
+	foaf:givenName rdfs:label "???"@fr .
+	foaf:familyName rdfs:label "???"@fr .
+	foaf:homepage rdfs:label "???"@fr .
+	foaf:phone rdfs:label "???"@fr .
+	vcard:postal-code rdfs:label "???"@fr .
+	av:linkedinId rdfs:label "???"@fr .
+	av:twitterId rdfs:label "???"@fr .
+	av:facebookId rdfs:label "???"@fr .
+	# resource, multi-valued
+	foaf:img rdfs:label "???"@fr .
+	# DBPediaLookup
+	foaf:topic_interest rdfs:label "???"@fr .
+	foaf:knows rdfs:label "???"@fr .
+	av:contributes rdfs:label "???"@fr .
+	av:supports  rdfs:label "???"@fr .
+	# DBPediaLookup
+	cco:expertise rdfs:label "???"@fr .
+
+
+# form:classDomain av:Idea
+	# rdfs:label rdfs:comment
+	# DBPediaLookup
+	dct:subject rdfs:label "???"@fr .
+	av:inspiredBy rdfs:label "???"@fr .
+	av:compatibleWith rdfs:label "???"@fr .
+	av:ideaCategory rdfs:label "???"@fr .
+
+
+# form:classDomain av:Resource
+	# rdfs:label rdfs:comment
+	av:managedBy rdfs:label "???"@fr .
+	av:resourceCategory rdfs:label "???"@fr .
+	# DBPediaLookup
+	# dct:subject
+	foaf:homepage rdfs:label "???"@fr .
+
