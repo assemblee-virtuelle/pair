@@ -15,58 +15,23 @@
 # form:classDomain av:Project ;
 rdfs:label rdfs:label "nom"@fr .
 rdfs:comment rdfs:label "description"@fr .
-
-foaf:homepage rdfs:label "???"@fr .
-# av:projectCategory
-foaf:maker rdfs:label "???"@fr .
-foaf:mbox rdfs:label "???"@fr .
-foaf:fundedBy rdfs:label "???"@fr .
-foaf:isPrimaryTopicOf rdfs:label "???"@fr .
-foaf:depiction rdfs:label "???"@fr .
-foaf:holdsAccount rdfs:label "???"@fr .
-	# DBPediaLookup
-dct:subject rdfs:label "???"@fr .
+foaf:homepage rdfs:label "Site web"@fr .
+foaf:maker rdfs:label "Initiateur(s)"@fr . # au lieu de "agent"
+foaf:mbox rdfs:label "courriel"@fr .
+# DBPediaLookup
+dct:subject rdfs:label "thèmes"@fr .
 
 # form:classDomain av:Organization
-	foaf:homepage rdfs:label "???"@fr .
-	foaf:maker rdfs:label "???"@fr .
-	foaf:mbox rdfs:label "???"@fr .
 
 
 # form:classDomain av:Person
-	foaf:givenName rdfs:label "???"@fr .
-	foaf:familyName rdfs:label "???"@fr .
-	foaf:homepage rdfs:label "???"@fr .
-	foaf:phone rdfs:label "???"@fr .
-	vcard:postal-code rdfs:label "???"@fr .
-	av:linkedinId rdfs:label "???"@fr .
-	av:twitterId rdfs:label "???"@fr .
-	av:facebookId rdfs:label "???"@fr .
-	# resource, multi-valued
-	foaf:img rdfs:label "???"@fr .
+	foaf:familyName rdfs:label "nom"@fr .
+	vcard:postal-code rdfs:label "code postal"@fr .
+	vcard:locality rdfs:label "ville"@fr .
 	# DBPediaLookup
-	foaf:topic_interest rdfs:label "???"@fr .
-	foaf:knows rdfs:label "???"@fr .
-	av:contributes rdfs:label "???"@fr .
-	av:supports  rdfs:label "???"@fr .
-	# DBPediaLookup
-	cco:expertise rdfs:label "???"@fr .
-
+	cco:expertise rdfs:label "expertise"@fr .
 
 # form:classDomain av:Idea
-	# rdfs:label rdfs:comment
-	# DBPediaLookup
-	dct:subject rdfs:label "???"@fr .
-	av:inspiredBy rdfs:label "???"@fr .
-	av:compatibleWith rdfs:label "???"@fr .
-	av:ideaCategory rdfs:label "???"@fr .
-
 
 # form:classDomain av:Resource
-	# rdfs:label rdfs:comment
-	av:managedBy rdfs:label "???"@fr .
-	av:resourceCategory rdfs:label "???"@fr .
-	# DBPediaLookup
-	# dct:subject
-	foaf:homepage rdfs:label "???"@fr .
 

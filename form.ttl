@@ -21,14 +21,12 @@
 	av:projectCategory
 	foaf:maker
 	foaf:mbox
-	foaf:fundedBy
-	foaf:isPrimaryTopicOf
-	foaf:depiction
-	foaf:holdsAccount
+	# foaf:depiction
 	dct:subject	# DBPediaLookup
-	av:lead
-	av:concretise
-	av:requires
+	av:project	# P
+	av:lead	# A
+	av:concretise	# I
+	av:resource	# R
 ) .
 <projectForm-dc_subject>
 	:fieldAppliesToForm <projectForm> ;
@@ -43,6 +41,10 @@
 	foaf:maker
 	foaf:mbox
 	dct:subject	# DBPediaLookup
+		# P
+		# A
+	av:	# I
+		# R
 ) .
 <OrganizationForm-dc_subject3>
 	:fieldAppliesToForm <OrganizationForm> ;
@@ -59,6 +61,7 @@
 	foaf:mbox
 	foaf:phone
 	vcard:postal-code
+	vcard:locality
 	av:linkedinId
 	av:twitterId
 	av:facebookId
@@ -69,6 +72,10 @@
 	av:contributes
 	av:supports 
 	cco:expertise	# DBPediaLookup
+		# P
+		# A
+	av:	# I
+		# R
 ) .
 <personForm-topic_interest>
 	:fieldAppliesToForm <personForm> ;
@@ -87,6 +94,10 @@
 	av:inspiredBy
 	av:compatibleWith
 	av:ideaCategory
+		# P
+		# A
+	av:	# I
+		# R
 ) .
 <IdeaForm-dc_subject2>
 	:fieldAppliesToForm <IdeaForm> ;
@@ -101,6 +112,10 @@
 	av:resourceCategory
 	dct:subject	# DBPediaLookup
 	foaf:homepage
+		# P
+		# A
+	av:	# I
+		# R
 ) .
 <RessourceForm-subject_field>
 	:fieldAppliesToForm <RessourceForm> ;

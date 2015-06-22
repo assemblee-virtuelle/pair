@@ -13,7 +13,7 @@
 av:Project a owl:Class ;
 	rdfs:subclassOf foaf:Project  ;
 	rdfs:label "Projet"@fr ;
-	rdfs:comment "Un projet logiciel, sociétal, etc.".
+	rdfs:comment "Un projet logiciel, sociétal, etc."@fr.
 # Les projets et les acteurs sont assez bien couverts par des vocabulaires RDF, respectivement DOAP et FOAF+SIOC."
 
 # ==== Propriétés de Projet ====
@@ -35,7 +35,8 @@ av:lead a owl:ObjectProperty ;
 
 av:concretise  a owl:ObjectProperty ;
         rdfs:domain   foaf:Project ;
-        rdfs:label    "concrétise" ;
+        rdfs:label    "idée"@fr ;
+	rdfs:comment  "le projet concrétise une idée"@fr ;
         rdfs:range    av:Idea .
 
 av:projectCategory   a owl:ObjectProperty ;
@@ -43,8 +44,12 @@ av:projectCategory   a owl:ObjectProperty ;
         rdfs:label    "catégorie de project"@fr ;
 	rdfs:range [ owl:oneOf ( av:software av:event av:society av:hardware ) ].
 
-av:software	rdfs:label "Espace"@fr .
-av:event	rdfs:label "Evènement"@fr .
+av:software	rdfs:label "Immatériel (logiciel etc)"@fr .
+av:event	rdfs:label "Événementiel"@fr .
 av:society	rdfs:label "Sociétal"@fr .
 av:hardware	rdfs:label "Matériel"@fr .
 
+av:project  a owl:ObjectProperty ;
+        rdfs:label    "project"@fr ;
+	rdfs:comment  "projet associé"@fr ;
+        rdfs:range    av:Project .

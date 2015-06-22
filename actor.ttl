@@ -27,13 +27,16 @@ av:Organization a owl:Class ;
 # ==== Propriétés de Personne ====
 
 av:linkedinId a owl:DatatypeProperty ;
-	rdfs:label "identifiant LinkedIn"@fr ;
+	rdfs:label "LinkedIn"@fr ;
+	rdfs:comment "identifiant LinkedIn"@fr ;
 	rdfs:domain foaf:Person .
 av:twitterId a owl:DatatypeProperty ;
-	rdfs:label "identifiant Twitter"@fr ;
+	rdfs:label "Twitter"@fr ;
+	rdfs:comment "identifiant Twitter"@fr ;
 	rdfs:domain foaf:Person .
 av:facebookId a owl:DatatypeProperty ;
-	rdfs:label "identifiant Facebook"@fr ;
+	rdfs:label "Facebook"@fr ;
+	rdfs:comment "identifiant Facebook"@fr ;
 	rdfs:domain foaf:Person .
 
 # ==== Propriétés de Acteur ====
