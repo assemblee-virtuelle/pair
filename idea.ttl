@@ -12,7 +12,7 @@
 
 av:Idea a owl:Class ;
 	rdfs:label "Idée"@fr ;
-	rdfs:comment """ Exemples d'idées: Dév Dur, social, économie, écologie, réflexions , analyse , critique, proposition  (l'intention peut être projet ou non); 
+	rdfs:comment """ Exemples d'idées: Développement Durable, social, économie, écologie, réflexions , analyse , critique, proposition  (l'intention peut être projet ou non); 
 relation entre idées: opposition, compatibilité , convergence ...
 approche systémique ( et combinatoire )
 faits ? c'est plus un sujet (Dublin core) qu'une ressource ou une idée
@@ -45,17 +45,21 @@ av:convergentWith  a owl:ObjectProperty ;
 	rdfs:domain av:Idea .
 
 av:supportedBy  a owl:ObjectProperty ;
-	rdfs:label "soutenue par"@fr ;
+	rdfs:label "acteur"@fr ;
+	rdfs:comment "soutenue par"@fr ;
 	rdfs:range av:Idea ;
-	rdfs:domain foaf:Person .
+	rdfs:domain av:Actor .
 
 av:ideaCategory   a owl:ObjectProperty ;
         rdfs:domain   av:Idea ;
         rdfs:label    "catégorie d'idée"@fr ;
 	rdfs:range [ owl:oneOf ( av:theme av:thesis ) ] .
 
-av:theme	rdfs:label "Théme"@fr .
+av:theme	rdfs:label "Thème"@fr .
 av:thesis	rdfs:label "Thèse"@fr .
 
-
+av:idea   a owl:ObjectProperty ;
+        rdfs:label    "idée"@fr ;
+	rdfs:comment  "idée associée"@fr ;
+        rdfs:range    av:Idea .
 

@@ -24,7 +24,7 @@
 	# foaf:depiction
 	dct:subject	# DBPediaLookup
 	av:project	# P
-	av:lead	# A
+	av:lead		# A
 	av:concretise	# I
 	av:resource	# R
 ) .
@@ -41,10 +41,10 @@
 	foaf:maker
 	foaf:mbox
 	dct:subject	# DBPediaLookup
-		# P
-		# A
-	av:	# I
-		# R
+	av:project	# P
+	foaf:member	# A
+	av:idea		# I
+	av:resource	# R
 ) .
 <OrganizationForm-dc_subject3>
 	:fieldAppliesToForm <OrganizationForm> ;
@@ -57,25 +57,22 @@
   form:showProperties (
 	foaf:givenName foaf:familyName
 	foaf:homepage
-	# literal or resource
-	foaf:mbox
+	foaf:mbox	# literal or resource
 	foaf:phone
 	vcard:postal-code
 	vcard:locality
 	av:linkedinId
 	av:twitterId
 	av:facebookId
-	# resource, multi-valued
-	foaf:img
+	foaf:img	# resource, multi-valued
 	foaf:topic_interest # DBPediaLookup
-	foaf:knows
-	av:contributes
-	av:supports 
 	cco:expertise	# DBPediaLookup
-		# P
-		# A
-	av:	# I
-		# R
+	av:contributes	# P
+	av:supports	# P
+	foaf:knows	# A
+	av:joins	# A
+	av:idea		# I
+	av:resource	# R
 ) .
 <personForm-topic_interest>
 	:fieldAppliesToForm <personForm> ;
@@ -94,10 +91,10 @@
 	av:inspiredBy
 	av:compatibleWith
 	av:ideaCategory
-		# P
-		# A
-	av:	# I
-		# R
+	av:project	# P
+	av:supportedBy	# A
+	av:idea		# I
+	av:resource	# R
 ) .
 <IdeaForm-dc_subject2>
 	:fieldAppliesToForm <IdeaForm> ;
@@ -112,10 +109,11 @@
 	av:resourceCategory
 	dct:subject	# DBPediaLookup
 	foaf:homepage
-		# P
-		# A
-	av:	# I
-		# R
+	av:project	# P
+	av:managedBy	# A
+	av:ownedBy	# A
+	av:idea		# I
+	av:resource	# R
 ) .
 <RessourceForm-subject_field>
 	:fieldAppliesToForm <RessourceForm> ;

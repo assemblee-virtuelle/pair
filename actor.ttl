@@ -39,6 +39,11 @@ av:facebookId a owl:DatatypeProperty ;
 	rdfs:comment "identifiant Facebook"@fr ;
 	rdfs:domain foaf:Person .
 
+av:joins a owl:ObjectProperty ;
+	rdfs:label "adhère"@fr ;
+	rdfs:domain av:Person ;
+	rdfs:range foaf:Organization .
+
 # ==== Propriétés de Acteur ====
 
 av:contributes a owl:ObjectProperty ;
@@ -47,14 +52,9 @@ av:contributes a owl:ObjectProperty ;
 	rdfs:range foaf:Project .
 
 av:supports a owl:ObjectProperty ;
-	rdfs:label "Soutient"@fr ;
+	rdfs:label "soutient"@fr ;
 	rdfs:domain av:Actor ;
-	rdfs:range foaf:Project ;
-	rdfs:comment """
-	NOTES:
-	- foaf:Project is the simplest common denominator
-	- doap:Project is also a foaf:Project
-	""" .
+	rdfs:range foaf:Project .
 
 # ==== Propriétés de Organisation ====
 

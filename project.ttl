@@ -10,11 +10,16 @@
 @prefix av: <http://www.assemblee-virtuelle.org/ontologies/v1.owl#> .
 @base <http://www.assemblee-virtuelle.org/ontologies/v1.owl> .
 
+# Les projets et les acteurs sont assez bien couverts par des vocabulaires RDF, respectivement DOAP et FOAF+SIOC."
+
 av:Project a owl:Class ;
 	rdfs:subclassOf foaf:Project  ;
 	rdfs:label "Projet"@fr ;
-	rdfs:comment "Un projet logiciel, sociétal, etc."@fr.
-# Les projets et les acteurs sont assez bien couverts par des vocabulaires RDF, respectivement DOAP et FOAF+SIOC."
+	rdfs:comment "Un projet logiciel, sociétal, etc."@fr;
+	rdfs:comment """NOTES:
+	- foaf:Project is the simplest common denominator
+	- doap:Project is also a foaf:Project
+	"""@en .
 
 # ==== Propriétés de Projet ====
 
@@ -50,6 +55,6 @@ av:society	rdfs:label "Sociétal"@fr .
 av:hardware	rdfs:label "Matériel"@fr .
 
 av:project  a owl:ObjectProperty ;
-        rdfs:label    "project"@fr ;
+        rdfs:label    "projet"@fr ;
 	rdfs:comment  "projet associé"@fr ;
         rdfs:range    av:Project .

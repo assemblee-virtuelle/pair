@@ -12,7 +12,7 @@
 
 av:Resource  a owl:Class ;
 	rdfs:label "Ressource"@fr ;
-	rdfs:comment "Exemples de resources: documents, matérielles, services, financières, lieux, outils, networking (carnet)" .  
+	rdfs:comment "Exemples de ressources: documents, matérielles, services, financières, lieux, outils, networking (carnet)" .  
 
 # ==== Propriétés de Ressource ====
 
@@ -23,10 +23,22 @@ av:managedBy  a owl:ObjectProperty ;
 
 av:resourceCategory   a owl:ObjectProperty ;
         rdfs:domain   av:Resource ;
-        rdfs:label    "catégorie de resource"@fr ;
-	rdfs:range [ owl:oneOf ( av:space av:good av:services av:competence ) ] .
+        rdfs:label    "catégorie de ressource"@fr ;
+	rdfs:range [ owl:oneOf ( av:space av:good av:services
+			av:competence av:document ) ] .
+
+av:ownedBy  a owl:ObjectProperty ;
+        rdfs:domain   av:Resource ;
+        rdfs:label    "Propriétaire"@fr ;
+        rdfs:range    foaf:Agent .
 
 av:space	rdfs:label "Espace"@fr .
 av:good		rdfs:label "Bien tangible"@fr .
 av:services	rdfs:label "Services"@fr .
 av:competence	rdfs:label "Compétences"@fr .
+av:document	rdfs:label "Ressource documentaire"@fr .
+
+av:resource  a owl:ObjectProperty ;
+        rdfs:label    "ressource"@fr ;
+	rdfs:comment  "ressource associée"@fr ;
+        rdfs:range    av:Resource .
