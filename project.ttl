@@ -46,7 +46,7 @@ av:concretise  a owl:ObjectProperty ;
 
 av:projectCategory   a owl:ObjectProperty ;
         rdfs:domain   av:Project ;
-        rdfs:label    "catégorie de project"@fr ;
+        rdfs:label    "catégorie de projet"@fr ;
 	rdfs:range [ owl:oneOf ( av:software av:event av:society av:hardware ) ].
 
 av:software	rdfs:label "Immatériel (logiciel etc)"@fr .
