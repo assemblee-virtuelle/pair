@@ -11,17 +11,17 @@
 @base <http://www.assemblee-virtuelle.org/ontologies/v1.owl> .
 
 av:Actor a owl:Class ;
-	owl:subclassOf foaf:Agent ;
+	rdfs:subClassOf foaf:Agent ;
 	rdfs:label "Acteur"@fr .
 
 av:Person a owl:Class ;
-	owl:subclassOf foaf:Person ;
-	owl:subclassOf av:Actor ;
+	rdfs:subClassOf foaf:Person ;
+	rdfs:subClassOf av:Actor ;
 	rdfs:label "Personne"@fr .
 
 av:Organization a owl:Class ;
-	owl:subclassOf foaf:Organization ;
-	owl:subclassOf av:Actor ;
+	rdfs:subClassOf foaf:Organization ;
+	rdfs:subClassOf av:Actor ;
 	rdfs:label "Organisation"@fr .
 
 # ==== Propriétés de Personne ====
