@@ -21,16 +21,22 @@ av:managedBy  a owl:ObjectProperty ;
         rdfs:label    "géré par"@fr ;
         rdfs:range    foaf:Person .
 
+av:ownedBy  a owl:ObjectProperty ;
+        rdfs:domain   av:Resource ;
+        rdfs:label    "propriétaire"@fr ;
+        rdfs:range    foaf:Agent .
+
+av:usedBy  a owl:ObjectProperty ;
+        rdfs:domain   av:Resource ;
+        rdfs:label    "utilisé par"@fr ;
+        rdfs:range    foaf:Agent .
+
+
 av:resourceCategory   a owl:ObjectProperty ;
         rdfs:domain   av:Resource ;
         rdfs:label    "catégorie de ressource"@fr ;
 	rdfs:range [ owl:oneOf ( av:space av:good av:services
 			av:competence av:document ) ] .
-
-av:ownedBy  a owl:ObjectProperty ;
-        rdfs:domain   av:Resource ;
-        rdfs:label    "propriétaire"@fr ;
-        rdfs:range    foaf:Agent .
 
 av:space	rdfs:label "Espace"@fr .
 av:good		rdfs:label "Bien tangible"@fr .

@@ -21,6 +21,7 @@ av:
 	cco: , vcard: ,
 	<project.ttl>, <actor.ttl>, <idea.ttl>, <resource.ttl> ;
 
+	rdfs:label "Ontologie de l'Assemblée Virtuelle"@fr ;
 	rdfs:comment """Ontologie de l'Assemblée Virtuelle, en vue de la Plateforme web;
 	concepts de base: Projets, Acteurs, Idées, Ressources (PAIR)
 	cf mail de Guillaume du 20 Mar 2014 11:42
@@ -28,9 +29,7 @@ av:
 	et "Jalons - Cartographie sémantique des ecosystemes de PAIR"
 	cf https://basecamp.com/2588660/projects/5413946-plateforme-web-av/documents/5456204-concepts-de-base 
 	et mail envoyé par Guillaume le 23 mars 
-	PAIR : Projet – Acteur – Idée – Ressource. """.
-
-# @prefix av: <#> .
+	PAIR : Projet – Acteur – Idée – Ressource. """@fr .
 
 av:Actor owl:disjointWith av:Idea .
 av:Actor owl:disjointWith av:Project .

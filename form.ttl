@@ -19,13 +19,15 @@
 	rdfs:label rdfs:comment
 	foaf:homepage
 	av:projectCategory
-	foaf:maker
+	# foaf:maker
 	foaf:mbox
 	# foaf:depiction
-	dct:subject	# DBPediaLookup
+
+	form:p------------------------PAIRs------------------------ # TODO separator 
 	av:project	# P
 	av:lead		# A
 	av:concretise	# I
+	dct:subject	# DBPediaLookup
 	av:resource	# R
 ) .
 <projectForm-dc_subject>
@@ -38,12 +40,13 @@
   form:showProperties (
 	rdfs:label rdfs:comment
 	foaf:homepage
-	foaf:maker
+	# foaf:maker
 	foaf:mbox
-	dct:subject	# DBPediaLookup
+
+	form:p------------------------PAIRs------------------------ # TODO separator 
 	av:project	# P
 	foaf:member	# A
-	av:idea		# I
+	dct:subject	# DBPediaLookup
 	av:resource	# R
 ) .
 <OrganizationForm-dc_subject3>
@@ -65,14 +68,16 @@
 	av:linkedinId
 	av:twitterId
 	av:facebookId
-	foaf:img	# resource, multi-valued
+	# foaf:img	# resource, multi-valued
 	foaf:topic_interest # DBPediaLookup
-	cco:expertise	# DBPediaLookup
+
+	form:p------------------------PAIRs------------------------ # TODO separator 
 	av:contributes	# P
-	av:supports	# P
+	# av:supports	# P
 	foaf:knows	# A
 	av:joins	# A
 	av:idea		# I
+	cco:expertise	# R DBPediaLookup
 	av:resource	# R
 ) .
 <personForm-topic_interest>
@@ -89,8 +94,10 @@
   form:showProperties (
 	rdfs:label rdfs:comment
 	dct:subject	# DBPediaLookup
-	av:inspiredBy
-	av:compatibleWith
+
+	form:p------------------------PAIRs------------------------ # TODO separator 
+	# av:inspiredBy
+	# av:compatibleWith
 	av:ideaCategory
 	av:project	# P
 	av:supportedBy	# A
@@ -109,9 +116,12 @@
 	av:resourceCategory
 	dct:subject	# DBPediaLookup
 	foaf:homepage
+
+	form:p------------------------PAIRs------------------------ # TODO separator 
 	av:project	# P
 	av:managedBy	# A
 	av:ownedBy	# A
+	av:usedBy	# A
 	av:idea		# I
 	av:resource	# R
 ) .
