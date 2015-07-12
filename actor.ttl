@@ -17,7 +17,7 @@ av:Actor a owl:Class ;
 av:Person a owl:Class ;
 	rdfs:subClassOf foaf:Person ;
 	rdfs:subClassOf av:Actor ;
-	rdfs:label "Personne"@fr .
+	rdfs:label "Individu"@fr .
 
 av:Organization a owl:Class ;
 	rdfs:subClassOf foaf:Organization ;
@@ -28,15 +28,15 @@ av:Organization a owl:Class ;
 
 av:linkedinId a owl:DatatypeProperty ;
 	rdfs:label "LinkedIn"@fr ;
-	rdfs:comment "identifiant LinkedIn"@fr ;
+	rdfs:comment "LinkedIn"@fr ;
 	rdfs:domain foaf:Person .
 av:twitterId a owl:DatatypeProperty ;
 	rdfs:label "Twitter"@fr ;
-	rdfs:comment "identifiant Twitter"@fr ;
+	rdfs:comment "Twitter"@fr ;
 	rdfs:domain foaf:Person .
 av:facebookId a owl:DatatypeProperty ;
 	rdfs:label "Facebook"@fr ;
-	rdfs:comment "identifiant Facebook"@fr ;
+	rdfs:comment "Facebook"@fr ;
 	rdfs:domain foaf:Person .
 
 av:joins a owl:ObjectProperty ;
@@ -56,5 +56,9 @@ av:supports a owl:ObjectProperty ;
 	rdfs:domain av:Actor ;
 	rdfs:range foaf:Project .
 
-# ==== Propriétés de Organisation ====
+# ==== Propriété générique de valeurs Actor ====
+
+av:actor a owl:ObjectProperty ;
+	rdfs:label "acteur"@fr ;
+	rdfs:range av:Actor .
 

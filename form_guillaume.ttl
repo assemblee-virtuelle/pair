@@ -1,0 +1,190 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix form: <http://deductions-software.com/ontologies/forms.owl.ttl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix cco: <http://purl.org/ontology/cco/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix cv: <http://rdfs.org/resume-rdf/cv.rdfs#>.
+@prefix     : <http://xmlns.com/foaf/0.1/>.
+
+@prefix av: <http://www.assemblee-virtuelle.org/ontologies/v1.owl#> .
+@base <http://www.assemblee-virtuelle.org/ontologies/v1.owl> .
+
+# specifications de formulaires pour AV
+
+<projectForm>
+  form:classDomain av:Project ;
+  form:showProperties (
+	rdfs:label rdfs:comment
+	foaf:homepage
+	av:projectCategory
+	# foaf:maker
+	foaf:mbox
+	# foaf:depiction
+
+	form:p------------------------PAIRs------------------------ # TODO separator 
+	form:p---Projet-----
+	av:similarTo
+	av:depends
+	av:isComplementOf
+
+	form:a---Acteur_Individu-----
+	av:supportedBy	# soutenu ( inverse de likesXXX )aussi pour Organisation
+	foaf:member
+	form:a---Acteur_Organisation-----
+	
+	form:i---Idée----
+
+) .
+<projectForm-dc_subject>
+	:fieldAppliesToForm <projectForm> ;
+	:fieldAppliesToProperty dct:subject ;
+	:widgetClass form:DBPediaLookup .
+
+<OrganizationForm>
+  form:classDomain av:Organization ;
+  form:showProperties (
+	rdfs:label rdfs:comment
+	foaf:homepage
+	# foaf:maker
+	foaf:mbox
+
+	form:p------------------PAIRs---------------- # TODO separator 
+	form:p---Projet-----
+	av:likesProject
+	av:contributes	# P
+	av:originator   # est à l'origine
+
+	form:a---Acteur_Individu-----
+	av:isLikedBy
+	av:hasContributor
+	av:hasEmployee
+	form:a---Acteur_Organisation-----
+	av:likesOrganization
+	av:partner	# owlSymmmetricProperty
+	foaf:fundedBy	# intransitive !
+	# av:hasCustomer
+
+	form:i---Idée----
+	av:likesIdea		# I
+	av:specializedIn
+	av:opposedTo
+
+# NOTE: collé !!!!!!!!!
+	form:r------Ressource_biens-espaces-----
+	av:sharesGoodOrSpace	# offre, partage
+	av:needsGoodOrSpace	# recherche, demande
+	form:r------Ressource_services-compétences-----
+	av:sharesServices 	# offre
+	av:needsServices	# recherche, demande
+	# cco:expertise	# R DBPediaLookup
+	form:r------Ressource_documentaires-----
+	av:sharesDocument  	# URL offre
+	av:needsDocument 	# DBPediaLookup recherche, demande
+) .
+
+
+<OrganizationForm-dc_subject3>
+	:fieldAppliesToForm <OrganizationForm> ;
+	:fieldAppliesToProperty dct:subject ;
+	:widgetClass form:DBPediaLookup .
+
+
+<personForm>
+  form:classDomain av:Person ;
+  form:showProperties (
+
+	foaf:givenName foaf:familyName
+	rdfs:comment
+	foaf:homepage
+	foaf:mbox	# literal or resource
+	foaf:phone
+	vcard:postal-code
+	vcard:locality
+	av:linkedinId
+	av:twitterId
+	av:facebookId
+	# foaf:img	# resource, multi-valued
+	foaf:topic_interest # DBPediaLookup
+
+	form:p--------------------PAIRs------------------ # TODO separator 
+	form:p---Projet-----
+	av:likesProject
+	av:contributes	# P
+
+	form:a---Acteur_Individu-----
+	foaf:knows	# A (ami, famille)
+	av:worksWith
+	form:a---Acteur_Organisation-----
+	av:likesOrganization
+	av:contributes	# A (adhère, contribue)
+	av:employee	# A VOIR : existe déjà dans un vocab' ?
+
+	form:i---Idée----
+	av:likesIdea		# I
+	av:specializedIn
+	av:opposedTo
+
+	form:r------Ressource_biens-espaces-----
+	av:sharesGoodOrSpace	# offre, partage
+	av:needsGoodOrSpace	# recherche, demande
+	form:r------Ressource_services-compétences-----
+	av:sharesServices 	# offre
+	av:needsServices	# recherche, demande
+	# cco:expertise	# R DBPediaLookup
+	form:r------Ressource_documentaire-----
+	av:sharesDocument  	# URL offre
+	av:needsDocument 	# DBPediaLookup recherche, demande
+) .
+<personForm-topic_interest>
+	:fieldAppliesToForm <personForm> ;
+	:fieldAppliesToProperty foaf:topic_interest ;
+	:widgetClass form:DBPediaLookup .
+<personForm-skill>
+	:fieldAppliesToForm <personForm> ;
+	:fieldAppliesToProperty cco:expertise ;
+	:widgetClass form:DBPediaLookup .
+
+<IdeaForm>
+  form:classDomain av:Idea  ;
+  form:showProperties (
+	rdfs:label rdfs:comment
+	dct:subject	# DBPediaLookup
+
+	form:p------------------------PAIRs------------------------ # TODO separator 
+	# av:inspiredBy
+	# av:compatibleWith
+	av:ideaCategory
+	av:project	# P
+	av:supportedBy	# A
+	av:idea		# I
+	av:resource	# R
+) .
+<IdeaForm-dc_subject2>
+	:fieldAppliesToForm <IdeaForm> ;
+	:fieldAppliesToProperty dct:subject ;
+	:widgetClass form:DBPediaLookup .
+
+<RessourceForm>
+  form:classDomain av:Resource ;
+  form:showProperties (
+	rdfs:label rdfs:comment
+	av:resourceCategory
+	dct:subject	# DBPediaLookup
+	foaf:homepage
+
+	form:p------------------------PAIRs------------------------ # TODO separator 
+	av:project	# P
+	av:managedBy	# A
+	av:ownedBy	# A
+	av:usedBy	# A
+	av:idea		# I
+	av:resource	# R
+) .
+<RessourceForm-subject_field>
+	:fieldAppliesToForm <RessourceForm> ;
+	:fieldAppliesToProperty	dct:subject ;
+	:widgetClass form:DBPediaLookup .
+
+
