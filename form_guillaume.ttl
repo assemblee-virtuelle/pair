@@ -50,7 +50,7 @@
 	# av:needsResource
 	# av:provides # fournit, met à disposition
 	form:r------Ressource_biens-espaces-----
-	av:sharesGoodOrSpace	# offre, partage
+	av:sharesGoodOrSpace	# offre, partage ; subPropertyOf av:sharesResource
 	av:needsGoodOrSpace	# recherche, demande
 	form:r------Ressource_services-compétences-----
 	av:sharesServices 	# offre
@@ -208,7 +208,7 @@
 	
 	form:r---Resource---------------
 
-	av:resource	# R
+	av:resource	# exemple : thèse, documentation bonnes pratique practichère practishare ;)
 ) .
 <IdeaForm-dc_subject2>
 	form:fieldAppliesToForm <IdeaForm_Guillaume> ;
@@ -217,6 +217,7 @@
 
 <RessourceForm_Guillaume>
   form:classDomain av:Resource ;
+  ############################
   form:showProperties (
 	rdfs:label rdfs:comment
 	av:resourceCategory
@@ -226,17 +227,31 @@
 	form:p------------------------PAIRs------------------------ # TODO separator 
 
 	form:p---Projet-----------------
+	av:sharedByProject
+	av:neededByProject
+
 	form:a---Organization-----------
-	form:a---Individu---------------
-	form:i---Idée-------------------
-	form:r---Resource---------------
-	
-	av:project	# P
+	av:sharedByOrganization
+	av:neededByOrganization
 	av:managedBy	# A
 	av:ownedBy	# A
 	av:usedBy	# A
+
+	form:a---Individu---------------
+	av:sharedByPerson
+	av:neededByPerson
+	av:managedBy	# A Note: collé !!!
+	av:ownedBy	# A
+	av:usedBy	# A
+
+	form:i---Idée-------------------
 	av:idea		# I
-	av:resource	# R
+
+	form:r---Resource---------------	
+	av:partOf # trouver un concept déjà existant
+	av:includes # owl:inverProperty partOf
+	skos:related
+	av:needsResource
 ) .
 
 <RessourceForm-subject_field>
