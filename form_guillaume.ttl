@@ -15,6 +15,7 @@
 
 <projectForm>
   form:classDomain av:Project ;
+  #############################
   form:showProperties (
 	rdfs:label rdfs:comment
 	foaf:homepage
@@ -25,17 +26,39 @@
 
 	form:p------------------------PAIRs------------------------ # TODO separator 
 	form:p---Projet-----
-	av:similarTo
-	av:depends
-	av:isComplementOf
+	av:similarTo # probably use SKOS
+	av:usedBy # inverse : uses
+	# av:isComplementOf
 
 	form:a---Acteur_Individu-----
-	av:supportedBy	# soutenu ( inverse de likesXXX )aussi pour Organisation
-	foaf:member
+	av:supportedBy	# soutenu ( inverse de likesXXX ) aussi pour Organisation
+	foaf:member # a pour contributeur - subPropertyOf supportedBy
+	av:targetUser
+	
 	form:a---Acteur_Organisation-----
+	av:supportedBy	# soutenu ( inverse de likesXXX ) aussi pour Organisation
+	foaf:member # a pour contributeur - subPropertyOf supportedBy
+	av:targetUser
+	foaf:fundedBy
 	
 	form:i---Idée----
-
+	av:implements # met en oeuvre
+	av:inspiredBy
+	av:opposedTo
+	
+	form:r---Resource----
+	# av:needsResource
+	# av:provides # fournit, met à disposition
+	form:r------Ressource_biens-espaces-----
+	av:sharesGoodOrSpace	# offre, partage
+	av:needsGoodOrSpace	# recherche, demande
+	form:r------Ressource_services-compétences-----
+	av:sharesServices 	# offre
+	av:needsServices	# recherche, demande
+	cco:expertise	# R DBPediaLookup
+	form:r------Ressource_documentaires-----
+	av:sharesDocument  	# URL, offre/partage document ou bonne pratique
+	av:needsDocument 	# DBPediaLookup recherche, demande
 ) .
 <projectForm-dc_subject>
 	:fieldAppliesToForm <projectForm> ;
@@ -44,6 +67,7 @@
 
 <OrganizationForm>
   form:classDomain av:Organization ;
+  ################################ (acteur)
   form:showProperties (
 	rdfs:label rdfs:comment
 	foaf:homepage
@@ -53,13 +77,14 @@
 	form:p------------------PAIRs---------------- # TODO separator 
 	form:p---Projet-----
 	av:likesProject
-	av:contributes	# P
+	av:contributes	# P subPropertyOf likesProject
 	av:originator   # est à l'origine
 
 	form:a---Acteur_Individu-----
-	av:isLikedBy
+	av:isLikedBy # sympatisant
 	av:hasContributor
-	av:hasEmployee
+	av:hasEmployee # subPropertyOf hasContributor 
+
 	form:a---Acteur_Organisation-----
 	av:likesOrganization
 	av:partner	# owlSymmmetricProperty
@@ -71,7 +96,7 @@
 	av:specializedIn
 	av:opposedTo
 
-# NOTE: collé !!!!!!!!!
+# NOTES: collé depuis personne; bien ou espace est plus pertinent pour organisation que pour personne
 	form:r------Ressource_biens-espaces-----
 	av:sharesGoodOrSpace	# offre, partage
 	av:needsGoodOrSpace	# recherche, demande
@@ -93,6 +118,7 @@
 
 <personForm>
   form:classDomain av:Person ;
+  ##########################
   form:showProperties (
 
 	foaf:givenName foaf:familyName
@@ -112,10 +138,12 @@
 	form:p---Projet-----
 	av:likesProject
 	av:contributes	# P
+	av:originator   # est à l'origine
 
 	form:a---Acteur_Individu-----
 	foaf:knows	# A (ami, famille)
-	av:worksWith
+	av:worksWith	# subPropertyOf
+	
 	form:a---Acteur_Organisation-----
 	av:likesOrganization
 	av:contributes	# A (adhère, contribue)
@@ -147,16 +175,40 @@
 	:widgetClass form:DBPediaLookup .
 
 <IdeaForm>
-  form:classDomain av:Idea  ;
+  form:classDomain av:Idea ;
+  ########################
   form:showProperties (
 	rdfs:label rdfs:comment
 	dct:subject	# DBPediaLookup
-
-	form:p------------------------PAIRs------------------------ # TODO separator 
-	# av:inspiredBy
-	# av:compatibleWith
 	av:ideaCategory
-	av:project	# P
+	
+	form:p------------------------PAIRs------------------------ # TODO separator 
+	
+	form:p---Projet-----------------
+	av:isImplementedBy	# P # inversePropertyOf
+	av:opposedTo
+	
+	form:a---Organization-----------
+	av:supportedBy
+	av:implementedBy
+	av:faughtBy # combattue par 
+	
+	form:a---Individu---------------
+	# NOTE: collé de ci-dessus
+	av:supportedBy
+	av:implementedBy
+	av:faughtBy # combattue par
+	
+	form:i---Idée-------------------
+	av:inspiredBy
+	# av:compatibleWith
+	skos:related # av:similarTo
+	av:opposedTo
+	# NOTES: autres relations: généralisation, dépendence: skos:narrower, skos:broader
+	
+	form:r---Resource---------------
+	
+				
 	av:supportedBy	# A
 	av:idea		# I
 	av:resource	# R
@@ -175,6 +227,13 @@
 	foaf:homepage
 
 	form:p------------------------PAIRs------------------------ # TODO separator 
+
+	form:p---Projet-----------------
+	form:a---Organization-----------
+	form:a---Individu---------------
+	form:i---Idée-------------------
+	form:r---Resource---------------
+	
 	av:project	# P
 	av:managedBy	# A
 	av:ownedBy	# A
@@ -182,6 +241,7 @@
 	av:idea		# I
 	av:resource	# R
 ) .
+
 <RessourceForm-subject_field>
 	:fieldAppliesToForm <RessourceForm> ;
 	:fieldAppliesToProperty	dct:subject ;
