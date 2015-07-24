@@ -31,7 +31,7 @@ av:opposedTo a owl:ObjectProperty ;
 
 av:inspiredBy a owl:ObjectProperty ;
 	rdfs:label "inspiré par"@fr ;
-	rdfs:range av:Idea ;
+	rdfs:range av:Idea ; # TODO owl:Union Idea, Project <<<<<
 	rdfs:domain av:Idea .
 
 av:compatibleWith a owl:ObjectProperty ;

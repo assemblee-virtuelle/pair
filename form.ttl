@@ -6,7 +6,7 @@
 @prefix cco: <http://purl.org/ontology/cco/core#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix cv: <http://rdfs.org/resume-rdf/cv.rdfs#>.
-@prefix     : <http://xmlns.com/foaf/0.1/>.
+# @prefix     : <http://xmlns.com/foaf/0.1/>.
 
 @prefix av: <http://www.assemblee-virtuelle.org/ontologies/v1.owl#> .
 @base <http://www.assemblee-virtuelle.org/ontologies/v1.owl> .
@@ -31,9 +31,9 @@
 	av:resource	# R
 ) .
 <projectForm-dc_subject>
-	:fieldAppliesToForm <projectForm> ;
-	:fieldAppliesToProperty dct:subject ;
-	:widgetClass form:DBPediaLookup .
+	form:fieldAppliesToForm <projectForm> ;
+	form:fieldAppliesToProperty dct:subject ;
+	form:widgetClass form:DBPediaLookup .
 
 <OrganizationForm>
   form:classDomain av:Organization ;
@@ -50,9 +50,9 @@
 	av:resource	# R
 ) .
 <OrganizationForm-dc_subject3>
-	:fieldAppliesToForm <OrganizationForm> ;
-	:fieldAppliesToProperty dct:subject ;
-	:widgetClass form:DBPediaLookup .
+	form:fieldAppliesToForm <OrganizationForm> ;
+	form:fieldAppliesToProperty dct:subject ;
+	form:widgetClass form:DBPediaLookup .
 
 
 <personForm>
@@ -81,13 +81,13 @@
 	av:resource	# R
 ) .
 <personForm-topic_interest>
-	:fieldAppliesToForm <personForm> ;
-	:fieldAppliesToProperty foaf:topic_interest ;
-	:widgetClass form:DBPediaLookup .
+	form:fieldAppliesToForm <personForm> ;
+	form:fieldAppliesToProperty foaf:topic_interest ;
+	form:widgetClass form:DBPediaLookup .
 <personForm-skill>
-	:fieldAppliesToForm <personForm> ;
-	:fieldAppliesToProperty cco:expertise ;
-	:widgetClass form:DBPediaLookup .
+	form:fieldAppliesToForm <personForm> ;
+	form:fieldAppliesToProperty cco:expertise ;
+	form:widgetClass form:DBPediaLookup .
 
 <IdeaForm>
   form:classDomain av:Idea  ;
@@ -105,9 +105,9 @@
 	av:resource	# R
 ) .
 <IdeaForm-dc_subject2>
-	:fieldAppliesToForm <IdeaForm> ;
-	:fieldAppliesToProperty dct:subject ;
-	:widgetClass form:DBPediaLookup .
+	form:fieldAppliesToForm <IdeaForm> ;
+	form:fieldAppliesToProperty dct:subject ;
+	form:widgetClass form:DBPediaLookup .
 
 <RessourceForm>
   form:classDomain av:Resource ;
@@ -126,8 +126,8 @@
 	av:resource	# R
 ) .
 <RessourceForm-subject_field>
-	:fieldAppliesToForm <RessourceForm> ;
-	:fieldAppliesToProperty	dct:subject ;
-	:widgetClass form:DBPediaLookup .
+	form:fieldAppliesToForm <RessourceForm> ;
+	form:fieldAppliesToProperty	dct:subject ;
+	form:widgetClass form:DBPediaLookup .
 
 

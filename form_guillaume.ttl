@@ -6,14 +6,14 @@
 @prefix cco: <http://purl.org/ontology/cco/core#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix cv: <http://rdfs.org/resume-rdf/cv.rdfs#>.
-@prefix     : <http://xmlns.com/foaf/0.1/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 @prefix av: <http://www.assemblee-virtuelle.org/ontologies/v1.owl#> .
 @base <http://www.assemblee-virtuelle.org/ontologies/v1.owl> .
 
 # specifications de formulaires pour AV
 
-<projectForm>
+<projectForm_Guillaume>
   form:classDomain av:Project ;
   #############################
   form:showProperties (
@@ -26,7 +26,7 @@
 
 	form:p------------------------PAIRs------------------------ # TODO separator 
 	form:p---Projet-----
-	av:similarTo # probably use SKOS
+	skos:related # similaire
 	av:usedBy # inverse : uses
 	# av:isComplementOf
 
@@ -61,11 +61,11 @@
 	av:needsDocument 	# DBPediaLookup recherche, demande
 ) .
 <projectForm-dc_subject>
-	:fieldAppliesToForm <projectForm> ;
-	:fieldAppliesToProperty dct:subject ;
-	:widgetClass form:DBPediaLookup .
+	form:fieldAppliesToForm <projectForm_Guillaume> ;
+	form:fieldAppliesToProperty dct:subject ;
+	form:widgetClass form:DBPediaLookup .
 
-<OrganizationForm>
+<OrganizationForm_Guillaume>
   form:classDomain av:Organization ;
   ################################ (acteur)
   form:showProperties (
@@ -111,12 +111,12 @@
 
 
 <OrganizationForm-dc_subject3>
-	:fieldAppliesToForm <OrganizationForm> ;
-	:fieldAppliesToProperty dct:subject ;
-	:widgetClass form:DBPediaLookup .
+	form:fieldAppliesToForm <OrganizationForm_Guillaume> ;
+	form:fieldAppliesToProperty dct:subject ;
+	form::widgetClass form:DBPediaLookup .
 
 
-<personForm>
+<personForm_Guillaume>
   form:classDomain av:Person ;
   ##########################
   form:showProperties (
@@ -166,15 +166,15 @@
 	av:needsDocument 	# DBPediaLookup recherche, demande
 ) .
 <personForm-topic_interest>
-	:fieldAppliesToForm <personForm> ;
-	:fieldAppliesToProperty foaf:topic_interest ;
-	:widgetClass form:DBPediaLookup .
+	form:fieldAppliesToForm <personForm_Guillaume> ;
+	form:fieldAppliesToProperty foaf:topic_interest ;
+	form:widgetClass form:DBPediaLookup .
 <personForm-skill>
-	:fieldAppliesToForm <personForm> ;
-	:fieldAppliesToProperty cco:expertise ;
-	:widgetClass form:DBPediaLookup .
+	form:fieldAppliesToForm <personForm_Guillaume> ;
+	form:fieldAppliesToProperty cco:expertise ;
+	form:widgetClass form:DBPediaLookup .
 
-<IdeaForm>
+<IdeaForm_Guillaume>
   form:classDomain av:Idea ;
   ########################
   form:showProperties (
@@ -202,23 +202,20 @@
 	form:i---Idée-------------------
 	av:inspiredBy
 	# av:compatibleWith
-	skos:related # av:similarTo
+	skos:related # similaire
 	av:opposedTo
 	# NOTES: autres relations: généralisation, dépendence: skos:narrower, skos:broader
 	
 	form:r---Resource---------------
-	
-				
-	av:supportedBy	# A
-	av:idea		# I
+
 	av:resource	# R
 ) .
 <IdeaForm-dc_subject2>
-	:fieldAppliesToForm <IdeaForm> ;
-	:fieldAppliesToProperty dct:subject ;
-	:widgetClass form:DBPediaLookup .
+	form:fieldAppliesToForm <IdeaForm_Guillaume> ;
+	form:fieldAppliesToProperty dct:subject ;
+	form:widgetClass form:DBPediaLookup .
 
-<RessourceForm>
+<RessourceForm_Guillaume>
   form:classDomain av:Resource ;
   form:showProperties (
 	rdfs:label rdfs:comment
@@ -243,8 +240,8 @@
 ) .
 
 <RessourceForm-subject_field>
-	:fieldAppliesToForm <RessourceForm> ;
-	:fieldAppliesToProperty	dct:subject ;
-	:widgetClass form:DBPediaLookup .
+	form:fieldAppliesToForm <RessourceForm_Guillaume> ;
+	form:fieldAppliesToProperty	dct:subject ;
+	form:widgetClass form:DBPediaLookup .
 
 
