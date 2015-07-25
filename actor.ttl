@@ -28,27 +28,80 @@ av:Organization a owl:Class ;
 
 av:linkedinId a owl:DatatypeProperty ;
 	rdfs:label "LinkedIn"@fr ;
-	rdfs:comment "LinkedIn"@fr ;
 	rdfs:domain foaf:Person .
 av:twitterId a owl:DatatypeProperty ;
 	rdfs:label "Twitter"@fr ;
-	rdfs:comment "Twitter"@fr ;
 	rdfs:domain foaf:Person .
 av:facebookId a owl:DatatypeProperty ;
 	rdfs:label "Facebook"@fr ;
-	rdfs:comment "Facebook"@fr ;
 	rdfs:domain foaf:Person .
 
-av:joins a owl:ObjectProperty ;
+av:contributes  a owl:ObjectProperty ;
 	rdfs:label "adhère"@fr ;
 	rdfs:domain av:Person ;
+	rdfs:range foaf:Organization , foaf:Project .  # TODO [owl:unionOf ( av:Organization foaf:Project )]
+
+av:worksWith  a owl:ObjectProperty ; a owl:SymmetricProperty ;
+	rdfs:label "travaille avec"@fr ;
+	rdfs:subPropertyOf foaf:knows ;
+	rdfs:domain foaf:Person ;
+	rdfs:range foaf:Person .
+
+av:employeeOf  a owl:ObjectProperty ;
+	rdfs:label "employé par"@fr ;
+	owl:inverseOf av:hasEmployee ;
+	rdfs:domain av:Person ;
 	rdfs:range foaf:Organization .
+
+# ==== Propriétés de Organisation ====
+
+av:originator  a owl:ObjectProperty ;
+	rdfs:label "est à l'origine"@fr ;
+	rdfs:domain foaf:Organization ;
+	rdfs:range av:Person .
+
+av:isLikedBy  a owl:ObjectProperty ;
+	rdfs:label "sympatisant"@fr ;
+	rdfs:domain foaf:Organization ;
+	rdfs:range av:Person .
+
+# av:hasContributor
+av:hasEmployee  a owl:ObjectProperty ;
+	rdfs:label "employé"@fr ;
+	rdfs:subPropertyOf av:hasContributor ; owl:inverseOf av:employeeOf ;
+	rdfs:domain foaf:Organization ;
+	rdfs:range av:Person .
+
+av:likesOrganization  a owl:ObjectProperty ;
+	rdfs:label "aime l'organisation"@fr ;
+	rdfs:domain foaf:Organization ;
+	rdfs:range foaf:Organization .
+
+av:partner  a owl:ObjectProperty ; a owl:SymmetricProperty ;
+	rdfs:label "partenaire"@fr ;
+	rdfs:domain foaf:Organization ;
+	rdfs:range foaf:Organization .
+
+av:likesIdea  a owl:ObjectProperty ; a owl:SymmetricProperty ;
+	rdfs:label "aime l'idée"@fr ;
+	rdfs:domain foaf:Organization ;
+	rdfs:range av:Idea .
+av:specializedIn  a owl:ObjectProperty ; a owl:SymmetricProperty ;
+	rdfs:label "spécialisé dans l'idée"@fr ;
+	rdfs:domain foaf:Organization ;
+	rdfs:range av:Idea .
+av:opposedTo  a owl:ObjectProperty ; a owl:SymmetricProperty ;
+	rdfs:label "opposé à l'idée"@fr ;
+	rdfs:domain foaf:Organization ;
+	rdfs:range av:Idea .
+
 
 # ==== Propriétés de Acteur ====
 
 av:contributes a owl:ObjectProperty ;
 	rdfs:label "contribue"@fr ;
-	rdfs:domain av:Actor ;
+	owl:inverseOf foaf:member ;
+	rdfs:domain foaf:Person ;
 	rdfs:range foaf:Project .
 
 av:supports a owl:ObjectProperty ;
@@ -56,7 +109,7 @@ av:supports a owl:ObjectProperty ;
 	rdfs:domain av:Actor ;
 	rdfs:range foaf:Project .
 
-# ==== Propriété générique de valeurs Actor ====
+# ==== Propriété générique vers Actor ====
 
 av:actor a owl:ObjectProperty ;
 	rdfs:label "acteur"@fr ;

@@ -23,6 +23,7 @@
 	# foaf:maker
 	foaf:mbox
 	# foaf:depiction
+	av:targetUser # lookup ou énuméré ?
 
 	form:p------------------------PAIRs------------------------ # TODO separator 
 	form:p---Projet-----
@@ -30,15 +31,12 @@
 	av:usedBy # inverse : uses
 	# av:isComplementOf
 
-	form:a---Acteur_Individu-----
-	av:supportedBy	# soutenu ( inverse de likesXXX ) aussi pour Organisation
+	form:a-------Acteur---------
+	av:supportedBy	# soutenu par ( inverse de likesXXX )
 	foaf:member # a pour contributeur - subPropertyOf supportedBy
-	av:targetUser
-	
+	# form:a---Acteur_Individu-----	
 	form:a---Acteur_Organisation-----
-	av:supportedBy	# soutenu ( inverse de likesXXX ) aussi pour Organisation
-	foaf:member # a pour contributeur - subPropertyOf supportedBy
-	av:targetUser
+	# ??? av:targetUser
 	foaf:fundedBy
 	
 	form:i---Idée----
@@ -60,19 +58,15 @@
 	av:sharesDocument  	# URL, offre/partage document ou bonne pratique
 	av:needsDocument 	# DBPediaLookup recherche, demande
 ) .
-<projectForm-dc_subject>
-	form:fieldAppliesToForm <projectForm_Guillaume> ;
-	form:fieldAppliesToProperty dct:subject ;
-	form:widgetClass form:DBPediaLookup .
+
 
 <OrganizationForm_Guillaume>
   form:classDomain av:Organization ;
   ################################ (acteur)
   form:showProperties (
-	rdfs:label rdfs:comment
-	foaf:homepage
+	rdfs:label	rdfs:comment
+	foaf:homepage	foaf:mbox
 	# foaf:maker
-	foaf:mbox
 
 	form:p------------------PAIRs---------------- # TODO separator 
 	form:p---Projet-----
@@ -82,12 +76,12 @@
 
 	form:a---Acteur_Individu-----
 	av:isLikedBy # sympatisant
-	av:hasContributor
-	av:hasEmployee # subPropertyOf hasContributor 
+	foaf:member # av:hasContributor
+	av:hasEmployee # subPropertyOf hasContributor ; owl:inverseOf av:employeeOf
 
 	form:a---Acteur_Organisation-----
 	av:likesOrganization
-	av:partner	# owlSymmmetricProperty
+	av:partner	# owl:SymmetricProperty
 	foaf:fundedBy	# intransitive !
 	# av:hasCustomer
 
@@ -96,7 +90,8 @@
 	av:specializedIn
 	av:opposedTo
 
-# NOTES: collé depuis personne; bien ou espace est plus pertinent pour organisation que pour personne
+# NOTE: collé depuis personne
+# NOTE: bien ou espace est plus pertinent pour organisation que pour personne
 	form:r------Ressource_biens-espaces-----
 	av:sharesGoodOrSpace	# offre, partage
 	av:needsGoodOrSpace	# recherche, demande
@@ -109,28 +104,17 @@
 	av:needsDocument 	# DBPediaLookup recherche, demande
 ) .
 
-
-<OrganizationForm-dc_subject3>
-	form:fieldAppliesToForm <OrganizationForm_Guillaume> ;
-	form:fieldAppliesToProperty dct:subject ;
-	form::widgetClass form:DBPediaLookup .
-
-
 <personForm_Guillaume>
   form:classDomain av:Person ;
   ##########################
   form:showProperties (
-
 	foaf:givenName foaf:familyName
 	rdfs:comment
 	foaf:homepage
 	foaf:mbox	# literal or resource
 	foaf:phone
-	vcard:postal-code
-	vcard:locality
-	av:linkedinId
-	av:twitterId
-	av:facebookId
+	vcard:postal-code	vcard:locality
+	av:linkedinId		av:twitterId	av:facebookId
 	# foaf:img	# resource, multi-valued
 	foaf:topic_interest # DBPediaLookup
 
@@ -142,12 +126,12 @@
 
 	form:a---Acteur_Individu-----
 	foaf:knows	# A (ami, famille)
-	av:worksWith	# subPropertyOf
+	av:worksWith	# subPropertyOf foaf:knows
 	
 	form:a---Acteur_Organisation-----
 	av:likesOrganization
 	av:contributes	# A (adhère, contribue)
-	av:employee	# A VOIR : existe déjà dans un vocab' ?
+	av:employeeOf	# owl:inverseOf av:hasEmployee - A VOIR : existe déjà dans un vocab' ?
 
 	form:i---Idée----
 	av:likesIdea		# I
@@ -160,7 +144,7 @@
 	form:r------Ressource_services-compétences-----
 	av:sharesServices 	# offre
 	av:needsServices	# recherche, demande
-	# cco:expertise	# R DBPediaLookup
+	cco:expertise	# R DBPediaLookup
 	form:r------Ressource_documentaire-----
 	av:sharesDocument  	# URL offre
 	av:needsDocument 	# DBPediaLookup recherche, demande
@@ -178,36 +162,27 @@
   form:classDomain av:Idea ;
   ########################
   form:showProperties (
-	rdfs:label rdfs:comment
+	rdfs:label	rdfs:comment
 	dct:subject	# DBPediaLookup
 	av:ideaCategory
 	
-	form:p------------------------PAIRs------------------------ # TODO separator 
-	
+	form:p------------------------PAIRs------------------------ # TODO separator 	
 	form:p---Projet-----------------
-	av:isImplementedBy	# P # inversePropertyOf
+	av:implementedBy	# owl:inversePropertyOf av:implements
 	av:opposedTo
 	
-	form:a---Organization-----------
+	form:a-------Acteur---------
 	av:supportedBy
-	av:implementedBy
+	# av:implementedBy
 	av:faughtBy # combattue par 
-	
-	form:a---Individu---------------
-	# NOTE: collé de ci-dessus
-	av:supportedBy
-	av:implementedBy
-	av:faughtBy # combattue par
 	
 	form:i---Idée-------------------
 	av:inspiredBy
-	# av:compatibleWith
-	skos:related # similaire
+	skos:related # similarité
 	av:opposedTo
 	# NOTES: autres relations: généralisation, dépendence: skos:narrower, skos:broader
 	
 	form:r---Resource---------------
-
 	av:resource	# exemple : thèse, documentation bonnes pratique practichère practishare ;)
 ) .
 <IdeaForm-dc_subject2>
@@ -249,7 +224,7 @@
 
 	form:r---Resource---------------	
 	av:partOf # trouver un concept déjà existant
-	av:includes # owl:inverProperty partOf
+	av:includes # owl:inverseOf av:partOf
 	skos:related
 	av:needsResource
 ) .

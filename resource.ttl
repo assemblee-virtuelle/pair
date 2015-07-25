@@ -16,35 +16,122 @@ av:Resource  a owl:Class ;
 
 # ==== Propriétés de Ressource ====
 
-av:managedBy  a owl:ObjectProperty ;
-        rdfs:domain   av:Resource ;
-        rdfs:label    "géré par"@fr ;
-        rdfs:range    foaf:Person .
-
-av:ownedBy  a owl:ObjectProperty ;
-        rdfs:domain   av:Resource ;
-        rdfs:label    "propriétaire"@fr ;
-        rdfs:range    foaf:Agent .
-
-av:usedBy  a owl:ObjectProperty ;
-        rdfs:domain   av:Resource ;
-        rdfs:label    "utilisé par"@fr ;
-        rdfs:range    foaf:Agent .
-
-
 av:resourceCategory   a owl:ObjectProperty ;
-        rdfs:domain   av:Resource ;
-        rdfs:label    "catégorie de ressource"@fr ;
+	rdfs:label    "catégorie de ressource"@fr ;
+	rdfs:domain   av:Resource ;
 	rdfs:range [ owl:oneOf ( av:space av:good av:services
 			av:competence av:document ) ] .
-
 av:space	rdfs:label "Espace"@fr .
 av:good		rdfs:label "Bien tangible"@fr .
 av:services	rdfs:label "Services"@fr .
 av:competence	rdfs:label "Compétences"@fr .
 av:document	rdfs:label "Ressource documentaire"@fr .
 
+av:managedBy  a owl:ObjectProperty ;
+	rdfs:label    "géré par"@fr ;
+	rdfs:domain   av:Resource ;
+	rdfs:range    foaf:Person .
+
+av:ownedBy  a owl:ObjectProperty ;
+	rdfs:label    "propriétaire"@fr ;
+	rdfs:domain   av:Resource ;
+	rdfs:range    foaf:Agent .
+
+av:usedBy  a owl:ObjectProperty ;
+	rdfs:label    "utilisé par"@fr ;
+	rdfs:domain   av:Resource ; # TODO [owl:unionOf ( av:Resource foaf:Project )]
+	rdfs:range    foaf:Agent .
+
+av:sharedByProject  a owl:ObjectProperty ;
+	rdfs:label    "partagée (proposée) par projet"@fr ;
+	rdfs:domain   av:Resource ;
+	rdfs:range    foaf:Project .
+
+av:neededByProject  a owl:ObjectProperty ;
+	rdfs:label    "ressource nécessaire au projet"@fr ;
+	rdfs:domain   av:Resource ;
+	rdfs:range    foaf:Project .
+
+
+av:sharedByOrganization  a owl:ObjectProperty ;
+	rdfs:label    "ressource partagée (proposée) par"@fr ;
+	rdfs:domain   av:Resource ;
+	rdfs:range    foaf:Organization . # Agent .
+
+av:neededByOrganization  a owl:ObjectProperty ;
+	rdfs:label    "ressource nécessaire à l'organisation"@fr ;
+	rdfs:domain   av:Resource ;
+	rdfs:range    foaf:Organization .
+
+av:sharedByPerson  a owl:ObjectProperty ;
+	rdfs:label    "ressource partagée (proposée) par"@fr ;
+	rdfs:domain   av:Resource ;
+	rdfs:range    foaf:Person .
+
+av:neededByPerson  a owl:ObjectProperty ;
+	rdfs:label    "ressource nécessaire à l'individu"@fr ;
+	rdfs:domain   av:Resource ;
+	rdfs:range    foaf:Person .
+
+av:partOf  a owl:ObjectProperty ;
+	rdfs:label	"ressource conteneur"@fr ;
+	rdfs:comment	"une partie contenant physiquement ou logiquement la ressource sujet"@fr ;
+	rdfs:domain   av:Resource ;
+	rdfs:range    av:Resource .
+# TODO trouver un concept déjà existant pour av:partOf
+
+av:includes  a owl:ObjectProperty ;
+	rdfs:label	"sous-partie de la ressource"@fr ;
+	rdfs:comment	"une partie contenue physiquement ou logiquement dans la ressource sujet"@fr ;
+	owl:inverseOf av:partOf ;
+	rdfs:domain   av:Resource ;
+	rdfs:range    av:Resource .
+
+
+# ==== Propriétés vers Resource ====
+
 av:resource  a owl:ObjectProperty ;
-        rdfs:label    "ressource"@fr ;
+	rdfs:label    "ressource"@fr ;
 	rdfs:comment  "ressource associée"@fr ;
-        rdfs:range    av:Resource .
+	rdfs:range    av:Resource .
+
+av:sharesResource  a owl:ObjectProperty ;
+	rdfs:range av:Resource .
+av:sharesGoodOrSpace  a owl:ObjectProperty ;
+	rdfs:label    "propose ou partage des biens ou des espaces."@fr ;
+	rdfs:subPropertyOf av:sharesResource ;
+	rdfs:domain   av:Organization , av:Person ; # TODO [owl:unionOf ( av:Organization foaf:Person )] ;
+	rdfs:range    av:Resource .
+ 
+av:needsGoodOrSpace  a owl:ObjectProperty ;
+	rdfs:label    "recherche des biens ou des espaces."@fr ;
+	rdfs:subPropertyOf av:needsResource ;
+	rdfs:domain   av:Organization , av:Person ; # TODO [owl:unionOf ( av:Organization foaf:Person )] ;
+	rdfs:range    owl:Thing .  # DBPediaLookup
+
+#form:r------Ressource_services-compétences-----
+av:sharesServices  a owl:ObjectProperty ;
+	rdfs:label    "propose des services."@fr ;
+	rdfs:subPropertyOf av:sharesResource ;
+	rdfs:domain   av:Organization , av:Person ; # TODO [owl:unionOf ( av:Organization foaf:Person )] ;
+	rdfs:range    av:Resource .
+
+av:needsServices  a owl:ObjectProperty ;
+	rdfs:label    "recherche des services."@fr ;
+	rdfs:subPropertyOf av:needsResource ;
+	rdfs:domain   av:Organization , av:Person ; # TODO [owl:unionOf ( av:Organization foaf:Person )] ;
+	rdfs:range    owl:Thing .  # DBPediaLookup
+
+#form:r------Ressource_documentaires-----
+av:sharesDocument  a owl:ObjectProperty ;
+	rdfs:label    "propose ou partage des documents ou des bonnes pratiques."@fr ;
+	rdfs:subPropertyOf av:sharesResource ;
+	rdfs:domain   av:Organization , av:Person ; # TODO [owl:unionOf ( av:Organization foaf:Person )] ;
+	rdfs:range    av:Resource .  	# URL, offre/partage document ou bonne pratique
+
+av:needsDocument  a owl:ObjectProperty ;
+	rdfs:label    "recherche des documents ou des bonnes pratiques."@fr ;
+	rdfs:subPropertyOf av:needsResource ;
+	rdfs:domain   av:Organization , av:Person ; # TODO [owl:unionOf ( av:Organization foaf:Person )] ;
+	rdfs:range    owl:Thing .  # DBPediaLookup
+
