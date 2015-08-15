@@ -36,10 +36,10 @@ av:facebookId a owl:DatatypeProperty ;
 	rdfs:label "Facebook"@fr ;
 	rdfs:domain foaf:Person .
 
-av:contributes  a owl:ObjectProperty ;
+av:contributesToOrganization  a owl:ObjectProperty ;
 	rdfs:label "adhère"@fr ;
 	rdfs:domain av:Person ;
-	rdfs:range foaf:Organization , foaf:Project .  # TODO [owl:unionOf ( av:Organization foaf:Project )]
+	rdfs:range foaf:Organization .  # TODO [owl:unionOf ( av:Organization foaf:Project )]
 
 av:worksWith  a owl:ObjectProperty ; a owl:SymmetricProperty ;
 	rdfs:label "travaille avec"@fr ;
@@ -100,8 +100,8 @@ av:opposedTo  a owl:ObjectProperty ; a owl:SymmetricProperty ;
 
 av:contributes a owl:ObjectProperty ;
 	rdfs:label "contribue"@fr ;
-	owl:inverseOf foaf:member ;
-	rdfs:domain foaf:Person ;
+	owl:inverseOf foaf:member ;	# pas sûr ...
+	rdfs:domain av:Actor ;
 	rdfs:range foaf:Project .
 
 av:supports a owl:ObjectProperty ;
