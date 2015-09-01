@@ -1,0 +1,36 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix doap: <http://usefulinc.com/ns/doap#>.
+
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl:  <http://www.w3.org/2002/07/owl#>.
+@prefix foaf:  <http://xmlns.com/foaf/0.1/>.
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#>.
+
+@prefix av: <http://www.assemblee-virtuelle.org/ontologies/v1.owl#> .
+@base <http://www.assemblee-virtuelle.org/ontologies/v1.owl> .
+
+av:Event a owl:Class ;
+	rdfs:subClassOf av:Project ;
+	rdfs:label "Evènement"@fr .
+
+# ==== Propriétés de Evènement ====
+
+av:date a owl:DatatypeProperty ;
+	rdfs:label "date"@fr ;
+	rdfs:domain av:Event ;
+	rdfs:range xsd:dateTime .
+
+av:place  a owl:DatatypeProperty ;
+	rdfs:label "lieu"@fr ;
+	rdfs:domain av:Event ;
+	rdfs:range av:Place .
+
+av:participant a owl:ObjectProperty ;
+	rdfs:label "participant"@fr ;
+	rdfs:domain av:Event ;
+	rdfs:range foaf:Agent .
+
+# ==== Propriété générique vers Evènement ====
+
+
