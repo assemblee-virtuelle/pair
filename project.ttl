@@ -72,6 +72,11 @@ av:event	rdfs:label "Événementiel"@fr .
 av:society	rdfs:label "Sociétal"@fr .
 av:hardware	rdfs:label "Matériel"@fr .
 
+av:hasMeeting a owl:ObjectProperty ;
+        rdfs:label "Réunion"@fr ;
+	rdfs:domain av:Project ;
+        rdfs:range av:Event .
+
 # ==== Propriétés vers Projet ====
 
 av:project  a owl:ObjectProperty ;

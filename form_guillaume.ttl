@@ -234,4 +234,28 @@
 	form:fieldAppliesToProperty	dct:subject ;
 	form:widgetClass form:DBPediaLookup .
 
+####### extensions to PAIR : Task, Event ######
+
+<TaskForm_Guillaume>
+form:classDomain av:Task ;
+##########################
+  form:showProperties (
+	rdfs:label rdfs:comment
+	dct:subject	# DBPediaLookup
+	av:workloadEvaluation
+	foaf:member
+	av:needsServices
+	av:hasMeeting
+) .
+
+<EventForm_Guillaume>
+form:classDomain av:Event ;
+###########################
+  form:showProperties (
+	rdfs:label rdfs:comment
+	dct:subject	# DBPediaLookup
+	av:date
+	av:place 
+	av:participant
+) .
 
