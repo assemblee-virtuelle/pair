@@ -11,14 +11,13 @@
 @prefix av: <http://www.assemblee-virtuelle.org/ontologies/v1.owl#> .
 @base <http://www.assemblee-virtuelle.org/ontologies/v1.owl> .
 
-# Les projets et les acteurs sont assez bien couverts par des vocabulaires RDF, respectivement DOAP et FOAF+SIOC."
 
 av:Task a owl:Class ;
 	rdfs:subClassOf av:Project  ;
 	rdfs:label "Tâche"@fr ;
 	rdfs:comment "Une tâche, particulèrement pour un projet logiciel, mais pas seulement."@fr .
 
-av:workloadEvaluation a owl:ObjectProperty ;
+av:workloadEvaluation a owl:DatatypeProperty ;
         rdfs:label "Evaluation de la charge de travail (en jours)"@fr ;
 	rdfs:domain av:Task ;
         rdfs:range  xsd:positiveInteger .

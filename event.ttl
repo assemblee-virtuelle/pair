@@ -21,7 +21,7 @@ av:date a owl:DatatypeProperty ;
 	rdfs:domain av:Event ;
 	rdfs:range xsd:dateTime .
 
-av:place  a owl:DatatypeProperty ;
+av:place  a owl:ObjectProperty ;
 	rdfs:label "lieu"@fr ;
 	rdfs:domain av:Event ;
 	rdfs:range av:Place .
