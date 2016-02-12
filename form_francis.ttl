@@ -7,6 +7,8 @@
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix cv: <http://rdfs.org/resume-rdf/cv.rdfs#>.
 # @prefix     : <http://xmlns.com/foaf/0.1/>.
+@prefix forms: <http://deductions-software.com/ontologies/forms#> .
+@prefix practi: <https://practishare.wordpress.com/forms#> .
 
 @prefix av: <http://www.assemblee-virtuelle.org/ontologies/v1.owl#> .
 @base <http://www.assemblee-virtuelle.org/ontologies/v1.owl> .
@@ -15,7 +17,7 @@
 # suivant vision de francis: juste 3 champs relationnels par PAIR,
 # en évitant les relations P-P, A-A, etc
 
-<projectForm>
+practi:projectForm
   form:classDomain av:Project ;
   form:showProperties (
 	rdfs:label rdfs:comment
@@ -27,12 +29,12 @@
 	av:concretise	# I
 	av:resource	# R
 ) .
-<projectForm-dc_subject>
-	form:fieldAppliesToForm <projectForm> ;
+practi:projectForm-dc_subject
+	form:fieldAppliesToForm practi:projectForm ;
 	form:fieldAppliesToProperty dct:subject ;
 	form:widgetClass form:DBPediaLookup .
 
-<OrganizationForm>
+practi:OrganizationForm
   form:classDomain av:Organization ;
   form:showProperties (
 	rdfs:label rdfs:comment
@@ -43,13 +45,13 @@
 	av:idea		# I
 	av:resource	# R
 ) .
-<OrganizationForm-dc_subject3>
-	form:fieldAppliesToForm <OrganizationForm> ;
+practi:OrganizationForm-dc_subject3
+	form:fieldAppliesToForm practi:OrganizationForm ;
 	form:fieldAppliesToProperty dct:subject ;
 	form:widgetClass form:DBPediaLookup .
 
 
-<personForm>
+practi:personForm
   form:classDomain av:Person ;
   form:showProperties (
 	foaf:name
@@ -69,16 +71,16 @@
 	av:idea		# I
 	av:resource	# R
 ) .
-<personForm-topic_interest>
-	form:fieldAppliesToForm <personForm> ;
+practi:personForm-topic_interest
+	form:fieldAppliesToForm practi:personForm ;
 	form:fieldAppliesToProperty foaf:topic_interest ;
 	form:widgetClass form:DBPediaLookup .
-<personForm-skill>
-	form:fieldAppliesToForm <personForm> ;
+practi:personForm-skill
+	form:fieldAppliesToForm practi:personForm ;
 	form:fieldAppliesToProperty cco:expertise ;
 	form:widgetClass form:DBPediaLookup .
 
-<IdeaForm>
+practi:IdeaForm
   form:classDomain av:Idea  ;
   form:showProperties (
 	rdfs:label rdfs:comment
@@ -89,12 +91,12 @@
 	av:supportedBy	# A
 	av:resource	# R
 ) .
-<IdeaForm-dc_subject2>
-	form:fieldAppliesToForm <IdeaForm> ;
+practi:IdeaForm-dc_subject2
+	form:fieldAppliesToForm practi:IdeaForm ;
 	form:fieldAppliesToProperty dct:subject ;
 	form:widgetClass form:DBPediaLookup .
 
-<RessourceForm>
+practi:RessourceForm
   form:classDomain av:Resource ;
   form:showProperties (
 	rdfs:label rdfs:comment
@@ -106,8 +108,8 @@
 	av:actor	# A
 	av:idea		# I
 ) .
-<RessourceForm-subject_field>
-	form:fieldAppliesToForm <RessourceForm> ;
+practi:RessourceForm-subject_field
+	form:fieldAppliesToForm practi:RessourceForm ;
 	form:fieldAppliesToProperty	dct:subject ;
 	form:widgetClass form:DBPediaLookup .
 

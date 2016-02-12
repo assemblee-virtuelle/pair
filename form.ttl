@@ -10,10 +10,11 @@
 
 @prefix av: <http://www.assemblee-virtuelle.org/ontologies/v1.owl#> .
 @base <http://www.assemblee-virtuelle.org/ontologies/v1.owl> .
+@prefix avf: <http://www.assemblee-virtuelle.org/forms#> .
 
 # specifications de formulaires pour AV
 
-<projectForm>
+avf:projectForm
   form:classDomain av:Project ;
   form:showProperties (
 	rdfs:label rdfs:comment
@@ -30,12 +31,12 @@
 	dct:subject	# DBPediaLookup
 	av:resource	# R
 ) .
-<projectForm-dc_subject>
-	form:fieldAppliesToForm <projectForm> ;
+avf:projectForm-dc_subject
+	form:fieldAppliesToForm avf:projectForm ;
 	form:fieldAppliesToProperty dct:subject ;
 	form:widgetClass form:DBPediaLookup .
 
-<OrganizationForm>
+avf:OrganizationForm
   form:classDomain av:Organization ;
   form:showProperties (
 	rdfs:label rdfs:comment
@@ -49,13 +50,13 @@
 	dct:subject	# DBPediaLookup
 	av:resource	# R
 ) .
-<OrganizationForm-dc_subject3>
-	form:fieldAppliesToForm <OrganizationForm> ;
+avf:OrganizationForm-dc_subject3
+	form:fieldAppliesToForm avf:OrganizationForm ;
 	form:fieldAppliesToProperty dct:subject ;
 	form:widgetClass form:DBPediaLookup .
 
 
-<personForm>
+avf:personForm
   form:classDomain av:Person ;
   form:showProperties (
 	foaf:givenName foaf:familyName
@@ -80,16 +81,16 @@
 	cco:expertise	# R DBPediaLookup
 	av:resource	# R
 ) .
-<personForm-topic_interest>
-	form:fieldAppliesToForm <personForm> ;
+avf:personForm-topic_interest
+	form:fieldAppliesToForm avf:personForm ;
 	form:fieldAppliesToProperty foaf:topic_interest ;
 	form:widgetClass form:DBPediaLookup .
-<personForm-skill>
-	form:fieldAppliesToForm <personForm> ;
+avf:personForm-skill
+	form:fieldAppliesToForm avf:personForm ;
 	form:fieldAppliesToProperty cco:expertise ;
 	form:widgetClass form:DBPediaLookup .
 
-<IdeaForm>
+avf:IdeaForm
   form:classDomain av:Idea  ;
   form:showProperties (
 	rdfs:label rdfs:comment
@@ -104,12 +105,12 @@
 	av:idea		# I
 	av:resource	# R
 ) .
-<IdeaForm-dc_subject2>
-	form:fieldAppliesToForm <IdeaForm> ;
+avf:IdeaForm-dc_subject2
+	form:fieldAppliesToForm avf:IdeaForm ;
 	form:fieldAppliesToProperty dct:subject ;
 	form:widgetClass form:DBPediaLookup .
 
-<RessourceForm>
+avf:RessourceForm
   form:classDomain av:Resource ;
   form:showProperties (
 	rdfs:label rdfs:comment
@@ -125,8 +126,8 @@
 	av:idea		# I
 	av:resource	# R
 ) .
-<RessourceForm-subject_field>
-	form:fieldAppliesToForm <RessourceForm> ;
+avf:RessourceForm-subject_field
+	form:fieldAppliesToForm avf:RessourceForm ;
 	form:fieldAppliesToProperty	dct:subject ;
 	form:widgetClass form:DBPediaLookup .
 

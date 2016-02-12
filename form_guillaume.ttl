@@ -10,10 +10,11 @@
 
 @prefix av: <http://www.assemblee-virtuelle.org/ontologies/v1.owl#> .
 @base <http://www.assemblee-virtuelle.org/ontologies/v1.owl> .
+@prefix avf: <http://www.assemblee-virtuelle.org/forms#> .
 
 # specifications de formulaires pour AV
 
-<projectForm_Guillaume>
+avf:projectForm_Guillaume
   form:classDomain av:Project ;
   #############################
   form:showProperties (
@@ -60,7 +61,7 @@
 ) .
 
 
-<OrganizationForm_Guillaume>
+avf:OrganizationForm_Guillaume
   form:classDomain av:Organization ;
   ################################ (acteur)
   form:showProperties (
@@ -104,7 +105,7 @@
 	av:needsDocument 	# DBPediaLookup recherche, demande
 ) .
 
-<personForm_Guillaume>
+avf:personForm_Guillaume
   form:classDomain av:Person ;
   ##########################
   form:showProperties (
@@ -148,16 +149,16 @@
 	av:sharesDocument  	# URL offre
 	av:needsDocument 	# DBPediaLookup recherche, demande
 ) .
-<personForm-topic_interest>
-	form:fieldAppliesToForm <personForm_Guillaume> ;
+avf:personForm-topic_interest
+	form:fieldAppliesToForm avf:personForm_Guillaume ;
 	form:fieldAppliesToProperty foaf:topic_interest ;
 	form:widgetClass form:DBPediaLookup .
-<personForm-skill>
-	form:fieldAppliesToForm <personForm_Guillaume> ;
+avf:personForm-skill
+	form:fieldAppliesToForm avf:personForm_Guillaume ;
 	form:fieldAppliesToProperty cco:expertise ;
 	form:widgetClass form:DBPediaLookup .
 
-<IdeaForm_Guillaume>
+avf:IdeaForm_Guillaume
   form:classDomain av:Idea ;
   ########################
   form:showProperties (
@@ -184,12 +185,12 @@
 	form:r---Resource---------------
 	av:resource	# exemple : thèse, documentation bonnes pratique practichère practishare ;)
 ) .
-<IdeaForm-dc_subject2>
-	form:fieldAppliesToForm <IdeaForm_Guillaume> ;
+avf:IdeaForm-dc_subject2
+	form:fieldAppliesToForm avf:IdeaForm_Guillaume ;
 	form:fieldAppliesToProperty dct:subject ;
 	form:widgetClass form:DBPediaLookup .
 
-<RessourceForm_Guillaume>
+avf:RessourceForm_Guillaume
   form:classDomain av:Resource ;
   ############################
   form:showProperties (
@@ -228,14 +229,14 @@
 	av:needsResource
 ) .
 
-<RessourceForm-subject_field>
-	form:fieldAppliesToForm <RessourceForm_Guillaume> ;
+avf:RessourceForm-subject_field
+	form:fieldAppliesToForm avf:RessourceForm_Guillaume ;
 	form:fieldAppliesToProperty	dct:subject ;
 	form:widgetClass form:DBPediaLookup .
 
 ####### extensions to PAIR : Task, Event ######
 
-<TaskForm_Guillaume>
+avf:TaskForm_Guillaume
 form:classDomain av:Task ;
 ##########################
   form:showProperties (
@@ -247,7 +248,7 @@ form:classDomain av:Task ;
 	av:hasMeeting
 ) .
 
-<EventForm_Guillaume>
+avf:EventForm_Guillaume
 form:classDomain av:Event ;
 ###########################
   form:showProperties (
