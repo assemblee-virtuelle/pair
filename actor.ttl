@@ -52,6 +52,10 @@ av:employeeOf  a owl:ObjectProperty ;
 	owl:inverseOf av:hasEmployee ;
 	rdfs:domain av:Person ;
 	rdfs:range foaf:Organization .
+ av:metAt   a rdf:Property ;
+	rdfs:label "rencontré à"@fr ;
+	rdfs:domain av:Person .
+
 
 # ==== Propriétés de Organisation ====
 
