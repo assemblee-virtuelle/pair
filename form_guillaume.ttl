@@ -117,7 +117,7 @@ avf:personForm_Guillaume
 	vcard:postal-code	vcard:locality
 	av:linkedinId		av:twitterId	av:facebookId
 	# foaf:img	# resource, multi-valued
-	foaf:topic_interest # DBPediaLookup
+	# foaf:topic_interest # DBPediaLookup
 
 	form:p--------------------PAIRs------------------ # TODO separator 
 	form:p---Projet-----
@@ -134,7 +134,8 @@ avf:personForm_Guillaume
 	av:employeeOf	# owl:inverseOf av:hasEmployee - A VOIR : existe déjà dans un vocab' ?
 
 	form:i---Idée----
-	av:likesIdea		# I
+	foaf:topic_interest # DBPediaLookup
+	# av:likesIdea		# I
 	av:specializedIn
 	av:opposedTo
 
