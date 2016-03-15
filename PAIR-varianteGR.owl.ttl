@@ -39,7 +39,7 @@
 
 :a_pour_auteur rdf:type owl:ObjectProperty ;
                
-               owl:inverseOf :est_l'auteur_de .
+               owl:inverseOf :est_l_auteur_de .
 
 
 
@@ -400,7 +400,7 @@
 
 ###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#est_l'auteur_de
 
-:est_l'auteur_de rdf:type owl:ObjectProperty ;
+:est_l_auteur_de rdf:type owl:ObjectProperty ;
                  
                  rdfs:domain :Acteur ;
                  
@@ -864,7 +864,7 @@ Je fais un test cependant""" .
 
 ###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Raison_d'être
 
-:Raison_d'être rdf:type owl:DatatypeProperty ;
+:Raison_d_être rdf:type owl:DatatypeProperty ;
                
                rdfs:subPropertyOf :Code_Social .
 
@@ -872,7 +872,7 @@ Je fais un test cependant""" .
 
 ###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Site_web_/_URL
 
-:Site_web_/_URL rdf:type owl:DatatypeProperty ;
+:Site_web_ou_URL rdf:type owl:DatatypeProperty ;
                 
                 rdfs:domain :Acteur ,
                             :Idée ,
