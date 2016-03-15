@@ -13,23 +13,23 @@
 # spécifications de formulaires pour AV : changements de labels par rapport aux vocabulaires d'origine
 
 # form:classDomain av:Project ;
-rdfs:label rdfs:label "nom"@fr .
-rdfs:comment rdfs:label "description"@fr .
-foaf:homepage rdfs:label "Site web"@fr .
-foaf:maker rdfs:label "Initiateur(s)"@fr . # au lieu de "agent"
-foaf:mbox rdfs:label "courriel"@fr .
+rdfs:label rdfs:label "Nom"@fr .
+rdfs:comment rdfs:label "Description"@fr .
+foaf:homepage rdfs:label "Site Web"@fr .
+foaf:maker rdfs:label "Auteur(s)"@fr . # au lieu de "agent"
+foaf:mbox rdfs:label "Email"@fr .
 # DBPediaLookup
-dct:subject rdfs:label "thèmes"@fr .
+dct:subject rdfs:label "Thèmes"@fr .
 
 # form:classDomain av:Organization
-foaf:member rdfs:label "acteur"@fr .
+foaf:member rdfs:label "Membre"@fr .
 
 # form:classDomain av:Person
-	foaf:familyName rdfs:label "nom"@fr .
-	vcard:postal-code rdfs:label "code postal"@fr .
-	vcard:locality rdfs:label "ville"@fr .
+	foaf:familyName rdfs:label "Nom"@fr .
+	vcard:postal-code rdfs:label "Code Postal"@fr .
+	vcard:locality rdfs:label "Ville"@fr .
 	# DBPediaLookup
-	cco:expertise rdfs:label "expertise"@fr .
+	cco:expertise rdfs:label "Compétences"@fr .
 
 # form:classDomain av:Idea
 
