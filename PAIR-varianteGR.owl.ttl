@@ -4,7 +4,6 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix Type_d: <http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_d'> .
 @base <http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10> .
 
 <http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10> rdf:type owl:Ontology ;
@@ -885,7 +884,7 @@ Je fais un test cependant""" .
 
 ###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_d'événement
 
-Type_d:événement rdf:type owl:DatatypeProperty ;
+:Type_d_événement rdf:type owl:DatatypeProperty ;
                  
                  rdfs:subPropertyOf :Type ;
                  
@@ -1098,9 +1097,9 @@ Type_d:événement rdf:type owl:DatatypeProperty ;
 
 
 
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Probématique
+###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Problématique
 
-:Probématique rdf:type owl:Class ;
+:Problématique rdf:type owl:Class ;
               
               rdfs:subClassOf :Thèse .
 
@@ -1196,7 +1195,7 @@ Type_d:événement rdf:type owl:DatatypeProperty ;
 :Assemblée_Générale rdf:type owl:NamedIndividual ,
                              :Acteur ;
                     
-                    Type_d:événement "" .
+                    :Type_d_événement "" .
 
 
 
@@ -1205,7 +1204,7 @@ Type_d:événement rdf:type owl:DatatypeProperty ;
 :Autre rdf:type owl:NamedIndividual ,
                 :Acteur ;
        
-       Type_d:événement "" .
+       :Type_d_événement "" .
 
 
 
@@ -1214,7 +1213,7 @@ Type_d:événement rdf:type owl:DatatypeProperty ;
 :Barcamp rdf:type owl:NamedIndividual ,
                   :Acteur ;
          
-         Type_d:événement "" .
+         :Type_d_événement "" .
 
 
 
@@ -1223,7 +1222,7 @@ Type_d:événement rdf:type owl:DatatypeProperty ;
 :Café_des_pixels rdf:type owl:NamedIndividual ,
                           :Acteur ;
                  
-                 Type_d:événement "" .
+                 :Type_d_événement "" .
 
 
 
@@ -1241,7 +1240,7 @@ Type_d:événement rdf:type owl:DatatypeProperty ;
 :Festival rdf:type owl:NamedIndividual ,
                    :Acteur ;
           
-          Type_d:événement "" .
+          :Type_d_événement "" .
 
 
 
@@ -1259,7 +1258,7 @@ Type_d:événement rdf:type owl:DatatypeProperty ;
 :Réunion rdf:type owl:NamedIndividual ,
                   :Acteur ;
          
-         Type_d:événement "" .
+         :Type_d_événement "" .
 
 
 
@@ -1268,7 +1267,7 @@ Type_d:événement rdf:type owl:DatatypeProperty ;
 :aPAIRo rdf:type owl:NamedIndividual ,
                  :Acteur ;
         
-        Type_d:événement "" .
+        :Type_d_événement "" .
 
 
 
