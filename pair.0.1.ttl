@@ -1,12 +1,14 @@
-@prefix : <http://https://github.com/assemblee-virtuelle/pair/pair.0.1.ttl#> .
+@prefix : <http://www.assemblee-virtuelle.org/ontologies/v1.owl##> .
+@prefix av: <http://www.assemblee-virtuelle.org/ontologies/v1.owl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://https://github.com/assemblee-virtuelle/pair/pair.0.1.ttl> .
+@base <http://www.assemblee-virtuelle.org/ontologies/v1.owl#> .
 
-<http://https://github.com/assemblee-virtuelle/pair/pair.0.1.ttl> rdf:type owl:Ontology .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#> rdf:type owl:Ontology .
 
 
 #################################################################
@@ -16,7 +18,7 @@
 #################################################################
 
 
-###  http://https://github.com/assemblee-virtuelle/pair/pair.0.1.ttl#actualizes
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl##actualizes
 
 :actualizes rdf:type owl:ObjectProperty ;
             
@@ -26,7 +28,7 @@
 
 
 
-###  http://https://github.com/assemblee-virtuelle/pair/pair.0.1.ttl#composesOf
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl##composesOf
 
 :composesOf rdf:type owl:ObjectProperty ;
             
@@ -36,7 +38,7 @@
 
 
 
-###  http://https://github.com/assemblee-virtuelle/pair/pair.0.1.ttl#dependsOn
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl##dependsOn
 
 :dependsOn rdf:type owl:ObjectProperty ;
            
@@ -46,7 +48,7 @@
 
 
 
-###  http://https://github.com/assemblee-virtuelle/pair/pair.0.1.ttl#endsAt
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl##endsAt
 
 :endsAt rdf:type owl:AsymmetricProperty ,
                  owl:ObjectProperty ;
@@ -59,7 +61,7 @@
 
 
 
-###  http://https://github.com/assemblee-virtuelle/pair/pair.0.1.ttl#hasAnArgumentOn
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl##hasAnArgumentOn
 
 :hasAnArgumentOn rdf:type owl:AsymmetricProperty ,
                           owl:ObjectProperty ;
@@ -70,27 +72,27 @@
 
 
 
-###  http://https://github.com/assemblee-virtuelle/pair/pair.0.1.ttl#hasDialecticalRelationWith
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl##hasDialecticalRelationWith
 
 :hasDialecticalRelationWith rdf:type owl:ObjectProperty ;
                             
-                            rdfs:range <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea> ;
+                            rdfs:domain <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea> ;
                             
-                            rdfs:domain <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea> .
+                            rdfs:range <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea> .
 
 
 
-###  http://https://github.com/assemblee-virtuelle/pair/pair.0.1.ttl#hasStructuralRelationWith
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl##hasStructuralRelationWith
 
 :hasStructuralRelationWith rdf:type owl:ObjectProperty ;
                            
-                           rdfs:range <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor> ;
+                           rdfs:domain <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor> ;
                            
-                           rdfs:domain <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor> .
+                           rdfs:range <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor> .
 
 
 
-###  http://https://github.com/assemblee-virtuelle/pair/pair.0.1.ttl#inFieldOf
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl##inFieldOf
 
 :inFieldOf rdf:type owl:AsymmetricProperty ,
                     owl:IrreflexiveProperty ,
@@ -102,19 +104,19 @@
 
 
 
-###  http://https://github.com/assemblee-virtuelle/pair/pair.0.1.ttl#isFacetOf
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl##isFacetOf
 
 :isFacetOf rdf:type owl:ObjectProperty ,
                     owl:SymmetricProperty ,
                     owl:TransitiveProperty ;
            
-           rdfs:range <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity> ;
+           rdfs:domain <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity> ;
            
-           rdfs:domain <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity> .
+           rdfs:range <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity> .
 
 
 
-###  http://https://github.com/assemblee-virtuelle/pair/pair.0.1.ttl#needs
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl##needs
 
 :needs rdf:type owl:ObjectProperty ;
        
@@ -124,7 +126,7 @@
 
 
 
-###  http://https://github.com/assemblee-virtuelle/pair/pair.0.1.ttl#products
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl##products
 
 :products rdf:type owl:ObjectProperty ;
           
@@ -134,7 +136,7 @@
 
 
 
-###  http://https://github.com/assemblee-virtuelle/pair/pair.0.1.ttl#sparks
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl##sparks
 
 :sparks rdf:type owl:ObjectProperty ;
         
@@ -144,7 +146,7 @@
 
 
 
-###  http://https://github.com/assemblee-virtuelle/pair/pair.0.1.ttl#suscites
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl##suscites
 
 :suscites rdf:type owl:AsymmetricProperty ,
                    owl:ObjectProperty ;
@@ -217,13 +219,13 @@
 #################################################################
 
 
-###  http://https://github.com/assemblee-virtuelle/pair/pair.0.1.ttl#Argument
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl##Argument
 
 :Argument rdf:type owl:Class .
 
 
 
-###  http://https://github.com/assemblee-virtuelle/pair/pair.0.1.ttl#Competence
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl##Competence
 
 :Competence rdf:type owl:Class ;
             
@@ -231,7 +233,7 @@
 
 
 
-###  http://https://github.com/assemblee-virtuelle/pair/pair.0.1.ttl#Educational
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl##Educational
 
 :Educational rdf:type owl:Class ;
              
@@ -239,13 +241,13 @@
 
 
 
-###  http://https://github.com/assemblee-virtuelle/pair/pair.0.1.ttl#Event
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl##Event
 
 :Event rdf:type owl:Class .
 
 
 
-###  http://https://github.com/assemblee-virtuelle/pair/pair.0.1.ttl#HumanResources
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl##HumanResources
 
 :HumanResources rdf:type owl:Class ;
                 
@@ -253,7 +255,7 @@
 
 
 
-###  http://https://github.com/assemblee-virtuelle/pair/pair.0.1.ttl#Immaterials
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl##Immaterials
 
 :Immaterials rdf:type owl:Class ;
              
@@ -261,7 +263,7 @@
 
 
 
-###  http://https://github.com/assemblee-virtuelle/pair/pair.0.1.ttl#Materials
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl##Materials
 
 :Materials rdf:type owl:Class ;
            
@@ -269,7 +271,7 @@
 
 
 
-###  http://https://github.com/assemblee-virtuelle/pair/pair.0.1.ttl#Milestone
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl##Milestone
 
 :Milestone rdf:type owl:Class ;
            
@@ -277,7 +279,7 @@
 
 
 
-###  http://https://github.com/assemblee-virtuelle/pair/pair.0.1.ttl#NaturalResources
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl##NaturalResources
 
 :NaturalResources rdf:type owl:Class ;
                   
@@ -285,7 +287,7 @@
 
 
 
-###  http://https://github.com/assemblee-virtuelle/pair/pair.0.1.ttl#Task
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl##Task
 
 :Task rdf:type owl:Class ;
       
@@ -293,7 +295,7 @@
 
 
 
-###  http://https://github.com/assemblee-virtuelle/pair/pair.0.1.ttl#Theme
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl##Theme
 
 :Theme rdf:type owl:Class .
 
