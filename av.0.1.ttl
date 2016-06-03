@@ -1,0 +1,428 @@
+@prefix : <http://www.virtual-assembly.org/ontologies/1.0/pair#> .
+@prefix av: <http://www.assemblee-virtuelle.org/ontologies/v1.owl#> .
+@prefix cv: <http://rdfs.org/resume-rdf/cv.rdfs#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.virtual-assembly.org/ontologies/1.0/pair> .
+
+<http://www.virtual-assembly.org/ontologies/1.0/pair> rdf:type owl:Ontology ;
+                                                      
+                                                      owl:imports av: .
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#metAt
+
+av:metAt rdf:type owl:AnnotationProperty ;
+         
+         rdfs:label "rencontré à"@fr ;
+         
+         rdfs:domain av:Person .
+
+
+
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://purl.org/dc/terms/creator
+
+<http://purl.org/dc/terms/creator> rdf:type owl:ObjectProperty .
+
+
+
+###  http://rdfs.org/sioc/ns#follows
+
+<http://rdfs.org/sioc/ns#follows> rdf:type owl:ObjectProperty ;
+                                  
+                                  rdfs:domain :Actor ;
+                                  
+                                  rdfs:range [ rdf:type owl:Class ;
+                                               owl:unionOf ( :Actor
+                                                             :Idea
+                                                             :Project
+                                                             :Resource
+                                                           )
+                                             ] .
+
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributes
+
+av:contributes rdf:type owl:ObjectProperty ;
+               
+               rdfs:label "contribue"@fr ;
+               
+               rdfs:domain :Actor ;
+               
+               rdfs:range foaf:Project ;
+               
+               owl:inverseOf foaf:member .
+
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributesToOrganization
+
+av:contributesToOrganization rdf:type owl:AsymmetricProperty ,
+                                      owl:ObjectProperty ;
+                             
+                             rdfs:label "adhère"@fr ;
+                             
+                             rdfs:comment "Exprime le lien entre un individu et une organisation, dans laquelle l'individu se reconnaît dans l'action de l'organisation"@fr ;
+                             
+                             rdfs:subPropertyOf <http://www.assemblee-virtuelle.org/ontologies/v1.owl##hasStructuralRelationWith> ;
+                             
+                             rdfs:domain :Person ;
+                             
+                             rdfs:range foaf:Organization .
+
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#employeeOf
+
+av:employeeOf rdf:type owl:ObjectProperty ;
+              
+              rdfs:label "employé par"@fr ;
+              
+              owl:inverseOf av:hasEmployee ;
+              
+              rdfs:domain :Person ;
+              
+              rdfs:range foaf:Organization .
+
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasContributor
+
+av:hasContributor rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:range :Actor ;
+                  
+                  rdfs:domain :Organization ,
+                              :Project .
+
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasEmployee
+
+av:hasEmployee rdf:type owl:ObjectProperty ;
+               
+               rdfs:label "employé"@fr ;
+               
+               rdfs:subPropertyOf av:hasContributor ;
+               
+               rdfs:range :Person ;
+               
+               rdfs:domain foaf:Organization .
+
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#isLikedBy
+
+av:isLikedBy rdf:type owl:ObjectProperty ;
+             
+             rdfs:label "sympatisant"@fr ;
+             
+             rdfs:range :Person ;
+             
+             rdfs:domain foaf:Organization .
+
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesIdea
+
+av:likesIdea rdf:type owl:AsymmetricProperty ,
+                      owl:ObjectProperty ;
+             
+             rdfs:label "aime l'idée"@fr ;
+             
+             rdfs:domain :Actor ;
+             
+             rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#opposedTo
+
+av:opposedTo rdf:type owl:ObjectProperty ,
+                      owl:SymmetricProperty ;
+             
+             rdfs:label "opposé à l'idée"@fr ;
+             
+             rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> ;
+             
+             rdfs:domain foaf:Organization .
+
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#originator
+
+av:originator rdf:type owl:ObjectProperty ;
+              
+              rdfs:label "est à l'origine"@fr ;
+              
+              rdfs:range :Person ;
+              
+              rdfs:domain foaf:Organization .
+
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#partner
+
+av:partner rdf:type owl:ObjectProperty ,
+                    owl:SymmetricProperty ;
+           
+           rdfs:label "partenaire"@fr ;
+           
+           rdfs:domain foaf:Organization ;
+           
+           rdfs:range foaf:Organization .
+
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#specializedIn
+
+av:specializedIn rdf:type owl:ObjectProperty ,
+                          owl:SymmetricProperty ;
+                 
+                 rdfs:label "spécialisé dans l'idée"@fr ;
+                 
+                 rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> ;
+                 
+                 rdfs:domain foaf:Organization .
+
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#supports
+
+av:supports rdf:type owl:ObjectProperty ;
+            
+            rdfs:label "soutient"@fr ;
+            
+            rdfs:domain :Actor ;
+            
+            rdfs:range foaf:Project .
+
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#worksWith
+
+av:worksWith rdf:type owl:ObjectProperty ,
+                      owl:SymmetricProperty ;
+             
+             rdfs:label "travaille avec"@fr ;
+             
+             rdfs:domain foaf:Person ;
+             
+             rdfs:range foaf:Person ;
+             
+             rdfs:subPropertyOf foaf:knows .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#authorof
+
+:authorof rdf:type owl:ObjectProperty ;
+          
+          rdfs:subPropertyOf <http://purl.org/dc/terms/creator> ;
+          
+          rdfs:domain :Actor .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#founderof
+
+:founderof rdf:type owl:ObjectProperty ;
+           
+           rdfs:subPropertyOf <http://purl.org/dc/terms/creator> ;
+           
+           rdfs:domain :Actor ;
+           
+           rdfs:range [ rdf:type owl:Class ;
+                        owl:unionOf ( :Organization
+                                      :Project
+                                    )
+                      ] .
+
+
+
+###  http://xmlns.com/foaf/0.1/knows
+
+foaf:knows rdf:type owl:ObjectProperty .
+
+
+
+###  http://xmlns.com/foaf/0.1/member
+
+foaf:member rdf:type owl:ObjectProperty .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#facebookId
+
+av:facebookId rdf:type owl:DatatypeProperty ;
+              
+              rdfs:label "Facebook"@fr ;
+              
+              rdfs:domain foaf:Person .
+
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#linkedinId
+
+av:linkedinId rdf:type owl:DatatypeProperty ;
+              
+              rdfs:label "LinkedIn"@fr ;
+              
+              rdfs:domain foaf:Person .
+
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#twitterId
+
+av:twitterId rdf:type owl:DatatypeProperty ;
+             
+             rdfs:label "Twitter"@fr ;
+             
+             rdfs:domain foaf:Person .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://creativecommons.org/ns#Work
+
+<http://creativecommons.org/ns#Work> rdf:type owl:Class .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Actor
+
+:Actor rdf:type owl:Class ;
+       
+       rdfs:label "Acteur"@fr ;
+       
+       rdfs:subClassOf <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor> ,
+                       foaf:Agent .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Idea
+
+:Idea rdf:type owl:Class ;
+      
+      rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Organization
+
+:Organization rdf:type owl:Class ;
+              
+              rdfs:label "Organisation"@fr ;
+              
+              rdfs:subClassOf :Actor ,
+                              foaf:Organization .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Person
+
+:Person rdf:type owl:Class ;
+        
+        rdfs:label "Individu"@fr ;
+        
+        rdfs:subClassOf :Actor ,
+                        foaf:Person .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Project
+
+:Project rdf:type owl:Class ;
+         
+         rdfs:subClassOf foaf:Project .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Resource
+
+:Resource rdf:type owl:Class .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Work
+
+:Work rdf:type owl:Class ;
+      
+      rdfs:subClassOf <http://creativecommons.org/ns#Work> ,
+                      :Resource .
+
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+
+<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class .
+
+
+
+###  http://xmlns.com/foaf/0.1/Agent
+
+foaf:Agent rdf:type owl:Class .
+
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+
+foaf:Organization rdf:type owl:Class .
+
+
+
+###  http://xmlns.com/foaf/0.1/Person
+
+foaf:Person rdf:type owl:Class .
+
+
+
+###  http://xmlns.com/foaf/0.1/Project
+
+foaf:Project rdf:type owl:Class .
+
+
+
+
+###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+

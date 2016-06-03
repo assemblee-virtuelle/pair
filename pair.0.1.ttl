@@ -311,7 +311,11 @@
 
 ###  http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity
 
-<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity> rdf:type owl:Class .
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity> rdf:type owl:Class ;
+                                                                                      
+                                                                                      rdfs:label "Entité"@fr ;
+                                                                                      
+                                                                                      rdfs:comment "Concept englobant les quatre concepts-clefs de l'ontologie. Ce concept est principalement lié à la propritété 'facet' qui permet de décrire qu'un PAIR est une facette d'un autre PAIR"^^xsd:string .
 
 
 
