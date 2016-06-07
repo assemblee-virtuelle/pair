@@ -1,0 +1,506 @@
+@prefix : <http://xmlns.com/foaf/0.1/#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wot: <http://xmlns.com/wot/0.1/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://xmlns.com/foaf/0.1/> .
+
+<http://xmlns.com/foaf/0.1/> rdf:type owl:Ontology ;
+                             
+                             dc:description "The Friend of a Friend (FOAF) RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language." ;
+                             
+                             dc:title "Friend of a Friend (FOAF) vocabulary" .
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://purl.org/dc/elements/1.1/date
+
+dc:date rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/dc/elements/1.1/description
+
+dc:description rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/dc/elements/1.1/title
+
+dc:title rdf:type owl:AnnotationProperty .
+
+
+
+###  http://www.w3.org/2003/06/sw-vocab-status/ns#term_status
+
+vs:term_status rdf:type owl:AnnotationProperty .
+
+
+
+###  http://xmlns.com/foaf/0.1/membershipClass
+
+foaf:membershipClass rdf:type owl:AnnotationProperty ;
+                     
+                     rdfs:label "membershipClass" ;
+                     
+                     rdfs:comment "Indicates the class of individuals that are a member of a Group" ;
+                     
+                     vs:term_status "unstable" ;
+                     
+                     rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+
+
+
+###  http://xmlns.com/foaf/0.1/name
+
+foaf:name rdf:type owl:AnnotationProperty ;
+          
+          rdfs:label "name" ;
+          
+          rdfs:comment "A name for some thing." ;
+          
+          vs:term_status "testing" ;
+          
+          rdfs:subPropertyOf rdfs:label ;
+          
+          rdfs:domain owl:Thing ;
+          
+          rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+
+
+
+###  http://xmlns.com/wot/0.1/assurance
+
+wot:assurance rdf:type owl:AnnotationProperty .
+
+
+
+###  http://xmlns.com/wot/0.1/src_assurance
+
+wot:src_assurance rdf:type owl:AnnotationProperty .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://xmlns.com/foaf/0.1/accountName
+
+foaf:accountName rdf:type owl:DatatypeProperty ;
+                 
+                 rdfs:label "account name" ;
+                 
+                 rdfs:comment "Indicates the name (identifier) associated with this online account." ;
+                 
+                 vs:term_status "testing" ;
+                 
+                 rdfs:range rdfs:Literal ;
+                 
+                 rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+
+
+
+###  http://xmlns.com/foaf/0.1/age
+
+foaf:age rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         
+         rdfs:label "age" ;
+         
+         rdfs:comment "The age in years of some agent." ;
+         
+         vs:term_status "unstable" ;
+         
+         rdfs:range rdfs:Literal ;
+         
+         rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+
+
+
+###  http://xmlns.com/foaf/0.1/aimChatID
+
+foaf:aimChatID rdf:type owl:DatatypeProperty ;
+               
+               rdfs:range rdfs:Literal ;
+               
+               rdfs:subPropertyOf foaf:nick .
+
+
+
+###  http://xmlns.com/foaf/0.1/birthday
+
+foaf:birthday rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              
+              rdfs:label "birthday" ;
+              
+              rdfs:comment "The birthday of this Agent, represented in mm-dd string form, eg. '12-31'." ;
+              
+              vs:term_status "unstable" ;
+              
+              rdfs:range rdfs:Literal ;
+              
+              rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+
+
+
+###  http://xmlns.com/foaf/0.1/dnaChecksum
+
+foaf:dnaChecksum rdf:type owl:DatatypeProperty ;
+                 
+                 rdfs:label "DNA checksum" ;
+                 
+                 vs:term_status "archaic" ;
+                 
+                 rdfs:comment "A checksum for the DNA of some thing. Joke." ;
+                 
+                 rdfs:range rdfs:Literal ;
+                 
+                 rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+
+
+
+###  http://xmlns.com/foaf/0.1/familyName
+
+foaf:familyName rdf:type owl:DatatypeProperty ;
+                
+                rdfs:label "familyName" ;
+                
+                rdfs:comment "The family name of some person." ;
+                
+                vs:term_status "testing" ;
+                
+                rdfs:range rdfs:Literal ;
+                
+                rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+
+
+
+###  http://xmlns.com/foaf/0.1/family_name
+
+foaf:family_name rdf:type owl:DatatypeProperty ;
+                 
+                 rdfs:label "family_name" ;
+                 
+                 rdfs:comment "The family name of some person." ;
+                 
+                 vs:term_status "archaic" ;
+                 
+                 rdfs:range rdfs:Literal ;
+                 
+                 rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+
+
+
+###  http://xmlns.com/foaf/0.1/firstName
+
+foaf:firstName rdf:type owl:DatatypeProperty ;
+               
+               rdfs:label "firstName" ;
+               
+               vs:term_status "testing" ;
+               
+               rdfs:comment "The first name of a person." ;
+               
+               rdfs:range rdfs:Literal ;
+               
+               rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+
+
+
+###  http://xmlns.com/foaf/0.1/geekcode
+
+foaf:geekcode rdf:type owl:DatatypeProperty ;
+              
+              rdfs:label "geekcode" ;
+              
+              rdfs:comment "A textual geekcode for this person, see http://www.geekcode.com/geek.html" ;
+              
+              vs:term_status "archaic" ;
+              
+              rdfs:range rdfs:Literal ;
+              
+              rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+
+
+
+###  http://xmlns.com/foaf/0.1/gender
+
+foaf:gender rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            
+            rdfs:label "gender" ;
+            
+            vs:term_status "testing" ;
+            
+            rdfs:comment "The gender of this Agent (typically but not necessarily 'male' or 'female')." ;
+            
+            rdfs:range rdfs:Literal ;
+            
+            rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+
+
+
+###  http://xmlns.com/foaf/0.1/givenName
+
+foaf:givenName rdf:type owl:DatatypeProperty ;
+               
+               rdfs:label "Given name" ;
+               
+               vs:term_status "testing" ;
+               
+               rdfs:comment "The given name of some person." ;
+               
+               rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+
+
+
+###  http://xmlns.com/foaf/0.1/givenname
+
+foaf:givenname rdf:type owl:DatatypeProperty ;
+               
+               rdfs:label "Given name" ;
+               
+               vs:term_status "archaic" ;
+               
+               rdfs:comment "The given name of some person." ;
+               
+               rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+
+
+
+###  http://xmlns.com/foaf/0.1/icqChatID
+
+foaf:icqChatID rdf:type owl:DatatypeProperty ;
+               
+               rdfs:range rdfs:Literal ;
+               
+               rdfs:subPropertyOf foaf:nick .
+
+
+
+###  http://xmlns.com/foaf/0.1/jabberID
+
+foaf:jabberID rdf:type owl:DatatypeProperty ;
+              
+              rdfs:range rdfs:Literal .
+
+
+
+###  http://xmlns.com/foaf/0.1/lastName
+
+foaf:lastName rdf:type owl:DatatypeProperty ;
+              
+              rdfs:label "lastName" ;
+              
+              vs:term_status "testing" ;
+              
+              rdfs:comment "The last name of a person." ;
+              
+              rdfs:range rdfs:Literal ;
+              
+              rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+
+
+
+###  http://xmlns.com/foaf/0.1/mbox_sha1sum
+
+foaf:mbox_sha1sum rdf:type owl:DatatypeProperty ;
+                  
+                  rdfs:range rdfs:Literal .
+
+
+
+###  http://xmlns.com/foaf/0.1/msnChatID
+
+foaf:msnChatID rdf:type owl:DatatypeProperty ;
+               
+               rdfs:range rdfs:Literal ;
+               
+               rdfs:subPropertyOf foaf:nick .
+
+
+
+###  http://xmlns.com/foaf/0.1/myersBriggs
+
+foaf:myersBriggs rdf:type owl:DatatypeProperty ;
+                 
+                 rdfs:label "myersBriggs" ;
+                 
+                 vs:term_status "testing" ;
+                 
+                 rdfs:comment "A Myers Briggs (MBTI) personality classification." ;
+                 
+                 rdfs:range rdfs:Literal ;
+                 
+                 rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+
+
+
+###  http://xmlns.com/foaf/0.1/name
+
+foaf:name rdf:type owl:DatatypeProperty ;
+          
+          rdfs:label "name" ;
+          
+          rdfs:comment "A name for some thing." ;
+          
+          vs:term_status "testing" ;
+          
+          rdfs:range rdfs:Literal ;
+          
+          rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+
+
+
+###  http://xmlns.com/foaf/0.1/nick
+
+foaf:nick rdf:type owl:DatatypeProperty ;
+          
+          rdfs:label "nickname" ;
+          
+          vs:term_status "testing" ;
+          
+          rdfs:comment "A short informal nickname characterising an agent (includes login identifiers, IRC and other chat nicknames)." ;
+          
+          rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+
+
+
+###  http://xmlns.com/foaf/0.1/plan
+
+foaf:plan rdf:type owl:DatatypeProperty ;
+          
+          rdfs:label "plan" ;
+          
+          rdfs:comment "A .plan comment, in the tradition of finger and '.plan' files." ;
+          
+          vs:term_status "testing" ;
+          
+          rdfs:range rdfs:Literal ;
+          
+          rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+
+
+
+###  http://xmlns.com/foaf/0.1/sha1
+
+foaf:sha1 rdf:type owl:DatatypeProperty ;
+          
+          rdfs:label "sha1sum (hex)" ;
+          
+          vs:term_status "unstable" ;
+          
+          rdfs:comment "A sha1sum hash, in hex." ;
+          
+          rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+
+
+
+###  http://xmlns.com/foaf/0.1/skypeID
+
+foaf:skypeID rdf:type owl:DatatypeProperty ;
+             
+             rdfs:label "Skype ID" ;
+             
+             rdfs:comment "A Skype ID" ;
+             
+             vs:term_status "testing" ;
+             
+             rdfs:range rdfs:Literal ;
+             
+             rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> ;
+             
+             rdfs:subPropertyOf foaf:nick .
+
+
+
+###  http://xmlns.com/foaf/0.1/status
+
+foaf:status rdf:type owl:DatatypeProperty ;
+            
+            rdfs:label "status" ;
+            
+            vs:term_status "unstable" ;
+            
+            rdfs:comment "A string expressing what the user is happy for the general public (normally) to know about their current activity." ;
+            
+            rdfs:range rdfs:Literal ;
+            
+            rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+
+
+
+###  http://xmlns.com/foaf/0.1/surname
+
+foaf:surname rdf:type owl:DatatypeProperty ;
+             
+             rdfs:label "Surname" ;
+             
+             vs:term_status "archaic" ;
+             
+             rdfs:comment "The surname of some person." ;
+             
+             rdfs:range rdfs:Literal ;
+             
+             rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+
+
+
+###  http://xmlns.com/foaf/0.1/title
+
+foaf:title rdf:type owl:DatatypeProperty ;
+           
+           rdfs:label "title" ;
+           
+           rdfs:comment "Title (Mr, Mrs, Ms, Dr. etc)" ;
+           
+           vs:term_status "testing" ;
+           
+           rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+
+
+
+###  http://xmlns.com/foaf/0.1/yahooChatID
+
+foaf:yahooChatID rdf:type owl:DatatypeProperty ;
+                 
+                 rdfs:range rdfs:Literal ;
+                 
+                 rdfs:subPropertyOf foaf:nick .
+
+
+
+
+
+#################################################################
+#
+#    Annotations
+#
+#################################################################
+
+
+owl:Thing rdfs:label "Thing" .
+
+
+
+
+###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+

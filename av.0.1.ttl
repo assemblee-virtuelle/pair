@@ -153,6 +153,8 @@ av:likesIdea rdf:type owl:AsymmetricProperty ,
              
              rdfs:label "aime l'idée"@fr ;
              
+             rdfs:subPropertyOf <http://www.assemblee-virtuelle.org/ontologies/v1.owl##hasAnArgumentOn> ;
+             
              rdfs:domain :Actor ;
              
              rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> .
