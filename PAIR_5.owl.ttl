@@ -9,6 +9,8 @@
 @prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix gr: <http://purl.org/goodrelations/v1#> .
+
 @base <http://www.virtual-assembly.org/ontologies/1.0/pair> .
 
 <http://www.virtual-assembly.org/ontologies/1.0/pair> rdf:type owl:Ontology .
@@ -76,7 +78,7 @@ av:metAt rdf:type owl:AnnotationProperty ;
                                                            owl:unionOf ( <http://purl.org/ontology/cco/core#cco:Skill>
                                                                          <http://schema.org/CreativeWork>
                                                                          :Idea
-                                                                         :GoodRelations:v1
+                                                                         gr:Offering
                                                                        )
                                                          ] .
 
@@ -226,7 +228,7 @@ av:partner rdf:type owl:ObjectProperty ;
                                     <http://schema.org/CreativeWork>
                                     :Money
                                     :Place
-                                    :GoodRelations:v1
+                                    gr:Offering
                                     foaf:Document
                                   )
                     ] .
@@ -248,7 +250,7 @@ av:partner rdf:type owl:ObjectProperty ;
                                  <http://schema.org/CreativeWork>
                                  :Money
                                  :Place
-                                 :GoodRelations:v1
+                                 gr:Offering
                                  foaf:Document
                                )
                  ] .
@@ -278,7 +280,7 @@ av:partner rdf:type owl:ObjectProperty ;
                rdfs:range [ rdf:type owl:Class ;
                             owl:unionOf ( <http://schema.org/CreativeWork>
                                           <http://schema.org/Event>
-                                          :GoodRelations:v1
+                                          gr:Offering
                                           foaf:Document
                                           foaf:Project
                                         )
@@ -307,7 +309,7 @@ av:partner rdf:type owl:ObjectProperty ;
            
            rdfs:domain foaf:Agent ;
            
-           rdfs:range :GoodRelations:v1 .
+           rdfs:range gr:Offering .
 
 
 
@@ -411,7 +413,7 @@ av:partner rdf:type owl:ObjectProperty ;
                   rdfs:range [ rdf:type owl:Class ;
                                owl:unionOf ( <http://schema.org/CreativeWork>
                                              <http://schema.org/Event>
-                                             :GoodRelations:v1
+                                             gr:Offering
                                              foaf:Document
                                              foaf:Project
                                            )
@@ -533,7 +535,7 @@ av:partner rdf:type owl:ObjectProperty ;
                                   <http://schema.org/CreativeWork>
                                   :Money
                                   :Place
-                                  :GoodRelations:v1
+                                  gr:Offering
                                   foaf:Document
                                 )
                   ] .
@@ -553,7 +555,7 @@ av:partner rdf:type owl:ObjectProperty ;
                                    <http://schema.org/CreativeWork>
                                    :Money
                                    :Place
-                                   :GoodRelations:v1
+                                   gr:Offering
                                    foaf:Document
                                  )
                    ] ;
@@ -607,7 +609,7 @@ av:partner rdf:type owl:ObjectProperty ;
                                   <http://schema.org/CreativeWork>
                                   :Money
                                   :Place
-                                  :GoodRelations:v1
+                                  gr:Offering
                                   foaf:Document
                                 )
                   ] ;
@@ -645,7 +647,7 @@ av:partner rdf:type owl:ObjectProperty ;
                                           <http://schema.org/CreativeWork>
                                           :Money
                                           :Place
-                                          :GoodRelations:v1
+                                          gr:Offering
                                           foaf:Document
                                         )
                           ] .
@@ -665,7 +667,7 @@ av:partner rdf:type owl:ObjectProperty ;
                                         <http://schema.org/CreativeWork>
                                         :Money
                                         :Place
-                                        :GoodRelations:v1
+                                        gr:Offering
                                         foaf:Document
                                       )
                         ] .
@@ -685,7 +687,7 @@ av:partner rdf:type owl:ObjectProperty ;
                                       <http://schema.org/CreativeWork>
                                       :Money
                                       :Place
-                                      :GoodRelations:v1
+                                      gr:Offering
                                       foaf:Document
                                     )
                       ] .
@@ -849,7 +851,7 @@ av:twitterId rdf:type owl:DatatypeProperty ;
                  
                  rdfs:subClassOf <http://schema.org/CreativeWork> ,
                                  :Resource ,
-                                 :GoodRelations:v1 ;
+                                 gr:Offering ;
                  
                  rdfs:label "Bien ou Service"@fr ,
                             "Good or Service"@en .
@@ -1010,10 +1012,7 @@ av:twitterId rdf:type owl:DatatypeProperty ;
                  "Work"@en .
 
 
-
-###  http://www.virtual-assembly.org/ontologies/1.0/pair#GoodRelations:v1
-
-:GoodRelations:v1 rdf:type owl:Class .
+gr:Offering rdf:type owl:Class .
 
 
 
