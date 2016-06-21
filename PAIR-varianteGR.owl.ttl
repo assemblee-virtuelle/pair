@@ -4,1290 +4,496 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10> .
 
-<http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10> rdf:type owl:Ontology ;
-                                                                           
-                                                                           rdfs:comment "Ontologie PAIR de test réalisée par Guillaume R." .
-
-
-#################################################################
-#
-#    Object Properties
-#
-#################################################################
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Dispose_de
-
-:Dispose_de rdf:type owl:ObjectProperty ;
-            
-            rdfs:subPropertyOf :offre .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Recherche
-
-:Recherche rdf:type owl:ObjectProperty ;
-           
-           rdfs:subPropertyOf :demande .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#a_pour_auteur
-
-:a_pour_auteur rdf:type owl:ObjectProperty ;
-               
-               owl:inverseOf :est_l_auteur_de .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#a_pour_contributeur
-
-:a_pour_contributeur rdf:type owl:ObjectProperty ;
-                     
-                     owl:inverseOf :contribue_à .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#a_pour_fondateur
-
-:a_pour_fondateur rdf:type owl:ObjectProperty ;
-                  
-                  owl:inverseOf :est_le_fondateur_de ;
-                  
-                  rdfs:domain :Organisation ;
-                  
-                  rdfs:range :Acteur .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#a_pour_participant
-
-:a_pour_participant rdf:type owl:ObjectProperty .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#achète
-
-:achète rdf:type owl:ObjectProperty ;
-        
-        rdfs:subPropertyOf :demande ;
-        
-        owl:inverseOf :vend .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#cherche_gratuitement
-
-:cherche_gratuitement rdf:type owl:ObjectProperty ;
-                      
-                      rdfs:subPropertyOf :demande ;
-                      
-                      owl:inverseOf :donne .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#consomme
-
-:consomme rdf:type owl:ObjectProperty ;
-          
-          rdfs:subPropertyOf :demande ;
-          
-          owl:inverseOf :produit .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#contribue_à
-
-:contribue_à rdf:type owl:ObjectProperty ;
-             
-             rdfs:domain :Acteur ;
-             
-             rdfs:range :Idée ,
-                        :Organisation ,
-                        :Projet .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#demande
-
-:demande rdf:type owl:ObjectProperty ;
-         
-         owl:inverseOf :est_demandé_par ;
-         
-         rdfs:domain :Acteur ,
-                     :Idée ,
-                     :Projet ,
-                     :Ressource ;
-         
-         rdfs:range :Ressource .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#donne
-
-:donne rdf:type owl:ObjectProperty ;
-       
-       rdfs:subPropertyOf :offre .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#emprunte
-
-:emprunte rdf:type owl:ObjectProperty ;
-          
-          rdfs:subPropertyOf :demande ;
-          
-          owl:inverseOf :prête .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#est_ami_de
-
-:est_ami_de rdf:type owl:ObjectProperty ;
-            
-            rdfs:domain :Individu ;
-            
-            rdfs:range :Individu .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#est_demandé_par
-
-:est_demandé_par rdf:type owl:ObjectProperty ;
-                 
-                 rdfs:domain :Ressource ;
-                 
-                 rdfs:range :Acteur ,
-                            :Idée ,
-                            :Projet ,
-                            :Ressource .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#est_le_fondateur_de
-
-:est_le_fondateur_de rdf:type owl:ObjectProperty ;
-                     
-                     rdfs:domain :Acteur ;
-                     
-                     rdfs:range :Lieu ,
-                                :Organisation .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#est_lié_à
-
-:est_lié_à rdf:type owl:ObjectProperty ;
-           
-           rdfs:domain :Acteur ,
-                       :Idée ,
-                       :Projet ,
-                       :Ressource ;
-           
-           rdfs:range :Acteur ,
-                      :Idée ,
-                      :Projet ,
-                      :Ressource .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#est_offert_par
-
-:est_offert_par rdf:type owl:ObjectProperty ;
-                
-                owl:inverseOf :offre ;
-                
-                rdfs:domain :Ressource ;
-                
-                rdfs:range :Acteur ,
-                           :Idée ,
-                           :Projet ,
-                           :Ressource .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#est_soutenu_par
-
-:est_soutenu_par rdf:type owl:ObjectProperty ;
-                 
-                 owl:inverseOf :soutient ;
-                 
-                 rdfs:domain :Acteur ,
-                             :Idée ,
-                             :Projet ;
-                 
-                 rdfs:range :Acteur .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#est_suivi_par
-
-:est_suivi_par rdf:type owl:ObjectProperty ;
-               
-               owl:inverseOf :suit ;
-               
-               rdfs:domain :Acteur ,
-                           :Idée ,
-                           :Projet ,
-                           :Ressource ;
-               
-               rdfs:range :Acteur .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#fait_partie_de
-
-:fait_partie_de rdf:type owl:ObjectProperty ;
-                
-                owl:inverseOf :inclue ;
-                
-                rdfs:domain :Acteur ,
-                            :Idée ,
-                            :Projet ,
-                            :Ressource ;
-                
-                rdfs:range :Acteur ,
-                           :Idée ,
-                           :Projet ,
-                           :Ressource .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#finance
-
-:finance rdf:type owl:ObjectProperty ;
-         
-         rdfs:subPropertyOf :soutient .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#inclue
-
-:inclue rdf:type owl:ObjectProperty ;
-        
-        rdfs:domain :Acteur ,
-                    :Idée ,
-                    :Projet ,
-                    :Ressource ;
-        
-        rdfs:range :Acteur ,
-                   :Idée ,
-                   :Projet ,
-                   :Ressource .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#loue
-
-:loue rdf:type owl:ObjectProperty ;
-      
-      rdfs:subPropertyOf :offre ;
-      
-      owl:inverseOf :veut_louer .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#offre
-
-:offre rdf:type owl:ObjectProperty ;
-       
-       rdfs:domain :Acteur ,
-                   :Idée ,
-                   :Projet ,
-                   :Ressource ;
-       
-       rdfs:range :Ressource .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#particpe_à
-
-:particpe_à rdf:type owl:ObjectProperty ;
-            
-            rdfs:domain :Acteur ;
-            
-            rdfs:range :Evènement .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#produit
-
-:produit rdf:type owl:ObjectProperty ;
-         
-         rdfs:subPropertyOf :offre .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#prête
-
-:prête rdf:type owl:ObjectProperty ;
-       
-       rdfs:subPropertyOf :offre .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#soutient
-
-:soutient rdf:type owl:ObjectProperty ;
-          
-          rdfs:domain :Acteur ;
-          
-          rdfs:range :Acteur ,
-                     :Idée ,
-                     :Projet .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#suit
-
-:suit rdf:type owl:ObjectProperty ;
-      
-      rdfs:domain :Acteur ;
-      
-      rdfs:range :Acteur ,
-                 :Idée ,
-                 :Projet ,
-                 :Ressource .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#travaille_avec
-
-:travaille_avec rdf:type owl:ObjectProperty ;
-                
-                rdfs:domain :Acteur ;
-                
-                rdfs:range :Acteur .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#troque
-
-:troque rdf:type owl:ObjectProperty ;
-        
-        rdfs:subPropertyOf :offre ;
-        
-        owl:inverseOf :veut_troquer .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#vend
-
-:vend rdf:type owl:ObjectProperty ;
-      
-      rdfs:subPropertyOf :offre .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#veut_louer
-
-:veut_louer rdf:type owl:ObjectProperty ;
-            
-            rdfs:subPropertyOf :demande .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#veut_troquer
-
-:veut_troquer rdf:type owl:ObjectProperty ;
-              
-              rdfs:subPropertyOf :demande .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#est_l'auteur_de
-
-:est_l_auteur_de rdf:type owl:ObjectProperty ;
-                 
-                 rdfs:domain :Acteur ;
-                 
-                 rdfs:range :Bien ,
-                            :Bonne_pratique ,
-                            :Compétence ,
-                            :Idée ,
-                            :Oeuvre ,
-                            :Outil ,
-                            :Projet ,
-                            :Ressource_documentaire .
-
-
-
-
-
-#################################################################
-#
-#    Data properties
-#
-#################################################################
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#A_venir
-
-:A_venir rdf:type owl:DatatypeProperty ;
-         
-         rdfs:subPropertyOf :Etat .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Adresse
-
-:Adresse rdf:type owl:DatatypeProperty ;
-         
-         rdfs:domain :Acteur ,
-                     :Projet ,
-                     :Ressource ;
-         
-         rdfs:range xsd:string .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Code_Postal
-
-:Code_Postal rdf:type owl:DatatypeProperty ;
-             
-             rdfs:domain :Acteur ,
-                         :Projet ,
-                         :Ressource ;
-             
-             rdfs:range xsd:string .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Code_Social
-
-:Code_Social rdf:type owl:DatatypeProperty ;
-             
-             rdfs:domain :Organisation ,
-                         :Projet ;
-             
-             rdfs:range xsd:string .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Date
-
-:Date rdf:type owl:DatatypeProperty ;
-      
-      rdfs:domain :Evènement ;
-      
-      rdfs:range xsd:dateTime .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Date_de_début
-
-:Date_de_début rdf:type owl:DatatypeProperty ;
-               
-               rdfs:subPropertyOf :Date .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Date_de_fin
-
-:Date_de_fin rdf:type owl:DatatypeProperty ;
-             
-             rdfs:subPropertyOf :Date .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Description
-
-:Description rdf:type owl:DatatypeProperty ;
-             
-             rdfs:domain :Acteur ,
-                         :Idée ,
-                         :Projet ,
-                         :Ressource ;
-             
-             rdfs:range xsd:string .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Description_courte
-
-:Description_courte rdf:type owl:DatatypeProperty ;
-                    
-                    rdfs:subPropertyOf :Description .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Description_longue
-
-:Description_longue rdf:type owl:DatatypeProperty ;
-                    
-                    rdfs:subPropertyOf :Description .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Dénomination_sociale
-
-:Dénomination_sociale rdf:type owl:DatatypeProperty ;
-                      
-                      rdfs:subPropertyOf :Nom ;
-                      
-                      rdfs:domain :Organisation ;
-                      
-                      rdfs:range xsd:string .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Email
-
-:Email rdf:type owl:DatatypeProperty .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Email_de_contact
-
-:Email_de_contact rdf:type owl:DatatypeProperty ;
-                  
-                  rdfs:subPropertyOf :Email ;
-                  
-                  rdfs:domain :Evènement ,
-                              :Initiative ,
-                              :Organisation ,
-                              :Ressource ,
-                              :Thèse ;
-                  
-                  rdfs:range xsd:string .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#En_cours
-
-:En_cours rdf:type owl:DatatypeProperty ;
-          
-          rdfs:subPropertyOf :Etat .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Etat
-
-:Etat rdf:type owl:DatatypeProperty ;
-      
-      rdfs:domain :Evènement ,
-                  :Initiative ,
-                  :Organisation .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Forme_juridique
-
-:Forme_juridique rdf:type owl:DatatypeProperty ;
-                 
-                 rdfs:subPropertyOf :Type ;
-                 
-                 rdfs:domain :Organisation ;
-                 
-                 rdfs:range xsd:string .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Genre
-
-:Genre rdf:type owl:DatatypeProperty ;
-       
-       rdfs:subPropertyOf :Type ;
-       
-       rdfs:domain :Individu .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Heure
-
-:Heure rdf:type owl:DatatypeProperty ;
-       
-       rdfs:domain :Evènement ;
-       
-       rdfs:range xsd:dateTime .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Heure_de_début
-
-:Heure_de_début rdf:type owl:DatatypeProperty ;
-                
-                rdfs:subPropertyOf :Heure .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Heure_de_fin
-
-:Heure_de_fin rdf:type owl:DatatypeProperty ;
-              
-              rdfs:subPropertyOf :Heure .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Historique
-
-:Historique rdf:type owl:DatatypeProperty ;
-            
-            rdfs:domain :Acteur ,
-                        :Idée ,
-                        :Projet ,
-                        :Ressource ;
-            
-            rdfs:range xsd:string .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Informations_générales
-
-:Informations_générales rdf:type owl:DatatypeProperty ;
-                        
-                        rdfs:subPropertyOf :Code_Social .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_culturel_et_artistique
-
-:Modèle_culturel_et_artistique rdf:type owl:DatatypeProperty ;
-                               
-                               rdfs:subPropertyOf :Code_Social .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_juridique_et_financier
-
-:Modèle_juridique_et_financier rdf:type owl:DatatypeProperty ;
-                               
-                               rdfs:subPropertyOf :Code_Social .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_social_et_humain
-
-:Modèle_social_et_humain rdf:type owl:DatatypeProperty ;
-                         
-                         rdfs:subPropertyOf :Code_Social .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_technologique
-
-:Modèle_technologique rdf:type owl:DatatypeProperty ;
-                      
-                      rdfs:subPropertyOf :Code_Social .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_écologique
-
-:Modèle_écologique rdf:type owl:DatatypeProperty ;
-                   
-                   rdfs:subPropertyOf :Code_Social .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_économique
-
-:Modèle_économique rdf:type owl:DatatypeProperty ;
-                   
-                   rdfs:subPropertyOf :Code_Social .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Nom
-
-:Nom rdf:type owl:DatatypeProperty ;
-     
-     rdfs:domain :Idée ,
-                 :Projet ,
-                 :Ressource ;
-     
-     rdfs:range xsd:string .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Nom_de_famille
-
-:Nom_de_famille rdf:type owl:DatatypeProperty ;
-                
-                rdfs:subPropertyOf :Nom ;
-                
-                rdfs:domain :Individu ;
-                
-                rdfs:range xsd:string .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Pays
-
-:Pays rdf:type owl:DatatypeProperty ;
-      
-      rdfs:domain :Acteur ,
-                  :Projet ,
-                  :Ressource ;
-      
-      rdfs:range xsd:string .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Prénom
-
-:Prénom rdf:type owl:DatatypeProperty ;
-        
-        rdfs:domain :Individu ;
-        
-        rdfs:range xsd:string .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Pseudo
-
-:Pseudo rdf:type owl:DatatypeProperty ;
-        
-        rdfs:subPropertyOf :Nom ;
-        
-        rdfs:domain :Individu ;
-        
-        rdfs:range xsd:string .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Récurrence
-
-:Récurrence rdf:type owl:DatatypeProperty ;
-            
-            rdfs:domain :Evènement ;
-            
-            rdfs:range xsd:dateTime ,
-                       xsd:string .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Réseaux_sociaux
-
-:Réseaux_sociaux rdf:type owl:DatatypeProperty ;
-                 
-                 rdfs:domain :Acteur ,
-                             :Idée ,
-                             :Projet ,
-                             :Ressource ;
-                 
-                 rdfs:range xsd:anyURI .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Siret
-
-:Siret rdf:type owl:DatatypeProperty ;
-       
-       rdfs:domain :Organisation ;
-       
-       rdfs:comment """Je ne sais pas ici comment gérer les types ...
+<http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10> a owl:Ontology ;
+	rdfs:comment "Ontologie PAIR de test réalisée par Guillaume R." .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#est_ami_de
+
+:est_ami_de a owl:ObjectProperty ;
+	rdfs:domain :Individu ;
+	rdfs:range :Individu .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#finance
+
+:finance a owl:ObjectProperty .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#A_venir
+
+:A_venir a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :Etat .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Adresse
+
+:Adresse a owl:DatatypeProperty ;
+	rdfs:domain :Ressource ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Code_Postal
+
+:Code_Postal a owl:DatatypeProperty ;
+	rdfs:domain :Ressource ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Code_Social
+
+:Code_Social a owl:DatatypeProperty ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Date
+
+:Date a owl:DatatypeProperty ;
+	rdfs:domain <http://www.virtual-assembly.org/ontologies/1.0/pair#Event> ;
+	rdfs:range xsd:dateTime .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Date_de_début
+
+:Date_de_début a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :Date .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Date_de_fin
+
+:Date_de_fin a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :Date .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Description
+
+:Description a owl:DatatypeProperty ;
+	rdfs:domain :Ressource ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Description_courte
+
+:Description_courte a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :Description .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Description_longue
+
+:Description_longue a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :Description .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Dénomination_sociale
+
+:Dénomination_sociale a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :Nom ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Email
+
+:Email a owl:DatatypeProperty .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Email_de_contact
+
+:Email_de_contact a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :Email ;
+	rdfs:domain :Ressource , <http://www.virtual-assembly.org/ontologies/1.0/pair#Event> , <ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission> ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#En_cours
+
+:En_cours a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :Etat .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Etat
+
+:Etat a owl:DatatypeProperty ;
+	rdfs:domain <http://www.virtual-assembly.org/ontologies/1.0/pair#Event> , <ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission> .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Forme_juridique
+
+:Forme_juridique a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :Type ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Genre
+
+:Genre a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :Type ;
+	rdfs:domain :Individu .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Heure
+
+:Heure a owl:DatatypeProperty ;
+	rdfs:domain <http://www.virtual-assembly.org/ontologies/1.0/pair#Event> ;
+	rdfs:range xsd:dateTime .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Heure_de_début
+
+:Heure_de_début a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :Heure .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Heure_de_fin
+
+:Heure_de_fin a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :Heure .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Historique
+
+:Historique a owl:DatatypeProperty ;
+	rdfs:domain :Ressource ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Informations_générales
+
+:Informations_générales a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :Code_Social .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_culturel_et_artistique
+
+:Modèle_culturel_et_artistique a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :Code_Social .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_juridique_et_financier
+
+:Modèle_juridique_et_financier a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :Code_Social .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_social_et_humain
+
+:Modèle_social_et_humain a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :Code_Social .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_technologique
+
+:Modèle_technologique a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :Code_Social .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_écologique
+
+:Modèle_écologique a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :Code_Social .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_économique
+
+:Modèle_économique a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :Code_Social .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Nom
+
+:Nom a owl:DatatypeProperty ;
+	rdfs:domain :Ressource ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Nom_de_famille
+
+:Nom_de_famille a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :Nom ;
+	rdfs:domain :Individu ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Pays
+
+:Pays a owl:DatatypeProperty ;
+	rdfs:domain :Ressource ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Prénom
+
+:Prénom a owl:DatatypeProperty ;
+	rdfs:domain :Individu ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Pseudo
+
+:Pseudo a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :Nom ;
+	rdfs:domain :Individu ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Raison_d_être
+
+:Raison_d_être a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :Code_Social .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Récurrence
+
+:Récurrence a owl:DatatypeProperty ;
+	rdfs:domain <http://www.virtual-assembly.org/ontologies/1.0/pair#Event> ;
+	rdfs:range xsd:dateTime , xsd:string .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Réseaux_sociaux
+
+:Réseaux_sociaux a owl:DatatypeProperty ;
+	rdfs:domain :Ressource ;
+	rdfs:range xsd:anyURI .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Siret
+
+:Siret a owl:DatatypeProperty ;
+	rdfs:comment """Je ne sais pas ici comment gérer les types ...
 
 Je fais un test cependant""" .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Terminé
-
-:Terminé rdf:type owl:DatatypeProperty ;
-         
-         rdfs:subPropertyOf :Etat .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type
-
-:Type rdf:type owl:DatatypeProperty .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_de_lieu
-
-:Type_de_lieu rdf:type owl:DatatypeProperty ;
-              
-              rdfs:subPropertyOf :Type .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_de_projet
-
-:Type_de_projet rdf:type owl:DatatypeProperty ;
-                
-                rdfs:subPropertyOf :Type ;
-                
-                rdfs:domain :Initiative ;
-                
-                rdfs:range xsd:string .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_de_thèse
-
-:Type_de_thèse rdf:type owl:DatatypeProperty ;
-               
-               rdfs:subPropertyOf :Type ;
-               
-               rdfs:domain :Thèse ;
-               
-               rdfs:range xsd:string .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Téléphone
-
-:Téléphone rdf:type owl:DatatypeProperty ;
-           
-           rdfs:domain :Acteur ,
-                       :Projet ,
-                       :Ressource ,
-                       :Thèse ;
-           
-           rdfs:range xsd:decimal .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ville
-
-:Ville rdf:type owl:DatatypeProperty ;
-       
-       rdfs:domain :Acteur ,
-                   :Projet ,
-                   :Ressource .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#140_caractères
-
-:140_caractères rdf:type owl:DatatypeProperty ;
-                
-                rdfs:subPropertyOf :Description .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Raison_d'être
-
-:Raison_d_être rdf:type owl:DatatypeProperty ;
-               
-               rdfs:subPropertyOf :Code_Social .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Site_web_/_URL
-
-:Site_web_ou_URL rdf:type owl:DatatypeProperty ;
-                
-                rdfs:domain :Acteur ,
-                            :Idée ,
-                            :Projet ,
-                            :Ressource ;
-                
-                rdfs:range xsd:anyURI .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_d'événement
-
-:Type_d_événement rdf:type owl:DatatypeProperty ;
-                 
-                 rdfs:subPropertyOf :Type ;
-                 
-                 rdfs:domain :Evènement .
-
-
-
-
-
-#################################################################
-#
-#    Classes
-#
-#################################################################
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Acteur
-
-:Acteur rdf:type owl:Class .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Argent
-
-:Argent rdf:type owl:Class ;
-        
-        rdfs:subClassOf :Ressource .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Argument
-
-:Argument rdf:type owl:Class ;
-          
-          rdfs:subClassOf :Thèse .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Association
-
-:Association rdf:type owl:Class ;
-             
-             rdfs:subClassOf :Organisation .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Bien
-
-:Bien rdf:type owl:Class ;
-      
-      rdfs:subClassOf :Ressource .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Bonne_pratique
-
-:Bonne_pratique rdf:type owl:Class ;
-                
-                rdfs:subClassOf :Ressource .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Collectif_informel
-
-:Collectif_informel rdf:type owl:Class ;
-                    
-                    rdfs:subClassOf :Organisation .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Collectivité
-
-:Collectivité rdf:type owl:Class ;
-              
-              rdfs:subClassOf :Organisation .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Compte_Rendu
-
-:Compte_Rendu rdf:type owl:Class ;
-              
-              rdfs:subClassOf :Ressource_documentaire .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Compétence
-
-:Compétence rdf:type owl:Class ;
-            
-            rdfs:subClassOf :Ressource .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Contre
-
-:Contre rdf:type owl:Class ;
-        
-        rdfs:subClassOf :Argument .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Entreprise
-
-:Entreprise rdf:type owl:Class ;
-            
-            rdfs:subClassOf :Organisation .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Evènement
-
-:Evènement rdf:type owl:Class ;
-           
-           rdfs:subClassOf :Projet .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Idée
-
-:Idée rdf:type owl:Class .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Individu
-
-:Individu rdf:type owl:Class ;
-          
-          rdfs:subClassOf :Acteur .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Initiative
-
-:Initiative rdf:type owl:Class ;
-            
-            rdfs:subClassOf :Projet .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Institution
-
-:Institution rdf:type owl:Class ;
-             
-             rdfs:subClassOf :Organisation .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Langage
-
-:Langage rdf:type owl:Class ;
-         
-         rdfs:subClassOf :Outil .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Lieu
-
-:Lieu rdf:type owl:Class ;
-      
-      rdfs:subClassOf :Ressource .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Logiciel
-
-:Logiciel rdf:type owl:Class ;
-          
-          rdfs:subClassOf :Outil .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Méthodologie
-
-:Méthodologie rdf:type owl:Class ;
-              
-              rdfs:subClassOf :Outil .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Oeuvre
-
-:Oeuvre rdf:type owl:Class ;
-        
-        rdfs:subClassOf :Ressource .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Organisation
-
-:Organisation rdf:type owl:Class ;
-              
-              rdfs:subClassOf :Acteur .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Outil
-
-:Outil rdf:type owl:Class ;
-       
-       rdfs:subClassOf :Ressource .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Pro
-
-:Pro rdf:type owl:Class ;
-     
-     rdfs:subClassOf :Argument .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Problématique
-
-:Problématique rdf:type owl:Class ;
-              
-              rdfs:subClassOf :Thèse .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Projet
-
-:Projet rdf:type owl:Class .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Proposition
-
-:Proposition rdf:type owl:Class ;
-             
-             rdfs:subClassOf :Thèse .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Protocole
-
-:Protocole rdf:type owl:Class ;
-           
-           rdfs:subClassOf :Outil .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource
-
-:Ressource rdf:type owl:Class .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource_documentaire
-
-:Ressource_documentaire rdf:type owl:Class ;
-                        
-                        rdfs:subClassOf :Ressource .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Service
-
-:Service rdf:type owl:Class ;
-         
-         rdfs:subClassOf :Ressource .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Temps
-
-:Temps rdf:type owl:Class ;
-       
-       rdfs:subClassOf :Ressource .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Thème
-
-:Thème rdf:type owl:Class ;
-       
-       rdfs:subClassOf :Idée .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Thèse
-
-:Thèse rdf:type owl:Class ;
-       
-       rdfs:subClassOf :Idée .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Tutoriel
-
-:Tutoriel rdf:type owl:Class ;
-          
-          rdfs:subClassOf :Ressource_documentaire .
-
-
-
-
-
-#################################################################
-#
-#    Individuals
-#
-#################################################################
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Assemblée_Générale
-
-:Assemblée_Générale rdf:type owl:NamedIndividual ,
-                             :Acteur ;
-                    
-                    :Type_d_événement "" .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Autre
-
-:Autre rdf:type owl:NamedIndividual ,
-                :Acteur ;
-       
-       :Type_d_événement "" .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Barcamp
-
-:Barcamp rdf:type owl:NamedIndividual ,
-                  :Acteur ;
-         
-         :Type_d_événement "" .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Café_des_pixels
-
-:Café_des_pixels rdf:type owl:NamedIndividual ,
-                          :Acteur ;
-                 
-                 :Type_d_événement "" .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Femme
-
-:Femme rdf:type owl:NamedIndividual ,
-                :Acteur ;
-       
-       :Genre "" .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Festival
-
-:Festival rdf:type owl:NamedIndividual ,
-                   :Acteur ;
-          
-          :Type_d_événement "" .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Homme
-
-:Homme rdf:type owl:NamedIndividual ,
-                :Acteur ;
-       
-       :Genre "" .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Réunion
-
-:Réunion rdf:type owl:NamedIndividual ,
-                  :Acteur ;
-         
-         :Type_d_événement "" .
-
-
-
-###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#aPAIRo
-
-:aPAIRo rdf:type owl:NamedIndividual ,
-                 :Acteur ;
-        
-        :Type_d_événement "" .
-
-
-
-
-
-#################################################################
-#
-#    General axioms
-#
-#################################################################
-
-
-[ rdf:type owl:AllDifferent ;
-  owl:distinctMembers ( :Femme
-                        :Homme
-                      )
-] .
-
-
-
-
-###  Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi
-
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Site_web_ou_URL
+
+:Site_web_ou_URL a owl:DatatypeProperty ;
+	rdfs:domain :Ressource ;
+	rdfs:range xsd:anyURI .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Terminé
+
+:Terminé a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :Etat .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type
+
+:Type a owl:DatatypeProperty .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_d_événement
+
+:Type_d_événement a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :Type ;
+	rdfs:domain <http://www.virtual-assembly.org/ontologies/1.0/pair#Event> .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_de_lieu
+
+:Type_de_lieu a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :Type .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_de_projet
+
+:Type_de_projet a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :Type ;
+	rdfs:domain <ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission> ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_de_thèse
+
+:Type_de_thèse a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :Type ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Téléphone
+
+:Téléphone a owl:DatatypeProperty ;
+	rdfs:domain :Ressource ;
+	rdfs:range xsd:decimal .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ville
+
+:Ville a owl:DatatypeProperty ;
+	rdfs:domain :Ressource .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#140_caractères
+
+:140_caractères a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :Description .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Argent
+
+:Argent a owl:Class ;
+	rdfs:subClassOf :Ressource .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Association
+
+:Association a owl:Class .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Association_non_déclarée
+
+:Association_non_déclarée a owl:Class .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Bien
+
+:Bien a owl:Class ;
+	rdfs:subClassOf :Ressource .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Bonne_pratique
+
+:Bonne_pratique a owl:Class ;
+	rdfs:subClassOf :Ressource .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Collectivité
+
+:Collectivité a owl:Class .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Compte_Rendu
+
+:Compte_Rendu a owl:Class ;
+	rdfs:subClassOf :Ressource_documentaire .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Compétence
+
+:Compétence a owl:Class ;
+	rdfs:subClassOf :Ressource .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Entreprise
+
+:Entreprise a owl:Class .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Individu
+
+:Individu a owl:Class .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Institution
+
+:Institution a owl:Class .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Langage
+
+:Langage a owl:Class ;
+	rdfs:subClassOf :Outil .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Lieu
+
+:Lieu a owl:Class ;
+	rdfs:subClassOf :Ressource .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Logiciel
+
+:Logiciel a owl:Class ;
+	rdfs:subClassOf :Outil .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Méthodologie
+
+:Méthodologie a owl:Class ;
+	rdfs:subClassOf :Outil .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Oeuvre
+
+:Oeuvre a owl:Class ;
+	rdfs:subClassOf :Ressource .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Outil
+
+:Outil a owl:Class ;
+	rdfs:subClassOf :Ressource .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Protocole
+
+:Protocole a owl:Class ;
+	rdfs:subClassOf :Outil .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource
+
+:Ressource a owl:Class .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource_documentaire
+
+:Ressource_documentaire a owl:Class ;
+	rdfs:subClassOf :Ressource .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Service
+
+:Service a owl:Class ;
+	rdfs:subClassOf :Ressource .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Temps
+
+:Temps a owl:Class ;
+	rdfs:subClassOf :Ressource .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Tutoriel
+
+:Tutoriel a owl:Class ;
+	rdfs:subClassOf :Ressource_documentaire .
+# 
+# http://www.virtual-assembly.org/ontologies/1.0/pair#Event
+
+<http://www.virtual-assembly.org/ontologies/1.0/pair#Event> a owl:Class .
+# 
+# ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission
+
+<ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission> a owl:Class .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Assemblée_Générale
+
+:Assemblée_Générale a owl:NamedIndividual ;
+	:Type_d_événement "" .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Autre
+
+:Autre a owl:NamedIndividual ;
+	:Type_d_événement "" .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Barcamp
+
+:Barcamp a owl:NamedIndividual ;
+	:Type_d_événement "" .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Café_des_pixels
+
+:Café_des_pixels a owl:NamedIndividual ;
+	:Type_d_événement "" .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Femme
+
+:Femme a owl:NamedIndividual ;
+	:Genre "" .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Festival
+
+:Festival a owl:NamedIndividual ;
+	:Type_d_événement "" .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Homme
+
+:Homme a owl:NamedIndividual ;
+	:Genre "" .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Réunion
+
+:Réunion a owl:NamedIndividual ;
+	:Type_d_événement "" .
+# 
+# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#aPAIRo
+
+:aPAIRo a owl:NamedIndividual ;
+	:Type_d_événement "" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+
+_:genid1 a owl:AllDifferent ;
+	owl:distinctMembers _:genid3 .
+
+_:genid3 a rdf:List ;
+	rdf:first :Femme ;
+	rdf:rest _:genid2 .
+
+_:genid2 a rdf:List ;
+	rdf:first :Homme ;
+	rdf:rest rdf:nil .
+# 
+# Generated by the OWL API (version 4.2.1.20160306-0033) https://github.com/owlcs/owlapi
