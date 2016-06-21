@@ -13,7 +13,7 @@
 
 <http://www.virtual-assembly.org/ontologies/1.0/pair> rdf:type owl:Ontology ;
                                                       
-                                                      owl:imports av: .
+                                                      owl:imports <http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10> .
 
 
 #################################################################
@@ -80,14 +80,9 @@ av:contributes rdf:type owl:ObjectProperty ;
 
 ###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributesToOrganization
 
-av:contributesToOrganization rdf:type owl:AsymmetricProperty ,
-                                      owl:ObjectProperty ;
+av:contributesToOrganization rdf:type owl:ObjectProperty ;
                              
                              rdfs:label "adhère"@fr ;
-                             
-                             rdfs:comment "Exprime le lien entre un individu et une organisation, dans laquelle l'individu se reconnaît dans l'action de l'organisation"@fr ;
-                             
-                             rdfs:subPropertyOf <http://www.assemblee-virtuelle.org/ontologies/v1.owl##hasStructuralRelationWith> ;
                              
                              rdfs:domain :Person ;
                              
@@ -148,16 +143,14 @@ av:isLikedBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesIdea
 
-av:likesIdea rdf:type owl:AsymmetricProperty ,
-                      owl:ObjectProperty ;
+av:likesIdea rdf:type owl:ObjectProperty ,
+                      owl:SymmetricProperty ;
              
              rdfs:label "aime l'idée"@fr ;
              
-             rdfs:subPropertyOf <http://www.assemblee-virtuelle.org/ontologies/v1.owl##hasAnArgumentOn> ;
+             rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> ;
              
-             rdfs:domain :Actor ;
-             
-             rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> .
+             rdfs:domain foaf:Organization .
 
 
 
@@ -337,8 +330,7 @@ av:twitterId rdf:type owl:DatatypeProperty ;
        
        rdfs:label "Acteur"@fr ;
        
-       rdfs:subClassOf <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor> ,
-                       foaf:Agent .
+       rdfs:subClassOf foaf:Agent .
 
 
 
