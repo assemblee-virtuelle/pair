@@ -9,10 +9,13 @@
 @prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl> .
 
-<http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl> rdf:type owl:Ontology ;
-                                                            owl:imports pair: .
+# @base <http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl> .
+# <http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl
+
+<> rdf:type owl:Ontology ;
+	rdfs:label "Ontologie AV version Michel"@fr ;
+	owl:imports <pair.0.1.ttl> .
 
 
 #################################################################
