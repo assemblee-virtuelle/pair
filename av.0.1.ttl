@@ -22,7 +22,7 @@
 #################################################################
 
 
-###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#metAt
+###  http://www.assemblee-virtuelle.org/ontologies/av.0.1.ttl#metAt
 
 :metAt rdf:type owl:ObjectProperty ;
 
@@ -63,7 +63,7 @@
 
 
 
-###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributes
+###  http://www.assemblee-virtuelle.org/ontologies/av.0.1.ttl#contributes
 
 :contributes rdf:type owl:ObjectProperty ;
 
@@ -77,7 +77,7 @@
 
 
 
-###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributesToOrganization
+###  http://www.assemblee-virtuelle.org/ontologies/av.0.1.ttl#contributesToOrganization
 
 :contributesToOrganization rdf:type owl:AsymmetricProperty ,
                                       owl:ObjectProperty ;
@@ -86,7 +86,7 @@
 
                              rdfs:comment "Exprime le lien entre un individu et une organisation, dans laquelle l'individu se reconnaît dans l'action de l'organisation"@fr ;
 
-                             rdfs:subPropertyOf <http://www.assemblee-virtuelle.org/ontologies/v1.owl##hasStructuralRelationWith> ;
+                             rdfs:subPropertyOf <http://www.assemblee-virtuelle.org/ontologies/av.0.1.ttl##hasStructuralRelationWith> ;
 
                              rdfs:domain :Person ;
 
@@ -94,7 +94,7 @@
 
 
 
-###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#employeeOf
+###  http://www.assemblee-virtuelle.org/ontologies/av.0.1.ttl#employeeOf
 
 :employeeOf rdf:type owl:ObjectProperty ;
 
@@ -108,7 +108,7 @@
 
 
 
-###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasContributor
+###  http://www.assemblee-virtuelle.org/ontologies/av.0.1.ttl#hasContributor
 
 :hasContributor rdf:type owl:ObjectProperty ;
 
@@ -119,7 +119,7 @@
 
 
 
-###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasEmployee
+###  http://www.assemblee-virtuelle.org/ontologies/av.0.1.ttl#hasEmployee
 
 :hasEmployee rdf:type owl:ObjectProperty ;
 
@@ -133,7 +133,7 @@
 
 
 
-###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#isLikedBy
+###  http://www.assemblee-virtuelle.org/ontologies/av.0.1.ttl#isLikedBy
 
 :isLikedBy rdf:type owl:ObjectProperty ;
 
@@ -145,14 +145,14 @@
 
 
 
-###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesIdea
+###  http://www.assemblee-virtuelle.org/ontologies/av.0.1.ttl#likesIdea
 
 :likesIdea rdf:type owl:AsymmetricProperty ,
                       owl:ObjectProperty ;
 
              rdfs:label "aime l'idée"@fr ;
 
-             rdfs:subPropertyOf <http://www.assemblee-virtuelle.org/ontologies/v1.owl##hasAnArgumentOn> ;
+             rdfs:subPropertyOf <http://www.assemblee-virtuelle.org/ontologies/av.0.1.ttl##hasAnArgumentOn> ;
 
              rdfs:domain :Actor ;
 
@@ -160,7 +160,7 @@
 
 
 
-###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#opposedTo
+###  http://www.assemblee-virtuelle.org/ontologies/av.0.1.ttl#opposedTo
 
 :opposedTo rdf:type owl:ObjectProperty ,
                       owl:SymmetricProperty ;
@@ -173,7 +173,7 @@
 
 
 
-###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#originator
+###  http://www.assemblee-virtuelle.org/ontologies/av.0.1.ttl#originator
 
 :originator rdf:type owl:ObjectProperty ;
 
@@ -185,7 +185,7 @@
 
 
 
-###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#partner
+###  http://www.assemblee-virtuelle.org/ontologies/av.0.1.ttl#partner
 
 :partner rdf:type owl:ObjectProperty ,
                     owl:SymmetricProperty ;
@@ -198,7 +198,7 @@
 
 
 
-###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#specializedIn
+###  http://www.assemblee-virtuelle.org/ontologies/av.0.1.ttl#specializedIn
 
 :specializedIn rdf:type owl:ObjectProperty ,
                           owl:SymmetricProperty ;
@@ -211,7 +211,7 @@
 
 
 
-###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#supports
+###  http://www.assemblee-virtuelle.org/ontologies/av.0.1.ttl#supports
 
 :supports rdf:type owl:ObjectProperty ;
 
@@ -223,7 +223,7 @@
 
 
 
-###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#worksWith
+###  http://www.assemblee-virtuelle.org/ontologies/av.0.1.ttl#worksWith
 
 :worksWith rdf:type owl:ObjectProperty ,
                       owl:SymmetricProperty ;
@@ -285,7 +285,7 @@ foaf:member rdf:type owl:ObjectProperty .
 #################################################################
 
 
-###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#facebookId
+###  http://www.assemblee-virtuelle.org/ontologies/av.0.1.ttl#facebookId
 
 :facebookId rdf:type owl:DatatypeProperty ;
 
@@ -295,7 +295,7 @@ foaf:member rdf:type owl:ObjectProperty .
 
 
 
-###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#linkedinId
+###  http://www.assemblee-virtuelle.org/ontologies/av.0.1.ttl#linkedinId
 
 :linkedinId rdf:type owl:DatatypeProperty ;
 
@@ -305,7 +305,7 @@ foaf:member rdf:type owl:ObjectProperty .
 
 
 
-###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#twitterId
+###  http://www.assemblee-virtuelle.org/ontologies/av.0.1.ttl#twitterId
 
 :twitterId rdf:type owl:DatatypeProperty ;
 
