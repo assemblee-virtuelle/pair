@@ -39,11 +39,45 @@ av:metAt a owl:AnnotationProperty ;
 
 <http://purl.org/dc/terms/creator> a owl:ObjectProperty .
 # 
+# http://purl.org/dc/terms/hasPart
+
+<http://purl.org/dc/terms/hasPart> a owl:ObjectProperty .
+# 
+# http://purl.org/dc/terms/isPartOf
+
+<http://purl.org/dc/terms/isPartOf> a owl:ObjectProperty .
+# 
 # http://purl.org/dc/terms/subject
 
 <http://purl.org/dc/terms/subject> a owl:ObjectProperty ;
 	rdfs:domain owl:Thing ;
-	rdfs:range :Idea .
+	rdfs:range _:genid1 .
+
+_:genid1 a owl:Class ;
+	owl:unionOf _:genid5 .
+
+_:genid5 a rdf:List ;
+	rdf:first :Actor ;
+	rdf:rest _:genid4 .
+
+_:genid4 a rdf:List ;
+	rdf:first :Idea ;
+	rdf:rest _:genid3 .
+
+_:genid3 a rdf:List ;
+	rdf:first :Project ;
+	rdf:rest _:genid2 .
+
+_:genid2 a rdf:List ;
+	rdf:first :Resource ;
+	rdf:rest rdf:nil .
+
+<http://purl.org/dc/terms/subject> rdfs:comment """\"A pour sujet\" permet d'identifier de quoi un PAIR parle ou traite ... Il peut s'agir : 
+- d'un acteur (ex: ce document a pour sujet Monsanto), 
+- d'une idée (ex : Assemblée virtuelle) a pour sujet le peer to peer), 
+- d'un projet (ex: semantic forms a pour sujet l'interopérabilté)
+- d'une ressource (ex: économie symbiotique a pour sujet développement durable)"""@fr ;
+	rdfs:label "a pour sujet"@fr .
 # 
 # http://purl.org/goodrelations/v1#offers
 
@@ -59,16 +93,16 @@ av:metAt a owl:AnnotationProperty ;
 
 <http://purl.org/ontology/cco/core#expertise> a owl:ObjectProperty ;
 	rdfs:domain foaf:Agent ;
-	rdfs:range _:genid1 .
+	rdfs:range _:genid6 .
 
-_:genid1 a owl:Class ;
-	owl:unionOf _:genid3 .
+_:genid6 a owl:Class ;
+	owl:unionOf _:genid8 .
 
-_:genid3 a rdf:List ;
+_:genid8 a rdf:List ;
 	rdf:first <http://purl.org/ontology/cco/core#cco:Skill> ;
-	rdf:rest _:genid2 .
+	rdf:rest _:genid7 .
 
-_:genid2 a rdf:List ;
+_:genid7 a rdf:List ;
 	rdf:first :Idea ;
 	rdf:rest rdf:nil .
 # 
@@ -76,62 +110,29 @@ _:genid2 a rdf:List ;
 
 <http://purl.org/spar/cito/likes> a owl:ObjectProperty .
 # 
-# http://purl.org/spar/cito/supports
-
-<http://purl.org/spar/cito/supports> a owl:ObjectProperty ;
-	rdfs:domain foaf:Agent ;
-	rdfs:range _:genid4 .
-
-_:genid4 a owl:Class ;
-	owl:unionOf _:genid10 .
-
-_:genid10 a rdf:List ;
-	rdf:first <http://schema.org/CreativeWork> ;
-	rdf:rest _:genid9 .
-
-_:genid9 a rdf:List ;
-	rdf:first <http://schema.org/Event> ;
-	rdf:rest _:genid8 .
-
-_:genid8 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid7 .
-
-_:genid7 a rdf:List ;
-	rdf:first :Place ;
-	rdf:rest _:genid6 .
-
-_:genid6 a rdf:List ;
-	rdf:first foaf:Agent ;
-	rdf:rest _:genid5 .
-
-_:genid5 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-# 
 # http://rdfs.org/sioc/ns#follows
 
 <http://rdfs.org/sioc/ns#follows> a owl:ObjectProperty ;
-	rdfs:subPropertyOf <http://purl.org/spar/cito/likes> ;
+	rdfs:subPropertyOf owl:topObjectProperty ;
 	rdfs:domain :Actor ;
-	rdfs:range _:genid11 .
+	rdfs:range _:genid9 .
 
-_:genid11 a owl:Class ;
-	owl:unionOf _:genid15 .
-
-_:genid15 a rdf:List ;
-	rdf:first :Actor ;
-	rdf:rest _:genid14 .
-
-_:genid14 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid13 .
+_:genid9 a owl:Class ;
+	owl:unionOf _:genid13 .
 
 _:genid13 a rdf:List ;
-	rdf:first :Project ;
+	rdf:first :Actor ;
 	rdf:rest _:genid12 .
 
 _:genid12 a rdf:List ;
+	rdf:first :Idea ;
+	rdf:rest _:genid11 .
+
+_:genid11 a rdf:List ;
+	rdf:first :Project ;
+	rdf:rest _:genid10 .
+
+_:genid10 a rdf:List ;
 	rdf:first :Resource ;
 	rdf:rest rdf:nil .
 # 
@@ -179,28 +180,28 @@ _:genid12 a rdf:List ;
 
 :carriesOut a owl:ObjectProperty ;
 	rdfs:subPropertyOf :actualizes ;
-	rdfs:domain _:genid16 .
+	rdfs:domain _:genid14 .
 
-_:genid16 a owl:Class ;
-	owl:unionOf _:genid21 .
-
-_:genid21 a rdf:List ;
-	rdf:first <http://purl.org/goodrelations/v1#Offering> ;
-	rdf:rest _:genid20 .
-
-_:genid20 a rdf:List ;
-	rdf:first <http://schema.org/CreativeWork> ;
-	rdf:rest _:genid19 .
+_:genid14 a owl:Class ;
+	owl:unionOf _:genid19 .
 
 _:genid19 a rdf:List ;
-	rdf:first <http://schema.org/Event> ;
+	rdf:first <http://purl.org/goodrelations/v1#Offering> ;
 	rdf:rest _:genid18 .
 
 _:genid18 a rdf:List ;
-	rdf:first foaf:Agent ;
+	rdf:first <http://schema.org/CreativeWork> ;
 	rdf:rest _:genid17 .
 
 _:genid17 a rdf:List ;
+	rdf:first <http://schema.org/Event> ;
+	rdf:rest _:genid16 .
+
+_:genid16 a rdf:List ;
+	rdf:first foaf:Agent ;
+	rdf:rest _:genid15 .
+
+_:genid15 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -211,28 +212,28 @@ _:genid17 a rdf:List ;
 
 :contributedTo a owl:ObjectProperty ;
 	rdfs:domain foaf:Agent ;
-	rdfs:range _:genid22 .
+	rdfs:range _:genid20 .
 
-_:genid22 a owl:Class ;
-	owl:unionOf _:genid27 .
-
-_:genid27 a rdf:List ;
-	rdf:first <http://schema.org/CreativeWork> ;
-	rdf:rest _:genid26 .
-
-_:genid26 a rdf:List ;
-	rdf:first <http://schema.org/Event> ;
-	rdf:rest _:genid25 .
+_:genid20 a owl:Class ;
+	owl:unionOf _:genid25 .
 
 _:genid25 a rdf:List ;
-	rdf:first foaf:Group ;
+	rdf:first <http://schema.org/CreativeWork> ;
 	rdf:rest _:genid24 .
 
 _:genid24 a rdf:List ;
-	rdf:first foaf:Organization ;
+	rdf:first <http://schema.org/Event> ;
 	rdf:rest _:genid23 .
 
 _:genid23 a rdf:List ;
+	rdf:first foaf:Group ;
+	rdf:rest _:genid22 .
+
+_:genid22 a rdf:List ;
+	rdf:first foaf:Organization ;
+	rdf:rest _:genid21 .
+
+_:genid21 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -243,28 +244,28 @@ _:genid23 a rdf:List ;
 :contributesTo a owl:ObjectProperty ;
 	owl:inverseOf :hasContributor ;
 	rdfs:domain foaf:Agent ;
-	rdfs:range _:genid28 .
+	rdfs:range _:genid26 .
 
-_:genid28 a owl:Class ;
-	owl:unionOf _:genid33 .
-
-_:genid33 a rdf:List ;
-	rdf:first <http://schema.org/CreativeWork> ;
-	rdf:rest _:genid32 .
-
-_:genid32 a rdf:List ;
-	rdf:first <http://schema.org/Event> ;
-	rdf:rest _:genid31 .
+_:genid26 a owl:Class ;
+	owl:unionOf _:genid31 .
 
 _:genid31 a rdf:List ;
-	rdf:first foaf:Group ;
+	rdf:first <http://schema.org/CreativeWork> ;
 	rdf:rest _:genid30 .
 
 _:genid30 a rdf:List ;
-	rdf:first foaf:Organization ;
+	rdf:first <http://schema.org/Event> ;
 	rdf:rest _:genid29 .
 
 _:genid29 a rdf:List ;
+	rdf:first foaf:Group ;
+	rdf:rest _:genid28 .
+
+_:genid28 a rdf:List ;
+	rdf:first foaf:Organization ;
+	rdf:rest _:genid27 .
+
+_:genid27 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -284,37 +285,37 @@ _:genid29 a rdf:List ;
 
 :creatorof a owl:ObjectProperty ;
 	rdfs:subPropertyOf <http://purl.org/dc/terms/creator> ;
-	rdfs:domain _:genid34 .
+	rdfs:domain _:genid32 .
 
-_:genid34 a owl:Class ;
-	owl:unionOf _:genid36 .
+_:genid32 a owl:Class ;
+	owl:unionOf _:genid34 .
 
-_:genid36 a rdf:List ;
+_:genid34 a rdf:List ;
 	rdf:first foaf:Agent ;
-	rdf:rest _:genid35 .
+	rdf:rest _:genid33 .
 
-_:genid35 a rdf:List ;
+_:genid33 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
-:creatorof rdfs:range _:genid37 .
+:creatorof rdfs:range _:genid35 .
 
-_:genid37 a owl:Class ;
-	owl:unionOf _:genid41 .
-
-_:genid41 a rdf:List ;
-	rdf:first <http://purl.org/goodrelations/v1#Offering> ;
-	rdf:rest _:genid40 .
-
-_:genid40 a rdf:List ;
-	rdf:first <http://schema.org/CreativeWork> ;
-	rdf:rest _:genid39 .
+_:genid35 a owl:Class ;
+	owl:unionOf _:genid39 .
 
 _:genid39 a rdf:List ;
-	rdf:first :Idea ;
+	rdf:first <http://purl.org/goodrelations/v1#Offering> ;
 	rdf:rest _:genid38 .
 
 _:genid38 a rdf:List ;
+	rdf:first <http://schema.org/CreativeWork> ;
+	rdf:rest _:genid37 .
+
+_:genid37 a rdf:List ;
+	rdf:first :Idea ;
+	rdf:rest _:genid36 .
+
+_:genid36 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -327,6 +328,7 @@ _:genid38 a rdf:List ;
 # http://www.virtual-assembly.org/ontologies/1.0/pair#dependsOn
 
 :dependsOn a owl:ObjectProperty ;
+	rdfs:subPropertyOf <http://purl.org/dc/terms/hasPart> ;
 	rdfs:domain :Resource ;
 	rdfs:range :Resource .
 # 
@@ -334,28 +336,28 @@ _:genid38 a rdf:List ;
 
 :embodies a owl:ObjectProperty ;
 	rdfs:subPropertyOf :actualizes ;
-	rdfs:domain _:genid42 .
+	rdfs:domain _:genid40 .
 
-_:genid42 a owl:Class ;
-	owl:unionOf _:genid47 .
-
-_:genid47 a rdf:List ;
-	rdf:first <http://purl.org/goodrelations/v1#Offering> ;
-	rdf:rest _:genid46 .
-
-_:genid46 a rdf:List ;
-	rdf:first <http://schema.org/CreativeWork> ;
-	rdf:rest _:genid45 .
+_:genid40 a owl:Class ;
+	owl:unionOf _:genid45 .
 
 _:genid45 a rdf:List ;
-	rdf:first <http://schema.org/Event> ;
+	rdf:first <http://purl.org/goodrelations/v1#Offering> ;
 	rdf:rest _:genid44 .
 
 _:genid44 a rdf:List ;
-	rdf:first foaf:Agent ;
+	rdf:first <http://schema.org/CreativeWork> ;
 	rdf:rest _:genid43 .
 
 _:genid43 a rdf:List ;
+	rdf:first <http://schema.org/Event> ;
+	rdf:rest _:genid42 .
+
+_:genid42 a rdf:List ;
+	rdf:first foaf:Agent ;
+	rdf:rest _:genid41 .
+
+_:genid41 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -366,27 +368,40 @@ _:genid43 a rdf:List ;
 
 :financialSupport a owl:ObjectProperty ;
 	rdfs:subPropertyOf :supports ;
-	rdfs:label "soutient financièrement" .
+	rdfs:range _:genid46 .
+
+_:genid46 a owl:Class ;
+	owl:unionOf _:genid48 .
+
+_:genid48 a rdf:List ;
+	rdf:first :Organization ;
+	rdf:rest _:genid47 .
+
+_:genid47 a rdf:List ;
+	rdf:first :Project ;
+	rdf:rest rdf:nil .
+
+:financialSupport rdfs:label "soutient financièrement" .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#follows
 
 :follows a owl:ObjectProperty ;
-	rdfs:subPropertyOf <http://rdfs.org/sioc/ns#follows> , :likes ;
+	rdfs:subPropertyOf <http://purl.org/spar/cito/likes> , <http://rdfs.org/sioc/ns#follows> ;
 	rdfs:domain foaf:Agent ;
-	rdfs:range _:genid48 .
+	rdfs:range _:genid49 .
 
-_:genid48 a owl:Class ;
-	owl:unionOf _:genid51 .
+_:genid49 a owl:Class ;
+	owl:unionOf _:genid52 .
+
+_:genid52 a rdf:List ;
+	rdf:first <http://schema.org/Event> ;
+	rdf:rest _:genid51 .
 
 _:genid51 a rdf:List ;
-	rdf:first <http://schema.org/Event> ;
+	rdf:first foaf:Agent ;
 	rdf:rest _:genid50 .
 
 _:genid50 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid49 .
-
-_:genid49 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -397,28 +412,28 @@ _:genid49 a rdf:List ;
 :founderof a owl:ObjectProperty ;
 	rdfs:subPropertyOf <http://purl.org/dc/terms/creator> ;
 	rdfs:domain foaf:Agent ;
-	rdfs:range _:genid52 .
+	rdfs:range _:genid53 .
 
-_:genid52 a owl:Class ;
-	owl:unionOf _:genid57 .
+_:genid53 a owl:Class ;
+	owl:unionOf _:genid58 .
+
+_:genid58 a rdf:List ;
+	rdf:first <http://schema.org/Event> ;
+	rdf:rest _:genid57 .
 
 _:genid57 a rdf:List ;
-	rdf:first <http://schema.org/Event> ;
+	rdf:first :Place ;
 	rdf:rest _:genid56 .
 
 _:genid56 a rdf:List ;
-	rdf:first :Place ;
+	rdf:first foaf:Group ;
 	rdf:rest _:genid55 .
 
 _:genid55 a rdf:List ;
-	rdf:first foaf:Group ;
+	rdf:first foaf:Organization ;
 	rdf:rest _:genid54 .
 
 _:genid54 a rdf:List ;
-	rdf:first foaf:Organization ;
-	rdf:rest _:genid53 .
-
-_:genid53 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -485,21 +500,17 @@ _:genid53 a rdf:List ;
 	rdfs:range foaf:Agent ;
 	rdfs:label "a pour bénéficiaire" .
 # 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#includes
-
-:includes a owl:ObjectProperty ;
-	owl:inverseOf :isPartOf ;
-	rdfs:label "includes"@en , "inclut"@fr .
-# 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#isFacetOf
 
 :isFacetOf a owl:ObjectProperty ;
-	rdfs:domain _:genid1 .
+	rdfs:subPropertyOf <http://purl.org/dc/terms/isPartOf> ;
+	rdfs:domain _:genid59 .
 
-_:genid1 owl:unionOf _:genid62 .
+_:genid59 a owl:Class ;
+	owl:unionOf _:genid62 .
 
 _:genid62 a rdf:List ;
-	rdf:first :Actor ;
+	rdf:first :Group ;
 	rdf:rest _:genid61 .
 
 _:genid61 a rdf:List ;
@@ -508,16 +519,24 @@ _:genid61 a rdf:List ;
 
 _:genid60 a rdf:List ;
 	rdf:first :Project ;
-	rdf:rest _:genid59 .
-
-_:genid59 a rdf:List ;
-	rdf:first :Resource ;
 	rdf:rest rdf:nil .
 
-:isFacetOf rdfs:range _:genid2 .
+:isFacetOf rdfs:range _:genid63 .
 
-_:genid2 a owl:Class ;
-	owl:unionOf _:genid62 .
+_:genid63 a owl:Class ;
+	owl:unionOf _:genid66 .
+
+_:genid66 a rdf:List ;
+	rdf:first :Idea ;
+	rdf:rest _:genid65 .
+
+_:genid65 a rdf:List ;
+	rdf:first :Project ;
+	rdf:rest _:genid64 .
+
+_:genid64 a rdf:List ;
+	rdf:first :Resource ;
+	rdf:rest rdf:nil .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#isFamily
 
@@ -531,11 +550,6 @@ _:genid2 a owl:Class ;
 	rdfs:subPropertyOf foaf:knows ;
 	rdfs:label "ami de"@fr , "friend of"@en .
 # 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#isPartOf
-
-:isPartOf a owl:ObjectProperty ;
-	rdfs:label "fait partie de"@fr , "is part of"@en .
-# 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#lends
 
 :lends a owl:ObjectProperty ;
@@ -546,29 +560,45 @@ _:genid2 a owl:Class ;
 
 :likes a owl:ObjectProperty ;
 	rdfs:subPropertyOf <http://purl.org/spar/cito/likes> ;
-	rdfs:label "aime"@fr , "likes"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#moralSupport
+	rdfs:domain foaf:Agent ;
+	rdfs:range _:genid67 .
 
-:moralSupport a owl:ObjectProperty ;
-	rdfs:subPropertyOf :supports ;
-	rdfs:label "soutient (moralement)" .
+_:genid67 a owl:Class ;
+	owl:unionOf _:genid71 .
+
+_:genid71 a rdf:List ;
+	rdf:first <http://schema.org/Event> ;
+	rdf:rest _:genid70 .
+
+_:genid70 a rdf:List ;
+	rdf:first :Idea ;
+	rdf:rest _:genid69 .
+
+_:genid69 a rdf:List ;
+	rdf:first foaf:Agent ;
+	rdf:rest _:genid68 .
+
+_:genid68 a rdf:List ;
+	rdf:first foaf:Project ;
+	rdf:rest rdf:nil .
+
+:likes rdfs:label "aime"@fr , "likes"@en .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#offers
 
 :offers a owl:ObjectProperty ;
 	rdfs:subPropertyOf <http://purl.org/goodrelations/v1#offers> ;
 	a owl:FunctionalProperty ;
-	rdfs:domain _:genid63 .
+	rdfs:domain _:genid72 .
 
-_:genid63 a owl:Class ;
-	owl:unionOf _:genid65 .
+_:genid72 a owl:Class ;
+	owl:unionOf _:genid74 .
 
-_:genid65 a rdf:List ;
+_:genid74 a rdf:List ;
 	rdf:first <http://purl.org/goodrelations/v1#BusinessEntity> ;
-	rdf:rest _:genid64 .
+	rdf:rest _:genid73 .
 
-_:genid64 a rdf:List ;
+_:genid73 a rdf:List ;
 	rdf:first foaf:Agent ;
 	rdf:rest rdf:nil .
 
@@ -580,58 +610,52 @@ _:genid64 a rdf:List ;
 
 :opposedTo a owl:ObjectProperty ;
 	rdfs:subPropertyOf :debate ;
-	rdfs:domain _:genid66 .
+	rdfs:domain _:genid75 .
 
-_:genid66 a owl:Class ;
-	owl:unionOf _:genid68 .
+_:genid75 a owl:Class ;
+	owl:unionOf _:genid77 .
 
-_:genid68 a rdf:List ;
+_:genid77 a rdf:List ;
 	rdf:first :Idea ;
-	rdf:rest _:genid67 .
+	rdf:rest _:genid76 .
 
-_:genid67 a rdf:List ;
+_:genid76 a rdf:List ;
 	rdf:first foaf:Agent ;
 	rdf:rest rdf:nil .
 
 :opposedTo rdfs:range :Idea ;
 	rdfs:label "opposed to"@en , "opposé à"@fr .
 # 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#philosophicalSupport
-
-:philosophicalSupport a owl:ObjectProperty ;
-	rdfs:subPropertyOf :supports ;
-	rdfs:label "soutient (philosophiquement)" .
-# 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#products
 
 :products a owl:ObjectProperty ;
-	rdfs:domain _:genid69 .
+	rdfs:domain _:genid78 .
 
-_:genid69 a owl:Class ;
-	owl:unionOf _:genid71 .
+_:genid78 a owl:Class ;
+	owl:unionOf _:genid80 .
 
-_:genid71 a rdf:List ;
+_:genid80 a rdf:List ;
 	rdf:first foaf:Agent ;
-	rdf:rest _:genid70 .
+	rdf:rest _:genid79 .
 
-_:genid70 a rdf:List ;
+_:genid79 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
-:products rdfs:range _:genid72 .
+:products rdfs:range _:genid81 .
 
-_:genid72 a owl:Class ;
-	owl:unionOf _:genid75 .
+_:genid81 a owl:Class ;
+	owl:unionOf _:genid84 .
 
-_:genid75 a rdf:List ;
+_:genid84 a rdf:List ;
 	rdf:first :Idea ;
-	rdf:rest _:genid74 .
+	rdf:rest _:genid83 .
 
-_:genid74 a rdf:List ;
+_:genid83 a rdf:List ;
 	rdf:first :Project ;
-	rdf:rest _:genid73 .
+	rdf:rest _:genid82 .
 
-_:genid73 a rdf:List ;
+_:genid82 a rdf:List ;
 	rdf:first :Resource ;
 	rdf:rest rdf:nil .
 
@@ -648,16 +672,16 @@ _:genid73 a rdf:List ;
 
 :seeks a owl:ObjectProperty ;
 	rdfs:subPropertyOf <http://purl.org/goodrelations/v1#seeks> ;
-	rdfs:domain _:genid76 .
+	rdfs:domain _:genid85 .
 
-_:genid76 a owl:Class ;
-	owl:unionOf _:genid78 .
+_:genid85 a owl:Class ;
+	owl:unionOf _:genid87 .
 
-_:genid78 a rdf:List ;
+_:genid87 a rdf:List ;
 	rdf:first <http://purl.org/goodrelations/v1#BusinessEntity> ;
-	rdf:rest _:genid77 .
+	rdf:rest _:genid86 .
 
-_:genid77 a rdf:List ;
+_:genid86 a rdf:List ;
 	rdf:first foaf:Agent ;
 	rdf:rest rdf:nil .
 
@@ -670,86 +694,25 @@ _:genid77 a rdf:List ;
 	rdfs:subPropertyOf :offers ;
 	rdfs:label "sells"@en , "vend"@fr .
 # 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#subject
-
-:subject a owl:ObjectProperty ;
-	rdfs:subPropertyOf <http://purl.org/dc/terms/subject> ;
-	rdfs:domain _:genid79 .
-
-_:genid79 a owl:Class ;
-	owl:unionOf _:genid85 .
-
-_:genid85 a rdf:List ;
-	rdf:first <http://schema.org/CreativeWork> ;
-	rdf:rest _:genid84 .
-
-_:genid84 a rdf:List ;
-	rdf:first <http://schema.org/Event> ;
-	rdf:rest _:genid83 .
-
-_:genid83 a rdf:List ;
-	rdf:first foaf:Document ;
-	rdf:rest _:genid82 .
-
-_:genid82 a rdf:List ;
-	rdf:first foaf:Group ;
-	rdf:rest _:genid81 .
-
-_:genid81 a rdf:List ;
-	rdf:first foaf:Organization ;
-	rdf:rest _:genid80 .
-
-_:genid80 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-:subject rdfs:range _:genid86 .
-
-_:genid86 a owl:Class ;
-	owl:unionOf _:genid90 .
-
-_:genid90 a rdf:List ;
-	rdf:first :Actor ;
-	rdf:rest _:genid89 .
-
-_:genid89 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid88 .
-
-_:genid88 a rdf:List ;
-	rdf:first :Project ;
-	rdf:rest _:genid87 .
-
-_:genid87 a rdf:List ;
-	rdf:first :Resource ;
-	rdf:rest rdf:nil .
-
-:subject rdfs:comment """\"A pour sujet\" permet d'identifier de quoi un PAIR parle ou traite ... Il peut s'agir : 
-- d'un acteur (ex: ce document a pour sujet Monsanto), 
-- d'une idée (ex : Assemblée virtuelle) a pour sujet le peer to peer), 
-- d'un projet (ex: semantic forms a pour sujet l'interopérabilté)
-- d'une ressource (ex: économie symbiotique a pour sujet développement durable)""" ;
-	rdfs:label "a pour sujet"@fr , "is about"@en .
-# 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#supports
 
 :supports a owl:ObjectProperty ;
-	rdfs:subPropertyOf <http://purl.org/spar/cito/supports> ;
+	rdfs:subPropertyOf :follows ;
 	rdfs:domain foaf:Agent ;
-	rdfs:range _:genid91 .
+	rdfs:range _:genid88 .
 
-_:genid91 a owl:Class ;
-	owl:unionOf _:genid94 .
+_:genid88 a owl:Class ;
+	owl:unionOf _:genid91 .
 
-_:genid94 a rdf:List ;
+_:genid91 a rdf:List ;
 	rdf:first <http://schema.org/Event> ;
-	rdf:rest _:genid93 .
+	rdf:rest _:genid90 .
 
-_:genid93 a rdf:List ;
+_:genid90 a rdf:List ;
 	rdf:first foaf:Agent ;
-	rdf:rest _:genid92 .
+	rdf:rest _:genid89 .
 
-_:genid92 a rdf:List ;
+_:genid89 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -784,24 +747,24 @@ _:genid92 a rdf:List ;
 foaf:currentProject a owl:ObjectProperty ;
 	rdfs:subPropertyOf :contributesTo ;
 	rdfs:domain foaf:Person ;
-	rdfs:range <http://purl.org/goodrelations/v1#Offering> , _:genid95 .
+	rdfs:range <http://purl.org/goodrelations/v1#Offering> , _:genid92 .
 
-_:genid95 a owl:Class ;
-	owl:unionOf _:genid99 .
-
-_:genid99 a rdf:List ;
-	rdf:first <http://schema.org/CreativeWork> ;
-	rdf:rest _:genid98 .
-
-_:genid98 a rdf:List ;
-	rdf:first <http://schema.org/Event> ;
-	rdf:rest _:genid97 .
-
-_:genid97 a rdf:List ;
-	rdf:first foaf:Document ;
-	rdf:rest _:genid96 .
+_:genid92 a owl:Class ;
+	owl:unionOf _:genid96 .
 
 _:genid96 a rdf:List ;
+	rdf:first <http://schema.org/CreativeWork> ;
+	rdf:rest _:genid95 .
+
+_:genid95 a rdf:List ;
+	rdf:first <http://schema.org/Event> ;
+	rdf:rest _:genid94 .
+
+_:genid94 a rdf:List ;
+	rdf:first foaf:Document ;
+	rdf:rest _:genid93 .
+
+_:genid93 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 # 
@@ -814,16 +777,16 @@ foaf:knows a owl:ObjectProperty ;
 # http://xmlns.com/foaf/0.1/member
 
 foaf:member a owl:ObjectProperty ;
-	rdfs:domain _:genid100 .
+	rdfs:domain _:genid97 .
 
-_:genid100 a owl:Class ;
-	owl:unionOf _:genid102 .
+_:genid97 a owl:Class ;
+	owl:unionOf _:genid99 .
 
-_:genid102 a rdf:List ;
+_:genid99 a rdf:List ;
 	rdf:first foaf:Group ;
-	rdf:rest _:genid101 .
+	rdf:rest _:genid98 .
 
-_:genid101 a rdf:List ;
+_:genid98 a rdf:List ;
 	rdf:first foaf:Organization ;
 	rdf:rest rdf:nil .
 
@@ -832,7 +795,28 @@ foaf:member rdfs:range foaf:Agent .
 # http://xmlns.com/foaf/0.1/pastProject
 
 foaf:pastProject a owl:ObjectProperty ;
-	rdfs:subPropertyOf :contributedTo .
+	rdfs:subPropertyOf :contributedTo ;
+	rdfs:domain foaf:Person ;
+	rdfs:range <http://purl.org/goodrelations/v1#Offering> , _:genid100 .
+
+_:genid100 a owl:Class ;
+	owl:unionOf _:genid104 .
+
+_:genid104 a rdf:List ;
+	rdf:first <http://schema.org/CreativeWork> ;
+	rdf:rest _:genid103 .
+
+_:genid103 a rdf:List ;
+	rdf:first <http://schema.org/Event> ;
+	rdf:rest _:genid102 .
+
+_:genid102 a rdf:List ;
+	rdf:first foaf:Document ;
+	rdf:rest _:genid101 .
+
+_:genid101 a rdf:List ;
+	rdf:first foaf:Project ;
+	rdf:rest rdf:nil .
 # 
 # 
 # 
@@ -954,7 +938,7 @@ An instance of this class represents the legal agent making (or seeking) a parti
 # http://purl.org/goodrelations/v1#Offering
 
 <http://purl.org/goodrelations/v1#Offering> a owl:Class ;
-	rdfs:subClassOf :Resource ;
+	rdfs:subClassOf owl:Thing ;
 	rdfs:comment """URI http://purl.org/goodrelations/v1#Offering
 
 An offering represents the public, not necessarily binding, not necessarily exclusive, announcement by a gr:BusinessEntity to provide (or seek) a certain gr:BusinessFunction for a certain gr:ProductOrService to a specified target audience.""" .
@@ -967,12 +951,12 @@ An offering represents the public, not necessarily binding, not necessarily excl
 # http://schema.org/CreativeWork
 
 <http://schema.org/CreativeWork> a owl:Class ;
-	rdfs:subClassOf :Resource .
+	rdfs:subClassOf owl:Thing .
 # 
 # http://schema.org/Event
 
 <http://schema.org/Event> a owl:Class ;
-	rdfs:subClassOf :Resource .
+	rdfs:subClassOf owl:Thing .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#Activity
 
@@ -1118,7 +1102,7 @@ foaf:Agent a owl:Class ;
 # http://xmlns.com/foaf/0.1/Document
 
 foaf:Document a owl:Class ;
-	rdfs:subClassOf :Resource .
+	rdfs:subClassOf owl:Thing .
 # 
 # http://xmlns.com/foaf/0.1/Group
 
@@ -1142,7 +1126,7 @@ foaf:Project a owl:Class .
 # https://schema.org/Place
 
 <https://schema.org/Place> a owl:Class ;
-	rdfs:subClassOf :Resource .
+	rdfs:subClassOf owl:Thing .
 # 
 # ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission
 
