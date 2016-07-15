@@ -61,15 +61,15 @@ _:genid5 a rdf:List ;
 	rdf:rest _:genid4 .
 
 _:genid4 a rdf:List ;
-	rdf:first :Project ;
+	rdf:first :Resource ;
 	rdf:rest _:genid3 .
 
 _:genid3 a rdf:List ;
-	rdf:first :Resource ;
+	rdf:first foaf:Agent ;
 	rdf:rest _:genid2 .
 
 _:genid2 a rdf:List ;
-	rdf:first foaf:Agent ;
+	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
 <http://purl.org/dc/terms/subject> rdfs:comment """\"A pour sujet\" permet d'identifier de quoi un PAIR parle ou traite ... Il peut s'agir : 
@@ -125,22 +125,22 @@ _:genid13 a rdf:List ;
 	rdf:rest _:genid12 .
 
 _:genid12 a rdf:List ;
-	rdf:first :Project ;
+	rdf:first :Resource ;
 	rdf:rest _:genid11 .
 
 _:genid11 a rdf:List ;
-	rdf:first :Resource ;
+	rdf:first foaf:Agent ;
 	rdf:rest _:genid10 .
 
 _:genid10 a rdf:List ;
-	rdf:first foaf:Agent ;
+	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 # 
 # http://schema.org/attendee
 
 <http://schema.org/attendee> a owl:ObjectProperty ;
-	rdfs:domain foaf:Agent ;
-	rdfs:range :Event .
+	rdfs:domain <http://schema.org/Event> ;
+	rdfs:range foaf:Agent .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#actualizes
 
@@ -374,11 +374,11 @@ _:genid46 a owl:Class ;
 	owl:unionOf _:genid48 .
 
 _:genid48 a rdf:List ;
-	rdf:first :Organization ;
+	rdf:first foaf:Organization ;
 	rdf:rest _:genid47 .
 
 _:genid47 a rdf:List ;
-	rdf:first :Project ;
+	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
 :financialSupport rdfs:label "soutient financièrement" .
@@ -412,32 +412,7 @@ _:genid50 a rdf:List ;
 :founderof a owl:ObjectProperty ;
 	rdfs:subPropertyOf <http://purl.org/dc/terms/creator> ;
 	rdfs:domain foaf:Agent ;
-	rdfs:range _:genid53 .
-
-_:genid53 a owl:Class ;
-	owl:unionOf _:genid58 .
-
-_:genid58 a rdf:List ;
-	rdf:first <http://schema.org/Event> ;
-	rdf:rest _:genid57 .
-
-_:genid57 a rdf:List ;
-	rdf:first :Place ;
-	rdf:rest _:genid56 .
-
-_:genid56 a rdf:List ;
-	rdf:first foaf:Group ;
-	rdf:rest _:genid55 .
-
-_:genid55 a rdf:List ;
-	rdf:first foaf:Organization ;
-	rdf:rest _:genid54 .
-
-_:genid54 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-:founderof rdfs:label "fondateur de"@fr , "founder of"@en .
+	rdfs:label "fondateur de"@fr , "founder of"@en .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#gives
 
@@ -457,7 +432,7 @@ _:genid54 a rdf:List ;
 
 :hasAttendee a owl:ObjectProperty ;
 	rdfs:subPropertyOf <http://schema.org/attendee> ;
-	rdfs:domain :Event ;
+	rdfs:domain <http://schema.org/Event> ;
 	rdfs:range foaf:Agent ;
 	rdfs:label "a pour participant"@fr , "has attendee"@en .
 # 
@@ -504,21 +479,21 @@ _:genid54 a rdf:List ;
 
 :isFacetOf a owl:ObjectProperty ;
 	rdfs:subPropertyOf <http://purl.org/dc/terms/isPartOf> ;
-	rdfs:range _:genid59 .
+	rdfs:range _:genid53 .
 
-_:genid59 a owl:Class ;
-	owl:unionOf _:genid62 .
+_:genid53 a owl:Class ;
+	owl:unionOf _:genid56 .
 
-_:genid62 a rdf:List ;
+_:genid56 a rdf:List ;
 	rdf:first :Idea ;
-	rdf:rest _:genid61 .
+	rdf:rest _:genid55 .
 
-_:genid61 a rdf:List ;
-	rdf:first :Project ;
-	rdf:rest _:genid60 .
-
-_:genid60 a rdf:List ;
+_:genid55 a rdf:List ;
 	rdf:first :Resource ;
+	rdf:rest _:genid54 .
+
+_:genid54 a rdf:List ;
+	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
 :isFacetOf rdfs:comment "TODO A définir !" .
@@ -546,24 +521,24 @@ _:genid60 a rdf:List ;
 :likes a owl:ObjectProperty ;
 	rdfs:subPropertyOf <http://purl.org/spar/cito/likes> ;
 	rdfs:domain foaf:Agent ;
-	rdfs:range _:genid63 .
+	rdfs:range _:genid57 .
 
-_:genid63 a owl:Class ;
-	owl:unionOf _:genid67 .
+_:genid57 a owl:Class ;
+	owl:unionOf _:genid61 .
 
-_:genid67 a rdf:List ;
+_:genid61 a rdf:List ;
 	rdf:first <http://schema.org/Event> ;
-	rdf:rest _:genid66 .
+	rdf:rest _:genid60 .
 
-_:genid66 a rdf:List ;
+_:genid60 a rdf:List ;
 	rdf:first :Idea ;
-	rdf:rest _:genid65 .
+	rdf:rest _:genid59 .
 
-_:genid65 a rdf:List ;
+_:genid59 a rdf:List ;
 	rdf:first foaf:Agent ;
-	rdf:rest _:genid64 .
+	rdf:rest _:genid58 .
 
-_:genid64 a rdf:List ;
+_:genid58 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -574,16 +549,16 @@ _:genid64 a rdf:List ;
 :offers a owl:ObjectProperty ;
 	rdfs:subPropertyOf <http://purl.org/goodrelations/v1#offers> ;
 	a owl:FunctionalProperty ;
-	rdfs:domain _:genid68 .
+	rdfs:domain _:genid62 .
 
-_:genid68 a owl:Class ;
-	owl:unionOf _:genid70 .
+_:genid62 a owl:Class ;
+	owl:unionOf _:genid64 .
 
-_:genid70 a rdf:List ;
+_:genid64 a rdf:List ;
 	rdf:first <http://purl.org/goodrelations/v1#BusinessEntity> ;
-	rdf:rest _:genid69 .
+	rdf:rest _:genid63 .
 
-_:genid69 a rdf:List ;
+_:genid63 a rdf:List ;
 	rdf:first foaf:Agent ;
 	rdf:rest rdf:nil .
 
@@ -595,16 +570,16 @@ _:genid69 a rdf:List ;
 
 :opposedTo a owl:ObjectProperty ;
 	rdfs:subPropertyOf :debate ;
-	rdfs:domain _:genid71 .
+	rdfs:domain _:genid65 .
 
-_:genid71 a owl:Class ;
-	owl:unionOf _:genid73 .
+_:genid65 a owl:Class ;
+	owl:unionOf _:genid67 .
 
-_:genid73 a rdf:List ;
+_:genid67 a rdf:List ;
 	rdf:first :Idea ;
-	rdf:rest _:genid72 .
+	rdf:rest _:genid66 .
 
-_:genid72 a rdf:List ;
+_:genid66 a rdf:List ;
 	rdf:first foaf:Agent ;
 	rdf:rest rdf:nil .
 
@@ -614,34 +589,34 @@ _:genid72 a rdf:List ;
 # http://www.virtual-assembly.org/ontologies/1.0/pair#products
 
 :products a owl:ObjectProperty ;
-	rdfs:domain _:genid74 .
+	rdfs:domain _:genid68 .
 
-_:genid74 a owl:Class ;
-	owl:unionOf _:genid76 .
+_:genid68 a owl:Class ;
+	owl:unionOf _:genid70 .
 
-_:genid76 a rdf:List ;
+_:genid70 a rdf:List ;
 	rdf:first foaf:Agent ;
-	rdf:rest _:genid75 .
+	rdf:rest _:genid69 .
 
-_:genid75 a rdf:List ;
+_:genid69 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
-:products rdfs:range _:genid77 .
+:products rdfs:range _:genid71 .
 
-_:genid77 a owl:Class ;
-	owl:unionOf _:genid80 .
+_:genid71 a owl:Class ;
+	owl:unionOf _:genid74 .
 
-_:genid80 a rdf:List ;
+_:genid74 a rdf:List ;
 	rdf:first :Idea ;
-	rdf:rest _:genid79 .
+	rdf:rest _:genid73 .
 
-_:genid79 a rdf:List ;
-	rdf:first :Project ;
-	rdf:rest _:genid78 .
-
-_:genid78 a rdf:List ;
+_:genid73 a rdf:List ;
 	rdf:first :Resource ;
+	rdf:rest _:genid72 .
+
+_:genid72 a rdf:List ;
+	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
 :products rdfs:label "products"@en , "produit"@fr .
@@ -657,16 +632,16 @@ _:genid78 a rdf:List ;
 
 :seeks a owl:ObjectProperty ;
 	rdfs:subPropertyOf <http://purl.org/goodrelations/v1#seeks> ;
-	rdfs:domain _:genid81 .
+	rdfs:domain _:genid75 .
 
-_:genid81 a owl:Class ;
-	owl:unionOf _:genid83 .
+_:genid75 a owl:Class ;
+	owl:unionOf _:genid77 .
 
-_:genid83 a rdf:List ;
+_:genid77 a rdf:List ;
 	rdf:first <http://purl.org/goodrelations/v1#BusinessEntity> ;
-	rdf:rest _:genid82 .
+	rdf:rest _:genid76 .
 
-_:genid82 a rdf:List ;
+_:genid76 a rdf:List ;
 	rdf:first foaf:Agent ;
 	rdf:rest rdf:nil .
 
@@ -684,20 +659,20 @@ _:genid82 a rdf:List ;
 :supports a owl:ObjectProperty ;
 	rdfs:subPropertyOf :follows ;
 	rdfs:domain foaf:Agent ;
-	rdfs:range _:genid84 .
+	rdfs:range _:genid78 .
 
-_:genid84 a owl:Class ;
-	owl:unionOf _:genid87 .
+_:genid78 a owl:Class ;
+	owl:unionOf _:genid81 .
 
-_:genid87 a rdf:List ;
+_:genid81 a rdf:List ;
 	rdf:first <http://schema.org/Event> ;
-	rdf:rest _:genid86 .
+	rdf:rest _:genid80 .
 
-_:genid86 a rdf:List ;
+_:genid80 a rdf:List ;
 	rdf:first foaf:Agent ;
-	rdf:rest _:genid85 .
+	rdf:rest _:genid79 .
 
-_:genid85 a rdf:List ;
+_:genid79 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -732,24 +707,24 @@ _:genid85 a rdf:List ;
 foaf:currentProject a owl:ObjectProperty ;
 	rdfs:subPropertyOf :contributesTo ;
 	rdfs:domain foaf:Person ;
-	rdfs:range <http://purl.org/goodrelations/v1#Offering> , _:genid88 .
+	rdfs:range <http://purl.org/goodrelations/v1#Offering> , _:genid82 .
 
-_:genid88 a owl:Class ;
-	owl:unionOf _:genid92 .
+_:genid82 a owl:Class ;
+	owl:unionOf _:genid86 .
 
-_:genid92 a rdf:List ;
+_:genid86 a rdf:List ;
 	rdf:first <http://schema.org/CreativeWork> ;
-	rdf:rest _:genid91 .
+	rdf:rest _:genid85 .
 
-_:genid91 a rdf:List ;
+_:genid85 a rdf:List ;
 	rdf:first <http://schema.org/Event> ;
-	rdf:rest _:genid90 .
+	rdf:rest _:genid84 .
 
-_:genid90 a rdf:List ;
+_:genid84 a rdf:List ;
 	rdf:first foaf:Document ;
-	rdf:rest _:genid89 .
+	rdf:rest _:genid83 .
 
-_:genid89 a rdf:List ;
+_:genid83 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 # 
@@ -762,16 +737,16 @@ foaf:knows a owl:ObjectProperty ;
 # http://xmlns.com/foaf/0.1/member
 
 foaf:member a owl:ObjectProperty ;
-	rdfs:domain _:genid93 .
+	rdfs:domain _:genid87 .
 
-_:genid93 a owl:Class ;
-	owl:unionOf _:genid95 .
+_:genid87 a owl:Class ;
+	owl:unionOf _:genid89 .
 
-_:genid95 a rdf:List ;
+_:genid89 a rdf:List ;
 	rdf:first foaf:Group ;
-	rdf:rest _:genid94 .
+	rdf:rest _:genid88 .
 
-_:genid94 a rdf:List ;
+_:genid88 a rdf:List ;
 	rdf:first foaf:Organization ;
 	rdf:rest rdf:nil .
 
@@ -782,24 +757,24 @@ foaf:member rdfs:range foaf:Agent .
 foaf:pastProject a owl:ObjectProperty ;
 	rdfs:subPropertyOf :contributedTo ;
 	rdfs:domain foaf:Person ;
-	rdfs:range <http://purl.org/goodrelations/v1#Offering> , _:genid96 .
+	rdfs:range <http://purl.org/goodrelations/v1#Offering> , _:genid90 .
 
-_:genid96 a owl:Class ;
-	owl:unionOf _:genid100 .
+_:genid90 a owl:Class ;
+	owl:unionOf _:genid94 .
 
-_:genid100 a rdf:List ;
+_:genid94 a rdf:List ;
 	rdf:first <http://schema.org/CreativeWork> ;
-	rdf:rest _:genid99 .
+	rdf:rest _:genid93 .
 
-_:genid99 a rdf:List ;
+_:genid93 a rdf:List ;
 	rdf:first <http://schema.org/Event> ;
-	rdf:rest _:genid98 .
+	rdf:rest _:genid92 .
 
-_:genid98 a rdf:List ;
+_:genid92 a rdf:List ;
 	rdf:first foaf:Document ;
-	rdf:rest _:genid97 .
+	rdf:rest _:genid91 .
 
-_:genid97 a rdf:List ;
+_:genid91 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 # 
@@ -915,44 +890,38 @@ Sociologie des parties prenantes""" .
 # http://purl.org/goodrelations/v1#BusinessEntity
 
 <http://purl.org/goodrelations/v1#BusinessEntity> a owl:Class ;
-	rdfs:subClassOf :Actor ;
 	rdfs:comment """URI http://purl.org/goodrelations/v1#BusinessEntity
 
-An instance of this class represents the legal agent making (or seeking) a particular offering. This can be a legal body or a person.""" .
+An instance of this class represents the legal agent making (or seeking) a particular offering. This can be a legal body or a person.""" ;
+	rdfs:label "Entité légale"@fr .
 # 
 # http://purl.org/goodrelations/v1#Offering
 
 <http://purl.org/goodrelations/v1#Offering> a owl:Class ;
-	rdfs:subClassOf owl:Thing ;
+	rdfs:subClassOf :Resource ;
 	rdfs:comment """URI http://purl.org/goodrelations/v1#Offering
 
-An offering represents the public, not necessarily binding, not necessarily exclusive, announcement by a gr:BusinessEntity to provide (or seek) a certain gr:BusinessFunction for a certain gr:ProductOrService to a specified target audience.""" .
+An offering represents the public, not necessarily binding, not necessarily exclusive, announcement by a gr:BusinessEntity to provide (or seek) a certain gr:BusinessFunction for a certain gr:ProductOrService to a specified target audience.""" ;
+	rdfs:label "rdfs:label \"Bien ou Service\"@fr"@fr .
 # 
 # http://purl.org/ontology/cco/core#cco:Skill
 
 <http://purl.org/ontology/cco/core#cco:Skill> a owl:Class ;
-	rdfs:subClassOf :Resource .
+	rdfs:subClassOf :Resource ;
+	rdfs:label "Compétence"@fr .
 # 
 # http://schema.org/CreativeWork
 
 <http://schema.org/CreativeWork> a owl:Class ;
-	rdfs:subClassOf owl:Thing .
+	rdfs:subClassOf owl:Thing ;
+	rdfs:label "Oeuvre créative"@fr .
 # 
 # http://schema.org/Event
 
 <http://schema.org/Event> a owl:Class ;
-	rdfs:subClassOf owl:Thing .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Activity
-
-:Activity a owl:Class ;
-	rdfs:subClassOf :Project ;
-	rdfs:label "Activity"@en , "Activité"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Actor
-
-:Actor a owl:Class ;
-	rdfs:label "Acteur"@fr .
+	rdfs:subClassOf foaf:Project ;
+	rdfs:comment "An event happening at a certain time and location,' property. Repeated events may be structured as separate Event objects."@en ;
+	rdfs:label "Evènement"@en .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#Argument
 
@@ -960,30 +929,15 @@ An offering represents the public, not necessarily binding, not necessarily excl
 	rdfs:subClassOf :Thesis ;
 	rdfs:label "Argument"@en , "Argument"@fr .
 # 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Document
-
-:Document a owl:Class ;
-	rdfs:subClassOf :Resource , foaf:Document .
-# 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#Event
 
 :Event a owl:Class ;
-	rdfs:subClassOf <http://schema.org/Event> , :Project ;
-	rdfs:comment "An event happening at a certain time and location,' property. Repeated events may be structured as separate Event objects."@en ;
-	rdfs:label "Event"@en , "Évènement"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Good_or_Service
-
-:Good_or_Service a owl:Class ;
-	rdfs:subClassOf <http://purl.org/goodrelations/v1#Offering> , <http://schema.org/CreativeWork> , :Resource ;
-	rdfs:comment """Exemples :
-- projet lociciel Open Source,
-- planter des arbres""" ;
-	rdfs:label "Bien ou Service"@fr , "Good or Service"@en .
+	rdfs:label "Event type"@en , "Type d'évènement"@fr .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#Idea
 
 :Idea a owl:Class ;
+	rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
 	rdfs:comment "Mettre une définition d'idée telle que conçue par AV" ;
 	rdfs:label "Idea"@en , "Idée"@fr .
 # 
@@ -998,30 +952,6 @@ An offering represents the public, not necessarily binding, not necessarily excl
 :NaturalResources a owl:Class ;
 	rdfs:subClassOf :Resource ;
 	rdfs:label "Natural resource"@en , "Ressource naturelle"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Organization
-
-:Organization a owl:Class ;
-	rdfs:subClassOf :Actor , foaf:Organization ;
-	rdfs:label "Organisation"@fr , "Organization"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Person
-
-:Person a owl:Class ;
-	rdfs:subClassOf :Actor , foaf:Person ;
-	rdfs:label "Individu"@fr , "Person"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Place
-
-:Place a owl:Class ;
-	rdfs:subClassOf :Resource , <https://schema.org/Place> ;
-	rdfs:label "Lieu"@fr , "Place"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Project
-
-:Project a owl:Class ;
-	rdfs:subClassOf foaf:Project ;
-	rdfs:label "Project"@en , "Projet"@fr .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#Proposition
 
@@ -1040,16 +970,10 @@ An offering represents the public, not necessarily binding, not necessarily excl
 :Resource a owl:Class ;
 	rdfs:label "Resource"@en , "Ressource"@fr .
 # 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Skill
-
-:Skill a owl:Class ;
-	rdfs:subClassOf <http://purl.org/ontology/cco/core#cco:Skill> , :Resource ;
-	rdfs:label "Compétence"@fr , "Skill"@en .
-# 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#SocialCode
 
 :SocialCode a owl:Class ;
-	rdfs:subClassOf :Document .
+	rdfs:subClassOf foaf:Document .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#Theme
 
@@ -1064,52 +988,55 @@ An offering represents the public, not necessarily binding, not necessarily excl
 	rdfs:subClassOf :Idea ;
 	rdfs:label "Thesis"@en , "Thèse"@fr .
 # 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Work
-
-:Work a owl:Class ;
-	rdfs:subClassOf <http://schema.org/CreativeWork> , :Resource ;
-	rdfs:label "Oeuvre"@fr , "Work"@en .
-# 
 # http://www.w3.org/2004/02/skos/core#Concept
 
-<http://www.w3.org/2004/02/skos/core#Concept> a owl:Class ;
-	rdfs:subClassOf :Idea .
+<http://www.w3.org/2004/02/skos/core#Concept> a owl:Class .
 # 
 # http://xmlns.com/foaf/0.1/Agent
 
-foaf:Agent a owl:Class .
+foaf:Agent a owl:Class ;
+	rdfs:label "Acteur"@fr .
 # 
 # http://xmlns.com/foaf/0.1/Document
 
 foaf:Document a owl:Class ;
-	rdfs:subClassOf owl:Thing .
+	rdfs:subClassOf :Resource ;
+	rdfs:label "Document"@fr .
 # 
 # http://xmlns.com/foaf/0.1/Group
 
-foaf:Group a owl:Class .
+foaf:Group a owl:Class ;
+	rdfs:subClassOf foaf:Agent ;
+	rdfs:label "Groupe"@fr .
 # 
 # http://xmlns.com/foaf/0.1/Organization
 
-foaf:Organization a owl:Class .
+foaf:Organization a owl:Class ;
+	rdfs:subClassOf foaf:Agent ;
+	rdfs:label "Organisation"@fr .
 # 
 # http://xmlns.com/foaf/0.1/Person
 
-foaf:Person a owl:Class .
+foaf:Person a owl:Class ;
+	rdfs:subClassOf foaf:Agent ;
+	rdfs:label "Individu"@fr .
 # 
 # http://xmlns.com/foaf/0.1/Project
 
-foaf:Project a owl:Class .
+foaf:Project a owl:Class ;
+	rdfs:label "Projet"@fr .
 # 
 # https://schema.org/Place
 
 <https://schema.org/Place> a owl:Class ;
-	rdfs:subClassOf owl:Thing .
+	rdfs:subClassOf :Resource ;
+	rdfs:label "Lieu"@fr .
 # 
 # ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission
 
 <ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission> a owl:Class ;
-	rdfs:subClassOf :Project ;
-	rdfs:label "Initiative or Mission"@en , "Initiative ou Mission"@fr .
+	rdfs:subClassOf foaf:Project ;
+	rdfs:label "Initiative or Mission"@en , "Initiative ou Mission ou Activité"@fr .
 # 
 # 
 # 
@@ -1146,7 +1073,10 @@ foaf:Project a owl:Class .
 # 
 # http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#aPAIRo
 
-<http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#aPAIRo> a owl:NamedIndividual , :Event .
+<http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#aPAIRo> a owl:NamedIndividual , :Event ;
+	rdfs:comment """TODO:
+Tous ces trucs ne sont pas des évènements,
+mais des types d'évènement.""" .
 # 
 # 
 # 
