@@ -76,7 +76,7 @@ _:genid2 a rdf:List ;
 - d'un acteur (ex: ce document a pour sujet Monsanto), 
 - d'une idée (ex : Assemblée virtuelle) a pour sujet le peer to peer), 
 - d'un projet (ex: semantic forms a pour sujet l'interopérabilté)
-- d'une ressource (ex: économie symbiotique a pour sujet développement durable)"""@fr ;
+- d'une ressource (ex: économie symbiotique a pour sujet développement durable)"""@fr , "utiliser plutôt dc:subject !!!!!!!!!!!!!" ;
 	rdfs:label "a pour sujet"@fr .
 # 
 # http://purl.org/goodrelations/v1#offers
@@ -145,6 +145,8 @@ _:genid10 a rdf:List ;
 # http://www.virtual-assembly.org/ontologies/1.0/pair#actualizes
 
 :actualizes a owl:ObjectProperty ;
+	rdfs:comment """Exemple:
+\"AMAP (idée) incarne circuits courts  (idée)\"""" ;
 	rdfs:label "actualise"@fr , "actualizes"@en .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#authorof
@@ -549,20 +551,7 @@ _:genid58 a rdf:List ;
 :offers a owl:ObjectProperty ;
 	rdfs:subPropertyOf <http://purl.org/goodrelations/v1#offers> ;
 	a owl:FunctionalProperty ;
-	rdfs:domain _:genid62 .
-
-_:genid62 a owl:Class ;
-	owl:unionOf _:genid64 .
-
-_:genid64 a rdf:List ;
-	rdf:first <http://purl.org/goodrelations/v1#BusinessEntity> ;
-	rdf:rest _:genid63 .
-
-_:genid63 a rdf:List ;
-	rdf:first foaf:Agent ;
-	rdf:rest rdf:nil .
-
-:offers rdfs:range :Resource ;
+	rdfs:range :Resource ;
 	rdfs:comment "hasOrPropose"@en ;
 	rdfs:label "dispose de / propose"@fr , "has"@en .
 # 
@@ -570,16 +559,16 @@ _:genid63 a rdf:List ;
 
 :opposedTo a owl:ObjectProperty ;
 	rdfs:subPropertyOf :debate ;
-	rdfs:domain _:genid65 .
+	rdfs:domain _:genid62 .
 
-_:genid65 a owl:Class ;
-	owl:unionOf _:genid67 .
+_:genid62 a owl:Class ;
+	owl:unionOf _:genid64 .
 
-_:genid67 a rdf:List ;
+_:genid64 a rdf:List ;
 	rdf:first :Idea ;
-	rdf:rest _:genid66 .
+	rdf:rest _:genid63 .
 
-_:genid66 a rdf:List ;
+_:genid63 a rdf:List ;
 	rdf:first foaf:Agent ;
 	rdf:rest rdf:nil .
 
@@ -589,33 +578,33 @@ _:genid66 a rdf:List ;
 # http://www.virtual-assembly.org/ontologies/1.0/pair#products
 
 :products a owl:ObjectProperty ;
-	rdfs:domain _:genid68 .
+	rdfs:domain _:genid65 .
 
-_:genid68 a owl:Class ;
-	owl:unionOf _:genid70 .
+_:genid65 a owl:Class ;
+	owl:unionOf _:genid67 .
 
-_:genid70 a rdf:List ;
+_:genid67 a rdf:List ;
 	rdf:first foaf:Agent ;
-	rdf:rest _:genid69 .
+	rdf:rest _:genid66 .
 
-_:genid69 a rdf:List ;
+_:genid66 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
-:products rdfs:range _:genid71 .
+:products rdfs:range _:genid68 .
 
-_:genid71 a owl:Class ;
-	owl:unionOf _:genid74 .
+_:genid68 a owl:Class ;
+	owl:unionOf _:genid71 .
 
-_:genid74 a rdf:List ;
+_:genid71 a rdf:List ;
 	rdf:first :Idea ;
-	rdf:rest _:genid73 .
+	rdf:rest _:genid70 .
 
-_:genid73 a rdf:List ;
+_:genid70 a rdf:List ;
 	rdf:first :Resource ;
-	rdf:rest _:genid72 .
+	rdf:rest _:genid69 .
 
-_:genid72 a rdf:List ;
+_:genid69 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -632,20 +621,7 @@ _:genid72 a rdf:List ;
 
 :seeks a owl:ObjectProperty ;
 	rdfs:subPropertyOf <http://purl.org/goodrelations/v1#seeks> ;
-	rdfs:domain _:genid75 .
-
-_:genid75 a owl:Class ;
-	owl:unionOf _:genid77 .
-
-_:genid77 a rdf:List ;
-	rdf:first <http://purl.org/goodrelations/v1#BusinessEntity> ;
-	rdf:rest _:genid76 .
-
-_:genid76 a rdf:List ;
-	rdf:first foaf:Agent ;
-	rdf:rest rdf:nil .
-
-:seeks rdfs:range :Resource ;
+	rdfs:range :Resource ;
 	rdfs:label "recherche"@fr , "seeks"@en .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#sells
@@ -659,20 +635,20 @@ _:genid76 a rdf:List ;
 :supports a owl:ObjectProperty ;
 	rdfs:subPropertyOf :follows ;
 	rdfs:domain foaf:Agent ;
-	rdfs:range _:genid78 .
+	rdfs:range _:genid72 .
 
-_:genid78 a owl:Class ;
-	owl:unionOf _:genid81 .
+_:genid72 a owl:Class ;
+	owl:unionOf _:genid75 .
 
-_:genid81 a rdf:List ;
+_:genid75 a rdf:List ;
 	rdf:first <http://schema.org/Event> ;
-	rdf:rest _:genid80 .
+	rdf:rest _:genid74 .
 
-_:genid80 a rdf:List ;
+_:genid74 a rdf:List ;
 	rdf:first foaf:Agent ;
-	rdf:rest _:genid79 .
+	rdf:rest _:genid73 .
 
-_:genid79 a rdf:List ;
+_:genid73 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -707,24 +683,24 @@ _:genid79 a rdf:List ;
 foaf:currentProject a owl:ObjectProperty ;
 	rdfs:subPropertyOf :contributesTo ;
 	rdfs:domain foaf:Person ;
-	rdfs:range <http://purl.org/goodrelations/v1#Offering> , _:genid82 .
+	rdfs:range <http://purl.org/goodrelations/v1#Offering> , _:genid76 .
 
-_:genid82 a owl:Class ;
-	owl:unionOf _:genid86 .
+_:genid76 a owl:Class ;
+	owl:unionOf _:genid80 .
 
-_:genid86 a rdf:List ;
+_:genid80 a rdf:List ;
 	rdf:first <http://schema.org/CreativeWork> ;
-	rdf:rest _:genid85 .
+	rdf:rest _:genid79 .
 
-_:genid85 a rdf:List ;
+_:genid79 a rdf:List ;
 	rdf:first <http://schema.org/Event> ;
-	rdf:rest _:genid84 .
+	rdf:rest _:genid78 .
 
-_:genid84 a rdf:List ;
+_:genid78 a rdf:List ;
 	rdf:first foaf:Document ;
-	rdf:rest _:genid83 .
+	rdf:rest _:genid77 .
 
-_:genid83 a rdf:List ;
+_:genid77 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 # 
@@ -737,16 +713,16 @@ foaf:knows a owl:ObjectProperty ;
 # http://xmlns.com/foaf/0.1/member
 
 foaf:member a owl:ObjectProperty ;
-	rdfs:domain _:genid87 .
+	rdfs:domain _:genid81 .
 
-_:genid87 a owl:Class ;
-	owl:unionOf _:genid89 .
+_:genid81 a owl:Class ;
+	owl:unionOf _:genid83 .
 
-_:genid89 a rdf:List ;
+_:genid83 a rdf:List ;
 	rdf:first foaf:Group ;
-	rdf:rest _:genid88 .
+	rdf:rest _:genid82 .
 
-_:genid88 a rdf:List ;
+_:genid82 a rdf:List ;
 	rdf:first foaf:Organization ;
 	rdf:rest rdf:nil .
 
@@ -757,24 +733,24 @@ foaf:member rdfs:range foaf:Agent .
 foaf:pastProject a owl:ObjectProperty ;
 	rdfs:subPropertyOf :contributedTo ;
 	rdfs:domain foaf:Person ;
-	rdfs:range <http://purl.org/goodrelations/v1#Offering> , _:genid90 .
+	rdfs:range <http://purl.org/goodrelations/v1#Offering> , _:genid84 .
 
-_:genid90 a owl:Class ;
-	owl:unionOf _:genid94 .
+_:genid84 a owl:Class ;
+	owl:unionOf _:genid88 .
 
-_:genid94 a rdf:List ;
+_:genid88 a rdf:List ;
 	rdf:first <http://schema.org/CreativeWork> ;
-	rdf:rest _:genid93 .
+	rdf:rest _:genid87 .
 
-_:genid93 a rdf:List ;
+_:genid87 a rdf:List ;
 	rdf:first <http://schema.org/Event> ;
-	rdf:rest _:genid92 .
+	rdf:rest _:genid86 .
 
-_:genid92 a rdf:List ;
+_:genid86 a rdf:List ;
 	rdf:first foaf:Document ;
-	rdf:rest _:genid91 .
+	rdf:rest _:genid85 .
 
-_:genid91 a rdf:List ;
+_:genid85 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 # 
@@ -887,14 +863,6 @@ Sociologie des parties prenantes""" .
 # #################################################################
 # 
 # 
-# http://purl.org/goodrelations/v1#BusinessEntity
-
-<http://purl.org/goodrelations/v1#BusinessEntity> a owl:Class ;
-	rdfs:comment """URI http://purl.org/goodrelations/v1#BusinessEntity
-
-An instance of this class represents the legal agent making (or seeking) a particular offering. This can be a legal body or a person.""" ;
-	rdfs:label "Entité légale"@fr .
-# 
 # http://purl.org/goodrelations/v1#Offering
 
 <http://purl.org/goodrelations/v1#Offering> a owl:Class ;
@@ -902,7 +870,7 @@ An instance of this class represents the legal agent making (or seeking) a parti
 	rdfs:comment """URI http://purl.org/goodrelations/v1#Offering
 
 An offering represents the public, not necessarily binding, not necessarily exclusive, announcement by a gr:BusinessEntity to provide (or seek) a certain gr:BusinessFunction for a certain gr:ProductOrService to a specified target audience.""" ;
-	rdfs:label "rdfs:label \"Bien ou Service\"@fr"@fr .
+	rdfs:label "Bien ou Service"@fr .
 # 
 # http://purl.org/ontology/cco/core#cco:Skill
 
@@ -928,6 +896,25 @@ An offering represents the public, not necessarily binding, not necessarily excl
 :Argument a owl:Class ;
 	rdfs:subClassOf :Thesis ;
 	rdfs:label "Argument"@en , "Argument"@fr .
+# 
+# http://www.virtual-assembly.org/ontologies/1.0/pair#Association
+
+:Association a owl:Class ;
+	rdfs:subClassOf foaf:Organization ;
+	rdfs:label "Association, fondation"@fr .
+# 
+# http://www.virtual-assembly.org/ontologies/1.0/pair#Cooperative
+
+:Cooperative a owl:Class ;
+	rdfs:subClassOf :Enterprise ;
+	rdfs:label "Coopérative"@fr .
+# 
+# http://www.virtual-assembly.org/ontologies/1.0/pair#Enterprise
+
+:Enterprise a owl:Class ;
+	rdfs:subClassOf foaf:Organization ;
+	rdfs:comment "Entreprise industrielle ou commerciale."@fr ;
+	rdfs:label "Entreprise"@fr .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#Event
 
@@ -958,6 +945,12 @@ An offering represents the public, not necessarily binding, not necessarily excl
 :Proposition a owl:Class ;
 	rdfs:subClassOf :Thesis ;
 	rdfs:label "Proposition"@en , "Proposition"@fr .
+# 
+# http://www.virtual-assembly.org/ontologies/1.0/pair#PublicOrganization
+
+:PublicOrganization a owl:Class ;
+	rdfs:subClassOf foaf:Organization ;
+	rdfs:label "Organisme public, collectivité"@fr .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#Question
 
