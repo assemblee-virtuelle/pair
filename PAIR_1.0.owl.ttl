@@ -164,6 +164,14 @@ _:genid10 a rdf:List ;
 	owl:inverseOf :wantsToBarter ;
 	rdfs:label "barters"@en , "troque"@fr .
 # 
+# http://www.virtual-assembly.org/ontologies/1.0/pair#because
+
+:because a owl:ObjectProperty ;
+	owl:inverseOf :hasConsequence ;
+	rdfs:domain :Idea ;
+	rdfs:range :Idea ;
+	rdfs:label "because"@en , "parce que"@fr .
+# 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#borrows
 
 :borrows a owl:ObjectProperty ;
@@ -277,7 +285,6 @@ _:genid27 a rdf:List ;
 # http://www.virtual-assembly.org/ontologies/1.0/pair#convergesWith
 
 :convergesWith a owl:ObjectProperty ;
-	rdfs:subPropertyOf :debate ;
 	rdfs:domain :Idea ;
 	rdfs:range :Idea ;
 	rdfs:comment "L'économie symbiotique est convergente avec le développement durable" ;
@@ -322,10 +329,6 @@ _:genid36 a rdf:List ;
 	rdf:rest rdf:nil .
 
 :creatorof rdfs:label "creator of"@en , "créateur de"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#debate
-
-:debate a owl:ObjectProperty .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#dependsOn
 
@@ -393,10 +396,18 @@ _:genid47 a rdf:List ;
 	rdfs:range _:genid49 .
 
 _:genid49 a owl:Class ;
-	owl:unionOf _:genid52 .
+	owl:unionOf _:genid54 .
+
+_:genid54 a rdf:List ;
+	rdf:first <http://purl.org/ontology/cco/core#cco:Skill> ;
+	rdf:rest _:genid53 .
+
+_:genid53 a rdf:List ;
+	rdf:first <http://schema.org/Event> ;
+	rdf:rest _:genid52 .
 
 _:genid52 a rdf:List ;
-	rdf:first <http://schema.org/Event> ;
+	rdf:first :Idea ;
 	rdf:rest _:genid51 .
 
 _:genid51 a rdf:List ;
@@ -423,13 +434,6 @@ _:genid50 a rdf:List ;
 	owl:inverseOf :wouldLike ;
 	rdfs:label "donne"@fr , "gives"@en .
 # 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#hasAnArgumentOn
-
-:hasAnArgumentOn a owl:ObjectProperty ;
-	rdfs:subPropertyOf :debate ;
-	rdfs:domain foaf:Agent ;
-	rdfs:range :Idea .
-# 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#hasAttendee
 
 :hasAttendee a owl:ObjectProperty ;
@@ -437,6 +441,13 @@ _:genid50 a rdf:List ;
 	rdfs:domain <http://schema.org/Event> ;
 	rdfs:range foaf:Agent ;
 	rdfs:label "a pour participant"@fr , "has attendee"@en .
+# 
+# http://www.virtual-assembly.org/ontologies/1.0/pair#hasConsequence
+
+:hasConsequence a owl:ObjectProperty ;
+	rdfs:domain :Idea ;
+	rdfs:range :Idea ;
+	rdfs:label "donc"@fr , "so ..."@en .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#hasContributor
 
@@ -481,20 +492,20 @@ _:genid50 a rdf:List ;
 
 :isFacetOf a owl:ObjectProperty ;
 	rdfs:subPropertyOf <http://purl.org/dc/terms/isPartOf> ;
-	rdfs:range _:genid53 .
+	rdfs:range _:genid55 .
 
-_:genid53 a owl:Class ;
-	owl:unionOf _:genid56 .
+_:genid55 a owl:Class ;
+	owl:unionOf _:genid58 .
+
+_:genid58 a rdf:List ;
+	rdf:first :Idea ;
+	rdf:rest _:genid57 .
+
+_:genid57 a rdf:List ;
+	rdf:first :Resource ;
+	rdf:rest _:genid56 .
 
 _:genid56 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid55 .
-
-_:genid55 a rdf:List ;
-	rdf:first :Resource ;
-	rdf:rest _:genid54 .
-
-_:genid54 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -523,24 +534,24 @@ _:genid54 a rdf:List ;
 :likes a owl:ObjectProperty ;
 	rdfs:subPropertyOf <http://purl.org/spar/cito/likes> ;
 	rdfs:domain foaf:Agent ;
-	rdfs:range _:genid57 .
+	rdfs:range _:genid59 .
 
-_:genid57 a owl:Class ;
-	owl:unionOf _:genid61 .
+_:genid59 a owl:Class ;
+	owl:unionOf _:genid63 .
+
+_:genid63 a rdf:List ;
+	rdf:first :Idea ;
+	rdf:rest _:genid62 .
+
+_:genid62 a rdf:List ;
+	rdf:first :Resource ;
+	rdf:rest _:genid61 .
 
 _:genid61 a rdf:List ;
-	rdf:first <http://schema.org/Event> ;
+	rdf:first foaf:Agent ;
 	rdf:rest _:genid60 .
 
 _:genid60 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid59 .
-
-_:genid59 a rdf:List ;
-	rdf:first foaf:Agent ;
-	rdf:rest _:genid58 .
-
-_:genid58 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -558,42 +569,22 @@ _:genid58 a rdf:List ;
 # http://www.virtual-assembly.org/ontologies/1.0/pair#opposedTo
 
 :opposedTo a owl:ObjectProperty ;
-	rdfs:subPropertyOf :debate ;
-	rdfs:domain _:genid62 .
+	rdfs:domain _:genid64 .
 
-_:genid62 a owl:Class ;
-	owl:unionOf _:genid64 .
-
-_:genid64 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid63 .
-
-_:genid63 a rdf:List ;
-	rdf:first foaf:Agent ;
-	rdf:rest rdf:nil .
-
-:opposedTo rdfs:range :Idea ;
-	rdfs:label "opposed to"@en , "opposé à"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#products
-
-:products a owl:ObjectProperty ;
-	rdfs:domain _:genid65 .
-
-_:genid65 a owl:Class ;
-	owl:unionOf _:genid67 .
-
-_:genid67 a rdf:List ;
-	rdf:first foaf:Agent ;
-	rdf:rest _:genid66 .
+_:genid64 a owl:Class ;
+	owl:unionOf _:genid66 .
 
 _:genid66 a rdf:List ;
-	rdf:first foaf:Project ;
+	rdf:first :Idea ;
+	rdf:rest _:genid65 .
+
+_:genid65 a rdf:List ;
+	rdf:first foaf:Agent ;
 	rdf:rest rdf:nil .
 
-:products rdfs:range _:genid68 .
+:opposedTo rdfs:range _:genid67 .
 
-_:genid68 a owl:Class ;
+_:genid67 a owl:Class ;
 	owl:unionOf _:genid71 .
 
 _:genid71 a rdf:List ;
@@ -601,10 +592,49 @@ _:genid71 a rdf:List ;
 	rdf:rest _:genid70 .
 
 _:genid70 a rdf:List ;
-	rdf:first :Resource ;
+	rdf:first foaf:Group ;
 	rdf:rest _:genid69 .
 
 _:genid69 a rdf:List ;
+	rdf:first foaf:Organization ;
+	rdf:rest _:genid68 .
+
+_:genid68 a rdf:List ;
+	rdf:first foaf:Project ;
+	rdf:rest rdf:nil .
+
+:opposedTo rdfs:label "opposed to"@en , "opposé à"@fr .
+# 
+# http://www.virtual-assembly.org/ontologies/1.0/pair#products
+
+:products a owl:ObjectProperty ;
+	rdfs:domain _:genid72 .
+
+_:genid72 a owl:Class ;
+	owl:unionOf _:genid74 .
+
+_:genid74 a rdf:List ;
+	rdf:first foaf:Agent ;
+	rdf:rest _:genid73 .
+
+_:genid73 a rdf:List ;
+	rdf:first foaf:Project ;
+	rdf:rest rdf:nil .
+
+:products rdfs:range _:genid75 .
+
+_:genid75 a owl:Class ;
+	owl:unionOf _:genid78 .
+
+_:genid78 a rdf:List ;
+	rdf:first :Idea ;
+	rdf:rest _:genid77 .
+
+_:genid77 a rdf:List ;
+	rdf:first :Resource ;
+	rdf:rest _:genid76 .
+
+_:genid76 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -635,24 +665,76 @@ _:genid69 a rdf:List ;
 :supports a owl:ObjectProperty ;
 	rdfs:subPropertyOf :follows ;
 	rdfs:domain foaf:Agent ;
-	rdfs:range _:genid72 .
+	rdfs:range _:genid79 .
 
-_:genid72 a owl:Class ;
-	owl:unionOf _:genid75 .
+_:genid79 a owl:Class ;
+	owl:unionOf _:genid82 .
 
-_:genid75 a rdf:List ;
+_:genid82 a rdf:List ;
 	rdf:first <http://schema.org/Event> ;
-	rdf:rest _:genid74 .
+	rdf:rest _:genid81 .
 
-_:genid74 a rdf:List ;
+_:genid81 a rdf:List ;
 	rdf:first foaf:Agent ;
-	rdf:rest _:genid73 .
+	rdf:rest _:genid80 .
 
-_:genid73 a rdf:List ;
+_:genid80 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
 :supports rdfs:label "soutient"@fr , "supports"@en .
+# 
+# http://www.virtual-assembly.org/ontologies/1.0/pair#votesAgainst
+
+:votesAgainst a owl:ObjectProperty ;
+	rdfs:subPropertyOf :opposedTo ;
+	rdfs:domain foaf:Agent ;
+	rdfs:range _:genid83 .
+
+_:genid83 a owl:Class ;
+	owl:unionOf _:genid87 .
+
+_:genid87 a rdf:List ;
+	rdf:first :Idea ;
+	rdf:rest _:genid86 .
+
+_:genid86 a rdf:List ;
+	rdf:first foaf:Agent ;
+	rdf:rest _:genid85 .
+
+_:genid85 a rdf:List ;
+	rdf:first foaf:Document ;
+	rdf:rest _:genid84 .
+
+_:genid84 a rdf:List ;
+	rdf:first foaf:Project ;
+	rdf:rest rdf:nil .
+# 
+# http://www.virtual-assembly.org/ontologies/1.0/pair#votesFor
+
+:votesFor a owl:ObjectProperty ;
+	rdfs:subPropertyOf <http://purl.org/spar/cito/likes> ;
+	rdfs:domain foaf:Agent ;
+	rdfs:range _:genid88 .
+
+_:genid88 a owl:Class ;
+	owl:unionOf _:genid92 .
+
+_:genid92 a rdf:List ;
+	rdf:first :Idea ;
+	rdf:rest _:genid91 .
+
+_:genid91 a rdf:List ;
+	rdf:first foaf:Agent ;
+	rdf:rest _:genid90 .
+
+_:genid90 a rdf:List ;
+	rdf:first foaf:Document ;
+	rdf:rest _:genid89 .
+
+_:genid89 a rdf:List ;
+	rdf:first foaf:Project ;
+	rdf:rest rdf:nil .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#wantsToBarter
 
@@ -683,24 +765,24 @@ _:genid73 a rdf:List ;
 foaf:currentProject a owl:ObjectProperty ;
 	rdfs:subPropertyOf :contributesTo ;
 	rdfs:domain foaf:Person ;
-	rdfs:range <http://purl.org/goodrelations/v1#Offering> , _:genid76 .
+	rdfs:range <http://purl.org/goodrelations/v1#Offering> , _:genid93 .
 
-_:genid76 a owl:Class ;
-	owl:unionOf _:genid80 .
+_:genid93 a owl:Class ;
+	owl:unionOf _:genid97 .
 
-_:genid80 a rdf:List ;
+_:genid97 a rdf:List ;
 	rdf:first <http://schema.org/CreativeWork> ;
-	rdf:rest _:genid79 .
+	rdf:rest _:genid96 .
 
-_:genid79 a rdf:List ;
+_:genid96 a rdf:List ;
 	rdf:first <http://schema.org/Event> ;
-	rdf:rest _:genid78 .
+	rdf:rest _:genid95 .
 
-_:genid78 a rdf:List ;
+_:genid95 a rdf:List ;
 	rdf:first foaf:Document ;
-	rdf:rest _:genid77 .
+	rdf:rest _:genid94 .
 
-_:genid77 a rdf:List ;
+_:genid94 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 # 
@@ -713,16 +795,16 @@ foaf:knows a owl:ObjectProperty ;
 # http://xmlns.com/foaf/0.1/member
 
 foaf:member a owl:ObjectProperty ;
-	rdfs:domain _:genid81 .
+	rdfs:domain _:genid98 .
 
-_:genid81 a owl:Class ;
-	owl:unionOf _:genid83 .
+_:genid98 a owl:Class ;
+	owl:unionOf _:genid100 .
 
-_:genid83 a rdf:List ;
+_:genid100 a rdf:List ;
 	rdf:first foaf:Group ;
-	rdf:rest _:genid82 .
+	rdf:rest _:genid99 .
 
-_:genid82 a rdf:List ;
+_:genid99 a rdf:List ;
 	rdf:first foaf:Organization ;
 	rdf:rest rdf:nil .
 
@@ -733,24 +815,24 @@ foaf:member rdfs:range foaf:Agent .
 foaf:pastProject a owl:ObjectProperty ;
 	rdfs:subPropertyOf :contributedTo ;
 	rdfs:domain foaf:Person ;
-	rdfs:range <http://purl.org/goodrelations/v1#Offering> , _:genid84 .
+	rdfs:range _:genid101 .
 
-_:genid84 a owl:Class ;
-	owl:unionOf _:genid88 .
+_:genid101 a owl:Class ;
+	owl:unionOf _:genid105 .
 
-_:genid88 a rdf:List ;
+_:genid105 a rdf:List ;
 	rdf:first <http://schema.org/CreativeWork> ;
-	rdf:rest _:genid87 .
+	rdf:rest _:genid104 .
 
-_:genid87 a rdf:List ;
+_:genid104 a rdf:List ;
 	rdf:first <http://schema.org/Event> ;
-	rdf:rest _:genid86 .
+	rdf:rest _:genid103 .
 
-_:genid86 a rdf:List ;
+_:genid103 a rdf:List ;
 	rdf:first foaf:Document ;
-	rdf:rest _:genid85 .
+	rdf:rest _:genid102 .
 
-_:genid85 a rdf:List ;
+_:genid102 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 # 
@@ -1083,4 +1165,4 @@ mais des types d'évènement.""" .
 
 :SocialCode rdfs:label "Code Social"@fr , "Social Code"@en .
 # 
-# Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi
+# Generated by the OWL API (version 4.2.1.20160306-0033) https://github.com/owlcs/owlapi
