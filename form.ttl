@@ -1,0 +1,134 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix form: <http://deductions-software.com/ontologies/forms.owl.ttl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix cco: <http://purl.org/ontology/cco/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix cv: <http://rdfs.org/resume-rdf/cv.rdfs#>.
+# @prefix     : <http://xmlns.com/foaf/0.1/>.
+
+@prefix av: <http://www.virtual-assembly.org/ontologies/1.0/pair#> .
+@base <http://www.virtual-assembly.org/ontologies/1.0/pair#> .
+@prefix avf: <http://www.assemblee-virtuelle.org/forms#> .
+
+# specifications de formulaires pour AV
+
+avf:projectForm
+  form:classDomain foaf:Project ;
+  form:showProperties (
+	rdfs:label rdfs:comment
+	foaf:homepage
+	av:projectCategory
+	# foaf:maker
+	foaf:mbox
+	# foaf:depiction
+
+	form:p------------------------PAIRs------------------------ # TODO separator 
+	av:project	# P
+	av:lead		# A
+	av:concretise	# I
+	dct:subject	# DBPediaLookup
+	av:resource	# R
+) .
+avf:projectForm-dc_subject
+	form:fieldAppliesToForm avf:projectForm ;
+	form:fieldAppliesToProperty dct:subject ;
+	form:widgetClass form:DBPediaLookup .
+
+avf:OrganizationForm
+  form:classDomain foaf:Organization ;
+  form:showProperties (
+	rdfs:label rdfs:comment
+	foaf:homepage
+	# foaf:maker
+	foaf:mbox
+
+	form:p------------------------PAIRs------------------------ # TODO separator 
+	av:project	# P
+	foaf:member	# A
+	dct:subject	# DBPediaLookup
+	av:resource	# R
+) .
+avf:OrganizationForm-dc_subject3
+	form:fieldAppliesToForm avf:OrganizationForm ;
+	form:fieldAppliesToProperty dct:subject ;
+	form:widgetClass form:DBPediaLookup .
+
+
+avf:personForm
+  form:classDomain foaf:Person ;
+  form:showProperties (
+	foaf:givenName foaf:familyName
+	rdfs:comment
+	foaf:homepage
+	foaf:mbox	# literal or resource
+	foaf:phone
+	vcard:postal-code
+	vcard:locality
+	av:linkedinId
+	av:twitterId
+	av:facebookId
+	# foaf:img	# resource, multi-valued
+	foaf:topic_interest # DBPediaLookup
+
+	form:p------------------------PAIRs------------------------ # TODO separator 
+	av:contributes	# P
+	# av:supports	# P
+	foaf:knows	# A
+	av:contributesToOrganization	# A
+	av:idea		# I
+	cco:expertise	# R DBPediaLookup
+	av:resource	# R
+) .
+avf:personForm-topic_interest
+	form:fieldAppliesToForm avf:personForm ;
+	form:fieldAppliesToProperty foaf:topic_interest ;
+	form:widgetClass form:DBPediaLookup .
+avf:personForm-skill
+	form:fieldAppliesToForm avf:personForm ;
+	form:fieldAppliesToProperty cco:expertise ;
+	form:widgetClass form:DBPediaLookup .
+
+avf:IdeaForm
+  form:classDomain av:Idea  ;
+  form:showProperties (
+	rdfs:label rdfs:comment
+	dct:subject	# DBPediaLookup
+
+	form:p------------------------PAIRs------------------------ # TODO separator 
+	# av:inspiredBy
+	# av:compatibleWith
+	av:ideaCategory
+	av:project	# P
+	av:supportedBy	# A
+	av:idea		# I
+	av:resource	# R
+) .
+avf:IdeaForm-dc_subject2
+	form:fieldAppliesToForm avf:IdeaForm ;
+	form:fieldAppliesToProperty dct:subject ;
+	form:widgetClass form:DBPediaLookup .
+
+avf:RessourceForm
+  form:classDomain av:Resource ;
+  form:showProperties (
+	rdfs:label rdfs:comment
+	av:resourceCategory
+	dct:subject	# DBPediaLookup
+	foaf:homepage
+
+	form:p------------------------PAIRs------------------------ # TODO separator 
+	av:project	# P
+	av:managedBy	# A
+	av:ownedBy	# A
+	av:usedBy	# A
+	av:idea		# I
+	av:resource	# R
+) .
+avf:RessourceForm-subject_field
+	form:fieldAppliesToForm avf:RessourceForm ;
+	form:fieldAppliesToProperty	dct:subject ;
+	form:widgetClass form:DBPediaLookup .
+
+
