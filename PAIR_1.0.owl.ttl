@@ -9,6 +9,7 @@
 @prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix gr: <http://purl.org/goodrelations/v1#>.
 
 <http://www.virtual-assembly.org/ontologies/1.0/pair> a owl:Ontology .
 # 
@@ -162,7 +163,7 @@ _:genid19 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
-<http://purl.org/dc/terms/subject> rdfs:comment """\"A pour sujet\" permet d'identifier de quoi un PAIR parle ou traite ... Il peut s'agir : 
+<http://purl.org/dc/terms/subject> rdfs:comment """ 'A pour sujet' permet d'identifier de quoi un PAIR parle ou traite ... Il peut s'agir : 
 - d'un acteur (ex: ce document a pour sujet Monsanto), 
 - d'une idée (ex : Assemblée virtuelle) a pour sujet le peer to peer), 
 - d'un projet (ex: semantic forms a pour sujet l'interopérabilté)
@@ -901,7 +902,7 @@ _:genid120 a rdf:List ;
 foaf:currentProject a owl:ObjectProperty ;
 	rdfs:subPropertyOf :contributesTo ;
 	rdfs:domain foaf:Person ;
-	rdfs:range <http://purl.org/goodrelations/v1#Offering> , _:genid124 .
+	rdfs:range _:genid124 .
 
 _:genid124 a owl:Class ;
 	owl:unionOf _:genid128 .
@@ -920,6 +921,10 @@ _:genid126 a rdf:List ;
 
 _:genid125 a rdf:List ;
 	rdf:first foaf:Project ;
+	rdf:rest _:genid1251 .
+
+_:genid1251 a rdf:List ;
+	rdf:first gr:Offering ; 
 	rdf:rest rdf:nil .
 
 foaf:currentProject rdfs:label "contribue à"@fr , "contributes to"@en .
@@ -1150,19 +1155,19 @@ An offering represents the public, not necessarily binding, not necessarily excl
 :Money a owl:Class ;
 	rdfs:subClassOf :Resource ;
 	rdfs:comment """Exemples:
-La collectivité \"Ile de France\" finance des projets.
+La collectivité 'Ile de France' finance des projets.
 
 <Ile_de_France> :offers :UndefinedAmountOfMoney .
  :UndefinedAmountOfMoney a :Money .
 
 PENDING
 
-Avec une classe \"appel à projets\" on pourrait modéliser:
+Avec une classe 'appel à projets' on pourrait modéliser:
 
-La collectivité \"Ile de France\" offre des resources financières dans le cadre de son appel à projets intitulé \"innovation sociale\".
+La collectivité 'Ile de France' offre des resources financières dans le cadre de son appel à projets intitulé 'innovation sociale'.
 
 On pourrait modéliser:
-La collectivité \"Ile de France\" finance des (précisément) projets."""@fr ;
+La collectivité 'Ile de France' finance des (précisément) projets."""@fr ;
 	rdfs:label "Financial Resource"@en , "Ressource financière"@fr .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#NaturalResources
