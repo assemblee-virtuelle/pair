@@ -1,5 +1,5 @@
-@prefix :	<http://www.virtual-assembly.org/ontologies/1.0/pair#> .
-@prefix av:	<http://www.virtual-assembly.org/ontologies/1.0/pair#> .
+@prefix : <http://www.virtual-assembly.org/ontologies/1.0/pair#> .
+@prefix av: <http://www.virtual-assembly.org/ontologies/1.0/pair#> .
 @prefix cv: <http://rdfs.org/resume-rdf/cv.rdfs#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -9,1003 +9,988 @@
 @prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.virtual-assembly.org/ontologies/1.0/pair> .
 
-<http://www.virtual-assembly.org/ontologies/1.0/pair> a owl:Ontology .
-# 
-# 
-# #################################################################
-# #
-# #    Annotation properties
-# #
-# #################################################################
-# 
-# 
-# http://www.assemblee-virtuelle.org/ontologies/v1.owl#metAt
+<http://www.virtual-assembly.org/ontologies/1.0/pair> rdf:type owl:Ontology .
 
-av:metAt a owl:AnnotationProperty ;
-	rdfs:label "rencontré à"@fr ;
-	rdfs:domain av:Person .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Object Properties
-# #
-# #################################################################
-# 
-# 
-# http://open.vocab.org/terms/similarTo
 
-<http://open.vocab.org/terms/similarTo> a owl:ObjectProperty ;
-	rdfs:domain foaf:Project .
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
 
-<http://open.vocab.org/terms/similarTo> rdfs:range _:genid1 .
 
-_:genid1 a owl:Class ;
-	owl:unionOf _:genid6 .
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#metAt
 
-_:genid6 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid5 .
+av:metAt rdf:type owl:AnnotationProperty ;
+         
+         rdfs:label "rencontré à"@fr ;
+         
+         rdfs:domain av:Person .
 
-_:genid5 a rdf:List ;
-	rdf:first :Resource ;
-	rdf:rest _:genid4 .
 
-_:genid4 a rdf:List ;
-	rdf:first foaf:Group ;
-	rdf:rest _:genid3 .
 
-_:genid3 a rdf:List ;
-	rdf:first foaf:Organization ;
-	rdf:rest rdf:nil .
 
-<http://open.vocab.org/terms/similarTo> rdfs:comment "Voir \"inclue\""@en ;
-	rdfs:label "similaire à"@fr , "similar to"@en .
-# 
-# http://purl.org/dc/terms/creator
 
-<http://purl.org/dc/terms/creator> a owl:ObjectProperty .
-# 
-# http://purl.org/dc/terms/hasPart
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
 
-<http://purl.org/dc/terms/hasPart> a owl:ObjectProperty ;
-	owl:inverseOf <http://purl.org/dc/terms/isPartOf> ;
-	rdfs:domain _:genid7 .
 
-_:genid7 a owl:Class ;
-	owl:unionOf _:genid9 .
+###  http://open.vocab.org/terms/similarTo
 
-_:genid9 a rdf:List ;
-	rdf:first <http://purl.org/ontology/cco/core#cco:Skill> ;
-	rdf:rest _:genid8 .
+<http://open.vocab.org/terms/similarTo> rdf:type owl:ObjectProperty ;
+                                        
+                                        rdfs:domain foaf:Project ;
+                                        
+                                        rdfs:range [ rdf:type owl:Class ;
+                                                     owl:unionOf ( av:Idea
+                                                                   av:Resource
+                                                                   foaf:Group
+                                                                   foaf:Organization
+                                                                 )
+                                                   ] ;
+                                        
+                                        rdfs:comment "Voir \"inclue\""@en ;
+                                        
+                                        rdfs:label "similaire à"@fr ,
+                                                   "similar to"@en .
 
-_:genid8 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest rdf:nil .
 
-<http://purl.org/dc/terms/hasPart> rdfs:range _:genid10 .
 
-_:genid10 a owl:Class ;
-	owl:unionOf _:genid13 .
+###  http://purl.org/dc/terms/creator
 
-_:genid13 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid12 .
+<http://purl.org/dc/terms/creator> rdf:type owl:ObjectProperty .
 
-_:genid12 a rdf:List ;
-	rdf:first :Resource ;
-	rdf:rest _:genid11 .
 
-_:genid11 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
 
-<http://purl.org/dc/terms/hasPart> rdfs:comment """L'enjeu en termes de modélisation est de signifier qu'une idée peut inclure un idée, qu'un projet peut inclure un projet, qu'une ressource peut inclure une ressource. 
+###  http://purl.org/dc/terms/hasPart
+
+<http://purl.org/dc/terms/hasPart> rdf:type owl:ObjectProperty ;
+                                   
+                                   owl:inverseOf <http://purl.org/dc/terms/isPartOf> ;
+                                   
+                                   rdfs:domain [ rdf:type owl:Class ;
+                                                 owl:unionOf ( <http://purl.org/ontology/cco/core#cco:Skill>
+                                                               av:Idea
+                                                             )
+                                               ] ;
+                                   
+                                   rdfs:range [ rdf:type owl:Class ;
+                                                owl:unionOf ( av:Idea
+                                                              av:Resource
+                                                              foaf:Project
+                                                            )
+                                              ] ;
+                                   
+                                   rdfs:comment """L'enjeu en termes de modélisation est de signifier qu'une idée peut inclure un idée, qu'un projet peut inclure un projet, qu'une ressource peut inclure une ressource. 
 
 Par contre, je ne sais pas comment ne pas modéliser une idée n'inclue pas une projet, un projet n'inclue pas une ressource, etc. 
 
 Comment poser ces restrictctions et ne modéliser que les relations d'inclusion II, PP, RR ?"""@fr ;
-	rdfs:label "includes"@en , "inclue"@fr .
-# 
-# http://purl.org/dc/terms/isPartOf
+                                   
+                                   rdfs:label "includes"@en ,
+                                              "inclue"@fr .
 
-<http://purl.org/dc/terms/isPartOf> a owl:ObjectProperty ;
-	rdfs:domain _:genid4 .
 
-_:genid4 a owl:Class ;
-	owl:unionOf _:genid17 .
 
-_:genid17 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid16 .
+###  http://purl.org/dc/terms/isPartOf
 
-_:genid16 a rdf:List ;
-	rdf:first :Resource ;
-	rdf:rest _:genid15 .
+<http://purl.org/dc/terms/isPartOf> rdf:type owl:ObjectProperty ;
+                                    
+                                    rdfs:domain [ rdf:type owl:Class ;
+                                                  owl:unionOf ( av:Idea
+                                                                av:Resource
+                                                                foaf:Project
+                                                              )
+                                                ] ;
+                                    
+                                    rdfs:range [ rdf:type owl:Class ;
+                                                 owl:unionOf ( av:Idea
+                                                               av:Resource
+                                                               foaf:Project
+                                                             )
+                                               ] ;
+                                    
+                                    rdfs:comment "Voir la propriété \"inclue\""@fr ;
+                                    
+                                    rdfs:label "fait partie de"@fr ,
+                                               "is part of"@fr .
 
-_:genid15 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
 
-<http://purl.org/dc/terms/isPartOf> rdfs:range _:genid3 .
 
-_:genid3 a owl:Class ;
-	owl:unionOf _:genid17 .
+###  http://purl.org/dc/terms/subject
 
-<http://purl.org/dc/terms/isPartOf> rdfs:comment "Voir la propriété \"inclue\""@fr ;
-	rdfs:label "fait partie de"@fr , "is part of"@fr .
-# 
-# http://purl.org/dc/terms/subject
-
-<http://purl.org/dc/terms/subject> a owl:ObjectProperty ;
-	rdfs:domain owl:Thing ;
-	rdfs:range _:genid18 .
-
-_:genid18 a owl:Class ;
-	owl:unionOf _:genid22 .
-
-_:genid22 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid21 .
-
-_:genid21 a rdf:List ;
-	rdf:first :Resource ;
-	rdf:rest _:genid20 .
-
-_:genid20 a rdf:List ;
-	rdf:first foaf:Agent ;
-	rdf:rest _:genid19 .
-
-_:genid19 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-<http://purl.org/dc/terms/subject> rdfs:comment """\"A pour sujet\" permet d'identifier de quoi un PAIR parle ou traite ... Il peut s'agir : 
+<http://purl.org/dc/terms/subject> rdf:type owl:ObjectProperty ;
+                                   
+                                   rdfs:domain owl:Thing ;
+                                   
+                                   rdfs:range [ rdf:type owl:Class ;
+                                                owl:unionOf ( av:Idea
+                                                              av:Resource
+                                                              foaf:Agent
+                                                              foaf:Project
+                                                            )
+                                              ] ;
+                                   
+                                   rdfs:comment """\"A pour sujet\" permet d'identifier de quoi un PAIR parle ou traite ... Il peut s'agir : 
 - d'un acteur (ex: ce document a pour sujet Monsanto), 
 - d'une idée (ex : Assemblée virtuelle) a pour sujet le peer to peer), 
 - d'un projet (ex: semantic forms a pour sujet l'interopérabilté)
 - d'une ressource (ex: économie symbiotique a pour sujet développement durable)"""@fr ;
-	rdfs:label "a pour sujet ou centre d'intérêt"@fr , "is about"@en .
-# 
-# http://purl.org/goodrelations/v1#offers
+                                   
+                                   rdfs:label "a pour sujet ou centre d'intérêt"@fr ,
+                                              "is about"@en .
 
-<http://purl.org/goodrelations/v1#offers> a owl:ObjectProperty ;
-	rdfs:domain _:genid23 .
 
-_:genid23 a owl:Class ;
-	owl:unionOf _:genid25 .
 
-_:genid25 a rdf:List ;
-	rdf:first foaf:Agent ;
-	rdf:rest _:genid24 .
+###  http://purl.org/goodrelations/v1#offers
 
-_:genid24 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
+<http://purl.org/goodrelations/v1#offers> rdf:type owl:ObjectProperty ;
+                                          
+                                          rdfs:domain [ rdf:type owl:Class ;
+                                                        owl:unionOf ( foaf:Agent
+                                                                      foaf:Project
+                                                                    )
+                                                      ] ;
+                                          
+                                          rdfs:range av:Resource ;
+                                          
+                                          rdfs:label "dispose de, propose"@fr ,
+                                                     "offers"@en .
 
-<http://purl.org/goodrelations/v1#offers> rdfs:range :Resource ;
-	rdfs:label "dispose de, propose"@fr , "offers"@en .
-# 
-# http://purl.org/goodrelations/v1#seeks
 
-<http://purl.org/goodrelations/v1#seeks> a owl:ObjectProperty ;
-	rdfs:domain _:genid26 .
 
-_:genid26 a owl:Class ;
-	owl:unionOf _:genid28 .
+###  http://purl.org/goodrelations/v1#seeks
 
-_:genid28 a rdf:List ;
-	rdf:first foaf:Agent ;
-	rdf:rest _:genid27 .
+<http://purl.org/goodrelations/v1#seeks> rdf:type owl:ObjectProperty ;
+                                         
+                                         rdfs:domain [ rdf:type owl:Class ;
+                                                       owl:unionOf ( foaf:Agent
+                                                                     foaf:Project
+                                                                   )
+                                                     ] ;
+                                         
+                                         rdfs:range av:Resource ;
+                                         
+                                         rdfs:label "recherche"@fr ,
+                                                    "seeks"@en .
 
-_:genid27 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
 
-<http://purl.org/goodrelations/v1#seeks> rdfs:range :Resource ;
-	rdfs:label "recherche"@fr , "seeks"@en .
-# 
-# http://purl.org/ontology/cco/core#expertise
 
-<http://purl.org/ontology/cco/core#expertise> a owl:ObjectProperty ;
-	rdfs:domain foaf:Agent ;
-	rdfs:range _:genid7 .
+###  http://purl.org/ontology/cco/core#expertise
 
-_:genid7 owl:unionOf _:genid30 .
+<http://purl.org/ontology/cco/core#expertise> rdf:type owl:ObjectProperty ;
+                                              
+                                              rdfs:domain foaf:Agent ;
+                                              
+                                              rdfs:range [ rdf:type owl:Class ;
+                                                           owl:unionOf ( <http://purl.org/ontology/cco/core#cco:Skill>
+                                                                         av:Idea
+                                                                       )
+                                                         ] ;
+                                              
+                                              rdfs:label "a pour compétence"@fr ,
+                                                         "hasExpertise"@en .
 
-_:genid30 a rdf:List ;
-	rdf:first <http://purl.org/ontology/cco/core#cco:Skill> ;
-	rdf:rest _:genid29 .
 
-_:genid29 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest rdf:nil .
 
-<http://purl.org/ontology/cco/core#expertise> rdfs:label "a pour compétence"@fr , "hasExpertise"@en .
-# 
-# http://purl.org/spar/cito/likes
+###  http://purl.org/spar/cito/likes
 
-<http://purl.org/spar/cito/likes> a owl:ObjectProperty ;
-	rdfs:subPropertyOf <http://purl.org/dc/terms/subject> ;
-	rdfs:domain foaf:Agent ;
-	rdfs:range _:genid31 .
+<http://purl.org/spar/cito/likes> rdf:type owl:ObjectProperty ;
+                                  
+                                  rdfs:subPropertyOf <http://purl.org/dc/terms/subject> ;
+                                  
+                                  rdfs:domain foaf:Agent ;
+                                  
+                                  rdfs:range [ rdf:type owl:Class ;
+                                               owl:unionOf ( av:Resource
+                                                             foaf:Agent
+                                                             foaf:Project
+                                                           )
+                                             ] ;
+                                  
+                                  rdfs:label "aime"@fr ,
+                                             "likes"@en .
 
-_:genid31 a owl:Class ;
-	owl:unionOf _:genid34 .
 
-_:genid34 a rdf:List ;
-	rdf:first :Resource ;
-	rdf:rest _:genid33 .
 
-_:genid33 a rdf:List ;
-	rdf:first foaf:Agent ;
-	rdf:rest _:genid32 .
+###  http://rdfs.org/sioc/ns#follows
 
-_:genid32 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
+<http://rdfs.org/sioc/ns#follows> rdf:type owl:ObjectProperty ;
+                                  
+                                  rdfs:subPropertyOf <http://purl.org/dc/terms/subject> ;
+                                  
+                                  rdfs:domain foaf:Agent ;
+                                  
+                                  rdfs:range [ rdf:type owl:Class ;
+                                               owl:unionOf ( av:Idea
+                                                             av:Resource
+                                                             foaf:Agent
+                                                             foaf:Project
+                                                           )
+                                             ] ;
+                                  
+                                  rdfs:label "follows"@en ,
+                                             "suit"@fr .
 
-<http://purl.org/spar/cito/likes> rdfs:label "aime"@fr , "likes"@en .
-# 
-# http://rdfs.org/sioc/ns#follows
 
-<http://rdfs.org/sioc/ns#follows> a owl:ObjectProperty ;
-	rdfs:subPropertyOf <http://purl.org/dc/terms/subject> ;
-	rdfs:domain foaf:Agent ;
-	rdfs:range _:genid35 .
 
-_:genid35 a owl:Class ;
-	owl:unionOf _:genid39 .
+###  http://schema.org/attendee
 
-_:genid39 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid38 .
+<http://schema.org/attendee> rdf:type owl:ObjectProperty ;
+                             
+                             rdfs:domain <http://schema.org/Event> ;
+                             
+                             rdfs:range foaf:Agent ;
+                             
+                             rdfs:label "a pour participant"@fr ,
+                                        "has attendee"@en .
 
-_:genid38 a rdf:List ;
-	rdf:first :Resource ;
-	rdf:rest _:genid37 .
 
-_:genid37 a rdf:List ;
-	rdf:first foaf:Agent ;
-	rdf:rest _:genid36 .
 
-_:genid36 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#actualizes
 
-<http://rdfs.org/sioc/ns#follows> rdfs:label "follows"@en , "suit"@fr .
-# 
-# http://schema.org/attendee
-
-<http://schema.org/attendee> a owl:ObjectProperty ;
-	rdfs:domain <http://schema.org/Event> ;
-	rdfs:range foaf:Agent ;
-	rdfs:label "a pour participant"@fr , "has attendee"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#actualizes
-
-:actualizes a owl:ObjectProperty ;
-	rdfs:domain _:genid40 .
-
-_:genid40 a owl:Class ;
-	owl:unionOf _:genid45 .
-
-_:genid45 a rdf:List ;
-	rdf:first <http://purl.org/goodrelations/v1#Offering> ;
-	rdf:rest _:genid44 .
-
-_:genid44 a rdf:List ;
-	rdf:first <http://schema.org/CreativeWork> ;
-	rdf:rest _:genid43 .
-
-_:genid43 a rdf:List ;
-	rdf:first <http://schema.org/Event> ;
-	rdf:rest _:genid42 .
-
-_:genid42 a rdf:List ;
-	rdf:first foaf:Agent ;
-	rdf:rest _:genid41 .
-
-_:genid41 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-:actualizes rdfs:range :Idea ;
-	rdfs:comment """Exemple:
+av:actualizes rdf:type owl:ObjectProperty ;
+              
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( <http://purl.org/goodrelations/v1#Offering>
+                                          <http://schema.org/CreativeWork>
+                                          <http://schema.org/Event>
+                                          foaf:Agent
+                                          foaf:Project
+                                        )
+                          ] ;
+              
+              rdfs:range [ rdf:type owl:Class ;
+                           owl:unionOf ( av:Idea
+                                         foaf:Project
+                                       )
+                         ] ;
+              
+              rdfs:comment """Exemple:
 AMAP (idée) incarne circuits courts (idée) """ ;
-	rdfs:label "embodies, carries out, actualizes"@en , "incarne, met en oeuvre, actualise"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#authorof
-
-:authorof a owl:ObjectProperty ;
-	rdfs:subPropertyOf <http://purl.org/dc/terms/creator> ;
-	rdfs:domain foaf:Agent ;
-	rdfs:range <http://schema.org/CreativeWork> ;
-	rdfs:label "auteur de"@fr , "author of"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#barters
-
-:barters a owl:ObjectProperty ;
-	rdfs:subPropertyOf <http://purl.org/goodrelations/v1#offers> ;
-	owl:inverseOf :wantsToBarter ;
-	rdfs:label "barters"@en , "troque"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#because
-
-:because a owl:ObjectProperty ;
-	owl:inverseOf :hasConsequence ;
-	rdfs:domain :Idea ;
-	rdfs:range :Idea ;
-	rdfs:label "because"@en , "parce que"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#borrows
-
-:borrows a owl:ObjectProperty ;
-	rdfs:subPropertyOf <http://purl.org/goodrelations/v1#seeks> ;
-	owl:inverseOf :lends ;
-	rdfs:label "souhaite emprunter"@fr , "wants to borrow"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#buys
-
-:buys a owl:ObjectProperty ;
-	rdfs:subPropertyOf <http://purl.org/goodrelations/v1#seeks> ;
-	owl:inverseOf :sells ;
-	rdfs:label "souhaite acheter"@fr , "wants to buy"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#contributedTo
-
-:contributedTo a owl:ObjectProperty ;
-	rdfs:domain foaf:Agent ;
-	rdfs:range _:genid46 .
-
-_:genid46 a owl:Class ;
-	owl:unionOf _:genid51 .
-
-_:genid51 a rdf:List ;
-	rdf:first <http://schema.org/CreativeWork> ;
-	rdf:rest _:genid50 .
-
-_:genid50 a rdf:List ;
-	rdf:first <http://schema.org/Event> ;
-	rdf:rest _:genid49 .
-
-_:genid49 a rdf:List ;
-	rdf:first foaf:Group ;
-	rdf:rest _:genid48 .
-
-_:genid48 a rdf:List ;
-	rdf:first foaf:Organization ;
-	rdf:rest _:genid47 .
-
-_:genid47 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-:contributedTo rdfs:label "a contribué à"@fr , "has contributed to"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#contributesTo
-
-:contributesTo a owl:ObjectProperty ;
-	owl:inverseOf :hasContributor ;
-	rdfs:domain foaf:Agent ;
-	rdfs:range _:genid52 .
-
-_:genid52 a owl:Class ;
-	owl:unionOf _:genid57 .
-
-_:genid57 a rdf:List ;
-	rdf:first <http://schema.org/CreativeWork> ;
-	rdf:rest _:genid56 .
-
-_:genid56 a rdf:List ;
-	rdf:first <http://schema.org/Event> ;
-	rdf:rest _:genid55 .
-
-_:genid55 a rdf:List ;
-	rdf:first foaf:Group ;
-	rdf:rest _:genid54 .
-
-_:genid54 a rdf:List ;
-	rdf:first foaf:Organization ;
-	rdf:rest _:genid53 .
-
-_:genid53 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-:contributesTo rdfs:comment "The domain of foaf:currentProject is supposed to be a person but ... It could be a group or an organization isnt'it ?"@fr ;
-	rdfs:label "contribue à"@fr , "contributes to"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#convergesWith
+              
+              rdfs:label "embodies, carries out, actualizes"@en ,
+                         "incarne, met en oeuvre, actualise"@fr .
 
-:convergesWith a owl:ObjectProperty ;
-	rdfs:domain :Idea ;
-	rdfs:range :Idea ;
-	rdfs:comment "L'économie symbiotique est convergente avec le développement durable" ;
-	rdfs:label "convergent avec"@fr , "converges with"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#creatorof
-
-:creatorof a owl:ObjectProperty ;
-	rdfs:subPropertyOf <http://purl.org/dc/terms/creator> ;
-	rdfs:domain _:genid58 .
-
-_:genid58 a owl:Class ;
-	owl:unionOf _:genid60 .
-
-_:genid60 a rdf:List ;
-	rdf:first foaf:Agent ;
-	rdf:rest _:genid59 .
-
-_:genid59 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-:creatorof rdfs:range _:genid61 .
-
-_:genid61 a owl:Class ;
-	owl:unionOf _:genid65 .
-
-_:genid65 a rdf:List ;
-	rdf:first <http://purl.org/goodrelations/v1#Offering> ;
-	rdf:rest _:genid64 .
-
-_:genid64 a rdf:List ;
-	rdf:first <http://schema.org/CreativeWork> ;
-	rdf:rest _:genid63 .
-
-_:genid63 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid62 .
-
-_:genid62 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-:creatorof rdfs:label "creator of"@en , "créateur de"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#dependsOn
-
-:dependsOn a owl:ObjectProperty ;
-	rdfs:domain _:genid5 .
-
-_:genid5 a owl:Class ;
-	owl:unionOf _:genid69 .
-
-_:genid69 a rdf:List ;
-	rdf:first :Resource ;
-	rdf:rest _:genid68 .
-
-_:genid68 a rdf:List ;
-	rdf:first foaf:Agent ;
-	rdf:rest _:genid67 .
-
-_:genid67 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-:dependsOn rdfs:range _:genid6 .
-
-_:genid6 a owl:Class ;
-	owl:unionOf _:genid69 .
-
-:dependsOn rdfs:comment "Il faudrait affiner avec des cas d'usages"@fr ;
-	rdfs:label "depends on"@en , "dépend de"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#financialSupport
-
-:financialSupport a owl:ObjectProperty ;
-	rdfs:subPropertyOf :supports ;
-	rdfs:domain foaf:Agent ;
-	rdfs:range _:genid70 .
-
-_:genid70 a owl:Class ;
-	owl:unionOf _:genid72 .
-
-_:genid72 a rdf:List ;
-	rdf:first foaf:Organization ;
-	rdf:rest _:genid71 .
-
-_:genid71 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-:financialSupport rdfs:label "gives financial support"@en , "soutient financièrement" .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#founderof
-
-:founderof a owl:ObjectProperty ;
-	rdfs:subPropertyOf <http://purl.org/dc/terms/creator> ;
-	rdfs:domain foaf:Agent ;
-	rdfs:label "fondateur de"@fr , "founder of"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#gives
-
-:gives a owl:ObjectProperty ;
-	rdfs:subPropertyOf <http://purl.org/goodrelations/v1#offers> ;
-	owl:inverseOf :wouldLike ;
-	rdfs:label "donne"@fr , "gives"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#hasConsequence
-
-:hasConsequence a owl:ObjectProperty ;
-	rdfs:domain :Idea ;
-	rdfs:range :Idea ;
-	rdfs:label "donc"@fr , "so ..."@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#hasContributor
-
-:hasContributor a owl:ObjectProperty ;
-	rdfs:subPropertyOf foaf:member ;
-	rdfs:domain _:genid73 .
-
-_:genid73 a owl:Class ;
-	owl:unionOf _:genid76 .
-
-_:genid76 a rdf:List ;
-	rdf:first foaf:Group ;
-	rdf:rest _:genid75 .
-
-_:genid75 a rdf:List ;
-	rdf:first foaf:Organization ;
-	rdf:rest _:genid74 .
-
-_:genid74 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-:hasContributor rdfs:range foaf:Agent ;
-	rdfs:label "a pour contributeur"@fr , "has contributor"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#hasEmployee
-
-:hasEmployee a owl:ObjectProperty ;
-	rdfs:subPropertyOf foaf:member ;
-	rdfs:domain foaf:Organization ;
-	rdfs:range foaf:Person ;
-	rdfs:label "a pour employé"@fr , "has employee"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#hasPartner
-
-:hasPartner a owl:ObjectProperty ;
-	rdfs:domain foaf:Agent ;
-	rdfs:range foaf:Agent ;
-	rdfs:label "a pour partenaire"@fr , "has partner"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#hasRecipient
-
-:hasRecipient a owl:ObjectProperty ;
-	rdfs:domain _:genid77 .
-
-_:genid77 a owl:Class ;
-	owl:unionOf _:genid79 .
-
-_:genid79 a rdf:List ;
-	rdf:first foaf:Organization ;
-	rdf:rest _:genid78 .
-
-_:genid78 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-:hasRecipient rdfs:range foaf:Agent ;
-	rdfs:label "a pour bénéficiaire" , "has recipient"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#isFacetOf
-
-:isFacetOf a owl:ObjectProperty ;
-	rdfs:subPropertyOf <http://purl.org/dc/terms/isPartOf> ;
-	rdfs:range _:genid80 .
-
-_:genid80 a owl:Class ;
-	owl:unionOf _:genid83 .
-
-_:genid83 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid82 .
-
-_:genid82 a rdf:List ;
-	rdf:first :Resource ;
-	rdf:rest _:genid81 .
-
-_:genid81 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-:isFacetOf rdfs:comment "TODO A définir !" ;
-	rdfs:label "est une facette de"@fr , "is a facet of"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#isFamily
-
-:isFamily a owl:ObjectProperty ;
-	rdfs:subPropertyOf foaf:knows ;
-	rdfs:label "famille de"@fr , "family of"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#isFriendOf
-
-:isFriendOf a owl:ObjectProperty ;
-	rdfs:subPropertyOf foaf:knows ;
-	rdfs:label "ami de"@fr , "friend of"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#lends
-
-:lends a owl:ObjectProperty ;
-	rdfs:subPropertyOf <http://purl.org/goodrelations/v1#offers> ;
-	rdfs:label "lends"@en , "prête"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#opposedTo
-
-:opposedTo a owl:ObjectProperty ;
-	rdfs:subPropertyOf <http://purl.org/dc/terms/subject> ;
-	rdfs:domain _:genid84 .
-
-_:genid84 a owl:Class ;
-	owl:unionOf _:genid87 .
-
-_:genid87 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid86 .
-
-_:genid86 a rdf:List ;
-	rdf:first foaf:Agent ;
-	rdf:rest _:genid85 .
-
-_:genid85 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-:opposedTo rdfs:range _:genid88 .
-
-_:genid88 a owl:Class ;
-	owl:unionOf _:genid92 .
-
-_:genid92 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid91 .
-
-_:genid91 a rdf:List ;
-	rdf:first foaf:Group ;
-	rdf:rest _:genid90 .
-
-_:genid90 a rdf:List ;
-	rdf:first foaf:Organization ;
-	rdf:rest _:genid89 .
-
-_:genid89 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-:opposedTo rdfs:label "opposed to"@en , "opposé à"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#organize
-
-:organize a owl:ObjectProperty ;
-	rdfs:subPropertyOf :products ;
-	rdfs:domain foaf:Agent ;
-	rdfs:range <http://schema.org/Event> ;
-	rdfs:label "organise"@fr , "organize"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#products
-
-:products a owl:ObjectProperty ;
-	rdfs:domain _:genid93 .
-
-_:genid93 a owl:Class ;
-	owl:unionOf _:genid96 .
-
-_:genid96 a rdf:List ;
-	rdf:first :Resource ;
-	rdf:rest _:genid95 .
-
-_:genid95 a rdf:List ;
-	rdf:first foaf:Agent ;
-	rdf:rest _:genid94 .
-
-_:genid94 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-:products rdfs:range _:genid97 .
-
-_:genid97 a owl:Class ;
-	owl:unionOf _:genid100 .
-
-_:genid100 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid99 .
-
-_:genid99 a rdf:List ;
-	rdf:first :Resource ;
-	rdf:rest _:genid98 .
-
-_:genid98 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-:products rdfs:comment "Cas des ressources : Une ressource de type voiture produit des gaz à effet de serre. Affiner cependant"@en ;
-	rdfs:label "products"@en , "produit"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#rents
-
-:rents a owl:ObjectProperty ;
-	rdfs:subPropertyOf <http://purl.org/goodrelations/v1#offers> ;
-	owl:inverseOf :wantsToRent ;
-	rdfs:label "loue"@fr , "rents"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#sells
-
-:sells a owl:ObjectProperty ;
-	rdfs:subPropertyOf <http://purl.org/goodrelations/v1#offers> ;
-	rdfs:label "sells"@en , "vend"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#supports
-
-:supports a owl:ObjectProperty ;
-	rdfs:subPropertyOf <http://purl.org/spar/cito/likes> ;
-	rdfs:domain foaf:Agent ;
-	rdfs:range _:genid101 .
-
-_:genid101 a owl:Class ;
-	owl:unionOf _:genid105 .
-
-_:genid105 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid104 .
-
-_:genid104 a rdf:List ;
-	rdf:first :Resource ;
-	rdf:rest _:genid103 .
-
-_:genid103 a rdf:List ;
-	rdf:first foaf:Agent ;
-	rdf:rest _:genid102 .
-
-_:genid102 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-:supports rdfs:label "soutient"@fr , "supports"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#uses
-
-:uses a owl:ObjectProperty ;
-	rdfs:domain _:genid106 .
-
-_:genid106 a owl:Class ;
-	owl:unionOf _:genid109 .
-
-_:genid109 a rdf:List ;
-	rdf:first :Resource ;
-	rdf:rest _:genid108 .
-
-_:genid108 a rdf:List ;
-	rdf:first foaf:Agent ;
-	rdf:rest _:genid107 .
-
-_:genid107 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-:uses rdfs:range _:genid110 .
-
-_:genid110 a owl:Class ;
-	owl:unionOf _:genid113 .
-
-_:genid113 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid112 .
-
-_:genid112 a rdf:List ;
-	rdf:first :Resource ;
-	rdf:rest _:genid111 .
-
-_:genid111 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-:uses rdfs:comment "Cas des ressources : Une ressource de type voiture consomme du pétrole et des matières premières"@en ;
-	rdfs:label "consomme"@fr , "uses"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#votesAgainst
-
-:votesAgainst a owl:ObjectProperty ;
-	rdfs:subPropertyOf :opposedTo ;
-	rdfs:domain foaf:Agent ;
-	rdfs:range _:genid114 .
-
-_:genid114 a owl:Class ;
-	owl:unionOf _:genid118 .
-
-_:genid118 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid117 .
-
-_:genid117 a rdf:List ;
-	rdf:first foaf:Agent ;
-	rdf:rest _:genid116 .
-
-_:genid116 a rdf:List ;
-	rdf:first foaf:Document ;
-	rdf:rest _:genid115 .
-
-_:genid115 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-:votesAgainst rdfs:label "vote contre"@fr , "votes against"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#votesFor
-
-:votesFor a owl:ObjectProperty ;
-	rdfs:subPropertyOf <http://purl.org/spar/cito/likes> ;
-	rdfs:domain foaf:Agent ;
-	rdfs:range _:genid119 .
-
-_:genid119 a owl:Class ;
-	owl:unionOf _:genid123 .
-
-_:genid123 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid122 .
-
-_:genid122 a rdf:List ;
-	rdf:first foaf:Agent ;
-	rdf:rest _:genid121 .
-
-_:genid121 a rdf:List ;
-	rdf:first foaf:Document ;
-	rdf:rest _:genid120 .
-
-_:genid120 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-:votesFor rdfs:label "vote pour"@fr , "votes for"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#wantsToBarter
-
-:wantsToBarter a owl:ObjectProperty ;
-	rdfs:subPropertyOf <http://purl.org/goodrelations/v1#seeks> ;
-	rdfs:label "souhaite troquer"@fr , "wants to barter"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#wantsToRent
-
-:wantsToRent a owl:ObjectProperty ;
-	rdfs:subPropertyOf <http://purl.org/goodrelations/v1#seeks> ;
-	rdfs:label "souhaite louer"@fr , "wants to rent"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#worksOn
-
-:worksOn a owl:ObjectProperty ;
-	rdfs:subPropertyOf <http://purl.org/dc/terms/subject> ;
-	rdfs:domain foaf:Agent ;
-	rdfs:range :Idea ;
-	rdfs:label "travaille sur"@fr , "works on"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#worksWith
-
-:worksWith a owl:ObjectProperty ;
-	rdfs:subPropertyOf foaf:knows ;
-	rdfs:label "travaille avec"@fr , "works with"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#wouldLike
-
-:wouldLike a owl:ObjectProperty ;
-	rdfs:subPropertyOf <http://purl.org/goodrelations/v1#seeks> ;
-	rdfs:label "aimerait"@fr , "would like"@en .
-# 
-# http://xmlns.com/foaf/0.1/currentProject
-
-foaf:currentProject a owl:ObjectProperty ;
-	rdfs:subPropertyOf :contributesTo ;
-	rdfs:domain foaf:Person ;
-	rdfs:range <http://purl.org/goodrelations/v1#Offering> , _:genid124 .
-
-_:genid124 a owl:Class ;
-	owl:unionOf _:genid128 .
-
-_:genid128 a rdf:List ;
-	rdf:first <http://schema.org/CreativeWork> ;
-	rdf:rest _:genid127 .
-
-_:genid127 a rdf:List ;
-	rdf:first <http://schema.org/Event> ;
-	rdf:rest _:genid126 .
-
-_:genid126 a rdf:List ;
-	rdf:first foaf:Document ;
-	rdf:rest _:genid125 .
-
-_:genid125 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-foaf:currentProject rdfs:label "contribue à"@fr , "contributes to"@en .
-# 
-# http://xmlns.com/foaf/0.1/knows
-
-foaf:knows a owl:ObjectProperty ;
-	rdfs:domain foaf:Person ;
-	rdfs:range foaf:Person ;
-	rdfs:label "connait"@fr , "knows"@en .
-# 
-# http://xmlns.com/foaf/0.1/member
-
-foaf:member a owl:ObjectProperty ;
-	rdfs:label "a pour membre"@fr .
-# 
-# http://xmlns.com/foaf/0.1/pastProject
-
-foaf:pastProject a owl:ObjectProperty ;
-	rdfs:subPropertyOf :contributedTo ;
-	rdfs:domain foaf:Person ;
-	rdfs:range _:genid129 .
-
-_:genid129 a owl:Class ;
-	owl:unionOf _:genid133 .
-
-_:genid133 a rdf:List ;
-	rdf:first <http://schema.org/CreativeWork> ;
-	rdf:rest _:genid132 .
-
-_:genid132 a rdf:List ;
-	rdf:first <http://schema.org/Event> ;
-	rdf:rest _:genid131 .
-
-_:genid131 a rdf:List ;
-	rdf:first foaf:Document ;
-	rdf:rest _:genid130 .
-
-_:genid130 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-foaf:pastProject rdfs:label "a contribué à"@fr , "has contributed to"@en .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Data properties
-# #
-# #################################################################
-# 
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Context
-
-:Context a owl:DatatypeProperty ;
-	rdfs:subPropertyOf :Description .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#CulturalArtisticModel
-
-:CulturalArtisticModel a owl:DatatypeProperty ;
-	rdfs:subPropertyOf :SocialCode .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Definition
-
-:Definition a owl:DatatypeProperty ;
-	rdfs:subPropertyOf :Description .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Description
-
-:Description a owl:DatatypeProperty .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#EcologicalModel
-
-:EcologicalModel a owl:DatatypeProperty ;
-	rdfs:subPropertyOf :SocialCode .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#EconomicalModel
-
-:EconomicalModel a owl:DatatypeProperty ;
-	rdfs:subPropertyOf :SocialCode .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#GeneralInformations
-
-:GeneralInformations a owl:DatatypeProperty ;
-	rdfs:comment """Propriétés possibles :
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#authorof
+
+av:authorof rdf:type owl:ObjectProperty ;
+            
+            rdfs:subPropertyOf <http://purl.org/dc/terms/creator> ;
+            
+            rdfs:domain foaf:Agent ;
+            
+            rdfs:range <http://schema.org/CreativeWork> ;
+            
+            rdfs:label "auteur de"@fr ,
+                       "author of"@en .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#barters
+
+av:barters rdf:type owl:ObjectProperty ;
+           
+           rdfs:subPropertyOf <http://purl.org/goodrelations/v1#offers> ;
+           
+           owl:inverseOf av:wantsToBarter ;
+           
+           rdfs:label "barters"@en ,
+                      "troque"@fr .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#because
+
+av:because rdf:type owl:ObjectProperty ;
+           
+           owl:inverseOf av:hasConsequence ;
+           
+           rdfs:domain av:Idea ;
+           
+           rdfs:range av:Idea ;
+           
+           rdfs:label "because"@en ,
+                      "parce que"@fr .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#borrows
+
+av:borrows rdf:type owl:ObjectProperty ;
+           
+           rdfs:subPropertyOf <http://purl.org/goodrelations/v1#seeks> ;
+           
+           owl:inverseOf av:lends ;
+           
+           rdfs:label "souhaite emprunter"@fr ,
+                      "wants to borrow"@en .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#buys
+
+av:buys rdf:type owl:ObjectProperty ;
+        
+        rdfs:subPropertyOf <http://purl.org/goodrelations/v1#seeks> ;
+        
+        owl:inverseOf av:sells ;
+        
+        rdfs:label "souhaite acheter"@fr ,
+                   "wants to buy"@en .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#contributedTo
+
+av:contributedTo rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:domain foaf:Agent ;
+                 
+                 rdfs:range [ rdf:type owl:Class ;
+                              owl:unionOf ( <http://schema.org/CreativeWork>
+                                            <http://schema.org/Event>
+                                            foaf:Group
+                                            foaf:Organization
+                                            foaf:Project
+                                          )
+                            ] ;
+                 
+                 rdfs:label "a contribué à"@fr ,
+                            "has contributed to"@en .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#contributesTo
+
+av:contributesTo rdf:type owl:ObjectProperty ;
+                 
+                 owl:inverseOf av:hasContributor ;
+                 
+                 rdfs:domain foaf:Agent ;
+                 
+                 rdfs:range [ rdf:type owl:Class ;
+                              owl:unionOf ( <http://schema.org/CreativeWork>
+                                            <http://schema.org/Event>
+                                            foaf:Group
+                                            foaf:Organization
+                                            foaf:Project
+                                          )
+                            ] ;
+                 
+                 rdfs:comment "The domain of foaf:currentProject is supposed to be a person but ... It could be a group or an organization isnt'it ?"@fr ;
+                 
+                 rdfs:label "contribue à"@fr ,
+                            "contributes to"@en .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#convergesWith
+
+av:convergesWith rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:domain av:Idea ;
+                 
+                 rdfs:range av:Idea ;
+                 
+                 rdfs:comment "L'économie symbiotique est convergente avec le développement durable" ;
+                 
+                 rdfs:label "convergent avec"@fr ,
+                            "converges with"@en .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#creatorof
+
+av:creatorof rdf:type owl:ObjectProperty ;
+             
+             rdfs:subPropertyOf <http://purl.org/dc/terms/creator> ;
+             
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( foaf:Agent
+                                         foaf:Project
+                                       )
+                         ] ;
+             
+             rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( <http://purl.org/goodrelations/v1#Offering>
+                                        <http://schema.org/CreativeWork>
+                                        av:Idea
+                                        foaf:Project
+                                      )
+                        ] ;
+             
+             rdfs:label "creator of"@en ,
+                        "créateur de"@fr .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#dependsOn
+
+av:dependsOn rdf:type owl:ObjectProperty ;
+             
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( av:Resource
+                                         foaf:Agent
+                                         foaf:Project
+                                       )
+                         ] ;
+             
+             rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( av:Resource
+                                        foaf:Agent
+                                        foaf:Project
+                                      )
+                        ] ;
+             
+             rdfs:comment "Il faudrait affiner avec des cas d'usages"@fr ;
+             
+             rdfs:label "depends on"@en ,
+                        "dépend de"@fr .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#financialSupport
+
+av:financialSupport rdf:type owl:ObjectProperty ;
+                    
+                    rdfs:subPropertyOf av:supports ;
+                    
+                    rdfs:domain foaf:Agent ;
+                    
+                    rdfs:range [ rdf:type owl:Class ;
+                                 owl:unionOf ( foaf:Organization
+                                               foaf:Project
+                                             )
+                               ] ;
+                    
+                    rdfs:label "gives financial support"@en ,
+                               "soutient financièrement" .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#founderof
+
+av:founderof rdf:type owl:ObjectProperty ;
+             
+             rdfs:subPropertyOf <http://purl.org/dc/terms/creator> ;
+             
+             rdfs:domain foaf:Agent ;
+             
+             rdfs:label "fondateur de"@fr ,
+                        "founder of"@en .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#gives
+
+av:gives rdf:type owl:ObjectProperty ;
+         
+         rdfs:subPropertyOf <http://purl.org/goodrelations/v1#offers> ;
+         
+         owl:inverseOf av:wouldLike ;
+         
+         rdfs:label "donne"@fr ,
+                    "gives"@en .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#hasConsequence
+
+av:hasConsequence rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:domain av:Idea ;
+                  
+                  rdfs:range av:Idea ;
+                  
+                  rdfs:label "donc"@fr ,
+                             "so ..."@en .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#hasContributor
+
+av:hasContributor rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:subPropertyOf foaf:member ;
+                  
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( foaf:Group
+                                              foaf:Organization
+                                              foaf:Project
+                                            )
+                              ] ;
+                  
+                  rdfs:range foaf:Agent ;
+                  
+                  rdfs:label "a pour contributeur"@fr ,
+                             "has contributor"@en .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#hasEmployee
+
+av:hasEmployee rdf:type owl:ObjectProperty ;
+               
+               rdfs:subPropertyOf foaf:member ;
+               
+               rdfs:domain foaf:Organization ;
+               
+               rdfs:range foaf:Person ;
+               
+               rdfs:label "a pour employé"@fr ,
+                          "has employee"@en .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#hasPartner
+
+av:hasPartner rdf:type owl:ObjectProperty ;
+              
+              rdfs:domain foaf:Agent ;
+              
+              rdfs:range foaf:Agent ;
+              
+              rdfs:label "a pour partenaire"@fr ,
+                         "has partner"@en .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#hasRecipient
+
+av:hasRecipient rdf:type owl:ObjectProperty ;
+                
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( foaf:Organization
+                                            foaf:Project
+                                          )
+                            ] ;
+                
+                rdfs:range foaf:Agent ;
+                
+                rdfs:label "a pour bénéficiaire" ,
+                           "has recipient"@en .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#isFacetOf
+
+av:isFacetOf rdf:type owl:ObjectProperty ;
+             
+             rdfs:subPropertyOf <http://purl.org/dc/terms/isPartOf> ;
+             
+             rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( av:Idea
+                                        av:Resource
+                                        foaf:Project
+                                      )
+                        ] ;
+             
+             rdfs:comment "TODO A définir !" ;
+             
+             rdfs:label "est une facette de"@fr ,
+                        "is a facet of"@en .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#isFamily
+
+av:isFamily rdf:type owl:ObjectProperty ;
+            
+            rdfs:subPropertyOf foaf:knows ;
+            
+            rdfs:label "famille de"@fr ,
+                       "family of"@en .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#isFriendOf
+
+av:isFriendOf rdf:type owl:ObjectProperty ;
+              
+              rdfs:subPropertyOf foaf:knows ;
+              
+              rdfs:label "ami de"@fr ,
+                         "friend of"@en .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#lends
+
+av:lends rdf:type owl:ObjectProperty ;
+         
+         rdfs:subPropertyOf <http://purl.org/goodrelations/v1#offers> ;
+         
+         rdfs:label "lends"@en ,
+                    "prête"@fr .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#opposedTo
+
+av:opposedTo rdf:type owl:ObjectProperty ;
+             
+             rdfs:subPropertyOf <http://purl.org/dc/terms/subject> ;
+             
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( av:Idea
+                                         foaf:Agent
+                                         foaf:Project
+                                       )
+                         ] ;
+             
+             rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( av:Idea
+                                        foaf:Group
+                                        foaf:Organization
+                                        foaf:Project
+                                      )
+                        ] ;
+             
+             rdfs:label "opposed to"@en ,
+                        "opposé à"@fr .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#organize
+
+av:organize rdf:type owl:ObjectProperty ;
+            
+            rdfs:subPropertyOf av:products ;
+            
+            rdfs:domain foaf:Agent ;
+            
+            rdfs:range <http://schema.org/Event> ;
+            
+            rdfs:label "organise"@fr ,
+                       "organize"@en .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#products
+
+av:products rdf:type owl:ObjectProperty ;
+            
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( av:Resource
+                                        foaf:Agent
+                                        foaf:Project
+                                      )
+                        ] ;
+            
+            rdfs:range [ rdf:type owl:Class ;
+                         owl:unionOf ( av:Idea
+                                       av:Resource
+                                       foaf:Project
+                                     )
+                       ] ;
+            
+            rdfs:comment "Cas des ressources : Une ressource de type voiture produit des gaz à effet de serre. Affiner cependant"@en ;
+            
+            rdfs:label "products"@en ,
+                       "produit"@fr .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#rents
+
+av:rents rdf:type owl:ObjectProperty ;
+         
+         rdfs:subPropertyOf <http://purl.org/goodrelations/v1#offers> ;
+         
+         owl:inverseOf av:wantsToRent ;
+         
+         rdfs:label "loue"@fr ,
+                    "rents"@en .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#sells
+
+av:sells rdf:type owl:ObjectProperty ;
+         
+         rdfs:subPropertyOf <http://purl.org/goodrelations/v1#offers> ;
+         
+         rdfs:label "sells"@en ,
+                    "vend"@fr .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#supports
+
+av:supports rdf:type owl:ObjectProperty ;
+            
+            rdfs:subPropertyOf <http://purl.org/spar/cito/likes> ;
+            
+            rdfs:domain foaf:Agent ;
+            
+            rdfs:range [ rdf:type owl:Class ;
+                         owl:unionOf ( av:Idea
+                                       av:Resource
+                                       foaf:Agent
+                                       foaf:Project
+                                     )
+                       ] ;
+            
+            rdfs:label "soutient"@fr ,
+                       "supports"@en .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#uses
+
+av:uses rdf:type owl:ObjectProperty ;
+        
+        rdfs:domain [ rdf:type owl:Class ;
+                      owl:unionOf rdf:nil
+                    ] ;
+        
+        rdfs:range [ rdf:type owl:Class ;
+                     owl:unionOf ( av:Idea
+                                   av:Resource
+                                   foaf:Project
+                                 )
+                   ] ;
+        
+        rdfs:comment "Cas des ressources : Une ressource de type voiture consomme du pétrole et des matières premières"@en ;
+        
+        rdfs:label "consomme"@fr ,
+                   "uses"@en .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#votesAgainst
+
+av:votesAgainst rdf:type owl:ObjectProperty ;
+                
+                rdfs:subPropertyOf av:opposedTo ;
+                
+                rdfs:domain foaf:Agent ;
+                
+                rdfs:range [ rdf:type owl:Class ;
+                             owl:unionOf ( av:Idea
+                                           foaf:Agent
+                                           foaf:Document
+                                           foaf:Project
+                                         )
+                           ] ;
+                
+                rdfs:label "vote contre"@fr ,
+                           "votes against"@en .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#votesFor
+
+av:votesFor rdf:type owl:ObjectProperty ;
+            
+            rdfs:subPropertyOf <http://purl.org/spar/cito/likes> ;
+            
+            rdfs:domain foaf:Agent ;
+            
+            rdfs:range [ rdf:type owl:Class ;
+                         owl:unionOf ( av:Idea
+                                       foaf:Agent
+                                       foaf:Document
+                                       foaf:Project
+                                     )
+                       ] ;
+            
+            rdfs:label "vote pour"@fr ,
+                       "votes for"@en .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#wantsToBarter
+
+av:wantsToBarter rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:subPropertyOf <http://purl.org/goodrelations/v1#seeks> ;
+                 
+                 rdfs:label "souhaite troquer"@fr ,
+                            "wants to barter"@en .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#wantsToRent
+
+av:wantsToRent rdf:type owl:ObjectProperty ;
+               
+               rdfs:subPropertyOf <http://purl.org/goodrelations/v1#seeks> ;
+               
+               rdfs:label "souhaite louer"@fr ,
+                          "wants to rent"@en .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#worksOn
+
+av:worksOn rdf:type owl:ObjectProperty ;
+           
+           rdfs:subPropertyOf <http://purl.org/dc/terms/subject> ;
+           
+           rdfs:domain foaf:Agent ;
+           
+           rdfs:range av:Idea ;
+           
+           rdfs:label "travaille sur"@fr ,
+                      "works on"@en .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#worksWith
+
+av:worksWith rdf:type owl:ObjectProperty ;
+             
+             rdfs:subPropertyOf foaf:knows ;
+             
+             rdfs:label "travaille avec"@fr ,
+                        "works with"@en .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#wouldLike
+
+av:wouldLike rdf:type owl:ObjectProperty ;
+             
+             rdfs:subPropertyOf <http://purl.org/goodrelations/v1#seeks> ;
+             
+             rdfs:label "aimerait"@fr ,
+                        "would like"@en .
+
+
+
+###  http://xmlns.com/foaf/0.1/currentProject
+
+foaf:currentProject rdf:type owl:ObjectProperty ;
+                    
+                    rdfs:subPropertyOf av:contributesTo ;
+                    
+                    rdfs:domain foaf:Person ;
+                    
+                    rdfs:range <http://purl.org/goodrelations/v1#Offering> ,
+                               [ rdf:type owl:Class ;
+                                 owl:unionOf ( <http://schema.org/CreativeWork>
+                                               <http://schema.org/Event>
+                                               foaf:Document
+                                               foaf:Project
+                                             )
+                               ] ;
+                    
+                    rdfs:label "contribue à"@fr ,
+                               "contributes to"@en .
+
+
+
+###  http://xmlns.com/foaf/0.1/knows
+
+foaf:knows rdf:type owl:ObjectProperty ;
+           
+           rdfs:domain foaf:Person ;
+           
+           rdfs:range foaf:Person ;
+           
+           rdfs:label "connait"@fr ,
+                      "knows"@en .
+
+
+
+###  http://xmlns.com/foaf/0.1/member
+
+foaf:member rdf:type owl:ObjectProperty ;
+            
+            rdfs:label "a pour membre"@fr .
+
+
+
+###  http://xmlns.com/foaf/0.1/pastProject
+
+foaf:pastProject rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:subPropertyOf av:contributedTo ;
+                 
+                 rdfs:domain foaf:Person ;
+                 
+                 rdfs:range [ rdf:type owl:Class ;
+                              owl:unionOf ( <http://schema.org/CreativeWork>
+                                            <http://schema.org/Event>
+                                            foaf:Document
+                                            foaf:Project
+                                          )
+                            ] ;
+                 
+                 rdfs:label "a contribué à"@fr ,
+                            "has contributed to"@en .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Context
+
+av:Context rdf:type owl:DatatypeProperty ;
+           
+           rdfs:subPropertyOf av:Description .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#CulturalArtisticModel
+
+av:CulturalArtisticModel rdf:type owl:DatatypeProperty ;
+                         
+                         rdfs:subPropertyOf av:SocialCode .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Definition
+
+av:Definition rdf:type owl:DatatypeProperty ;
+              
+              rdfs:subPropertyOf av:Description .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Description
+
+av:Description rdf:type owl:DatatypeProperty .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#EcologicalModel
+
+av:EcologicalModel rdf:type owl:DatatypeProperty ;
+                   
+                   rdfs:subPropertyOf av:SocialCode .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#EconomicalModel
+
+av:EconomicalModel rdf:type owl:DatatypeProperty ;
+                   
+                   rdfs:subPropertyOf av:SocialCode .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#GeneralInformations
+
+av:GeneralInformations rdf:type owl:DatatypeProperty ;
+                       
+                       rdfs:comment """Propriétés possibles :
 
 Forme Juridique
 Type de Licence
@@ -1034,122 +1019,187 @@ Système d'information
 Territoire d'intervention
 
 Sociologie des parties prenantes""" .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Issues
 
-:Issues a owl:DatatypeProperty ;
-	rdfs:subPropertyOf :Description .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#LegalFinancialModel
 
-:LegalFinancialModel a owl:DatatypeProperty ;
-	rdfs:subPropertyOf :SocialCode .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Objectives
 
-:Objectives a owl:DatatypeProperty ;
-	rdfs:subPropertyOf :Description .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#ShortDescription140
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Issues
 
-:ShortDescription140 a owl:DatatypeProperty ;
-	rdfs:subPropertyOf :Description ;
-	rdfs:label "Descrpition courte (140 caractères)" .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#SocialCode
+av:Issues rdf:type owl:DatatypeProperty ;
+          
+          rdfs:subPropertyOf av:Description .
 
-:SocialCode a owl:DatatypeProperty .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#SocialHumanModel
 
-:SocialHumanModel a owl:DatatypeProperty ;
-	rdfs:subPropertyOf :SocialCode .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#TechnologicalModel
 
-:TechnologicalModel a owl:DatatypeProperty ;
-	rdfs:subPropertyOf :SocialCode .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Classes
-# #
-# #################################################################
-# 
-# 
-# http://purl.org/goodrelations/v1#Offering
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#LegalFinancialModel
 
-<http://purl.org/goodrelations/v1#Offering> a owl:Class ;
-	rdfs:subClassOf :Resource ;
-	rdfs:comment """URI http://purl.org/goodrelations/v1#Offering
+av:LegalFinancialModel rdf:type owl:DatatypeProperty ;
+                       
+                       rdfs:subPropertyOf av:SocialCode .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Objectives
+
+av:Objectives rdf:type owl:DatatypeProperty ;
+              
+              rdfs:subPropertyOf av:Description .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#ShortDescription140
+
+av:ShortDescription140 rdf:type owl:DatatypeProperty ;
+                       
+                       rdfs:subPropertyOf av:Description ;
+                       
+                       rdfs:label "Descrpition courte (140 caractères)" .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#SocialCode
+
+av:SocialCode rdf:type owl:DatatypeProperty .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#SocialHumanModel
+
+av:SocialHumanModel rdf:type owl:DatatypeProperty ;
+                    
+                    rdfs:subPropertyOf av:SocialCode .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#TechnologicalModel
+
+av:TechnologicalModel rdf:type owl:DatatypeProperty ;
+                      
+                      rdfs:subPropertyOf av:SocialCode .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://purl.org/goodrelations/v1#Offering
+
+<http://purl.org/goodrelations/v1#Offering> rdf:type owl:Class ;
+                                            
+                                            rdfs:subClassOf av:Resource ;
+                                            
+                                            rdfs:comment """URI http://purl.org/goodrelations/v1#Offering
 
 An offering represents the public, not necessarily binding, not necessarily exclusive, announcement by a gr:BusinessEntity to provide (or seek) a certain gr:BusinessFunction for a certain gr:ProductOrService to a specified target audience.""" ;
-	rdfs:label "Bien ou Service"@fr , "Good or service"@en .
-# 
-# http://purl.org/ontology/cco/core#cco:Skill
+                                            
+                                            rdfs:label "Bien ou Service"@fr ,
+                                                       "Good or service"@en .
 
-<http://purl.org/ontology/cco/core#cco:Skill> a owl:Class ;
-	rdfs:subClassOf :Resource ;
-	rdfs:label "Compétence"@fr , "Skill"@en .
-# 
-# http://schema.org/CreativeWork
 
-<http://schema.org/CreativeWork> a owl:Class ;
-	rdfs:subClassOf :Resource ;
-	rdfs:label "Artwork"@en , "Oeuvre"@fr .
-# 
-# http://schema.org/Event
 
-<http://schema.org/Event> a owl:Class ;
-	rdfs:subClassOf foaf:Project ;
-	rdfs:comment "An event happening at a certain time and location,' property. Repeated events may be structured as separate Event objects."@en ;
-	rdfs:label "Event"@en , "Evènement"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Argument
+###  http://purl.org/ontology/cco/core#cco:Skill
 
-:Argument a owl:Class ;
-	rdfs:subClassOf :Thesis ;
-	rdfs:label "Argument"@en , "Argument"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Association
+<http://purl.org/ontology/cco/core#cco:Skill> rdf:type owl:Class ;
+                                              
+                                              rdfs:subClassOf av:Resource ;
+                                              
+                                              rdfs:label "Compétence"@fr ,
+                                                         "Skill"@en .
 
-:Association a owl:Class ;
-	rdfs:subClassOf foaf:Organization ;
-	rdfs:label "Association, fondation"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Cooperative
 
-:Cooperative a owl:Class ;
-	rdfs:subClassOf :Enterprise ;
-	rdfs:label "Coopérative"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Enterprise
 
-:Enterprise a owl:Class ;
-	rdfs:subClassOf foaf:Organization ;
-	rdfs:comment "Entreprise industrielle ou commerciale."@fr ;
-	rdfs:label "Entreprise"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Event
+###  http://schema.org/CreativeWork
 
-:Event a owl:Class ;
-	rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
-	rdfs:label "Event type"@en , "Type d'évènement"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Idea
+<http://schema.org/CreativeWork> rdf:type owl:Class ;
+                                 
+                                 rdfs:subClassOf av:Resource ;
+                                 
+                                 rdfs:label "Artwork"@en ,
+                                            "Oeuvre"@fr .
 
-:Idea a owl:Class ;
-	rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
-	rdfs:comment "Mettre une définition d'idée telle que conçue par AV" ;
-	rdfs:label "Idea"@en , "Idée"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Money
 
-:Money a owl:Class ;
-	rdfs:subClassOf :Resource ;
-	rdfs:comment """Exemples:
+
+###  http://schema.org/Event
+
+<http://schema.org/Event> rdf:type owl:Class ;
+                          
+                          rdfs:subClassOf foaf:Project ;
+                          
+                          rdfs:comment "An event happening at a certain time and location,' property. Repeated events may be structured as separate Event objects."@en ;
+                          
+                          rdfs:label "Event"@en ,
+                                     "Evènement"@en .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Argument
+
+av:Argument rdf:type owl:Class ;
+            
+            rdfs:subClassOf av:Thesis ;
+            
+            rdfs:label "Argument"@en ,
+                       "Argument"@fr .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Association
+
+av:Association rdf:type owl:Class ;
+               
+               rdfs:subClassOf foaf:Organization ;
+               
+               rdfs:label "Association, fondation"@fr .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Cooperative
+
+av:Cooperative rdf:type owl:Class ;
+               
+               rdfs:subClassOf av:Enterprise ;
+               
+               rdfs:label "Coopérative"@fr .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Enterprise
+
+av:Enterprise rdf:type owl:Class ;
+              
+              rdfs:subClassOf foaf:Organization ;
+              
+              rdfs:comment "Entreprise industrielle ou commerciale."@fr ;
+              
+              rdfs:label "Entreprise"@fr .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Idea
+
+av:Idea rdf:type owl:Class ;
+        
+        rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+        
+        rdfs:comment "Mettre une définition d'idée telle que conçue par AV" ;
+        
+        rdfs:label "Idea"@en ,
+                   "Idée"@fr .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Money
+
+av:Money rdf:type owl:Class ;
+         
+         rdfs:subClassOf av:Resource ;
+         
+         rdfs:comment """Exemples:
 La collectivité \"Ile de France\" finance des projets.
 
 <Ile_de_France> :offers :UndefinedAmountOfMoney .
@@ -1163,61 +1213,100 @@ La collectivité \"Ile de France\" offre des resources financières dans le cadr
 
 On pourrait modéliser:
 La collectivité \"Ile de France\" finance des (précisément) projets."""@fr ;
-	rdfs:label "Financial Resource"@en , "Ressource financière"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#NaturalResources
+         
+         rdfs:label "Financial Resource"@en ,
+                    "Ressource financière"@fr .
 
-:NaturalResources a owl:Class ;
-	rdfs:subClassOf :Resource ;
-	rdfs:comment "TODO donner exemple d'utilisation"@fr ;
-	rdfs:label "Natural resource"@en , "Ressource naturelle"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Proposition
 
-:Proposition a owl:Class ;
-	rdfs:subClassOf :Thesis ;
-	rdfs:label "Proposition"@en , "Proposition"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#PublicOrganization
 
-:PublicOrganization a owl:Class ;
-	rdfs:subClassOf foaf:Organization ;
-	rdfs:label "Organisme public, collectivité"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Question
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#NaturalResources
 
-:Question a owl:Class ;
-	rdfs:subClassOf :Thesis ;
-	rdfs:label "Issue or question"@en , "Problème ou question"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Resource
+av:NaturalResources rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf av:Resource ;
+                    
+                    rdfs:comment "TODO donner exemple d'utilisation"@fr ;
+                    
+                    rdfs:label "Natural resource"@en ,
+                               "Ressource naturelle"@fr .
 
-:Resource a owl:Class ;
-	rdfs:label "Resource"@en , "Ressource"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#SocialCode
 
-:SocialCode a owl:Class ;
-	rdfs:subClassOf foaf:Document .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Theme
 
-:Theme a owl:Class ;
-	rdfs:subClassOf :Idea ;
-	rdfs:comment "Themes are equivalent to \"tags\" or \"topic interests\""@fr ;
-	rdfs:label "Theme or topic interest"@en , "Thème ou centre d'intérêt"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Thesis
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Proposition
 
-:Thesis a owl:Class ;
-	rdfs:subClassOf :Idea ;
-	rdfs:label "Thesis"@en , "Thèse"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Domaine_d'activité
+av:Proposition rdf:type owl:Class ;
+               
+               rdfs:subClassOf av:Thesis ;
+               
+               rdfs:label "Proposition"@en ,
+                          "Proposition"@fr .
 
-<http://www.virtual-assembly.org/ontologies/1.0/pair#Domaine_d'activité> a owl:Class ;
-	rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
-	rdfs:comment """Exemple de domaines d'activités ... N'est ce pas juste des thèmes ?
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#PublicOrganization
+
+av:PublicOrganization rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf foaf:Organization ;
+                      
+                      rdfs:label "Organisme public, collectivité"@fr .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Question
+
+av:Question rdf:type owl:Class ;
+            
+            rdfs:subClassOf av:Thesis ;
+            
+            rdfs:label "Issue or question"@en ,
+                       "Problème ou question"@fr .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Resource
+
+av:Resource rdf:type owl:Class ;
+            
+            rdfs:label "Resource"@en ,
+                       "Ressource"@fr .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#SocialCode
+
+av:SocialCode rdf:type owl:Class ;
+              
+              rdfs:subClassOf foaf:Document .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Theme
+
+av:Theme rdf:type owl:Class ;
+         
+         rdfs:subClassOf av:Idea ;
+         
+         rdfs:comment """Exemples issus de Alternatiba et Mathias
+
+Fabriquer, réparer
+Agriculure, alimentation
+Culture
+Eau, nature et biodiversité
+Citoyenneté, droits
+Solidarités et migrations
+Climat et énergie
+Economie soutenable
+Education pour tous
+Transports, mobilités
+Habitat et urbanisme
+Santé
+Média et numérique
+
+[Manque philo et spritualités]
+
+
+[Domaines d'activités ...] N'est ce pas juste des thèmes ?
 Aide aux porteurs de projets
 Création d'événements fédérateurs
 Création de liens entre élus et citoyens
@@ -1233,118 +1322,194 @@ Journalisme et valorisation des initiatives
 Mise en synergie des acteurs
 Mutualisation des données 
 Recensement des actions
-Création destructrice"""@fr .
-# 
-# http://www.w3.org/2004/02/skos/core#Concept
+Création destructrice""" ,
+                      "Themes are equivalent to \"tags\" or \"topic interests\""@fr ;
+         
+         rdfs:label "Theme or topic interest"@en ,
+                    "Thème ou centre d'intérêt"@fr .
 
-<http://www.w3.org/2004/02/skos/core#Concept> a owl:Class ;
-	rdfs:label "Concept"@en , "Concept"@fr .
-# 
-# http://xmlns.com/foaf/0.1/Agent
 
-foaf:Agent a owl:Class ;
-	rdfs:label "Acteur"@fr , "Agent"@en .
-# 
-# http://xmlns.com/foaf/0.1/Document
 
-foaf:Document a owl:Class ;
-	rdfs:subClassOf :Resource ;
-	rdfs:label "Document"@en , "Document"@fr .
-# 
-# http://xmlns.com/foaf/0.1/Group
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Thesis
 
-foaf:Group a owl:Class ;
-	rdfs:subClassOf foaf:Agent ;
-	rdfs:label "Group"@en , "Groupe"@fr .
-# 
-# http://xmlns.com/foaf/0.1/Organization
+av:Thesis rdf:type owl:Class ;
+          
+          rdfs:subClassOf av:Idea ;
+          
+          rdfs:label "Thesis"@en ,
+                     "Thèse"@fr .
 
-foaf:Organization a owl:Class ;
-	rdfs:subClassOf foaf:Agent ;
-	rdfs:label "Organisation"@fr , "Organization"@en .
-# 
-# http://xmlns.com/foaf/0.1/Person
 
-foaf:Person a owl:Class ;
-	rdfs:subClassOf foaf:Agent ;
-	rdfs:label "Individu"@fr , "Person"@en .
-# 
-# http://xmlns.com/foaf/0.1/Project
 
-foaf:Project a owl:Class ;
-	rdfs:label "Project"@en , "Projet"@fr .
-# 
-# https://schema.org/Place
+###  http://www.w3.org/2004/02/skos/core#Concept
 
-<https://schema.org/Place> a owl:Class ;
-	rdfs:subClassOf :Resource ;
-	rdfs:comment "Place"@en ;
-	rdfs:label "Lieu"@fr .
-# 
-# ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission
+<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class ;
+                                              
+                                              rdfs:label "Concept"@en ,
+                                                         "Concept"@fr .
 
-<ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission> a owl:Class ;
-	rdfs:subClassOf foaf:Project ;
-	rdfs:label "Initiative or Mission"@en , "Initiative, mission or activity"@en , "Initiative, mission ou activité"@fr .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Individuals
-# #
-# #################################################################
-# 
-# 
-# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Assemblée_Générale
 
-<http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Assemblée_Générale> a owl:NamedIndividual , :Event .
-# 
-# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Autre
 
-<http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Autre> a owl:NamedIndividual , :Event .
-# 
-# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Barcamp
+###  http://xmlns.com/foaf/0.1/Agent
 
-<http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Barcamp> a owl:NamedIndividual , :Event .
-# 
-# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Café_des_pixels
+foaf:Agent rdf:type owl:Class ;
+           
+           rdfs:label "Acteur"@fr ,
+                      "Agent"@en .
 
-<http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Café_des_pixels> a owl:NamedIndividual , :Event .
-# 
-# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Festival
 
-<http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Festival> a owl:NamedIndividual , :Event .
-# 
-# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Réunion
 
-<http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Réunion> a owl:NamedIndividual , :Event .
-# 
-# http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#aPAIRo
+###  http://xmlns.com/foaf/0.1/Document
 
-:aPAIRo a owl:NamedIndividual , :Event ;
-	rdfs:comment """TODO:
+foaf:Document rdf:type owl:Class ;
+              
+              rdfs:subClassOf av:Resource ;
+              
+              rdfs:label "Document"@en ,
+                         "Document"@fr .
+
+
+
+###  http://xmlns.com/foaf/0.1/Group
+
+foaf:Group rdf:type owl:Class ;
+           
+           rdfs:subClassOf foaf:Agent ;
+           
+           rdfs:label "Group"@en ,
+                      "Groupe"@fr .
+
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+
+foaf:Organization rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf foaf:Agent ;
+                  
+                  rdfs:label "Organisation"@fr ,
+                             "Organization"@en .
+
+
+
+###  http://xmlns.com/foaf/0.1/Person
+
+foaf:Person rdf:type owl:Class ;
+            
+            rdfs:subClassOf foaf:Agent ;
+            
+            rdfs:label "Individu"@fr ,
+                       "Person"@en .
+
+
+
+###  http://xmlns.com/foaf/0.1/Project
+
+foaf:Project rdf:type owl:Class ;
+             
+             rdfs:label "Project"@en ,
+                        "Projet"@fr .
+
+
+
+###  https://schema.org/Place
+
+<https://schema.org/Place> rdf:type owl:Class ;
+                           
+                           rdfs:subClassOf av:Resource ;
+                           
+                           rdfs:comment "Place"@en ;
+                           
+                           rdfs:label "Lieu"@fr .
+
+
+
+###  ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission
+
+<ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission> rdf:type owl:Class ;
+                                                                         
+                                                                         rdfs:subClassOf foaf:Project ;
+                                                                         
+                                                                         rdfs:label "Initiative or Mission"@en ,
+                                                                                    "Initiative, mission or activity"@en ,
+                                                                                    "Initiative, mission ou activité"@fr .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Assemblée_Générale
+
+<http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Assemblée_Générale> rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Autre
+
+<http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Autre> rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Barcamp
+
+<http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Barcamp> rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Café_des_pixels
+
+<http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Café_des_pixels> rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Festival
+
+<http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Festival> rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Réunion
+
+<http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Réunion> rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Meetup
+
+av:Meetup rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#aPAIRo
+
+av:aPAIRo rdf:type owl:NamedIndividual ;
+          
+          rdfs:comment """TODO:
 Tous ces trucs ne sont pas des évènements,
 mais des types d'évènement.""" .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Meetup
 
-:Meetup a owl:NamedIndividual , :Event .
 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#UndefinedAmountOfMoney
 
-# 
-# 
-# #################################################################
-# #
-# #    Annotations
-# #
-# #################################################################
-# 
-# 
 
-:SocialCode rdfs:label "Code Social"@fr , "Social Code"@en .
-# 
+
+#################################################################
+#
+#    Annotations
+#
+#################################################################
+
+
+av:SocialCode rdfs:label "Code Social"@fr ,
+                         "Social Code"@en .
+
+
 
 owl:topObjectProperty rdfs:comment """Quelques propriétés qu'il faut peut être envisager de prendre en compte : 
 
@@ -1352,35 +1517,28 @@ owl:topObjectProperty rdfs:comment """Quelques propriétés qu'il faut peut êtr
 -similarTo
 -hasForked
 -hasMerged""" .
-# 
-# Generated by the OWL API (version 4.2.1.20160306-0033) https://github.com/owlcs/owlapi
-# 
-# 
-# #################################################################
-# #
-# #    General axioms
-# #
-# #################################################################
-# 
-# 
 
-_:genid106 a owl:AllDisjointClasses ;
-	owl:members _:genid110 .
 
-_:genid110 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid109 .
 
-_:genid109 a rdf:List ;
-	rdf:first :Resource ;
-	rdf:rest _:genid108 .
 
-_:genid108 a rdf:List ;
-	rdf:first foaf:Agent ;
-	rdf:rest _:genid107 .
 
-_:genid107 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-# 
-# Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi
+#################################################################
+#
+#    General axioms
+#
+#################################################################
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( av:Idea
+                av:Resource
+                foaf:Agent
+                foaf:Project
+              )
+] .
+
+
+
+
+###  Generated by the OWL API (version 4.2.1.20160306-0033) https://github.com/owlcs/owlapi
+
