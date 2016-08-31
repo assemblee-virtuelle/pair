@@ -9,6 +9,7 @@
 @prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 
 <http://www.virtual-assembly.org/ontologies/1.0/pair> a owl:Ontology ;
 	rdfs:comment """L'ontologie PAIR est issue d'un travail collectif mené dans le cadre de l'association Assemblée virtuelle.
@@ -29,7 +30,7 @@ Elle est publiée sous licence Creative Commons : Attribution
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#metAt
 
-:metAt a owl:AnnotationProperty ;
+:metAt a rdf:Property ;
 	rdfs:label "rencontré à"@fr ;
 	rdfs:domain :Person .
 # 
@@ -87,7 +88,7 @@ _:genid8 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
-<http://open.vocab.org/terms/similarTo> rdfs:comment "Voir \"inclue\""@en ;
+<http://open.vocab.org/terms/similarTo> rdfs:comment "Voir \"inclut\""@fr ;
 	rdfs:label "similaire à"@fr , "similar to"@en .
 # 
 # http://purl.org/dc/terms/creator
@@ -99,53 +100,37 @@ _:genid8 a rdf:List ;
 
 <http://purl.org/dc/terms/hasPart> a owl:ObjectProperty ;
 	owl:inverseOf <http://purl.org/dc/terms/isPartOf> ;
-	rdfs:domain _:genid13 .
+	rdfs:comment """L'enjeu en termes de modélisation est de signifier qu'une idée peut inclure une idée,
+qu'un projet peut inclure un projet, qu'une ressource peut inclure une ressource.
 
-_:genid13 a rdf:List ;
-	rdf:first :Resource ;
-	rdf:rest _:genid12 .
+Par contre, je ne sais pas comment ne pas modéliser une idée n'inclue pas un projet, un projet n'inclue pas une ressource, etc. 
+Comment poser ces restrictions et ne modéliser que les relations d'inclusion II, PP, RR ?
 
-_:genid12 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-<http://purl.org/dc/terms/hasPart> rdfs:range _:genid14 .
-
-_:genid14 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid13 .
-
-<http://purl.org/dc/terms/hasPart> rdfs:comment """L'enjeu en termes de modélisation est de signifier qu'une idée peut inclure un idée, qu'un projet peut inclure un projet, qu'une ressource peut inclure une ressource. 
-
-Par contre, je ne sais pas comment ne pas modéliser une idée n'inclue pas une projet, un projet n'inclue pas une ressource, etc. 
-
-Comment poser ces restrictctions et ne modéliser que les relations d'inclusion II, PP, RR ?"""@fr ;
+REPONSE de JMV: avec 3 propriétés spécifiques qui seront rdfs:subPropertyOf dcterms:isPartOf """@fr ;
 	rdfs:label "includes"@en , "inclut"@fr .
+
+:ideaIsPartOf a owl:ObjectProperty ;
+	rdfs:subPropertyOf dcterms:isPartOf ;
+	rdfs:label "fait partie de l'idée"@fr , "is part of idea"@en ;
+	rdfs:domain :Idea ; rdfs:range :Idea .
+
+:projectIsPartOf a owl:ObjectProperty ;
+	rdfs:subPropertyOf dcterms:isPartOf ;
+	rdfs:label "fait partie du projet"@fr , "is part of project"@en ;
+	rdfs:domain :Project ; rdfs:range :Project .
+
+:resourceIsPartOf a owl:ObjectProperty ;
+	rdfs:subPropertyOf dcterms:isPartOf ;
+	rdfs:label "fait partie de la ressource"@fr , "is part of resource"@en ;
+	rdfs:domain :Resource ; rdfs:range :Resource .
+
+
 # 
 # http://purl.org/dc/terms/isPartOf
 
 <http://purl.org/dc/terms/isPartOf> a owl:ObjectProperty , owl:ReflexiveProperty ;
-	rdfs:domain _:genid16 .
-
-_:genid16 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-<http://purl.org/dc/terms/isPartOf> rdfs:range _:genid15 .
-
-_:genid15 a owl:Class ;
-	owl:unionOf _:genid18 .
-
-_:genid18 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid17 .
-
-_:genid17 a rdf:List ;
-	rdf:first :Resource ;
-	rdf:rest _:genid16 .
-
-<http://purl.org/dc/terms/isPartOf> rdfs:comment "Voir la propriété \"inclue\""@fr ;
-	rdfs:label "fait partie de"@fr , "is part of"@fr .
+	rdfs:comment "Voir la propriété \"inclue\""@fr ;
+	rdfs:label "fait partie de"@fr , "is part of"@en .
 # 
 # http://purl.org/dc/terms/subject
 

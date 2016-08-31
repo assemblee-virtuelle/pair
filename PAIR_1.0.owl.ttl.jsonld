@@ -1,5 +1,11 @@
 {
   "@context" : {
+    "" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#..."
+    },
+    "term_firstName" : {
+      "@id" : "http://xmlns.com/foaf/spec/#term_firstName"
+    },
     "opposedTo" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#opposedTo",
       "@type" : "@id"
@@ -12,22 +18,39 @@
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#products",
       "@type" : "@id"
     },
-    "BusinessEntity" : {
-      "@id" : "http://purl.org/goodrelations/v1#BusinessEntity"
+    "creationDate" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#creationDate"
+    },
+    "pseudo" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#pseudo"
     },
     "member" : {
       "@id" : "http://xmlns.com/foaf/0.1/member",
+      "@type" : "@id"
+    },
+    "hasUseCase" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#hasUseCase",
+      "@type" : "@id"
+    },
+    "term_img" : {
+      "@id" : "http://xmlns.com/foaf/spec/#term_img"
+    },
+    "ideaIsPartOf" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#ideaIsPartOf",
       "@type" : "@id"
     },
     "hasRecipient" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#hasRecipient",
       "@type" : "@id"
     },
+    "country" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#country"
+    },
     "Organization" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Organization"
+      "@id" : "http://xmlns.com/foaf/0.1/Organization"
     },
     "metAt" : {
-      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#metAt"
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#metAt"
     },
     "isFamily" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#isFamily",
@@ -39,14 +62,30 @@
     "Idea" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"
     },
-    "EcologicalModel" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#EcologicalModel"
+    "longDescription" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#longDescription"
     },
-    "Context" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Context"
+    "resourceIsPartOf" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#resourceIsPartOf",
+      "@type" : "@id"
+    },
+    "term_lastName" : {
+      "@id" : "http://xmlns.com/foaf/spec/#term_lastName"
+    },
+    "wikipedia" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#wikipedia"
+    },
+    "physicalWorkSpace" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#physicalWorkSpace"
+    },
+    "image" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#image"
+    },
+    "currency" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#currency"
     },
     "seeks" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#seeks",
+      "@id" : "http://purl.org/goodrelations/v1#seeks",
       "@type" : "@id"
     },
     "label" : {
@@ -66,25 +105,28 @@
     "Question" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Question"
     },
-    "GeneralInformations" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#GeneralInformations"
+    "website" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#website"
     },
     "convergesWith" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#convergesWith",
       "@type" : "@id"
     },
-    "Activity" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Activity"
+    "wikipediaPage" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#wikipediaPage"
     },
-    "carriesOut" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#carriesOut",
-      "@type" : "@id"
+    "email" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#email"
     },
     "Event" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Event"
+      "@id" : "http://schema.org/Event"
     },
     "follows" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#follows",
+      "@id" : "http://rdfs.org/sioc/ns#follows",
+      "@type" : "@id"
+    },
+    "hasConsequence" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#hasConsequence",
       "@type" : "@id"
     },
     "Offering" : {
@@ -94,8 +136,18 @@
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#contributedTo",
       "@type" : "@id"
     },
+    "similarTo" : {
+      "@id" : "http://open.vocab.org/terms/similarTo",
+      "@type" : "@id"
+    },
     "Person" : {
       "@id" : "http://xmlns.com/foaf/0.1/Person"
+    },
+    "term_mbox" : {
+      "@id" : "http://xmlns.com/foaf/spec/#term_mbox"
+    },
+    "PublicOrganization" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#PublicOrganization"
     },
     "InitiativeOrMission" : {
       "@id" : "ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission"
@@ -104,8 +156,8 @@
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#hasContributor",
       "@type" : "@id"
     },
-    "Actor" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Actor"
+    "legalForm" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#legalForm"
     },
     "attendee" : {
       "@id" : "http://schema.org/attendee",
@@ -114,48 +166,63 @@
     "Agent" : {
       "@id" : "http://xmlns.com/foaf/0.1/Agent"
     },
+    "because" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#because",
+      "@type" : "@id"
+    },
+    "town" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#town"
+    },
     "creator" : {
       "@id" : "http://purl.org/dc/terms/creator",
       "@type" : "@id"
-    },
-    "Objectives" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Objectives"
     },
     "actualizes" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#actualizes",
       "@type" : "@id"
     },
-    "topObjectProperty" : {
-      "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty",
+    "name" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#name"
+    },
+    "votesFor" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#votesFor",
       "@type" : "@id"
     },
     "wantsToBarter" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#wantsToBarter",
       "@type" : "@id"
     },
-    "hasMember" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#hasMember",
+    "employee" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#employee",
+      "@type" : "@id"
+    },
+    "votesAgainst" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#votesAgainst",
       "@type" : "@id"
     },
     "CreativeWork" : {
       "@id" : "http://schema.org/CreativeWork"
     },
-    "LegalFinancialModel" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#LegalFinancialModel"
-    },
     "gives" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#gives",
       "@type" : "@id"
     },
-    "EconomicalModel" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#EconomicalModel"
+    "status" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#status"
     },
     "authorof" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#authorof",
       "@type" : "@id"
     },
-    "Work" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Work"
+    "projectIsPartOf" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#projectIsPartOf",
+      "@type" : "@id"
+    },
+    "firstName" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#firstName"
+    },
+    "shortDescription" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#shortDescription"
     },
     "Argument" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Argument"
@@ -164,34 +231,35 @@
       "@id" : "http://xmlns.com/foaf/0.1/currentProject",
       "@type" : "@id"
     },
-    "Description" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Description"
+    "recurrence" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#recurrence"
+    },
+    "term_nick" : {
+      "@id" : "http://xmlns.com/foaf/spec/#term_nick"
     },
     "subject" : {
       "@id" : "http://purl.org/dc/terms/subject",
-      "@type" : "@id"
-    },
-    "debate" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#debate",
-      "@type" : "@id"
-    },
-    "embodies" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#embodies",
       "@type" : "@id"
     },
     "wantsToRent" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#wantsToRent",
       "@type" : "@id"
     },
+    "term_weblog" : {
+      "@id" : "http://xmlns.com/foaf/spec/#term_weblog"
+    },
     "buys" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#buys",
       "@type" : "@id"
     },
     "Place" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Place"
+      "@id" : "https://schema.org/Place"
     },
-    "Good_or_Service" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Good_or_Service"
+    "phoneNumber" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#phoneNumber"
+    },
+    "until" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#until"
     },
     "knows" : {
       "@id" : "http://xmlns.com/foaf/0.1/knows",
@@ -201,6 +269,9 @@
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#isFriendOf",
       "@type" : "@id"
     },
+    "tickets" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#tickets"
+    },
     "Project" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Project"
     },
@@ -208,22 +279,14 @@
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#creatorof",
       "@type" : "@id"
     },
-    "SocialHumanModel" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#SocialHumanModel"
+    "history" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#history"
     },
-    "hasExpertise" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#hasExpertise",
-      "@type" : "@id"
+    "birthDate" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#birthDate"
     },
     "pastProject" : {
       "@id" : "http://xmlns.com/foaf/0.1/pastProject",
-      "@type" : "@id"
-    },
-    "CulturalArtisticModel" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#CulturalArtisticModel"
-    },
-    "hasAnArgumentOn" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#hasAnArgumentOn",
       "@type" : "@id"
     },
     "Skill" : {
@@ -232,15 +295,28 @@
     "Theme" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Theme"
     },
+    "licence" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#licence"
+    },
     "NaturalResources" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#NaturalResources"
     },
-    "Definition" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Definition"
+    "uses" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#uses",
+      "@type" : "@id"
     },
     "supports" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#supports",
       "@type" : "@id"
+    },
+    "zipCode" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#zipCode"
+    },
+    "from" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#from"
+    },
+    "Cooperative" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Cooperative"
     },
     "Thesis" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Thesis"
@@ -252,6 +328,10 @@
     "Money" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Money"
     },
+    "manage" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#manage",
+      "@type" : "@id"
+    },
     "hasPartner" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#hasPartner",
       "@type" : "@id"
@@ -259,8 +339,13 @@
     "SocialCode" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#SocialCode"
     },
-    "TechnologicalModel" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#TechnologicalModel"
+    "hasDirector" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#hasDirector",
+      "@type" : "@id"
+    },
+    "worksOn" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#worksOn",
+      "@type" : "@id"
     },
     "Resource" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"
@@ -281,21 +366,40 @@
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#contributesTo",
       "@type" : "@id"
     },
+    "digitalWorkSpace" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#digitalWorkSpace"
+    },
     "comment" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
     },
-    "Document" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Document"
+    "price" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#price"
     },
-    "Issues" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Issues"
+    "Document" : {
+      "@id" : "http://xmlns.com/foaf/0.1/Document"
     },
     "Group" : {
       "@id" : "http://xmlns.com/foaf/0.1/Group"
     },
+    "Association" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Association"
+    },
+    "socialNetworks" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#socialNetworks"
+    },
+    "to" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#to"
+    },
+    "hasCreator" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#hasCreator",
+      "@type" : "@id"
+    },
     "expertise" : {
       "@id" : "http://purl.org/ontology/cco/core#expertise",
       "@type" : "@id"
+    },
+    "Enterprise" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Enterprise"
     },
     "hasEmployee" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#hasEmployee",
@@ -304,9 +408,15 @@
     "Proposition" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Proposition"
     },
+    "adress" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#adress"
+    },
     "worksWith" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#worksWith",
       "@type" : "@id"
+    },
+    "at" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#at"
     },
     "likes" : {
       "@id" : "http://purl.org/spar/cito/likes",
@@ -320,16 +430,15 @@
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#isFacetOf",
       "@type" : "@id"
     },
+    "description" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#description"
+    },
     "wouldLike" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#wouldLike",
       "@type" : "@id"
     },
-    "hasAttendee" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#hasAttendee",
-      "@type" : "@id"
-    },
     "offers" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#offers",
+      "@id" : "http://purl.org/goodrelations/v1#offers",
       "@type" : "@id"
     },
     "barters" : {
@@ -338,6 +447,10 @@
     },
     "lends" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#lends",
+      "@type" : "@id"
+    },
+    "organize" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#organize",
       "@type" : "@id"
     }
   }
