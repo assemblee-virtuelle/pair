@@ -65,6 +65,10 @@
     "longDescription" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#longDescription"
     },
+    "hosts" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#hosts",
+      "@type" : "@id"
+    },
     "resourceIsPartOf" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#resourceIsPartOf",
       "@type" : "@id"
@@ -86,6 +90,10 @@
     },
     "seeks" : {
       "@id" : "http://purl.org/goodrelations/v1#seeks",
+      "@type" : "@id"
+    },
+    "hosted" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#hosted",
       "@type" : "@id"
     },
     "label" : {
@@ -111,12 +119,6 @@
     "convergesWith" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#convergesWith",
       "@type" : "@id"
-    },
-    "wikipediaPage" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#wikipediaPage"
-    },
-    "email" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#email"
     },
     "Event" : {
       "@id" : "http://schema.org/Event"
@@ -203,6 +205,10 @@
     "CreativeWork" : {
       "@id" : "http://schema.org/CreativeWork"
     },
+    "hasAuthor" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#hasAuthor",
+      "@type" : "@id"
+    },
     "gives" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#gives",
       "@type" : "@id"
@@ -273,7 +279,7 @@
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#tickets"
     },
     "Project" : {
-      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Project"
+      "@id" : "http://xmlns.com/foaf/0.1/Project"
     },
     "creatorof" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#creatorof",
@@ -338,6 +344,9 @@
     },
     "SocialCode" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#SocialCode"
+    },
+    "file" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#file"
     },
     "hasDirector" : {
       "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#hasDirector",
