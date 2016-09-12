@@ -6,31 +6,49 @@
 @prefix cco: <http://purl.org/ontology/cco/core#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix cv: <http://rdfs.org/resume-rdf/cv.rdfs#>.
-# @prefix     : <http://xmlns.com/foaf/0.1/>.
 
-@prefix av: <http://www.virtual-assembly.org/ontologies/1.0/pair#> .
-@base <http://www.virtual-assembly.org/ontologies/1.0/pair#> .
-@prefix avf: <http://www.assemblee-virtuelle.org/forms#> .
+@prefix pair: <http://www.virtual-assembly.org/ontologies/1.0/pair#> .
+@prefix av:   <http://www.virtual-assembly.org/ontologies/1.0/pair#> .
+@base         <http://www.virtual-assembly.org/ontologies/1.0/pair#> .
+@prefix pairforms: <http://www.virtual-assembly.org/ontologies/1.0/forms#> .
 
-# specifications de formulaires pour AV
+# Specifications de formulaires pour AV
 
-avf:projectForm
-  form:classDomain foaf:Project ;
+pairforms:InitiativeOrMissionForm
+  form:classDomain pair:InitiativeOrMission ;
   form:showProperties (
-	rdfs:label rdfs:comment
-	foaf:homepage
-	av:projectCategory
-	# foaf:maker
+	rdfs:label
+	foaf:img
+	pair:licence
+	pair:status
+	foaf:weblog
 	foaf:mbox
-	# foaf:depiction
+	pair:shortDescription
+	rdfs:comment
+	pair:longDescription
+	pair:socialNetworks
+	pair:physicalWorkSpace
+	pair:digitalWorkSpace
 
-	form:p------------------------PAIRs------------------------ # TODO separator 
-	av:project	# P
-	av:lead		# A
-	av:concretise	# I
-	dct:subject	# DBPediaLookup
-	av:resource	# R
+	form:p------------------------Projets associés------------------------
+	pair:hasUseCase
+	pair:supports
+	
+	form:p------------------------Acteurs associés------------------------
+	pair:hasDirector
+	pair:hasContributor
+	pair:hasFollower
+	pair:hasPartner
+	
+	form:p------------------------Idées associées------------------------
+	dcterms:subject
+	pair:actualizes
+	
+	form:p------------------------Ressources associés------------------------
+	gr:seeks
+	gr:offers
 ) .
+
 avf:projectForm-dc_subject
 	form:fieldAppliesToForm avf:projectForm ;
 	form:fieldAppliesToProperty dct:subject ;
