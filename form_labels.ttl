@@ -6,7 +6,14 @@
 @prefix cco: <http://purl.org/ontology/cco/core#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix cv: <http://rdfs.org/resume-rdf/cv.rdfs#>.
-@prefix pair: <http://www.virtual-assembly.org/ontologies/1.0/pair#> .
+@prefix gr: <http://purl.org/goodrelations/v1#> .
+@prefix schema: <http://schema.org/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix sioc: <http://rdfs.org/sioc/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+
+# @prefix pair: <http://www.virtual-assembly.org/ontologies/1.0/pair#> .
 
 # Spécifications de formulaires pour AV : changements de labels par rapport aux vocabulaires d'origine
 
@@ -17,6 +24,7 @@ foaf:homepage rdfs:label "Site Web"@fr .
 foaf:mbox rdfs:label "Email"@fr .
 foaf:familyName rdfs:label "Nom"@fr .
 foaf:nick rdfs:label "Pseudo"@fr .
+
 foaf:img rdfs:label "Photo, image"@fr .
 foaf:weblog rdfs:label "Site ou page web"@fr .
 
