@@ -145,7 +145,7 @@ dcterms:subject rdfs:comment """ 'A pour sujet' permet d'identifier de quoi un P
 - d'une idée (ex : Assemblée virtuelle) a pour sujet le peer to peer), 
 - d'un projet (ex: semantic forms a pour sujet l'interopérabilté)
 - d'une ressource (ex: économie symbiotique a pour sujet développement durable)"""@fr ;
-	rdfs:label "a pour sujet ou centre d'intérêt"@fr , "is about"@en .
+	rdfs:label "is about"@en , "sujet / centre d'intérêt"@fr .
 # 
 # http://purl.org/goodrelations/v1#offers
 
@@ -335,6 +335,7 @@ AMAP (idée) incarne circuits courts (idée) """ ;
 
 :authorof a owl:ObjectProperty ;
 	rdfs:subPropertyOf dcterms:creator ;
+	owl:inverseOf :hasAuthor ;
 	rdfs:domain foaf:Agent ;
 	rdfs:range _:genid48 .
 
@@ -696,6 +697,11 @@ _:genid98 a rdf:List ;
 	rdfs:domain foaf:Organization ;
 	rdfs:range foaf:Person ;
 	rdfs:label "a pour employé"@fr , "has employee"@en .
+# 
+# http://www.virtual-assembly.org/ontologies/1.0/pair#hasFollower
+
+:hasFollower a owl:ObjectProperty ;
+	rdfs:label "a pour sympathisant"@fr .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#hasPartner
 
@@ -1255,7 +1261,15 @@ foaf:knows a owl:ObjectProperty ;
 foaf:member a owl:ObjectProperty ;
 	rdfs:domain _:genid1 .
 
-_:genid1 owl:unionOf _:genid189 .
+_:genid1 owl:unionOf _:genid191 .
+
+_:genid191 a rdf:List ;
+	rdf:first :Idea ;
+	rdf:rest _:genid190 .
+
+_:genid190 a rdf:List ;
+	rdf:first :Resource ;
+	rdf:rest _:genid189 .
 
 _:genid189 a rdf:List ;
 	rdf:first foaf:Group ;
@@ -1263,12 +1277,24 @@ _:genid189 a rdf:List ;
 
 _:genid188 a rdf:List ;
 	rdf:first foaf:Organization ;
+	rdf:rest _:genid187 .
+
+_:genid187 a rdf:List ;
+	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
-foaf:member rdfs:range _:genid2 .
+foaf:member rdfs:range _:genid192 .
 
-_:genid2 a owl:Class ;
-	owl:unionOf _:genid189 .
+_:genid192 a owl:Class ;
+	owl:unionOf _:genid194 .
+
+_:genid194 a rdf:List ;
+	rdf:first foaf:Group ;
+	rdf:rest _:genid193 .
+
+_:genid193 a rdf:List ;
+	rdf:first foaf:Organization ;
+	rdf:rest rdf:nil .
 
 foaf:member rdfs:label "a pour membre"@fr .
 # 
@@ -1277,28 +1303,28 @@ foaf:member rdfs:label "a pour membre"@fr .
 foaf:pastProject a owl:ObjectProperty ;
 	rdfs:subPropertyOf :contributedTo ;
 	rdfs:domain foaf:Person ;
-	rdfs:range _:genid190 .
+	rdfs:range _:genid195 .
 
-_:genid190 a owl:Class ;
-	owl:unionOf _:genid195 .
+_:genid195 a owl:Class ;
+	owl:unionOf _:genid200 .
 
-_:genid195 a rdf:List ;
+_:genid200 a rdf:List ;
 	rdf:first :Idea ;
-	rdf:rest _:genid194 .
+	rdf:rest _:genid199 .
 
-_:genid194 a rdf:List ;
+_:genid199 a rdf:List ;
 	rdf:first :Resource ;
-	rdf:rest _:genid193 .
+	rdf:rest _:genid198 .
 
-_:genid193 a rdf:List ;
+_:genid198 a rdf:List ;
 	rdf:first foaf:Group ;
-	rdf:rest _:genid192 .
+	rdf:rest _:genid197 .
 
-_:genid192 a rdf:List ;
+_:genid197 a rdf:List ;
 	rdf:first foaf:Organization ;
-	rdf:rest _:genid191 .
+	rdf:rest _:genid196 .
 
-_:genid191 a rdf:List ;
+_:genid196 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -1316,20 +1342,20 @@ foaf:pastProject rdfs:label "a contribué à"@fr , "has contributed to"@en .
 # http://www.virtual-assembly.org/ontologies/1.0/pair#adress
 
 :adress a owl:DatatypeProperty ;
-	rdfs:domain _:genid196 .
+	rdfs:domain _:genid201 .
 
-_:genid196 a owl:Class ;
-	owl:unionOf _:genid199 .
+_:genid201 a owl:Class ;
+	owl:unionOf _:genid204 .
 
-_:genid199 a rdf:List ;
+_:genid204 a rdf:List ;
 	rdf:first :Resource ;
-	rdf:rest _:genid198 .
+	rdf:rest _:genid203 .
 
-_:genid198 a rdf:List ;
+_:genid203 a rdf:List ;
 	rdf:first foaf:Agent ;
-	rdf:rest _:genid197 .
+	rdf:rest _:genid202 .
 
-_:genid197 a rdf:List ;
+_:genid202 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -1349,20 +1375,20 @@ _:genid197 a rdf:List ;
 # http://www.virtual-assembly.org/ontologies/1.0/pair#country
 
 :country a owl:DatatypeProperty ;
-	rdfs:domain _:genid200 .
+	rdfs:domain _:genid205 .
 
-_:genid200 a owl:Class ;
-	owl:unionOf _:genid203 .
+_:genid205 a owl:Class ;
+	owl:unionOf _:genid208 .
 
-_:genid203 a rdf:List ;
+_:genid208 a rdf:List ;
 	rdf:first :Resource ;
-	rdf:rest _:genid202 .
+	rdf:rest _:genid207 .
 
-_:genid202 a rdf:List ;
+_:genid207 a rdf:List ;
 	rdf:first foaf:Agent ;
-	rdf:rest _:genid201 .
+	rdf:rest _:genid206 .
 
-_:genid201 a rdf:List ;
+_:genid206 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -1371,28 +1397,28 @@ _:genid201 a rdf:List ;
 # http://www.virtual-assembly.org/ontologies/1.0/pair#creationDate
 
 :creationDate a owl:DatatypeProperty ;
-	rdfs:domain _:genid204 .
+	rdfs:domain _:genid209 .
 
-_:genid204 a owl:Class ;
-	owl:unionOf _:genid209 .
+_:genid209 a owl:Class ;
+	owl:unionOf _:genid214 .
 
-_:genid209 a rdf:List ;
+_:genid214 a rdf:List ;
 	rdf:first :Idea ;
-	rdf:rest _:genid208 .
+	rdf:rest _:genid213 .
 
-_:genid208 a rdf:List ;
+_:genid213 a rdf:List ;
 	rdf:first :Resource ;
-	rdf:rest _:genid207 .
+	rdf:rest _:genid212 .
 
-_:genid207 a rdf:List ;
+_:genid212 a rdf:List ;
 	rdf:first foaf:Group ;
-	rdf:rest _:genid206 .
+	rdf:rest _:genid211 .
 
-_:genid206 a rdf:List ;
+_:genid211 a rdf:List ;
 	rdf:first foaf:Organization ;
-	rdf:rest _:genid205 .
+	rdf:rest _:genid210 .
 
-_:genid205 a rdf:List ;
+_:genid210 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -1407,33 +1433,6 @@ _:genid205 a rdf:List ;
 # http://www.virtual-assembly.org/ontologies/1.0/pair#description
 
 :description a owl:DatatypeProperty ;
-	rdfs:domain _:genid210 .
-
-_:genid210 a owl:Class ;
-	owl:unionOf _:genid214 .
-
-_:genid214 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid213 .
-
-_:genid213 a rdf:List ;
-	rdf:first :Resource ;
-	rdf:rest _:genid212 .
-
-_:genid212 a rdf:List ;
-	rdf:first foaf:Agent ;
-	rdf:rest _:genid211 .
-
-_:genid211 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-:description rdfs:comment "1000 caractères max"@fr ;
-	rdfs:label "Description"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#digitalWorkSpace
-
-:digitalWorkSpace a owl:DatatypeProperty ;
 	rdfs:domain _:genid215 .
 
 _:genid215 a owl:Class ;
@@ -1444,22 +1443,23 @@ _:genid219 a rdf:List ;
 	rdf:rest _:genid218 .
 
 _:genid218 a rdf:List ;
-	rdf:first foaf:Group ;
+	rdf:first :Resource ;
 	rdf:rest _:genid217 .
 
 _:genid217 a rdf:List ;
-	rdf:first foaf:Organization ;
+	rdf:first foaf:Agent ;
 	rdf:rest _:genid216 .
 
 _:genid216 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
-:digitalWorkSpace rdfs:label "Espace de travail numérique"@fr .
+:description rdfs:comment "1000 caractères max"@fr ;
+	rdfs:label "Description"@fr .
 # 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#file
+# http://www.virtual-assembly.org/ontologies/1.0/pair#digitalWorkSpace
 
-:file a owl:DatatypeProperty ;
+:digitalWorkSpace a owl:DatatypeProperty ;
 	rdfs:domain _:genid220 .
 
 _:genid220 a owl:Class ;
@@ -1470,14 +1470,40 @@ _:genid224 a rdf:List ;
 	rdf:rest _:genid223 .
 
 _:genid223 a rdf:List ;
-	rdf:first :Resource ;
+	rdf:first foaf:Group ;
 	rdf:rest _:genid222 .
 
 _:genid222 a rdf:List ;
-	rdf:first foaf:Agent ;
+	rdf:first foaf:Organization ;
 	rdf:rest _:genid221 .
 
 _:genid221 a rdf:List ;
+	rdf:first foaf:Project ;
+	rdf:rest rdf:nil .
+
+:digitalWorkSpace rdfs:label "Espace de travail numérique"@fr .
+# 
+# http://www.virtual-assembly.org/ontologies/1.0/pair#file
+
+:file a owl:DatatypeProperty ;
+	rdfs:domain _:genid225 .
+
+_:genid225 a owl:Class ;
+	owl:unionOf _:genid229 .
+
+_:genid229 a rdf:List ;
+	rdf:first :Idea ;
+	rdf:rest _:genid228 .
+
+_:genid228 a rdf:List ;
+	rdf:first :Resource ;
+	rdf:rest _:genid227 .
+
+_:genid227 a rdf:List ;
+	rdf:first foaf:Agent ;
+	rdf:rest _:genid226 .
+
+_:genid226 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -1492,24 +1518,24 @@ _:genid221 a rdf:List ;
 # http://www.virtual-assembly.org/ontologies/1.0/pair#from
 
 :from a owl:DatatypeProperty ;
-	rdfs:domain _:genid225 .
+	rdfs:domain _:genid230 .
 
-_:genid225 a owl:Class ;
-	owl:unionOf _:genid229 .
+_:genid230 a owl:Class ;
+	owl:unionOf _:genid234 .
 
-_:genid229 a rdf:List ;
+_:genid234 a rdf:List ;
 	rdf:first <http://schema.org/Event> ;
-	rdf:rest _:genid228 .
+	rdf:rest _:genid233 .
 
-_:genid228 a rdf:List ;
+_:genid233 a rdf:List ;
 	rdf:first foaf:Group ;
-	rdf:rest _:genid227 .
+	rdf:rest _:genid232 .
 
-_:genid227 a rdf:List ;
+_:genid232 a rdf:List ;
 	rdf:first foaf:Organization ;
-	rdf:rest _:genid226 .
+	rdf:rest _:genid231 .
 
-_:genid226 a rdf:List ;
+_:genid231 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -1521,32 +1547,6 @@ Mais également depuis, par exemple, dans les locaux des grands voisins, depuis 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#history
 
 :history a owl:DatatypeProperty ;
-	rdfs:domain _:genid230 .
-
-_:genid230 a owl:Class ;
-	owl:unionOf _:genid234 .
-
-_:genid234 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid233 .
-
-_:genid233 a rdf:List ;
-	rdf:first :Resource ;
-	rdf:rest _:genid232 .
-
-_:genid232 a rdf:List ;
-	rdf:first foaf:Agent ;
-	rdf:rest _:genid231 .
-
-_:genid231 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-:history rdfs:label "Historique, histoire"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#image
-
-:image a owl:DatatypeProperty ;
 	rdfs:domain _:genid235 .
 
 _:genid235 a owl:Class ;
@@ -1568,15 +1568,23 @@ _:genid236 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
-:image rdfs:label "Photo, image" .
+:history rdfs:label "Historique, histoire"@fr .
 # 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#legalForm
+# http://www.virtual-assembly.org/ontologies/1.0/pair#image
 
-:legalForm a owl:DatatypeProperty ;
+:image a owl:DatatypeProperty ;
 	rdfs:domain _:genid240 .
 
 _:genid240 a owl:Class ;
-	owl:unionOf _:genid242 .
+	owl:unionOf _:genid244 .
+
+_:genid244 a rdf:List ;
+	rdf:first :Idea ;
+	rdf:rest _:genid243 .
+
+_:genid243 a rdf:List ;
+	rdf:first :Resource ;
+	rdf:rest _:genid242 .
 
 _:genid242 a rdf:List ;
 	rdf:first foaf:Agent ;
@@ -1586,36 +1594,32 @@ _:genid241 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
+:image rdfs:label "Photo, image" .
+# 
+# http://www.virtual-assembly.org/ontologies/1.0/pair#legalForm
+
+:legalForm a owl:DatatypeProperty ;
+	rdfs:domain _:genid245 .
+
+_:genid245 a owl:Class ;
+	owl:unionOf _:genid247 .
+
+_:genid247 a rdf:List ;
+	rdf:first foaf:Agent ;
+	rdf:rest _:genid246 .
+
+_:genid246 a rdf:List ;
+	rdf:first foaf:Project ;
+	rdf:rest rdf:nil .
+
 :legalForm rdfs:label "Forme juridique"@fr .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#licence
 
 :licence a owl:DatatypeProperty ;
-	rdfs:domain _:genid243 .
+	rdfs:domain _:genid248 .
 
-_:genid243 a owl:Class ;
-	owl:unionOf _:genid246 .
-
-_:genid246 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid245 .
-
-_:genid245 a rdf:List ;
-	rdf:first :Resource ;
-	rdf:rest _:genid244 .
-
-_:genid244 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-:licence rdfs:label "Licence"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#longDescription
-
-:longDescription a owl:DatatypeProperty ;
-	rdfs:domain _:genid247 .
-
-_:genid247 a owl:Class ;
+_:genid248 a owl:Class ;
 	owl:unionOf _:genid251 .
 
 _:genid251 a rdf:List ;
@@ -1627,19 +1631,14 @@ _:genid250 a rdf:List ;
 	rdf:rest _:genid249 .
 
 _:genid249 a rdf:List ;
-	rdf:first foaf:Agent ;
-	rdf:rest _:genid248 .
-
-_:genid248 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
-:longDescription rdfs:comment "Pas de limite de nombre de caractères"@fr ;
-	rdfs:label "Description longue"@fr .
+:licence rdfs:label "Licence"@fr .
 # 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#name
+# http://www.virtual-assembly.org/ontologies/1.0/pair#longDescription
 
-:name a owl:DatatypeProperty ;
+:longDescription a owl:DatatypeProperty ;
 	rdfs:domain _:genid252 .
 
 _:genid252 a owl:Class ;
@@ -1661,11 +1660,12 @@ _:genid253 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
-:name rdfs:label "Nom"@fr .
+:longDescription rdfs:comment "Pas de limite de nombre de caractères"@fr ;
+	rdfs:label "Description longue"@fr .
 # 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#phoneNumber
+# http://www.virtual-assembly.org/ontologies/1.0/pair#name
 
-:phoneNumber a owl:DatatypeProperty ;
+:name a owl:DatatypeProperty ;
 	rdfs:domain _:genid257 .
 
 _:genid257 a owl:Class ;
@@ -1687,11 +1687,11 @@ _:genid258 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
-:phoneNumber rdfs:label "Téléphone"@fr .
+:name rdfs:label "Nom"@fr .
 # 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#physicalWorkSpace
+# http://www.virtual-assembly.org/ontologies/1.0/pair#phoneNumber
 
-:physicalWorkSpace a owl:DatatypeProperty ;
+:phoneNumber a owl:DatatypeProperty ;
 	rdfs:domain _:genid262 .
 
 _:genid262 a owl:Class ;
@@ -1702,14 +1702,40 @@ _:genid266 a rdf:List ;
 	rdf:rest _:genid265 .
 
 _:genid265 a rdf:List ;
-	rdf:first foaf:Group ;
+	rdf:first :Resource ;
 	rdf:rest _:genid264 .
 
 _:genid264 a rdf:List ;
-	rdf:first foaf:Organization ;
+	rdf:first foaf:Agent ;
 	rdf:rest _:genid263 .
 
 _:genid263 a rdf:List ;
+	rdf:first foaf:Project ;
+	rdf:rest rdf:nil .
+
+:phoneNumber rdfs:label "Téléphone"@fr .
+# 
+# http://www.virtual-assembly.org/ontologies/1.0/pair#physicalWorkSpace
+
+:physicalWorkSpace a owl:DatatypeProperty ;
+	rdfs:domain _:genid267 .
+
+_:genid267 a owl:Class ;
+	owl:unionOf _:genid271 .
+
+_:genid271 a rdf:List ;
+	rdf:first :Idea ;
+	rdf:rest _:genid270 .
+
+_:genid270 a rdf:List ;
+	rdf:first foaf:Group ;
+	rdf:rest _:genid269 .
+
+_:genid269 a rdf:List ;
+	rdf:first foaf:Organization ;
+	rdf:rest _:genid268 .
+
+_:genid268 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -1737,33 +1763,6 @@ _:genid263 a rdf:List ;
 # http://www.virtual-assembly.org/ontologies/1.0/pair#shortDescription
 
 :shortDescription a owl:DatatypeProperty ;
-	rdfs:domain _:genid267 .
-
-_:genid267 a owl:Class ;
-	owl:unionOf _:genid271 .
-
-_:genid271 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid270 .
-
-_:genid270 a rdf:List ;
-	rdf:first :Resource ;
-	rdf:rest _:genid269 .
-
-_:genid269 a rdf:List ;
-	rdf:first foaf:Agent ;
-	rdf:rest _:genid268 .
-
-_:genid268 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-:shortDescription rdfs:comment "140 caractères max"@fr ;
-	rdfs:label "Description courte"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#socialNetworks
-
-:socialNetworks a owl:DatatypeProperty ;
 	rdfs:domain _:genid272 .
 
 _:genid272 a owl:Class ;
@@ -1785,11 +1784,12 @@ _:genid273 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
-:socialNetworks rdfs:label "Réseaux sociaux"@fr .
+:shortDescription rdfs:comment "140 caractères max"@fr ;
+	rdfs:label "Description courte"@fr .
 # 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#status
+# http://www.virtual-assembly.org/ontologies/1.0/pair#socialNetworks
 
-:status a owl:DatatypeProperty ;
+:socialNetworks a owl:DatatypeProperty ;
 	rdfs:domain _:genid277 .
 
 _:genid277 a owl:Class ;
@@ -1808,6 +1808,32 @@ _:genid279 a rdf:List ;
 	rdf:rest _:genid278 .
 
 _:genid278 a rdf:List ;
+	rdf:first foaf:Project ;
+	rdf:rest rdf:nil .
+
+:socialNetworks rdfs:label "Réseaux sociaux"@fr .
+# 
+# http://www.virtual-assembly.org/ontologies/1.0/pair#status
+
+:status a owl:DatatypeProperty ;
+	rdfs:domain _:genid282 .
+
+_:genid282 a owl:Class ;
+	owl:unionOf _:genid286 .
+
+_:genid286 a rdf:List ;
+	rdf:first :Idea ;
+	rdf:rest _:genid285 .
+
+_:genid285 a rdf:List ;
+	rdf:first :Resource ;
+	rdf:rest _:genid284 .
+
+_:genid284 a rdf:List ;
+	rdf:first foaf:Agent ;
+	rdf:rest _:genid283 .
+
+_:genid283 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -1830,24 +1856,20 @@ _:genid278 a rdf:List ;
 # http://www.virtual-assembly.org/ontologies/1.0/pair#town
 
 :town a owl:DatatypeProperty ;
-	rdfs:domain _:genid282 .
+	rdfs:domain _:genid287 .
 
-_:genid282 a owl:Class ;
-	owl:unionOf _:genid286 .
+_:genid287 a owl:Class ;
+	owl:unionOf _:genid290 .
 
-_:genid286 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid285 .
-
-_:genid285 a rdf:List ;
+_:genid290 a rdf:List ;
 	rdf:first :Resource ;
-	rdf:rest _:genid284 .
+	rdf:rest _:genid289 .
 
-_:genid284 a rdf:List ;
+_:genid289 a rdf:List ;
 	rdf:first foaf:Agent ;
-	rdf:rest _:genid283 .
+	rdf:rest _:genid288 .
 
-_:genid283 a rdf:List ;
+_:genid288 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -1856,24 +1878,24 @@ _:genid283 a rdf:List ;
 # http://www.virtual-assembly.org/ontologies/1.0/pair#until
 
 :until a owl:DatatypeProperty ;
-	rdfs:domain _:genid287 .
+	rdfs:domain _:genid291 .
 
-_:genid287 a owl:Class ;
-	owl:unionOf _:genid291 .
+_:genid291 a owl:Class ;
+	owl:unionOf _:genid295 .
 
-_:genid291 a rdf:List ;
+_:genid295 a rdf:List ;
 	rdf:first <http://schema.org/Event> ;
-	rdf:rest _:genid290 .
+	rdf:rest _:genid294 .
 
-_:genid290 a rdf:List ;
+_:genid294 a rdf:List ;
 	rdf:first foaf:Group ;
-	rdf:rest _:genid289 .
+	rdf:rest _:genid293 .
 
-_:genid289 a rdf:List ;
+_:genid293 a rdf:List ;
 	rdf:first foaf:Organization ;
-	rdf:rest _:genid288 .
+	rdf:rest _:genid292 .
 
-_:genid288 a rdf:List ;
+_:genid292 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -1882,24 +1904,24 @@ _:genid288 a rdf:List ;
 # http://www.virtual-assembly.org/ontologies/1.0/pair#website
 
 :website a owl:DatatypeProperty ;
-	rdfs:domain _:genid292 .
+	rdfs:domain _:genid296 .
 
-_:genid292 a owl:Class ;
-	owl:unionOf _:genid296 .
+_:genid296 a owl:Class ;
+	owl:unionOf _:genid300 .
 
-_:genid296 a rdf:List ;
+_:genid300 a rdf:List ;
 	rdf:first :Idea ;
-	rdf:rest _:genid295 .
+	rdf:rest _:genid299 .
 
-_:genid295 a rdf:List ;
+_:genid299 a rdf:List ;
 	rdf:first :Resource ;
-	rdf:rest _:genid294 .
+	rdf:rest _:genid298 .
 
-_:genid294 a rdf:List ;
+_:genid298 a rdf:List ;
 	rdf:first foaf:Agent ;
-	rdf:rest _:genid293 .
+	rdf:rest _:genid297 .
 
-_:genid293 a rdf:List ;
+_:genid297 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -1908,24 +1930,24 @@ _:genid293 a rdf:List ;
 # http://www.virtual-assembly.org/ontologies/1.0/pair#wikipedia
 
 :wikipedia a owl:DatatypeProperty ;
-	rdfs:domain _:genid297 .
+	rdfs:domain _:genid301 .
 
-_:genid297 a owl:Class ;
-	owl:unionOf _:genid301 .
+_:genid301 a owl:Class ;
+	owl:unionOf _:genid305 .
 
-_:genid301 a rdf:List ;
+_:genid305 a rdf:List ;
 	rdf:first :Idea ;
-	rdf:rest _:genid300 .
+	rdf:rest _:genid304 .
 
-_:genid300 a rdf:List ;
+_:genid304 a rdf:List ;
 	rdf:first :Resource ;
-	rdf:rest _:genid299 .
+	rdf:rest _:genid303 .
 
-_:genid299 a rdf:List ;
+_:genid303 a rdf:List ;
 	rdf:first foaf:Agent ;
-	rdf:rest _:genid298 .
+	rdf:rest _:genid302 .
 
-_:genid298 a rdf:List ;
+_:genid302 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -1934,20 +1956,20 @@ _:genid298 a rdf:List ;
 # http://www.virtual-assembly.org/ontologies/1.0/pair#zipCode
 
 :zipCode a owl:DatatypeProperty ;
-	rdfs:domain _:genid302 .
+	rdfs:domain _:genid306 .
 
-_:genid302 a owl:Class ;
-	owl:unionOf _:genid305 .
+_:genid306 a owl:Class ;
+	owl:unionOf _:genid309 .
 
-_:genid305 a rdf:List ;
+_:genid309 a rdf:List ;
 	rdf:first :Resource ;
-	rdf:rest _:genid304 .
+	rdf:rest _:genid308 .
 
-_:genid304 a rdf:List ;
+_:genid308 a rdf:List ;
 	rdf:first foaf:Agent ;
-	rdf:rest _:genid303 .
+	rdf:rest _:genid307 .
 
-_:genid303 a rdf:List ;
+_:genid307 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -1963,6 +1985,13 @@ _:genid303 a rdf:List ;
 <http://www.virtual-assembly.org/ontologies/1.0/pair#De_(heure)> a owl:DatatypeProperty ;
 	rdfs:domain <http://schema.org/Event> .
 # 
+# http://xmlns.com/foaf/0.1/familyName
+
+foaf:familyName a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :name ;
+	rdfs:domain foaf:Person ;
+	rdfs:label "Nom"@fr .
+# 
 # http://xmlns.com/foaf/spec/#term_firstName
 
 <http://xmlns.com/foaf/spec/#term_firstName> a owl:DatatypeProperty ;
@@ -1975,34 +2004,27 @@ _:genid303 a rdf:List ;
 	rdfs:subPropertyOf :image ;
 	rdfs:label "Photo, image"@fr .
 # 
-# http://xmlns.com/foaf/spec/#term_lastName
-
-<http://xmlns.com/foaf/spec/#term_lastName> a owl:DatatypeProperty ;
-	rdfs:subPropertyOf :name ;
-	rdfs:domain foaf:Person ;
-	rdfs:label "Nom"@fr .
-# 
 # http://xmlns.com/foaf/spec/#term_mbox
 
 <http://xmlns.com/foaf/spec/#term_mbox> a owl:DatatypeProperty ;
-	rdfs:domain _:genid306 .
+	rdfs:domain _:genid310 .
 
-_:genid306 a owl:Class ;
-	owl:unionOf _:genid310 .
+_:genid310 a owl:Class ;
+	owl:unionOf _:genid314 .
 
-_:genid310 a rdf:List ;
+_:genid314 a rdf:List ;
 	rdf:first :Idea ;
-	rdf:rest _:genid309 .
+	rdf:rest _:genid313 .
 
-_:genid309 a rdf:List ;
+_:genid313 a rdf:List ;
 	rdf:first :Resource ;
-	rdf:rest _:genid308 .
+	rdf:rest _:genid312 .
 
-_:genid308 a rdf:List ;
+_:genid312 a rdf:List ;
 	rdf:first foaf:Agent ;
-	rdf:rest _:genid307 .
+	rdf:rest _:genid311 .
 
-_:genid307 a rdf:List ;
+_:genid311 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -2316,22 +2338,22 @@ owl:topObjectProperty rdfs:comment """Quelques propriétés qu'il faut peut êtr
 # 
 # 
 
-_:genid311 a owl:AllDisjointClasses ;
-	owl:members _:genid315 .
+_:genid315 a owl:AllDisjointClasses ;
+	owl:members _:genid319 .
 
-_:genid315 a rdf:List ;
+_:genid319 a rdf:List ;
 	rdf:first :Idea ;
-	rdf:rest _:genid314 .
+	rdf:rest _:genid318 .
 
-_:genid314 a rdf:List ;
+_:genid318 a rdf:List ;
 	rdf:first :Resource ;
-	rdf:rest _:genid313 .
+	rdf:rest _:genid317 .
 
-_:genid313 a rdf:List ;
+_:genid317 a rdf:List ;
 	rdf:first foaf:Agent ;
-	rdf:rest _:genid312 .
+	rdf:rest _:genid316 .
 
-_:genid312 a rdf:List ;
+_:genid316 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 # 
