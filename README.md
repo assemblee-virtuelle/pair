@@ -11,6 +11,13 @@ pour la modélisation PAIR ( Projet- Acteur - Idée - Resource ) .
 
 Outils recommandés pour vérifier la syntaxe Turtle:
 
+NE PAS COMMITER SANS VERIFIER LA SYNTAXE !!!!!!!!!
+
+Utilitaire rapper:
+    sudo apt-get install raptor2-utils
+    for f in *.ttl ; do echo ====== $f ; rapper -i turtle $f ; read PAUSE ; done
+
+- *validation Web: http://ttl.summerofcode.be/*
 - [EulerGUI](http://svn.code.sf.net/p/eulergui/code/trunk/eulergui/html/documentation.html#L931)
 - [Protégé](http://protege.stanford.edu/)
 - Outil en ligne de commande: [CWM](http://www.w3.org/2000/10/swap/doc/CwmInstall)
