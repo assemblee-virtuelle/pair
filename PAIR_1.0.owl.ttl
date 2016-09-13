@@ -150,6 +150,7 @@ dcterms:subject rdfs:comment """ 'A pour sujet' permet d'identifier de quoi un P
 # http://purl.org/goodrelations/v1#offers
 
 gr:offers a owl:ObjectProperty ;
+	owl:inverseOf gr:seeks ;
 	rdfs:domain _:genid16 .
 
 _:genid16 a owl:Class ;
@@ -164,7 +165,7 @@ _:genid17 a rdf:List ;
 	rdf:rest rdf:nil .
 
 gr:offers rdfs:range :Resource ;
-	rdfs:label "dispose de, propose"@fr , "offers"@en .
+	rdfs:label "offers"@en , "ressources proposées (hors compétences)"@fr .
 # 
 # http://purl.org/goodrelations/v1#seeks
 
@@ -183,7 +184,7 @@ _:genid20 a rdf:List ;
 	rdf:rest rdf:nil .
 
 gr:seeks rdfs:range :Resource ;
-	rdfs:label "a besoin de, recherche"@fr , "seeks"@en .
+	rdfs:label "ressources recherchées (hors compétences)"@fr , "seeks"@en .
 # 
 # http://purl.org/ontology/cco/core#expertise
 
@@ -356,13 +357,6 @@ _:genid49 a rdf:List ;
 
 :authorof rdfs:label "auteur de"@fr , "author of"@en .
 # 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#barters
-
-:barters a owl:ObjectProperty ;
-	rdfs:subPropertyOf gr:offers ;
-	owl:inverseOf :wantsToBarter ;
-	rdfs:label "barters"@en , "troque"@fr .
-# 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#because
 
 :because a owl:ObjectProperty ;
@@ -370,20 +364,6 @@ _:genid49 a rdf:List ;
 	rdfs:domain :Idea ;
 	rdfs:range :Idea ;
 	rdfs:label "because"@en , "parce que"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#borrows
-
-:borrows a owl:ObjectProperty ;
-	rdfs:subPropertyOf gr:seeks ;
-	owl:inverseOf :lends ;
-	rdfs:label "souhaite emprunter"@fr , "wants to borrow"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#buys
-
-:buys a owl:ObjectProperty ;
-	rdfs:subPropertyOf gr:seeks ;
-	owl:inverseOf :sells ;
-	rdfs:label "souhaite acheter"@fr , "wants to buy"@en .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#contributedTo
 
@@ -569,13 +549,6 @@ _:genid79 a rdf:List ;
 
 :founderof rdfs:label "fondateur de"@fr , "founder of"@en .
 # 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#gives
-
-:gives a owl:ObjectProperty ;
-	rdfs:subPropertyOf gr:offers ;
-	owl:inverseOf :wouldLike ;
-	rdfs:label "donne"@fr , "gives"@en .
-# 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#hasAuthor
 
 :hasAuthor a owl:ObjectProperty ;
@@ -688,7 +661,7 @@ _:genid98 a rdf:List ;
 	rdf:rest rdf:nil .
 
 :hasDirector rdfs:range foaf:Agent ;
-	rdfs:label "a pour dirigeant"@fr , "has director"@en .
+	rdfs:label "a pour responsable / dirigeant"@fr , "has director"@en .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#hasEmployee
 
@@ -755,7 +728,7 @@ _:genid105 a rdf:List ;
 	rdfs:subPropertyOf :contributesTo ;
 	rdfs:domain foaf:Project ;
 	rdfs:range foaf:Project ;
-	rdfs:label "a pour cas d'usage"@en .
+	rdfs:label "cas d'usage"@fr .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#hosted
 
@@ -832,9 +805,30 @@ _:genid121 a rdf:List ;
 
 :ideaIsPartOf a owl:ObjectProperty ;
 	rdfs:subPropertyOf dcterms:isPartOf ;
+	owl:inverseOf :includesIdea ;
 	rdfs:domain :Idea ;
 	rdfs:range :Idea ;
-	rdfs:label "fait partie de l'idée"@fr , "is part of idea"@en .
+	rdfs:label "fait partie de"@fr , "is part of idea"@en .
+# 
+# http://www.virtual-assembly.org/ontologies/1.0/pair#includesIdea
+
+:includesIdea a owl:ObjectProperty ;
+	rdfs:subPropertyOf dcterms:hasPart ;
+	rdfs:label "inclut, rassemble"@fr .
+# 
+# http://www.virtual-assembly.org/ontologies/1.0/pair#includesProject
+
+:includesProject a owl:ObjectProperty ;
+	rdfs:subPropertyOf dcterms:hasPart ;
+	owl:inverseOf :projectIsPartOf ;
+	rdfs:label "includes"@en , "inclut, rassemble"@fr .
+# 
+# http://www.virtual-assembly.org/ontologies/1.0/pair#includesResource
+
+:includesResource a owl:ObjectProperty ;
+	rdfs:subPropertyOf dcterms:hasPart ;
+	owl:inverseOf :resourceIsPartOf ;
+	rdfs:label "inclut, rassemble"@fr .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#isFacetOf
 
@@ -889,12 +883,6 @@ _:genid127 a rdf:List ;
 	rdfs:subPropertyOf foaf:knows ;
 	rdfs:label "ami de"@fr , "friend of"@en .
 # 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#lends
-
-:lends a owl:ObjectProperty ;
-	rdfs:subPropertyOf gr:offers ;
-	rdfs:label "lends"@en , "prête"@fr .
-# 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#manage
 
 :manage a owl:ObjectProperty ;
@@ -921,6 +909,13 @@ _:genid132 a rdf:List ;
 	rdf:rest rdf:nil .
 
 :manage rdfs:label "manage"@en , "responsable de"@fr .
+# 
+# http://www.virtual-assembly.org/ontologies/1.0/pair#offersSkill
+
+:offersSkill a owl:ObjectProperty ;
+	rdfs:subPropertyOf gr:offers ;
+	owl:inverseOf :seeksSkill ;
+	rdfs:label "compétences proposées"@fr .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#opposedTo
 
@@ -1030,14 +1025,7 @@ _:genid153 a rdf:List ;
 
 :projectIsPartOf a owl:ObjectProperty ;
 	rdfs:subPropertyOf dcterms:isPartOf ;
-	rdfs:label "fait partie du projet"@fr , "is part of project"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#rents
-
-:rents a owl:ObjectProperty ;
-	rdfs:subPropertyOf gr:offers ;
-	owl:inverseOf :wantsToRent ;
-	rdfs:label "loue"@fr , "rents"@en .
+	rdfs:label "fait partie de"@fr , "is part of project"@en .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#resourceIsPartOf
 
@@ -1045,13 +1033,13 @@ _:genid153 a rdf:List ;
 	rdfs:subPropertyOf dcterms:isPartOf ;
 	rdfs:domain :Resource ;
 	rdfs:range :Resource ;
-	rdfs:label "fait partie de la ressource"@fr , "is part of resource"@en .
+	rdfs:label "fait partie de"@fr , "is part of resource"@en .
 # 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#sells
+# http://www.virtual-assembly.org/ontologies/1.0/pair#seeksSkill
 
-:sells a owl:ObjectProperty ;
-	rdfs:subPropertyOf gr:offers ;
-	rdfs:label "sells"@en , "vend"@fr .
+:seeksSkill a owl:ObjectProperty ;
+	rdfs:subPropertyOf gr:seeks ;
+	rdfs:label "compétences recherchées"@fr .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#supports
 
@@ -1115,7 +1103,7 @@ _:genid165 a rdf:List ;
 
 :uses rdfs:range :Resource ;
 	rdfs:comment "Cas des ressources : Une ressource de type voiture consomme du pétrole et des matières premières"@en ;
-	rdfs:label "consomme"@fr , "uses"@en .
+	rdfs:label "uses"@en , "utilise"@fr .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#votesAgainst
 
@@ -1173,18 +1161,6 @@ _:genid174 a rdf:List ;
 
 :votesFor rdfs:label "vote pour"@fr , "votes for"@en .
 # 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#wantsToBarter
-
-:wantsToBarter a owl:ObjectProperty ;
-	rdfs:subPropertyOf gr:seeks ;
-	rdfs:label "souhaite troquer"@fr , "wants to barter"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#wantsToRent
-
-:wantsToRent a owl:ObjectProperty ;
-	rdfs:subPropertyOf gr:seeks ;
-	rdfs:label "souhaite louer"@fr , "wants to rent"@en .
-# 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#worksOn
 
 :worksOn a owl:ObjectProperty ;
@@ -1210,12 +1186,6 @@ _:genid179 a rdf:List ;
 :worksWith a owl:ObjectProperty ;
 	rdfs:subPropertyOf foaf:knows ;
 	rdfs:label "collaborateur de"@fr , "colleague, collaborator"@en .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#wouldLike
-
-:wouldLike a owl:ObjectProperty ;
-	rdfs:subPropertyOf gr:seeks ;
-	rdfs:label "aimerait"@fr , "would like"@en .
 # 
 # http://xmlns.com/foaf/0.1/currentProject
 
@@ -1509,12 +1479,6 @@ _:genid226 a rdf:List ;
 
 :file rdfs:label "Fichier"@fr .
 # 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#firstName
-
-:firstName a owl:DatatypeProperty ;
-	rdfs:domain foaf:Person ;
-	rdfs:label "Prénom"@fr .
-# 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#from
 
 :from a owl:DatatypeProperty ;
@@ -1634,7 +1598,8 @@ _:genid249 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
-:licence rdfs:label "Licence"@fr .
+:licence rdfs:comment "des choses produites ou diffusées selon les cas"@fr ;
+	rdfs:label "Licence"@fr .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#longDescription
 
@@ -1660,7 +1625,7 @@ _:genid253 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
-:longDescription rdfs:comment "Pas de limite de nombre de caractères"@fr ;
+:longDescription rdfs:comment "Illimité"@fr ;
 	rdfs:label "Description longue"@fr .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#name
@@ -1784,7 +1749,7 @@ _:genid273 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
-:shortDescription rdfs:comment "140 caractères max"@fr ;
+:shortDescription rdfs:comment "- de 140 caractères"@fr ;
 	rdfs:label "Description courte"@fr .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#socialNetworks
@@ -1811,7 +1776,8 @@ _:genid278 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
-:socialNetworks rdfs:label "Réseaux sociaux"@fr .
+:socialNetworks rdfs:comment "Ajouter une URL par profil de réseaux réseau social"@fr ;
+	rdfs:label "Réseaux sociaux"@fr .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#status
 
@@ -1844,7 +1810,7 @@ _:genid283 a rdf:List ;
 
 :tickets a owl:DatatypeProperty ;
 	rdfs:domain <http://schema.org/Event> ;
-	rdfs:label "Réservations"@fr .
+	rdfs:label "Lien vers billetterie"@fr .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#to
 
@@ -1995,7 +1961,6 @@ foaf:familyName a owl:DatatypeProperty ;
 # http://xmlns.com/foaf/spec/#term_firstName
 
 <http://xmlns.com/foaf/spec/#term_firstName> a owl:DatatypeProperty ;
-	rdfs:subPropertyOf :firstName ;
 	rdfs:label "Prénom"@fr .
 # 
 # http://xmlns.com/foaf/spec/#term_img
