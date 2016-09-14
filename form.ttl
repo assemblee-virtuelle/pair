@@ -8,7 +8,10 @@
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix cv: <http://rdfs.org/resume-rdf/cv.rdfs#>.
 @prefix gr: <http://purl.org/goodrelations/v1#> .
-
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix sioc: <http://rdfs.org/sioc/> .
+@prefix schema: <http://schema.org/> .
 @prefix pair: <http://www.virtual-assembly.org/ontologies/1.0/pair#> .
 @prefix av:   <http://www.virtual-assembly.org/ontologies/1.0/pair#> .
 @base         <http://www.virtual-assembly.org/ontologies/1.0/pair> .
@@ -92,7 +95,7 @@ pairforms:EventForm
 	form:p------------------------Idées_associées------------------------
 	dcterms:subject
 	
-	form:p------------------------Ressources_associées_(Compétences)------------------------
+	form:p------------------------Ressources_associées------------------------
 	gr:seeks
 	gr:offers
 	pair:seeksSkill
