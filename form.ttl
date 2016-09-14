@@ -24,6 +24,7 @@ pairforms:InitiativeOrMissionForm
 	foaf:img
 	pair:licence
 	pair:status
+	pair:town
 	foaf:weblog
 	foaf:mbox
 	pair:shortDescription
@@ -52,6 +53,14 @@ pairforms:InitiativeOrMissionForm
 	pair:seeksSkill
 	pair:offersSkill
 ) .
+
+pairforms:InitiativeOrMissionForm-Completion
+	form:fieldAppliesToForm pairforms:InitiativeOrMissionForm ;
+	form:fieldAppliesToProperty pair:town ;
+	form:fieldAppliesToProperty dcterms:subject ;
+	form:fieldAppliesToProperty pair:seeksSkill ;
+	form:fieldAppliesToProperty pair:offersSkill ;
+	form:widgetClass form:DBPediaLookup .
 
 pairforms:EventForm
   form:classDomain pair:Event ;
@@ -89,6 +98,14 @@ pairforms:EventForm
 	pair:seeksSkill
 	pair:offersSkill
 ) .
+
+pairforms:EventForm-Completion
+	form:fieldAppliesToForm pairforms:EventForm ;
+	form:fieldAppliesToProperty pair:town ;
+	form:fieldAppliesToProperty dcterms:subject ;
+	form:fieldAppliesToProperty pair:seeksSkill ;
+	form:fieldAppliesToProperty pair:offersSkill ;
+	form:widgetClass form:DBPediaLookup .
 
 pairforms:PersonForm
   form:classDomain foaf:Person ;
@@ -134,11 +151,20 @@ pairforms:PersonForm
 	pair:offersSkill
 ) .
 
+pairforms:PersonForm-Completion
+	form:fieldAppliesToForm pairforms:PersonForm ;
+	form:fieldAppliesToProperty pair:town ;
+	form:fieldAppliesToProperty dcterms:subject ;
+	form:fieldAppliesToProperty pair:seeksSkill ;
+	form:fieldAppliesToProperty pair:offersSkill ;
+	form:widgetClass form:DBPediaLookup .
+
 pairforms:GroupForm
   form:classDomain foaf:Group ;
   form:showProperties (
 	rdfs:label
 	foaf:img
+	pair:town
 	foaf:weblog
 	foaf:mbox
 	pair:shortDescription
@@ -168,6 +194,14 @@ pairforms:GroupForm
 	pair:seeksSkill
 	pair:offersSkill
 ) .
+
+pairforms:GroupForm-Completion
+	form:fieldAppliesToForm pairforms:GroupForm ;
+	form:fieldAppliesToProperty pair:town ;
+	form:fieldAppliesToProperty dcterms:subject ;
+	form:fieldAppliesToProperty pair:seeksSkill ;
+	form:fieldAppliesToProperty pair:offersSkill ;
+	form:widgetClass form:DBPediaLookup .
 
 pairforms:OrganizationForm
   form:classDomain foaf:Organization ;
@@ -210,11 +244,20 @@ pairforms:OrganizationForm
 	pair:offersSkill
 ) .
 
+pairforms:OrganizationForm-Completion
+form:fieldAppliesToForm pairforms:OrganizationForm ;
+	form:fieldAppliesToProperty pair:town ;
+	form:fieldAppliesToProperty dcterms:subject ;
+	form:fieldAppliesToProperty pair:seeksSkill ;
+	form:fieldAppliesToProperty pair:offersSkill ;
+	form:widgetClass form:DBPediaLookup .
+
 pairforms:ThemeForm
   form:classDomain pair:Theme ;
   form:showProperties (
 	rdfs:label
 	foaf:img
+	pair:wikipedia
 	pair:shortDescription
 	rdfs:comment
 	pair:description
@@ -225,17 +268,28 @@ pairforms:ThemeForm
 	pair:convergesWith
 	pair:opposedTo
 	
-	form:p------------------------Ressources_documentaires_associées------------------------
+	form:p------------------------Ressources_associées------------------------
 	dcterms:subject
 ) .
+
+pairforms:ThemeForm-Completion
+form:fieldAppliesToForm pairforms:ThemeForm ;
+	form:fieldAppliesToProperty pair:because ;
+	form:fieldAppliesToProperty pair:hasConsequence ;
+	form:fieldAppliesToProperty pair:convergesWith ;
+	form:fieldAppliesToProperty pair:opposedTo ;
+	form:fieldAppliesToProperty dcterms:subject ;
+	form:widgetClass form:DBPediaLookup .
 
 pairforms:ThesisForm
   form:classDomain pair:Thesis ;
   form:showProperties (
 	rdfs:label
 	foaf:img
+	pair:wikipedia
 	pair:licence
 	pair:status
+	pair:town
 	foaf:weblog
 	foaf:mbox
 	pair:shortDescription
@@ -244,8 +298,6 @@ pairforms:ThesisForm
 	pair:socialNetworks
 	pair:physicalWorkSpace
 	pair:digitalWorkSpace
-
-
 
 	form:p------------------------Idées_associées------------------------
 	dcterms:subject
@@ -254,17 +306,33 @@ pairforms:ThesisForm
 	pair:convergesWith
 	pair:opposedTo
 	
-	form:p------------------------Ressources_documentaires_associées------------------------
-	dcterms:subject
+	form:p------------------------Ressources_associées------------------------
+	gr:seeks
+	gr:offers
+	pair:seeksSkill
+	pair:offersSkill
 ) .
 
+pairforms:ThesisForm-Completion
+form:fieldAppliesToForm pairforms:ThesisForm ;
+	form:fieldAppliesToProperty pair:town ;
+	form:fieldAppliesToProperty pair:dcterms:subject ;
+	form:fieldAppliesToProperty pair:because ;
+	form:fieldAppliesToProperty pair:hasConsequence ;
+	form:fieldAppliesToProperty pair:convergesWith ;
+	form:fieldAppliesToProperty pair:opposedTo ;
+	form:fieldAppliesToProperty pair:seeksSkill ;
+	form:fieldAppliesToProperty pair:offersSkill ;
+	form:widgetClass form:DBPediaLookup .
+	
 pairforms:ResourceForm
-  form:classDomain pair:Resource ;
+  form:classDomain pair:ResourceForm ;
   form:showProperties (
 	rdfs:label
 	foaf:img
 	pair:licence
 	pair:status
+	pair:town
 	foaf:weblog
 	foaf:mbox
 	pair:shortDescription
@@ -274,7 +342,26 @@ pairforms:ResourceForm
 	pair:physicalWorkSpace
 	pair:digitalWorkSpace
 
+	form:p------------------------Idées_associées------------------------
+	dcterms:subject
+	
+	form:p------------------------Ressources_associées------------------------
+	dcterms:subject
+) .
 
+pairforms:ResourceForm-Completion
+form:fieldAppliesToForm pairforms:ResourceForm ;
+	form:fieldAppliesToProperty dcterms:subject ;
+	form:widgetClass form:DBPediaLookup .
+	
+pairforms:SkillForm
+  form:classDomain pair:Resource ;
+  form:showProperties (
+	rdfs:label
+	foaf:img
+	pair:shortDescription
+	rdfs:comment
+	pair:longDescription
 
 	form:p------------------------Idées_associées------------------------
 	dcterms:subject
@@ -283,105 +370,9 @@ pairforms:ResourceForm
 	dcterms:subject
 ) .
 
-avf:projectForm-dc_subject
-	form:fieldAppliesToForm avf:projectForm ;
-	form:fieldAppliesToProperty dct:subject ;
-	form:widgetClass form:DBPediaLookup .
-
-avf:OrganizationForm
-  form:classDomain foaf:Organization ;
-  form:showProperties (
-	rdfs:label rdfs:comment
-	foaf:homepage
-	# foaf:maker
-	foaf:mbox
-
-	form:p------------------------PAIRs------------------------ # TODO separator 
-	av:project	# P
-	foaf:member	# A
-	dct:subject	# DBPediaLookup
-	av:resource	# R
-) .
-avf:OrganizationForm-dc_subject3
-	form:fieldAppliesToForm avf:OrganizationForm ;
-	form:fieldAppliesToProperty dct:subject ;
-	form:widgetClass form:DBPediaLookup .
-
-
-avf:personForm
-  form:classDomain foaf:Person ;
-  form:showProperties (
-	foaf:givenName foaf:familyName
-	rdfs:comment
-	foaf:homepage
-	foaf:mbox	# literal or resource
-	foaf:phone
-	vcard:postal-code
-	vcard:locality
-	av:linkedinId
-	av:twitterId
-	av:facebookId
-	# foaf:img	# resource, multi-valued
-	foaf:topic_interest # DBPediaLookup
-
-	form:p------------------------PAIRs------------------------ # TODO separator 
-	av:contributes	# P
-	# av:supports	# P
-	foaf:knows	# A
-	av:contributesToOrganization	# A
-	av:idea		# I
-	cco:expertise	# R DBPediaLookup
-	av:resource	# R
-) .
-
-avf:personForm-topic_interest
-	form:fieldAppliesToForm avf:personForm ;
-	form:fieldAppliesToProperty foaf:topic_interest ;
-	form:widgetClass form:DBPediaLookup .
-avf:personForm-skill
-	form:fieldAppliesToForm avf:personForm ;
-	form:fieldAppliesToProperty cco:expertise ;
-	form:widgetClass form:DBPediaLookup .
-
-avf:IdeaForm
-  form:classDomain av:Idea  ;
-  form:showProperties (
-	rdfs:label rdfs:comment
-	dct:subject	# DBPediaLookup
-
-	form:p------------------------PAIRs------------------------ # TODO separator 
-	# av:inspiredBy
-	# av:compatibleWith
-	av:ideaCategory
-	av:project	# P
-	av:supportedBy	# A
-	av:idea		# I
-	av:resource	# R
-) .
-avf:IdeaForm-dc_subject2
-	form:fieldAppliesToForm avf:IdeaForm ;
-	form:fieldAppliesToProperty dct:subject ;
-	form:widgetClass form:DBPediaLookup .
-
-avf:RessourceForm
-  form:classDomain av:Resource ;
-  form:showProperties (
-	rdfs:label rdfs:comment
-	av:resourceCategory
-	dct:subject	# DBPediaLookup
-	foaf:homepage
-
-	form:p------------------------PAIRs------------------------ # TODO separator 
-	av:project	# P
-	av:managedBy	# A
-	av:ownedBy	# A
-	av:usedBy	# A
-	av:idea		# I
-	av:resource	# R
-) .
-avf:RessourceForm-subject_field
-	form:fieldAppliesToForm avf:RessourceForm ;
-	form:fieldAppliesToProperty	dct:subject ;
+pairforms:SkillForm-Completion
+form:fieldAppliesToForm pairforms:SkillForm ;
+	form:fieldAppliesToProperty dcterms:subject ;
 	form:widgetClass form:DBPediaLookup .
 
 
