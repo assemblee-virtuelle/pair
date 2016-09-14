@@ -90,12 +90,14 @@ pairforms:EventForm
 	pair:offersSkill
 ) .
 
-pairforms:OrganizationForm
-  form:classDomain foaf:Organization ;
+pairforms:PersonForm
+  form:classDomain foaf:Person ;
   form:showProperties (
 	rdfs:label
+	foaf:firstName
+	foaf:familyName
+	foaf:nick
 	foaf:img
-	pair:legalForm
 	pair:adress
 	pair:zipcode
 	pair:town
@@ -107,22 +109,23 @@ pairforms:OrganizationForm
 	rdfs:comment
 	pair:longDescription
 	pair:socialNetworks
-	pair:physicalWorkSpace
-	pair:digitalWorkSpace
 
 	form:p------------------------Projets_associés------------------------
 	pair:manage
 	pair:contributesTo
+	cito:likes
 	
 	form:p------------------------Acteurs_associés------------------------
-	pair:hasDirector
-	pair:hasContributor
-	pair:hasEmployee
-	pair:hasFollower
+	pair:manage
+	pair:contributesTo
+	pair:Employee
+	cito:likes
 	pair:hasPartner
 	
 	form:p------------------------Idées_associées------------------------
 	dcterms:subject
+	cito:likes
+	pair:creatorof
 	
 	form:p------------------------Ressources_associées------------------------
 	gr:seeks
@@ -166,14 +169,12 @@ pairforms:GroupForm
 	pair:offersSkill
 ) .
 
-pairforms:PersonForm
-  form:classDomain foaf:person ;
+pairforms:OrganizationForm
+  form:classDomain foaf:Organization ;
   form:showProperties (
 	rdfs:label
-	foaf:firstName
-	foaf:familyName
-	foaf:nick
 	foaf:img
+	pair:legalForm
 	pair:adress
 	pair:zipcode
 	pair:town
@@ -185,29 +186,101 @@ pairforms:PersonForm
 	rdfs:comment
 	pair:longDescription
 	pair:socialNetworks
+	pair:physicalWorkSpace
+	pair:digitalWorkSpace
 
 	form:p------------------------Projets_associés------------------------
 	pair:manage
 	pair:contributesTo
-	cito:likes
 	
 	form:p------------------------Acteurs_associés------------------------
-	pair:manage
-	pair:contributesTo
-	pair:Employee
-	cito:likes
+	pair:hasDirector
+	pair:hasContributor
+	pair:hasEmployee
+	pair:hasFollower
 	pair:hasPartner
 	
 	form:p------------------------Idées_associées------------------------
 	dcterms:subject
-	cito:likes
-	pair:creatorof
 	
 	form:p------------------------Ressources_associées------------------------
 	gr:seeks
 	gr:offers
 	pair:seeksSkill
 	pair:offersSkill
+) .
+
+pairforms:ThemeForm
+  form:classDomain pair:Theme ;
+  form:showProperties (
+	rdfs:label
+	foaf:img
+	pair:shortDescription
+	rdfs:comment
+	pair:description
+
+	form:p------------------------Idées_associées------------------------
+	pair:because
+	pair:hasConsequence
+	pair:convergesWith
+	pair:opposedTo
+	
+	form:p------------------------Ressources_documentaires_associées------------------------
+	dcterms:subject
+) .
+
+pairforms:ThesisForm
+  form:classDomain pair:Thesis ;
+  form:showProperties (
+	rdfs:label
+	foaf:img
+	pair:licence
+	pair:status
+	foaf:weblog
+	foaf:mbox
+	pair:shortDescription
+	rdfs:comment
+	pair:longDescription
+	pair:socialNetworks
+	pair:physicalWorkSpace
+	pair:digitalWorkSpace
+
+
+
+	form:p------------------------Idées_associées------------------------
+	dcterms:subject
+	pair:because
+	pair:hasConsequence
+	pair:convergesWith
+	pair:opposedTo
+	
+	form:p------------------------Ressources_documentaires_associées------------------------
+	dcterms:subject
+) .
+
+pairforms:ResourceForm
+  form:classDomain pair:Resource ;
+  form:showProperties (
+	rdfs:label
+	foaf:img
+	pair:licence
+	pair:status
+	foaf:weblog
+	foaf:mbox
+	pair:shortDescription
+	rdfs:comment
+	pair:longDescription
+	pair:socialNetworks
+	pair:physicalWorkSpace
+	pair:digitalWorkSpace
+
+
+
+	form:p------------------------Idées_associées------------------------
+	dcterms:subject
+	
+	form:p------------------------Ressources_associées------------------------
+	dcterms:subject
 ) .
 
 avf:projectForm-dc_subject
@@ -260,6 +333,7 @@ avf:personForm
 	cco:expertise	# R DBPediaLookup
 	av:resource	# R
 ) .
+
 avf:personForm-topic_interest
 	form:fieldAppliesToForm avf:personForm ;
 	form:fieldAppliesToProperty foaf:topic_interest ;
