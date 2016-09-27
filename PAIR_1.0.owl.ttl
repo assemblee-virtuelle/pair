@@ -1191,40 +1191,12 @@ _:genid179 a rdf:List ;
 
 foaf:currentProject a owl:ObjectProperty ;
 	rdfs:subPropertyOf :contributesTo ;
-	rdfs:domain foaf:Person ;
-	rdfs:range _:genid181 .
+	rdfs:domain foaf:Person .
 
-_:genid181 a owl:Class ;
-	owl:unionOf _:genid186 .
-
-_:genid186 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid185 .
-
-_:genid185 a rdf:List ;
-	rdf:first :Resource ;
-	rdf:rest _:genid184 .
-
-_:genid184 a rdf:List ;
-	rdf:first foaf:Group ;
-	rdf:rest _:genid183 .
-
-_:genid183 a rdf:List ;
-	rdf:first foaf:Organization ;
-	rdf:rest _:genid182 .
-
-_:genid182 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-foaf:currentProject rdfs:label "contribue à"@fr , "contributes to"@en .
 # 
 # http://xmlns.com/foaf/0.1/knows
 
-foaf:knows a owl:ObjectProperty ;
-	rdfs:domain foaf:Person ;
-	rdfs:range foaf:Person ;
-	rdfs:label "connait"@fr , "knows"@en .
+foaf:knows a owl:ObjectProperty  .
 # 
 # http://xmlns.com/foaf/0.1/member
 
@@ -1266,40 +1238,12 @@ _:genid193 a rdf:List ;
 	rdf:first foaf:Organization ;
 	rdf:rest rdf:nil .
 
-foaf:member rdfs:label "a pour membre"@fr .
 # 
 # http://xmlns.com/foaf/0.1/pastProject
 
 foaf:pastProject a owl:ObjectProperty ;
 	rdfs:subPropertyOf :contributedTo ;
-	rdfs:domain foaf:Person ;
-	rdfs:range _:genid195 .
-
-_:genid195 a owl:Class ;
-	owl:unionOf _:genid200 .
-
-_:genid200 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid199 .
-
-_:genid199 a rdf:List ;
-	rdf:first :Resource ;
-	rdf:rest _:genid198 .
-
-_:genid198 a rdf:List ;
-	rdf:first foaf:Group ;
-	rdf:rest _:genid197 .
-
-_:genid197 a rdf:List ;
-	rdf:first foaf:Organization ;
-	rdf:rest _:genid196 .
-
-_:genid196 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-foaf:pastProject rdfs:label "a contribué à"@fr , "has contributed to"@en .
-# 
+	rdfs:domain foaf:Person  .
 # 
 # 
 # #################################################################
