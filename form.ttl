@@ -329,7 +329,7 @@ form:fieldAppliesToForm pairforms:ThesisForm ;
 	form:widgetClass form:DBPediaLookup .
 	
 pairforms:ResourceForm
-  form:classDomain pair:ResourceForm ;
+  form:classDomain pair:Resource ;
   form:showProperties (
 	rdfs:label
 	foaf:img
@@ -358,7 +358,7 @@ form:fieldAppliesToForm pairforms:ResourceForm ;
 	form:widgetClass form:DBPediaLookup .
 	
 pairforms:SkillForm
-  form:classDomain pair:Resource ;
+  form:classDomain cco:Skill ;
   form:showProperties (
 	rdfs:label
 	foaf:img
