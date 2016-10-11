@@ -2069,16 +2069,9 @@ An offering represents the public, not necessarily binding, not necessarily excl
 	rdfs:comment "Entreprise industrielle ou commerciale."@fr ;
 	rdfs:label "Entreprise"@fr .
 # 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Idea
+# http://www.virtual-assembly.org/ontologies/1.0/pair#FinancialResource
 
-:Idea a owl:Class ;
-	rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
-	rdfs:comment "Mettre une définition d'idée telle que conçue par AV" ;
-	rdfs:label "Idea"@en , "Idée"@fr .
-# 
-# http://www.virtual-assembly.org/ontologies/1.0/pair#Money
-
-:Money a owl:Class ;
+:FinancialResource a owl:Class ;
 	rdfs:subClassOf :Resource ;
 	rdfs:comment """Exemples:
 La collectivité 'Ile de France' finance des projets.
@@ -2095,6 +2088,13 @@ La collectivité 'Ile de France' offre des resources financières dans le cadre 
 On pourrait modéliser:
 La collectivité 'Ile de France' finance des (précisément) projets."""@fr ;
 	rdfs:label "Financial Resource"@en , "Ressource financière"@fr .
+# 
+# http://www.virtual-assembly.org/ontologies/1.0/pair#Idea
+
+:Idea a owl:Class ;
+	rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+	rdfs:comment "Mettre une définition d'idée telle que conçue par AV" ;
+	rdfs:label "Idea"@en , "Idée"@fr .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#NaturalResources
 
