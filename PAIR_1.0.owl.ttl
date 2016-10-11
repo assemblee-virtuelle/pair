@@ -529,7 +529,7 @@ _:genid80 a rdf:List ;
 	rdf:rest _:genid79 .
 
 _:genid79 a rdf:List ;
-	rdf:first <https://schema.org/Place> ;
+	rdf:first <http://schema.org/Place> ;
 	rdf:rest rdf:nil .
 
 :founderof rdfs:label "fondateur de"@fr , "founder of"@en .
@@ -746,7 +746,7 @@ _:genid114 a rdf:List ;
 	rdf:rest _:genid113 .
 
 _:genid113 a rdf:List ;
-	rdf:first <https://schema.org/Place> ;
+	rdf:first <http://schema.org/Place> ;
 	rdf:rest rdf:nil .
 
 :hosted rdfs:label "hosted"@en , "hébergé par"@fr .
@@ -768,7 +768,7 @@ _:genid118 a rdf:List ;
 	rdf:rest _:genid117 .
 
 _:genid117 a rdf:List ;
-	rdf:first <https://schema.org/Place> ;
+	rdf:first <http://schema.org/Place> ;
 	rdf:rest rdf:nil .
 
 :hosts rdfs:range _:genid120 .
@@ -890,7 +890,7 @@ _:genid133 a rdf:List ;
 	rdf:rest _:genid132 .
 
 _:genid132 a rdf:List ;
-	rdf:first <https://schema.org/Place> ;
+	rdf:first <http://schema.org/Place> ;
 	rdf:rest rdf:nil .
 
 :manage rdfs:label "manage"@en , "responsable de"@fr .
@@ -2165,9 +2165,9 @@ foaf:Person a owl:Class ;
 foaf:Project a owl:Class ;
 	rdfs:label "Project"@en , "Projet"@fr .
 # 
-# https://schema.org/Place
+# http://schema.org/Place
 
-<https://schema.org/Place> a owl:Class ;
+<http://schema.org/Place> a owl:Class ;
 	rdfs:subClassOf :Resource ;
 	rdfs:comment "Place"@en ;
 	rdfs:label "Lieu"@fr .
