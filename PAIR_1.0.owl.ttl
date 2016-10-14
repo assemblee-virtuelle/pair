@@ -16,7 +16,11 @@
 <http://www.virtual-assembly.org/ontologies/1.0/pair> a owl:Ontology ;
 	rdfs:comment """L'ontologie PAIR est issue d'un travail collectif mené dans le cadre de l'association Assemblée virtuelle.
 
-Elle est publiée sous licence Creative Commons : Attribution
+C'est un vocabulaire permettant d'exprimer simplement le réel, ainsi que les interactions qui s'y déroulent. Le réel est perçu sous la forme d'un graphe faisant interagir des projets, acteurs, des idées et des ressources.
+
+L'enjeu de l'ontologie PAIR est de permettre à une diversité de plateformes, blogs, sites web, bases de données de partager un même langage, et ce faisant de devenir interopérables. 
+
+Elle est publiée sous licence Creative Commons : Attribution à l'url suivante : http://www.virtual-assembly.org/ontologies/1.0/pair
 
 2 wikis en chantier permettent d'en saisir les tenants et les aboutissants. 
 - https://github.com/assemblee-virtuelle/pair/wiki
@@ -468,11 +472,8 @@ _:genid73 a rdf:List ;
 	rdf:rest _:genid72 .
 
 _:genid72 a rdf:List ;
-	rdf:first <ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission> .
-
-<ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission> a owl:Class .
-
-_:genid72 rdf:rest rdf:nil .
+	rdf:first <ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission> ;
+	rdf:rest rdf:nil .
 
 :dependsOn rdfs:comment """A_VOIR Il faudrait affiner avec des cas d'usages
 	JMV: et surtout avec des exemples"""@fr ;
@@ -521,15 +522,15 @@ _:genid78 a owl:Class ;
 	owl:unionOf _:genid81 .
 
 _:genid81 a rdf:List ;
-	rdf:first foaf:Group ;
+	rdf:first schema:Place ;
 	rdf:rest _:genid80 .
 
 _:genid80 a rdf:List ;
-	rdf:first foaf:Organization ;
+	rdf:first foaf:Group ;
 	rdf:rest _:genid79 .
 
 _:genid79 a rdf:List ;
-	rdf:first <http://schema.org/Place> ;
+	rdf:first foaf:Organization ;
 	rdf:rest rdf:nil .
 
 :founderof rdfs:label "fondateur de"@fr , "founder of"@en .
@@ -738,15 +739,15 @@ _:genid112 a owl:Class ;
 	owl:unionOf _:genid115 .
 
 _:genid115 a rdf:List ;
-	rdf:first foaf:Group ;
+	rdf:first schema:Place ;
 	rdf:rest _:genid114 .
 
 _:genid114 a rdf:List ;
-	rdf:first foaf:Organization ;
+	rdf:first foaf:Group ;
 	rdf:rest _:genid113 .
 
 _:genid113 a rdf:List ;
-	rdf:first <http://schema.org/Place> ;
+	rdf:first foaf:Organization ;
 	rdf:rest rdf:nil .
 
 :hosted rdfs:label "hosted"@en , "hébergé par"@fr .
@@ -760,15 +761,15 @@ _:genid116 a owl:Class ;
 	owl:unionOf _:genid119 .
 
 _:genid119 a rdf:List ;
-	rdf:first foaf:Group ;
+	rdf:first schema:Place ;
 	rdf:rest _:genid118 .
 
 _:genid118 a rdf:List ;
-	rdf:first foaf:Organization ;
+	rdf:first foaf:Group ;
 	rdf:rest _:genid117 .
 
 _:genid117 a rdf:List ;
-	rdf:first <http://schema.org/Place> ;
+	rdf:first foaf:Organization ;
 	rdf:rest rdf:nil .
 
 :hosts rdfs:range _:genid120 .
@@ -878,19 +879,19 @@ _:genid131 a owl:Class ;
 	owl:unionOf _:genid135 .
 
 _:genid135 a rdf:List ;
-	rdf:first foaf:Group ;
+	rdf:first schema:Place ;
 	rdf:rest _:genid134 .
 
 _:genid134 a rdf:List ;
-	rdf:first foaf:Organization ;
+	rdf:first foaf:Group ;
 	rdf:rest _:genid133 .
 
 _:genid133 a rdf:List ;
-	rdf:first foaf:Project ;
+	rdf:first foaf:Organization ;
 	rdf:rest _:genid132 .
 
 _:genid132 a rdf:List ;
-	rdf:first <http://schema.org/Place> ;
+	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
 :manage rdfs:label "manage"@en , "responsable de"@fr .
@@ -899,11 +900,8 @@ _:genid132 a rdf:List ;
 
 :metAt a owl:ObjectProperty ;
 	rdfs:domain foaf:Person ;
-	rdfs:range schema:Place .
-
-schema:Place a owl:Class .
-
-:metAt rdfs:label "rencontré à"@fr .
+	rdfs:range schema:Place ;
+	rdfs:label "rencontré à"@fr .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#offersSkill
 
@@ -1983,6 +1981,11 @@ schema:Event a owl:Class ;
 	rdfs:label "Event"@en , "Evènement"@en .
 # 
 # http://schema.org/Place
+
+schema:Place a owl:Class ;
+	rdfs:subClassOf :Resource ;
+	rdfs:comment "Place"@en ;
+	rdfs:label "Lieu"@fr .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#Argument
 
@@ -2033,7 +2036,27 @@ La collectivité 'Ile de France' finance des (précisément) projets."""@fr ;
 
 :Idea a owl:Class ;
 	rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
-	rdfs:comment "Mettre une définition d'idée telle que conçue par AV" ;
+	rdfs:comment """La notion d'Idée dans PAIR est en relation avec la notion de concept dans l'ontologie SKOS. Dans PAIR Idée est ainsi une sous-classe de SKOS:Concept
+
+URI : http://www.virtual-assembly.org/ontologies/1.0/pair#idea
+
+Définition : Dans l'ontologie PAIR, la notion d'idée se réfère à ce qui est abstrait, idéel, notionnel, conceptuel, à ce qui est de l'ordre de l'idéation, de la proposition, du virtuel (au sens philosophique).
+
+Elle se définit notamment par opposition à la notion de projet :
+
+Une idée n'est pas un projet dans la mesure où, par définition, une idée n'est pas incarnée. Une idée peut en revanche s'incarner dans un projet, ou alors, devenir un projet. Il est possible qu'un même \"objet\" soit perçu comme une idée ou un projet.
+
+Par exemple, les \"Chemins de la transition\" peuvent être perçus comme une idée, mais aussi comme un projet. C'est au regard de son intention, que le créateur des \"Chemins de la transition\" optera pour la catégorie idée ou projet : S'il considère qu'il s'agit juste d'un concept, il optera pour la catégorie \"Idée\" ; Si son intention est d'incarner cette idée dans le cadre d'un projet, il optera donc pour la catégorie correspondante.
+
+Dans l'ontologie PAIR, les idées se subdivisent en 2 catégories :
+
+- Les thèmes rassemblent les notions, les concepts, les centres d'intérêts, les \"tags\".
+
+Par exemple, \"développement durable\", \"open source\", \"mécanique quantique\", \"peer to peer\", pastafarisme, etc.
+
+- Les thèses rassemblent les propositions (\"Et si ...\", \"Mettre en place un revenu universel inconditionnel\"), les arguments ainsi que les problèmes et les questions (Par exemple : \"Pourquoi y a t'il quelque chose plutôt que rien ?\")
+
+Dans l'ontologie PAIR, thèmes et thèses constituent les 2 sous classes de de la classe Idée.""" ;
 	rdfs:label "Idea"@en , "Idée"@fr .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission
@@ -2070,6 +2093,24 @@ La collectivité 'Ile de France' finance des (précisément) projets."""@fr ;
 # http://www.virtual-assembly.org/ontologies/1.0/pair#Resource
 
 :Resource a owl:Class ;
+	rdfs:comment """La notion de Ressource ne découle (pour l'instant) d'aucune ontologie.
+
+URI : http://www.virtual-assembly.org/ontologies/1.0/pair#resource
+
+Définition : Dans l'ontologie PAIR, la notion de ressource est appréhendée de manière très générique. Constitue une ressource toute chose, matérielle ou immatérielle, susceptible d'être utilisée, offerte, nécessitée dans le cadre d'une aventure. Excepté les être humains, c'est la raison pour laquelle vous trouverez en sous-classes de la classe Ressource, des compétences et des services, mais pas des ressources humaines ...
+
+Les Ressources se subdivisent en plusieurs sous-classes :
+
+- Bien ou service
+- Compétence
+- Document
+- Code social
+- Lieu
+- Œuvre
+- Ressource financière
+- Ressource naturelle
+
+Dans le cadre de cette version, leurs propriétés objets sont globalement identiques."""@fr ;
 	rdfs:label "Resource"@en , "Ressource"@fr .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#SocialCode
@@ -2134,6 +2175,11 @@ Création destructrice""" , "Themes are equivalent to \"tags\" or \"topic intere
 # http://xmlns.com/foaf/0.1/Agent
 
 foaf:Agent a owl:Class ;
+	rdfs:comment """La notion d'Acteur dans PAIR est la même que celle d'Agent dans FOAF.
+
+URI : xmlns.com/foaf/0.1/agent
+
+Définition : Comme la notion d'Agent dans l'ontologie FOAF, la notion d'acteur dans l'ontologie PAIR rassemble les individus, les groupes et les organisations.""" ;
 	rdfs:label "Acteur"@fr , "Agent"@en .
 # 
 # http://xmlns.com/foaf/0.1/Document
@@ -2146,33 +2192,58 @@ foaf:Document a owl:Class ;
 
 foaf:Group a owl:Class ;
 	rdfs:subClassOf foaf:Agent ;
+	rdfs:comment """La notion de groupe dans PAIR est la même que celle de Groupe dans FOAF.
+
+URI : xmlns.com/foaf/0.1/group
+
+Définition : Un groupe est un collectif d'individus s'associant en vue d'une fin déterminée, ou pas. Un groupe se distingue d'une organisation par le fait qu'il n'a pas d'existence juridique à proprement parler. La notion de groupe en tant que section / partie d'une organisation n'est ici par prise en compte.""" ;
 	rdfs:label "Group"@en , "Groupe"@fr .
 # 
 # http://xmlns.com/foaf/0.1/Organization
 
 foaf:Organization a owl:Class ;
 	rdfs:subClassOf foaf:Agent ;
+	rdfs:comment """La notion d'organisation dans PAIR est la même que celle d' Organization dans FOAF.
+
+URI : xmlns.com/foaf/0.1/organization
+
+Définition : Une organisation est une personne morale, prenant la forme d'un collectif d'individus s'associant en vue d'une fin déterminée. En tant que personnes morales, les organisations ont une existence sur le plan juridique.
+
+Plusieurs types d'organisations sont ici rassemblés :
+
+- Association, fondation
+- Entreprises, parmi lesquelles nous distinguons le cas particulier des coopératives.
+- Organismes publics, collectivités. 
+
+Dans le cadre de cette version de l'ontologie PAIR, les propriétés objet sont les mêmes pour les 3 types d'organisation.""" ;
 	rdfs:label "Organisation"@fr , "Organization"@en .
 # 
 # http://xmlns.com/foaf/0.1/Person
 
 foaf:Person a owl:Class ;
 	rdfs:subClassOf foaf:Agent ;
+	rdfs:comment """La notion d'individu dans PAIR est la même que celle de Personne dans FOAF.
+
+URI : xmlns.com/foaf/0.1/person
+
+Définition : Un individu est un acteur, une personne physique, un humain.""" ;
 	rdfs:label "Individu"@fr , "Person"@en .
 # 
 # http://xmlns.com/foaf/0.1/Project
 
 foaf:Project a owl:Class ;
+	rdfs:comment """La notion de Projet dans PAIR est la même que celle de Projet dans FOAF.
+
+URI : xmlns.com/foaf/0.1/project
+
+Définition : Un projet suppose une action, et donc l'incarnation d'une idée, d'une intention dans le réel.
+
+Dans l'ontologie PAIR, les Projets se subdivisent en 2 grandes catégories : - D'un côté, les initiatives, missions, activités, soit les toutes les aventures au long cours. - D'un autre côté, les événements, s'inscrivant dans une temporalité courte, avec une date de début et une date de fin. La notion d'événement réfère ici à la notion de manifestation. Elle ne recouvre pas la notion d'événement au sens d'actualité (par exemple : un tremblement de terre, un attentat, une découverte)."""@fr ;
 	rdfs:label "Project"@en , "Projet"@fr .
 # 
-# http://schema.org/Place
-
-<http://schema.org/Place> a owl:Class ;
-	rdfs:subClassOf :Resource ;
-	rdfs:comment "Place"@en ;
-	rdfs:label "Lieu"@fr .
-# 
 # ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission
+
+<ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission> a owl:Class .
 # 
 # 
 # 
@@ -2264,4 +2335,4 @@ _:genid304 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 # 
-# Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi
+# Generated by the OWL API (version 4.2.1.20160306-0033) https://github.com/owlcs/owlapi
