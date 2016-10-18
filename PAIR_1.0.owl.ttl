@@ -14,17 +14,28 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
 <http://www.virtual-assembly.org/ontologies/1.0/pair> a owl:Ontology ;
-	rdfs:comment """L'ontologie PAIR est issue d'un travail collectif mené dans le cadre de l'association Assemblée virtuelle.
+	rdfs:comment """L'ontologie PAIR est issue d'un travail collectif mené par l'association Assemblée virtuelle et ses partenaires. 
 
 C'est un vocabulaire permettant d'exprimer simplement le réel, ainsi que les interactions qui s'y déroulent. Le réel est perçu sous la forme d'un graphe faisant interagir des projets, acteurs, des idées et des ressources.
 
-L'enjeu de l'ontologie PAIR est de permettre à une diversité de plateformes, blogs, sites web, bases de données de partager un même langage, et ce faisant de devenir interopérables. 
+Il s'agit plus exactement d'une méta-ontologie (préfixe meta : Avec, après, au-delà de) visant la mise en système de plusieurs ontologies existantes (et des données structurées par elles) : Foaf, Dublin Core, Good Relations, Cognitive Characteritics, certains vocabulaires issus de Schema.org etc.
+Elle intègre de nouvelles notions, non identifiées parmi les ontologies existantes. 
+
+Elle s'inscrit dans le magnifique projet du LOV (Linked Open Vocabularies - http://lov.okfn.org/dataset/lov/) ainsi que dans celui du LOD (Linked Open Data - http://lod-cloud.net/). 
+
+L'enjeu de l'ontologie PAIR est de permettre à une diversité de plateformes, blogs, sites web, bases de données de partager un même langage, et ce faisant de devenir interopérables. L'interopérabilité est ici envisagée comme le moyen de faire émerger des réseaux sociaux distribués, également appelés réseaux sociaux peer to peer.
+
+Nous livrons dans un premier temps un vocabulaire générique permettant de retracer les majorité des interactions sociales de tous les jours : les gens (acteurs) travaillent au sein d'organisations, contribuent à des projets, s'intéressent à des choses, disposent de compétences et de ressources, ont besoin de compétences et de ressources ... Etc.
+
+Dès lors que nous aurons abouti dans la formalisation de ce tronc générique, nous co-développerons ensuite, avec nos partenaires, des vocabulaires métiers se référant à des domaines particuliers du réel : Le travail au sein d'une organisation ou d'un projet, les circuits-courts alimentaires, les transactions immobilières etc. Dans chacun de ces domaines, des acteurs ont des projets, portant sur des thématiques et faisant intervenir des échanges de ressources...  
 
 Elle est publiée sous licence Creative Commons : Attribution à l'url suivante : http://www.virtual-assembly.org/ontologies/1.0/pair
 
+La genèse de l'ontologie PAIR est décrite en détail dans la partie historique du code social de l'Assemblée Virtuelle : http://virtual-assembly.org/code-social-assemblee-virtuelle/
+
 2 wikis en chantier permettent d'en saisir les tenants et les aboutissants. 
 - https://github.com/assemblee-virtuelle/pair/wiki
-- http://91.134.140.110:8080/index.php/PAIR"""@fr .
+- http://91.134.140.110:8080/index.php/PAIR."""@fr .
 # 
 # 
 # #################################################################
@@ -1956,7 +1967,15 @@ _:genid299 a rdf:List ;
 
 gr:Offering a owl:Class ;
 	rdfs:subClassOf :Resource ;
-	rdfs:comment """URI http://purl.org/goodrelations/v1#Offering
+	rdfs:comment """La notion de \"Bien ou service\" est la même que la notion intitulée \"Offering\" dans l'ontologie Good Relation. 
+
+URI :  http://purl.org/goodrelations/v1#Offering
+
+Définitiion : Nous avons classé sous la catégorie vague de bien ou service, l'ensemble des choses produites dans la persepctive d'un échange, quelles qu'en soient les modalités (achat-vente, prêt, troc, don etc.)
+
+A l'exception des compétences, des documents, des lieux, des oeuvres, ainsi que des ressources naturelles et financières. Leurs spécificités nous ayant amené à les isoler.
+
+Dans une étape ultérieure, nous affinerons cette catégorie de \"bien ou service\"."""@fr , """URI http://purl.org/goodrelations/v1#Offering
 
 An offering represents the public, not necessarily binding, not necessarily exclusive, announcement by a gr:BusinessEntity to provide (or seek) a certain gr:BusinessFunction for a certain gr:ProductOrService to a specified target audience.""" ;
 	rdfs:label "Bien ou Service"@fr , "Good or service"@en .
@@ -1965,26 +1984,40 @@ An offering represents the public, not necessarily binding, not necessarily excl
 
 <http://purl.org/ontology/cco/core#cco:Skill> a owl:Class ;
 	rdfs:subClassOf :Resource ;
+	rdfs:comment "Classe non valide, à remplacer ..."@fr ;
 	rdfs:label "Compétence"@fr , "Skill"@en .
 # 
 # http://schema.org/CreativeWork
 
 schema:CreativeWork a owl:Class ;
 	rdfs:subClassOf :Resource ;
+	rdfs:comment """Issu de Schema: CreativeWork
+
+URI : http://schema.org/CreativeWork
+
+Définition : The most generic kind of creative work, including books, movies, photographs, software programs, etc."""@fr ;
 	rdfs:label "Artwork"@en , "Oeuvre"@fr .
 # 
 # http://schema.org/Event
 
 schema:Event a owl:Class ;
 	rdfs:subClassOf foaf:Project ;
-	rdfs:comment "An event happening at a certain time and location,' property. Repeated events may be structured as separate Event objects."@en ;
+	rdfs:comment "An event happening at a certain time and location,' property. Repeated events may be structured as separate Event objects."@en , """Héritage : Dans l'ontologie PAIR, la notion d'événement est identique à celle de Schema:Event
+
+URI : https://schema.org/Event
+
+Définition : A la différence des initiatives, missions ou activités, les événements s'inscrivent dans une temporalité courte, avec une date de début et une date de fin. La notion d'événement réfère ici à la notion de manifestation. Elle ne recouvre pas la notion d'événement au sens d'actualité (par exemple : un tremblement de terre, un attentat, une découverte)."""@fr ;
 	rdfs:label "Event"@en , "Evènement"@en .
 # 
 # http://schema.org/Place
 
 schema:Place a owl:Class ;
 	rdfs:subClassOf :Resource ;
-	rdfs:comment "Place"@en ;
+	rdfs:comment """Identique à la notion de Lieu dans Schema.org
+
+URI : https://schema.org/Place
+
+Définition : Entité spatiales dotées d'une adresse sur la Terre."""@fr , "Place"@en ;
 	rdfs:label "Lieu"@fr .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#Argument
@@ -2063,6 +2096,11 @@ Dans l'ontologie PAIR, thèmes et thèses constituent les 2 sous classes de de l
 
 :InitiativeOrMission a owl:Class ;
 	rdfs:subClassOf foaf:Project ;
+	rdfs:comment """Héritage : Découle de FOAF:Project
+
+URI : http://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission
+
+Définition : Les initiatives, missions, activités sont des aventures au long cours."""@fr ;
 	rdfs:label "Initiative or Mission"@en , "Initiative, mission or activity"@en , "Initiative, mission ou activité"@fr .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#NaturalResources
@@ -2117,59 +2155,43 @@ Dans le cadre de cette version, leurs propriétés objets sont globalement ident
 
 :SocialCode a owl:Class ;
 	rdfs:subClassOf foaf:Document ;
+	rdfs:comment """L’enjeu du \"#CodeSocial\" est de poser de manière claire et transparente le quoi, le pourquoi et le comment d’une organisation, d’un projet, d’une collaboration …
+
+Il permet aux différentes parties prenantes d’une aventure d’en co-construire une représentation commune à travers une méthode de description holistique.
+
+Le “#CodeSocial” présente la raison d’être, l’histoire, ainsi que les différents principes et modèles qui fondent nos actions : sur les plans social et humain, économique, écologique, scientifique et technologique, juridique, artistique et culturel.
+
+En rendant explicite ce qui souvent est implicite il permet à des communautés d’acteurs de travailler ensemble de manière saine, transparente et efficiente."""@fr ;
 	rdfs:label "Code social"@fr , "Social code"@en .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#Theme
 
 :Theme a owl:Class ;
 	rdfs:subClassOf :Idea ;
-	rdfs:comment """Exemples issus de Alternatiba et Mathias
+	rdfs:comment """Les thèmes rassemblent les notions, les concepts, les centres d'intérêts, les \"tags\".
 
-Fabriquer, réparer
-Agriculure, alimentation
-Culture
-Eau, nature et biodiversité
-Citoyenneté, droits
-Solidarités et migrations
-Climat et énergie
-Economie soutenable
-Education pour tous
-Transports, mobilités
-Habitat et urbanisme
-Santé
-Média et numérique
-
-[Manque philo et spritualités]
-
-
-[Domaines d'activités ...] N'est ce pas juste des thèmes ?
-Aide aux porteurs de projets
-Création d'événements fédérateurs
-Création de liens entre élus et citoyens
-Création de lieux pour travailler
-Création de méthodes collaboratives
-Développement de l'économie verte
-Développement des pédagogies humanistes
-Développement des pratiques agro-écologiques
-Diffusion de méthodes et d'outils de gestion de projet
-Dupplication des bonnes pratiques 
-Financement des projets
-Journalisme et valorisation des initiatives
-Mise en synergie des acteurs
-Mutualisation des données 
-Recensement des actions
-Création destructrice""" , "Themes are equivalent to \"tags\" or \"topic interests\""@fr ;
+Par exemple, \"développement durable\", \"open source\", \"mécanique quantique\", \"peer to peer\", \"pastafarisme\", etc. Ce que l'on trouve dans wikipedia plus ou moins, ainsi que dans ses versions sémantiques : dbpedia, wikidata)""" , "Themes are equivalent to \"tags\" or \"topic interests\""@fr ;
 	rdfs:label "Theme or topic interest"@en , "Thème ou centre d'intérêt"@fr .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#Thesis
 
 :Thesis a owl:Class ;
 	rdfs:subClassOf :Idea ;
+	rdfs:comment """- Les thèses rassemblent : 
+
+1- Les propositions (\"Et si ...\", \"Mettre en place un revenu universel inconditionnel\"), 
+2- Les arguments autour d'une thèse.  
+3- Les problèmes et les questions (Par exemple : \"Pourquoi y a t'il quelque chose plutôt que rien ?\")"""@fr ;
 	rdfs:label "Thesis"@en , "Thèse"@fr .
 # 
 # http://www.w3.org/2004/02/skos/core#Concept
 
 <http://www.w3.org/2004/02/skos/core#Concept> a owl:Class ;
+	rdfs:comment """SKOS est une ontologie se décrivant comme un système simple d'organisation de la connaissance (Simple Knoledge Organisation Sytem - SKOS)
+
+SKOS est à la racine du concept d'Idée dans l'ontologie PAIR. 
+
+Plus d'informations sur : https://www.w3.org/2009/08/skos-reference/skos.html"""@fr ;
 	rdfs:label "Concept"@en , "Concept"@fr .
 # 
 # http://xmlns.com/foaf/0.1/Agent
@@ -2186,6 +2208,11 @@ Définition : Comme la notion d'Agent dans l'ontologie FOAF, la notion d'acteur 
 
 foaf:Document a owl:Class ;
 	rdfs:subClassOf :Resource ;
+	rdfs:comment """La notion de document est ici empruntée à foaf:document
+
+URI : http://xmlns.com/foaf/spec/#term_Document
+
+Définition : \"The Document class represents those things which are, broadly conceived, 'documents'.\""""@fr ;
 	rdfs:label "Document"@en , "Document"@fr .
 # 
 # http://xmlns.com/foaf/0.1/Group
