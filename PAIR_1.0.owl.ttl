@@ -499,9 +499,10 @@ Définition : Pointe vers des Acteurs ayant créé une idée, une ressource ou u
 # http://www.virtual-assembly.org/ontologies/1.0/pair#dependsOn
 
 :dependsOn a owl:ObjectProperty ;
-	rdfs:domain _:genid1 .
+	rdfs:domain _:genid3 .
 
-_:genid1 owl:unionOf _:genid70 .
+_:genid3 a owl:Class ;
+	owl:unionOf _:genid70 .
 
 _:genid70 a rdf:List ;
 	rdf:first :Resource ;
@@ -511,9 +512,9 @@ _:genid69 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
-:dependsOn rdfs:range _:genid2 .
+:dependsOn rdfs:range _:genid4 .
 
-_:genid2 a owl:Class ;
+_:genid4 a owl:Class ;
 	owl:unionOf _:genid70 .
 
 :dependsOn rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#dependsOn
@@ -646,6 +647,9 @@ _:genid84 a rdf:List ;
 	rdf:rest rdf:nil .
 
 :hasContributor rdfs:range foaf:Agent ;
+	rdfs:comment """URi : http://www.virtual-assembly.org/ontologies/1.0/pair#hasContributor
+
+Définition : Pointe vers des acteurs contribuant à un Projet, un groupe, une organisation ou une idée."""@fr ;
 	rdfs:label "a pour contributeur"@fr , "has contributor"@en .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#hasCreator
@@ -707,6 +711,9 @@ _:genid95 a rdf:List ;
 	rdf:rest rdf:nil .
 
 :hasDirector rdfs:range foaf:Agent ;
+	rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#hasDirector
+
+Définition : Pointe vers des acteurs exerçant des responsabilités au sein d'un groupe, d'une organisation ou d'un projet."""@fr ;
 	rdfs:label "a pour responsable / dirigeant"@fr , "has director"@en .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#hasEmployee
@@ -715,6 +722,9 @@ _:genid95 a rdf:List ;
 	rdfs:subPropertyOf foaf:member ;
 	rdfs:domain foaf:Organization ;
 	rdfs:range foaf:Person ;
+	rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#hasEmployee
+
+Définition : Pointe vers des individus employés par une organisation"""@fr ;
 	rdfs:label "a pour employé"@fr , "has employee"@en .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#hasFollower
@@ -890,7 +900,7 @@ _:genid123 a rdf:List ;
 	rdfs:range :Idea ;
 	rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#ideaIsPartOf
 
-Définition : une idée faisant partie d'une autre idée"""@en ;
+Définition : une idée faisant partie d'une autre idée"""@fr ;
 	rdfs:label "fait partie de"@fr , "is part of idea"@en .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#includesIdea
@@ -923,41 +933,35 @@ Définition : une idée faisant partie d'une autre idée"""@en ;
 
 :isFacetOf a owl:ObjectProperty ;
 	rdfs:subPropertyOf dcterms:isPartOf ;
-	rdfs:domain _:genid125 .
+	rdfs:domain _:genid6 .
 
-_:genid125 a owl:Class ;
-	owl:unionOf _:genid127 .
+_:genid6 a owl:Class ;
+	owl:unionOf _:genid129 .
+
+_:genid129 a rdf:List ;
+	rdf:first :Idea ;
+	rdf:rest _:genid128 .
+
+_:genid128 a rdf:List ;
+	rdf:first :Resource ;
+	rdf:rest _:genid127 .
 
 _:genid127 a rdf:List ;
-	rdf:first schema:CreativeWork ;
+	rdf:first foaf:Agent ;
 	rdf:rest _:genid126 .
 
 _:genid126 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest rdf:nil .
-
-:isFacetOf rdfs:range _:genid128 .
-
-_:genid128 a owl:Class ;
-	owl:unionOf _:genid132 .
-
-_:genid132 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid131 .
-
-_:genid131 a rdf:List ;
-	rdf:first :Resource ;
-	rdf:rest _:genid130 .
-
-_:genid130 a rdf:List ;
-	rdf:first foaf:Agent ;
-	rdf:rest _:genid129 .
-
-_:genid129 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
-:isFacetOf rdfs:comment "TODO A définir !" ;
+:isFacetOf rdfs:range _:genid5 .
+
+_:genid5 a owl:Class ;
+	owl:unionOf _:genid129 .
+
+:isFacetOf rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#isFacetOf
+
+Définition : Un PAIR constituant une facette d'une autre PAIR. Par exemple, le Projet de l'Assemblée Virtuelle est une facette de l'Association Assemblée Virtuelle."""@fr ;
 	rdfs:label "est une facette de"@fr , "is a facet of"@en .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#isFamily
@@ -966,6 +970,9 @@ _:genid129 a rdf:List ;
 	rdfs:subPropertyOf foaf:knows ;
 	rdfs:domain foaf:Person ;
 	rdfs:range foaf:Person ;
+	rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#isFamily
+
+Définition : Individu de la famille d'un autre individu"""@fr ;
 	rdfs:label "famille de"@fr , "family of"@en .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#isFriendOf
@@ -974,30 +981,33 @@ _:genid129 a rdf:List ;
 	rdfs:subPropertyOf foaf:knows ;
 	rdfs:domain foaf:Person ;
 	rdfs:range foaf:Person ;
+	rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#isFriendOf
+
+Définition : Individu ami d'un autre individu"""@fr ;
 	rdfs:label "ami de"@fr , "friend of"@en .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#manage
 
 :manage a owl:ObjectProperty ;
 	rdfs:domain foaf:Agent ;
-	rdfs:range _:genid133 .
+	rdfs:range _:genid130 .
 
-_:genid133 a owl:Class ;
-	owl:unionOf _:genid137 .
-
-_:genid137 a rdf:List ;
-	rdf:first schema:Place ;
-	rdf:rest _:genid136 .
-
-_:genid136 a rdf:List ;
-	rdf:first foaf:Group ;
-	rdf:rest _:genid135 .
-
-_:genid135 a rdf:List ;
-	rdf:first foaf:Organization ;
-	rdf:rest _:genid134 .
+_:genid130 a owl:Class ;
+	owl:unionOf _:genid134 .
 
 _:genid134 a rdf:List ;
+	rdf:first schema:Place ;
+	rdf:rest _:genid133 .
+
+_:genid133 a rdf:List ;
+	rdf:first foaf:Group ;
+	rdf:rest _:genid132 .
+
+_:genid132 a rdf:List ;
+	rdf:first foaf:Organization ;
+	rdf:rest _:genid131 .
+
+_:genid131 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -1021,41 +1031,41 @@ _:genid134 a rdf:List ;
 
 :opposedTo a owl:ObjectProperty ;
 	rdfs:subPropertyOf dcterms:subject ;
-	rdfs:domain _:genid138 .
+	rdfs:domain _:genid135 .
 
-_:genid138 a owl:Class ;
-	owl:unionOf _:genid141 .
+_:genid135 a owl:Class ;
+	owl:unionOf _:genid138 .
 
-_:genid141 a rdf:List ;
+_:genid138 a rdf:List ;
 	rdf:first :Idea ;
-	rdf:rest _:genid140 .
+	rdf:rest _:genid137 .
 
-_:genid140 a rdf:List ;
+_:genid137 a rdf:List ;
 	rdf:first foaf:Agent ;
-	rdf:rest _:genid139 .
+	rdf:rest _:genid136 .
 
-_:genid139 a rdf:List ;
+_:genid136 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
-:opposedTo rdfs:range _:genid142 .
+:opposedTo rdfs:range _:genid139 .
 
-_:genid142 a owl:Class ;
-	owl:unionOf _:genid146 .
-
-_:genid146 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid145 .
-
-_:genid145 a rdf:List ;
-	rdf:first :Resource ;
-	rdf:rest _:genid144 .
-
-_:genid144 a rdf:List ;
-	rdf:first foaf:Agent ;
-	rdf:rest _:genid143 .
+_:genid139 a owl:Class ;
+	owl:unionOf _:genid143 .
 
 _:genid143 a rdf:List ;
+	rdf:first :Idea ;
+	rdf:rest _:genid142 .
+
+_:genid142 a rdf:List ;
+	rdf:first :Resource ;
+	rdf:rest _:genid141 .
+
+_:genid141 a rdf:List ;
+	rdf:first foaf:Agent ;
+	rdf:rest _:genid140 .
+
+_:genid140 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -1066,16 +1076,16 @@ _:genid143 a rdf:List ;
 
 :organize a owl:ObjectProperty ;
 	rdfs:subPropertyOf :products ;
-	rdfs:domain _:genid147 .
+	rdfs:domain _:genid144 .
 
-_:genid147 a owl:Class ;
-	owl:unionOf _:genid149 .
+_:genid144 a owl:Class ;
+	owl:unionOf _:genid146 .
 
-_:genid149 a rdf:List ;
+_:genid146 a rdf:List ;
 	rdf:first foaf:Agent ;
-	rdf:rest _:genid148 .
+	rdf:rest _:genid145 .
 
-_:genid148 a rdf:List ;
+_:genid145 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -1085,37 +1095,37 @@ _:genid148 a rdf:List ;
 # http://www.virtual-assembly.org/ontologies/1.0/pair#products
 
 :products a owl:ObjectProperty ;
-	rdfs:domain _:genid150 .
+	rdfs:domain _:genid147 .
 
-_:genid150 a owl:Class ;
-	owl:unionOf _:genid153 .
+_:genid147 a owl:Class ;
+	owl:unionOf _:genid150 .
+
+_:genid150 a rdf:List ;
+	rdf:first :Resource ;
+	rdf:rest _:genid149 .
+
+_:genid149 a rdf:List ;
+	rdf:first foaf:Agent ;
+	rdf:rest _:genid148 .
+
+_:genid148 a rdf:List ;
+	rdf:first foaf:Project ;
+	rdf:rest rdf:nil .
+
+:products rdfs:range _:genid151 .
+
+_:genid151 a owl:Class ;
+	owl:unionOf _:genid154 .
+
+_:genid154 a rdf:List ;
+	rdf:first :Idea ;
+	rdf:rest _:genid153 .
 
 _:genid153 a rdf:List ;
 	rdf:first :Resource ;
 	rdf:rest _:genid152 .
 
 _:genid152 a rdf:List ;
-	rdf:first foaf:Agent ;
-	rdf:rest _:genid151 .
-
-_:genid151 a rdf:List ;
-	rdf:first foaf:Project ;
-	rdf:rest rdf:nil .
-
-:products rdfs:range _:genid154 .
-
-_:genid154 a owl:Class ;
-	owl:unionOf _:genid157 .
-
-_:genid157 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid156 .
-
-_:genid156 a rdf:List ;
-	rdf:first :Resource ;
-	rdf:rest _:genid155 .
-
-_:genid155 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
@@ -1141,13 +1151,30 @@ Définition : une idée faisant partie d'une autre idée"""@en ;
 	rdfs:range :Resource ;
 	rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#resourceIsPartOf
 
-Définition : une ressource faisant partie d'une autre ressource"""@en ;
+Définition : une ressource faisant partie d'une autre ressource"""@fr ;
 	rdfs:label "fait partie de"@fr , "is part of resource"@en .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#seeksSkill
 
 :seeksSkill a owl:ObjectProperty ;
 	rdfs:subPropertyOf gr:seeks ;
+	rdfs:domain _:genid155 .
+
+_:genid155 a owl:Class ;
+	owl:unionOf _:genid157 .
+
+_:genid157 a rdf:List ;
+	rdf:first foaf:Agent ;
+	rdf:rest _:genid156 .
+
+_:genid156 a rdf:List ;
+	rdf:first foaf:Project ;
+	rdf:rest rdf:nil .
+
+:seeksSkill rdfs:range <http://purl.org/ontology/cco/core#cco:Skill> ;
+	rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#seeksSkill
+
+Définition : Pointe vers des compétences détenues par des acteurs"""@fr ;
 	rdfs:label "compétences recherchées"@fr .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#supports
@@ -1296,6 +1323,9 @@ _:genid181 a rdf:List ;
 	rdfs:subPropertyOf foaf:knows ;
 	rdfs:domain foaf:Person ;
 	rdfs:range foaf:Person ;
+	rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#workWith
+
+Définition : Individu collaborateur d'un autre individu"""@fr ;
 	rdfs:label "collaborateur de"@fr , "colleague, collaborator"@en .
 # 
 # http://xmlns.com/foaf/0.1/currentProject
@@ -1359,6 +1389,7 @@ _:genid189 a rdf:List ;
 foaf:pastProject a owl:ObjectProperty ;
 	rdfs:subPropertyOf :contributedTo ;
 	rdfs:domain foaf:Person ;
+	rdfs:range foaf:Project ;
 	rdfs:comment """Cette relation est issue de foaf:pastProject. 
 
 URI : http://xmlns.com/foaf/spec/#term_pastProject
