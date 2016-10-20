@@ -101,8 +101,7 @@ dcterms:creator a owl:ObjectProperty ;
 	owl:inverseOf :hasCreator ;
 	rdfs:comment """URI: http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=elements#terms-creator
 
-Définition : propriété générique se subdivisant en : auteur, créateur, fondateur. Sans domain, ni range donc, lesquels sont spécifiés au niveau des sous-propriétés."""@fr ;
-	rdfs:label "créateur de"@fr .
+Définition : propriété générique se subdivisant en : auteur, créateur, fondateur. Sans domain, ni range donc, lesquels sont spécifiés au niveau des sous-propriétés."""@fr .
 # 
 # http://purl.org/dc/terms/hasPart
 
@@ -1760,21 +1759,13 @@ _:genid248 a rdf:List ;
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#phoneNumber
 
-:phoneNumber a owl:DatatypeProperty ;
+foaf:phone
 	rdfs:domain _:genid252 .
 
 _:genid252 a owl:Class ;
 	owl:unionOf _:genid256 .
 
 _:genid256 a rdf:List ;
-	rdf:first :Idea ;
-	rdf:rest _:genid255 .
-
-_:genid255 a rdf:List ;
-	rdf:first :Resource ;
-	rdf:rest _:genid254 .
-
-_:genid254 a rdf:List ;
 	rdf:first foaf:Agent ;
 	rdf:rest _:genid253 .
 
@@ -1782,7 +1773,6 @@ _:genid253 a rdf:List ;
 	rdf:first foaf:Project ;
 	rdf:rest rdf:nil .
 
-:phoneNumber rdfs:label "Téléphone"@fr .
 # 
 # http://www.virtual-assembly.org/ontologies/1.0/pair#physicalWorkSpace
 
