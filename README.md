@@ -9,7 +9,7 @@ des spécifications de formulaires,
 pour la modélisation PAIR ( Projet- Acteur - Idée - Resource ) .
 
 
-Outils recommandés pour vérifier la syntaxe Turtle:
+# Outils recommandés pour vérifier la syntaxe Turtle:
 
 NE PAS COMMITER SANS VERIFIER LA SYNTAXE !!!!!!!!!
 
@@ -25,7 +25,9 @@ Utilitaire rapper:
 - Raisonneurs (en ligne de commande): [Hermit](http://hermit-reasoner.com/download.html)
 - [Pellet](http://clarkparsia.com/pellet/)
 
+# Utiliser dans une application
 Les spécifications de formulaires sont utilisables avec
 [semantic\_forms](https://github.com/jmvanel/semantic_forms/blob/master/scala/forms_play/README.md)
-.
+,
+et [WP-LDP](https://github.com/assemblee-virtuelle/wpldp/wiki/Installation).
 
