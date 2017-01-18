@@ -12,8 +12,15 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sioc: <http://rdfs.org/sioc/ns#> .
 
 <> owl:imports <PAIR_1.0.owl.ttl> ,
                foaf: ,
                dcterms: , dc: ,
-               schema: .
+               skos: ,
+               sioc: ,
+               # NOTE: schema.org is not self hosted, so we use this:
+               <http://topbraid.org/schema/schema.ttl>
+               # schema:        
+	.
