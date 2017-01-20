@@ -15,6 +15,11 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sioc: <http://rdfs.org/sioc/ns#> .
 
-<> owl:imports <PAIR_1.0.owl.ttl> ,
-               <PAIR_1.0.depencencies.owl.ttl> 
+<> owl:imports foaf: ,
+               dcterms: , dc: ,
+               skos: ,
+               sioc: ,
+               # NOTE: schema.org is not self hosted, so we use this:
+               <http://topbraid.org/schema/schema.ttl>
+               # schema:        
 	.
