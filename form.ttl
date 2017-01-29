@@ -22,6 +22,9 @@
 # Specifications de formulaires pour AV
 
 pairforms:InitiativeOrMissionForm
+  a form:specification ;
+  rdfs:label "Initiative ou Mission AV"@fr ;
+  rdfs:label "Initiative or Mission AV"@en ;
   form:classDomain pair:InitiativeOrMission ;
   form:showProperties (
 	rdfs:label
@@ -67,6 +70,9 @@ pairforms:InitiativeOrMissionForm-Completion
 	form:widgetClass form:DBPediaLookup .
 
 pairforms:EventForm
+  a form:specification ;
+  rdfs:label "Evènement AV"@fr ;
+  rdfs:label "Event AV"@en ;
   form:classDomain pair:Event ;
   form:showProperties (
 	rdfs:label
@@ -112,6 +118,9 @@ pairforms:EventForm-Completion
 	form:widgetClass form:DBPediaLookup .
 
 pairforms:PersonForm
+  a form:specification ;
+  rdfs:label "Personne AV"@fr ;
+  rdfs:label "Person AV"@en ;
   form:classDomain foaf:Person ;
   form:showProperties (
 	rdfs:label
@@ -164,6 +173,9 @@ pairforms:PersonForm-Completion
 	form:widgetClass form:DBPediaLookup .
 
 pairforms:GroupForm
+  a form:specification ;
+  rdfs:label "Groupe AV"@fr ;
+  rdfs:label "Group AV"@en ;
   form:classDomain foaf:Group ;
   form:showProperties (
 	rdfs:label
@@ -208,6 +220,9 @@ pairforms:GroupForm-Completion
 	form:widgetClass form:DBPediaLookup .
 
 pairforms:OrganizationForm
+  a form:specification ;
+  rdfs:label "Organisation AV"@fr ;
+  rdfs:label "Organization AV"@en ;
   form:classDomain foaf:Organization ;
   form:showProperties (
 	rdfs:label
@@ -257,6 +272,9 @@ form:fieldAppliesToForm pairforms:OrganizationForm ;
 	form:widgetClass form:DBPediaLookup .
 
 pairforms:ThemeForm
+  a form:specification ;
+  rdfs:label "Thème AV"@fr ;
+  rdfs:label "Theme AV"@en ;
   form:classDomain pair:Theme ;
   form:showProperties (
 	rdfs:label
@@ -286,6 +304,9 @@ form:fieldAppliesToForm pairforms:ThemeForm ;
 	form:widgetClass form:DBPediaLookup .
 
 pairforms:ThesisForm
+  a form:specification ;
+  rdfs:label "Thèse AV"@fr ;
+  rdfs:label "Thesis AV"@en ;
   form:classDomain pair:Thesis ;
   form:showProperties (
 	rdfs:label
@@ -330,6 +351,9 @@ form:fieldAppliesToForm pairforms:ThesisForm ;
 	form:widgetClass form:DBPediaLookup .
 	
 pairforms:ResourceForm
+  a form:specification ;
+  rdfs:label "Ressource AV"@fr ;
+  rdfs:label "Resource AV"@en ;
   form:classDomain pair:Resource ;
   form:showProperties (
 	rdfs:label
@@ -359,6 +383,9 @@ form:fieldAppliesToForm pairforms:ResourceForm ;
 	form:widgetClass form:DBPediaLookup .
 	
 pairforms:SkillForm
+  a form:specification ;
+  rdfs:label "Compétence AV"@fr ;
+  rdfs:label "Skill AV"@en ;
   form:classDomain cco:Skill ;
   form:showProperties (
 	rdfs:label
