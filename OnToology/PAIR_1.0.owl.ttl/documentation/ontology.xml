@@ -1,0 +1,2637 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:ov="http://open.vocab.org/terms/"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns="http://www.virtual-assembly.org/ontologies/1.0/pair#"
+    xmlns:doap="http://usefulinc.com/ns/doap#"
+    xmlns:gr="http://purl.org/goodrelations/v1#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:cv="http://rdfs.org/resume-rdf/cv.rdfs#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:schema="http://schema.org/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" > 
+  <rdf:Description rdf:nodeID="A0">
+    <rdf:rest rdf:nodeID="A1"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A2">
+    <owl:unionOf rdf:nodeID="A3"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A4">
+    <owl:unionOf rdf:nodeID="A5"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A6">
+    <rdf:rest rdf:nodeID="A7"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A8">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A9">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A10">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/attendee">
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:domain rdf:resource="http://schema.org/Event"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A11">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Autre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A12">
+    <rdf:rest rdf:nodeID="A13"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#price">
+    <rdfs:label xml:lang="fr">Prix</rdfs:label>
+    <rdfs:comment xml:lang="fr">Comment modéliser le fait qu'une ressource a un prix formulé en euros et/ou dollar ? En lien avec la classe ressource financière et les propriétés booléennes ..</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#town">
+    <rdfs:label xml:lang="fr">Ville</rdfs:label>
+    <rdfs:domain rdf:nodeID="A14"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A5">
+    <rdf:rest rdf:nodeID="A15"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A16">
+    <rdf:rest rdf:nodeID="A0"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A17">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#file">
+    <rdfs:label xml:lang="fr">Fichier</rdfs:label>
+    <rdfs:domain rdf:nodeID="A18"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A19">
+    <owl:unionOf rdf:nodeID="A20"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A21">
+    <rdf:rest rdf:nodeID="A6"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A22">
+    <rdf:rest rdf:nodeID="A9"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A23">
+    <rdf:rest rdf:nodeID="A11"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A24">
+    <owl:unionOf rdf:nodeID="A25"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A26">
+    <rdf:rest rdf:nodeID="A12"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A14">
+    <owl:unionOf rdf:nodeID="A21"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A27">
+    <rdf:rest rdf:nodeID="A28"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#organize">
+    <rdfs:label xml:lang="en">organize</rdfs:label>
+    <rdfs:label xml:lang="fr">organise</rdfs:label>
+    <rdfs:range rdf:resource="http://schema.org/Event"/>
+    <rdfs:domain rdf:nodeID="A29"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#products"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A30">
+    <rdf:rest rdf:nodeID="A16"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A31">
+    <rdf:rest rdf:nodeID="A32"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#votesFor">
+    <rdfs:label xml:lang="en">votes for</rdfs:label>
+    <rdfs:label xml:lang="fr">vote pour</rdfs:label>
+    <rdfs:range rdf:nodeID="A33"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#supports"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A34">
+    <rdf:rest rdf:nodeID="A35"/>
+    <rdf:first rdf:resource="http://purl.org/ontology/cco/core#cco:Skill"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person">
+    <rdfs:label xml:lang="en">Person</rdfs:label>
+    <rdfs:label xml:lang="fr">Individu</rdfs:label>
+    <rdfs:comment>La notion d'individu dans PAIR est la même que celle de Personne dans FOAF.
+
+URI : xmlns.com/foaf/0.1/person
+
+Définition : Un individu est un acteur, une personne physique, un humain.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#Question">
+    <rdfs:label xml:lang="fr">Problème ou question</rdfs:label>
+    <rdfs:label xml:lang="en">Issue or question</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Thesis"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#worksOn">
+    <rdfs:label xml:lang="en">works on</rdfs:label>
+    <rdfs:label xml:lang="fr">travaille sur</rdfs:label>
+    <rdfs:range rdf:nodeID="A36"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/subject"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#isFamily">
+    <rdfs:label xml:lang="en">family of</rdfs:label>
+    <rdfs:label xml:lang="fr">famille de</rdfs:label>
+    <rdfs:comment xml:lang="fr">URI : http://www.virtual-assembly.org/ontologies/1.0/pair#isFamily
+
+Définition : Individu de la famille d'un autre individu</rdfs:comment>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/knows"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#hasDirector">
+    <rdfs:label xml:lang="en">has director</rdfs:label>
+    <rdfs:label xml:lang="fr">a pour responsable / dirigeant</rdfs:label>
+    <rdfs:comment xml:lang="fr">URI : http://www.virtual-assembly.org/ontologies/1.0/pair#hasDirector
+
+Définition : Pointe vers des acteurs exerçant des responsabilités au sein d'un groupe, d'une organisation ou d'un projet.</rdfs:comment>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:domain rdf:nodeID="A37"/>
+    <owl:inverseOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#manage"/>
+    <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/member"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A38">
+    <owl:unionOf rdf:nodeID="A26"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#authorof">
+    <rdfs:label xml:lang="en">author of</rdfs:label>
+    <rdfs:label xml:lang="fr">auteur de</rdfs:label>
+    <rdfs:comment>URI : http://www.virtual-assembly.org/ontologies/1.0/pair#authorOf
+
+Définition : Pointe vers les Acteurs à l'origine d'une Oeuvre, d'une Idée ou d'un document.</rdfs:comment>
+    <rdfs:range rdf:nodeID="A39"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <owl:inverseOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#hasAuthor"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/creator"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#socialNetworks">
+    <rdfs:label xml:lang="fr">Réseaux sociaux</rdfs:label>
+    <rdfs:comment xml:lang="fr">Ajouter une URL par profil de réseaux réseau social</rdfs:comment>
+    <rdfs:domain rdf:nodeID="A40"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A20">
+    <rdf:rest rdf:nodeID="A41"/>
+    <rdf:first rdf:resource="http://schema.org/Place"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/spec/#term_nick">
+    <rdfs:label xml:lang="fr">Pseudonyme</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#pseudo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A42">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A43">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A3">
+    <rdf:rest rdf:nodeID="A27"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A44">
+    <owl:unionOf rdf:nodeID="A30"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A32">
+    <rdf:rest rdf:nodeID="A10"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource">
+    <rdfs:label xml:lang="fr">Ressource</rdfs:label>
+    <rdfs:label xml:lang="en">Resource</rdfs:label>
+    <rdfs:comment xml:lang="fr">La notion de Ressource ne découle (pour l'instant) d'aucune ontologie.
+
+URI : http://www.virtual-assembly.org/ontologies/1.0/pair#resource
+
+Définition : Dans l'ontologie PAIR, la notion de ressource est appréhendée de manière très générique. Constitue une ressource toute chose, matérielle ou immatérielle, susceptible d'être utilisée, offerte, nécessitée dans le cadre d'une aventure. Excepté les être humains, c'est la raison pour laquelle vous trouverez en sous-classes de la classe Ressource, des compétences et des services, mais pas des ressources humaines ...
+
+Les Ressources se subdivisent en plusieurs sous-classes :
+
+- Bien ou service
+- Compétence
+- Document
+- Code social
+- Lieu
+- Œuvre
+- Ressource financière
+- Ressource naturelle
+
+Dans le cadre de cette version, leurs propriétés objets sont globalement identiques.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#resourceIsPartOf">
+    <rdfs:label xml:lang="en">is part of resource</rdfs:label>
+    <rdfs:label xml:lang="fr">fait partie de</rdfs:label>
+    <rdfs:comment xml:lang="fr">URI : http://www.virtual-assembly.org/ontologies/1.0/pair#resourceIsPartOf
+
+Définition : une ressource faisant partie d'une autre ressource</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdfs:domain rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/isPartOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A36">
+    <owl:unionOf rdf:nodeID="A34"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A45">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#Theme">
+    <rdfs:label xml:lang="fr">Thème ou centre d'intérêt</rdfs:label>
+    <rdfs:label xml:lang="en">Theme or topic interest</rdfs:label>
+    <rdfs:comment xml:lang="fr">Themes are equivalent to "tags" or "topic interests"</rdfs:comment>
+    <rdfs:comment>Les thèmes rassemblent les notions, les concepts, les centres d'intérêts, les "tags".
+
+Par exemple, "développement durable", "open source", "mécanique quantique", "peer to peer", "pastafarisme", etc. Ce que l'on trouve dans wikipedia plus ou moins, ainsi que dans ses versions sémantiques : dbpedia, wikidata)</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A46">
+    <rdf:rest rdf:nodeID="A42"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A41">
+    <rdf:rest rdf:nodeID="A47"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#votesAgainst">
+    <rdfs:label xml:lang="en">votes against</rdfs:label>
+    <rdfs:label xml:lang="fr">vote contre</rdfs:label>
+    <rdfs:range rdf:nodeID="A48"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#opposedTo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A49">
+    <owl:unionOf rdf:nodeID="A50"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A51">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A52">
+    <rdf:rest rdf:nodeID="A43"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#hasRecipient">
+    <rdfs:label xml:lang="en">has recipient</rdfs:label>
+    <rdfs:label>a pour bénéficiaire</rdfs:label>
+    <rdfs:comment xml:lang="fr">URI : http://www.virtual-assembly.org/ontologies/1.0/pair#hasRecipient
+
+Définition : Pointe vers des Acteurs bénéficiant de l'action d'un groupe ou d'une organisation, des fruits d'un projet ou bien d'une ressource.</rdfs:comment>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:domain rdf:nodeID="A53"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#opposedTo">
+    <rdfs:label xml:lang="fr">opposé à</rdfs:label>
+    <rdfs:label xml:lang="en">opposed to</rdfs:label>
+    <rdfs:comment xml:lang="fr"></rdfs:comment>
+    <rdfs:range rdf:nodeID="A54"/>
+    <rdfs:domain rdf:nodeID="A55"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/subject"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A56">
+    <rdf:rest rdf:nodeID="A57"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A58">
+    <owl:unionOf rdf:nodeID="A59"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#name">
+    <rdfs:label xml:lang="fr">Nom</rdfs:label>
+    <rdfs:domain rdf:nodeID="A60"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A61">
+    <owl:unionOf rdf:nodeID="A62"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#seeks">
+    <rdfs:range rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdfs:domain rdf:nodeID="A63"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A28">
+    <rdf:rest rdf:nodeID="A51"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A64">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A65">
+    <rdf:rest rdf:nodeID="A52"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A59">
+    <rdf:rest rdf:nodeID="A66"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#hasFollower">
+    <rdfs:label xml:lang="fr">a pour sympathisant</rdfs:label>
+    <rdfs:comment xml:lang="fr">URI : http://www.virtual-assembly.org/ontologies/1.0/pair#hasFollower
+
+Définition : Pointe vers les sympathisants (Acteurs) d'un groupe, d'une organisation, d'une idée ou d'un projet,</rdfs:comment>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:domain rdf:nodeID="A24"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#contributedTo">
+    <rdfs:label xml:lang="en">has contributed to</rdfs:label>
+    <rdfs:label xml:lang="fr">a contribué à</rdfs:label>
+    <rdfs:comment xml:lang="fr">URI : http://www.virtual-assembly.org/ontologies/1.0/pair#contributedTo
+
+La relation "a contribué à" s'inspire de foaf:pastProject, elle est néanmoins plus générique dans la mesure où nous considérons que des groupes et des organisations peuvent avoir contribué à des projets et à des PAIRs 
+
+Dans foaf:pastProject les individus seulement peuvent contribuer à des projets uniquement ... 
+Dans PAIR foaf:pastProject est donc une sous relation de pair:contributedTo</rdfs:comment>
+    <rdfs:range rdf:nodeID="A67"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A68">
+    <rdf:rest rdf:nodeID="A56"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A62">
+    <rdf:rest rdf:nodeID="A69"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A70">
+    <rdf:rest rdf:nodeID="A22"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#history">
+    <rdfs:label xml:lang="fr">Historique, histoire</rdfs:label>
+    <rdfs:domain rdf:nodeID="A2"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A71">
+    <rdf:rest rdf:nodeID="A72"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#includesProject">
+    <rdfs:label xml:lang="fr">inclut, rassemble</rdfs:label>
+    <rdfs:label xml:lang="en">includes</rdfs:label>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <owl:inverseOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#projectIsPartOf"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/hasPart"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#Association">
+    <rdfs:label xml:lang="fr">Association, fondation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/pastProject">
+    <rdfs:label xml:lang="en">contributed to</rdfs:label>
+    <rdfs:label xml:lang="fr">a contribué à</rdfs:label>
+    <rdfs:comment xml:lang="en">past project - A project this person has previously worked on.
+
+Domain: 	having this property implies being a Person
+Range: 	every value of this property is a Thing
+
+After a Person is no longer involved with a currentProject, or has been inactive for some time, a pastProject relationship can be used. This indicates that the Person was involved with the described project at one point.
+
+If the Person has stopped working on a project because it has been completed (successfully or otherwise), pastProject is applicable. In general, currentProject is used to indicate someone's current efforts (and implied interests, concerns etc.), while pastProject describes what they've previously been doing.</rdfs:comment>
+    <rdfs:comment xml:lang="fr">Cette relation est issue de foaf:pastProject. 
+
+URI : http://xmlns.com/foaf/spec/#term_pastProject
+
+Définition : Pointe vers des projets auxquels des individus ont contribué par le passé.</rdfs:comment>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#contributedTo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#shortDescription">
+    <rdfs:label xml:lang="fr">Description courte</rdfs:label>
+    <rdfs:comment xml:lang="fr">- de 140 caractères</rdfs:comment>
+    <rdfs:domain rdf:nodeID="A4"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#pseudo">
+    <rdfs:label xml:lang="fr">Pseudonyme</rdfs:label>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A37">
+    <owl:unionOf rdf:nodeID="A31"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea">
+    <owl:disjointWith rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <owl:disjointWith rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <owl:disjointWith rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdfs:label xml:lang="fr">Idée</rdfs:label>
+    <rdfs:label xml:lang="en">Idea</rdfs:label>
+    <rdfs:comment>La notion d'Idée dans PAIR est en relation avec la notion de concept dans l'ontologie SKOS. Dans PAIR Idée est ainsi une sous-classe de SKOS:Concept
+
+URI : http://www.virtual-assembly.org/ontologies/1.0/pair#idea
+
+Définition : Dans l'ontologie PAIR, la notion d'idée se réfère à ce qui est abstrait, idéel, notionnel, conceptuel, à ce qui est de l'ordre de l'idéation, de la proposition, du virtuel (au sens philosophique).
+
+Elle se définit notamment par opposition à la notion de projet :
+
+Une idée n'est pas un projet dans la mesure où, par définition, une idée n'est pas incarnée. Une idée peut en revanche s'incarner dans un projet, ou alors, devenir un projet. Il est possible qu'un même "objet" soit perçu comme une idée ou un projet.
+
+Par exemple, les "Chemins de la transition" peuvent être perçus comme une idée, mais aussi comme un projet. C'est au regard de son intention, que le créateur des "Chemins de la transition" optera pour la catégorie idée ou projet : S'il considère qu'il s'agit juste d'un concept, il optera pour la catégorie "Idée" ; Si son intention est d'incarner cette idée dans le cadre d'un projet, il optera donc pour la catégorie correspondante.
+
+Dans l'ontologie PAIR, les idées se subdivisent en 2 catégories :
+
+- Les thèmes rassemblent les notions, les concepts, les centres d'intérêts, les "tags".
+
+Par exemple, "développement durable", "open source", "mécanique quantique", "peer to peer", pastafarisme, etc.
+
+- Les thèses rassemblent les propositions ("Et si ...", "Mettre en place un revenu universel inconditionnel"), les arguments ainsi que les problèmes et les questions (Par exemple : "Pourquoi y a t'il quelque chose plutôt que rien ?")
+
+Dans l'ontologie PAIR, thèmes et thèses constituent les 2 sous classes de de la classe Idée.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A67">
+    <owl:unionOf rdf:nodeID="A73"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A66">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A74">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A75">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A25">
+    <rdf:rest rdf:nodeID="A76"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A77">
+    <rdf:rest rdf:nodeID="A78"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A79">
+    <rdf:rest rdf:nodeID="A80"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A50">
+    <rdf:rest rdf:nodeID="A70"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A78">
+    <rdf:rest rdf:nodeID="A81"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A82">
+    <rdf:rest rdf:nodeID="A71"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#from">
+    <rdfs:label xml:lang="fr">Depuis (jour)</rdfs:label>
+    <rdfs:comment xml:lang="fr">Date de début, par exemple : à partir de jeudi 29 septembre. 
+
+Mais également depuis, par exemple, dans les locaux des grands voisins, depuis 2015</rdfs:comment>
+    <rdfs:domain rdf:nodeID="A83"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#SocialCode">
+    <rdfs:label xml:lang="en">Social code</rdfs:label>
+    <rdfs:label xml:lang="fr">Code social</rdfs:label>
+    <rdfs:comment xml:lang="fr">L’enjeu du "#CodeSocial" est de poser de manière claire et transparente le quoi, le pourquoi et le comment d’une organisation, d’un projet, d’une collaboration …
+
+Il permet aux différentes parties prenantes d’une aventure d’en co-construire une représentation commune à travers une méthode de description holistique.
+
+Le “#CodeSocial” présente la raison d’être, l’histoire, ainsi que les différents principes et modèles qui fondent nos actions : sur les plans social et humain, économique, écologique, scientifique et technologique, juridique, artistique et culturel.
+
+En rendant explicite ce qui souvent est implicite il permet à des communautés d’acteurs de travailler ensemble de manière saine, transparente et efficiente.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A57">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Festival">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A84">
+    <rdf:rest rdf:nodeID="A85"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A73">
+    <rdf:rest rdf:nodeID="A86"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A13">
+    <rdf:rest rdf:nodeID="A74"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A76">
+    <rdf:rest rdf:nodeID="A87"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#creationDate">
+    <rdfs:label xml:lang="fr">Date de création</rdfs:label>
+    <rdfs:domain rdf:nodeID="A88"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A80">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#Cooperative">
+    <rdfs:label xml:lang="fr">Coopérative</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Enterprise"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/isPartOf">
+    <rdfs:label xml:lang="en">is part of</rdfs:label>
+    <rdfs:label xml:lang="fr">fait partie de</rdfs:label>
+    <rdfs:comment xml:lang="fr"></rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Group">
+    <rdfs:label xml:lang="fr">Groupe</rdfs:label>
+    <rdfs:label xml:lang="en">Group</rdfs:label>
+    <rdfs:comment>La notion de groupe dans PAIR est la même que celle de Groupe dans FOAF.
+
+URI : xmlns.com/foaf/0.1/group
+
+Définition : Un groupe est un collectif d'individus s'associant en vue d'une fin déterminée, ou pas. Un groupe se distingue d'une organisation par le fait qu'il n'a pas d'existence juridique à proprement parler. La notion de groupe en tant que section / partie d'une organisation n'est ici par prise en compte.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A7">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A89">
+    <owl:unionOf rdf:nodeID="A90"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A15">
+    <rdf:rest rdf:nodeID="A91"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A92">
+    <owl:unionOf rdf:nodeID="A93"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A94">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A86">
+    <rdf:rest rdf:nodeID="A95"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A96">
+    <rdf:rest rdf:nodeID="A97"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A98">
+    <owl:unionOf rdf:nodeID="A99"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A100">
+    <rdf:rest rdf:nodeID="A101"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A102">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A103">
+    <rdf:rest rdf:nodeID="A104"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#adress">
+    <rdfs:label xml:lang="fr">Adresse</rdfs:label>
+    <rdfs:domain rdf:nodeID="A105"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open.vocab.org/terms/similarTo">
+    <rdfs:label xml:lang="en">similar to</rdfs:label>
+    <rdfs:label xml:lang="fr">similaire à</rdfs:label>
+    <rdfs:comment xml:lang="fr">Voir "inclut"</rdfs:comment>
+    <rdfs:range rdf:nodeID="A106"/>
+    <rdfs:domain rdf:nodeID="A107"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A108">
+    <owl:unionOf rdf:nodeID="A109"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#Offering">
+    <rdfs:label xml:lang="en">Good or service</rdfs:label>
+    <rdfs:label xml:lang="fr">Bien ou Service</rdfs:label>
+    <rdfs:comment>URI http://purl.org/goodrelations/v1#Offering
+
+An offering represents the public, not necessarily binding, not necessarily exclusive, announcement by a gr:BusinessEntity to provide (or seek) a certain gr:BusinessFunction for a certain gr:ProductOrService to a specified target audience.</rdfs:comment>
+    <rdfs:comment xml:lang="fr">La notion de "Bien ou service" est la même que la notion intitulée "Offering" dans l'ontologie Good Relation. 
+
+URI :  http://purl.org/goodrelations/v1#Offering
+
+Définitiion : Nous avons classé sous la catégorie vague de bien ou service, l'ensemble des choses produites dans la persepctive d'un échange, quelles qu'en soient les modalités (achat-vente, prêt, troc, don etc.)
+
+A l'exception des compétences, des documents, des lieux, des oeuvres, ainsi que des ressources naturelles et financières. Leurs spécificités nous ayant amené à les isoler.
+
+Dans une étape ultérieure, nous affinerons cette catégorie de "bien ou service".</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A110">
+    <owl:unionOf rdf:nodeID="A111"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#digitalWorkSpace">
+    <rdfs:label xml:lang="fr">Espace de travail numérique</rdfs:label>
+    <rdfs:domain rdf:nodeID="A112"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A113">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A93">
+    <rdf:rest rdf:nodeID="A77"/>
+    <rdf:first rdf:resource="http://schema.org/Place"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A114">
+    <rdf:rest rdf:nodeID="A94"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#hasCreator">
+    <rdfs:label xml:lang="en">has creator</rdfs:label>
+    <rdfs:label xml:lang="fr">a pour créateur</rdfs:label>
+    <rdfs:comment xml:lang="fr">URI : http://www.virtual-assembly.org/ontologies/1.0/pair#hasCreator
+
+Définition : Pointe vers des Acteurs ayant créé un PAIR (sauf individu). 
+
+Propriété inverse de dcterms:creator</rdfs:comment>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:domain rdf:nodeID="A89"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A115">
+    <rdf:rest rdf:nodeID="A100"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A116">
+    <rdf:rest rdf:nodeID="A96"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A95">
+    <rdf:rest rdf:nodeID="A117"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A99">
+    <rdf:rest rdf:nodeID="A118"/>
+    <rdf:first rdf:resource="http://schema.org/Place"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A119">
+    <owl:unionOf rdf:nodeID="A120"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/cito/likes">
+    <rdfs:range rdf:nodeID="A121"/>
+    <rdfs:domain rdf:nodeID="A122"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/subject"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A104">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/phone">
+    <rdfs:domain rdf:nodeID="A123"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#actualizes">
+    <rdfs:label xml:lang="fr">incarne, met en oeuvre, actualise</rdfs:label>
+    <rdfs:label xml:lang="en">embodies, carries out, actualizes</rdfs:label>
+    <rdfs:comment>Exemple:
+AMAP (idée) incarne circuits courts (idée) </rdfs:comment>
+    <rdfs:comment>A_VOIR: pas de domain</rdfs:comment>
+    <rdfs:range rdf:nodeID="A124"/>
+    <rdfs:domain rdf:nodeID="A106"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A111">
+    <rdf:rest rdf:nodeID="A125"/>
+    <rdf:first rdf:resource="http://purl.org/ontology/cco/core#cco:Skill"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A126">
+    <rdf:rest rdf:nodeID="A127"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A69">
+    <rdf:rest rdf:nodeID="A128"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A117">
+    <rdf:rest rdf:nodeID="A129"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A130">
+    <rdf:rest rdf:nodeID="A114"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A131">
+    <rdf:rest rdf:nodeID="A68"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#hasUseCase">
+    <rdfs:label xml:lang="fr">cas d'usage</rdfs:label>
+    <rdfs:comment xml:lang="fr">URI : http://www.virtual-assembly.org/ontologies/1.0/pair#useCase
+
+Définitiion : Pointe vers des Projets ayant pour cas 'usage d'autres Projets.</rdfs:comment>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#contributesTo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A120">
+    <rdf:rest rdf:nodeID="A132"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A133">
+    <rdf:rest rdf:nodeID="A134"/>
+    <rdf:first rdf:resource="http://schema.org/Event"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A135">
+    <owl:unionOf rdf:nodeID="A116"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#Argument">
+    <rdfs:label xml:lang="fr">Argument</rdfs:label>
+    <rdfs:label xml:lang="en">Argument</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Thesis"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A136">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A125">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A129">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#ideaIsPartOf">
+    <rdfs:label xml:lang="en">is part of idea</rdfs:label>
+    <rdfs:label xml:lang="fr">fait partie de</rdfs:label>
+    <rdfs:comment xml:lang="fr">URI : http://www.virtual-assembly.org/ontologies/1.0/pair#ideaIsPartOf
+
+Définition : une idée faisant partie d'une autre idée</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdfs:domain rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <owl:inverseOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#includesIdea"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/isPartOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A127">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A90">
+    <rdf:rest rdf:nodeID="A131"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A137">
+    <owl:unionOf rdf:nodeID="A133"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A132">
+    <rdf:rest rdf:nodeID="A138"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/cco/core#expertise">
+    <rdfs:label xml:lang="en">expertise</rdfs:label>
+    <rdfs:label xml:lang="fr">a pour compétence</rdfs:label>
+    <rdfs:comment xml:lang="fr"> Définition : Pointe vers des compétences ou sujets (Idées) faisant l'objet d'une expertise par des Acteurs</rdfs:comment>
+    <rdfs:range rdf:nodeID="A110"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A128">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#hosted">
+    <rdfs:label xml:lang="fr">hébergé par</rdfs:label>
+    <rdfs:label xml:lang="en">hosted</rdfs:label>
+    <rdfs:range rdf:nodeID="A19"/>
+    <rdfs:domain rdf:nodeID="A139"/>
+    <owl:inverseOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#hosts"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A140">
+    <rdf:rest rdf:nodeID="A130"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A101">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A141">
+    <rdf:rest rdf:nodeID="A103"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A122">
+    <owl:unionOf rdf:nodeID="A142"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A143">
+    <rdf:rest rdf:nodeID="A140"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#Enterprise">
+    <rdfs:label xml:lang="fr">Entreprise</rdfs:label>
+    <rdfs:comment xml:lang="fr">Entreprise industrielle ou commerciale.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A144">
+    <owl:unionOf rdf:nodeID="A145"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#includesIdea">
+    <rdfs:label xml:lang="fr">inclut, rassemble</rdfs:label>
+    <rdfs:range rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdfs:domain rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/hasPart"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A88">
+    <owl:unionOf rdf:nodeID="A146"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A147">
+    <owl:unionOf rdf:nodeID="A148"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A149">
+    <rdf:rest rdf:nodeID="A150"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A151">
+    <rdf:rest rdf:nodeID="A152"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#employee">
+    <rdfs:label xml:lang="fr">employé chez</rdfs:label>
+    <rdfs:label xml:lang="en">employee</rdfs:label>
+    <rdfs:comment xml:lang="fr">URI : http://www.virtual-assembly.org/ontologies/1.0/pair#employee
+
+Définition : Pointe vers des organisations employnt un invividu.</rdfs:comment>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <owl:inverseOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#hasEmployee"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A153">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A154">
+    <owl:unionOf rdf:nodeID="A155"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/spec/#term_firstName">
+    <rdfs:label xml:lang="fr">Prénom</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Concept">
+    <rdfs:label xml:lang="fr">Concept</rdfs:label>
+    <rdfs:label xml:lang="en">Concept</rdfs:label>
+    <rdfs:comment xml:lang="fr">SKOS est une ontologie se décrivant comme un système simple d'organisation de la connaissance (Simple Knoledge Organisation Sytem - SKOS)
+
+SKOS est à la racine du concept d'Idée dans l'ontologie PAIR. 
+
+Plus d'informations sur : https://www.w3.org/2009/08/skos-reference/skos.html</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A156">
+    <rdf:rest rdf:nodeID="A157"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A35">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#uses">
+    <rdfs:label xml:lang="fr">utilise</rdfs:label>
+    <rdfs:label xml:lang="en">uses</rdfs:label>
+    <rdfs:comment xml:lang="en">Cas des ressources : Une ressource de type voiture consomme du pétrole et des matières premières</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdfs:domain rdf:nodeID="A158"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A72">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#isFriendOf">
+    <rdfs:label xml:lang="en">friend of</rdfs:label>
+    <rdfs:label xml:lang="fr">ami de</rdfs:label>
+    <rdfs:comment xml:lang="fr">URI : http://www.virtual-assembly.org/ontologies/1.0/pair#isFriendOf
+
+Définition : Individu ami d'un autre individu</rdfs:comment>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/knows"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A145">
+    <rdf:rest rdf:nodeID="A159"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A160">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#country">
+    <rdfs:label xml:lang="fr">Pays</rdfs:label>
+    <rdfs:domain rdf:nodeID="A161"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A162">
+    <rdf:rest rdf:nodeID="A153"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A158">
+    <owl:unionOf rdf:nodeID="A149"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A157">
+    <rdf:rest rdf:nodeID="A163"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A152">
+    <rdf:rest rdf:nodeID="A136"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A138">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#wikipedia">
+    <rdfs:label xml:lang="fr">Lien wikipedia</rdfs:label>
+    <rdfs:domain rdf:nodeID="A49"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A29">
+    <owl:unionOf rdf:nodeID="A164"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A118">
+    <rdf:rest rdf:nodeID="A165"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#because">
+    <rdfs:label xml:lang="fr">parce que</rdfs:label>
+    <rdfs:label xml:lang="en">because</rdfs:label>
+    <rdfs:range rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdfs:domain rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <owl:inverseOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#hasConsequence"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A166">
+    <rdf:rest rdf:nodeID="A113"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A167">
+    <rdf:rest rdf:nodeID="A115"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#seeksSkill">
+    <rdfs:label xml:lang="fr">compétences recherchées</rdfs:label>
+    <rdfs:comment xml:lang="fr">URI : http://www.virtual-assembly.org/ontologies/1.0/pair#seeksSkill
+
+Définition : Pointe vers des compétences détenues par des acteurs</rdfs:comment>
+    <rdfs:range rdf:resource="http://purl.org/ontology/cco/core#cco:Skill"/>
+    <rdfs:domain rdf:nodeID="A168"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#seeks"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A159">
+    <rdf:rest rdf:nodeID="A169"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/Event">
+    <rdfs:label xml:lang="en">Evènement</rdfs:label>
+    <rdfs:label xml:lang="en">Event</rdfs:label>
+    <rdfs:comment xml:lang="fr">Héritage : Dans l'ontologie PAIR, la notion d'événement est identique à celle de Schema:Event
+
+URI : https://schema.org/Event
+
+Définition : A la différence des initiatives, missions ou activités, les événements s'inscrivent dans une temporalité courte, avec une date de début et une date de fin. La notion d'événement réfère ici à la notion de manifestation. Elle ne recouvre pas la notion d'événement au sens d'actualité (par exemple : un tremblement de terre, un attentat, une découverte).</rdfs:comment>
+    <rdfs:comment xml:lang="en">An event happening at a certain time and location,' property. Repeated events may be structured as separate Event objects.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A170">
+    <owl:unionOf rdf:nodeID="A171"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A172">
+    <rdf:rest rdf:nodeID="A160"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#at">
+    <rdfs:label xml:lang="fr">à (heure)</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A139">
+    <owl:unionOf rdf:nodeID="A173"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A174">
+    <rdf:rest rdf:nodeID="A175"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A176">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A163">
+    <rdf:rest rdf:nodeID="A177"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A165">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A164">
+    <rdf:rest rdf:nodeID="A102"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/spec/#term_img">
+    <rdfs:label xml:lang="fr">Photo, image</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#image"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A178">
+    <rdf:rest rdf:nodeID="A166"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A146">
+    <rdf:rest rdf:nodeID="A167"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A169">
+    <rdf:rest rdf:nodeID="A179"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A171">
+    <rdf:rest rdf:nodeID="A151"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#recurrence">
+    <rdfs:label xml:lang="fr">Récurrence</rdfs:label>
+    <rdfs:domain rdf:resource="http://schema.org/Event"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A173">
+    <rdf:rest rdf:nodeID="A8"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A109">
+    <rdf:rest rdf:nodeID="A172"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A150">
+    <rdf:rest rdf:nodeID="A176"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A175">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A177">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A148">
+    <rdf:rest rdf:nodeID="A180"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A155">
+    <rdf:rest rdf:nodeID="A181"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A182">
+    <rdf:rest rdf:nodeID="A183"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A184">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A185">
+    <rdf:rest rdf:nodeID="A84"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A186">
+    <rdf:rest rdf:nodeID="A187"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A188">
+    <rdf:rest rdf:nodeID="A189"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A190">
+    <rdf:rest rdf:nodeID="A191"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#hasConsequence">
+    <rdfs:label xml:lang="en">so ...</rdfs:label>
+    <rdfs:label xml:lang="fr">donc</rdfs:label>
+    <rdfs:comment xml:lang="fr">URI : URI : http://www.virtual-assembly.org/ontologies/1.0/pair#hasConsequence
+
+Définition : Pointe vers des idées entrant découlant d'autres idées</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdfs:domain rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Réunion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A192">
+    <rdf:rest rdf:nodeID="A193"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A180">
+    <rdf:rest rdf:nodeID="A194"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A181">
+    <rdf:rest rdf:nodeID="A195"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A196">
+    <owl:unionOf rdf:nodeID="A197"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A183">
+    <rdf:rest rdf:nodeID="A198"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#aPAIRo">
+    <rdfs:comment>TODO:
+Tous ces trucs ne sont pas des évènements,
+mais des types d'évènement.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/creator">
+    <rdfs:comment xml:lang="fr">URI: http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=elements#terms-creator
+
+Définition : propriété générique se subdivisant en : auteur, créateur, fondateur. Sans domain, ni range donc, lesquels sont spécifiés au niveau des sous-propriétés.</rdfs:comment>
+    <owl:inverseOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#hasCreator"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A199">
+    <rdf:rest rdf:nodeID="A185"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission">
+    <rdfs:label xml:lang="fr">Initiative, mission ou activité</rdfs:label>
+    <rdfs:label xml:lang="en">Initiative, mission or activity</rdfs:label>
+    <rdfs:label xml:lang="en">Initiative or Mission</rdfs:label>
+    <rdfs:comment xml:lang="fr">Héritage : Découle de FOAF:Project
+
+URI : http://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission
+
+Définition : Les initiatives, missions, activités sont des aventures au long cours.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A191">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A124">
+    <owl:unionOf rdf:nodeID="A186"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#products">
+    <rdfs:label xml:lang="fr">produit</rdfs:label>
+    <rdfs:label xml:lang="en">products</rdfs:label>
+    <rdfs:comment xml:lang="en">Cas des ressources : Une ressource de type voiture produit des gaz à effet de serre. Affiner cependant</rdfs:comment>
+    <rdfs:range rdf:nodeID="A154"/>
+    <rdfs:domain rdf:nodeID="A119"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A189">
+    <rdf:rest rdf:nodeID="A200"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A193">
+    <rdf:rest rdf:nodeID="A201"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A195">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A194">
+    <rdf:rest rdf:nodeID="A202"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#description">
+    <rdfs:label xml:lang="fr">Description</rdfs:label>
+    <rdfs:comment xml:lang="fr">1000 caractères max</rdfs:comment>
+    <rdfs:domain rdf:nodeID="A135"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#contributesTo">
+    <rdfs:label xml:lang="en">contributes to</rdfs:label>
+    <rdfs:label xml:lang="fr">contribue à</rdfs:label>
+    <rdfs:comment xml:lang="fr">URI : http://www.virtual-assembly.org/ontologies/1.0/pair#contributesTo
+
+La relation "contribue à" s'inspire de foaf:currentProject, elle est néanmoins plus générique dans la mesure où nous considérons que des groupes et des organisations peuvent contribuer à des projets et plus généralement à des PAIRs 
+
+Dans foaf:currentProject les individus seulement peuvent contribuer à des projets uniquement ... 
+Dans PAIR foaf:currentProject est donc une sous relation de pair:contributesTo</rdfs:comment>
+    <rdfs:range rdf:nodeID="A144"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <owl:inverseOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#hasContributor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A134">
+    <rdf:rest rdf:nodeID="A203"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A81">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A200">
+    <rdf:rest rdf:nodeID="A204"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A205">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Café_des_pixels">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#founderof">
+    <rdfs:label xml:lang="en">founder of</rdfs:label>
+    <rdfs:label xml:lang="fr">fondateur de</rdfs:label>
+    <rdfs:comment xml:lang="fr">URI : http://www.virtual-assembly.org/ontologies/1.0/pair
+
+Définition : Pointe vers des Acteurs ayant fondé un lieu, un groupe ou une organisation.</rdfs:comment>
+    <rdfs:range rdf:nodeID="A98"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/creator"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#but">
+    <rdfs:label xml:lang="fr">mais</rdfs:label>
+    <rdfs:label xml:lang="en">but</rdfs:label>
+    <rdfs:comment xml:lang="fr">URI : http://www.virtual-assembly.org/ontologies/1.0/pair#but
+
+Définition : Pointe vers des idées entrant en contradiction avec d'autres idées</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdfs:domain rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A201">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/cco/core#cco:Skill">
+    <rdfs:label xml:lang="en">Skill</rdfs:label>
+    <rdfs:label xml:lang="fr">Compétence</rdfs:label>
+    <rdfs:comment xml:lang="fr">Classe non valide, à remplacer ...</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
+    <rdfs:comment>Quelques propriétés qu'il faut peut être envisager de prendre en compte : 
+
+-sameAs
+-similarTo
+-hasForked
+-hasMerged</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A206">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A202">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A168">
+    <owl:unionOf rdf:nodeID="A207"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A208">
+    <owl:unionOf rdf:nodeID="A209"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#worksWith">
+    <rdfs:label xml:lang="en">colleague, collaborator</rdfs:label>
+    <rdfs:label xml:lang="fr">collaborateur de</rdfs:label>
+    <rdfs:comment xml:lang="fr">URI : http://www.virtual-assembly.org/ontologies/1.0/pair#workWith
+
+Définition : Individu collaborateur d'un autre individu</rdfs:comment>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/knows"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A203">
+    <rdf:rest rdf:nodeID="A184"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#hasPartner">
+    <rdfs:label xml:lang="en">has partner</rdfs:label>
+    <rdfs:label xml:lang="fr">a pour partenaire</rdfs:label>
+    <rdfs:comment xml:lang="fr">URI : http://www.virtual-assembly.org/ontologies/1.0/pair#hasPartner
+
+Définition : Pointe vers des acteurs partenaires d'autres acteurs ou d'un projet</rdfs:comment>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:domain rdf:nodeID="A210"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A55">
+    <owl:unionOf rdf:nodeID="A182"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A33">
+    <owl:unionOf rdf:nodeID="A211"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#status">
+    <rdfs:label xml:lang="fr">Statut</rdfs:label>
+    <rdfs:comment xml:lang="fr">Par exemple : Inactif, en cours de développement, actif, en phade de prototypage etc.</rdfs:comment>
+    <rdfs:domain rdf:nodeID="A208"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A204">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A212">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A213">
+    <owl:unionOf rdf:nodeID="A190"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#website">
+    <rdfs:label xml:lang="fr">Site ou page web</rdfs:label>
+    <rdfs:domain rdf:nodeID="A196"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A123">
+    <owl:unionOf rdf:nodeID="A214"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A215">
+    <rdf:rest rdf:nodeID="A216"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A217">
+    <rdf:rest rdf:nodeID="A218"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A219">
+    <owl:unionOf rdf:nodeID="A79"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdf:rest rdf:nodeID="A220"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A221">
+    <rdf:rest rdf:nodeID="A222"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/currentProject">
+    <rdfs:label xml:lang="en">contributes to</rdfs:label>
+    <rdfs:label xml:lang="fr">contribue à</rdfs:label>
+    <rdfs:comment xml:lang="fr">Cette relation est issue de foaf:currentProject. 
+
+URI : http://xmlns.com/foaf/spec/#term_currentProject
+
+Définition : Pointe vers des projets auxquels des individus ont contribué par le passé</rdfs:comment>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#contributesTo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A207">
+    <rdf:rest rdf:nodeID="A223"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A224">
+    <owl:unionOf rdf:nodeID="A225"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A226">
+    <owl:members rdf:nodeID="A227"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A228">
+    <rdf:rest rdf:nodeID="A212"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A91">
+    <rdf:rest rdf:nodeID="A229"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A83">
+    <owl:unionOf rdf:nodeID="A230"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A231">
+    <owl:unionOf rdf:nodeID="A232"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A233">
+    <rdf:rest rdf:nodeID="A234"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A235">
+    <rdf:rest rdf:nodeID="A64"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A236">
+    <rdf:rest rdf:nodeID="A237"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A238">
+    <rdf:rest rdf:nodeID="A239"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A240">
+    <rdf:rest rdf:nodeID="A217"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#currency">
+    <rdfs:label xml:lang="fr">Devise</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#...">
+    <rdfs:subPropertyOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#socialNetworks"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A216">
+    <rdf:rest rdf:nodeID="A241"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A214">
+    <rdf:rest rdf:nodeID="A242"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A243">
+    <owl:unionOf rdf:nodeID="A79"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdf:rest rdf:nodeID="A219"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A223">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A121">
+    <owl:unionOf rdf:nodeID="A221"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A232">
+    <rdf:rest rdf:nodeID="A244"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A245">
+    <rdf:rest rdf:nodeID="A228"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A230">
+    <rdf:rest rdf:nodeID="A246"/>
+    <rdf:first rdf:resource="http://schema.org/Event"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A229">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#to">
+    <rdfs:label xml:lang="fr">à (jour)</rdfs:label>
+    <rdfs:comment xml:lang="fr">Date de début, par exemple : De Mercredi 28 septembre</rdfs:comment>
+    <rdfs:domain rdf:resource="http://schema.org/Event"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A241">
+    <rdf:rest rdf:nodeID="A247"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A239">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A234">
+    <rdf:rest rdf:nodeID="A205"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#Meetup">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A106">
+    <owl:unionOf rdf:nodeID="A141"/>
+    <owl:unionOf rdf:nodeID="A240"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A248">
+    <owl:unionOf rdf:nodeID="A199"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A198">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Agent">
+    <rdfs:label xml:lang="en">Agent</rdfs:label>
+    <rdfs:label xml:lang="fr">Acteur</rdfs:label>
+    <rdfs:comment>La notion d'Acteur dans PAIR est la même que celle d'Agent dans FOAF.
+
+URI : xmlns.com/foaf/0.1/agent
+
+Définition : Comme la notion d'Agent dans l'ontologie FOAF, la notion d'acteur dans l'ontologie PAIR rassemble les individus, les groupes et les organisations.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A197">
+    <rdf:rest rdf:nodeID="A249"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Barcamp">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A53">
+    <owl:unionOf rdf:nodeID="A250"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#Proposition">
+    <rdfs:label xml:lang="fr">Proposition</rdfs:label>
+    <rdfs:label xml:lang="en">Proposition</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Thesis"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#licence">
+    <rdfs:label xml:lang="fr">Licence</rdfs:label>
+    <rdfs:comment xml:lang="fr">des choses produites ou diffusées selon les cas</rdfs:comment>
+    <rdfs:domain rdf:nodeID="A251"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A252">
+    <owl:unionOf rdf:nodeID="A253"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A254">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A242">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A253">
+    <rdf:rest rdf:nodeID="A45"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A40">
+    <owl:unionOf rdf:nodeID="A255"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A246">
+    <rdf:rest rdf:nodeID="A256"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A250">
+    <rdf:rest rdf:nodeID="A245"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A244">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A251">
+    <owl:unionOf rdf:nodeID="A257"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A48">
+    <owl:unionOf rdf:nodeID="A258"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#hosts">
+    <rdfs:label xml:lang="fr">héberge</rdfs:label>
+    <rdfs:label xml:lang="en">hosts</rdfs:label>
+    <rdfs:range rdf:nodeID="A259"/>
+    <rdfs:domain rdf:nodeID="A260"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A220">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A54">
+    <owl:unionOf rdf:nodeID="A215"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A218">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A249">
+    <rdf:rest rdf:nodeID="A235"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A261">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#image">
+    <rdfs:label>Photo, image</rdfs:label>
+    <rdfs:domain rdf:nodeID="A262"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A142">
+    <rdf:rest rdf:nodeID="A254"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A263">
+    <owl:unionOf rdf:nodeID="A156"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A256">
+    <rdf:rest rdf:nodeID="A17"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A255">
+    <rdf:rest rdf:nodeID="A192"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A105">
+    <owl:unionOf rdf:nodeID="A264"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A237">
+    <rdf:rest rdf:nodeID="A126"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A257">
+    <rdf:rest rdf:nodeID="A162"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/hasPart">
+    <rdfs:label xml:lang="fr">inclut</rdfs:label>
+    <rdfs:label xml:lang="en">includes</rdfs:label>
+    <rdfs:comment xml:lang="fr">L'enjeu en termes de modélisation est de signifier qu'une idée peut inclure une idée,
+qu'un projet peut inclure un projet, qu'une ressource peut inclure une ressource.
+
+Par contre, je ne sais pas comment ne pas modéliser une idée n'inclue pas un projet, un projet n'inclue pas une ressource, etc. 
+Comment poser ces restrictions et ne modéliser que les relations d'inclusion II, PP, RR ?
+
+REPONSE de JMV: avec 3 propriétés spécifiques qui seront rdfs:subPropertyOf dcterms:isPartOf </rdfs:comment>
+    <owl:inverseOf rdf:resource="http://purl.org/dc/terms/isPartOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A258">
+    <rdf:rest rdf:nodeID="A233"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/CreativeWork">
+    <rdfs:label xml:lang="fr">Oeuvre</rdfs:label>
+    <rdfs:label xml:lang="en">Artwork</rdfs:label>
+    <rdfs:comment xml:lang="fr">Issu de Schema: CreativeWork
+
+URI : http://schema.org/CreativeWork
+
+Définition : Oeuvre au sens de création, où le caractère créatif de la production est l'enjeu même de la production. Dont les livres, les films, les photographies, les sculptures, peintures etc. 
+
+A noter que certaines d'entre elles, un essai par exemple, ou la vidéo d'une conférence seront plus logiquement catégorisées comme ressources documentaires ...</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A265">
+    <rdf:rest rdf:nodeID="A75"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A222">
+    <rdf:rest rdf:nodeID="A266"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A267">
+    <owl:unionOf rdf:nodeID="A268"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A269">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#tickets">
+    <rdfs:label xml:lang="fr">Lien vers billetterie</rdfs:label>
+    <rdfs:domain rdf:resource="http://schema.org/Event"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A270">
+    <rdf:rest rdf:nodeID="A261"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A271">
+    <rdf:rest rdf:nodeID="A272"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A273">
+    <rdf:rest rdf:nodeID="A274"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A112">
+    <owl:unionOf rdf:nodeID="A275"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A276">
+    <owl:unionOf rdf:nodeID="A277"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A179">
+    <rdf:rest rdf:nodeID="A278"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#dependsOn">
+    <rdfs:label xml:lang="fr">dépend de</rdfs:label>
+    <rdfs:label xml:lang="en">depends on</rdfs:label>
+    <rdfs:comment xml:lang="fr">URI : http://www.virtual-assembly.org/ontologies/1.0/pair#dependsOn
+
+Définition : Pointe vers des Ressources ou Projets dépendant d'autres resources ou projets.</rdfs:comment>
+    <rdfs:range rdf:nodeID="A243"/>
+    <rdfs:domain rdf:nodeID="A219"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A279">
+    <rdf:rest rdf:nodeID="A265"/>
+    <rdf:first rdf:resource="http://schema.org/CreativeWork"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#FinancialResource">
+    <rdfs:label xml:lang="fr">Ressource financière</rdfs:label>
+    <rdfs:label xml:lang="en">Financial Resource</rdfs:label>
+    <rdfs:comment xml:lang="fr">URI : http://www.virtual-assembly.org/ontologies/1.0/pair#FinancialResource
+
+Définition : Comme son nom l'indique une ressource financière est une ... ressource financière. Celle-ci peut être formulée dans la diversité des unités monétaires existantes, peut être précisée par un montant, et être assortie d'éléments descriptifs et conditionnels . 
+
+A préciser dans une version ultérieure ...</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Project">
+    <owl:disjointWith rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdfs:label xml:lang="fr">Projet</rdfs:label>
+    <rdfs:label xml:lang="en">Project</rdfs:label>
+    <rdfs:comment xml:lang="fr">La notion de Projet dans PAIR est la même que celle de Projet dans FOAF.
+
+URI : xmlns.com/foaf/0.1/project
+
+Définition : Un projet suppose une action, et donc l'incarnation d'une idée, d'une intention dans le réel.
+
+Dans l'ontologie PAIR, les Projets se subdivisent en 2 grandes catégories : - D'un côté, les initiatives, missions, activités, soit les toutes les aventures au long cours. - D'un autre côté, les événements, s'inscrivant dans une temporalité courte, avec une date de début et une date de fin. La notion d'événement réfère ici à la notion de manifestation. Elle ne recouvre pas la notion d'événement au sens d'actualité (par exemple : un tremblement de terre, un attentat, une découverte).</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A85">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A161">
+    <owl:unionOf rdf:nodeID="A82"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#includesResource">
+    <rdfs:label xml:lang="fr">inclut, rassemble</rdfs:label>
+    <rdfs:range rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdfs:domain rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <owl:inverseOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#resourceIsPartOf"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/hasPart"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#hasContributor">
+    <rdfs:label xml:lang="en">has contributor</rdfs:label>
+    <rdfs:label xml:lang="fr">a pour contributeur</rdfs:label>
+    <rdfs:comment xml:lang="fr">URi : http://www.virtual-assembly.org/ontologies/1.0/pair#hasContributor
+
+Définition : Pointe vers des acteurs contribuant à un Projet, un groupe, une organisation ou une idée.</rdfs:comment>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:domain rdf:nodeID="A276"/>
+    <owl:inverseOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#worksOn"/>
+    <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/member"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/member">
+    <rdfs:range rdf:nodeID="A231"/>
+    <rdfs:domain rdf:nodeID="A107"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A210">
+    <owl:unionOf rdf:nodeID="A270"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#De_(heure)">
+    <rdfs:domain rdf:resource="http://schema.org/Event"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A280">
+    <rdf:rest rdf:nodeID="A271"/>
+    <rdf:first rdf:resource="http://schema.org/Place"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A281">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A274">
+    <rdf:rest rdf:nodeID="A282"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A275">
+    <rdf:rest rdf:nodeID="A283"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A39">
+    <owl:unionOf rdf:nodeID="A279"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/spec/#term_mbox">
+    <rdfs:label xml:lang="fr">Email</rdfs:label>
+    <rdfs:domain rdf:nodeID="A147"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#projectIsPartOf">
+    <rdfs:label xml:lang="en">is part of project</rdfs:label>
+    <rdfs:label xml:lang="fr">fait partie de</rdfs:label>
+    <rdfs:comment xml:lang="en">URI : http://www.virtual-assembly.org/ontologies/1.0/pair#projectIsPartOf
+
+Définition : une idée faisant partie d'une autre idée</rdfs:comment>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/isPartOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A247">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A284">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A285">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#physicalWorkSpace">
+    <rdfs:label>Espace de travail physique</rdfs:label>
+    <rdfs:domain rdf:nodeID="A263"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#isFacetOf">
+    <rdfs:label xml:lang="en">is a facet of</rdfs:label>
+    <rdfs:label xml:lang="fr">est une facette de</rdfs:label>
+    <rdfs:comment xml:lang="fr">URI : http://www.virtual-assembly.org/ontologies/1.0/pair#isFacetOf
+
+Définition : Un PAIR constituant une facette d'une autre PAIR. Par exemple, le Projet de l'Assemblée Virtuelle est une facette de l'Association Assemblée Virtuelle.</rdfs:comment>
+    <rdfs:range rdf:nodeID="A286"/>
+    <rdfs:domain rdf:nodeID="A287"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/isPartOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#financialSupport">
+    <rdfs:label>soutient financièrement</rdfs:label>
+    <rdfs:label xml:lang="en">gives financial support</rdfs:label>
+    <rdfs:range rdf:nodeID="A61"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#supports"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdfs.org/sioc/ns#follows">
+    <rdfs:range rdf:nodeID="A170"/>
+    <rdfs:domain rdf:nodeID="A58"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/subject"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A288">
+    <owl:unionOf rdf:nodeID="A289"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#hasAuthor">
+    <rdfs:label xml:lang="en">has author</rdfs:label>
+    <rdfs:label xml:lang="fr">a pour auteur</rdfs:label>
+    <rdfs:comment xml:lang="fr">URI : http://www.virtual-assembly.org/ontologies/1.0/pair
+
+Définition : Pointe vers des Acteurs ayant créé une oeuvre, une idée, ou un document.</rdfs:comment>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:domain rdf:nodeID="A224"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A290">
+    <rdf:rest rdf:nodeID="A281"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A291">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A282">
+    <rdf:rest rdf:nodeID="A292"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#metAt">
+    <rdfs:label xml:lang="fr">rencontré à</rdfs:label>
+    <rdfs:range rdf:resource="http://schema.org/Place"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A283">
+    <rdf:rest rdf:nodeID="A293"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A264">
+    <rdf:rest rdf:nodeID="A294"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A259">
+    <owl:unionOf rdf:nodeID="A238"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/subject">
+    <rdfs:label xml:lang="fr">sujet / centre d'intérêt</rdfs:label>
+    <rdfs:label xml:lang="en">is about</rdfs:label>
+    <rdfs:comment xml:lang="fr"> 'A pour sujet' permet d'identifier de quoi un PAIR parle ou traite ... Il peut s'agir : 
+- d'un acteur (ex: ce document a pour sujet Monsanto), 
+- d'une idée (ex : Assemblée virtuelle) a pour sujet le peer to peer), 
+- d'un projet (ex: semantic forms a pour sujet l'interopérabilté)
+- d'une ressource (ex: économie symbiotique a pour sujet développement durable)</rdfs:comment>
+    <rdfs:range rdf:nodeID="A248"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A295">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/Place">
+    <rdfs:label xml:lang="fr">Lieu</rdfs:label>
+    <rdfs:comment xml:lang="en">Place</rdfs:comment>
+    <rdfs:comment xml:lang="fr">Identique à la notion de Lieu dans Schema.org
+
+URI : https://schema.org/Place
+
+Définition : Entité spatiale dotée d'une adresse sur la Terre.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#birthDate">
+    <rdfs:label xml:lang="fr">Date de naissance</rdfs:label>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A266">
+    <rdf:rest rdf:nodeID="A285"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A268">
+    <rdf:rest rdf:nodeID="A284"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A87">
+    <rdf:rest rdf:nodeID="A291"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#PublicOrganization">
+    <rdfs:label xml:lang="fr">Organisme public, collectivité</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A225">
+    <rdf:rest rdf:nodeID="A290"/>
+    <rdf:first rdf:resource="http://schema.org/CreativeWork"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A294">
+    <rdf:rest rdf:nodeID="A269"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A292">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A278">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A293">
+    <rdf:rest rdf:nodeID="A296"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#legalForm">
+    <rdfs:label xml:lang="fr">Forme juridique</rdfs:label>
+    <rdfs:domain rdf:nodeID="A213"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A272">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A297">
+    <rdf:rest rdf:nodeID="A298"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A187">
+    <rdf:rest rdf:nodeID="A295"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#until">
+    <rdfs:label xml:lang="fr">jusqu'à</rdfs:label>
+    <rdfs:domain rdf:nodeID="A137"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A227">
+    <rdf:rest rdf:nodeID="A299"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#NaturalResources">
+    <rdfs:label xml:lang="fr">Ressource naturelle</rdfs:label>
+    <rdfs:label xml:lang="en">Natural resource</rdfs:label>
+    <rdfs:comment xml:lang="fr">URI : http://www.virtual-assembly.org/ontologies/1.0/pair#NaturalResources
+
+Définition (wikipedia) : De manière générale, une ressource naturelle est une substance, un organisme ou un objet présent dans la nature et qui fait, dans la plupart des cas, l'objet d'une utilisation pour satisfaire les besoins (énergies, alimentation, agrément, etc.) des humains, animaux ou végétaux.
+
+Il peut s'agir :
+
+    d'une matière première minérale (par exemple : l'eau douce, les granulats, les minerais métalliques,...)
+    d'un produit d'origine agricole ou sauvage (ex.: la viande, le poisson, les céréales,...) ;
+    d'une matière organique fossile (comme le pétrole, le charbon, le gaz naturel, le lignite ou la tourbe...) ;
+    d'une source d'énergie (énergie solaire, énergie éolienne...) ;
+    et par extension d'un service écosystémique (la production d'oxygène fournie par la photosynthèse par exemple).
+
+https://fr.wikipedia.org/wiki/Ressource_naturelle</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#creatorof">
+    <rdfs:label xml:lang="fr">créateur de</rdfs:label>
+    <rdfs:label xml:lang="en">creator of</rdfs:label>
+    <rdfs:comment xml:lang="fr">URI : http://www.virtual-assembly.org/ontologies/1.0/pair#creatorOf
+
+Définition : Pointe vers des Acteurs ayant créé une idée, une ressource ou un projet.</rdfs:comment>
+    <rdfs:range rdf:nodeID="A288"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/creator"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/knows">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#offersSkill">
+    <rdfs:label xml:lang="fr">compétences proposées</rdfs:label>
+    <owl:inverseOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#seeksSkill"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#offers"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Assemblée_Générale">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#manage">
+    <rdfs:label xml:lang="fr">responsable de</rdfs:label>
+    <rdfs:label xml:lang="en">manage</rdfs:label>
+    <rdfs:range rdf:nodeID="A92"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organization">
+    <rdfs:label xml:lang="en">Organization</rdfs:label>
+    <rdfs:label xml:lang="fr">Organisation</rdfs:label>
+    <rdfs:comment>La notion d'organisation dans PAIR est la même que celle d' Organization dans FOAF.
+
+URI : xmlns.com/foaf/0.1/organization
+
+Définition : Une organisation est une personne morale, prenant la forme d'un collectif d'individus s'associant en vue d'une fin déterminée. En tant que personnes morales, les organisations ont une existence sur le plan juridique.
+
+Plusieurs types d'organisations sont ici rassemblés :
+
+- Association, fondation
+- Entreprises, parmi lesquelles nous distinguons le cas particulier des coopératives.
+- Organismes publics, collectivités. 
+
+Dans le cadre de cette version de l'ontologie PAIR, les propriétés objet sont les mêmes pour les 3 types d'organisation.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A209">
+    <rdf:rest rdf:nodeID="A65"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A300">
+    <rdf:rest rdf:nodeID="A301"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#Thesis">
+    <rdfs:label xml:lang="fr">Thèse</rdfs:label>
+    <rdfs:label xml:lang="en">Thesis</rdfs:label>
+    <rdfs:comment xml:lang="fr">- Les thèses rassemblent : 
+
+1- Les propositions ("Et si ...", "Mettre en place un revenu universel inconditionnel"), 
+2- Les arguments autour d'une thèse.  
+3- Les problèmes et les questions (Par exemple : "Pourquoi y a t'il quelque chose plutôt que rien ?")</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A63">
+    <owl:unionOf rdf:nodeID="A174"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A298">
+    <rdf:rest rdf:nodeID="A206"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A299">
+    <rdf:rest rdf:nodeID="A46"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A286">
+    <owl:unionOf rdf:nodeID="A236"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdf:rest rdf:nodeID="A243"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Document">
+    <rdfs:label xml:lang="fr">Document</rdfs:label>
+    <rdfs:label xml:lang="en">Document</rdfs:label>
+    <rdfs:comment xml:lang="fr">La notion de document est ici empruntée à foaf:document
+
+URI : http://xmlns.com/foaf/spec/#term_Document
+
+Définition : "The Document class represents those things which are, broadly conceived, 'documents'."</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair">
+    <rdfs:comment xml:lang="fr">L'ontologie PAIR est issue d'un travail collectif mené par l'association Assemblée virtuelle et ses partenaires. 
+
+C'est un vocabulaire permettant d'exprimer simplement le réel, ainsi que les interactions qui s'y déroulent. Le réel est perçu sous la forme d'un graphe faisant interagir des projets, acteurs, des idées et des ressources.
+
+Il s'agit plus exactement d'une méta-ontologie (préfixe meta : Avec, après, au-delà de) visant la mise en système de plusieurs ontologies existantes (et des données structurées par elles) : Foaf, Dublin Core, Good Relations, Cognitive Characteritics, certains vocabulaires issus de Schema.org etc.
+Elle intègre de nouvelles notions, non identifiées parmi les ontologies existantes. 
+
+Elle s'inscrit dans le magnifique projet du LOV (Linked Open Vocabularies - http://lov.okfn.org/dataset/lov/) ainsi que dans celui du LOD (Linked Open Data - http://lod-cloud.net/). 
+
+L'enjeu de l'ontologie PAIR est de permettre à une diversité de plateformes, blogs, sites web, bases de données de partager un même langage, et ce faisant de devenir interopérables. L'interopérabilité est ici envisagée comme le moyen de faire émerger des réseaux sociaux distribués, également appelés réseaux sociaux peer to peer.
+
+Nous livrons dans un premier temps un vocabulaire générique permettant de retracer les majorité des interactions sociales de tous les jours : les gens (acteurs) travaillent au sein d'organisations, contribuent à des projets, s'intéressent à des choses, disposent de compétences et de ressources, ont besoin de compétences et de ressources ... Etc.
+
+Dès lors que nous aurons abouti dans la formalisation de ce tronc générique, nous co-développerons ensuite, avec nos partenaires, des vocabulaires métiers se référant à des domaines particuliers du réel : Le travail au sein d'une organisation ou d'un projet, les circuits-courts alimentaires, les transactions immobilières etc. Dans chacun de ces domaines, des acteurs ont des projets, portant sur des thématiques et faisant intervenir des échanges de ressources...  L'ontologie se développe ainsi sur une approche modulaire. 
+
+Elle se développe par ailleurs de manière agrégative, nous agrégeons les différents modèles de données des acteurs avec lesquels nous travaillons, en les fusionnant lorsque les concepts sont identitiques d'une part, en ajoutant les concepts spécifiques dans la striucture de l'ontologie PAIR : soit dans le tronc générique, soit dans les diférents modules métiers. 
+
+Elle est publiée sous licence Creative Commons : Attribution à l'url suivante : http://www.virtual-assembly.org/ontologies/1.0/pair
+
+La genèse de l'ontologie PAIR est décrite en détail dans la partie historique du code social de l'Assemblée Virtuelle : http://virtual-assembly.org/code-social-assemblee-virtuelle/
+
+2 wikis en chantier permettent d'en saisir les tenants et les aboutissants. 
+- https://github.com/assemblee-virtuelle/pair/wiki
+- http://91.134.140.110:8080/index.php/PAIR.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#supports">
+    <rdfs:label xml:lang="en">supports</rdfs:label>
+    <rdfs:label xml:lang="fr">soutient</rdfs:label>
+    <rdfs:range rdf:nodeID="A38"/>
+    <rdfs:domain rdf:nodeID="A252"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/spar/cito/likes"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A289">
+    <rdf:rest rdf:nodeID="A300"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#zipCode">
+    <rdfs:label xml:lang="fr">Code Postal</rdfs:label>
+    <rdfs:domain rdf:nodeID="A108"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#offers">
+    <rdfs:label xml:lang="fr">ressources proposées (hors compétences)</rdfs:label>
+    <rdfs:label xml:lang="en">offers</rdfs:label>
+    <rdfs:range rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+    <rdfs:domain rdf:nodeID="A267"/>
+    <owl:inverseOf rdf:resource="http://purl.org/goodrelations/v1#seeks"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A262">
+    <owl:unionOf rdf:nodeID="A302"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A211">
+    <rdf:rest rdf:nodeID="A303"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A287">
+    <owl:unionOf rdf:nodeID="A236"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdf:rest rdf:nodeID="A286"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A296">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A260">
+    <owl:unionOf rdf:nodeID="A280"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A1">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/spec/#term_weblog">
+    <rdfs:label xml:lang="fr">Site ou page web</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#website"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/familyName">
+    <rdfs:label xml:lang="fr">Nom</rdfs:label>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#name"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A97">
+    <rdf:rest rdf:nodeID="A304"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A302">
+    <rdf:rest rdf:nodeID="A297"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#longDescription">
+    <rdfs:label xml:lang="fr">Description longue</rdfs:label>
+    <rdfs:comment xml:lang="fr">Illimité</rdfs:comment>
+    <rdfs:domain rdf:nodeID="A44"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A18">
+    <owl:unionOf rdf:nodeID="A188"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A107">
+    <owl:unionOf rdf:nodeID="A143"/>
+    <owl:unionOf rdf:nodeID="A287"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A303">
+    <rdf:rest rdf:nodeID="A23"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A277">
+    <rdf:rest rdf:nodeID="A178"/>
+    <rdf:first rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A47">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#hasEmployee">
+    <rdfs:label xml:lang="en">has employee</rdfs:label>
+    <rdfs:label xml:lang="fr">a pour employé</rdfs:label>
+    <rdfs:comment xml:lang="fr">URI : http://www.virtual-assembly.org/ontologies/1.0/pair#hasEmployee
+
+Définition : Pointe vers des individus employés par une organisation</rdfs:comment>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/member"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#convergesWith">
+    <rdfs:label xml:lang="en">converges with</rdfs:label>
+    <rdfs:label xml:lang="fr">convergent avec</rdfs:label>
+    <rdfs:comment xml:lang="fr">URI : http://www.virtual-assembly.org/ontologies/1.0/pair#convergesWith
+
+Définition : Pointe vers des Idées convergentes avec d'autres Idées. 
+
+Par exemple, la permaculture converge avec l'idée du non-agir.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdfs:domain rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Idea"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A60">
+    <owl:unionOf rdf:nodeID="A273"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A304">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A301">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+</rdf:RDF>

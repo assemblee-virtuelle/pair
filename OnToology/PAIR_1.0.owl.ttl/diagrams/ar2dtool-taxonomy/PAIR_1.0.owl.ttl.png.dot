@@ -1,0 +1,29 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "foaf:Document" "base:PublicOrganization" "base:Cooperative" "base:Thesis" "http://purl.org/ontology/cco/core#cco:Skill" "foaf:Group" "base:FinancialResource" "base:SocialCode" "base:Enterprise" "foaf:Person" "base:NaturalResources" "schema:CreativeWork" "base:Proposition" "foaf:Organization" "base:Association" "foaf:Agent" "http://www.w3.org/2004/02/skos/core#Concept" "schema:Place" "base:Argument" "schema:Event" "base:Theme" "gr:Offering" "foaf:Project" "base:Question" "base:Resource" "base:Idea" "base:InitiativeOrMission" ; /*classes style*/
+	"foaf:Document" -> "base:Resource" [ label = "rdfs:subClassOf" ];
+	"base:Cooperative" -> "base:Enterprise" [ label = "rdfs:subClassOf" ];
+	"base:Idea" -> "http://www.w3.org/2004/02/skos/core#Concept" [ label = "rdfs:subClassOf" ];
+	"base:SocialCode" -> "foaf:Document" [ label = "rdfs:subClassOf" ];
+	"base:Argument" -> "base:Thesis" [ label = "rdfs:subClassOf" ];
+	"schema:Event" -> "foaf:Project" [ label = "rdfs:subClassOf" ];
+	"base:NaturalResources" -> "base:Resource" [ label = "rdfs:subClassOf" ];
+	"foaf:Group" -> "foaf:Agent" [ label = "rdfs:subClassOf" ];
+	"base:Association" -> "foaf:Organization" [ label = "rdfs:subClassOf" ];
+	"base:Thesis" -> "base:Idea" [ label = "rdfs:subClassOf" ];
+	"base:PublicOrganization" -> "foaf:Organization" [ label = "rdfs:subClassOf" ];
+	"gr:Offering" -> "base:Resource" [ label = "rdfs:subClassOf" ];
+	"base:Theme" -> "base:Idea" [ label = "rdfs:subClassOf" ];
+	"base:Enterprise" -> "foaf:Organization" [ label = "rdfs:subClassOf" ];
+	"base:Question" -> "base:Thesis" [ label = "rdfs:subClassOf" ];
+	"base:InitiativeOrMission" -> "foaf:Project" [ label = "rdfs:subClassOf" ];
+	"base:FinancialResource" -> "base:Resource" [ label = "rdfs:subClassOf" ];
+	"foaf:Person" -> "foaf:Agent" [ label = "rdfs:subClassOf" ];
+	"base:Proposition" -> "base:Thesis" [ label = "rdfs:subClassOf" ];
+	"foaf:Organization" -> "foaf:Agent" [ label = "rdfs:subClassOf" ];
+	"schema:CreativeWork" -> "base:Resource" [ label = "rdfs:subClassOf" ];
+	"http://purl.org/ontology/cco/core#cco:Skill" -> "base:Resource" [ label = "rdfs:subClassOf" ];
+	"schema:Place" -> "base:Resource" [ label = "rdfs:subClassOf" ];
+
+}
