@@ -209,9 +209,9 @@ _:genid23 a rdf:List ;
 	rdf:first :Idea ;
 	rdf:rest rdf:nil .
 
-<http://purl.org/ontology/cco/core#expertise> rdfs:label """URI : http://purl.org/ontology/cco/core#expertise
-
-Définition : Pointe cers des compétences ou sujets (Idées) faisant l'obejt d'une expertise par des Acteurs"""@en , "a pour compétence"@fr , "expertise"@en .
+<http://purl.org/ontology/cco/core#expertise> 
+ rdfs:comment """ Définition : Pointe vers des compétences ou sujets (Idées) faisant l'objet d'une expertise par des Acteurs"""@fr ;
+ rdfs:label "a pour compétence"@fr , "expertise"@en .
 # 
 # http://purl.org/spar/cito/likes
 
