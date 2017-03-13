@@ -1,0 +1,858 @@
+@prefix :        <http://virtual-assembly.org/pair_v2#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix swrl:    <http://www.w3.org/2003/11/swrl#> .
+@prefix protege:  <http://protege.stanford.edu/plugins/owl/protege#> .
+@prefix xsp:     <http://www.owl-ontologies.com/2005/08/07/xsp.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix swrlb:   <http://www.w3.org/2003/11/swrlb#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml:     <http://www.w3.org/XML/1998/namespace> .
+
+:_object-subject_objectProperty
+      a       owl:ObjectProperty .
+
+:GOOD
+      a       owl:Class ;
+      rdfs:subClassOf :GOOD_OR_SERVICE .
+
+:documentedBy
+      a       owl:ObjectProperty ;
+      rdfs:domain :SUBJECT ;
+      rdfs:subPropertyOf :_object-subject_objectProperty ;
+      owl:inverseOf :documents .
+
+:subjectOf
+      a       owl:ObjectProperty ;
+      rdfs:domain :SUBJECT ;
+      rdfs:subPropertyOf :_interSubject_objectProperty .
+
+:employedBy
+      a       owl:ObjectProperty ;
+      rdfs:domain :Person ;
+      rdfs:subPropertyOf :affiliatedBy ;
+      owl:inverseOf :employs .
+
+:DocumentType
+      a       owl:Class ;
+      rdfs:subClassOf :OBJECT ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Document ;
+                owl:onProperty :typeOf
+              ] .
+
+:manages
+      a       owl:ObjectProperty ;
+      rdfs:domain :Person ;
+      rdfs:subPropertyOf :involvedIn .
+
+:employs
+      a       owl:ObjectProperty ;
+      rdfs:domain :Organization ;
+      rdfs:subPropertyOf :affiliates .
+
+:Town
+      a       owl:Class ;
+      rdfs:subClassOf :WHERE_SUBJECT ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Address ;
+                owl:onProperty :partOf
+              ] .
+
+:IntangibleGood
+      a       owl:Class ;
+      rdfs:subClassOf :GOOD .
+
+:_interObject_objectProperty
+      a       owl:ObjectProperty .
+
+:label
+      a       owl:DatatypeProperty ;
+      rdfs:range xsd:string .
+
+:Event
+      a       owl:Class ;
+      rdfs:subClassOf :MISC_SUBJECT ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Address ;
+                owl:onProperty :localizedBy
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Project ;
+                owl:onProperty :deliveredBy
+              ] .
+
+:localizedBy
+      a       owl:ObjectProperty ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Event :Person :Place)
+              ] ;
+      rdfs:subPropertyOf :_interSubject_objectProperty ;
+      owl:inverseOf :localizes .
+
+:PlaceType
+      a       owl:Class ;
+      rdfs:subClassOf :WHERE_SUBJECT ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Place ;
+                owl:onProperty :typeOf
+              ] .
+
+:lastName
+      a       owl:FunctionalProperty , owl:DatatypeProperty ;
+      rdfs:domain :Person ;
+      rdfs:subPropertyOf :label .
+
+:firstName
+      a       owl:FunctionalProperty , owl:DatatypeProperty ;
+      rdfs:domain :Person ;
+      rdfs:subPropertyOf :label .
+
+:Thema
+      a       owl:Class ;
+      rdfs:subClassOf :WHAT_SUBJECT ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          owl:unionOf (:Organization :Person)
+                        ] ;
+                owl:onProperty :interestOf
+              ] .
+
+:Address
+      a       owl:Class ;
+      rdfs:subClassOf :WHERE_SUBJECT ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          owl:unionOf (:Event :Person :Place)
+                        ] ;
+                owl:onProperty :localizes
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                owl:onProperty :hasPart
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Town ;
+                owl:onProperty :hasPart
+              ] .
+
+:offeredBy
+      a       owl:ObjectProperty ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:GOOD_OR_SERVICE :Place :Skill)
+              ] ;
+      rdfs:subPropertyOf :_interSubject_objectProperty ;
+      owl:inverseOf :offers .
+
+:zipCode
+      a       owl:FunctionalProperty , owl:DatatypeProperty ;
+      rdfs:domain :Town ;
+      rdfs:range xsd:string .
+
+:subjectIdentifier
+      a       owl:DatatypeProperty ;
+      rdfs:domain :HUBJECT ;
+      rdfs:range xsd:string .
+
+:Organization
+      a       owl:Class ;
+      rdfs:subClassOf :PERSONALITY ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          owl:unionOf (:GOOD_OR_SERVICE :Place :Skill)
+                        ] ;
+                owl:onProperty :offers
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Person ;
+                owl:onProperty :employs
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Person ;
+                owl:onProperty :affiliates
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Person ;
+                owl:onProperty :hasMember
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :BUILDING_ITEM ;
+                owl:onProperty :hostedIn
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :OrganizationType ;
+                owl:onProperty :hasType
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                owl:onProperty :hasType
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          owl:unionOf (:GOOD_OR_SERVICE :Place :Skill)
+                        ] ;
+                owl:onProperty :needs
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Person ;
+                owl:onProperty :hasResponsible
+              ] .
+
+:e-mail
+      a       owl:DatatypeProperty ;
+      rdfs:domain :PERSONALITY ;
+      rdfs:range xsd:string .
+
+:concretizedBy
+      a       owl:ObjectProperty ;
+      rdfs:domain :Proposal ;
+      rdfs:subPropertyOf :_interSubject_objectProperty ;
+      owl:inverseOf :concretizes .
+
+:brainstormedBy
+      a       owl:ObjectProperty ;
+      rdfs:domain :Proposal ;
+      rdfs:subPropertyOf :_interSubject_objectProperty ;
+      owl:inverseOf :brainstorms .
+
+:documents
+      a       owl:ObjectProperty ;
+      rdfs:domain :Document ;
+      rdfs:subPropertyOf :_object-subject_objectProperty .
+
+:localizes
+      a       owl:ObjectProperty ;
+      rdfs:domain :Address ;
+      rdfs:subPropertyOf :_interSubject_objectProperty .
+
+:homePage
+      a       owl:FunctionalProperty , owl:DatatypeProperty ;
+      rdfs:domain :HUBJECT ;
+      rdfs:subPropertyOf :webPage .
+
+:alternativeLabel
+      a       owl:DatatypeProperty ;
+      rdfs:domain :HUBJECT ;
+      rdfs:subPropertyOf :label .
+
+:affiliatedBy
+      a       owl:ObjectProperty ;
+      rdfs:domain :Person ;
+      rdfs:subPropertyOf :_interSubject_objectProperty ;
+      owl:inverseOf :affiliates .
+
+:webPage
+      a       owl:DatatypeProperty ;
+      rdfs:range xsd:string .
+
+:needs
+      a       owl:ObjectProperty ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:PERSONALITY :Project)
+              ] ;
+      rdfs:subPropertyOf :_interSubject_objectProperty .
+
+:involvedIn
+      a       owl:ObjectProperty ;
+      rdfs:domain :Person ;
+      rdfs:subPropertyOf :_interSubject_objectProperty ;
+      owl:inverseOf :involves .
+
+:hasMember
+      a       owl:ObjectProperty ;
+      rdfs:domain :Organization ;
+      rdfs:subPropertyOf :affiliates ;
+      owl:inverseOf :memberOf .
+
+:memberOf
+      a       owl:ObjectProperty ;
+      rdfs:domain :Person ;
+      rdfs:subPropertyOf :affiliatedBy .
+
+:TangibleGood
+      a       owl:Class ;
+      rdfs:subClassOf :GOOD .
+
+:Proposal
+      a       owl:Class ;
+      rdfs:subClassOf :WHY_SUBJECT ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Project ;
+                owl:onProperty :concretizedBy
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Person ;
+                owl:onProperty :brainstormedBy
+              ] .
+
+:PERSONALITY
+      a       owl:Class ;
+      rdfs:subClassOf :WHO_SUBJECT ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Thema ;
+                owl:onProperty :hasInterest
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          owl:unionOf (:GOOD_OR_SERVICE :Skill)
+                        ] ;
+                owl:onProperty :offers
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          owl:unionOf (:GOOD_OR_SERVICE :Skill)
+                        ] ;
+                owl:onProperty :needs
+              ] .
+
+:WHY_SUBJECT
+      a       owl:Class ;
+      rdfs:subClassOf :SUBJECT .
+
+:hostedIn
+      a       owl:ObjectProperty ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:GOOD_OR_SERVICE :Organization)
+              ] ;
+      rdfs:subPropertyOf :_interSubject_objectProperty ;
+      owl:inverseOf :hosts .
+
+:WHERE_SUBJECT
+      a       owl:Class ;
+      rdfs:subClassOf :SUBJECT .
+
+:knowedBy
+      a       owl:ObjectProperty ;
+      rdfs:domain :Person ;
+      rdfs:subPropertyOf :_interSubject_objectProperty ;
+      owl:inverseOf :knows .
+
+:Project
+      a       owl:Class ;
+      rdfs:subClassOf :HOW_SUBJECT ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          owl:unionOf (:Event :GOOD_OR_SERVICE :Place)
+                        ] ;
+                owl:onProperty :delivers
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Proposal ;
+                owl:onProperty :concretizes
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Person ;
+                owl:onProperty :involves
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Person ;
+                owl:onProperty :managedBy
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          owl:unionOf (:GOOD_OR_SERVICE :Skill)
+                        ] ;
+                owl:onProperty :needs
+              ] .
+
+:Place
+      a       owl:Class ;
+      rdfs:subClassOf :WHERE_SUBJECT ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Organization ;
+                owl:onProperty :offeredBy
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Project ;
+                owl:onProperty :deliveredBy
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Organization ;
+                owl:onProperty :neededBy
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :PlaceType ;
+                owl:onProperty :hasType
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Address ;
+                owl:onProperty :localizedBy
+              ] .
+
+:preferedLabel
+      a       owl:FunctionalProperty , owl:DatatypeProperty ;
+      rdfs:domain :HUBJECT ;
+      rdfs:subPropertyOf :label .
+
+:Room
+      a       owl:Class ;
+      rdfs:subClassOf :BUILDING_ITEM ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Floor ;
+                owl:onProperty :partOf
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                owl:onProperty :partOf
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          owl:unionOf (:GOOD_OR_SERVICE :Organization)
+                        ] ;
+                owl:onProperty :hosts
+              ] .
+
+:interestOf
+      a       owl:ObjectProperty ;
+      rdfs:domain :Thema ;
+      rdfs:subPropertyOf :_interSubject_objectProperty .
+
+:hasSubject
+      a       owl:ObjectProperty ;
+      rdfs:domain :SUBJECT ;
+      rdfs:subPropertyOf :_interSubject_objectProperty ;
+      owl:inverseOf :subjectOf .
+
+:responsibleOf
+      a       owl:ObjectProperty ;
+      rdfs:domain :Person ;
+      rdfs:subPropertyOf :affiliatedBy .
+
+:represents
+      a       owl:ObjectProperty ;
+      rdfs:domain :Document ;
+      rdfs:subPropertyOf :documents .
+
+:managedBy
+      a       owl:ObjectProperty ;
+      rdfs:domain :Project ;
+      rdfs:subPropertyOf :involves ;
+      owl:inverseOf :manages .
+
+:startDate
+      a       owl:FunctionalProperty , owl:DatatypeProperty ;
+      rdfs:domain :Event ;
+      rdfs:range xsd:dateTime .
+
+:Floor
+      a       owl:Class ;
+      rdfs:subClassOf :BUILDING_ITEM ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Room ;
+                owl:onProperty :hasPart
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                owl:onProperty :partOf
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Building ;
+                owl:onProperty :partOf
+              ] .
+
+:Skill
+      a       owl:Class ;
+      rdfs:subClassOf :WHAT_SUBJECT ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          owl:unionOf (:Organization :Person)
+                        ] ;
+                owl:onProperty :offeredBy
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          owl:unionOf (:Organization :Person :Project)
+                        ] ;
+                owl:onProperty :neededBy
+              ] .
+
+<http://virtual-assembly.org/pair_v2>
+      a       owl:Ontology .
+
+:knows
+      a       owl:ObjectProperty ;
+      rdfs:domain :Person ;
+      rdfs:subPropertyOf :_interSubject_objectProperty .
+
+:endDate
+      a       owl:FunctionalProperty , owl:DatatypeProperty ;
+      rdfs:domain :Event ;
+      rdfs:range xsd:dateTime .
+
+:SUBJECT
+      a       owl:Class ;
+      rdfs:subClassOf :HUBJECT .
+
+:OrganizationType
+      a       owl:Class ;
+      rdfs:subClassOf :WHO_SUBJECT ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Organization ;
+                owl:onProperty :typeOf
+              ] .
+
+:GOOD_OR_SERVICE
+      a       owl:Class ;
+      rdfs:subClassOf :WHAT_SUBJECT ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          owl:unionOf (:Organization :Person)
+                        ] ;
+                owl:onProperty :offeredBy
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Project ;
+                owl:onProperty :deliveredBy
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Room ;
+                owl:onProperty :hostedIn
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          owl:unionOf (:Organization :Person :Project)
+                        ] ;
+                owl:onProperty :neededBy
+              ] .
+
+:hasPart
+      a       owl:ObjectProperty ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Address :Building :Floor)
+              ] ;
+      rdfs:subPropertyOf :_interSubject_objectProperty ;
+      owl:inverseOf :partOf .
+
+:WHO_SUBJECT
+      a       owl:Class ;
+      rdfs:subClassOf :SUBJECT .
+
+:WHEN_SUBJECT
+      a       owl:Class ;
+      rdfs:subClassOf :SUBJECT .
+
+:MISC_SUBJECT
+      a       owl:Class ;
+      rdfs:subClassOf :SUBJECT .
+
+:phone
+      a       owl:DatatypeProperty ;
+      rdfs:domain :PERSONALITY ;
+      rdfs:range xsd:string .
+
+:description
+      a       owl:FunctionalProperty , owl:DatatypeProperty ;
+      rdfs:domain :HUBJECT ;
+      rdfs:range xsd:string .
+
+:typeOf
+      a       owl:ObjectProperty ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:DocumentType :OrganizationType :PlaceType)
+              ] ;
+      rdfs:subPropertyOf :_interSubject_objectProperty .
+
+:representedBy
+      a       owl:ObjectProperty ;
+      rdfs:domain :SUBJECT ;
+      rdfs:subPropertyOf :documentedBy ;
+      owl:inverseOf :represents .
+
+:offers
+      a       owl:ObjectProperty ;
+      rdfs:domain :PERSONALITY ;
+      rdfs:subPropertyOf :_interSubject_objectProperty .
+
+:deliveredBy
+      a       owl:ObjectProperty ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Event :GOOD_OR_SERVICE :Place)
+              ] ;
+      rdfs:subPropertyOf :_interSubject_objectProperty ;
+      owl:inverseOf :delivers .
+
+:hasResponsible
+      a       owl:ObjectProperty ;
+      rdfs:domain :Organization ;
+      rdfs:subPropertyOf :affiliates ;
+      owl:inverseOf :responsibleOf .
+
+:referencesBy
+      a       owl:ObjectProperty ;
+      rdfs:domain :Document ;
+      rdfs:subPropertyOf :_interObject_objectProperty .
+
+:delivers
+      a       owl:ObjectProperty ;
+      rdfs:domain :Project ;
+      rdfs:subPropertyOf :_interSubject_objectProperty .
+
+:Document
+      a       owl:Class ;
+      rdfs:subClassOf :OBJECT ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :SUBJECT ;
+                owl:onProperty :represents
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Document ;
+                owl:onProperty :referencesBy
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Document ;
+                owl:onProperty :references
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                owl:onProperty :hasType
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :SUBJECT ;
+                owl:onProperty :documents
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :DocumentType ;
+                owl:onProperty :hasType
+              ] .
+
+:HUBJECT
+      a       owl:Class .
+
+:brainstorms
+      a       owl:ObjectProperty ;
+      rdfs:domain :Person ;
+      rdfs:subPropertyOf :_interSubject_objectProperty .
+
+:Building
+      a       owl:Class ;
+      rdfs:subClassOf :BUILDING_ITEM ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Floor ;
+                owl:onProperty :hasPart
+              ] .
+
+:hasInterest
+      a       owl:ObjectProperty ;
+      rdfs:domain :PERSONALITY ;
+      rdfs:subPropertyOf :_interSubject_objectProperty ;
+      owl:inverseOf :interestOf .
+
+:hosts
+      a       owl:ObjectProperty ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:BUILDING_ITEM :Room)
+              ] ;
+      rdfs:subPropertyOf :_interSubject_objectProperty .
+
+:_interSubject_objectProperty
+      a       owl:ObjectProperty .
+
+:BUILDING_ITEM
+      a       owl:Class ;
+      rdfs:subClassOf :WHERE_SUBJECT ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Organization ;
+                owl:onProperty :hosts
+              ] .
+
+:OBJECT
+      a       owl:Class ;
+      rdfs:subClassOf :HUBJECT .
+
+:aboutPage
+      a       owl:DatatypeProperty ;
+      rdfs:domain :HUBJECT ;
+      rdfs:subPropertyOf :webPage .
+
+:involves
+      a       owl:ObjectProperty ;
+      rdfs:domain :Project ;
+      rdfs:subPropertyOf :_interSubject_objectProperty .
+
+:concretizes
+      a       owl:ObjectProperty ;
+      rdfs:domain :Project ;
+      rdfs:subPropertyOf :_interSubject_objectProperty .
+
+:neededBy
+      a       owl:ObjectProperty ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:GOOD_OR_SERVICE :Place :Skill)
+              ] ;
+      rdfs:subPropertyOf :_interSubject_objectProperty ;
+      owl:inverseOf :needs .
+
+:comment
+      a       owl:DatatypeProperty ;
+      rdfs:domain :HUBJECT ;
+      rdfs:range xsd:string .
+
+:references
+      a       owl:ObjectProperty ;
+      rdfs:domain :Document ;
+      rdfs:subPropertyOf :_interObject_objectProperty ;
+      owl:inverseOf :referencesBy .
+
+:Person
+      a       owl:Class ;
+      rdfs:subClassOf :PERSONALITY ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Project ;
+                owl:onProperty :involvedIn
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Person ;
+                owl:onProperty :knowedBy
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Organization ;
+                owl:onProperty :employedBy
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Organization ;
+                owl:onProperty :affiliatedBy
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Organization ;
+                owl:onProperty :memberOf
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Organization ;
+                owl:onProperty :responsibleOf
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Proposal ;
+                owl:onProperty :brainstorms
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Address ;
+                owl:onProperty :localizedBy
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Project ;
+                owl:onProperty :manages
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom :Person ;
+                owl:onProperty :knows
+              ] .
+
+:HOW_SUBJECT
+      a       owl:Class ;
+      rdfs:subClassOf :SUBJECT .
+
+:hasType
+      a       owl:ObjectProperty ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Document :Organization :Place)
+              ] ;
+      rdfs:subPropertyOf :_interSubject_objectProperty ;
+      owl:inverseOf :typeOf .
+
+:affiliates
+      a       owl:ObjectProperty ;
+      rdfs:domain :Organization ;
+      rdfs:subPropertyOf :_interSubject_objectProperty .
+
+:Service
+      a       owl:Class ;
+      rdfs:subClassOf :GOOD_OR_SERVICE .
+
+:WHAT_SUBJECT
+      a       owl:Class ;
+      rdfs:subClassOf :SUBJECT .
+
+:partOf
+      a       owl:ObjectProperty ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Floor :Room :Town)
+              ] ;
+      rdfs:subPropertyOf :_interSubject_objectProperty .
