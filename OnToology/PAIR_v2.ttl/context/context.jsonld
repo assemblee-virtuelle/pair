@@ -1,0 +1,347 @@
+{
+  "@context" : {
+    "hasInterest" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#hasInterest",
+      "@type" : "@id"
+    },
+    "Address" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#Address"
+    },
+    "hasSubject" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#hasSubject",
+      "@type" : "@id"
+    },
+    "documentedBy" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#documentedBy",
+      "@type" : "@id"
+    },
+    "Town" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#Town"
+    },
+    "OrganizationType" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#OrganizationType"
+    },
+    "OBJECT" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#OBJECT"
+    },
+    "PERSONALITY" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#PERSONALITY"
+    },
+    "Thema" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#Thema"
+    },
+    "manages" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#manages",
+      "@type" : "@id"
+    },
+    "subjectIdentifier" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#subjectIdentifier",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "BUILDING_ITEM" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#BUILDING_ITEM"
+    },
+    "startDate" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#startDate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "responsibleOf" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#responsibleOf",
+      "@type" : "@id"
+    },
+    "e-mail" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#e-mail",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "brainstorms" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#brainstorms",
+      "@type" : "@id"
+    },
+    "_object-subject_objectProperty" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#_object-subject_objectProperty",
+      "@type" : "@id"
+    },
+    "Organization" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#Organization"
+    },
+    "alternativeLabel" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#alternativeLabel"
+    },
+    "Thing" : {
+      "@id" : "http://www.w3.org/2002/07/owl#Thing"
+    },
+    "references" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#references",
+      "@type" : "@id"
+    },
+    "Room" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#Room"
+    },
+    "knowedBy" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#knowedBy",
+      "@type" : "@id"
+    },
+    "hosts" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#hosts",
+      "@type" : "@id"
+    },
+    "WHY_SUBJECT" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#WHY_SUBJECT"
+    },
+    "HUBJECT" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#HUBJECT"
+    },
+    "DocumentType" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#DocumentType"
+    },
+    "label" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "GOOD_OR_SERVICE" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE"
+    },
+    "neededBy" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#neededBy",
+      "@type" : "@id"
+    },
+    "hasPart" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#hasPart",
+      "@type" : "@id"
+    },
+    "GOOD" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#GOOD"
+    },
+    "involvedIn" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#involvedIn",
+      "@type" : "@id"
+    },
+    "subjectOf" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#subjectOf",
+      "@type" : "@id"
+    },
+    "lastName" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#lastName"
+    },
+    "webPage" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#webPage",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Event" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#Event"
+    },
+    "involves" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#involves",
+      "@type" : "@id"
+    },
+    "Person" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#Person"
+    },
+    "delivers" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#delivers",
+      "@type" : "@id"
+    },
+    "employs" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#employs",
+      "@type" : "@id"
+    },
+    "offeredBy" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#offeredBy",
+      "@type" : "@id"
+    },
+    "concretizes" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#concretizes",
+      "@type" : "@id"
+    },
+    "hasType" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#hasType",
+      "@type" : "@id"
+    },
+    "localizes" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#localizes",
+      "@type" : "@id"
+    },
+    "hasResponsible" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#hasResponsible",
+      "@type" : "@id"
+    },
+    "Building" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#Building"
+    },
+    "interestOf" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#interestOf",
+      "@type" : "@id"
+    },
+    "Proposal" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#Proposal"
+    },
+    "_interSubject_objectProperty" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty",
+      "@type" : "@id"
+    },
+    "hasMember" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#hasMember",
+      "@type" : "@id"
+    },
+    "localizedBy" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#localizedBy",
+      "@type" : "@id"
+    },
+    "partOf" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#partOf",
+      "@type" : "@id"
+    },
+    "affiliates" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#affiliates",
+      "@type" : "@id"
+    },
+    "firstName" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#firstName"
+    },
+    "HOW_SUBJECT" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#HOW_SUBJECT"
+    },
+    "aboutPage" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#aboutPage"
+    },
+    "Place" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#Place"
+    },
+    "knows" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#knows",
+      "@type" : "@id"
+    },
+    "_interObject_objectProperty" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#_interObject_objectProperty",
+      "@type" : "@id"
+    },
+    "MISC_SUBJECT" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#MISC_SUBJECT"
+    },
+    "PlaceType" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#PlaceType"
+    },
+    "Project" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#Project"
+    },
+    "represents" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#represents",
+      "@type" : "@id"
+    },
+    "managedBy" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#managedBy",
+      "@type" : "@id"
+    },
+    "representedBy" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#representedBy",
+      "@type" : "@id"
+    },
+    "concretizedBy" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#concretizedBy",
+      "@type" : "@id"
+    },
+    "documents" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#documents",
+      "@type" : "@id"
+    },
+    "phone" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#phone",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Skill" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#Skill"
+    },
+    "SUBJECT" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#SUBJECT"
+    },
+    "zipCode" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#zipCode",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "brainstormedBy" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#brainstormedBy",
+      "@type" : "@id"
+    },
+    "preferedLabel" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#preferedLabel"
+    },
+    "WHAT_SUBJECT" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#WHAT_SUBJECT"
+    },
+    "referencesBy" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#referencesBy",
+      "@type" : "@id"
+    },
+    "Floor" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#Floor"
+    },
+    "WHO_SUBJECT" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#WHO_SUBJECT"
+    },
+    "WHEN_SUBJECT" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#WHEN_SUBJECT"
+    },
+    "memberOf" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#memberOf",
+      "@type" : "@id"
+    },
+    "hostedIn" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#hostedIn",
+      "@type" : "@id"
+    },
+    "typeOf" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#typeOf",
+      "@type" : "@id"
+    },
+    "comment" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#comment",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Service" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#Service"
+    },
+    "WHERE_SUBJECT" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#WHERE_SUBJECT"
+    },
+    "Document" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#Document"
+    },
+    "needs" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#needs",
+      "@type" : "@id"
+    },
+    "TangibleGood" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#TangibleGood"
+    },
+    "employedBy" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#employedBy",
+      "@type" : "@id"
+    },
+    "IntangibleGood" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#IntangibleGood"
+    },
+    "deliveredBy" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#deliveredBy",
+      "@type" : "@id"
+    },
+    "endDate" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#endDate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "description" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "offers" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#offers",
+      "@type" : "@id"
+    },
+    "affiliatedBy" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#affiliatedBy",
+      "@type" : "@id"
+    },
+    "homePage" : {
+      "@id" : "http://virtual-assembly.org/pair_v2#homePage"
+    }
+  }
+}
