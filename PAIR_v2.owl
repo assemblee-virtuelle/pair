@@ -1,0 +1,1245 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns="http://virtual-assembly.org/pair_v2#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://virtual-assembly.org/pair_v2">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="OBJECT">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="HUBJECT"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="PlaceType">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="WHERE_SUBJECT"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="typeOf"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="Place"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="GOOD">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="GOOD_OR_SERVICE"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="WHO_SUBJECT">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="SUBJECT"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MISC_SUBJECT">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#SUBJECT"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="WHEN_SUBJECT">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#SUBJECT"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class>
+    <owl:unionOf rdf:parseType="Collection">
+      <owl:Class rdf:ID="Person"/>
+      <owl:Class rdf:ID="Organization"/>
+    </owl:unionOf>
+  </owl:Class>
+  <owl:Class rdf:about="#WHERE_SUBJECT">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#SUBJECT"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Document">
+    <rdfs:subClassOf rdf:resource="#OBJECT"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="DocumentType"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasType"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasType"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="documents"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#SUBJECT"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#SUBJECT"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="represents"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Document"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="references"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="referencesBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Document"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Thema">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="WHAT_SUBJECT"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="interestOf"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#Organization"/>
+              <owl:Class rdf:about="#Person"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Person">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="Project"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="manages"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="employedBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Organization"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="knows"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Person"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="Address"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="localizedBy"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="responsibleOf"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Organization"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="affiliatedBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Organization"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="brainstorms"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="Proposal"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="involvedIn"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Project"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Person"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="knowedBy"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Organization"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="memberOf"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="PERSONALITY"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#DocumentType">
+    <rdfs:subClassOf rdf:resource="#OBJECT"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Document"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#typeOf"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Floor">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="BUILDING_ITEM"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="partOf"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="Building"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#partOf"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasPart"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="Room"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Skill">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#WHAT_SUBJECT"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="neededBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#Person"/>
+              <owl:Class rdf:about="#Organization"/>
+              <owl:Class rdf:about="#Project"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#Person"/>
+              <owl:Class rdf:about="#Organization"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="offeredBy"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="HOW_SUBJECT">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#SUBJECT"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Address">
+    <rdfs:subClassOf rdf:resource="#WHERE_SUBJECT"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:ID="Event"/>
+              <owl:Class rdf:about="#Person"/>
+              <owl:Class rdf:about="#Place"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="localizes"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasPart"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="Town"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasPart"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class>
+    <owl:unionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="#Person"/>
+      <owl:Class rdf:about="#Organization"/>
+    </owl:unionOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Building">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#BUILDING_ITEM"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasPart"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Floor"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Town">
+    <rdfs:subClassOf rdf:resource="#WHERE_SUBJECT"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Address"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#partOf"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Organization">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#Skill"/>
+              <owl:Class rdf:about="#GOOD_OR_SERVICE"/>
+              <owl:Class rdf:about="#Place"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="offers"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasType"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="employs"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Person"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Person"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasMember"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hostedIn"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#BUILDING_ITEM"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Person"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasResponsible"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="needs"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#Skill"/>
+              <owl:Class rdf:about="#GOOD_OR_SERVICE"/>
+              <owl:Class rdf:about="#Place"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#PERSONALITY"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasType"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="OrganizationType"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="affiliates"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Person"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="IntangibleGood">
+    <rdfs:subClassOf rdf:resource="#GOOD"/>
+  </owl:Class>
+  <owl:Class rdf:about="#SUBJECT">
+    <rdfs:subClassOf rdf:resource="#HUBJECT"/>
+  </owl:Class>
+  <owl:Class rdf:ID="TangibleGood">
+    <rdfs:subClassOf rdf:resource="#GOOD"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Project">
+    <rdfs:subClassOf rdf:resource="#HOW_SUBJECT"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="concretizes"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Proposal"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Person"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="involves"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="managedBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Person"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#needs"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#Skill"/>
+              <owl:Class rdf:about="#GOOD_OR_SERVICE"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="delivers"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#GOOD_OR_SERVICE"/>
+              <owl:Class rdf:about="#Event"/>
+              <owl:Class rdf:about="#Place"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Place">
+    <rdfs:subClassOf rdf:resource="#WHERE_SUBJECT"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#neededBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Organization"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#offeredBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Organization"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="deliveredBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Project"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#localizedBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Address"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasType"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#PlaceType"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Room">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#BUILDING_ITEM"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#GOOD_OR_SERVICE"/>
+              <owl:Class rdf:about="#Organization"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hosts"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Floor"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#partOf"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#partOf"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Service">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GOOD_OR_SERVICE"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#OrganizationType">
+    <rdfs:subClassOf rdf:resource="#WHO_SUBJECT"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Organization"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#typeOf"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#BUILDING_ITEM">
+    <rdfs:subClassOf rdf:resource="#WHERE_SUBJECT"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hosts"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Organization"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#WHAT_SUBJECT">
+    <rdfs:subClassOf rdf:resource="#SUBJECT"/>
+  </owl:Class>
+  <owl:Class rdf:about="#PERSONALITY">
+    <rdfs:subClassOf rdf:resource="#WHO_SUBJECT"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#Skill"/>
+              <owl:Class rdf:about="#GOOD_OR_SERVICE"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#needs"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#offers"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#Skill"/>
+              <owl:Class rdf:about="#GOOD_OR_SERVICE"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Thema"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasInterest"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Proposal">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="WHY_SUBJECT"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Person"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="brainstormedBy"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="concretizedBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Project"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#GOOD_OR_SERVICE">
+    <rdfs:subClassOf rdf:resource="#WHAT_SUBJECT"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#Person"/>
+              <owl:Class rdf:about="#Organization"/>
+              <owl:Class rdf:about="#Project"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#neededBy"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#offeredBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#Person"/>
+              <owl:Class rdf:about="#Organization"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#deliveredBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Project"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hostedIn"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Room"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Event">
+    <rdfs:subClassOf rdf:resource="#MISC_SUBJECT"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#deliveredBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Project"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Address"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#localizedBy"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#WHY_SUBJECT">
+    <rdfs:subClassOf rdf:resource="#SUBJECT"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="_object-subject_objectProperty"/>
+  <owl:ObjectProperty rdf:about="#localizedBy">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:ID="_interSubject_objectProperty"/>
+    </rdfs:subPropertyOf>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Event"/>
+          <owl:Class rdf:about="#Place"/>
+          <owl:Class rdf:about="#Person"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#localizes"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#responsibleOf">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#hasResponsible"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="#Person"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#affiliatedBy"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasPart">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#partOf"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf rdf:resource="#_interSubject_objectProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Address"/>
+          <owl:Class rdf:about="#Building"/>
+          <owl:Class rdf:about="#Floor"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="documentedBy">
+    <rdfs:subPropertyOf rdf:resource="#_object-subject_objectProperty"/>
+    <rdfs:domain rdf:resource="#SUBJECT"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#documents"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hostedIn">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#hosts"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf rdf:resource="#_interSubject_objectProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#GOOD_OR_SERVICE"/>
+          <owl:Class rdf:about="#Organization"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#affiliatedBy">
+    <rdfs:subPropertyOf rdf:resource="#_interSubject_objectProperty"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#affiliates"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="#Person"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#represents">
+    <rdfs:domain rdf:resource="#Document"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="representedBy"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#documents"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#referencesBy">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#references"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="#Document"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:ID="_interObject_objectProperty"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#involves">
+    <rdfs:domain rdf:resource="#Project"/>
+    <rdfs:subPropertyOf rdf:resource="#_interSubject_objectProperty"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#involvedIn"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#delivers">
+    <rdfs:subPropertyOf rdf:resource="#_interSubject_objectProperty"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#deliveredBy"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="#Project"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#managedBy">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#manages"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="#Project"/>
+    <rdfs:subPropertyOf rdf:resource="#involves"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#concretizes">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#concretizedBy"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf rdf:resource="#_interSubject_objectProperty"/>
+    <rdfs:domain rdf:resource="#Project"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#neededBy">
+    <rdfs:subPropertyOf rdf:resource="#_interSubject_objectProperty"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#needs"/>
+    </owl:inverseOf>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Skill"/>
+          <owl:Class rdf:about="#GOOD_OR_SERVICE"/>
+          <owl:Class rdf:about="#Place"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#typeOf">
+    <rdfs:subPropertyOf rdf:resource="#_interSubject_objectProperty"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#hasType"/>
+    </owl:inverseOf>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#OrganizationType"/>
+          <owl:Class rdf:about="#DocumentType"/>
+          <owl:Class rdf:about="#PlaceType"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="subjectOf">
+    <rdfs:domain rdf:resource="#SUBJECT"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="hasSubject"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf rdf:resource="#_interSubject_objectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#employedBy">
+    <rdfs:subPropertyOf rdf:resource="#affiliatedBy"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#employs"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="#Person"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#references">
+    <owl:inverseOf rdf:resource="#referencesBy"/>
+    <rdfs:subPropertyOf rdf:resource="#_interObject_objectProperty"/>
+    <rdfs:domain rdf:resource="#Document"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#representedBy">
+    <rdfs:domain rdf:resource="#SUBJECT"/>
+    <rdfs:subPropertyOf rdf:resource="#documentedBy"/>
+    <owl:inverseOf rdf:resource="#represents"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#needs">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#PERSONALITY"/>
+          <owl:Class rdf:about="#Project"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <owl:inverseOf rdf:resource="#neededBy"/>
+    <rdfs:subPropertyOf rdf:resource="#_interSubject_objectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#brainstorms">
+    <rdfs:domain rdf:resource="#Person"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#brainstormedBy"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf rdf:resource="#_interSubject_objectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#manages">
+    <owl:inverseOf rdf:resource="#managedBy"/>
+    <rdfs:domain rdf:resource="#Person"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#involvedIn"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#knows">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#knowedBy"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="#Person"/>
+    <rdfs:subPropertyOf rdf:resource="#_interSubject_objectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#offers">
+    <rdfs:domain rdf:resource="#PERSONALITY"/>
+    <rdfs:subPropertyOf rdf:resource="#_interSubject_objectProperty"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#offeredBy"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasType">
+    <rdfs:subPropertyOf rdf:resource="#_interSubject_objectProperty"/>
+    <owl:inverseOf rdf:resource="#typeOf"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Organization"/>
+          <owl:Class rdf:about="#Document"/>
+          <owl:Class rdf:about="#Place"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#offeredBy">
+    <rdfs:subPropertyOf rdf:resource="#_interSubject_objectProperty"/>
+    <owl:inverseOf rdf:resource="#offers"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Skill"/>
+          <owl:Class rdf:about="#GOOD_OR_SERVICE"/>
+          <owl:Class rdf:about="#Place"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#employs">
+    <owl:inverseOf rdf:resource="#employedBy"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#affiliates"/>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="#Organization"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#involvedIn">
+    <owl:inverseOf rdf:resource="#involves"/>
+    <rdfs:subPropertyOf rdf:resource="#_interSubject_objectProperty"/>
+    <rdfs:domain rdf:resource="#Person"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasMember">
+    <rdfs:domain rdf:resource="#Organization"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#affiliates"/>
+    </rdfs:subPropertyOf>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#memberOf"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasInterest">
+    <rdfs:subPropertyOf rdf:resource="#_interSubject_objectProperty"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#interestOf"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="#PERSONALITY"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#memberOf">
+    <owl:inverseOf rdf:resource="#hasMember"/>
+    <rdfs:subPropertyOf rdf:resource="#affiliatedBy"/>
+    <rdfs:domain rdf:resource="#Person"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#concretizedBy">
+    <rdfs:domain rdf:resource="#Proposal"/>
+    <rdfs:subPropertyOf rdf:resource="#_interSubject_objectProperty"/>
+    <owl:inverseOf rdf:resource="#concretizes"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#deliveredBy">
+    <owl:inverseOf rdf:resource="#delivers"/>
+    <rdfs:subPropertyOf rdf:resource="#_interSubject_objectProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Event"/>
+          <owl:Class rdf:about="#GOOD_OR_SERVICE"/>
+          <owl:Class rdf:about="#Place"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#affiliates">
+    <owl:inverseOf rdf:resource="#affiliatedBy"/>
+    <rdfs:subPropertyOf rdf:resource="#_interSubject_objectProperty"/>
+    <rdfs:domain rdf:resource="#Organization"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hosts">
+    <owl:inverseOf rdf:resource="#hostedIn"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Room"/>
+          <owl:Class rdf:about="#BUILDING_ITEM"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:subPropertyOf rdf:resource="#_interSubject_objectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#knowedBy">
+    <rdfs:subPropertyOf rdf:resource="#_interSubject_objectProperty"/>
+    <owl:inverseOf rdf:resource="#knows"/>
+    <rdfs:domain rdf:resource="#Person"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasResponsible">
+    <rdfs:subPropertyOf rdf:resource="#affiliates"/>
+    <rdfs:domain rdf:resource="#Organization"/>
+    <owl:inverseOf rdf:resource="#responsibleOf"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#brainstormedBy">
+    <rdfs:domain rdf:resource="#Proposal"/>
+    <owl:inverseOf rdf:resource="#brainstorms"/>
+    <rdfs:subPropertyOf rdf:resource="#_interSubject_objectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#interestOf">
+    <owl:inverseOf rdf:resource="#hasInterest"/>
+    <rdfs:domain rdf:resource="#Thema"/>
+    <rdfs:subPropertyOf rdf:resource="#_interSubject_objectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasSubject">
+    <rdfs:domain rdf:resource="#SUBJECT"/>
+    <rdfs:subPropertyOf rdf:resource="#_interSubject_objectProperty"/>
+    <owl:inverseOf rdf:resource="#subjectOf"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#documents">
+    <rdfs:domain rdf:resource="#Document"/>
+    <rdfs:subPropertyOf rdf:resource="#_object-subject_objectProperty"/>
+    <owl:inverseOf rdf:resource="#documentedBy"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#partOf">
+    <rdfs:subPropertyOf rdf:resource="#_interSubject_objectProperty"/>
+    <owl:inverseOf rdf:resource="#hasPart"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Town"/>
+          <owl:Class rdf:about="#Floor"/>
+          <owl:Class rdf:about="#Room"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#localizes">
+    <owl:inverseOf rdf:resource="#localizedBy"/>
+    <rdfs:domain rdf:resource="#Address"/>
+    <rdfs:subPropertyOf rdf:resource="#_interSubject_objectProperty"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="zipCode">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#Town"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="homePage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:ID="webPage"/>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="#HUBJECT"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="subjectIdentifier">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#HUBJECT"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="alternativeLabel">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:ID="label"/>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="#HUBJECT"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="endDate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#Event"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="lastName">
+    <rdfs:domain rdf:resource="#Person"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="#label"/>
+    </rdfs:subPropertyOf>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="aboutPage">
+    <rdfs:domain rdf:resource="#HUBJECT"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="#webPage"/>
+    </rdfs:subPropertyOf>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="e-mail">
+    <rdfs:domain rdf:resource="#PERSONALITY"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="phone">
+    <rdfs:domain rdf:resource="#PERSONALITY"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="description">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#HUBJECT"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="preferedLabel">
+    <rdfs:domain rdf:resource="#HUBJECT"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="#label"/>
+    </rdfs:subPropertyOf>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="firstName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="#label"/>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="#Person"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="comment">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#HUBJECT"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#webPage">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="startDate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#Event"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#label">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.5, Build 663)  http://protege.stanford.edu -->
