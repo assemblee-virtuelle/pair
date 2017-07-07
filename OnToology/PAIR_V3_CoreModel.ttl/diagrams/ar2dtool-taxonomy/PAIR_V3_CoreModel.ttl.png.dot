@@ -1,0 +1,39 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "default:Room" "default:Place" "default:OrganizationType" "default:Event" "default:WHY_SUBJECT" "default:PlaceType" "default:Service" "default:DocumentType" "default:Document" "default:OBJECT" "default:SUBJECT" "default:Floor" "default:Building" "default:Organization" "default:PERSONALITY" "default:TangibleGood" "default:WHO_SUBJECT" "default:Project" "default:GOOD_OR_SERVICE" "default:BUILDING_ITEM" "default:Skill" "default:MISC_SUBJECT" "default:Thema" "default:Proposal" "default:Town" "default:Person" "default:WHERE_SUBJECT" "default:WHEN_SUBJECT" "default:HUBJECT" "default:IntangibleGood" "default:GOOD" "default:Address" "default:HOW_SUBJECT" "default:WHAT_SUBJECT" ; /*classes style*/
+	"default:BUILDING_ITEM" -> "default:WHERE_SUBJECT" [ label = "rdfs:subClassOf" ];
+	"default:Document" -> "default:OBJECT" [ label = "rdfs:subClassOf" ];
+	"default:Building" -> "default:BUILDING_ITEM" [ label = "rdfs:subClassOf" ];
+	"default:DocumentType" -> "default:OBJECT" [ label = "rdfs:subClassOf" ];
+	"default:Address" -> "default:WHERE_SUBJECT" [ label = "rdfs:subClassOf" ];
+	"default:PlaceType" -> "default:WHERE_SUBJECT" [ label = "rdfs:subClassOf" ];
+	"default:GOOD" -> "default:GOOD_OR_SERVICE" [ label = "rdfs:subClassOf" ];
+	"default:Thema" -> "default:WHAT_SUBJECT" [ label = "rdfs:subClassOf" ];
+	"default:WHERE_SUBJECT" -> "default:SUBJECT" [ label = "rdfs:subClassOf" ];
+	"default:Town" -> "default:WHERE_SUBJECT" [ label = "rdfs:subClassOf" ];
+	"default:HOW_SUBJECT" -> "default:SUBJECT" [ label = "rdfs:subClassOf" ];
+	"default:WHO_SUBJECT" -> "default:SUBJECT" [ label = "rdfs:subClassOf" ];
+	"default:Place" -> "default:WHERE_SUBJECT" [ label = "rdfs:subClassOf" ];
+	"default:Organization" -> "default:PERSONALITY" [ label = "rdfs:subClassOf" ];
+	"default:Person" -> "default:PERSONALITY" [ label = "rdfs:subClassOf" ];
+	"default:OrganizationType" -> "default:WHO_SUBJECT" [ label = "rdfs:subClassOf" ];
+	"default:WHAT_SUBJECT" -> "default:SUBJECT" [ label = "rdfs:subClassOf" ];
+	"default:Skill" -> "default:WHAT_SUBJECT" [ label = "rdfs:subClassOf" ];
+	"default:MISC_SUBJECT" -> "default:SUBJECT" [ label = "rdfs:subClassOf" ];
+	"default:Floor" -> "default:BUILDING_ITEM" [ label = "rdfs:subClassOf" ];
+	"default:GOOD_OR_SERVICE" -> "default:WHAT_SUBJECT" [ label = "rdfs:subClassOf" ];
+	"default:WHEN_SUBJECT" -> "default:SUBJECT" [ label = "rdfs:subClassOf" ];
+	"default:Event" -> "default:MISC_SUBJECT" [ label = "rdfs:subClassOf" ];
+	"default:IntangibleGood" -> "default:GOOD" [ label = "rdfs:subClassOf" ];
+	"default:WHY_SUBJECT" -> "default:SUBJECT" [ label = "rdfs:subClassOf" ];
+	"default:OBJECT" -> "default:HUBJECT" [ label = "rdfs:subClassOf" ];
+	"default:Proposal" -> "default:WHY_SUBJECT" [ label = "rdfs:subClassOf" ];
+	"default:Service" -> "default:GOOD_OR_SERVICE" [ label = "rdfs:subClassOf" ];
+	"default:TangibleGood" -> "default:GOOD" [ label = "rdfs:subClassOf" ];
+	"default:PERSONALITY" -> "default:WHO_SUBJECT" [ label = "rdfs:subClassOf" ];
+	"default:SUBJECT" -> "default:HUBJECT" [ label = "rdfs:subClassOf" ];
+	"default:Room" -> "default:BUILDING_ITEM" [ label = "rdfs:subClassOf" ];
+	"default:Project" -> "default:HOW_SUBJECT" [ label = "rdfs:subClassOf" ];
+
+}
