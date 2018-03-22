@@ -7,7 +7,7 @@ Voir `PAIR_Requirements_Specifications.md` pour la version anglaise.
 ## 1. Raison d'être
 L'enjeu de l'ontologie PAIR est de fournir un vocabulaire générique adapté à la réalité des différentes communautés afin que celles-ci puissent se relier par l'entremise de systèmes d'informations interopérables.
 L'ontologie PAIR a vocation à s'articuler avec d'autres ontologies : 
-- Ontologies métiers permettant de décrire des activités métiers telles que la gestion de projet ou les places de marché (Logique d'articulation). 
+- Ontologies permettant de décrire des activités métiers telles que la gestion de projet ou les places de marché (Logique d'articulation). 
 - Ontologies du [LOV](http://lov.okfn.org/) décrivant des domaines couverts par l'ontologie PAIR (Logique d'alignement). 
 
 ## 2. Champ d'application
