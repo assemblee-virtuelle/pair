@@ -1,5 +1,13 @@
 # Cahier des Charges de PAIR
 
+## Introduction
+
+Le cahier des charges d'une ontologie permet de collecter
+les exigences que l'ontologie doit remplir, telles que sa raison d'être,
+le groupe et les utilisateurs ciblés.
+Sa rédaction peut faire suite à un processus de concensus
+(voir Suárez-Figueroa et al. (2009), *How to Write and Use the Ontology Requirements Specification Document*, Springer:Berlin, https://doi.org/10.1007/978-3-642-05151-7_16).
+
 Voir `PAIR_Requirements_Specifications.md` pour la version anglaise.
 
 ## 1. Raison d'être
@@ -25,7 +33,7 @@ La structuration d'écosystèmes d'acteurs (individus et organisations) autour d
 
 ## 6. Exigences relatives à l'ontologie
 
-Elle doit intégrer les principaux concepts et relations caractérisant la vie des communautés, par delà leur dioversité et leurs spécificités.
+L'ontologie PAIR doit intégrer les principaux concepts et relations caractérisant la vie des communautés, par delà leur diversité et leurs spécificités.
 Elle constitue une base pouvant être étendue par l'intermédiaire de modules décrivant des domaines, des métiers, des activités plus spécifiques. 
 
 ## Termes pré-glossaires
