@@ -889,6 +889,57 @@ Alignement partiel avec FOAF et SKOS. Certaines classes ou propriétés n&apos;a
     
 
 
+    <!-- http://virtual-assembly.org/pair#hasDocumentActor -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/pair#hasDocumentActor">
+        <owl:inverseOf rdf:resource="http://virtual-assembly.org/pair#isActorOfDocument"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/pair#Document"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/pair#Personality"/>
+        <rdfs:label xml:lang="fr">a pour acteur du document</rdfs:label>
+        <rdfs:label xml:lang="en">has for document actor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://virtual-assembly.org/pair#hasDocumentAuthor -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/pair#hasDocumentAuthor">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/pair#hasDocumentActor"/>
+        <owl:inverseOf rdf:resource="http://virtual-assembly.org/pair#isAuthorOfDocument"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/pair#Document"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/pair#Personality"/>
+        <rdfs:label xml:lang="fr">a pour auteur du document</rdfs:label>
+        <rdfs:label xml:lang="en">has for document author</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://virtual-assembly.org/pair#hasDocumentContributor -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/pair#hasDocumentContributor">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/pair#hasDocumentActor"/>
+        <owl:inverseOf rdf:resource="http://virtual-assembly.org/pair#isContributorOfDocument"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/pair#Document"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/pair#Personality"/>
+        <rdfs:label xml:lang="fr">a pour contribteur du document</rdfs:label>
+        <rdfs:label xml:lang="en">has for document contributor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://virtual-assembly.org/pair#hasDocumentPublisher -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/pair#hasDocumentPublisher">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/pair#hasDocumentActor"/>
+        <owl:inverseOf rdf:resource="http://virtual-assembly.org/pair#isPublisherOfDocument"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/pair#Document"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/pair#Personality"/>
+        <rdfs:label xml:lang="fr">a pour éditeur du document</rdfs:label>
+        <rdfs:label xml:lang="en">has for document publisher</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://virtual-assembly.org/pair#hasEmployee -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/pair#hasEmployee">
@@ -2511,7 +2562,6 @@ This relationship, combined with the inverse relation &quot;generalizes&quot; al
 
     <owl:Class rdf:about="http://virtual-assembly.org/pair#Document">
         <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
-        <owl:disjointWith rdf:resource="http://virtual-assembly.org/pair#DocumentType"/>
         <rdfs:label xml:lang="en">Document</rdfs:label>
         <rdfs:label xml:lang="fr">Document</rdfs:label>
     </owl:Class>
@@ -3462,9 +3512,9 @@ This relationship, combined with the inverse relation &quot;generalizes&quot; al
 
     <rdf:Description rdf:about="http://purl.org/dc/terms/Agent">
         <rdfs:label xml:lang="en">Agent</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
         <rdfs:comment xml:lang="en">A resource that acts or has the power to act.</rdfs:comment>
         <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2008-01-14</terms:issued>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
         <terms:description xml:lang="en">Examples of Agent include person, organization, and software agent.</terms:description>
         <terms:hasVersion rdf:resource="http://dublincore.org/usage/terms/history/#Agent-001"/>
     </rdf:Description>
@@ -3496,8 +3546,8 @@ This relationship, combined with the inverse relation &quot;generalizes&quot; al
     <rdf:Description rdf:about="http://purl.org/dc/terms/FileFormat">
         <terms:description xml:lang="en">Examples include the formats defined by the list of Internet Media Types.</terms:description>
         <terms:hasVersion rdf:resource="http://dublincore.org/usage/terms/history/#FileFormat-001"/>
-        <rdfs:comment xml:lang="en">A digital resource format.</rdfs:comment>
         <rdfs:label xml:lang="en">File Format</rdfs:label>
+        <rdfs:comment xml:lang="en">A digital resource format.</rdfs:comment>
         <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2008-01-14</terms:issued>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </rdf:Description>
@@ -3520,8 +3570,8 @@ This relationship, combined with the inverse relation &quot;generalizes&quot; al
     <rdf:Description rdf:about="http://purl.org/dc/terms/ISO639-2">
         <rdfs:seeAlso rdf:resource="http://lcweb.loc.gov/standards/iso639-2/langhome.html"/>
         <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2008-01-14</terms:modified>
-        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2000-07-11</terms:issued>
         <rdfs:comment xml:lang="en">The three-letter alphabetic codes listed in ISO639-2 for the representation of names of languages.</rdfs:comment>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2000-07-11</terms:issued>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
         <rdfs:label xml:lang="en">ISO 639-2</rdfs:label>
         <terms:hasVersion rdf:resource="http://dublincore.org/usage/terms/history/#ISO639-2-003"/>
@@ -3747,8 +3797,8 @@ This relationship, combined with the inverse relation &quot;generalizes&quot; al
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/terms/accrualMethod">
-        <terms:hasVersion rdf:resource="http://dublincore.org/usage/terms/history/#accrualMethod-003"/>
         <rdfs:label xml:lang="en">Accrual Method</rdfs:label>
+        <terms:hasVersion rdf:resource="http://dublincore.org/usage/terms/history/#accrualMethod-003"/>
         <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-10-11</terms:modified>
         <rdfs:comment xml:lang="en">The method by which items are added to a collection.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
@@ -3824,8 +3874,8 @@ This relationship, combined with the inverse relation &quot;generalizes&quot; al
     <rdf:Description rdf:about="http://purl.org/dc/terms/coverage">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
         <terms:hasVersion rdf:resource="http://dublincore.org/usage/terms/history/#coverageT-001"/>
-        <terms:description xml:lang="en">Spatial topic and spatial applicability may be a named place or a location specified by its geographic coordinates. Temporal topic may be a named period, date, or date range. A jurisdiction may be a named administrative entity or a geographic place to which the resource applies. Recommended best practice is to use a controlled vocabulary such as the Thesaurus of Geographic Names [TGN]. Where appropriate, named places or time periods can be used in preference to numeric identifiers such as sets of coordinates or date ranges.</terms:description>
         <rdfs:label xml:lang="en">Coverage</rdfs:label>
+        <terms:description xml:lang="en">Spatial topic and spatial applicability may be a named place or a location specified by its geographic coordinates. Temporal topic may be a named period, date, or date range. A jurisdiction may be a named administrative entity or a geographic place to which the resource applies. Recommended best practice is to use a controlled vocabulary such as the Thesaurus of Geographic Names [TGN]. Where appropriate, named places or time periods can be used in preference to numeric identifiers such as sets of coordinates or date ranges.</terms:description>
         <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2008-01-14</terms:issued>
         <rdfs:comment xml:lang="en">The spatial or temporal topic of the resource, the spatial applicability of the resource, or the jurisdiction under which the resource is relevant.</rdfs:comment>
         <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2008-01-14</terms:modified>
@@ -3834,8 +3884,8 @@ This relationship, combined with the inverse relation &quot;generalizes&quot; al
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
         <rdfs:comment xml:lang="en">Date of creation of the resource.</rdfs:comment>
         <terms:hasVersion rdf:resource="http://dublincore.org/usage/terms/history/#created-003"/>
-        <rdfs:label xml:lang="en">Date Created</rdfs:label>
         <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2008-01-14</terms:modified>
+        <rdfs:label xml:lang="en">Date Created</rdfs:label>
         <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2000-07-11</terms:issued>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/terms/creator">
@@ -3849,8 +3899,8 @@ This relationship, combined with the inverse relation &quot;generalizes&quot; al
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/terms/date">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
-        <terms:hasVersion rdf:resource="http://dublincore.org/usage/terms/history/#dateT-001"/>
         <rdfs:comment xml:lang="en">A point or period of time associated with an event in the lifecycle of the resource.</rdfs:comment>
+        <terms:hasVersion rdf:resource="http://dublincore.org/usage/terms/history/#dateT-001"/>
         <terms:description xml:lang="en">Date may be used to express temporal information at any level of granularity.  Recommended best practice is to use an encoding scheme, such as the W3CDTF profile of ISO 8601 [W3CDTF].</terms:description>
         <rdfs:label xml:lang="en">Date</rdfs:label>
         <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2008-01-14</terms:issued>
@@ -4118,8 +4168,8 @@ This relationship, combined with the inverse relation &quot;generalizes&quot; al
         <rdfs:label xml:lang="en">Requires</rdfs:label>
         <rdfs:comment xml:lang="en">A related resource that is required by the described resource to support its function, delivery, or coherence.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
-        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2000-07-11</terms:issued>
         <skos:note xml:lang="en">This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/).  As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration.</skos:note>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2000-07-11</terms:issued>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/terms/rights">
         <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2008-01-14</terms:issued>
@@ -4194,8 +4244,8 @@ This relationship, combined with the inverse relation &quot;generalizes&quot; al
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
         <terms:description xml:lang="en">Recommended best practice is to use a controlled vocabulary such as the DCMI Type Vocabulary [DCMITYPE]. To describe the file format, physical medium, or dimensions of the resource, use the Format element.</terms:description>
         <rdfs:comment xml:lang="en">The nature or genre of the resource.</rdfs:comment>
-        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2008-01-14</terms:modified>
         <rdfs:label xml:lang="en">Type</rdfs:label>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2008-01-14</terms:modified>
         <terms:hasVersion rdf:resource="http://dublincore.org/usage/terms/history/#typeT-001"/>
         <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2008-01-14</terms:issued>
     </rdf:Description>
@@ -4222,6 +4272,7 @@ This relationship, combined with the inverse relation &quot;generalizes&quot; al
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://virtual-assembly.org/pair#Address"/>
+            <rdf:Description rdf:about="http://virtual-assembly.org/pair#Document"/>
             <rdf:Description rdf:about="http://virtual-assembly.org/pair#Event"/>
             <rdf:Description rdf:about="http://virtual-assembly.org/pair#GoodOrService"/>
             <rdf:Description rdf:about="http://virtual-assembly.org/pair#Personality"/>
