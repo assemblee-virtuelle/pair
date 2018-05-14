@@ -1,0 +1,8 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "base:VideoReport" "base:Report" "base:AudioReport" ; /*classes style*/
+	"base:VideoReport" -> "base:Report" [ label = "rdfs:subClassOf" ];
+	"base:AudioReport" -> "base:Report" [ label = "rdfs:subClassOf" ];
+
+}
