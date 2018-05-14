@@ -16,12 +16,13 @@
 :AdministrativeDocument rdf:type owl:Class .
 
 
+###  http://virtual-assembly.org/pair/document#Article
+:Article rdf:type owl:Class .
+
+
 ###  http://virtual-assembly.org/pair/document#AudioReport
-:AudioReport rdf:type owl:Class .
-
-
-###  http://virtual-assembly.org/pair/document#BlogPost
-:BlogPost rdf:type owl:Class .
+:AudioReport rdf:type owl:Class ;
+             rdfs:subClassOf :Report .
 
 
 ###  http://virtual-assembly.org/pair/document#Book
@@ -40,8 +41,8 @@
 :PresentationPaper rdf:type owl:Class .
 
 
-###  http://virtual-assembly.org/pair/document#PressArticle
-:PressArticle rdf:type owl:Class .
+###  http://virtual-assembly.org/pair/document#Report
+:Report rdf:type owl:Class .
 
 
 ###  http://virtual-assembly.org/pair/document#ScientificPaper
@@ -53,7 +54,8 @@
 
 
 ###  http://virtual-assembly.org/pair/document#VideoReport
-:VideoReport rdf:type owl:Class .
+:VideoReport rdf:type owl:Class ;
+             rdfs:subClassOf :Report .
 
 
 ###  http://virtual-assembly.org/pair/document#WorkingPaper
