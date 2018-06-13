@@ -9,6 +9,23 @@
 <http://virtual-assembly.org/pair/document> rdf:type owl:Ontology .
 
 #################################################################
+#    Data properties
+#################################################################
+
+###  http://virtual-assembly.org/pair/document#abstract
+:abstract rdf:type owl:DatatypeProperty .
+
+
+###  http://virtual-assembly.org/pair/document#bibliography
+:bibliography rdf:type owl:DatatypeProperty ;
+              rdfs:range [ rdf:type rdfs:Datatype ;
+                           owl:unionOf ( xsd:anyURI
+                                         xsd:string
+                                       )
+                         ] .
+
+
+#################################################################
 #    Classes
 #################################################################
 
@@ -47,6 +64,10 @@
 
 ###  http://virtual-assembly.org/pair/document#ScientificPaper
 :ScientificPaper rdf:type owl:Class .
+
+
+###  http://virtual-assembly.org/pair/document#SocialCode
+:SocialCode rdf:type owl:Class .
 
 
 ###  http://virtual-assembly.org/pair/document#Tutorial
