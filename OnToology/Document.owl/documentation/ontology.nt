@@ -1,0 +1,77 @@
+<http://virtual-assembly.org/pair/document> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://virtual-assembly.org/pair/document#abstract
+<http://virtual-assembly.org/pair/document#abstract> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# http://virtual-assembly.org/pair/document#bibliography
+<http://virtual-assembly.org/pair/document#bibliography> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://virtual-assembly.org/pair/document#bibliography> <http://www.w3.org/2000/01/rdf-schema#range> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2001/XMLSchema#anyURI> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://virtual-assembly.org/pair/document#AdministrativeDocument
+<http://virtual-assembly.org/pair/document#AdministrativeDocument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://virtual-assembly.org/pair/document#Article
+<http://virtual-assembly.org/pair/document#Article> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://virtual-assembly.org/pair/document#AudioReport
+<http://virtual-assembly.org/pair/document#AudioReport> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair/document#AudioReport> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair/document#Report> .
+# 
+# http://virtual-assembly.org/pair/document#Book
+<http://virtual-assembly.org/pair/document#Book> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://virtual-assembly.org/pair/document#FinancialDocument
+<http://virtual-assembly.org/pair/document#FinancialDocument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://virtual-assembly.org/pair/document#Newsletter
+<http://virtual-assembly.org/pair/document#Newsletter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://virtual-assembly.org/pair/document#PresentationPaper
+<http://virtual-assembly.org/pair/document#PresentationPaper> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://virtual-assembly.org/pair/document#Report
+<http://virtual-assembly.org/pair/document#Report> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://virtual-assembly.org/pair/document#ScientificPaper
+<http://virtual-assembly.org/pair/document#ScientificPaper> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://virtual-assembly.org/pair/document#SocialCode
+<http://virtual-assembly.org/pair/document#SocialCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://virtual-assembly.org/pair/document#Tutorial
+<http://virtual-assembly.org/pair/document#Tutorial> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://virtual-assembly.org/pair/document#VideoReport
+<http://virtual-assembly.org/pair/document#VideoReport> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair/document#VideoReport> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair/document#Report> .
+# 
+# http://virtual-assembly.org/pair/document#WorkingPaper
+<http://virtual-assembly.org/pair/document#WorkingPaper> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair/document#WorkingPaper> <http://www.w3.org/2000/01/rdf-schema#comment> "On peut envisager un statut \"Etat\" : Work In Progress / Compte Rendu ?" .
+# 
+# Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/

@@ -1,0 +1,11 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+	"NULL" -> "rdf:nil" [ label = "rdf:rest" ];
+	"NULL" -> "xsd:string" [ label = "rdf:first" ];
+	"NULL" -> "3d0b2534:163f92f5e8a:-7ffc" [ label = "owl:unionOf" ];
+	"NULL" -> "3d0b2534:163f92f5e8a:-7ffb" [ label = "rdf:rest" ];
+	"NULL" -> "xsd:anyURI" [ label = "rdf:first" ];
+	"owl:Thing" -> "2c32553f8d761edaae755242bc21c6f1" [ label = "base:bibliography" ];
+
+}
