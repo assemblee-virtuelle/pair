@@ -876,6 +876,26 @@ Alignement partiel avec FOAF et SKOS. Certaines classes ou propriétés n&apos;a
     
 
 
+    <!-- http://virtual-assembly.org/pair#follows -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/pair#follows">
+        <owl:inverseOf rdf:resource="http://virtual-assembly.org/pair#isFollowedBy"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/pair#Personality"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://virtual-assembly.org/pair#Event"/>
+                    <rdf:Description rdf:about="http://virtual-assembly.org/pair#Personality"/>
+                    <rdf:Description rdf:about="http://virtual-assembly.org/pair#Project"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">follows</rdfs:label>
+        <rdfs:label xml:lang="fr">suit</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://virtual-assembly.org/pair#generalizes -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/pair#generalizes">
@@ -961,7 +981,7 @@ Alignement partiel avec FOAF et SKOS. Certaines classes ou propriétés n&apos;a
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/pair#isInterestOf"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/pair#Personality"/>
         <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:comment xml:lang="fr">Pointe sur un thesaurus</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Pointe sur un thesaurus - Ne pas confondre avec follows...</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Centres d&apos;intérêts</rdfs:label>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Domaine(s) thématique(s)</rdfs:label>
         <rdfs:label xml:lang="fr">a pour centre d&apos;intérêt</rdfs:label>
@@ -1043,6 +1063,17 @@ Cette propriété ne doit donc pas être employée pour les personnnes responsab
     
 
 
+    <!-- http://virtual-assembly.org/pair#hasSkill -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/pair#hasSkill">
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/pair#Personality"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/pair#Skill"/>
+        <rdfs:label xml:lang="fr">a pour compétence</rdfs:label>
+        <rdfs:label xml:lang="en">has skill</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://virtual-assembly.org/pair#hasSubject -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/pair#hasSubject">
@@ -1062,7 +1093,7 @@ Cette propriété ne doit donc pas être employée pour les personnnes responsab
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/pair#Topic"/>
         <rdfs:label xml:lang="fr">a pour thème</rdfs:label>
-        <rdfs:label xml:lang="en">has as topic</rdfs:label>
+        <rdfs:label xml:lang="en">has topic</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1214,6 +1245,25 @@ Cette propriété ne doit donc pas être employée pour les personnnes responsab
         <rdfs:label xml:lang="fr">Organisations dont vous êtes employé(e)</rdfs:label>
         <rdfs:label xml:lang="fr">est employé.e par</rdfs:label>
         <rdfs:label xml:lang="en">is employed by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://virtual-assembly.org/pair#isFollowedBy -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/pair#isFollowedBy">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://virtual-assembly.org/pair#Event"/>
+                    <rdf:Description rdf:about="http://virtual-assembly.org/pair#Personality"/>
+                    <rdf:Description rdf:about="http://virtual-assembly.org/pair#Project"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/pair#Personality"/>
+        <rdfs:label xml:lang="fr">est suivi par</rdfs:label>
+        <rdfs:label xml:lang="en">is followed by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1501,6 +1551,17 @@ Nous l&apos;utilisons ici pour nommer celui ou celle, individu ou organisation, 
     
 
 
+    <!-- http://virtual-assembly.org/pair#isSkillOf -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/pair#isSkillOf">
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/pair#Skill"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/pair#Personality"/>
+        <rdfs:label xml:lang="fr">est une compétence de</rdfs:label>
+        <rdfs:label xml:lang="en">is skill of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://virtual-assembly.org/pair#isSubjectOf -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/pair#isSubjectOf">
@@ -1540,6 +1601,7 @@ Nous l&apos;utilisons ici pour nommer celui ou celle, individu ou organisation, 
         <owl:equivalentProperty rdf:resource="http://xmlns.com/foaf/0.1/knows"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/pair#Person"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/pair#Person"/>
+        <rdfs:comment>Cette propriété devrait disparaitre à terme, dans la mesure où elle est imprécise et suppose plus ou moins une relation symétrique entre celui qui connait et celui est connu..</rdfs:comment>
         <rdfs:label xml:lang="fr">Vos amis</rdfs:label>
         <rdfs:label xml:lang="fr">connais</rdfs:label>
         <rdfs:label xml:lang="en">knows</rdfs:label>
