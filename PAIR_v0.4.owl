@@ -1,49 +1,34 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://virtual-assembly.org/pair#"
      xml:base="http://virtual-assembly.org/pair"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
-     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
-     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:terms="http://purl.org/dc/terms/"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:wot="http://xmlns.com/wot/0.1/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
-     xmlns:dc="http://purl.org/dc/elements/1.1/">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#">
     <owl:Ontology rdf:about="http://virtual-assembly.org/pair">
         <owl:versionIRI rdf:resource="http://virtual-assembly.org/pair/4.0"/>
-        <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
         <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
         <terms:license>https://creativecommons.org/licenses/by-sa/3.0/</terms:license>
-        <rdfs:comment xml:lang="en">PAIR Ontology designed according to the Semantic Model of Concepts v3.04 available at : https://www.virtual-assembly.org/ontologie-pair/
-
-Partial alignment with FOAF and SKOS. Some classes or properties could not be aligned because of incompatibility in terms of modeling.</rdfs:comment>
         <rdfs:comment xml:lang="fr">Ontologie PAIR globalement conforme au Modèle Sémantique des Concepts v3.04 : https://www.virtual-assembly.org/ontologie-pair/
 
 Alignement partiel avec FOAF et SKOS. Certaines classes ou propriétés n&apos;ayant pas pu être alignées pour cause d&apos;incompatibilité en terme de modélisation.</rdfs:comment>
+        <rdfs:comment xml:lang="en">PAIR Ontology designed according to the Semantic Model of Concepts v3.04 available at : https://www.virtual-assembly.org/ontologie-pair/
+
+Partial alignment with FOAF and SKOS. Some classes or properties could not be aligned because of incompatibility in terms of modeling.</rdfs:comment>
         <rdfs:isDefinedBy xml:lang="en">https://www.virtual-assembly.org/PAIR_RQSD.md</rdfs:isDefinedBy>
     </owl:Ontology>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotation properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-
     
 
 
@@ -54,8 +39,6 @@ Alignement partiel avec FOAF et SKOS. Certaines classes ou propriétés n&apos;a
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-
-    
 
     
 
@@ -75,9 +58,6 @@ Alignement partiel avec FOAF et SKOS. Certaines classes ou propriétés n&apos;a
      -->
 
     
-
-
-   
 
 
     <!-- http://virtual-assembly.org/pair#affiliates -->
@@ -1055,6 +1035,47 @@ This relationship, combined with the inverse relation &quot;generalizes&quot; al
     
 
 
+    <!-- http://www.w3.org/2004/02/skos/core#broader -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#broader"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#narrower -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#narrower"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/currentProject -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/currentProject"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/knows -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/knows"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/maker -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/maker"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/member -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/member"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/topic_interest -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/topic_interest"/>
+    
+
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -1065,9 +1086,6 @@ This relationship, combined with the inverse relation &quot;generalizes&quot; al
      -->
 
     
-
-
- 
 
 
     <!-- http://virtual-assembly.org/pair#aboutPage -->
@@ -1220,7 +1238,7 @@ This relationship, combined with the inverse relation &quot;generalizes&quot; al
 
     <owl:DatatypeProperty rdf:about="http://virtual-assembly.org/pair#endDate">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/pair#Event"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:label xml:lang="fr">Date de fin</rdfs:label>
         <rdfs:label xml:lang="en">End date</rdfs:label>
@@ -1266,7 +1284,6 @@ This relationship, combined with the inverse relation &quot;generalizes&quot; al
     <owl:DatatypeProperty rdf:about="http://virtual-assembly.org/pair#firstName">
         <owl:equivalentProperty rdf:resource="http://xmlns.com/foaf/0.1/firstName"/>
         <owl:equivalentProperty rdf:resource="http://xmlns.com/foaf/0.1/givenName"/>
-        <owl:equivalentProperty rdf:resource="http://xmlns.com/foaf/0.1/givenname"/>
         <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/pair#label"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/pair#Person"/>
@@ -1354,7 +1371,6 @@ This relationship, combined with the inverse relation &quot;generalizes&quot; al
 
     <owl:DatatypeProperty rdf:about="http://virtual-assembly.org/pair#lastName">
         <owl:equivalentProperty rdf:resource="http://xmlns.com/foaf/0.1/familyName"/>
-        <owl:equivalentProperty rdf:resource="http://xmlns.com/foaf/0.1/family_name"/>
         <owl:equivalentProperty rdf:resource="http://xmlns.com/foaf/0.1/lastName"/>
         <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/pair#label"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
@@ -1542,6 +1558,36 @@ This relationship, combined with the inverse relation &quot;generalizes&quot; al
     
 
 
+    <!-- http://xmlns.com/foaf/0.1/familyName -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/familyName"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/firstName -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/firstName"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/givenName -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/givenName"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/lastName -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/lastName"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/surname -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/surname"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1549,6 +1595,9 @@ This relationship, combined with the inverse relation &quot;generalizes&quot; al
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
+
+    
+
 
     <!-- http://virtual-assembly.org/pair#Address -->
 
@@ -1789,18 +1838,37 @@ This relationship, combined with the inverse relation &quot;generalizes&quot; al
     </owl:Class>
     
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
 
+    <!-- http://xmlns.com/foaf/0.1/Agent -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Agent"/>
     
 
 
+    <!-- http://xmlns.com/foaf/0.1/Document -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Document"/>
     
+
+
+    <!-- http://xmlns.com/foaf/0.1/Organization -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organization"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Project -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Project"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1828,5 +1896,5 @@ This relationship, combined with the inverse relation &quot;generalizes&quot; al
 
 
 
-<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.6.2018-09-06T00:27:41Z) https://github.com/owlcs/owlapi -->
 
