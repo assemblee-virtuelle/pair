@@ -1,15 +1,24 @@
-RDF pour PAIR
+Ontologie PAIR (Projet-Acteur-Idée-Ressource)
 ===
 
 [![Join the chat at https://gitter.im/assemblee-virtuelle/pair](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/assemblee-virtuelle/pair?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Contient des ontologies,
-des exemples de données,
-des spécifications de formulaires,
-pour la modélisation PAIR ( Projet- Acteur - Idée - Resource ) .
+Contient les documents de conception, l'implementation OWL et les fichiers de documentation pour l'ontologie PAIR (Projet-Acteur-Idée-Ressource).
+
+**L'ontologie PAIR est publiée à l'URI http://virtual-assembly.org/ontologies/pair.**
+
+## Pour en savoir plus sur PAIR
+
+- [Ontologie PAIR - Aperçu global](https://www.virtual-assembly.org/ontologie-pair/) sur le site de l'Assemblée Virtuelle;
+- [La méthodologie PAIR](https://www.virtual-assembly.org/pair-a-pair/) sur le site de l'Assemblée Virtuelle;
+
+## Utiliser dans une application
+
+Les spécifications de formulaires sont utilisables avec
+[semantic\_forms](https://github.com/jmvanel/semantic_forms/blob/master/scala/forms_play/README.md), et [WP-LDP](https://github.com/assemblee-virtuelle/wpldp/wiki/Installation).
 
 
-# Outils recommandés pour vérifier la syntaxe Turtle:
+## Outils recommandés pour vérifier la syntaxe Turtle:
 
 NE PAS COMMITER SANS VERIFIER LA SYNTAXE !!!!!!!!!
 
@@ -24,10 +33,4 @@ Utilitaire rapper:
 - Outil en ligne de commande: [rapper](http://librdf.org/raptor/rapper.html)
 - Raisonneurs (en ligne de commande): [Hermit](http://hermit-reasoner.com/download.html)
 - [Pellet](http://clarkparsia.com/pellet/)
-
-# Utiliser dans une application
-Les spécifications de formulaires sont utilisables avec
-[semantic\_forms](https://github.com/jmvanel/semantic_forms/blob/master/scala/forms_play/README.md)
-,
-et [WP-LDP](https://github.com/assemblee-virtuelle/wpldp/wiki/Installation).
 
