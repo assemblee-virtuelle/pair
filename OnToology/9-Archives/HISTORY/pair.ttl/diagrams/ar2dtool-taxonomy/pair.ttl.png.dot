@@ -1,0 +1,17 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "foaf:Project" "foaf:Agent" "base:Organization" "base:Person" "base:Resource" "base:Work" "base:Idea" "http://www.virtual-assembly.org/ontologies/0.1/pair#theme" "http://www.virtual-assembly.org/ontologies/0.1/pair#thesis" "foaf:Person" "foaf:Organization" "http://www.w3.org/2004/02/skos/core#Concept" "base:Actor" "base:Project" "http://creativecommons.org/ns#Work" ; /*classes style*/
+	"http://www.virtual-assembly.org/ontologies/0.1/pair#thesis" -> "base:Idea" [ label = "rdfs:subClassOf" ];
+	"http://www.virtual-assembly.org/ontologies/0.1/pair#theme" -> "base:Idea" [ label = "rdfs:subClassOf" ];
+	"base:Idea" -> "http://www.w3.org/2004/02/skos/core#Concept" [ label = "rdfs:subClassOf" ];
+	"base:Project" -> "foaf:Project" [ label = "rdfs:subClassOf" ];
+	"base:Person" -> "foaf:Person" [ label = "rdfs:subClassOf" ];
+	"base:Person" -> "base:Actor" [ label = "rdfs:subClassOf" ];
+	"base:Actor" -> "foaf:Agent" [ label = "rdfs:subClassOf" ];
+	"base:Work" -> "base:Resource" [ label = "rdfs:subClassOf" ];
+	"base:Work" -> "http://creativecommons.org/ns#Work" [ label = "rdfs:subClassOf" ];
+	"base:Organization" -> "foaf:Organization" [ label = "rdfs:subClassOf" ];
+	"base:Organization" -> "base:Actor" [ label = "rdfs:subClassOf" ];
+
+}

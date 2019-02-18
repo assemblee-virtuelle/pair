@@ -1,0 +1,191 @@
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#metAt
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#metAt> <http://www.w3.org/2000/01/rdf-schema#label> "rencontré à"@fr .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#metAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#metAt> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#actor
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#actor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#actor> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#actor> <http://www.w3.org/2000/01/rdf-schema#label> "acteur"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributes
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributes> <http://www.w3.org/2002/07/owl#inverseOf> <http://xmlns.com/foaf/0.1/member> .
+<http://xmlns.com/foaf/0.1/member> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributes> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributes> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Project> .
+<http://xmlns.com/foaf/0.1/Project> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributes> <http://www.w3.org/2000/01/rdf-schema#label> "contribue"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributesToOrganization
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributesToOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributesToOrganization> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributesToOrganization> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Organization> .
+<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributesToOrganization> <http://www.w3.org/2000/01/rdf-schema#label> "adhère"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#employeeOf
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#employeeOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#employeeOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#employeeOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Organization> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#employeeOf> <http://www.w3.org/2000/01/rdf-schema#label> "employé par"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasContributor
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasContributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasEmployee
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasEmployee> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasEmployee> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasContributor> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasEmployee> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#employeeOf> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasEmployee> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Organization> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasEmployee> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasEmployee> <http://www.w3.org/2000/01/rdf-schema#label> "employé"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#isLikedBy
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#isLikedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#isLikedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Organization> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#isLikedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#isLikedBy> <http://www.w3.org/2000/01/rdf-schema#label> "sympatisant"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesIdea
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesIdea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesIdea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesIdea> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Organization> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesIdea> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesIdea> <http://www.w3.org/2000/01/rdf-schema#label> "aime l'idée"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesOrganization
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesOrganization> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Organization> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesOrganization> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Organization> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesOrganization> <http://www.w3.org/2000/01/rdf-schema#label> "aime l'organisation"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#opposedTo
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#opposedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#opposedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#opposedTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Organization> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#opposedTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#opposedTo> <http://www.w3.org/2000/01/rdf-schema#label> "opposé à l'idée"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#originator
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#originator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#originator> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Organization> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#originator> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#originator> <http://www.w3.org/2000/01/rdf-schema#label> "est à l'origine"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#partner
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#partner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#partner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#partner> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Organization> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#partner> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Organization> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#partner> <http://www.w3.org/2000/01/rdf-schema#label> "partenaire"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#specializedIn
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#specializedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#specializedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#specializedIn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Organization> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#specializedIn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#specializedIn> <http://www.w3.org/2000/01/rdf-schema#label> "spécialisé dans l'idée"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#supports
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#supports> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#supports> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#supports> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Project> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#supports> <http://www.w3.org/2000/01/rdf-schema#label> "soutient"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#worksWith
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#worksWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#worksWith> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://xmlns.com/foaf/0.1/knows> .
+<http://xmlns.com/foaf/0.1/knows> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#worksWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#worksWith> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#worksWith> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Person> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#worksWith> <http://www.w3.org/2000/01/rdf-schema#label> "travaille avec"@fr .
+# 
+# http://xmlns.com/foaf/0.1/knows
+# 
+# http://xmlns.com/foaf/0.1/member
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#facebookId
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#facebookId> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#facebookId> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#facebookId> <http://www.w3.org/2000/01/rdf-schema#label> "Facebook"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#linkedinId
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#linkedinId> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#linkedinId> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#linkedinId> <http://www.w3.org/2000/01/rdf-schema#label> "LinkedIn"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#twitterId
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#twitterId> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#twitterId> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#twitterId> <http://www.w3.org/2000/01/rdf-schema#label> "Twitter"@fr .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Agent> .
+<http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor> <http://www.w3.org/2000/01/rdf-schema#label> "Acteur"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Organization> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization> <http://www.w3.org/2000/01/rdf-schema#label> "Organisation"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Person> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person> <http://www.w3.org/2000/01/rdf-schema#label> "Individu"@fr .
+# 
+# http://xmlns.com/foaf/0.1/Agent
+# 
+# http://xmlns.com/foaf/0.1/Organization
+# 
+# http://xmlns.com/foaf/0.1/Person
+# 
+# http://xmlns.com/foaf/0.1/Project
+# 
+# Generated by the OWL API (version 5.1.9) https://github.com/owlcs/owlapi/

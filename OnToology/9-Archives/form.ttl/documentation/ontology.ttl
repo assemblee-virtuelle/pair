@@ -1,0 +1,203 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#classDomain
+<http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#classDomain> rdf:type owl:AnnotationProperty .
+
+
+###  http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToForm
+<http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToForm> rdf:type owl:AnnotationProperty .
+
+
+###  http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToProperty
+<http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToProperty> rdf:type owl:AnnotationProperty .
+
+
+###  http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#showProperties
+<http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#showProperties> rdf:type owl:AnnotationProperty .
+
+
+###  http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#widgetClass
+<http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#widgetClass> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification
+<http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.virtual-assembly.org/ontologies/1.0/forms#EventForm
+<http://www.virtual-assembly.org/ontologies/1.0/forms#EventForm> rdf:type owl:NamedIndividual ,
+                                                                          <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification> ;
+                                                                 <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#classDomain> <http://www.virtual-assembly.org/ontologies/1.0/pair#Event> ;
+                                                                 <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#showProperties> [ ] ;
+rdfs:label "Event AV"@en ,
+           "Evènement AV"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/forms#GroupForm
+<http://www.virtual-assembly.org/ontologies/1.0/forms#GroupForm> rdf:type owl:NamedIndividual ,
+                                                                          <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification> ;
+                                                                 <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#classDomain> <http://xmlns.com/foaf/0.1/Group> ;
+                                                                 <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#showProperties> [ ] ;
+rdfs:label "Group AV"@en ,
+           "Groupe AV"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/forms#InitiativeOrMissionForm
+<http://www.virtual-assembly.org/ontologies/1.0/forms#InitiativeOrMissionForm> rdf:type owl:NamedIndividual ,
+                                                                                        <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification> ;
+                                                                               <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#classDomain> <http://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission> ;
+                                                                               <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#showProperties> [ ] ;
+rdfs:label "Initiative or Mission AV"@en ,
+           "Initiative ou Mission AV"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/forms#OrganizationForm
+<http://www.virtual-assembly.org/ontologies/1.0/forms#OrganizationForm> rdf:type owl:NamedIndividual ,
+                                                                                 <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification> ;
+                                                                        <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#classDomain> <http://xmlns.com/foaf/0.1/Organization> ;
+                                                                        <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#showProperties> [ ] ;
+rdfs:label "Organisation AV"@fr ,
+           "Organization AV"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/forms#PersonForm
+<http://www.virtual-assembly.org/ontologies/1.0/forms#PersonForm> rdf:type owl:NamedIndividual ,
+                                                                           <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification> ;
+                                                                  <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#classDomain> <http://xmlns.com/foaf/0.1/Person> ;
+                                                                  <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#showProperties> [ ] ;
+rdfs:label "Person AV"@en ,
+           "Personne AV"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/forms#ResourceForm
+<http://www.virtual-assembly.org/ontologies/1.0/forms#ResourceForm> rdf:type owl:NamedIndividual ,
+                                                                             <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification> ;
+                                                                    <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#classDomain> <http://www.virtual-assembly.org/ontologies/1.0/pair#Resource> ;
+                                                                    <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#showProperties> [ ] ;
+rdfs:label "Resource AV"@en ,
+           "Ressource AV"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/forms#SkillForm
+<http://www.virtual-assembly.org/ontologies/1.0/forms#SkillForm> rdf:type owl:NamedIndividual ,
+                                                                          <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification> ;
+                                                                 <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#classDomain> <http://purl.org/ontology/cco/core#Skill> ;
+                                                                 <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#showProperties> [ ] ;
+rdfs:label "Compétence AV"@fr ,
+           "Skill AV"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/forms#ThemeForm
+<http://www.virtual-assembly.org/ontologies/1.0/forms#ThemeForm> rdf:type owl:NamedIndividual ,
+                                                                          <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification> ;
+                                                                 <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#classDomain> <http://www.virtual-assembly.org/ontologies/1.0/pair#Theme> ;
+                                                                 <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#showProperties> [ ] ;
+rdfs:label "Theme AV"@en ,
+           "Thème AV"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/forms#ThesisForm
+<http://www.virtual-assembly.org/ontologies/1.0/forms#ThesisForm> rdf:type owl:NamedIndividual ,
+                                                                           <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification> ;
+                                                                  <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#classDomain> <http://www.virtual-assembly.org/ontologies/1.0/pair#Thesis> ;
+                                                                  <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#showProperties> [ ] ;
+rdfs:label "Thesis AV"@en ,
+           "Thèse AV"@fr .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://www.virtual-assembly.org/ontologies/1.0/forms#EventForm-Completion> <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToForm> <http://www.virtual-assembly.org/ontologies/1.0/forms#EventForm> ;
+                                                                            <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToProperty> <http://purl.org/dc/terms/subject> ,
+                                                                                                                                                                                             <http://www.virtual-assembly.org/ontologies/1.0/pair#offersSkill> ,
+                                                                                                                                                                                             <http://www.virtual-assembly.org/ontologies/1.0/pair#seeksSkill> ,
+                                                                                                                                                                                             <http://www.virtual-assembly.org/ontologies/1.0/pair#town> ;
+                                                                            <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#widgetClass> <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#DBPediaLookup> .
+
+
+<http://www.virtual-assembly.org/ontologies/1.0/forms#GroupForm-Completion> <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToForm> <http://www.virtual-assembly.org/ontologies/1.0/forms#GroupForm> ;
+                                                                            <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToProperty> <http://purl.org/dc/terms/subject> ,
+                                                                                                                                                                                             <http://www.virtual-assembly.org/ontologies/1.0/pair#offersSkill> ,
+                                                                                                                                                                                             <http://www.virtual-assembly.org/ontologies/1.0/pair#seeksSkill> ,
+                                                                                                                                                                                             <http://www.virtual-assembly.org/ontologies/1.0/pair#town> ;
+                                                                            <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#widgetClass> <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#DBPediaLookup> .
+
+
+<http://www.virtual-assembly.org/ontologies/1.0/forms#InitiativeOrMissionForm-Completion> <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToForm> <http://www.virtual-assembly.org/ontologies/1.0/forms#InitiativeOrMissionForm> ;
+                                                                                          <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToProperty> <http://purl.org/dc/terms/subject> ,
+                                                                                                                                                                                                           <http://www.virtual-assembly.org/ontologies/1.0/pair#offersSkill> ,
+                                                                                                                                                                                                           <http://www.virtual-assembly.org/ontologies/1.0/pair#seeksSkill> ,
+                                                                                                                                                                                                           <http://www.virtual-assembly.org/ontologies/1.0/pair#town> ;
+                                                                                          <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#widgetClass> <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#DBPediaLookup> .
+
+
+<http://www.virtual-assembly.org/ontologies/1.0/forms#OrganizationForm-Completion> <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToForm> <http://www.virtual-assembly.org/ontologies/1.0/forms#OrganizationForm> ;
+                                                                                   <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToProperty> <http://purl.org/dc/terms/subject> ,
+                                                                                                                                                                                                    <http://www.virtual-assembly.org/ontologies/1.0/pair#offersSkill> ,
+                                                                                                                                                                                                    <http://www.virtual-assembly.org/ontologies/1.0/pair#seeksSkill> ,
+                                                                                                                                                                                                    <http://www.virtual-assembly.org/ontologies/1.0/pair#town> ;
+                                                                                   <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#widgetClass> <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#DBPediaLookup> .
+
+
+<http://www.virtual-assembly.org/ontologies/1.0/forms#PersonForm-Completion> <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToForm> <http://www.virtual-assembly.org/ontologies/1.0/forms#PersonForm> ;
+                                                                             <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToProperty> <http://purl.org/dc/terms/subject> ,
+                                                                                                                                                                                              <http://www.virtual-assembly.org/ontologies/1.0/pair#offersSkill> ,
+                                                                                                                                                                                              <http://www.virtual-assembly.org/ontologies/1.0/pair#seeksSkill> ,
+                                                                                                                                                                                              <http://www.virtual-assembly.org/ontologies/1.0/pair#town> ;
+                                                                             <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#widgetClass> <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#DBPediaLookup> .
+
+
+<http://www.virtual-assembly.org/ontologies/1.0/forms#ResourceForm-Completion> <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToForm> <http://www.virtual-assembly.org/ontologies/1.0/forms#ResourceForm> ;
+                                                                               <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToProperty> <http://purl.org/dc/terms/subject> ;
+                                                                               <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#widgetClass> <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#DBPediaLookup> .
+
+
+<http://www.virtual-assembly.org/ontologies/1.0/forms#SkillForm-Completion> <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToForm> <http://www.virtual-assembly.org/ontologies/1.0/forms#SkillForm> ;
+                                                                            <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToProperty> <http://purl.org/dc/terms/subject> ;
+                                                                            <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#widgetClass> <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#DBPediaLookup> .
+
+
+<http://www.virtual-assembly.org/ontologies/1.0/forms#ThemeForm-Completion> <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToForm> <http://www.virtual-assembly.org/ontologies/1.0/forms#ThemeForm> ;
+                                                                            <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToProperty> <http://purl.org/dc/terms/subject> ,
+                                                                                                                                                                                             <http://www.virtual-assembly.org/ontologies/1.0/pair#because> ,
+                                                                                                                                                                                             <http://www.virtual-assembly.org/ontologies/1.0/pair#convergesWith> ,
+                                                                                                                                                                                             <http://www.virtual-assembly.org/ontologies/1.0/pair#hasConsequence> ,
+                                                                                                                                                                                             <http://www.virtual-assembly.org/ontologies/1.0/pair#opposedTo> ;
+                                                                            <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#widgetClass> <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#DBPediaLookup> .
+
+
+<http://www.virtual-assembly.org/ontologies/1.0/forms#ThesisForm-Completion> <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToForm> <http://www.virtual-assembly.org/ontologies/1.0/forms#ThesisForm> ;
+                                                                             <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToProperty> <http://www.virtual-assembly.org/ontologies/1.0/pair#because> ,
+                                                                                                                                                                                              <http://www.virtual-assembly.org/ontologies/1.0/pair#convergesWith> ,
+                                                                                                                                                                                              <http://www.virtual-assembly.org/ontologies/1.0/pair#hasConsequence> ,
+                                                                                                                                                                                              <http://www.virtual-assembly.org/ontologies/1.0/pair#offersSkill> ,
+                                                                                                                                                                                              <http://www.virtual-assembly.org/ontologies/1.0/pair#opposedTo> ,
+                                                                                                                                                                                              <http://www.virtual-assembly.org/ontologies/1.0/pair#seeksSkill> ,
+                                                                                                                                                                                              <http://www.virtual-assembly.org/ontologies/1.0/pair#town> ,
+                                                                                                                                                                                              <http://www.virtual-assembly.org/ontologies/1.0/pair#dcterms:subject> ;
+                                                                             <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#widgetClass> <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#DBPediaLookup> .
+
+
+###  Generated by the OWL API (version 5.1.9) https://github.com/owlcs/owlapi/

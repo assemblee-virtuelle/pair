@@ -1,0 +1,134 @@
+{
+  "@context" : {
+    "term_status" : {
+      "@id" : "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status"
+    },
+    "accountName" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountName",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "myersBriggs" : {
+      "@id" : "http://xmlns.com/foaf/0.1/myersBriggs",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "age" : {
+      "@id" : "http://xmlns.com/foaf/0.1/age",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "aimChatID" : {
+      "@id" : "http://xmlns.com/foaf/0.1/aimChatID",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "birthday" : {
+      "@id" : "http://xmlns.com/foaf/0.1/birthday",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "familyName" : {
+      "@id" : "http://xmlns.com/foaf/0.1/familyName",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "lastName" : {
+      "@id" : "http://xmlns.com/foaf/0.1/lastName",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "gender" : {
+      "@id" : "http://xmlns.com/foaf/0.1/gender",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "yahooChatID" : {
+      "@id" : "http://xmlns.com/foaf/0.1/yahooChatID",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "jabberID" : {
+      "@id" : "http://xmlns.com/foaf/0.1/jabberID",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "mbox_sha1sum" : {
+      "@id" : "http://xmlns.com/foaf/0.1/mbox_sha1sum",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "givenName" : {
+      "@id" : "http://xmlns.com/foaf/0.1/givenName"
+    },
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "geekcode" : {
+      "@id" : "http://xmlns.com/foaf/0.1/geekcode",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "surname" : {
+      "@id" : "http://xmlns.com/foaf/0.1/surname",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "membershipClass" : {
+      "@id" : "http://xmlns.com/foaf/0.1/membershipClass"
+    },
+    "sha1" : {
+      "@id" : "http://xmlns.com/foaf/0.1/sha1"
+    },
+    "skypeID" : {
+      "@id" : "http://xmlns.com/foaf/0.1/skypeID",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "nick" : {
+      "@id" : "http://xmlns.com/foaf/0.1/nick"
+    },
+    "status" : {
+      "@id" : "http://xmlns.com/foaf/0.1/status",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "firstName" : {
+      "@id" : "http://xmlns.com/foaf/0.1/firstName",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "dnaChecksum" : {
+      "@id" : "http://xmlns.com/foaf/0.1/dnaChecksum",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "isDefinedBy" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#isDefinedBy"
+    },
+    "title" : {
+      "@id" : "http://xmlns.com/foaf/0.1/title"
+    },
+    "src_assurance" : {
+      "@id" : "http://xmlns.com/wot/0.1/src_assurance"
+    },
+    "assurance" : {
+      "@id" : "http://xmlns.com/wot/0.1/assurance"
+    },
+    "date" : {
+      "@id" : "http://purl.org/dc/elements/1.1/date"
+    },
+    "plan" : {
+      "@id" : "http://xmlns.com/foaf/0.1/plan",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "icqChatID" : {
+      "@id" : "http://xmlns.com/foaf/0.1/icqChatID",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "givenname" : {
+      "@id" : "http://xmlns.com/foaf/0.1/givenname"
+    },
+    "family_name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/family_name",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "msnChatID" : {
+      "@id" : "http://xmlns.com/foaf/0.1/msnChatID",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/elements/1.1/description"
+    }
+  }
+}

@@ -1,0 +1,259 @@
+<http://xmlns.com/foaf/0.1/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://xmlns.com/foaf/0.1/> <http://purl.org/dc/elements/1.1/description> "The Friend of a Friend (FOAF) RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language." .
+<http://xmlns.com/foaf/0.1/> <http://purl.org/dc/elements/1.1/title> "Friend of a Friend (FOAF) vocabulary" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2003/06/sw-vocab-status/ns#term_status
+<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://xmlns.com/foaf/0.1/membershipClass
+<http://xmlns.com/foaf/0.1/membershipClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://xmlns.com/foaf/0.1/membershipClass> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the class of individuals that are a member of a Group" .
+<http://xmlns.com/foaf/0.1/membershipClass> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://xmlns.com/foaf/0.1/membershipClass> <http://www.w3.org/2000/01/rdf-schema#label> "membershipClass" .
+<http://xmlns.com/foaf/0.1/membershipClass> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "unstable" .
+# 
+# http://xmlns.com/foaf/0.1/name
+<http://xmlns.com/foaf/0.1/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://xmlns.com/foaf/0.1/name> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2000/01/rdf-schema#label> .
+<http://xmlns.com/foaf/0.1/name> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://xmlns.com/foaf/0.1/name> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2002/07/owl#Thing> .
+# 
+# http://xmlns.com/wot/0.1/assurance
+<http://xmlns.com/wot/0.1/assurance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://xmlns.com/wot/0.1/src_assurance
+<http://xmlns.com/wot/0.1/src_assurance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://xmlns.com/foaf/0.1/accountName
+<http://xmlns.com/foaf/0.1/accountName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/accountName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://xmlns.com/foaf/0.1/accountName> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the name (identifier) associated with this online account." .
+<http://xmlns.com/foaf/0.1/accountName> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://xmlns.com/foaf/0.1/accountName> <http://www.w3.org/2000/01/rdf-schema#label> "account name" .
+<http://xmlns.com/foaf/0.1/accountName> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+# 
+# http://xmlns.com/foaf/0.1/age
+<http://xmlns.com/foaf/0.1/age> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/age> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://xmlns.com/foaf/0.1/age> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://xmlns.com/foaf/0.1/age> <http://www.w3.org/2000/01/rdf-schema#comment> "The age in years of some agent." .
+<http://xmlns.com/foaf/0.1/age> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://xmlns.com/foaf/0.1/age> <http://www.w3.org/2000/01/rdf-schema#label> "age" .
+<http://xmlns.com/foaf/0.1/age> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "unstable" .
+# 
+# http://xmlns.com/foaf/0.1/aimChatID
+<http://xmlns.com/foaf/0.1/aimChatID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/aimChatID> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://xmlns.com/foaf/0.1/nick> .
+<http://xmlns.com/foaf/0.1/aimChatID> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+# 
+# http://xmlns.com/foaf/0.1/birthday
+<http://xmlns.com/foaf/0.1/birthday> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/birthday> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://xmlns.com/foaf/0.1/birthday> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://xmlns.com/foaf/0.1/birthday> <http://www.w3.org/2000/01/rdf-schema#comment> "The birthday of this Agent, represented in mm-dd string form, eg. '12-31'." .
+<http://xmlns.com/foaf/0.1/birthday> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://xmlns.com/foaf/0.1/birthday> <http://www.w3.org/2000/01/rdf-schema#label> "birthday" .
+<http://xmlns.com/foaf/0.1/birthday> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "unstable" .
+# 
+# http://xmlns.com/foaf/0.1/dnaChecksum
+<http://xmlns.com/foaf/0.1/dnaChecksum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/dnaChecksum> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://xmlns.com/foaf/0.1/dnaChecksum> <http://www.w3.org/2000/01/rdf-schema#comment> "A checksum for the DNA of some thing. Joke." .
+<http://xmlns.com/foaf/0.1/dnaChecksum> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://xmlns.com/foaf/0.1/dnaChecksum> <http://www.w3.org/2000/01/rdf-schema#label> "DNA checksum" .
+<http://xmlns.com/foaf/0.1/dnaChecksum> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "archaic" .
+# 
+# http://xmlns.com/foaf/0.1/familyName
+<http://xmlns.com/foaf/0.1/familyName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/familyName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://xmlns.com/foaf/0.1/familyName> <http://www.w3.org/2000/01/rdf-schema#comment> "The family name of some person." .
+<http://xmlns.com/foaf/0.1/familyName> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://xmlns.com/foaf/0.1/familyName> <http://www.w3.org/2000/01/rdf-schema#label> "familyName" .
+<http://xmlns.com/foaf/0.1/familyName> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+# 
+# http://xmlns.com/foaf/0.1/family_name
+<http://xmlns.com/foaf/0.1/family_name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/family_name> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://xmlns.com/foaf/0.1/family_name> <http://www.w3.org/2000/01/rdf-schema#comment> "The family name of some person." .
+<http://xmlns.com/foaf/0.1/family_name> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://xmlns.com/foaf/0.1/family_name> <http://www.w3.org/2000/01/rdf-schema#label> "family_name" .
+<http://xmlns.com/foaf/0.1/family_name> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "archaic" .
+# 
+# http://xmlns.com/foaf/0.1/firstName
+<http://xmlns.com/foaf/0.1/firstName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/firstName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://xmlns.com/foaf/0.1/firstName> <http://www.w3.org/2000/01/rdf-schema#comment> "The first name of a person." .
+<http://xmlns.com/foaf/0.1/firstName> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://xmlns.com/foaf/0.1/firstName> <http://www.w3.org/2000/01/rdf-schema#label> "firstName" .
+<http://xmlns.com/foaf/0.1/firstName> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+# 
+# http://xmlns.com/foaf/0.1/geekcode
+<http://xmlns.com/foaf/0.1/geekcode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/geekcode> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://xmlns.com/foaf/0.1/geekcode> <http://www.w3.org/2000/01/rdf-schema#comment> "A textual geekcode for this person, see http://www.geekcode.com/geek.html" .
+<http://xmlns.com/foaf/0.1/geekcode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://xmlns.com/foaf/0.1/geekcode> <http://www.w3.org/2000/01/rdf-schema#label> "geekcode" .
+<http://xmlns.com/foaf/0.1/geekcode> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "archaic" .
+# 
+# http://xmlns.com/foaf/0.1/gender
+<http://xmlns.com/foaf/0.1/gender> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/gender> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://xmlns.com/foaf/0.1/gender> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://xmlns.com/foaf/0.1/gender> <http://www.w3.org/2000/01/rdf-schema#comment> "The gender of this Agent (typically but not necessarily 'male' or 'female')." .
+<http://xmlns.com/foaf/0.1/gender> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://xmlns.com/foaf/0.1/gender> <http://www.w3.org/2000/01/rdf-schema#label> "gender" .
+<http://xmlns.com/foaf/0.1/gender> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+# 
+# http://xmlns.com/foaf/0.1/givenName
+<http://xmlns.com/foaf/0.1/givenName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/givenName> <http://www.w3.org/2000/01/rdf-schema#comment> "The given name of some person." .
+<http://xmlns.com/foaf/0.1/givenName> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://xmlns.com/foaf/0.1/givenName> <http://www.w3.org/2000/01/rdf-schema#label> "Given name" .
+<http://xmlns.com/foaf/0.1/givenName> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+# 
+# http://xmlns.com/foaf/0.1/givenname
+<http://xmlns.com/foaf/0.1/givenname> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/givenname> <http://www.w3.org/2000/01/rdf-schema#comment> "The given name of some person." .
+<http://xmlns.com/foaf/0.1/givenname> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://xmlns.com/foaf/0.1/givenname> <http://www.w3.org/2000/01/rdf-schema#label> "Given name" .
+<http://xmlns.com/foaf/0.1/givenname> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "archaic" .
+# 
+# http://xmlns.com/foaf/0.1/icqChatID
+<http://xmlns.com/foaf/0.1/icqChatID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/icqChatID> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://xmlns.com/foaf/0.1/nick> .
+<http://xmlns.com/foaf/0.1/icqChatID> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+# 
+# http://xmlns.com/foaf/0.1/jabberID
+<http://xmlns.com/foaf/0.1/jabberID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/jabberID> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+# 
+# http://xmlns.com/foaf/0.1/lastName
+<http://xmlns.com/foaf/0.1/lastName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/lastName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://xmlns.com/foaf/0.1/lastName> <http://www.w3.org/2000/01/rdf-schema#comment> "The last name of a person." .
+<http://xmlns.com/foaf/0.1/lastName> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://xmlns.com/foaf/0.1/lastName> <http://www.w3.org/2000/01/rdf-schema#label> "lastName" .
+<http://xmlns.com/foaf/0.1/lastName> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+# 
+# http://xmlns.com/foaf/0.1/mbox_sha1sum
+<http://xmlns.com/foaf/0.1/mbox_sha1sum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/mbox_sha1sum> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+# 
+# http://xmlns.com/foaf/0.1/msnChatID
+<http://xmlns.com/foaf/0.1/msnChatID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/msnChatID> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://xmlns.com/foaf/0.1/nick> .
+<http://xmlns.com/foaf/0.1/msnChatID> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+# 
+# http://xmlns.com/foaf/0.1/myersBriggs
+<http://xmlns.com/foaf/0.1/myersBriggs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/myersBriggs> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://xmlns.com/foaf/0.1/myersBriggs> <http://www.w3.org/2000/01/rdf-schema#comment> "A Myers Briggs (MBTI) personality classification." .
+<http://xmlns.com/foaf/0.1/myersBriggs> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://xmlns.com/foaf/0.1/myersBriggs> <http://www.w3.org/2000/01/rdf-schema#label> "myersBriggs" .
+<http://xmlns.com/foaf/0.1/myersBriggs> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+# 
+# http://xmlns.com/foaf/0.1/name
+<http://xmlns.com/foaf/0.1/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# http://xmlns.com/foaf/0.1/nick
+<http://xmlns.com/foaf/0.1/nick> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/nick> <http://www.w3.org/2000/01/rdf-schema#comment> "A short informal nickname characterising an agent (includes login identifiers, IRC and other chat nicknames)." .
+<http://xmlns.com/foaf/0.1/nick> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://xmlns.com/foaf/0.1/nick> <http://www.w3.org/2000/01/rdf-schema#label> "nickname" .
+<http://xmlns.com/foaf/0.1/nick> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+# 
+# http://xmlns.com/foaf/0.1/plan
+<http://xmlns.com/foaf/0.1/plan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/plan> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://xmlns.com/foaf/0.1/plan> <http://www.w3.org/2000/01/rdf-schema#comment> "A .plan comment, in the tradition of finger and '.plan' files." .
+<http://xmlns.com/foaf/0.1/plan> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://xmlns.com/foaf/0.1/plan> <http://www.w3.org/2000/01/rdf-schema#label> "plan" .
+<http://xmlns.com/foaf/0.1/plan> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+# 
+# http://xmlns.com/foaf/0.1/sha1
+<http://xmlns.com/foaf/0.1/sha1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/sha1> <http://www.w3.org/2000/01/rdf-schema#comment> "A sha1sum hash, in hex." .
+<http://xmlns.com/foaf/0.1/sha1> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://xmlns.com/foaf/0.1/sha1> <http://www.w3.org/2000/01/rdf-schema#label> "sha1sum (hex)" .
+<http://xmlns.com/foaf/0.1/sha1> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "unstable" .
+# 
+# http://xmlns.com/foaf/0.1/skypeID
+<http://xmlns.com/foaf/0.1/skypeID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/skypeID> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://xmlns.com/foaf/0.1/nick> .
+<http://xmlns.com/foaf/0.1/skypeID> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://xmlns.com/foaf/0.1/skypeID> <http://www.w3.org/2000/01/rdf-schema#comment> "A Skype ID" .
+<http://xmlns.com/foaf/0.1/skypeID> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://xmlns.com/foaf/0.1/skypeID> <http://www.w3.org/2000/01/rdf-schema#label> "Skype ID" .
+<http://xmlns.com/foaf/0.1/skypeID> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+# 
+# http://xmlns.com/foaf/0.1/status
+<http://xmlns.com/foaf/0.1/status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/status> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://xmlns.com/foaf/0.1/status> <http://www.w3.org/2000/01/rdf-schema#comment> "A string expressing what the user is happy for the general public (normally) to know about their current activity." .
+<http://xmlns.com/foaf/0.1/status> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://xmlns.com/foaf/0.1/status> <http://www.w3.org/2000/01/rdf-schema#label> "status" .
+<http://xmlns.com/foaf/0.1/status> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "unstable" .
+# 
+# http://xmlns.com/foaf/0.1/surname
+<http://xmlns.com/foaf/0.1/surname> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/surname> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://xmlns.com/foaf/0.1/surname> <http://www.w3.org/2000/01/rdf-schema#comment> "The surname of some person." .
+<http://xmlns.com/foaf/0.1/surname> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://xmlns.com/foaf/0.1/surname> <http://www.w3.org/2000/01/rdf-schema#label> "Surname" .
+<http://xmlns.com/foaf/0.1/surname> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "archaic" .
+# 
+# http://xmlns.com/foaf/0.1/title
+<http://xmlns.com/foaf/0.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/title> <http://www.w3.org/2000/01/rdf-schema#comment> "Title (Mr, Mrs, Ms, Dr. etc)" .
+<http://xmlns.com/foaf/0.1/title> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://xmlns.com/foaf/0.1/title> <http://www.w3.org/2000/01/rdf-schema#label> "title" .
+<http://xmlns.com/foaf/0.1/title> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+# 
+# http://xmlns.com/foaf/0.1/yahooChatID
+<http://xmlns.com/foaf/0.1/yahooChatID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/yahooChatID> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://xmlns.com/foaf/0.1/nick> .
+<http://xmlns.com/foaf/0.1/yahooChatID> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+<http://www.w3.org/2002/07/owl#Thing> <http://www.w3.org/2000/01/rdf-schema#label> "Thing" .
+# 
+<http://xmlns.com/foaf/0.1/name> <http://www.w3.org/2000/01/rdf-schema#comment> "A name for some thing." .
+<http://xmlns.com/foaf/0.1/name> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://xmlns.com/foaf/0.1/name> <http://www.w3.org/2000/01/rdf-schema#label> "name" .
+<http://xmlns.com/foaf/0.1/name> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+# 
+# Generated by the OWL API (version 5.1.9) https://github.com/owlcs/owlapi/

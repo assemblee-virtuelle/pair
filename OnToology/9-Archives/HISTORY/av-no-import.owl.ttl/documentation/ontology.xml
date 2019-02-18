@@ -1,0 +1,971 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.assemblee-virtuelle.org/ontologies/v1.owl#"
+     xml:base="http://www.assemblee-virtuelle.org/ontologies/v1.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:v1="http://www.assemblee-virtuelle.org/ontologies/v1.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:wot="http://xmlns.com/wot/0.1/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#">
+        <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:comment xml:lang="fr">Ontologie de l&apos;Assemblée Virtuelle, en vue de la Plateforme web;
+	concepts de base: Projets, Acteurs, Idées, Ressources (PAIR)
+	cf mail de Guillaume du 20 Mar 2014 11:42
+	avec &quot;Prédicats ecosysteme&quot; , la rose des vents de Guillaume,
+	et &quot;Jalons - Cartographie sémantique des ecosystemes de PAIR&quot;
+	cf https://basecamp.com/2588660/projects/5413946-plateforme-web-av/documents/5456204-concepts-de-base 
+	et mail envoyé par Guillaume le 23 mars 
+	PAIR : Projet – Acteur – Idée – Ressource. </rdfs:comment>
+        <rdfs:label xml:lang="fr">Ontologie de l&apos;Assemblée Virtuelle</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#metAt -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#metAt">
+        <rdfs:label xml:lang="fr">rencontré à</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#actor -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#actor">
+        <rdfs:range rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor"/>
+        <rdfs:label xml:lang="fr">acteur</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#compatibleWith -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#compatibleWith">
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"/>
+        <rdfs:range rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"/>
+        <rdfs:label xml:lang="fr">compatible avec</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributes -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributes">
+        <owl:inverseOf rdf:resource="http://xmlns.com/foaf/0.1/member"/>
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+        <rdfs:label xml:lang="fr">contribue</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributesToOrganization -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributesToOrganization">
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:label xml:lang="fr">adhère</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#convergentWith -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#convergentWith">
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"/>
+        <rdfs:range rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"/>
+        <rdfs:label xml:lang="fr">convergent avec</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#employeeOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#employeeOf">
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:label xml:lang="fr">employé par</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#foughtBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#foughtBy">
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"/>
+        <rdfs:range rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor"/>
+        <rdfs:label xml:lang="fr">combattue par</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasContributor -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasContributor"/>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasEmployee -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasEmployee">
+        <rdfs:subPropertyOf rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasContributor"/>
+        <owl:inverseOf rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#employeeOf"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:range rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"/>
+        <rdfs:label xml:lang="fr">employé</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasMeeting -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasMeeting">
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project"/>
+        <rdfs:range rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Event"/>
+        <rdfs:label xml:lang="fr">Réunion</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#idea -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#idea">
+        <rdfs:range rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"/>
+        <rdfs:comment xml:lang="fr">idée associée</rdfs:comment>
+        <rdfs:label xml:lang="fr">idée</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#ideaCategory -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#ideaCategory">
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#theme"/>
+                    <rdf:Description rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#thesis"/>
+                </owl:oneOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label xml:lang="fr">catégorie d&apos;idée</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#implementedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#implementedBy">
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"/>
+        <rdfs:range rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project"/>
+        <rdfs:label xml:lang="fr">mise en oeuvre par</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#implements -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#implements">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+        <rdfs:range rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"/>
+        <rdfs:comment xml:lang="fr">le projet concrétise une idée</rdfs:comment>
+        <rdfs:label xml:lang="fr">idée</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#includes -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#includes">
+        <owl:inverseOf rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#partOf"/>
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"/>
+        <rdfs:range rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"/>
+        <rdfs:comment xml:lang="fr">une partie contenue physiquement ou logiquement dans la ressource sujet</rdfs:comment>
+        <rdfs:label xml:lang="fr">sous-partie de la ressource</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#inspiredBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#inspiredBy">
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+        <rdfs:range rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"/>
+        <rdfs:label xml:lang="fr">inspiré par</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#isImplementedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#isImplementedBy">
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"/>
+        <rdfs:range rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project"/>
+        <rdfs:comment xml:lang="fr">l&apos;idée est concrétisée par un projet</rdfs:comment>
+        <rdfs:label xml:lang="fr">projet</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#isLikedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#isLikedBy">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:range rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"/>
+        <rdfs:label xml:lang="fr">sympatisant</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#lead -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#lead">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:label xml:lang="fr">responsable</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesIdea -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesIdea">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:range rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"/>
+        <rdfs:label xml:lang="fr">aime l&apos;idée</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesOrganization -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesOrganization">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:label xml:lang="fr">aime l&apos;organisation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesProject -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesProject">
+        <rdfs:range rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project"/>
+        <rdfs:label xml:lang="fr">aime le projet</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#managedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#managedBy">
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:label xml:lang="fr">géré par</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByOrganization -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByOrganization">
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:label xml:lang="fr">ressource nécessaire à l&apos;organisation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByPerson -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByPerson">
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:label xml:lang="fr">ressource nécessaire à l&apos;individu</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByProject -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByProject">
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+        <rdfs:label xml:lang="fr">ressource nécessaire au projet</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsDocument -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsDocument">
+        <rdfs:subPropertyOf rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsResource"/>
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization"/>
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label xml:lang="fr">recherche des documents ou des bonnes pratiques.</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsGoodOrSpace -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsGoodOrSpace">
+        <rdfs:subPropertyOf rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsResource"/>
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization"/>
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label xml:lang="fr">recherche des biens ou des espaces.</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsResource -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsResource"/>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsServices -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsServices">
+        <rdfs:subPropertyOf rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsResource"/>
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization"/>
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label xml:lang="fr">recherche des services.</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#opposedTo -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#opposedTo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="_:genid-nodeid-node1d40881arx9"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+        <rdfs:range rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"/>
+                    <rdf:Description rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label xml:lang="fr">opposé à</rdfs:label>
+        <rdfs:label xml:lang="fr">opposé à l&apos;idée</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#originator -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#originator">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:range rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"/>
+        <rdfs:label xml:lang="fr">est à l&apos;origine</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#ownedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#ownedBy">
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:label xml:lang="fr">propriétaire</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#partOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#partOf">
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"/>
+        <rdfs:range rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"/>
+        <rdfs:comment xml:lang="fr">une partie contenant physiquement ou logiquement la ressource sujet</rdfs:comment>
+        <rdfs:label xml:lang="fr">ressource conteneur</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#partner -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#partner">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:label xml:lang="fr">partenaire</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#project -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#project">
+        <rdfs:range rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project"/>
+        <rdfs:comment xml:lang="fr">projet associé</rdfs:comment>
+        <rdfs:label xml:lang="fr">projet</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#projectCategory -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#projectCategory">
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#event"/>
+                    <rdf:Description rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#hardware"/>
+                    <rdf:Description rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#society"/>
+                    <rdf:Description rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#software"/>
+                </owl:oneOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label xml:lang="fr">catégorie de projet</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#requires -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#requires">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+        <rdfs:range rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"/>
+        <rdfs:label xml:lang="fr">nécessite ressource</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#resource -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#resource">
+        <rdfs:range rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"/>
+        <rdfs:comment xml:lang="fr">ressource associée</rdfs:comment>
+        <rdfs:label xml:lang="fr">ressource</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#resourceCategory -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#resourceCategory">
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#competence"/>
+                    <rdf:Description rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#document"/>
+                    <rdf:Description rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#good"/>
+                    <rdf:Description rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#services"/>
+                    <rdf:Description rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#space"/>
+                </owl:oneOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label xml:lang="fr">catégorie de ressource</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByOrganization -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByOrganization">
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:label xml:lang="fr">ressource partagée (proposée) par</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByPerson -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByPerson">
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:label xml:lang="fr">ressource partagée (proposée) par</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByProject -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByProject">
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+        <rdfs:label xml:lang="fr">partagée (proposée) par projet</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesDocument -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesDocument">
+        <rdfs:subPropertyOf rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesResource"/>
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization"/>
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"/>
+        <rdfs:label xml:lang="fr">propose ou partage des documents ou des bonnes pratiques.</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesGoodOrSpace -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesGoodOrSpace">
+        <rdfs:subPropertyOf rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesResource"/>
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization"/>
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"/>
+        <rdfs:label xml:lang="fr">propose ou partage des biens ou des espaces.</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesResource -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesResource">
+        <rdfs:range rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesServices -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesServices">
+        <rdfs:subPropertyOf rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesResource"/>
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization"/>
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"/>
+        <rdfs:label xml:lang="fr">propose des services.</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#specializedIn -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#specializedIn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:range rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"/>
+        <rdfs:label xml:lang="fr">spécialisé dans l&apos;idée</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#supportedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#supportedBy">
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"/>
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Projet"/>
+        <rdfs:range rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor"/>
+        <rdfs:comment xml:lang="fr">soutenue par</rdfs:comment>
+        <rdfs:label xml:lang="fr">acteur</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#supports -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#supports">
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+        <rdfs:label xml:lang="fr">soutient</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#targetUser -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#targetUser">
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Projet"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="fr">types d&apos;utilisateurs ciblés: occasionnels, réguliers, administrateurs, développeurs, ...</rdfs:comment>
+        <rdfs:label xml:lang="fr">utilisateurs cibles</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#usedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#usedBy">
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Projet"/>
+        <rdfs:domain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:label xml:lang="fr">utilisé par</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#worksWith -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#worksWith">
+        <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/knows"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:label xml:lang="fr">travaille avec</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/member -->
+
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/member"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#facebookId -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#facebookId">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:label xml:lang="fr">Facebook</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#linkedinId -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#linkedinId">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:label xml:lang="fr">LinkedIn</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#twitterId -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#twitterId">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:label xml:lang="fr">Twitter</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- _:genid-nodeid-node1d40881arx9 -->
+
+
+    <owl:Class rdf:about="_:genid-nodeid-node1d40881arx9"/>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor -->
+
+
+    <owl:Class rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <owl:disjointWith rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"/>
+        <owl:disjointWith rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project"/>
+        <rdfs:label xml:lang="fr">Acteur</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#Event -->
+
+
+    <owl:Class rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Event"/>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea -->
+
+
+    <owl:Class rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea">
+        <rdfs:comment> Exemples d&apos;idées: Développement Durable, social, économie, écologie, réflexions , analyse , critique, proposition  (l&apos;intention peut être projet ou non); 
+relation entre idées: opposition, compatibilité , convergence ...
+approche systémique ( et combinatoire )
+faits ? c&apos;est plus un sujet (Dublin core) qu&apos;une ressource ou une idée
+catégories, thématiques : passer du micro au macro ( particulier au général ) </rdfs:comment>
+        <rdfs:label xml:lang="fr">Idée</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization -->
+
+
+    <owl:Class rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization">
+        <rdfs:subClassOf rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor"/>
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:label xml:lang="fr">Organisation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person -->
+
+
+    <owl:Class rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person">
+        <rdfs:subClassOf rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor"/>
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:label xml:lang="fr">Individu</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project -->
+
+
+    <owl:Class rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+        <rdfs:comment xml:lang="en">NOTES:
+	- foaf:Project is the simplest common denominator
+	- doap:Project is also a foaf:Project
+	</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Un projet logiciel, sociétal, etc.</rdfs:comment>
+        <rdfs:label xml:lang="fr">Projet</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#Projet -->
+
+
+    <owl:Class rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Projet"/>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource -->
+
+
+    <owl:Class rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource">
+        <rdfs:comment>Exemples de ressources: documents, matérielles, services, financières, lieux, outils, networking (carnet)</rdfs:comment>
+        <rdfs:label xml:lang="fr">Ressource</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#competence -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#competence">
+        <rdfs:label xml:lang="fr">Compétences</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#document -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#document">
+        <rdfs:label xml:lang="fr">Ressource documentaire</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#event -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#event">
+        <rdfs:label xml:lang="fr">Événementiel</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#good -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#good">
+        <rdfs:label xml:lang="fr">Bien tangible</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#hardware -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#hardware">
+        <rdfs:label xml:lang="fr">Matériel</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#services -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#services">
+        <rdfs:label xml:lang="fr">Services</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#society -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#society">
+        <rdfs:label xml:lang="fr">Sociétal</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#software -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#software">
+        <rdfs:label xml:lang="fr">Immatériel (logiciel etc)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#space -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#space">
+        <rdfs:label xml:lang="fr">Espace</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#theme -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#theme">
+        <rdfs:label xml:lang="fr">Thème</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.assemblee-virtuelle.org/ontologies/v1.owl#thesis -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.assemblee-virtuelle.org/ontologies/v1.owl#thesis">
+        <rdfs:label xml:lang="fr">Thèse</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.9) https://github.com/owlcs/owlapi/ -->
+
+

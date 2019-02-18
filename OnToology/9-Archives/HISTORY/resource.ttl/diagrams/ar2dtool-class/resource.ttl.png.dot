@@ -1,0 +1,43 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+node [shape = rectangle, color="orange"]; "av:Resource" ; /*classes style*/
+	"NULL" -> "av:space" [ label = "rdf:first" ];
+	"NULL" -> "av:good" [ label = "rdf:first" ];
+	"NULL" -> "388744f5:1690088bebe:-7ff9" [ label = "rdf:rest" ];
+	"NULL" -> "av:competence" [ label = "rdf:first" ];
+	"NULL" -> "av:services" [ label = "rdf:first" ];
+	"NULL" -> "388744f5:1690088bebe:-7ff8" [ label = "rdf:rest" ];
+	"NULL" -> "388744f5:1690088bebe:-7ffb" [ label = "rdf:rest" ];
+	"NULL" -> "rdf:nil" [ label = "rdf:rest" ];
+	"NULL" -> "av:document" [ label = "rdf:first" ];
+	"NULL" -> "388744f5:1690088bebe:-7ffa" [ label = "rdf:rest" ];
+	"NULL" -> "388744f5:1690088bebe:-7ffc" [ label = "owl:oneOf" ];
+	"av:sharesGoodOrSpace" -> "av:sharesResource" [ label = "rdfs:subPropertyOf" ];
+	"av:needsServices" -> "av:needsResource" [ label = "rdfs:subPropertyOf" ];
+	"av:sharesServices" -> "av:sharesResource" [ label = "rdfs:subPropertyOf" ];
+	"av:needsGoodOrSpace" -> "av:needsResource" [ label = "rdfs:subPropertyOf" ];
+	"av:needsDocument" -> "av:needsResource" [ label = "rdfs:subPropertyOf" ];
+	"av:sharesDocument" -> "av:sharesResource" [ label = "rdfs:subPropertyOf" ];
+	"av:Organization" -> "owl:Thing" [ label = "av:needsGoodOrSpace" ];
+	"av:Resource" -> "foaf:Agent" [ label = "av:usedBy" ];
+	"owl:Thing" -> "av:Resource" [ label = "av:resource" ];
+	"av:Resource" -> "foaf:Organization" [ label = "av:neededByOrganization" ];
+	"av:Resource" -> "foaf:Person" [ label = "av:sharedByPerson" ];
+	"av:Resource" -> "a7156a77c0940cafd55af6ecf59cd9ba" [ label = "av:resourceCategory" ];
+	"av:Resource" -> "foaf:Person" [ label = "av:neededByPerson" ];
+	"av:Resource" -> "foaf:Project" [ label = "av:sharedByProject" ];
+	"av:Resource" -> "av:Resource" [ label = "av:partOf" ];
+	"av:Resource" -> "foaf:Project" [ label = "av:neededByProject" ];
+	"av:Organization" -> "av:Resource" [ label = "av:sharesDocument" ];
+	"av:Organization" -> "owl:Thing" [ label = "av:needsDocument" ];
+	"av:Resource" -> "foaf:Organization" [ label = "av:sharedByOrganization" ];
+	"owl:Thing" -> "av:Resource" [ label = "av:sharesResource" ];
+	"av:Organization" -> "av:Resource" [ label = "av:sharesGoodOrSpace" ];
+	"av:Resource" -> "foaf:Agent" [ label = "av:ownedBy" ];
+	"av:Resource" -> "foaf:Person" [ label = "av:managedBy" ];
+	"av:Organization" -> "av:Resource" [ label = "av:sharesServices" ];
+	"av:Organization" -> "owl:Thing" [ label = "av:needsServices" ];
+	"av:Resource" -> "av:Resource" [ label = "av:includes" ];
+
+}

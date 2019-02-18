@@ -1,0 +1,231 @@
+@prefix : <http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#> .
+
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23actualizes
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23actualizes> rdf:type owl:ObjectProperty ;
+                                                                           rdfs:domain <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource> ;
+                                                                           rdfs:range <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea> .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23composesOf
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23composesOf> rdf:type owl:ObjectProperty ;
+                                                                           rdfs:domain <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project> ;
+                                                                           rdfs:range <http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Task> .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23dependsOn
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23dependsOn> rdf:type owl:ObjectProperty ;
+                                                                          rdfs:domain <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource> ;
+                                                                          rdfs:range <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource> .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23endsAt
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23endsAt> rdf:type owl:ObjectProperty ;
+                                                                       rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                       rdf:type owl:AsymmetricProperty ;
+                                                                       rdfs:domain <http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Task> ;
+                                                                       rdfs:range <http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Milestone> .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23hasAnArgumentOn
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23hasAnArgumentOn> rdf:type owl:ObjectProperty ,
+                                                                                         owl:AsymmetricProperty ;
+                                                                                rdfs:domain <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor> ;
+                                                                                rdfs:range <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea> .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23hasDialecticalRelationWith
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23hasDialecticalRelationWith> rdf:type owl:ObjectProperty ;
+                                                                                           rdfs:domain <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea> ;
+                                                                                           rdfs:range <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea> .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23hasStructuralRelationWith
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23hasStructuralRelationWith> rdf:type owl:ObjectProperty ;
+                                                                                          rdfs:domain <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor> ;
+                                                                                          rdfs:range <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor> .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23inFieldOf
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23inFieldOf> rdf:type owl:ObjectProperty ,
+                                                                                   owl:AsymmetricProperty ,
+                                                                                   owl:IrreflexiveProperty ;
+                                                                          rdfs:domain <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea> ;
+                                                                          rdfs:range <http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Theme> .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23isFacetOf
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23isFacetOf> rdf:type owl:ObjectProperty ,
+                                                                                   owl:SymmetricProperty ,
+                                                                                   owl:TransitiveProperty ;
+                                                                          rdfs:domain <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity> ;
+                                                                          rdfs:range <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity> .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23needs
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23needs> rdf:type owl:ObjectProperty ;
+                                                                      rdfs:domain <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project> ;
+                                                                      rdfs:range <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource> .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23products
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23products> rdf:type owl:ObjectProperty ;
+                                                                         rdfs:domain <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project> ;
+                                                                         rdfs:range <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource> .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23sparks
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23sparks> rdf:type owl:ObjectProperty ;
+                                                                       rdfs:domain <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project> ;
+                                                                       rdfs:range <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea> .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23suscites
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23suscites> rdf:type owl:ObjectProperty ,
+                                                                                  owl:AsymmetricProperty ;
+                                                                         rdfs:domain <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea> ;
+                                                                         rdfs:range <http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Argument> .
+
+
+###  http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#carriesOut
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#carriesOut> rdf:type owl:ObjectProperty ;
+                                                                                          rdfs:domain <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project> ;
+                                                                                          rdfs:range <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea> .
+
+
+###  http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#coOperatesWith
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#coOperatesWith> rdf:type owl:ObjectProperty ;
+                                                                                              rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                                              rdf:type owl:SymmetricProperty ,
+                                                                                                       owl:TransitiveProperty ,
+                                                                                                       owl:IrreflexiveProperty ;
+                                                                                              rdfs:domain <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor> ;
+                                                                                              rdfs:range <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor> .
+
+
+###  http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#coProducts
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#coProducts> rdf:type owl:ObjectProperty ;
+                                                                                          owl:inverseOf <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#profitsTo> ;
+                                                                                          rdfs:domain <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor> ;
+                                                                                          rdfs:range <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project> .
+
+
+###  http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#disposesOf
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#disposesOf> rdf:type owl:ObjectProperty ;
+                                                                                          rdfs:domain <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor> ;
+                                                                                          rdfs:range <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource> .
+
+
+###  http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#profitsTo
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#profitsTo> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Argument
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Argument> rdf:type owl:Class .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Competence
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Competence> rdf:type owl:Class ;
+                                                                           rdfs:subClassOf <http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23HumanResources> .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Educational
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Educational> rdf:type owl:Class ;
+                                                                            rdfs:subClassOf <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource> .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Event
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Event> rdf:type owl:Class .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23HumanResources
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23HumanResources> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource> .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Immaterials
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Immaterials> rdf:type owl:Class ;
+                                                                            rdfs:subClassOf <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource> .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Materials
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Materials> rdf:type owl:Class ;
+                                                                          rdfs:subClassOf <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource> .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Milestone
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Milestone> rdf:type owl:Class ;
+                                                                          rdfs:subClassOf <http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Event> .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23NaturalResources
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23NaturalResources> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource> .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Task
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Task> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf owl:Thing .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Theme
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Theme> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor> rdf:type owl:Class ;
+                                                                                     rdfs:subClassOf <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity> .
+
+
+###  http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity> rdf:type owl:Class ;
+                                                                                      rdfs:comment "Concept englobant les quatre concepts-clefs de l'ontologie. Ce concept est principalement lié à la propritété 'facet' qui permet de décrire qu'un PAIR est une facette d'un autre PAIR"@fr ;
+                                                                                      rdfs:label "Entité"@fr .
+
+
+###  http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea> rdf:type owl:Class ;
+                                                                                    rdfs:subClassOf <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity> .
+
+
+###  http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Organization
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Organization> rdf:type owl:Class ;
+                                                                                            rdfs:subClassOf <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor> .
+
+
+###  http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Person
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Person> rdf:type owl:Class ;
+                                                                                      rdfs:subClassOf <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor> .
+
+
+###  http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project> rdf:type owl:Class ;
+                                                                                       rdfs:subClassOf <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity> .
+
+
+###  http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource> rdf:type owl:Class ;
+                                                                                        rdfs:subClassOf <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity> .
+
+
+###  http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Thesis
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Thesis> rdf:type owl:Class ;
+                                                                                      rdfs:subClassOf <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea> .
+
+
+###  Generated by the OWL API (version 5.1.9) https://github.com/owlcs/owlapi/

@@ -1,0 +1,16 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "base:Person" "foaf:Project" "foaf:Agent" "base:Project" "base:Resource" "base:Work" "base:Idea" "base:Actor" "foaf:Person" "foaf:Organization" "http://www.w3.org/2004/02/skos/core#Concept" "http://creativecommons.org/ns#Work" "base:Organization" ; /*classes style*/
+	"base:Person" -> "foaf:Person" [ label = "rdfs:subClassOf" ];
+	"base:Person" -> "base:Actor" [ label = "rdfs:subClassOf" ];
+	"base:Idea" -> "http://www.w3.org/2004/02/skos/core#Concept" [ label = "rdfs:subClassOf" ];
+	"base:Work" -> "base:Resource" [ label = "rdfs:subClassOf" ];
+	"base:Work" -> "http://creativecommons.org/ns#Work" [ label = "rdfs:subClassOf" ];
+	"base:Project" -> "foaf:Project" [ label = "rdfs:subClassOf" ];
+	"base:Actor" -> "foaf:Agent" [ label = "rdfs:subClassOf" ];
+	"base:Actor" -> "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor" [ label = "rdfs:subClassOf" ];
+	"base:Organization" -> "foaf:Organization" [ label = "rdfs:subClassOf" ];
+	"base:Organization" -> "base:Actor" [ label = "rdfs:subClassOf" ];
+
+}

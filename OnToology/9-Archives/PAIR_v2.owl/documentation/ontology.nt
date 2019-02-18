@@ -1,0 +1,980 @@
+<http://virtual-assembly.org/pair_v2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://virtual-assembly.org/pair_v2#_interObject_objectProperty
+<http://virtual-assembly.org/pair_v2#_interObject_objectProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://virtual-assembly.org/pair_v2#_interSubject_objectProperty
+<http://virtual-assembly.org/pair_v2#_interSubject_objectProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://virtual-assembly.org/pair_v2#_object-subject_objectProperty
+<http://virtual-assembly.org/pair_v2#_object-subject_objectProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://virtual-assembly.org/pair_v2#affiliatedBy
+<http://virtual-assembly.org/pair_v2#affiliatedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#affiliatedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interSubject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#affiliatedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Person> .
+# 
+# http://virtual-assembly.org/pair_v2#affiliates
+<http://virtual-assembly.org/pair_v2#affiliates> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#affiliates> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interSubject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#affiliates> <http://www.w3.org/2002/07/owl#inverseOf> <http://virtual-assembly.org/pair_v2#affiliatedBy> .
+<http://virtual-assembly.org/pair_v2#affiliates> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Organization> .
+# 
+# http://virtual-assembly.org/pair_v2#brainstormedBy
+<http://virtual-assembly.org/pair_v2#brainstormedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#brainstormedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interSubject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#brainstormedBy> <http://www.w3.org/2002/07/owl#inverseOf> <http://virtual-assembly.org/pair_v2#brainstorms> .
+<http://virtual-assembly.org/pair_v2#brainstormedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Proposal> .
+# 
+# http://virtual-assembly.org/pair_v2#brainstorms
+<http://virtual-assembly.org/pair_v2#brainstorms> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#brainstorms> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interSubject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#brainstorms> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Person> .
+# 
+# http://virtual-assembly.org/pair_v2#concretizedBy
+<http://virtual-assembly.org/pair_v2#concretizedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#concretizedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interSubject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#concretizedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Proposal> .
+# 
+# http://virtual-assembly.org/pair_v2#concretizes
+<http://virtual-assembly.org/pair_v2#concretizes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#concretizes> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interSubject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#concretizes> <http://www.w3.org/2002/07/owl#inverseOf> <http://virtual-assembly.org/pair_v2#concretizedBy> .
+<http://virtual-assembly.org/pair_v2#concretizes> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Project> .
+# 
+# http://virtual-assembly.org/pair_v2#deliveredBy
+<http://virtual-assembly.org/pair_v2#deliveredBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#deliveredBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interSubject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#deliveredBy> <http://www.w3.org/2002/07/owl#inverseOf> <http://virtual-assembly.org/pair_v2#delivers> .
+<http://virtual-assembly.org/pair_v2#deliveredBy> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Event> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Place> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+# http://virtual-assembly.org/pair_v2#delivers
+<http://virtual-assembly.org/pair_v2#delivers> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#delivers> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interSubject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#delivers> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Project> .
+# 
+# http://virtual-assembly.org/pair_v2#documentedBy
+<http://virtual-assembly.org/pair_v2#documentedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#documentedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_object-subject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#documentedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#SUBJECT> .
+# 
+# http://virtual-assembly.org/pair_v2#documents
+<http://virtual-assembly.org/pair_v2#documents> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#documents> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_object-subject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#documents> <http://www.w3.org/2002/07/owl#inverseOf> <http://virtual-assembly.org/pair_v2#documentedBy> .
+<http://virtual-assembly.org/pair_v2#documents> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Document> .
+# 
+# http://virtual-assembly.org/pair_v2#employedBy
+<http://virtual-assembly.org/pair_v2#employedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#employedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#affiliatedBy> .
+<http://virtual-assembly.org/pair_v2#employedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Person> .
+# 
+# http://virtual-assembly.org/pair_v2#employs
+<http://virtual-assembly.org/pair_v2#employs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#employs> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#affiliates> .
+<http://virtual-assembly.org/pair_v2#employs> <http://www.w3.org/2002/07/owl#inverseOf> <http://virtual-assembly.org/pair_v2#employedBy> .
+<http://virtual-assembly.org/pair_v2#employs> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Organization> .
+# 
+# http://virtual-assembly.org/pair_v2#hasInterest
+<http://virtual-assembly.org/pair_v2#hasInterest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#hasInterest> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interSubject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#hasInterest> <http://www.w3.org/2002/07/owl#inverseOf> <http://virtual-assembly.org/pair_v2#interestOf> .
+<http://virtual-assembly.org/pair_v2#hasInterest> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#PERSONALITY> .
+# 
+# http://virtual-assembly.org/pair_v2#hasMember
+<http://virtual-assembly.org/pair_v2#hasMember> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#hasMember> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#affiliates> .
+<http://virtual-assembly.org/pair_v2#hasMember> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Organization> .
+# 
+# http://virtual-assembly.org/pair_v2#hasPart
+<http://virtual-assembly.org/pair_v2#hasPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#hasPart> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interSubject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#hasPart> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid5 <http://www.w3.org/2002/07/owl#unionOf> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Address> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Building> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Floor> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+# http://virtual-assembly.org/pair_v2#hasResponsible
+<http://virtual-assembly.org/pair_v2#hasResponsible> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#hasResponsible> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#affiliates> .
+<http://virtual-assembly.org/pair_v2#hasResponsible> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Organization> .
+# 
+# http://virtual-assembly.org/pair_v2#hasSubject
+<http://virtual-assembly.org/pair_v2#hasSubject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#hasSubject> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interSubject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#hasSubject> <http://www.w3.org/2002/07/owl#inverseOf> <http://virtual-assembly.org/pair_v2#subjectOf> .
+<http://virtual-assembly.org/pair_v2#hasSubject> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#SUBJECT> .
+# 
+# http://virtual-assembly.org/pair_v2#hasType
+<http://virtual-assembly.org/pair_v2#hasType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#hasType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interSubject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#hasType> <http://www.w3.org/2002/07/owl#inverseOf> <http://virtual-assembly.org/pair_v2#typeOf> .
+<http://virtual-assembly.org/pair_v2#hasType> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid9 <http://www.w3.org/2002/07/owl#unionOf> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Document> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Organization> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Place> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+# http://virtual-assembly.org/pair_v2#hostedIn
+<http://virtual-assembly.org/pair_v2#hostedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#hostedIn> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interSubject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#hostedIn> <http://www.w3.org/2002/07/owl#inverseOf> <http://virtual-assembly.org/pair_v2#hosts> .
+<http://virtual-assembly.org/pair_v2#hostedIn> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid13 <http://www.w3.org/2002/07/owl#unionOf> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Organization> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+# http://virtual-assembly.org/pair_v2#hosts
+<http://virtual-assembly.org/pair_v2#hosts> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#hosts> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interSubject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#hosts> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid16 <http://www.w3.org/2002/07/owl#unionOf> _:genid18 .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#BUILDING_ITEM> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid17 .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Room> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+# http://virtual-assembly.org/pair_v2#interestOf
+<http://virtual-assembly.org/pair_v2#interestOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#interestOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interSubject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#interestOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Thema> .
+# 
+# http://virtual-assembly.org/pair_v2#involvedIn
+<http://virtual-assembly.org/pair_v2#involvedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#involvedIn> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interSubject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#involvedIn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Person> .
+# 
+# http://virtual-assembly.org/pair_v2#involves
+<http://virtual-assembly.org/pair_v2#involves> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#involves> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interSubject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#involves> <http://www.w3.org/2002/07/owl#inverseOf> <http://virtual-assembly.org/pair_v2#involvedIn> .
+<http://virtual-assembly.org/pair_v2#involves> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Project> .
+# 
+# http://virtual-assembly.org/pair_v2#knowedBy
+<http://virtual-assembly.org/pair_v2#knowedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#knowedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interSubject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#knowedBy> <http://www.w3.org/2002/07/owl#inverseOf> <http://virtual-assembly.org/pair_v2#knows> .
+<http://virtual-assembly.org/pair_v2#knowedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Person> .
+# 
+# http://virtual-assembly.org/pair_v2#knows
+<http://virtual-assembly.org/pair_v2#knows> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#knows> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interSubject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#knows> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Person> .
+# 
+# http://virtual-assembly.org/pair_v2#localizedBy
+<http://virtual-assembly.org/pair_v2#localizedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#localizedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interSubject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#localizedBy> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid19 .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid19 <http://www.w3.org/2002/07/owl#unionOf> _:genid22 .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Event> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid21 .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Person> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid20 .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Place> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+# http://virtual-assembly.org/pair_v2#localizes
+<http://virtual-assembly.org/pair_v2#localizes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#localizes> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interSubject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#localizes> <http://www.w3.org/2002/07/owl#inverseOf> <http://virtual-assembly.org/pair_v2#localizedBy> .
+<http://virtual-assembly.org/pair_v2#localizes> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Address> .
+# 
+# http://virtual-assembly.org/pair_v2#managedBy
+<http://virtual-assembly.org/pair_v2#managedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#managedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#involves> .
+<http://virtual-assembly.org/pair_v2#managedBy> <http://www.w3.org/2002/07/owl#inverseOf> <http://virtual-assembly.org/pair_v2#manages> .
+<http://virtual-assembly.org/pair_v2#managedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Project> .
+# 
+# http://virtual-assembly.org/pair_v2#manages
+<http://virtual-assembly.org/pair_v2#manages> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#manages> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#involvedIn> .
+<http://virtual-assembly.org/pair_v2#manages> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Person> .
+# 
+# http://virtual-assembly.org/pair_v2#memberOf
+<http://virtual-assembly.org/pair_v2#memberOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#memberOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#affiliatedBy> .
+<http://virtual-assembly.org/pair_v2#memberOf> <http://www.w3.org/2002/07/owl#inverseOf> <http://virtual-assembly.org/pair_v2#hasMember> .
+<http://virtual-assembly.org/pair_v2#memberOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Person> .
+# 
+# http://virtual-assembly.org/pair_v2#neededBy
+<http://virtual-assembly.org/pair_v2#neededBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#neededBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interSubject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#neededBy> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid23 .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid23 <http://www.w3.org/2002/07/owl#unionOf> _:genid26 .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid25 .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Place> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid24 .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Skill> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+# http://virtual-assembly.org/pair_v2#needs
+<http://virtual-assembly.org/pair_v2#needs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#needs> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interSubject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#needs> <http://www.w3.org/2002/07/owl#inverseOf> <http://virtual-assembly.org/pair_v2#neededBy> .
+<http://virtual-assembly.org/pair_v2#needs> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid27 .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid27 <http://www.w3.org/2002/07/owl#unionOf> _:genid29 .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#PERSONALITY> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Project> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+# http://virtual-assembly.org/pair_v2#offeredBy
+<http://virtual-assembly.org/pair_v2#offeredBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#offeredBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interSubject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#offeredBy> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid30 .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid30 <http://www.w3.org/2002/07/owl#unionOf> _:genid33 .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid32 .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Place> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid31 .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Skill> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+# http://virtual-assembly.org/pair_v2#offers
+<http://virtual-assembly.org/pair_v2#offers> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#offers> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interSubject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#offers> <http://www.w3.org/2002/07/owl#inverseOf> <http://virtual-assembly.org/pair_v2#offeredBy> .
+<http://virtual-assembly.org/pair_v2#offers> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#PERSONALITY> .
+# 
+# http://virtual-assembly.org/pair_v2#partOf
+<http://virtual-assembly.org/pair_v2#partOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#partOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interSubject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#partOf> <http://www.w3.org/2002/07/owl#inverseOf> <http://virtual-assembly.org/pair_v2#hasPart> .
+<http://virtual-assembly.org/pair_v2#partOf> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid34 .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid34 <http://www.w3.org/2002/07/owl#unionOf> _:genid37 .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Floor> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid36 .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Room> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid35 .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Town> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+# http://virtual-assembly.org/pair_v2#references
+<http://virtual-assembly.org/pair_v2#references> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#references> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interObject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#references> <http://www.w3.org/2002/07/owl#inverseOf> <http://virtual-assembly.org/pair_v2#referencesBy> .
+<http://virtual-assembly.org/pair_v2#references> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Document> .
+# 
+# http://virtual-assembly.org/pair_v2#referencesBy
+<http://virtual-assembly.org/pair_v2#referencesBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#referencesBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interObject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#referencesBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Document> .
+# 
+# http://virtual-assembly.org/pair_v2#representedBy
+<http://virtual-assembly.org/pair_v2#representedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#representedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#documentedBy> .
+<http://virtual-assembly.org/pair_v2#representedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#SUBJECT> .
+# 
+# http://virtual-assembly.org/pair_v2#represents
+<http://virtual-assembly.org/pair_v2#represents> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#represents> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#documents> .
+<http://virtual-assembly.org/pair_v2#represents> <http://www.w3.org/2002/07/owl#inverseOf> <http://virtual-assembly.org/pair_v2#representedBy> .
+<http://virtual-assembly.org/pair_v2#represents> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Document> .
+# 
+# http://virtual-assembly.org/pair_v2#responsibleOf
+<http://virtual-assembly.org/pair_v2#responsibleOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#responsibleOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#affiliatedBy> .
+<http://virtual-assembly.org/pair_v2#responsibleOf> <http://www.w3.org/2002/07/owl#inverseOf> <http://virtual-assembly.org/pair_v2#hasResponsible> .
+<http://virtual-assembly.org/pair_v2#responsibleOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Person> .
+# 
+# http://virtual-assembly.org/pair_v2#subjectOf
+<http://virtual-assembly.org/pair_v2#subjectOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#subjectOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interSubject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#subjectOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#SUBJECT> .
+# 
+# http://virtual-assembly.org/pair_v2#typeOf
+<http://virtual-assembly.org/pair_v2#typeOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://virtual-assembly.org/pair_v2#typeOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#_interSubject_objectProperty> .
+<http://virtual-assembly.org/pair_v2#typeOf> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid38 .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid38 <http://www.w3.org/2002/07/owl#unionOf> _:genid41 .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#DocumentType> .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid40 .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#OrganizationType> .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid39 .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#PlaceType> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://virtual-assembly.org/pair_v2#aboutPage
+<http://virtual-assembly.org/pair_v2#aboutPage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://virtual-assembly.org/pair_v2#aboutPage> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#webPage> .
+<http://virtual-assembly.org/pair_v2#aboutPage> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#HUBJECT> .
+# 
+# http://virtual-assembly.org/pair_v2#alternativeLabel
+<http://virtual-assembly.org/pair_v2#alternativeLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://virtual-assembly.org/pair_v2#alternativeLabel> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#label> .
+<http://virtual-assembly.org/pair_v2#alternativeLabel> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#HUBJECT> .
+# 
+# http://virtual-assembly.org/pair_v2#comment
+<http://virtual-assembly.org/pair_v2#comment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://virtual-assembly.org/pair_v2#comment> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#HUBJECT> .
+<http://virtual-assembly.org/pair_v2#comment> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://virtual-assembly.org/pair_v2#description
+<http://virtual-assembly.org/pair_v2#description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://virtual-assembly.org/pair_v2#description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://virtual-assembly.org/pair_v2#description> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#HUBJECT> .
+<http://virtual-assembly.org/pair_v2#description> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://virtual-assembly.org/pair_v2#e-mail
+<http://virtual-assembly.org/pair_v2#e-mail> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://virtual-assembly.org/pair_v2#e-mail> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#PERSONALITY> .
+<http://virtual-assembly.org/pair_v2#e-mail> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://virtual-assembly.org/pair_v2#endDate
+<http://virtual-assembly.org/pair_v2#endDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://virtual-assembly.org/pair_v2#endDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://virtual-assembly.org/pair_v2#endDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Event> .
+<http://virtual-assembly.org/pair_v2#endDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://virtual-assembly.org/pair_v2#firstName
+<http://virtual-assembly.org/pair_v2#firstName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://virtual-assembly.org/pair_v2#firstName> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#label> .
+<http://virtual-assembly.org/pair_v2#firstName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://virtual-assembly.org/pair_v2#firstName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Person> .
+# 
+# http://virtual-assembly.org/pair_v2#homePage
+<http://virtual-assembly.org/pair_v2#homePage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://virtual-assembly.org/pair_v2#homePage> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#webPage> .
+<http://virtual-assembly.org/pair_v2#homePage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://virtual-assembly.org/pair_v2#homePage> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#HUBJECT> .
+# 
+# http://virtual-assembly.org/pair_v2#label
+<http://virtual-assembly.org/pair_v2#label> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://virtual-assembly.org/pair_v2#label> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://virtual-assembly.org/pair_v2#lastName
+<http://virtual-assembly.org/pair_v2#lastName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://virtual-assembly.org/pair_v2#lastName> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#label> .
+<http://virtual-assembly.org/pair_v2#lastName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://virtual-assembly.org/pair_v2#lastName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Person> .
+# 
+# http://virtual-assembly.org/pair_v2#phone
+<http://virtual-assembly.org/pair_v2#phone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://virtual-assembly.org/pair_v2#phone> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#PERSONALITY> .
+<http://virtual-assembly.org/pair_v2#phone> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://virtual-assembly.org/pair_v2#preferedLabel
+<http://virtual-assembly.org/pair_v2#preferedLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://virtual-assembly.org/pair_v2#preferedLabel> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://virtual-assembly.org/pair_v2#label> .
+<http://virtual-assembly.org/pair_v2#preferedLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://virtual-assembly.org/pair_v2#preferedLabel> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#HUBJECT> .
+# 
+# http://virtual-assembly.org/pair_v2#startDate
+<http://virtual-assembly.org/pair_v2#startDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://virtual-assembly.org/pair_v2#startDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://virtual-assembly.org/pair_v2#startDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Event> .
+<http://virtual-assembly.org/pair_v2#startDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://virtual-assembly.org/pair_v2#subjectIdentifier
+<http://virtual-assembly.org/pair_v2#subjectIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://virtual-assembly.org/pair_v2#subjectIdentifier> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#HUBJECT> .
+<http://virtual-assembly.org/pair_v2#subjectIdentifier> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://virtual-assembly.org/pair_v2#webPage
+<http://virtual-assembly.org/pair_v2#webPage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://virtual-assembly.org/pair_v2#webPage> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://virtual-assembly.org/pair_v2#zipCode
+<http://virtual-assembly.org/pair_v2#zipCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://virtual-assembly.org/pair_v2#zipCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://virtual-assembly.org/pair_v2#zipCode> <http://www.w3.org/2000/01/rdf-schema#domain> <http://virtual-assembly.org/pair_v2#Town> .
+<http://virtual-assembly.org/pair_v2#zipCode> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://virtual-assembly.org/pair_v2#Address
+<http://virtual-assembly.org/pair_v2#Address> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#Address> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#WHERE_SUBJECT> .
+<http://virtual-assembly.org/pair_v2#Address> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid42 .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid42 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#hasPart> .
+_:genid42 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Town> .
+<http://virtual-assembly.org/pair_v2#Address> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid43 .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid43 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#localizes> .
+_:genid43 <http://www.w3.org/2002/07/owl#allValuesFrom> _:genid44 .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid44 <http://www.w3.org/2002/07/owl#unionOf> _:genid47 .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Event> .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid46 .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Person> .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid45 .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Place> .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://virtual-assembly.org/pair_v2#Address> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid48 .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid48 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#hasPart> .
+_:genid48 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+# 
+# http://virtual-assembly.org/pair_v2#BUILDING_ITEM
+<http://virtual-assembly.org/pair_v2#BUILDING_ITEM> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#BUILDING_ITEM> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#WHERE_SUBJECT> .
+<http://virtual-assembly.org/pair_v2#BUILDING_ITEM> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid49 .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid49 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#hosts> .
+_:genid49 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Organization> .
+# 
+# http://virtual-assembly.org/pair_v2#Building
+<http://virtual-assembly.org/pair_v2#Building> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#Building> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#BUILDING_ITEM> .
+<http://virtual-assembly.org/pair_v2#Building> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid50 .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid50 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#hasPart> .
+_:genid50 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Floor> .
+# 
+# http://virtual-assembly.org/pair_v2#Document
+<http://virtual-assembly.org/pair_v2#Document> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#Document> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#OBJECT> .
+<http://virtual-assembly.org/pair_v2#Document> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid51 .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid51 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#documents> .
+_:genid51 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#SUBJECT> .
+<http://virtual-assembly.org/pair_v2#Document> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid52 .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid52 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#hasType> .
+_:genid52 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#DocumentType> .
+<http://virtual-assembly.org/pair_v2#Document> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid53 .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid53 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#references> .
+_:genid53 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Document> .
+<http://virtual-assembly.org/pair_v2#Document> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid54 .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid54 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#referencesBy> .
+_:genid54 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Document> .
+<http://virtual-assembly.org/pair_v2#Document> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid55 .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid55 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#represents> .
+_:genid55 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#SUBJECT> .
+<http://virtual-assembly.org/pair_v2#Document> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid56 .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid56 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#hasType> .
+_:genid56 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+# 
+# http://virtual-assembly.org/pair_v2#DocumentType
+<http://virtual-assembly.org/pair_v2#DocumentType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#DocumentType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#OBJECT> .
+<http://virtual-assembly.org/pair_v2#DocumentType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid57 .
+_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid57 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#typeOf> .
+_:genid57 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Document> .
+# 
+# http://virtual-assembly.org/pair_v2#Event
+<http://virtual-assembly.org/pair_v2#Event> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#MISC_SUBJECT> .
+<http://virtual-assembly.org/pair_v2#Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid58 .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid58 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#deliveredBy> .
+_:genid58 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Project> .
+<http://virtual-assembly.org/pair_v2#Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid59 .
+_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid59 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#localizedBy> .
+_:genid59 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Address> .
+# 
+# http://virtual-assembly.org/pair_v2#Floor
+<http://virtual-assembly.org/pair_v2#Floor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#Floor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#BUILDING_ITEM> .
+<http://virtual-assembly.org/pair_v2#Floor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid60 .
+_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid60 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#hasPart> .
+_:genid60 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Room> .
+<http://virtual-assembly.org/pair_v2#Floor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid61 .
+_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid61 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#partOf> .
+_:genid61 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Building> .
+<http://virtual-assembly.org/pair_v2#Floor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid62 .
+_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid62 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#partOf> .
+_:genid62 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+# 
+# http://virtual-assembly.org/pair_v2#GOOD
+<http://virtual-assembly.org/pair_v2#GOOD> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#GOOD> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE> .
+# 
+# http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE
+<http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#WHAT_SUBJECT> .
+<http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid63 .
+_:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid63 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#deliveredBy> .
+_:genid63 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Project> .
+<http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid64 .
+_:genid64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid64 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#hostedIn> .
+_:genid64 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Room> .
+<http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid65 .
+_:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid65 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#neededBy> .
+_:genid65 <http://www.w3.org/2002/07/owl#allValuesFrom> _:genid66 .
+_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid66 <http://www.w3.org/2002/07/owl#unionOf> _:genid69 .
+_:genid69 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid69 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Organization> .
+_:genid69 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid68 .
+_:genid68 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid68 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Person> .
+_:genid68 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid67 .
+_:genid67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Project> .
+_:genid67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid70 .
+_:genid70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid70 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#offeredBy> .
+_:genid70 <http://www.w3.org/2002/07/owl#allValuesFrom> _:genid71 .
+_:genid71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid71 <http://www.w3.org/2002/07/owl#unionOf> _:genid73 .
+_:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Organization> .
+_:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid72 .
+_:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Person> .
+_:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+# http://virtual-assembly.org/pair_v2#HOW_SUBJECT
+<http://virtual-assembly.org/pair_v2#HOW_SUBJECT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#HOW_SUBJECT> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#SUBJECT> .
+# 
+# http://virtual-assembly.org/pair_v2#HUBJECT
+<http://virtual-assembly.org/pair_v2#HUBJECT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://virtual-assembly.org/pair_v2#IntangibleGood
+<http://virtual-assembly.org/pair_v2#IntangibleGood> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#IntangibleGood> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#GOOD> .
+# 
+# http://virtual-assembly.org/pair_v2#MISC_SUBJECT
+<http://virtual-assembly.org/pair_v2#MISC_SUBJECT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#MISC_SUBJECT> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#SUBJECT> .
+# 
+# http://virtual-assembly.org/pair_v2#OBJECT
+<http://virtual-assembly.org/pair_v2#OBJECT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#OBJECT> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#HUBJECT> .
+# 
+# http://virtual-assembly.org/pair_v2#Organization
+<http://virtual-assembly.org/pair_v2#Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#PERSONALITY> .
+<http://virtual-assembly.org/pair_v2#Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid74 .
+_:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid74 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#affiliates> .
+_:genid74 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Person> .
+<http://virtual-assembly.org/pair_v2#Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid75 .
+_:genid75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid75 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#employs> .
+_:genid75 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Person> .
+<http://virtual-assembly.org/pair_v2#Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid76 .
+_:genid76 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid76 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#hasMember> .
+_:genid76 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Person> .
+<http://virtual-assembly.org/pair_v2#Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid77 .
+_:genid77 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid77 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#hasResponsible> .
+_:genid77 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Person> .
+<http://virtual-assembly.org/pair_v2#Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid78 .
+_:genid78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid78 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#hasType> .
+_:genid78 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#OrganizationType> .
+<http://virtual-assembly.org/pair_v2#Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid79 .
+_:genid79 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid79 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#hostedIn> .
+_:genid79 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#BUILDING_ITEM> .
+<http://virtual-assembly.org/pair_v2#Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid80 .
+_:genid80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid80 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#needs> .
+_:genid80 <http://www.w3.org/2002/07/owl#allValuesFrom> _:genid81 .
+_:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid81 <http://www.w3.org/2002/07/owl#unionOf> _:genid84 .
+_:genid84 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid84 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE> .
+_:genid84 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid83 .
+_:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Place> .
+_:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid82 .
+_:genid82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Skill> .
+_:genid82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://virtual-assembly.org/pair_v2#Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid85 .
+_:genid85 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid85 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#offers> .
+_:genid85 <http://www.w3.org/2002/07/owl#allValuesFrom> _:genid86 .
+_:genid86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid86 <http://www.w3.org/2002/07/owl#unionOf> _:genid89 .
+_:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE> .
+_:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid88 .
+_:genid88 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid88 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Place> .
+_:genid88 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid87 .
+_:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Skill> .
+_:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://virtual-assembly.org/pair_v2#Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid90 .
+_:genid90 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid90 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#hasType> .
+_:genid90 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+# 
+# http://virtual-assembly.org/pair_v2#OrganizationType
+<http://virtual-assembly.org/pair_v2#OrganizationType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#OrganizationType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#WHO_SUBJECT> .
+<http://virtual-assembly.org/pair_v2#OrganizationType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid91 .
+_:genid91 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid91 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#typeOf> .
+_:genid91 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Organization> .
+# 
+# http://virtual-assembly.org/pair_v2#PERSONALITY
+<http://virtual-assembly.org/pair_v2#PERSONALITY> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#PERSONALITY> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#WHO_SUBJECT> .
+<http://virtual-assembly.org/pair_v2#PERSONALITY> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid92 .
+_:genid92 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid92 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#hasInterest> .
+_:genid92 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Thema> .
+<http://virtual-assembly.org/pair_v2#PERSONALITY> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid93 .
+_:genid93 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid93 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#needs> .
+_:genid93 <http://www.w3.org/2002/07/owl#allValuesFrom> _:genid94 .
+_:genid94 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid94 <http://www.w3.org/2002/07/owl#unionOf> _:genid96 .
+_:genid96 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid96 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE> .
+_:genid96 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid95 .
+_:genid95 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid95 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Skill> .
+_:genid95 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://virtual-assembly.org/pair_v2#PERSONALITY> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid97 .
+_:genid97 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid97 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#offers> .
+_:genid97 <http://www.w3.org/2002/07/owl#allValuesFrom> _:genid98 .
+_:genid98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid98 <http://www.w3.org/2002/07/owl#unionOf> _:genid100 .
+_:genid100 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid100 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE> .
+_:genid100 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid99 .
+_:genid99 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid99 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Skill> .
+_:genid99 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+# http://virtual-assembly.org/pair_v2#Person
+<http://virtual-assembly.org/pair_v2#Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#PERSONALITY> .
+<http://virtual-assembly.org/pair_v2#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid101 .
+_:genid101 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid101 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#affiliatedBy> .
+_:genid101 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Organization> .
+<http://virtual-assembly.org/pair_v2#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid102 .
+_:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid102 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#brainstorms> .
+_:genid102 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Proposal> .
+<http://virtual-assembly.org/pair_v2#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid103 .
+_:genid103 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid103 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#employedBy> .
+_:genid103 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Organization> .
+<http://virtual-assembly.org/pair_v2#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid104 .
+_:genid104 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid104 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#involvedIn> .
+_:genid104 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Project> .
+<http://virtual-assembly.org/pair_v2#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid105 .
+_:genid105 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid105 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#knowedBy> .
+_:genid105 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Person> .
+<http://virtual-assembly.org/pair_v2#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid106 .
+_:genid106 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid106 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#knows> .
+_:genid106 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Person> .
+<http://virtual-assembly.org/pair_v2#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid107 .
+_:genid107 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid107 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#localizedBy> .
+_:genid107 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Address> .
+<http://virtual-assembly.org/pair_v2#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid108 .
+_:genid108 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid108 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#manages> .
+_:genid108 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Project> .
+<http://virtual-assembly.org/pair_v2#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid109 .
+_:genid109 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid109 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#memberOf> .
+_:genid109 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Organization> .
+<http://virtual-assembly.org/pair_v2#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid110 .
+_:genid110 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid110 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#responsibleOf> .
+_:genid110 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Organization> .
+# 
+# http://virtual-assembly.org/pair_v2#Place
+<http://virtual-assembly.org/pair_v2#Place> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#Place> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#WHERE_SUBJECT> .
+<http://virtual-assembly.org/pair_v2#Place> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid111 .
+_:genid111 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid111 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#deliveredBy> .
+_:genid111 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Project> .
+<http://virtual-assembly.org/pair_v2#Place> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid112 .
+_:genid112 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid112 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#hasType> .
+_:genid112 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#PlaceType> .
+<http://virtual-assembly.org/pair_v2#Place> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid113 .
+_:genid113 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid113 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#localizedBy> .
+_:genid113 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Address> .
+<http://virtual-assembly.org/pair_v2#Place> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid114 .
+_:genid114 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid114 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#neededBy> .
+_:genid114 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Organization> .
+<http://virtual-assembly.org/pair_v2#Place> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid115 .
+_:genid115 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid115 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#offeredBy> .
+_:genid115 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Organization> .
+# 
+# http://virtual-assembly.org/pair_v2#PlaceType
+<http://virtual-assembly.org/pair_v2#PlaceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#PlaceType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#WHERE_SUBJECT> .
+<http://virtual-assembly.org/pair_v2#PlaceType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid116 .
+_:genid116 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid116 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#typeOf> .
+_:genid116 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Place> .
+# 
+# http://virtual-assembly.org/pair_v2#Project
+<http://virtual-assembly.org/pair_v2#Project> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#Project> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#HOW_SUBJECT> .
+<http://virtual-assembly.org/pair_v2#Project> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid117 .
+_:genid117 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid117 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#concretizes> .
+_:genid117 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Proposal> .
+<http://virtual-assembly.org/pair_v2#Project> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid118 .
+_:genid118 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid118 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#delivers> .
+_:genid118 <http://www.w3.org/2002/07/owl#allValuesFrom> _:genid119 .
+_:genid119 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid119 <http://www.w3.org/2002/07/owl#unionOf> _:genid122 .
+_:genid122 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid122 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Event> .
+_:genid122 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid121 .
+_:genid121 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid121 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE> .
+_:genid121 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid120 .
+_:genid120 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid120 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Place> .
+_:genid120 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://virtual-assembly.org/pair_v2#Project> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid123 .
+_:genid123 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid123 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#involves> .
+_:genid123 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Person> .
+<http://virtual-assembly.org/pair_v2#Project> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid124 .
+_:genid124 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid124 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#managedBy> .
+_:genid124 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Person> .
+<http://virtual-assembly.org/pair_v2#Project> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid125 .
+_:genid125 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid125 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#needs> .
+_:genid125 <http://www.w3.org/2002/07/owl#allValuesFrom> _:genid126 .
+_:genid126 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid126 <http://www.w3.org/2002/07/owl#unionOf> _:genid128 .
+_:genid128 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid128 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE> .
+_:genid128 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid127 .
+_:genid127 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid127 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Skill> .
+_:genid127 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+# http://virtual-assembly.org/pair_v2#Proposal
+<http://virtual-assembly.org/pair_v2#Proposal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#Proposal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#WHY_SUBJECT> .
+<http://virtual-assembly.org/pair_v2#Proposal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid129 .
+_:genid129 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid129 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#brainstormedBy> .
+_:genid129 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Person> .
+<http://virtual-assembly.org/pair_v2#Proposal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid130 .
+_:genid130 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid130 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#concretizedBy> .
+_:genid130 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Project> .
+# 
+# http://virtual-assembly.org/pair_v2#Room
+<http://virtual-assembly.org/pair_v2#Room> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#Room> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#BUILDING_ITEM> .
+<http://virtual-assembly.org/pair_v2#Room> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid131 .
+_:genid131 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid131 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#hosts> .
+_:genid131 <http://www.w3.org/2002/07/owl#allValuesFrom> _:genid132 .
+_:genid132 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid132 <http://www.w3.org/2002/07/owl#unionOf> _:genid134 .
+_:genid134 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid134 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE> .
+_:genid134 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid133 .
+_:genid133 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid133 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Organization> .
+_:genid133 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://virtual-assembly.org/pair_v2#Room> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid135 .
+_:genid135 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid135 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#partOf> .
+_:genid135 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Floor> .
+<http://virtual-assembly.org/pair_v2#Room> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid136 .
+_:genid136 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid136 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#partOf> .
+_:genid136 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+# 
+# http://virtual-assembly.org/pair_v2#SUBJECT
+<http://virtual-assembly.org/pair_v2#SUBJECT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#SUBJECT> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#HUBJECT> .
+# 
+# http://virtual-assembly.org/pair_v2#Service
+<http://virtual-assembly.org/pair_v2#Service> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#Service> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE> .
+# 
+# http://virtual-assembly.org/pair_v2#Skill
+<http://virtual-assembly.org/pair_v2#Skill> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#Skill> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#WHAT_SUBJECT> .
+<http://virtual-assembly.org/pair_v2#Skill> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid137 .
+_:genid137 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid137 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#neededBy> .
+_:genid137 <http://www.w3.org/2002/07/owl#allValuesFrom> _:genid138 .
+_:genid138 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid138 <http://www.w3.org/2002/07/owl#unionOf> _:genid141 .
+_:genid141 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid141 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Organization> .
+_:genid141 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid140 .
+_:genid140 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid140 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Person> .
+_:genid140 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid139 .
+_:genid139 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid139 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Project> .
+_:genid139 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://virtual-assembly.org/pair_v2#Skill> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid142 .
+_:genid142 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid142 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#offeredBy> .
+_:genid142 <http://www.w3.org/2002/07/owl#allValuesFrom> _:genid143 .
+_:genid143 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid143 <http://www.w3.org/2002/07/owl#unionOf> _:genid145 .
+_:genid145 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid145 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Organization> .
+_:genid145 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid144 .
+_:genid144 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid144 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Person> .
+_:genid144 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+# http://virtual-assembly.org/pair_v2#TangibleGood
+<http://virtual-assembly.org/pair_v2#TangibleGood> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#TangibleGood> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#GOOD> .
+# 
+# http://virtual-assembly.org/pair_v2#Thema
+<http://virtual-assembly.org/pair_v2#Thema> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#Thema> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#WHAT_SUBJECT> .
+<http://virtual-assembly.org/pair_v2#Thema> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid146 .
+_:genid146 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid146 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#interestOf> .
+_:genid146 <http://www.w3.org/2002/07/owl#allValuesFrom> _:genid147 .
+_:genid147 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid147 <http://www.w3.org/2002/07/owl#unionOf> _:genid149 .
+_:genid149 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid149 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Organization> .
+_:genid149 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid148 .
+_:genid148 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid148 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://virtual-assembly.org/pair_v2#Person> .
+_:genid148 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+# http://virtual-assembly.org/pair_v2#Town
+<http://virtual-assembly.org/pair_v2#Town> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#Town> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#WHERE_SUBJECT> .
+<http://virtual-assembly.org/pair_v2#Town> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid150 .
+_:genid150 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid150 <http://www.w3.org/2002/07/owl#onProperty> <http://virtual-assembly.org/pair_v2#partOf> .
+_:genid150 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://virtual-assembly.org/pair_v2#Address> .
+# 
+# http://virtual-assembly.org/pair_v2#WHAT_SUBJECT
+<http://virtual-assembly.org/pair_v2#WHAT_SUBJECT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#WHAT_SUBJECT> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#SUBJECT> .
+# 
+# http://virtual-assembly.org/pair_v2#WHEN_SUBJECT
+<http://virtual-assembly.org/pair_v2#WHEN_SUBJECT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#WHEN_SUBJECT> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#SUBJECT> .
+# 
+# http://virtual-assembly.org/pair_v2#WHERE_SUBJECT
+<http://virtual-assembly.org/pair_v2#WHERE_SUBJECT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#WHERE_SUBJECT> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#SUBJECT> .
+# 
+# http://virtual-assembly.org/pair_v2#WHO_SUBJECT
+<http://virtual-assembly.org/pair_v2#WHO_SUBJECT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#WHO_SUBJECT> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#SUBJECT> .
+# 
+# http://virtual-assembly.org/pair_v2#WHY_SUBJECT
+<http://virtual-assembly.org/pair_v2#WHY_SUBJECT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://virtual-assembly.org/pair_v2#WHY_SUBJECT> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://virtual-assembly.org/pair_v2#SUBJECT> .
+# 
+# Generated by the OWL API (version 5.1.9) https://github.com/owlcs/owlapi/

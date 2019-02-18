@@ -1,0 +1,603 @@
+<html><h2 id="crossreference" class="list">Cross reference for [Ontology Name] classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by [Ontology Name].
+<div id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor"
+            title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor">Acteur</a>
+      </li>
+      <li>
+         <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"
+            title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person">Individu</a>
+      </li>
+      <li>
+         <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization"
+            title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization">Organisation</a>
+      </li>
+   </ul>
+   <div class="entity" id="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor">
+      <h3>Acteur<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://xmlns.com/foaf/0.1/Agent">agent</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"
+               title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person">Individu</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization"
+               title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization">Organisation</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributes"
+               title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributes">contribue</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#supports"
+               title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#supports">soutient</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#actor"
+               title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#actor">acteur</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person">
+      <h3>Individu<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor"
+               title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor">Acteur</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <span class="dotted" title="http://xmlns.com/foaf/0.1/Person">person</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributesToOrganization"
+               title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributesToOrganization">adhère</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#employeeOf"
+               title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#employeeOf">employé par</a>
+            <sup class="type-op" title="object property">op</sup>, <span class="dotted"
+                  title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#metAt">rencontré à</span>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasEmployee"
+               title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasEmployee">employé</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#originator"
+               title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#originator">est à l'origine</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#isLikedBy"
+               title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#isLikedBy">sympatisant</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization">
+      <h3>Organisation<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor"
+               title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor">Acteur</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <span class="dotted" title="http://xmlns.com/foaf/0.1/Organization">organization</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#actor"
+            title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#actor">acteur</a>
+      </li>
+      <li>
+         <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributesToOrganization"
+            title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributesToOrganization">adhère</a>
+      </li>
+      <li>
+         <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesIdea"
+            title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesIdea">aime l'idée</a>
+      </li>
+      <li>
+         <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesOrganization"
+            title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesOrganization">aime l'organisation</a>
+      </li>
+      <li>
+         <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributes"
+            title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributes">contribue</a>
+      </li>
+      <li>
+         <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasEmployee"
+            title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasEmployee">employé</a>
+      </li>
+      <li>
+         <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#employeeOf"
+            title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#employeeOf">employé par</a>
+      </li>
+      <li>
+         <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#originator"
+            title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#originator">est à l'origine</a>
+      </li>
+      <li>
+         <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#opposedTo"
+            title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#opposedTo">opposé à l'idée</a>
+      </li>
+      <li>
+         <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#partner"
+            title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#partner">partenaire</a>
+      </li>
+      <li>
+         <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#supports"
+            title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#supports">soutient</a>
+      </li>
+      <li>
+         <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#specializedIn"
+            title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#specializedIn">spécialisé dans l'idée</a>
+      </li>
+      <li>
+         <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#isLikedBy"
+            title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#isLikedBy">sympatisant</a>
+      </li>
+      <li>
+         <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#worksWith"
+            title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#worksWith">travaille avec</a>
+      </li>
+   </ul>
+   <div class="entity" id="http://www.assemblee-virtuelle.org/ontologies/v1.owl#actor">
+      <h3>acteur<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.assemblee-virtuelle.org/ontologies/v1.owl#actor</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor"
+                  title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor">Acteur</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributesToOrganization">
+      <h3>adhère<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributesToOrganization</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"
+                  title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person">Individu</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://xmlns.com/foaf/0.1/Organization">organization</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesIdea">
+      <h3>aime l'idée<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesIdea</p>
+      <div class="description">
+         <p>
+            <strong>has characteristics:</strong> symmetric</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted" title="http://xmlns.com/foaf/0.1/Organization">organization</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted"
+                     title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea">idea</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesOrganization">
+      <h3>aime l'organisation<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesOrganization</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted" title="http://xmlns.com/foaf/0.1/Organization">organization</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://xmlns.com/foaf/0.1/Organization">organization</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributes">
+      <h3>contribue<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributes</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor"
+                  title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor">Acteur</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://xmlns.com/foaf/0.1/Project">project</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <span class="dotted" title="http://xmlns.com/foaf/0.1/member">member</span>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasEmployee">
+      <h3>employé<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasEmployee</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted"
+                     title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasContributor">has contributor</span>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted" title="http://xmlns.com/foaf/0.1/Organization">organization</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"
+                  title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person">Individu</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#employeeOf"
+                  title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#employeeOf">employé par</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.assemblee-virtuelle.org/ontologies/v1.owl#employeeOf">
+      <h3>employé par<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.assemblee-virtuelle.org/ontologies/v1.owl#employeeOf</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"
+                  title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person">Individu</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://xmlns.com/foaf/0.1/Organization">organization</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasEmployee"
+                  title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasEmployee">employé</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.assemblee-virtuelle.org/ontologies/v1.owl#originator">
+      <h3>est à l'origine<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.assemblee-virtuelle.org/ontologies/v1.owl#originator</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted" title="http://xmlns.com/foaf/0.1/Organization">organization</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"
+                  title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person">Individu</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.assemblee-virtuelle.org/ontologies/v1.owl#opposedTo">
+      <h3>opposé à l'idée<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.assemblee-virtuelle.org/ontologies/v1.owl#opposedTo</p>
+      <div class="description">
+         <p>
+            <strong>has characteristics:</strong> symmetric</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted" title="http://xmlns.com/foaf/0.1/Organization">organization</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted"
+                     title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea">idea</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.assemblee-virtuelle.org/ontologies/v1.owl#partner">
+      <h3>partenaire<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.assemblee-virtuelle.org/ontologies/v1.owl#partner</p>
+      <div class="description">
+         <p>
+            <strong>has characteristics:</strong> symmetric</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted" title="http://xmlns.com/foaf/0.1/Organization">organization</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://xmlns.com/foaf/0.1/Organization">organization</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.assemblee-virtuelle.org/ontologies/v1.owl#supports">
+      <h3>soutient<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.assemblee-virtuelle.org/ontologies/v1.owl#supports</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor"
+                  title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor">Acteur</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://xmlns.com/foaf/0.1/Project">project</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.assemblee-virtuelle.org/ontologies/v1.owl#specializedIn">
+      <h3>spécialisé dans l'idée<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.assemblee-virtuelle.org/ontologies/v1.owl#specializedIn</p>
+      <div class="description">
+         <p>
+            <strong>has characteristics:</strong> symmetric</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted" title="http://xmlns.com/foaf/0.1/Organization">organization</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted"
+                     title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea">idea</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.assemblee-virtuelle.org/ontologies/v1.owl#isLikedBy">
+      <h3>sympatisant<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.assemblee-virtuelle.org/ontologies/v1.owl#isLikedBy</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted" title="http://xmlns.com/foaf/0.1/Organization">organization</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"
+                  title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person">Individu</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.assemblee-virtuelle.org/ontologies/v1.owl#worksWith">
+      <h3>travaille avec<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.assemblee-virtuelle.org/ontologies/v1.owl#worksWith</p>
+      <div class="description">
+         <p>
+            <strong>has characteristics:</strong> symmetric</p>
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://xmlns.com/foaf/0.1/knows">knows</span>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted" title="http://xmlns.com/foaf/0.1/Person">person</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://xmlns.com/foaf/0.1/Person">person</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#facebookId"
+            title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#facebookId">Facebook</a>
+      </li>
+      <li>
+         <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#linkedinId"
+            title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#linkedinId">LinkedIn</a>
+      </li>
+      <li>
+         <a href="#http://www.assemblee-virtuelle.org/ontologies/v1.owl#twitterId"
+            title="http://www.assemblee-virtuelle.org/ontologies/v1.owl#twitterId">Twitter</a>
+      </li>
+   </ul>
+   <div class="entity" id="http://www.assemblee-virtuelle.org/ontologies/v1.owl#facebookId">
+      <h3>Facebook<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.assemblee-virtuelle.org/ontologies/v1.owl#facebookId</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted" title="http://xmlns.com/foaf/0.1/Person">person</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.assemblee-virtuelle.org/ontologies/v1.owl#linkedinId">
+      <h3>LinkedIn<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.assemblee-virtuelle.org/ontologies/v1.owl#linkedinId</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted" title="http://xmlns.com/foaf/0.1/Person">person</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.assemblee-virtuelle.org/ontologies/v1.owl#twitterId">
+      <h3>Twitter<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.assemblee-virtuelle.org/ontologies/v1.owl#twitterId</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted" title="http://xmlns.com/foaf/0.1/Person">person</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals
+</div>
+</div>
+</html>

@@ -1,0 +1,1010 @@
+[ {
+  "@id" : "_:genid-nodeid-node1d40881arx9",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#oneOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#theme"
+    }, {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#thesis"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid12",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#oneOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#competence"
+    }, {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#document"
+    }, {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#good"
+    }, {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#services"
+    }, {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#space"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid4",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+    }, {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid7",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#oneOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#event"
+    }, {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#hardware"
+    }, {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#society"
+    }, {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#software"
+    } ]
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "fr",
+    "@value" : "Ontologie de l'Assemblée Virtuelle, en vue de la Plateforme web;\n\tconcepts de base: Projets, Acteurs, Idées, Ressources (PAIR)\n\tcf mail de Guillaume du 20 Mar 2014 11:42\n\tavec \"Prédicats ecosysteme\" , la rose des vents de Guillaume,\n\tet \"Jalons - Cartographie sémantique des ecosystemes de PAIR\"\n\tcf https://basecamp.com/2588660/projects/5413946-plateforme-web-av/documents/5456204-concepts-de-base \n\tet mail envoyé par Guillaume le 23 mars \n\tPAIR : Projet – Acteur – Idée – Ressource. "
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Ontologie de l'Assemblée Virtuelle"
+  } ],
+  "http://www.w3.org/2002/07/owl#imports" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Acteur"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Agent"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  }, {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Event",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : " Exemples d'idées: Développement Durable, social, économie, écologie, réflexions , analyse , critique, proposition  (l'intention peut être projet ou non); \nrelation entre idées: opposition, compatibilité , convergence ...\napproche systémique ( et combinatoire )\nfaits ? c'est plus un sujet (Dublin core) qu'une ressource ou une idée\ncatégories, thématiques : passer du micro au macro ( particulier au général ) "
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Idée"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Organisation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor"
+  }, {
+    "@id" : "http://xmlns.com/foaf/0.1/Organization"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Individu"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor"
+  }, {
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "NOTES:\n\t- foaf:Project is the simplest common denominator\n\t- doap:Project is also a foaf:Project\n\t"
+  }, {
+    "@language" : "fr",
+    "@value" : "Un projet logiciel, sociétal, etc."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Projet"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Project"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Projet",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Exemples de ressources: documents, matérielles, services, financières, lieux, outils, networking (carnet)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Ressource"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#actor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "acteur"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#compatibleWith",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "compatible avec"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#competence",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Compétences"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributes",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "contribue"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Project"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/member"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributesToOrganization",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "adhère"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Organization"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#convergentWith",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "convergent avec"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#document",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Ressource documentaire"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#employeeOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "employé par"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Organization"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#event",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Événementiel"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#facebookId",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Facebook"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#foughtBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "combattue par"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#good",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Bien tangible"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#hardware",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Matériel"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasContributor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasEmployee",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "employé"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasContributor"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#employeeOf"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasMeeting",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Réunion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Event"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#idea",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "fr",
+    "@value" : "idée associée"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "idée"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#ideaCategory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "catégorie d'idée"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "_:genid1"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#implementedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "mise en oeuvre par"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#implements",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "fr",
+    "@value" : "le projet concrétise une idée"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Project"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "idée"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#includes",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "fr",
+    "@value" : "une partie contenue physiquement ou logiquement dans la ressource sujet"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "sous-partie de la ressource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#partOf"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#inspiredBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  }, {
+    "@id" : "http://xmlns.com/foaf/0.1/Project"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "inspiré par"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#isImplementedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "fr",
+    "@value" : "l'idée est concrétisée par un projet"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "projet"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#isLikedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "sympatisant"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#lead",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Project"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "responsable"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesIdea",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#SymmetricProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "aime l'idée"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesOrganization",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "aime l'organisation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Organization"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesProject",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "aime le projet"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#linkedinId",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "LinkedIn"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#managedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "géré par"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#metAt",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "rencontré à"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByOrganization",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "ressource nécessaire à l'organisation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Organization"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByPerson",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "ressource nécessaire à l'individu"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByProject",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "ressource nécessaire au projet"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Project"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsDocument",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization"
+  }, {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "recherche des documents ou des bonnes pratiques."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsResource"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsGoodOrSpace",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization"
+  }, {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "recherche des biens ou des espaces."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsResource"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsResource",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsServices",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization"
+  }, {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "recherche des services."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsResource"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#opposedTo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#SymmetricProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "_:genid-nodeid-node1d40881arx9"
+  }, {
+    "@id" : "http://xmlns.com/foaf/0.1/Organization"
+  }, {
+    "@id" : "http://xmlns.com/foaf/0.1/Project"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "opposé à"
+  }, {
+    "@language" : "fr",
+    "@value" : "opposé à l'idée"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  }, {
+    "@id" : "_:genid4"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#originator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "est à l'origine"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#ownedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "propriétaire"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Agent"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#partOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "fr",
+    "@value" : "une partie contenant physiquement ou logiquement la ressource sujet"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "ressource conteneur"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#partner",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#SymmetricProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "partenaire"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Organization"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#project",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "fr",
+    "@value" : "projet associé"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "projet"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#projectCategory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "catégorie de projet"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "_:genid7"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#requires",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Project"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "nécessite ressource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#resource",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "fr",
+    "@value" : "ressource associée"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "ressource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#resourceCategory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "catégorie de ressource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "_:genid12"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#services",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Services"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByOrganization",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "ressource partagée (proposée) par"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Organization"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByPerson",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "ressource partagée (proposée) par"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByProject",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "partagée (proposée) par projet"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Project"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesDocument",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization"
+  }, {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "propose ou partage des documents ou des bonnes pratiques."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesResource"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesGoodOrSpace",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization"
+  }, {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "propose ou partage des biens ou des espaces."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesResource"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesResource",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesServices",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization"
+  }, {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "propose des services."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesResource"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#society",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Sociétal"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#software",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Immatériel (logiciel etc)"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#space",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Espace"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#specializedIn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#SymmetricProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "spécialisé dans l'idée"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#supportedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "fr",
+    "@value" : "soutenue par"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  }, {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Projet"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "acteur"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#supports",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "soutient"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Project"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#targetUser",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "fr",
+    "@value" : "types d'utilisateurs ciblés: occasionnels, réguliers, administrateurs, développeurs, ..."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Projet"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "utilisateurs cibles"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#theme",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Thème"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#thesis",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Thèse"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#twitterId",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Twitter"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#usedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Projet"
+  }, {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "utilisé par"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Agent"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#worksWith",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#SymmetricProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "travaille avec"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/knows"
+  } ]
+} ]

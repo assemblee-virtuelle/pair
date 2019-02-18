@@ -1,0 +1,96 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
+}, {
+  "@id" : "_:genid2",
+  "@type" : [ "http://xmlns.com/foaf/0.1/Group" ],
+  "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#requires" : [ {
+    "@id" : "_:genid3"
+  } ]
+}, {
+  "@id" : "_:genid3",
+  "http://purl.org/dc/elements/1.1/description" : [ {
+    "@value" : "Medieval Costume"
+  } ]
+}, {
+  "@id" : "_:genid4",
+  "@type" : [ "http://dbpedia.org/resource/Car" ]
+}, {
+  "@id" : "_:genid5",
+  "@type" : [ "http://dbpedia.org/resource/Sound_reinforcement_system" ]
+}, {
+  "@id" : "_:genid6",
+  "@type" : [ "http://dbpedia.org/resource/Carriage" ]
+}, {
+  "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/#DynamiserMillemont",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#Idea" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#comment" : [ {
+    "@value" : "Comme discuté a l'AV l'autre jour"
+  } ]
+}, {
+  "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#Idea",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#Project",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#concretise",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#lead",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#participant",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#requires",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/cabaret#p",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#Project" ],
+  "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#participant" : [ {
+    "@id" : "_:genid2"
+  } ],
+  "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#requires" : [ {
+    "@id" : "_:genid4"
+  } ]
+}, {
+  "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/party#reve",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#Project" ],
+  "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#concretise" : [ {
+    "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/#DynamiserMillemont"
+  } ],
+  "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#lead" : [ {
+    "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../people/martin#me"
+  } ],
+  "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#requires" : [ {
+    "@id" : "_:genid5"
+  } ]
+}, {
+  "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/visiteChateau#x",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#Project" ],
+  "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#lead" : [ {
+    "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../people/sylvain#me"
+  } ],
+  "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#requires" : [ {
+    "@id" : "_:genid6"
+  } ]
+}, {
+  "@id" : "http://dbpedia.org/resource/Car",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://dbpedia.org/resource/Carriage",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://dbpedia.org/resource/Sound_reinforcement_system",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://purl.org/dc/elements/1.1/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#comment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/Group",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+} ]

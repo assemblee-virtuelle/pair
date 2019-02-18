@@ -1,0 +1,1716 @@
+@prefix : <http://www.virtual-assembly.org/ontologies/1.0/pair#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.virtual-assembly.org/ontologies/1.0/pair> .
+
+<http://www.virtual-assembly.org/ontologies/1.0/pair> rdf:type owl:Ontology ;
+                                                       rdfs:comment """L'ontologie PAIR est issue d'un travail collectif mené par l'association Assemblée virtuelle et ses partenaires. 
+
+C'est un vocabulaire permettant d'exprimer simplement le réel, ainsi que les interactions qui s'y déroulent. Le réel est perçu sous la forme d'un graphe faisant interagir des projets, acteurs, des idées et des ressources.
+
+Il s'agit plus exactement d'une méta-ontologie (préfixe meta : Avec, après, au-delà de) visant la mise en système de plusieurs ontologies existantes (et des données structurées par elles) : Foaf, Dublin Core, Good Relations, Cognitive Characteritics, certains vocabulaires issus de Schema.org etc.
+Elle intègre de nouvelles notions, non identifiées parmi les ontologies existantes. 
+
+Elle s'inscrit dans le magnifique projet du LOV (Linked Open Vocabularies - http://lov.okfn.org/dataset/lov/) ainsi que dans celui du LOD (Linked Open Data - http://lod-cloud.net/). 
+
+L'enjeu de l'ontologie PAIR est de permettre à une diversité de plateformes, blogs, sites web, bases de données de partager un même langage, et ce faisant de devenir interopérables. L'interopérabilité est ici envisagée comme le moyen de faire émerger des réseaux sociaux distribués, également appelés réseaux sociaux peer to peer.
+
+Nous livrons dans un premier temps un vocabulaire générique permettant de retracer les majorité des interactions sociales de tous les jours : les gens (acteurs) travaillent au sein d'organisations, contribuent à des projets, s'intéressent à des choses, disposent de compétences et de ressources, ont besoin de compétences et de ressources ... Etc.
+
+Dès lors que nous aurons abouti dans la formalisation de ce tronc générique, nous co-développerons ensuite, avec nos partenaires, des vocabulaires métiers se référant à des domaines particuliers du réel : Le travail au sein d'une organisation ou d'un projet, les circuits-courts alimentaires, les transactions immobilières etc. Dans chacun de ces domaines, des acteurs ont des projets, portant sur des thématiques et faisant intervenir des échanges de ressources...  L'ontologie se développe ainsi sur une approche modulaire. 
+
+Elle se développe par ailleurs de manière agrégative, nous agrégeons les différents modèles de données des acteurs avec lesquels nous travaillons, en les fusionnant lorsque les concepts sont identitiques d'une part, en ajoutant les concepts spécifiques dans la striucture de l'ontologie PAIR : soit dans le tronc générique, soit dans les diférents modules métiers. 
+
+Elle est publiée sous licence Creative Commons : Attribution à l'url suivante : http://www.virtual-assembly.org/ontologies/1.0/pair
+
+La genèse de l'ontologie PAIR est décrite en détail dans la partie historique du code social de l'Assemblée Virtuelle : http://virtual-assembly.org/code-social-assemblee-virtuelle/
+
+2 wikis en chantier permettent d'en saisir les tenants et les aboutissants. 
+- https://github.com/assemblee-virtuelle/pair/wiki
+- http://91.134.140.110:8080/index.php/PAIR."""@fr .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://xmlns.com/foaf/0.1/phone
+<http://xmlns.com/foaf/0.1/phone> rdf:type owl:AnnotationProperty ;
+                                  rdfs:domain _:genid-nodeid-genid-b38b8f2b0fac4f73b1ed408c40b26de8-genid252 .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://open.vocab.org/terms/similarTo
+<http://open.vocab.org/terms/similarTo> rdf:type owl:ObjectProperty ,
+                                                 owl:ReflexiveProperty ;
+                                        rdfs:domain [ rdf:type owl:Class ;
+                                                      owl:unionOf ( :Idea
+                                                                    :Resource
+                                                                    <http://xmlns.com/foaf/0.1/Group>
+                                                                    <http://xmlns.com/foaf/0.1/Organization>
+                                                                    <http://xmlns.com/foaf/0.1/Project>
+                                                                  )
+                                                    ] ;
+                                        rdfs:range [ rdf:type owl:Class ;
+                                                     owl:unionOf ( :Resource
+                                                                   <http://xmlns.com/foaf/0.1/Agent>
+                                                                   <http://xmlns.com/foaf/0.1/Project>
+                                                                 )
+                                                   ] ;
+                                        rdfs:comment "Voir \"inclut\""@fr ;
+                                        rdfs:label "similaire à"@fr ,
+                                                   "similar to"@en .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:ObjectProperty ;
+                                   owl:inverseOf :hasCreator ;
+                                   rdfs:comment """URI: http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=elements#terms-creator
+
+Définition : propriété générique se subdivisant en : auteur, créateur, fondateur. Sans domain, ni range donc, lesquels sont spécifiés au niveau des sous-propriétés."""@fr .
+
+
+###  http://purl.org/dc/terms/hasPart
+<http://purl.org/dc/terms/hasPart> rdf:type owl:ObjectProperty ;
+                                   owl:inverseOf <http://purl.org/dc/terms/isPartOf> ;
+                                   rdfs:comment """L'enjeu en termes de modélisation est de signifier qu'une idée peut inclure une idée,
+qu'un projet peut inclure un projet, qu'une ressource peut inclure une ressource.
+
+Par contre, je ne sais pas comment ne pas modéliser une idée n'inclue pas un projet, un projet n'inclue pas une ressource, etc. 
+Comment poser ces restrictions et ne modéliser que les relations d'inclusion II, PP, RR ?
+
+REPONSE de JMV: avec 3 propriétés spécifiques qui seront rdfs:subPropertyOf dcterms:isPartOf """@fr ;
+                                   rdfs:label "includes"@en ,
+                                              "inclut"@fr .
+
+
+###  http://purl.org/dc/terms/isPartOf
+<http://purl.org/dc/terms/isPartOf> rdf:type owl:ObjectProperty ,
+                                             owl:ReflexiveProperty ;
+                                    rdfs:comment ""@fr ;
+                                    rdfs:label "fait partie de"@fr ,
+                                               "is part of"@en .
+
+
+###  http://purl.org/dc/terms/subject
+<http://purl.org/dc/terms/subject> rdf:type owl:ObjectProperty ;
+                                   rdfs:domain owl:Thing ;
+                                   rdfs:range [ rdf:type owl:Class ;
+                                                owl:unionOf ( :Idea
+                                                              :Resource
+                                                              <http://xmlns.com/foaf/0.1/Agent>
+                                                              <http://xmlns.com/foaf/0.1/Project>
+                                                            )
+                                              ] ;
+                                   rdfs:comment """ 'A pour sujet' permet d'identifier de quoi un PAIR parle ou traite ... Il peut s'agir : 
+- d'un acteur (ex: ce document a pour sujet Monsanto), 
+- d'une idée (ex : Assemblée virtuelle) a pour sujet le peer to peer), 
+- d'un projet (ex: semantic forms a pour sujet l'interopérabilté)
+- d'une ressource (ex: économie symbiotique a pour sujet développement durable)"""@fr ;
+                                   rdfs:label "is about"@en ,
+                                              "sujet / centre d'intérêt"@fr .
+
+
+###  http://purl.org/goodrelations/v1#offers
+<http://purl.org/goodrelations/v1#offers> rdf:type owl:ObjectProperty ;
+                                          owl:inverseOf <http://purl.org/goodrelations/v1#seeks> ;
+                                          rdfs:domain [ rdf:type owl:Class ;
+                                                        owl:unionOf ( <http://xmlns.com/foaf/0.1/Agent>
+                                                                      <http://xmlns.com/foaf/0.1/Project>
+                                                                    )
+                                                      ] ;
+                                          rdfs:range :Resource ;
+                                          rdfs:label "offers"@en ,
+                                                     "ressources proposées (hors compétences)"@fr .
+
+
+###  http://purl.org/goodrelations/v1#seeks
+<http://purl.org/goodrelations/v1#seeks> rdf:type owl:ObjectProperty ;
+                                         rdfs:domain [ rdf:type owl:Class ;
+                                                       owl:unionOf ( <http://xmlns.com/foaf/0.1/Agent>
+                                                                     <http://xmlns.com/foaf/0.1/Project>
+                                                                   )
+                                                     ] ;
+                                         rdfs:range :Resource .
+
+
+###  http://purl.org/ontology/cco/core#expertise
+<http://purl.org/ontology/cco/core#expertise> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain <http://xmlns.com/foaf/0.1/Agent> ;
+                                              rdfs:range [ rdf:type owl:Class ;
+                                                           owl:unionOf ( <http://purl.org/ontology/cco/core#cco:Skill>
+                                                                         :Idea
+                                                                       )
+                                                         ] ;
+                                              rdfs:comment " Définition : Pointe vers des compétences ou sujets (Idées) faisant l'objet d'une expertise par des Acteurs"@fr ;
+                                              rdfs:label "a pour compétence"@fr ,
+                                                         "expertise"@en .
+
+
+###  http://purl.org/spar/cito/likes
+<http://purl.org/spar/cito/likes> rdf:type owl:ObjectProperty ;
+                                  rdfs:subPropertyOf <http://purl.org/dc/terms/subject> ;
+                                  rdfs:domain [ rdf:type owl:Class ;
+                                                owl:unionOf ( <http://xmlns.com/foaf/0.1/Agent>
+                                                              <http://xmlns.com/foaf/0.1/Project>
+                                                            )
+                                              ] ;
+                                  rdfs:range [ rdf:type owl:Class ;
+                                               owl:unionOf ( :Idea
+                                                             :Resource
+                                                             <http://xmlns.com/foaf/0.1/Agent>
+                                                             <http://xmlns.com/foaf/0.1/Project>
+                                                           )
+                                             ] .
+
+
+###  http://rdfs.org/sioc/ns#follows
+<http://rdfs.org/sioc/ns#follows> rdf:type owl:ObjectProperty ;
+                                  rdfs:subPropertyOf <http://purl.org/dc/terms/subject> ;
+                                  rdfs:domain [ rdf:type owl:Class ;
+                                                owl:unionOf ( <http://xmlns.com/foaf/0.1/Agent>
+                                                              <http://xmlns.com/foaf/0.1/Project>
+                                                            )
+                                              ] ;
+                                  rdfs:range [ rdf:type owl:Class ;
+                                               owl:unionOf ( :Idea
+                                                             :Resource
+                                                             <http://xmlns.com/foaf/0.1/Agent>
+                                                             <http://xmlns.com/foaf/0.1/Project>
+                                                           )
+                                             ] .
+
+
+###  http://schema.org/attendee
+<http://schema.org/attendee> rdf:type owl:ObjectProperty ;
+                             rdfs:domain <http://schema.org/Event> ;
+                             rdfs:range <http://xmlns.com/foaf/0.1/Agent> .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#actualizes
+:actualizes rdf:type owl:ObjectProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :Resource
+                                        <http://xmlns.com/foaf/0.1/Agent>
+                                        <http://xmlns.com/foaf/0.1/Project>
+                                      )
+                        ] ;
+            rdfs:range [ rdf:type owl:Class ;
+                         owl:unionOf ( :Idea
+                                       :Resource
+                                       <http://xmlns.com/foaf/0.1/Project>
+                                     )
+                       ] ;
+            rdfs:comment "A_VOIR: pas de domain" ,
+                         """Exemple:
+AMAP (idée) incarne circuits courts (idée) """ ;
+            rdfs:label "embodies, carries out, actualizes"@en ,
+                       "incarne, met en oeuvre, actualise"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#authorof
+:authorof rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf <http://purl.org/dc/terms/creator> ;
+          owl:inverseOf :hasAuthor ;
+          rdfs:domain <http://xmlns.com/foaf/0.1/Agent> ;
+          rdfs:range [ rdf:type owl:Class ;
+                       owl:unionOf ( <http://schema.org/CreativeWork>
+                                     :Idea
+                                     <http://xmlns.com/foaf/0.1/Document>
+                                   )
+                     ] ;
+          rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#authorOf
+
+Définition : Pointe vers les Acteurs à l'origine d'une Oeuvre, d'une Idée ou d'un document.""" ;
+          rdfs:label "auteur de"@fr ,
+                     "author of"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#because
+:because rdf:type owl:ObjectProperty ;
+         owl:inverseOf :hasConsequence ;
+         rdfs:domain :Idea ;
+         rdfs:range :Idea ;
+         rdfs:label "because"@en ,
+                    "parce que"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#but
+:but rdf:type owl:ObjectProperty ;
+     rdfs:domain :Idea ;
+     rdfs:range :Idea ;
+     rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#but
+
+Définition : Pointe vers des idées entrant en contradiction avec d'autres idées"""@fr ;
+     rdfs:label "but"@en ,
+                "mais"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#contributedTo
+:contributedTo rdf:type owl:ObjectProperty ;
+               rdfs:domain <http://xmlns.com/foaf/0.1/Agent> ;
+               rdfs:range [ rdf:type owl:Class ;
+                            owl:unionOf ( :Idea
+                                          :Resource
+                                          <http://xmlns.com/foaf/0.1/Group>
+                                          <http://xmlns.com/foaf/0.1/Organization>
+                                          <http://xmlns.com/foaf/0.1/Project>
+                                        )
+                          ] ;
+               rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#contributedTo
+
+La relation \"a contribué à\" s'inspire de foaf:pastProject, elle est néanmoins plus générique dans la mesure où nous considérons que des groupes et des organisations peuvent avoir contribué à des projets et à des PAIRs 
+
+Dans foaf:pastProject les individus seulement peuvent contribuer à des projets uniquement ... 
+Dans PAIR foaf:pastProject est donc une sous relation de pair:contributedTo"""@fr ;
+               rdfs:label "a contribué à"@fr ,
+                          "has contributed to"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#contributesTo
+:contributesTo rdf:type owl:ObjectProperty ;
+               owl:inverseOf :hasContributor ;
+               rdfs:domain <http://xmlns.com/foaf/0.1/Agent> ;
+               rdfs:range [ rdf:type owl:Class ;
+                            owl:unionOf ( :Idea
+                                          :Resource
+                                          <http://xmlns.com/foaf/0.1/Group>
+                                          <http://xmlns.com/foaf/0.1/Organization>
+                                          <http://xmlns.com/foaf/0.1/Project>
+                                        )
+                          ] ;
+               rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#contributesTo
+
+La relation \"contribue à\" s'inspire de foaf:currentProject, elle est néanmoins plus générique dans la mesure où nous considérons que des groupes et des organisations peuvent contribuer à des projets et plus généralement à des PAIRs 
+
+Dans foaf:currentProject les individus seulement peuvent contribuer à des projets uniquement ... 
+Dans PAIR foaf:currentProject est donc une sous relation de pair:contributesTo"""@fr ;
+               rdfs:label "contribue à"@fr ,
+                          "contributes to"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#convergesWith
+:convergesWith rdf:type owl:ObjectProperty ;
+               rdfs:domain :Idea ;
+               rdfs:range :Idea ;
+               rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#convergesWith
+
+Définition : Pointe vers des Idées convergentes avec d'autres Idées. 
+
+Par exemple, la permaculture converge avec l'idée du non-agir."""@fr ;
+               rdfs:label "convergent avec"@fr ,
+                          "converges with"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#creatorof
+:creatorof rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf <http://purl.org/dc/terms/creator> ;
+           rdfs:domain <http://xmlns.com/foaf/0.1/Agent> ;
+           rdfs:range [ rdf:type owl:Class ;
+                        owl:unionOf ( :Idea
+                                      :Resource
+                                      <http://xmlns.com/foaf/0.1/Project>
+                                    )
+                      ] ;
+           rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#creatorOf
+
+Définition : Pointe vers des Acteurs ayant créé une idée, une ressource ou un projet."""@fr ;
+           rdfs:label "creator of"@en ,
+                      "créateur de"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#dependsOn
+:dependsOn rdf:type owl:ObjectProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :Resource
+                                       <http://xmlns.com/foaf/0.1/Project>
+                                     )
+                       ] ;
+           rdfs:range [ rdf:type owl:Class ;
+                        owl:unionOf ( :Resource
+                                      <http://xmlns.com/foaf/0.1/Project>
+                                    )
+                      ] ;
+           rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#dependsOn
+
+Définition : Pointe vers des Ressources ou Projets dépendant d'autres resources ou projets."""@fr ;
+           rdfs:label "depends on"@en ,
+                      "dépend de"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#employee
+:employee rdf:type owl:ObjectProperty ;
+          owl:inverseOf :hasEmployee ;
+          rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+          rdfs:range <http://xmlns.com/foaf/0.1/Organization> ;
+          rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#employee
+
+Définition : Pointe vers des organisations employnt un invividu."""@fr ;
+          rdfs:label "employee"@en ,
+                     "employé chez"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#financialSupport
+:financialSupport rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :supports ;
+                  rdfs:domain <http://xmlns.com/foaf/0.1/Agent> ;
+                  rdfs:range [ rdf:type owl:Class ;
+                               owl:unionOf ( :Idea
+                                             <http://xmlns.com/foaf/0.1/Agent>
+                                             <http://xmlns.com/foaf/0.1/Project>
+                                           )
+                             ] ;
+                  rdfs:label "gives financial support"@en ,
+                             "soutient financièrement" .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#founderof
+:founderof rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf <http://purl.org/dc/terms/creator> ;
+           rdfs:domain <http://xmlns.com/foaf/0.1/Agent> ;
+           rdfs:range [ rdf:type owl:Class ;
+                        owl:unionOf ( <http://schema.org/Place>
+                                      <http://xmlns.com/foaf/0.1/Group>
+                                      <http://xmlns.com/foaf/0.1/Organization>
+                                    )
+                      ] ;
+           rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair
+
+Définition : Pointe vers des Acteurs ayant fondé un lieu, un groupe ou une organisation."""@fr ;
+           rdfs:label "fondateur de"@fr ,
+                      "founder of"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#hasAuthor
+:hasAuthor rdf:type owl:ObjectProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( <http://schema.org/CreativeWork>
+                                       :Idea
+                                       <http://xmlns.com/foaf/0.1/Document>
+                                     )
+                       ] ;
+           rdfs:range <http://xmlns.com/foaf/0.1/Agent> ;
+           rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair
+
+Définition : Pointe vers des Acteurs ayant créé une oeuvre, une idée, ou un document."""@fr ;
+           rdfs:label "a pour auteur"@fr ,
+                      "has author"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#hasConsequence
+:hasConsequence rdf:type owl:ObjectProperty ;
+                rdfs:domain :Idea ;
+                rdfs:range :Idea ;
+                rdfs:comment """URI : URI : http://www.virtual-assembly.org/ontologies/1.0/pair#hasConsequence
+
+Définition : Pointe vers des idées entrant découlant d'autres idées"""@fr ;
+                rdfs:label "donc"@fr ,
+                           "so ..."@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#hasContributor
+:hasContributor rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/member> ;
+                owl:inverseOf :worksOn ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( :Idea
+                                            <http://xmlns.com/foaf/0.1/Group>
+                                            <http://xmlns.com/foaf/0.1/Organization>
+                                            <http://xmlns.com/foaf/0.1/Project>
+                                          )
+                            ] ;
+                rdfs:range <http://xmlns.com/foaf/0.1/Agent> ;
+                rdfs:comment """URi : http://www.virtual-assembly.org/ontologies/1.0/pair#hasContributor
+
+Définition : Pointe vers des acteurs contribuant à un Projet, un groupe, une organisation ou une idée."""@fr ;
+                rdfs:label "a pour contributeur"@fr ,
+                           "has contributor"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#hasCreator
+:hasCreator rdf:type owl:ObjectProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :Idea
+                                        :Resource
+                                        <http://xmlns.com/foaf/0.1/Group>
+                                        <http://xmlns.com/foaf/0.1/Organization>
+                                        <http://xmlns.com/foaf/0.1/Project>
+                                      )
+                        ] ;
+            rdfs:range <http://xmlns.com/foaf/0.1/Agent> ;
+            rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#hasCreator
+
+Définition : Pointe vers des Acteurs ayant créé un PAIR (sauf individu). 
+
+Propriété inverse de dcterms:creator"""@fr ;
+            rdfs:label "a pour créateur"@fr ,
+                       "has creator"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#hasDirector
+:hasDirector rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/member> ;
+             owl:inverseOf :manage ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( <http://xmlns.com/foaf/0.1/Group>
+                                         <http://xmlns.com/foaf/0.1/Organization>
+                                         <http://xmlns.com/foaf/0.1/Project>
+                                       )
+                         ] ;
+             rdfs:range <http://xmlns.com/foaf/0.1/Agent> ;
+             rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#hasDirector
+
+Définition : Pointe vers des acteurs exerçant des responsabilités au sein d'un groupe, d'une organisation ou d'un projet."""@fr ;
+             rdfs:label "a pour responsable / dirigeant"@fr ,
+                        "has director"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#hasEmployee
+:hasEmployee rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/member> ;
+             rdfs:domain <http://xmlns.com/foaf/0.1/Organization> ;
+             rdfs:range <http://xmlns.com/foaf/0.1/Person> ;
+             rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#hasEmployee
+
+Définition : Pointe vers des individus employés par une organisation"""@fr ;
+             rdfs:label "a pour employé"@fr ,
+                        "has employee"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#hasFollower
+:hasFollower rdf:type owl:ObjectProperty ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :Idea
+                                         <http://xmlns.com/foaf/0.1/Group>
+                                         <http://xmlns.com/foaf/0.1/Organization>
+                                         <http://xmlns.com/foaf/0.1/Project>
+                                       )
+                         ] ;
+             rdfs:range <http://xmlns.com/foaf/0.1/Agent> ;
+             rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#hasFollower
+
+Définition : Pointe vers les sympathisants (Acteurs) d'un groupe, d'une organisation, d'une idée ou d'un projet,"""@fr ;
+             rdfs:label "a pour sympathisant"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#hasPartner
+:hasPartner rdf:type owl:ObjectProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( <http://xmlns.com/foaf/0.1/Agent>
+                                        <http://xmlns.com/foaf/0.1/Project>
+                                      )
+                        ] ;
+            rdfs:range <http://xmlns.com/foaf/0.1/Agent> ;
+            rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#hasPartner
+
+Définition : Pointe vers des acteurs partenaires d'autres acteurs ou d'un projet"""@fr ;
+            rdfs:label "a pour partenaire"@fr ,
+                       "has partner"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#hasRecipient
+:hasRecipient rdf:type owl:ObjectProperty ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( :Resource
+                                          <http://xmlns.com/foaf/0.1/Group>
+                                          <http://xmlns.com/foaf/0.1/Organization>
+                                          <http://xmlns.com/foaf/0.1/Project>
+                                        )
+                          ] ;
+              rdfs:range <http://xmlns.com/foaf/0.1/Agent> ;
+              rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#hasRecipient
+
+Définition : Pointe vers des Acteurs bénéficiant de l'action d'un groupe ou d'une organisation, des fruits d'un projet ou bien d'une ressource."""@fr ;
+              rdfs:label "has recipient"@en ,
+                         "a pour bénéficiaire" .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#hasUseCase
+:hasUseCase rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :contributesTo ;
+            rdfs:domain <http://xmlns.com/foaf/0.1/Project> ;
+            rdfs:range <http://xmlns.com/foaf/0.1/Project> ;
+            rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#useCase
+
+Définitiion : Pointe vers des Projets ayant pour cas 'usage d'autres Projets."""@fr ;
+            rdfs:label "cas d'usage"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#hosted
+:hosted rdf:type owl:ObjectProperty ;
+        owl:inverseOf :hosts ;
+        rdfs:domain [ rdf:type owl:Class ;
+                      owl:unionOf ( <http://xmlns.com/foaf/0.1/Agent>
+                                    <http://xmlns.com/foaf/0.1/Project>
+                                  )
+                    ] ;
+        rdfs:range [ rdf:type owl:Class ;
+                     owl:unionOf ( <http://schema.org/Place>
+                                   <http://xmlns.com/foaf/0.1/Group>
+                                   <http://xmlns.com/foaf/0.1/Organization>
+                                 )
+                   ] ;
+        rdfs:label "hosted"@en ,
+                   "hébergé par"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#hosts
+:hosts rdf:type owl:ObjectProperty ;
+       rdfs:domain [ rdf:type owl:Class ;
+                     owl:unionOf ( <http://schema.org/Place>
+                                   <http://xmlns.com/foaf/0.1/Group>
+                                   <http://xmlns.com/foaf/0.1/Organization>
+                                 )
+                   ] ;
+       rdfs:range [ rdf:type owl:Class ;
+                    owl:unionOf ( <http://xmlns.com/foaf/0.1/Agent>
+                                  <http://xmlns.com/foaf/0.1/Project>
+                                )
+                  ] ;
+       rdfs:label "hosts"@en ,
+                  "héberge"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#ideaIsPartOf
+:ideaIsPartOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://purl.org/dc/terms/isPartOf> ;
+              owl:inverseOf :includesIdea ;
+              rdfs:domain :Idea ;
+              rdfs:range :Idea ;
+              rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#ideaIsPartOf
+
+Définition : une idée faisant partie d'une autre idée"""@fr ;
+              rdfs:label "fait partie de"@fr ,
+                         "is part of idea"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#includesIdea
+:includesIdea rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://purl.org/dc/terms/hasPart> ;
+              rdfs:domain :Idea ;
+              rdfs:range :Idea ;
+              rdfs:label "inclut, rassemble"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#includesProject
+:includesProject rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf <http://purl.org/dc/terms/hasPart> ;
+                 owl:inverseOf :projectIsPartOf ;
+                 rdfs:domain <http://xmlns.com/foaf/0.1/Project> ;
+                 rdfs:range <http://xmlns.com/foaf/0.1/Project> ;
+                 rdfs:label "includes"@en ,
+                            "inclut, rassemble"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#includesResource
+:includesResource rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf <http://purl.org/dc/terms/hasPart> ;
+                  owl:inverseOf :resourceIsPartOf ;
+                  rdfs:domain :Resource ;
+                  rdfs:range :Resource ;
+                  rdfs:label "inclut, rassemble"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#isFacetOf
+:isFacetOf rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf <http://purl.org/dc/terms/isPartOf> ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :Idea
+                                       :Resource
+                                       <http://xmlns.com/foaf/0.1/Agent>
+                                       <http://xmlns.com/foaf/0.1/Project>
+                                     )
+                       ] ;
+           rdfs:range [ rdf:type owl:Class ;
+                        owl:unionOf ( :Idea
+                                      :Resource
+                                      <http://xmlns.com/foaf/0.1/Agent>
+                                      <http://xmlns.com/foaf/0.1/Project>
+                                    )
+                      ] ;
+           rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#isFacetOf
+
+Définition : Un PAIR constituant une facette d'une autre PAIR. Par exemple, le Projet de l'Assemblée Virtuelle est une facette de l'Association Assemblée Virtuelle."""@fr ;
+           rdfs:label "est une facette de"@fr ,
+                      "is a facet of"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#isFamily
+:isFamily rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/knows> ;
+          rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+          rdfs:range <http://xmlns.com/foaf/0.1/Person> ;
+          rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#isFamily
+
+Définition : Individu de la famille d'un autre individu"""@fr ;
+          rdfs:label "famille de"@fr ,
+                     "family of"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#isFriendOf
+:isFriendOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/knows> ;
+            rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+            rdfs:range <http://xmlns.com/foaf/0.1/Person> ;
+            rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#isFriendOf
+
+Définition : Individu ami d'un autre individu"""@fr ;
+            rdfs:label "ami de"@fr ,
+                       "friend of"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#manage
+:manage rdf:type owl:ObjectProperty ;
+        rdfs:domain <http://xmlns.com/foaf/0.1/Agent> ;
+        rdfs:range [ rdf:type owl:Class ;
+                     owl:unionOf ( <http://schema.org/Place>
+                                   <http://xmlns.com/foaf/0.1/Group>
+                                   <http://xmlns.com/foaf/0.1/Organization>
+                                   <http://xmlns.com/foaf/0.1/Project>
+                                 )
+                   ] ;
+        rdfs:label "manage"@en ,
+                   "responsable de"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#metAt
+:metAt rdf:type owl:ObjectProperty ;
+       rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+       rdfs:range <http://schema.org/Place> ;
+       rdfs:label "rencontré à"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#offersSkill
+:offersSkill rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf <http://purl.org/goodrelations/v1#offers> ;
+             owl:inverseOf :seeksSkill ;
+             rdfs:label "compétences proposées"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#opposedTo
+:opposedTo rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf <http://purl.org/dc/terms/subject> ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :Idea
+                                       <http://xmlns.com/foaf/0.1/Agent>
+                                       <http://xmlns.com/foaf/0.1/Project>
+                                     )
+                       ] ;
+           rdfs:range [ rdf:type owl:Class ;
+                        owl:unionOf ( :Idea
+                                      :Resource
+                                      <http://xmlns.com/foaf/0.1/Agent>
+                                      <http://xmlns.com/foaf/0.1/Project>
+                                    )
+                      ] ;
+           rdfs:comment ""@fr ;
+           rdfs:label "opposed to"@en ,
+                      "opposé à"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#organize
+:organize rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :products ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( <http://xmlns.com/foaf/0.1/Agent>
+                                      <http://xmlns.com/foaf/0.1/Project>
+                                    )
+                      ] ;
+          rdfs:range <http://schema.org/Event> ;
+          rdfs:label "organise"@fr ,
+                     "organize"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#products
+:products rdf:type owl:ObjectProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :Resource
+                                      <http://xmlns.com/foaf/0.1/Agent>
+                                      <http://xmlns.com/foaf/0.1/Project>
+                                    )
+                      ] ;
+          rdfs:range [ rdf:type owl:Class ;
+                       owl:unionOf ( :Idea
+                                     :Resource
+                                     <http://xmlns.com/foaf/0.1/Project>
+                                   )
+                     ] ;
+          rdfs:comment "Cas des ressources : Une ressource de type voiture produit des gaz à effet de serre. Affiner cependant"@en ;
+          rdfs:label "products"@en ,
+                     "produit"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#projectIsPartOf
+:projectIsPartOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf <http://purl.org/dc/terms/isPartOf> ;
+                 rdfs:domain <http://xmlns.com/foaf/0.1/Project> ;
+                 rdfs:range <http://xmlns.com/foaf/0.1/Project> ;
+                 rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#projectIsPartOf
+
+Définition : une idée faisant partie d'une autre idée"""@en ;
+                 rdfs:label "fait partie de"@fr ,
+                            "is part of project"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#resourceIsPartOf
+:resourceIsPartOf rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf <http://purl.org/dc/terms/isPartOf> ;
+                  rdfs:domain :Resource ;
+                  rdfs:range :Resource ;
+                  rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#resourceIsPartOf
+
+Définition : une ressource faisant partie d'une autre ressource"""@fr ;
+                  rdfs:label "fait partie de"@fr ,
+                             "is part of resource"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#seeksSkill
+:seeksSkill rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf <http://purl.org/goodrelations/v1#seeks> ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( <http://xmlns.com/foaf/0.1/Agent>
+                                        <http://xmlns.com/foaf/0.1/Project>
+                                      )
+                        ] ;
+            rdfs:range <http://purl.org/ontology/cco/core#cco:Skill> ;
+            rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#seeksSkill
+
+Définition : Pointe vers des compétences détenues par des acteurs"""@fr ;
+            rdfs:label "compétences recherchées"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#supports
+:supports rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf <http://purl.org/spar/cito/likes> ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( <http://xmlns.com/foaf/0.1/Agent>
+                                      <http://xmlns.com/foaf/0.1/Project>
+                                    )
+                      ] ;
+          rdfs:range [ rdf:type owl:Class ;
+                       owl:unionOf ( :Idea
+                                     :Resource
+                                     <http://xmlns.com/foaf/0.1/Agent>
+                                     <http://xmlns.com/foaf/0.1/Project>
+                                   )
+                     ] ;
+          rdfs:label "soutient"@fr ,
+                     "supports"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#uses
+:uses rdf:type owl:ObjectProperty ;
+      rdfs:domain [ rdf:type owl:Class ;
+                    owl:unionOf ( :Resource
+                                  <http://xmlns.com/foaf/0.1/Agent>
+                                  <http://xmlns.com/foaf/0.1/Project>
+                                )
+                  ] ;
+      rdfs:range :Resource ;
+      rdfs:comment "Cas des ressources : Une ressource de type voiture consomme du pétrole et des matières premières"@en ;
+      rdfs:label "uses"@en ,
+                 "utilise"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#votesAgainst
+:votesAgainst rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :opposedTo ;
+              rdfs:domain <http://xmlns.com/foaf/0.1/Agent> ;
+              rdfs:range [ rdf:type owl:Class ;
+                           owl:unionOf ( :Idea
+                                         <http://xmlns.com/foaf/0.1/Agent>
+                                         <http://xmlns.com/foaf/0.1/Document>
+                                         <http://xmlns.com/foaf/0.1/Project>
+                                       )
+                         ] ;
+              rdfs:label "vote contre"@fr ,
+                         "votes against"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#votesFor
+:votesFor rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :supports ;
+          rdfs:domain <http://xmlns.com/foaf/0.1/Agent> ;
+          rdfs:range [ rdf:type owl:Class ;
+                       owl:unionOf ( :Idea
+                                     <http://xmlns.com/foaf/0.1/Agent>
+                                     <http://xmlns.com/foaf/0.1/Document>
+                                     <http://xmlns.com/foaf/0.1/Project>
+                                   )
+                     ] ;
+          rdfs:label "vote pour"@fr ,
+                     "votes for"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#worksOn
+:worksOn rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf <http://purl.org/dc/terms/subject> ;
+         rdfs:domain <http://xmlns.com/foaf/0.1/Agent> ;
+         rdfs:range [ rdf:type owl:Class ;
+                      owl:unionOf ( <http://purl.org/ontology/cco/core#cco:Skill>
+                                    :Idea
+                                  )
+                    ] ;
+         rdfs:label "travaille sur"@fr ,
+                    "works on"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#worksWith
+:worksWith rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/knows> ;
+           rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+           rdfs:range <http://xmlns.com/foaf/0.1/Person> ;
+           rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#workWith
+
+Définition : Individu collaborateur d'un autre individu"""@fr ;
+           rdfs:label "collaborateur de"@fr ,
+                      "colleague, collaborator"@en .
+
+
+###  http://xmlns.com/foaf/0.1/currentProject
+<http://xmlns.com/foaf/0.1/currentProject> rdf:type owl:ObjectProperty ;
+                                           rdfs:subPropertyOf :contributesTo ;
+                                           rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+                                           rdfs:comment """Cette relation est issue de foaf:currentProject. 
+
+URI : http://xmlns.com/foaf/spec/#term_currentProject
+
+Définition : Pointe vers des projets auxquels des individus ont contribué par le passé"""@fr ;
+                                           rdfs:label "contribue à"@fr ,
+                                                      "contributes to"@en .
+
+
+###  http://xmlns.com/foaf/0.1/knows
+<http://xmlns.com/foaf/0.1/knows> rdf:type owl:ObjectProperty .
+
+
+###  http://xmlns.com/foaf/0.1/member
+<http://xmlns.com/foaf/0.1/member> rdf:type owl:ObjectProperty ;
+                                   rdfs:domain [ rdf:type owl:Class ;
+                                                 owl:unionOf ( :Idea
+                                                               :Resource
+                                                               <http://xmlns.com/foaf/0.1/Group>
+                                                               <http://xmlns.com/foaf/0.1/Organization>
+                                                               <http://xmlns.com/foaf/0.1/Project>
+                                                             )
+                                               ] ;
+                                   rdfs:range [ rdf:type owl:Class ;
+                                                owl:unionOf ( <http://xmlns.com/foaf/0.1/Group>
+                                                              <http://xmlns.com/foaf/0.1/Organization>
+                                                            )
+                                              ] .
+
+
+###  http://xmlns.com/foaf/0.1/pastProject
+<http://xmlns.com/foaf/0.1/pastProject> rdf:type owl:ObjectProperty ;
+                                        rdfs:subPropertyOf :contributedTo ;
+                                        rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+                                        rdfs:range <http://xmlns.com/foaf/0.1/Project> ;
+                                        rdfs:comment """Cette relation est issue de foaf:pastProject. 
+
+URI : http://xmlns.com/foaf/spec/#term_pastProject
+
+Définition : Pointe vers des projets auxquels des individus ont contribué par le passé."""@fr ,
+                                                     """past project - A project this person has previously worked on.
+
+Domain: 	having this property implies being a Person
+Range: 	every value of this property is a Thing
+
+After a Person is no longer involved with a currentProject, or has been inactive for some time, a pastProject relationship can be used. This indicates that the Person was involved with the described project at one point.
+
+If the Person has stopped working on a project because it has been completed (successfully or otherwise), pastProject is applicable. In general, currentProject is used to indicate someone's current efforts (and implied interests, concerns etc.), while pastProject describes what they've previously been doing."""@en ;
+                                        rdfs:label "a contribué à"@fr ,
+                                                   "contributed to"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#adress
+:adress rdf:type owl:DatatypeProperty ;
+        rdfs:domain [ rdf:type owl:Class ;
+                      owl:unionOf ( :Resource
+                                    <http://xmlns.com/foaf/0.1/Agent>
+                                    <http://xmlns.com/foaf/0.1/Project>
+                                  )
+                    ] ;
+        rdfs:label "Adresse"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#at
+:at rdf:type owl:DatatypeProperty ;
+    rdfs:label "à (heure)"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#birthDate
+:birthDate rdf:type owl:DatatypeProperty ;
+           rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+           rdfs:label "Date de naissance"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#country
+:country rdf:type owl:DatatypeProperty ;
+         rdfs:domain [ rdf:type owl:Class ;
+                       owl:unionOf ( :Resource
+                                     <http://xmlns.com/foaf/0.1/Agent>
+                                     <http://xmlns.com/foaf/0.1/Project>
+                                   )
+                     ] ;
+         rdfs:label "Pays"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#creationDate
+:creationDate rdf:type owl:DatatypeProperty ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( :Idea
+                                          :Resource
+                                          <http://xmlns.com/foaf/0.1/Group>
+                                          <http://xmlns.com/foaf/0.1/Organization>
+                                          <http://xmlns.com/foaf/0.1/Project>
+                                        )
+                          ] ;
+              rdfs:label "Date de création"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#currency
+:currency rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Resource ;
+          rdfs:label "Devise"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#description
+:description rdf:type owl:DatatypeProperty ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :Idea
+                                         :Resource
+                                         <http://xmlns.com/foaf/0.1/Agent>
+                                         <http://xmlns.com/foaf/0.1/Project>
+                                       )
+                         ] ;
+             rdfs:comment "1000 caractères max"@fr ;
+             rdfs:label "Description"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#digitalWorkSpace
+:digitalWorkSpace rdf:type owl:DatatypeProperty ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( :Idea
+                                              <http://xmlns.com/foaf/0.1/Group>
+                                              <http://xmlns.com/foaf/0.1/Organization>
+                                              <http://xmlns.com/foaf/0.1/Project>
+                                            )
+                              ] ;
+                  rdfs:label "Espace de travail numérique"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#file
+:file rdf:type owl:DatatypeProperty ;
+      rdfs:domain [ rdf:type owl:Class ;
+                    owl:unionOf ( :Idea
+                                  :Resource
+                                  <http://xmlns.com/foaf/0.1/Agent>
+                                  <http://xmlns.com/foaf/0.1/Project>
+                                )
+                  ] ;
+      rdfs:label "Fichier"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#from
+:from rdf:type owl:DatatypeProperty ;
+      rdfs:domain [ rdf:type owl:Class ;
+                    owl:unionOf ( <http://schema.org/Event>
+                                  <http://xmlns.com/foaf/0.1/Group>
+                                  <http://xmlns.com/foaf/0.1/Organization>
+                                  <http://xmlns.com/foaf/0.1/Project>
+                                )
+                  ] ;
+      rdfs:comment """Date de début, par exemple : à partir de jeudi 29 septembre. 
+
+Mais également depuis, par exemple, dans les locaux des grands voisins, depuis 2015"""@fr ;
+      rdfs:label "Depuis (jour)"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#history
+:history rdf:type owl:DatatypeProperty ;
+         rdfs:domain [ rdf:type owl:Class ;
+                       owl:unionOf ( :Idea
+                                     :Resource
+                                     <http://xmlns.com/foaf/0.1/Agent>
+                                     <http://xmlns.com/foaf/0.1/Project>
+                                   )
+                     ] ;
+         rdfs:label "Historique, histoire"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#image
+:image rdf:type owl:DatatypeProperty ;
+       rdfs:domain [ rdf:type owl:Class ;
+                     owl:unionOf ( :Idea
+                                   :Resource
+                                   <http://xmlns.com/foaf/0.1/Agent>
+                                   <http://xmlns.com/foaf/0.1/Project>
+                                 )
+                   ] ;
+       rdfs:label "Photo, image" .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#legalForm
+:legalForm rdf:type owl:DatatypeProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( <http://xmlns.com/foaf/0.1/Agent>
+                                       <http://xmlns.com/foaf/0.1/Project>
+                                     )
+                       ] ;
+           rdfs:label "Forme juridique"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#licence
+:licence rdf:type owl:DatatypeProperty ;
+         rdfs:domain [ rdf:type owl:Class ;
+                       owl:unionOf ( :Idea
+                                     :Resource
+                                     <http://xmlns.com/foaf/0.1/Project>
+                                   )
+                     ] ;
+         rdfs:comment "des choses produites ou diffusées selon les cas"@fr ;
+         rdfs:label "Licence"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#longDescription
+:longDescription rdf:type owl:DatatypeProperty ;
+                 rdfs:domain [ rdf:type owl:Class ;
+                               owl:unionOf ( :Idea
+                                             :Resource
+                                             <http://xmlns.com/foaf/0.1/Agent>
+                                             <http://xmlns.com/foaf/0.1/Project>
+                                           )
+                             ] ;
+                 rdfs:comment "Illimité"@fr ;
+                 rdfs:label "Description longue"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#name
+:name rdf:type owl:DatatypeProperty ;
+      rdfs:domain [ rdf:type owl:Class ;
+                    owl:unionOf ( :Idea
+                                  :Resource
+                                  <http://xmlns.com/foaf/0.1/Agent>
+                                  <http://xmlns.com/foaf/0.1/Project>
+                                )
+                  ] ;
+      rdfs:label "Nom"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#physicalWorkSpace
+:physicalWorkSpace rdf:type owl:DatatypeProperty ;
+                   rdfs:domain [ rdf:type owl:Class ;
+                                 owl:unionOf ( :Idea
+                                               <http://xmlns.com/foaf/0.1/Group>
+                                               <http://xmlns.com/foaf/0.1/Organization>
+                                               <http://xmlns.com/foaf/0.1/Project>
+                                             )
+                               ] ;
+                   rdfs:label "Espace de travail physique" .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#price
+:price rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Resource ;
+       rdfs:comment "Comment modéliser le fait qu'une ressource a un prix formulé en euros et/ou dollar ? En lien avec la classe ressource financière et les propriétés booléennes .."@fr ;
+       rdfs:label "Prix"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#pseudo
+:pseudo rdf:type owl:DatatypeProperty ;
+        rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+        rdfs:label "Pseudonyme"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#recurrence
+:recurrence rdf:type owl:DatatypeProperty ;
+            rdfs:domain <http://schema.org/Event> ;
+            rdfs:label "Récurrence"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#shortDescription
+:shortDescription rdf:type owl:DatatypeProperty ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( :Idea
+                                              :Resource
+                                              <http://xmlns.com/foaf/0.1/Agent>
+                                              <http://xmlns.com/foaf/0.1/Project>
+                                            )
+                              ] ;
+                  rdfs:comment "- de 140 caractères"@fr ;
+                  rdfs:label "Description courte"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#socialNetworks
+:socialNetworks rdf:type owl:DatatypeProperty ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( :Idea
+                                            :Resource
+                                            <http://xmlns.com/foaf/0.1/Agent>
+                                            <http://xmlns.com/foaf/0.1/Project>
+                                          )
+                            ] ;
+                rdfs:comment "Ajouter une URL par profil de réseaux réseau social"@fr ;
+                rdfs:label "Réseaux sociaux"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#status
+:status rdf:type owl:DatatypeProperty ;
+        rdfs:domain [ rdf:type owl:Class ;
+                      owl:unionOf ( :Idea
+                                    :Resource
+                                    <http://xmlns.com/foaf/0.1/Agent>
+                                    <http://xmlns.com/foaf/0.1/Project>
+                                  )
+                    ] ;
+        rdfs:comment "Par exemple : Inactif, en cours de développement, actif, en phade de prototypage etc."@fr ;
+        rdfs:label "Statut"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#tickets
+:tickets rdf:type owl:DatatypeProperty ;
+         rdfs:domain <http://schema.org/Event> ;
+         rdfs:label "Lien vers billetterie"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#to
+:to rdf:type owl:DatatypeProperty ;
+    rdfs:domain <http://schema.org/Event> ;
+    rdfs:comment "Date de début, par exemple : De Mercredi 28 septembre"@fr ;
+    rdfs:label "à (jour)"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#town
+:town rdf:type owl:DatatypeProperty ;
+      rdfs:domain [ rdf:type owl:Class ;
+                    owl:unionOf ( :Resource
+                                  <http://xmlns.com/foaf/0.1/Agent>
+                                  <http://xmlns.com/foaf/0.1/Project>
+                                )
+                  ] ;
+      rdfs:label "Ville"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#until
+:until rdf:type owl:DatatypeProperty ;
+       rdfs:domain [ rdf:type owl:Class ;
+                     owl:unionOf ( <http://schema.org/Event>
+                                   <http://xmlns.com/foaf/0.1/Group>
+                                   <http://xmlns.com/foaf/0.1/Organization>
+                                   <http://xmlns.com/foaf/0.1/Project>
+                                 )
+                   ] ;
+       rdfs:label "jusqu'à"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#website
+:website rdf:type owl:DatatypeProperty ;
+         rdfs:domain [ rdf:type owl:Class ;
+                       owl:unionOf ( :Idea
+                                     :Resource
+                                     <http://xmlns.com/foaf/0.1/Agent>
+                                     <http://xmlns.com/foaf/0.1/Project>
+                                   )
+                     ] ;
+         rdfs:label "Site ou page web"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#wikipedia
+:wikipedia rdf:type owl:DatatypeProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :Idea
+                                       :Resource
+                                       <http://xmlns.com/foaf/0.1/Agent>
+                                       <http://xmlns.com/foaf/0.1/Project>
+                                     )
+                       ] ;
+           rdfs:label "Lien wikipedia"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#zipCode
+:zipCode rdf:type owl:DatatypeProperty ;
+         rdfs:domain [ rdf:type owl:Class ;
+                       owl:unionOf ( :Resource
+                                     <http://xmlns.com/foaf/0.1/Agent>
+                                     <http://xmlns.com/foaf/0.1/Project>
+                                   )
+                     ] ;
+         rdfs:label "Code Postal"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#...
+<http://www.virtual-assembly.org/ontologies/1.0/pair#...> rdf:type owl:DatatypeProperty ;
+                                                          rdfs:subPropertyOf :socialNetworks .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#De_(heure)
+<http://www.virtual-assembly.org/ontologies/1.0/pair#De_(heure)> rdf:type owl:DatatypeProperty ;
+                                                                 rdfs:domain <http://schema.org/Event> .
+
+
+###  http://xmlns.com/foaf/0.1/familyName
+<http://xmlns.com/foaf/0.1/familyName> rdf:type owl:DatatypeProperty ;
+                                       rdfs:subPropertyOf :name ;
+                                       rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+                                       rdfs:label "Nom"@fr .
+
+
+###  http://xmlns.com/foaf/spec/#term_firstName
+<http://xmlns.com/foaf/spec/#term_firstName> rdf:type owl:DatatypeProperty ;
+                                             rdfs:label "Prénom"@fr .
+
+
+###  http://xmlns.com/foaf/spec/#term_img
+<http://xmlns.com/foaf/spec/#term_img> rdf:type owl:DatatypeProperty ;
+                                       rdfs:subPropertyOf :image ;
+                                       rdfs:label "Photo, image"@fr .
+
+
+###  http://xmlns.com/foaf/spec/#term_mbox
+<http://xmlns.com/foaf/spec/#term_mbox> rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain [ rdf:type owl:Class ;
+                                                      owl:unionOf ( :Idea
+                                                                    :Resource
+                                                                    <http://xmlns.com/foaf/0.1/Agent>
+                                                                    <http://xmlns.com/foaf/0.1/Project>
+                                                                  )
+                                                    ] ;
+                                        rdfs:label "Email"@fr .
+
+
+###  http://xmlns.com/foaf/spec/#term_nick
+<http://xmlns.com/foaf/spec/#term_nick> rdf:type owl:DatatypeProperty ;
+                                        rdfs:subPropertyOf :pseudo ;
+                                        rdfs:label "Pseudonyme"@fr .
+
+
+###  http://xmlns.com/foaf/spec/#term_weblog
+<http://xmlns.com/foaf/spec/#term_weblog> rdf:type owl:DatatypeProperty ;
+                                          rdfs:subPropertyOf :website ;
+                                          rdfs:label "Site ou page web"@fr .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/goodrelations/v1#Offering
+<http://purl.org/goodrelations/v1#Offering> rdf:type owl:Class ;
+                                            rdfs:subClassOf :Resource ;
+                                            rdfs:comment """La notion de \"Bien ou service\" est la même que la notion intitulée \"Offering\" dans l'ontologie Good Relation. 
+
+URI :  http://purl.org/goodrelations/v1#Offering
+
+Définitiion : Nous avons classé sous la catégorie vague de bien ou service, l'ensemble des choses produites dans la persepctive d'un échange, quelles qu'en soient les modalités (achat-vente, prêt, troc, don etc.)
+
+A l'exception des compétences, des documents, des lieux, des oeuvres, ainsi que des ressources naturelles et financières. Leurs spécificités nous ayant amené à les isoler.
+
+Dans une étape ultérieure, nous affinerons cette catégorie de \"bien ou service\"."""@fr ,
+                                                         """URI http://purl.org/goodrelations/v1#Offering
+
+An offering represents the public, not necessarily binding, not necessarily exclusive, announcement by a gr:BusinessEntity to provide (or seek) a certain gr:BusinessFunction for a certain gr:ProductOrService to a specified target audience.""" ;
+                                            rdfs:label "Bien ou Service"@fr ,
+                                                       "Good or service"@en .
+
+
+###  http://purl.org/ontology/cco/core#cco:Skill
+<http://purl.org/ontology/cco/core#cco:Skill> rdf:type owl:Class ;
+                                              rdfs:subClassOf :Resource ;
+                                              rdfs:comment "Classe non valide, à remplacer ..."@fr ;
+                                              rdfs:label "Compétence"@fr ,
+                                                         "Skill"@en .
+
+
+###  http://schema.org/CreativeWork
+<http://schema.org/CreativeWork> rdf:type owl:Class ;
+                                 rdfs:subClassOf :Resource ;
+                                 rdfs:comment """Issu de Schema: CreativeWork
+
+URI : http://schema.org/CreativeWork
+
+Définition : Oeuvre au sens de création, où le caractère créatif de la production est l'enjeu même de la production. Dont les livres, les films, les photographies, les sculptures, peintures etc. 
+
+A noter que certaines d'entre elles, un essai par exemple, ou la vidéo d'une conférence seront plus logiquement catégorisées comme ressources documentaires ..."""@fr ;
+                                 rdfs:label "Artwork"@en ,
+                                            "Oeuvre"@fr .
+
+
+###  http://schema.org/Event
+<http://schema.org/Event> rdf:type owl:Class ;
+                          rdfs:subClassOf <http://xmlns.com/foaf/0.1/Project> ;
+                          rdfs:comment "An event happening at a certain time and location,' property. Repeated events may be structured as separate Event objects."@en ,
+                                       """Héritage : Dans l'ontologie PAIR, la notion d'événement est identique à celle de Schema:Event
+
+URI : https://schema.org/Event
+
+Définition : A la différence des initiatives, missions ou activités, les événements s'inscrivent dans une temporalité courte, avec une date de début et une date de fin. La notion d'événement réfère ici à la notion de manifestation. Elle ne recouvre pas la notion d'événement au sens d'actualité (par exemple : un tremblement de terre, un attentat, une découverte)."""@fr ;
+                          rdfs:label "Event"@en ,
+                                     "Evènement"@en .
+
+
+###  http://schema.org/Place
+<http://schema.org/Place> rdf:type owl:Class ;
+                          rdfs:subClassOf :Resource ;
+                          rdfs:comment """Identique à la notion de Lieu dans Schema.org
+
+URI : https://schema.org/Place
+
+Définition : Entité spatiale dotée d'une adresse sur la Terre."""@fr ,
+                                       "Place"@en ;
+                          rdfs:label "Lieu"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Argument
+:Argument rdf:type owl:Class ;
+          rdfs:subClassOf :Thesis ;
+          rdfs:label "Argument"@en ,
+                     "Argument"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Association
+:Association rdf:type owl:Class ;
+             rdfs:subClassOf <http://xmlns.com/foaf/0.1/Organization> ;
+             rdfs:label "Association, fondation"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Cooperative
+:Cooperative rdf:type owl:Class ;
+             rdfs:subClassOf :Enterprise ;
+             rdfs:label "Coopérative"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Enterprise
+:Enterprise rdf:type owl:Class ;
+            rdfs:subClassOf <http://xmlns.com/foaf/0.1/Organization> ;
+            rdfs:comment "Entreprise industrielle ou commerciale."@fr ;
+            rdfs:label "Entreprise"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#FinancialResource
+:FinancialResource rdf:type owl:Class ;
+                   rdfs:subClassOf :Resource ;
+                   rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#FinancialResource
+
+Définition : Comme son nom l'indique une ressource financière est une ... ressource financière. Celle-ci peut être formulée dans la diversité des unités monétaires existantes, peut être précisée par un montant, et être assortie d'éléments descriptifs et conditionnels . 
+
+A préciser dans une version ultérieure ..."""@fr ;
+                   rdfs:label "Financial Resource"@en ,
+                              "Ressource financière"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Idea
+:Idea rdf:type owl:Class ;
+      rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+      owl:disjointWith :Resource ,
+                       <http://xmlns.com/foaf/0.1/Agent> ,
+                       <http://xmlns.com/foaf/0.1/Project> ;
+      rdfs:comment """La notion d'Idée dans PAIR est en relation avec la notion de concept dans l'ontologie SKOS. Dans PAIR Idée est ainsi une sous-classe de SKOS:Concept
+
+URI : http://www.virtual-assembly.org/ontologies/1.0/pair#idea
+
+Définition : Dans l'ontologie PAIR, la notion d'idée se réfère à ce qui est abstrait, idéel, notionnel, conceptuel, à ce qui est de l'ordre de l'idéation, de la proposition, du virtuel (au sens philosophique).
+
+Elle se définit notamment par opposition à la notion de projet :
+
+Une idée n'est pas un projet dans la mesure où, par définition, une idée n'est pas incarnée. Une idée peut en revanche s'incarner dans un projet, ou alors, devenir un projet. Il est possible qu'un même \"objet\" soit perçu comme une idée ou un projet.
+
+Par exemple, les \"Chemins de la transition\" peuvent être perçus comme une idée, mais aussi comme un projet. C'est au regard de son intention, que le créateur des \"Chemins de la transition\" optera pour la catégorie idée ou projet : S'il considère qu'il s'agit juste d'un concept, il optera pour la catégorie \"Idée\" ; Si son intention est d'incarner cette idée dans le cadre d'un projet, il optera donc pour la catégorie correspondante.
+
+Dans l'ontologie PAIR, les idées se subdivisent en 2 catégories :
+
+- Les thèmes rassemblent les notions, les concepts, les centres d'intérêts, les \"tags\".
+
+Par exemple, \"développement durable\", \"open source\", \"mécanique quantique\", \"peer to peer\", pastafarisme, etc.
+
+- Les thèses rassemblent les propositions (\"Et si ...\", \"Mettre en place un revenu universel inconditionnel\"), les arguments ainsi que les problèmes et les questions (Par exemple : \"Pourquoi y a t'il quelque chose plutôt que rien ?\")
+
+Dans l'ontologie PAIR, thèmes et thèses constituent les 2 sous classes de de la classe Idée.""" ;
+      rdfs:label "Idea"@en ,
+                 "Idée"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission
+:InitiativeOrMission rdf:type owl:Class ;
+                     rdfs:subClassOf <http://xmlns.com/foaf/0.1/Project> ;
+                     rdfs:comment """Héritage : Découle de FOAF:Project
+
+URI : http://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission
+
+Définition : Les initiatives, missions, activités sont des aventures au long cours."""@fr ;
+                     rdfs:label "Initiative or Mission"@en ,
+                                "Initiative, mission or activity"@en ,
+                                "Initiative, mission ou activité"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#NaturalResources
+:NaturalResources rdf:type owl:Class ;
+                  rdfs:subClassOf :Resource ;
+                  rdfs:comment """URI : http://www.virtual-assembly.org/ontologies/1.0/pair#NaturalResources
+
+Définition (wikipedia) : De manière générale, une ressource naturelle est une substance, un organisme ou un objet présent dans la nature et qui fait, dans la plupart des cas, l'objet d'une utilisation pour satisfaire les besoins (énergies, alimentation, agrément, etc.) des humains, animaux ou végétaux.
+
+Il peut s'agir :
+
+    d'une matière première minérale (par exemple : l'eau douce, les granulats, les minerais métalliques,...)
+    d'un produit d'origine agricole ou sauvage (ex.: la viande, le poisson, les céréales,...) ;
+    d'une matière organique fossile (comme le pétrole, le charbon, le gaz naturel, le lignite ou la tourbe...) ;
+    d'une source d'énergie (énergie solaire, énergie éolienne...) ;
+    et par extension d'un service écosystémique (la production d'oxygène fournie par la photosynthèse par exemple).
+
+https://fr.wikipedia.org/wiki/Ressource_naturelle"""@fr ;
+                  rdfs:label "Natural resource"@en ,
+                             "Ressource naturelle"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Proposition
+:Proposition rdf:type owl:Class ;
+             rdfs:subClassOf :Thesis ;
+             rdfs:label "Proposition"@en ,
+                        "Proposition"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#PublicOrganization
+:PublicOrganization rdf:type owl:Class ;
+                    rdfs:subClassOf <http://xmlns.com/foaf/0.1/Organization> ;
+                    rdfs:label "Organisme public, collectivité"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Question
+:Question rdf:type owl:Class ;
+          rdfs:subClassOf :Thesis ;
+          rdfs:label "Issue or question"@en ,
+                     "Problème ou question"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Resource
+:Resource rdf:type owl:Class ;
+          owl:disjointWith <http://xmlns.com/foaf/0.1/Project> ;
+          rdfs:comment """La notion de Ressource ne découle (pour l'instant) d'aucune ontologie.
+
+URI : http://www.virtual-assembly.org/ontologies/1.0/pair#resource
+
+Définition : Dans l'ontologie PAIR, la notion de ressource est appréhendée de manière très générique. Constitue une ressource toute chose, matérielle ou immatérielle, susceptible d'être utilisée, offerte, nécessitée dans le cadre d'une aventure. Excepté les être humains, c'est la raison pour laquelle vous trouverez en sous-classes de la classe Ressource, des compétences et des services, mais pas des ressources humaines ...
+
+Les Ressources se subdivisent en plusieurs sous-classes :
+
+- Bien ou service
+- Compétence
+- Document
+- Code social
+- Lieu
+- Œuvre
+- Ressource financière
+- Ressource naturelle
+
+Dans le cadre de cette version, leurs propriétés objets sont globalement identiques."""@fr ;
+          rdfs:label "Resource"@en ,
+                     "Ressource"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#SocialCode
+:SocialCode rdf:type owl:Class ;
+            rdfs:subClassOf <http://xmlns.com/foaf/0.1/Document> ;
+            rdfs:comment """L’enjeu du \"#CodeSocial\" est de poser de manière claire et transparente le quoi, le pourquoi et le comment d’une organisation, d’un projet, d’une collaboration …
+
+Il permet aux différentes parties prenantes d’une aventure d’en co-construire une représentation commune à travers une méthode de description holistique.
+
+Le “#CodeSocial” présente la raison d’être, l’histoire, ainsi que les différents principes et modèles qui fondent nos actions : sur les plans social et humain, économique, écologique, scientifique et technologique, juridique, artistique et culturel.
+
+En rendant explicite ce qui souvent est implicite il permet à des communautés d’acteurs de travailler ensemble de manière saine, transparente et efficiente."""@fr ;
+            rdfs:label "Code social"@fr ,
+                       "Social code"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Theme
+:Theme rdf:type owl:Class ;
+       rdfs:subClassOf :Idea ;
+       rdfs:comment "Themes are equivalent to \"tags\" or \"topic interests\""@fr ,
+                    """Les thèmes rassemblent les notions, les concepts, les centres d'intérêts, les \"tags\".
+
+Par exemple, \"développement durable\", \"open source\", \"mécanique quantique\", \"peer to peer\", \"pastafarisme\", etc. Ce que l'on trouve dans wikipedia plus ou moins, ainsi que dans ses versions sémantiques : dbpedia, wikidata)""" ;
+       rdfs:label "Theme or topic interest"@en ,
+                  "Thème ou centre d'intérêt"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Thesis
+:Thesis rdf:type owl:Class ;
+        rdfs:subClassOf :Idea ;
+        rdfs:comment """- Les thèses rassemblent : 
+
+1- Les propositions (\"Et si ...\", \"Mettre en place un revenu universel inconditionnel\"), 
+2- Les arguments autour d'une thèse.  
+3- Les problèmes et les questions (Par exemple : \"Pourquoi y a t'il quelque chose plutôt que rien ?\")"""@fr ;
+        rdfs:label "Thesis"@en ,
+                   "Thèse"@fr .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class ;
+                                              rdfs:comment """SKOS est une ontologie se décrivant comme un système simple d'organisation de la connaissance (Simple Knoledge Organisation Sytem - SKOS)
+
+SKOS est à la racine du concept d'Idée dans l'ontologie PAIR. 
+
+Plus d'informations sur : https://www.w3.org/2009/08/skos-reference/skos.html"""@fr ;
+                                              rdfs:label "Concept"@en ,
+                                                         "Concept"@fr .
+
+
+###  http://xmlns.com/foaf/0.1/Agent
+<http://xmlns.com/foaf/0.1/Agent> rdf:type owl:Class ;
+                                  rdfs:comment """La notion d'Acteur dans PAIR est la même que celle d'Agent dans FOAF.
+
+URI : xmlns.com/foaf/0.1/agent
+
+Définition : Comme la notion d'Agent dans l'ontologie FOAF, la notion d'acteur dans l'ontologie PAIR rassemble les individus, les groupes et les organisations.""" ;
+                                  rdfs:label "Acteur"@fr ,
+                                             "Agent"@en .
+
+
+###  http://xmlns.com/foaf/0.1/Document
+<http://xmlns.com/foaf/0.1/Document> rdf:type owl:Class ;
+                                     rdfs:subClassOf :Resource ;
+                                     rdfs:comment """La notion de document est ici empruntée à foaf:document
+
+URI : http://xmlns.com/foaf/spec/#term_Document
+
+Définition : \"The Document class represents those things which are, broadly conceived, 'documents'.\""""@fr ;
+                                     rdfs:label "Document"@en ,
+                                                "Document"@fr .
+
+
+###  http://xmlns.com/foaf/0.1/Group
+<http://xmlns.com/foaf/0.1/Group> rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> ;
+                                  rdfs:comment """La notion de groupe dans PAIR est la même que celle de Groupe dans FOAF.
+
+URI : xmlns.com/foaf/0.1/group
+
+Définition : Un groupe est un collectif d'individus s'associant en vue d'une fin déterminée, ou pas. Un groupe se distingue d'une organisation par le fait qu'il n'a pas d'existence juridique à proprement parler. La notion de groupe en tant que section / partie d'une organisation n'est ici par prise en compte.""" ;
+                                  rdfs:label "Group"@en ,
+                                             "Groupe"@fr .
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+<http://xmlns.com/foaf/0.1/Organization> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> ;
+                                         rdfs:comment """La notion d'organisation dans PAIR est la même que celle d' Organization dans FOAF.
+
+URI : xmlns.com/foaf/0.1/organization
+
+Définition : Une organisation est une personne morale, prenant la forme d'un collectif d'individus s'associant en vue d'une fin déterminée. En tant que personnes morales, les organisations ont une existence sur le plan juridique.
+
+Plusieurs types d'organisations sont ici rassemblés :
+
+- Association, fondation
+- Entreprises, parmi lesquelles nous distinguons le cas particulier des coopératives.
+- Organismes publics, collectivités. 
+
+Dans le cadre de cette version de l'ontologie PAIR, les propriétés objet sont les mêmes pour les 3 types d'organisation.""" ;
+                                         rdfs:label "Organisation"@fr ,
+                                                    "Organization"@en .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> ;
+                                   rdfs:comment """La notion d'individu dans PAIR est la même que celle de Personne dans FOAF.
+
+URI : xmlns.com/foaf/0.1/person
+
+Définition : Un individu est un acteur, une personne physique, un humain.""" ;
+                                   rdfs:label "Individu"@fr ,
+                                              "Person"@en .
+
+
+###  http://xmlns.com/foaf/0.1/Project
+<http://xmlns.com/foaf/0.1/Project> rdf:type owl:Class ;
+                                    rdfs:comment """La notion de Projet dans PAIR est la même que celle de Projet dans FOAF.
+
+URI : xmlns.com/foaf/0.1/project
+
+Définition : Un projet suppose une action, et donc l'incarnation d'une idée, d'une intention dans le réel.
+
+Dans l'ontologie PAIR, les Projets se subdivisent en 2 grandes catégories : - D'un côté, les initiatives, missions, activités, soit les toutes les aventures au long cours. - D'un autre côté, les événements, s'inscrivant dans une temporalité courte, avec une date de début et une date de fin. La notion d'événement réfère ici à la notion de manifestation. Elle ne recouvre pas la notion d'événement au sens d'actualité (par exemple : un tremblement de terre, un attentat, une découverte)."""@fr ;
+                                    rdfs:label "Project"@en ,
+                                               "Projet"@fr .
+
+
+###  ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission
+<ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Assemblée_Générale
+<http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Assemblée_Générale> rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Autre
+<http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Autre> rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Barcamp
+<http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Barcamp> rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Café_des_pixels
+<http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Café_des_pixels> rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Festival
+<http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Festival> rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Réunion
+<http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Réunion> rdf:type owl:NamedIndividual .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Meetup
+:Meetup rdf:type owl:NamedIndividual .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#aPAIRo
+:aPAIRo rdf:type owl:NamedIndividual ;
+        rdfs:comment """TODO:
+Tous ces trucs ne sont pas des évènements,
+mais des types d'évènement.""" .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+owl:topObjectProperty rdfs:comment """Quelques propriétés qu'il faut peut être envisager de prendre en compte : 
+
+-sameAs
+-similarTo
+-hasForked
+-hasMerged""" .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Idea
+                :Resource
+                <http://xmlns.com/foaf/0.1/Agent>
+                <http://xmlns.com/foaf/0.1/Project>
+              )
+] .
+
+
+###  Generated by the OWL API (version 5.1.9) https://github.com/owlcs/owlapi/

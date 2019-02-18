@@ -1,0 +1,146 @@
+{
+  "@context" : {
+    "products" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl##products",
+      "@type" : "@id"
+    },
+    "hasDialecticalRelationWith" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl##hasDialecticalRelationWith",
+      "@type" : "@id"
+    },
+    "sparks" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl##sparks",
+      "@type" : "@id"
+    },
+    "Organization" : {
+      "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Organization"
+    },
+    "Thing" : {
+      "@id" : "http://www.w3.org/2002/07/owl#Thing"
+    },
+    "Idea" : {
+      "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea"
+    },
+    "profitsTo" : {
+      "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#profitsTo",
+      "@type" : "@id"
+    },
+    "Milestone" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl##Milestone"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "hasStructuralRelationWith" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl##hasStructuralRelationWith",
+      "@type" : "@id"
+    },
+    "carriesOut" : {
+      "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#carriesOut",
+      "@type" : "@id"
+    },
+    "Event" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl##Event"
+    },
+    "Immaterials" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl##Immaterials"
+    },
+    "Person" : {
+      "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Person"
+    },
+    "Materials" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl##Materials"
+    },
+    "Actor" : {
+      "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor"
+    },
+    "suscites" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl##suscites",
+      "@type" : "@id"
+    },
+    "actualizes" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl##actualizes",
+      "@type" : "@id"
+    },
+    "topObjectProperty" : {
+      "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty",
+      "@type" : "@id"
+    },
+    "HumanResources" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl##HumanResources"
+    },
+    "coOperatesWith" : {
+      "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#coOperatesWith",
+      "@type" : "@id"
+    },
+    "Argument" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl##Argument"
+    },
+    "Competence" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl##Competence"
+    },
+    "Project" : {
+      "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project"
+    },
+    "hasAnArgumentOn" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl##hasAnArgumentOn",
+      "@type" : "@id"
+    },
+    "coProducts" : {
+      "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#coProducts",
+      "@type" : "@id"
+    },
+    "Theme" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl##Theme"
+    },
+    "NaturalResources" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl##NaturalResources"
+    },
+    "endsAt" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl##endsAt",
+      "@type" : "@id"
+    },
+    "Educational" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl##Educational"
+    },
+    "Thesis" : {
+      "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Thesis"
+    },
+    "Entity" : {
+      "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity"
+    },
+    "disposesOf" : {
+      "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#disposesOf",
+      "@type" : "@id"
+    },
+    "Resource" : {
+      "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource"
+    },
+    "inFieldOf" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl##inFieldOf",
+      "@type" : "@id"
+    },
+    "dependsOn" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl##dependsOn",
+      "@type" : "@id"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "needs" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl##needs",
+      "@type" : "@id"
+    },
+    "composesOf" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl##composesOf",
+      "@type" : "@id"
+    },
+    "Task" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl##Task"
+    },
+    "isFacetOf" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl##isFacetOf",
+      "@type" : "@id"
+    }
+  }
+}

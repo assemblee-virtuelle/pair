@@ -1,0 +1,42 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+node [shape = rectangle, color="orange"]; "foaf:Project" "base:Organization" "base:Person" "base:Resource" "base:Idea" "38376a2fc933cd56a029352aab191935" "foaf:Person" "foaf:Organization" "a3345283af7811f12e6969209536e391" "http://www.w3.org/2004/02/skos/core#Concept" "base:Actor" "base:Project" ; /*classes style*/
+	"NULL" -> "base:Actor" [ label = "rdf:first" ];
+	"NULL" -> "base:Organization" [ label = "rdf:first" ];
+	"NULL" -> "30c36770df21eccee4f0c17f3cf33084" [ label = "rdf:rest" ];
+	"NULL" -> "base:Project" [ label = "rdf:first" ];
+	"NULL" -> "c58587dbac6f57382c7eba67a6b5753f" [ label = "rdf:rest" ];
+	"NULL" -> "502828d736dbd50072eb59f0c516e61d" [ label = "rdf:rest" ];
+	"NULL" -> "base:Idea" [ label = "rdf:first" ];
+	"NULL" -> "rdf:nil" [ label = "rdf:rest" ];
+	"NULL" -> "base:Resource" [ label = "rdf:first" ];
+	"NULL" -> "00fe98be9bd1cd49df7fd65ff38feccd" [ label = "owl:unionOf" ];
+	"NULL" -> "2cdd8ee28a2619ca9f4eae81e8d45aec" [ label = "rdf:rest" ];
+	"NULL" -> "db7e35e852ceaeab129aec9135e795d1" [ label = "owl:unionOf" ];
+	"av:hasEmployee" -> "av:hasContributor" [ label = "rdfs:subPropertyOf" ];
+	"base:founderof" -> "http://purl.org/dc/terms/creator" [ label = "rdfs:subPropertyOf" ];
+	"av:worksWith" -> "foaf:knows" [ label = "rdfs:subPropertyOf" ];
+	"base:authorof" -> "http://purl.org/dc/terms/creator" [ label = "rdfs:subPropertyOf" ];
+	"foaf:Organization" -> "http://www.w3.org/2004/02/skos/core#Concept" [ label = "av:specializedIn" ];
+	"foaf:Organization" -> "base:Person" [ label = "av:hasEmployee" ];
+	"base:Person" -> "foaf:Organization" [ label = "av:contributesToOrganization" ];
+	"foaf:Person" -> "owl:Thing" [ label = "av:facebookId" ];
+	"foaf:Organization" -> "http://www.w3.org/2004/02/skos/core#Concept" [ label = "av:opposedTo" ];
+	"foaf:Organization" -> "base:Person" [ label = "av:isLikedBy" ];
+	"av:Person" -> "owl:Thing" [ label = "av:metAt" ];
+	"base:Actor" -> "a3345283af7811f12e6969209536e391" [ label = "base:founderof" ];
+	"foaf:Person" -> "owl:Thing" [ label = "av:linkedinId" ];
+	"base:Person" -> "foaf:Organization" [ label = "av:employeeOf" ];
+	"base:Actor" -> "owl:Thing" [ label = "base:authorof" ];
+	"foaf:Organization" -> "foaf:Organization" [ label = "av:partner" ];
+	"base:Actor" -> "foaf:Project" [ label = "av:supports" ];
+	"base:Actor" -> "foaf:Project" [ label = "av:contributes" ];
+	"foaf:Person" -> "owl:Thing" [ label = "av:twitterId" ];
+	"base:Organization" -> "base:Actor" [ label = "av:hasContributor" ];
+	"base:Actor" -> "38376a2fc933cd56a029352aab191935" [ label = "http://rdfs.org/sioc/ns#follows" ];
+	"foaf:Person" -> "foaf:Person" [ label = "av:worksWith" ];
+	"foaf:Organization" -> "base:Person" [ label = "av:originator" ];
+	"foaf:Organization" -> "http://www.w3.org/2004/02/skos/core#Concept" [ label = "av:likesIdea" ];
+
+}

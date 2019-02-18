@@ -1,0 +1,600 @@
+@prefix : <http://www.assemblee-virtuelle.org/ontologies/v1.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.assemblee-virtuelle.org/ontologies/v1.owl#> .
+
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#> rdf:type owl:Ontology ;
+                                                         owl:imports <http://xmlns.com/foaf/0.1/> ;
+                                                         rdfs:comment """Ontologie de l'Assemblée Virtuelle, en vue de la Plateforme web;
+	concepts de base: Projets, Acteurs, Idées, Ressources (PAIR)
+	cf mail de Guillaume du 20 Mar 2014 11:42
+	avec \"Prédicats ecosysteme\" , la rose des vents de Guillaume,
+	et \"Jalons - Cartographie sémantique des ecosystemes de PAIR\"
+	cf https://basecamp.com/2588660/projects/5413946-plateforme-web-av/documents/5456204-concepts-de-base 
+	et mail envoyé par Guillaume le 23 mars 
+	PAIR : Projet – Acteur – Idée – Ressource. """@fr ;
+                                                         rdfs:label "Ontologie de l'Assemblée Virtuelle"@fr .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#metAt
+:metAt rdfs:label "rencontré à"@fr ;
+       rdf:type owl:AnnotationProperty ;
+       rdfs:domain :Person .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#actor
+:actor rdf:type owl:ObjectProperty ;
+       rdfs:range :Actor ;
+       rdfs:label "acteur"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#compatibleWith
+:compatibleWith rdf:type owl:ObjectProperty ;
+                rdfs:domain :Idea ;
+                rdfs:range :Idea ;
+                rdfs:label "compatible avec"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributes
+:contributes rdf:type owl:ObjectProperty ;
+             owl:inverseOf <http://xmlns.com/foaf/0.1/member> ;
+             rdfs:domain :Actor ;
+             rdfs:range <http://xmlns.com/foaf/0.1/Project> ;
+             rdfs:label "contribue"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributesToOrganization
+:contributesToOrganization rdf:type owl:ObjectProperty ;
+                           rdfs:domain :Person ;
+                           rdfs:range <http://xmlns.com/foaf/0.1/Organization> ;
+                           rdfs:label "adhère"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#convergentWith
+:convergentWith rdf:type owl:ObjectProperty ;
+                rdfs:domain :Idea ;
+                rdfs:range :Idea ;
+                rdfs:label "convergent avec"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#employeeOf
+:employeeOf rdf:type owl:ObjectProperty ;
+            rdfs:domain :Person ;
+            rdfs:range <http://xmlns.com/foaf/0.1/Organization> ;
+            rdfs:label "employé par"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#foughtBy
+:foughtBy rdf:type owl:ObjectProperty ;
+          rdfs:domain :Idea ;
+          rdfs:range :Actor ;
+          rdfs:label "combattue par"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasContributor
+:hasContributor rdf:type owl:ObjectProperty .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasEmployee
+:hasEmployee rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :hasContributor ;
+             owl:inverseOf :employeeOf ;
+             rdfs:domain <http://xmlns.com/foaf/0.1/Organization> ;
+             rdfs:range :Person ;
+             rdfs:label "employé"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasMeeting
+:hasMeeting rdf:type owl:ObjectProperty ;
+            rdfs:domain :Project ;
+            rdfs:range :Event ;
+            rdfs:label "Réunion"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#idea
+:idea rdf:type owl:ObjectProperty ;
+      rdfs:range :Idea ;
+      rdfs:comment "idée associée"@fr ;
+      rdfs:label "idée"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#ideaCategory
+:ideaCategory rdf:type owl:ObjectProperty ;
+              rdfs:domain :Idea ;
+              rdfs:range [ rdf:type owl:Class ;
+                           owl:oneOf ( :theme
+                                       :thesis
+                                     )
+                         ] ;
+              rdfs:label "catégorie d'idée"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#implementedBy
+:implementedBy rdf:type owl:ObjectProperty ;
+               rdfs:domain :Idea ;
+               rdfs:range :Project ;
+               rdfs:label "mise en oeuvre par"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#implements
+:implements rdf:type owl:ObjectProperty ;
+            rdfs:domain <http://xmlns.com/foaf/0.1/Project> ;
+            rdfs:range :Idea ;
+            rdfs:comment "le projet concrétise une idée"@fr ;
+            rdfs:label "idée"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#includes
+:includes rdf:type owl:ObjectProperty ;
+          owl:inverseOf :partOf ;
+          rdfs:domain :Resource ;
+          rdfs:range :Resource ;
+          rdfs:comment "une partie contenue physiquement ou logiquement dans la ressource sujet"@fr ;
+          rdfs:label "sous-partie de la ressource"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#inspiredBy
+:inspiredBy rdf:type owl:ObjectProperty ;
+            rdfs:domain :Idea ,
+                        <http://xmlns.com/foaf/0.1/Project> ;
+            rdfs:range :Idea ;
+            rdfs:label "inspiré par"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#isImplementedBy
+:isImplementedBy rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Idea ;
+                 rdfs:range :Project ;
+                 rdfs:comment "l'idée est concrétisée par un projet"@fr ;
+                 rdfs:label "projet"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#isLikedBy
+:isLikedBy rdf:type owl:ObjectProperty ;
+           rdfs:domain <http://xmlns.com/foaf/0.1/Organization> ;
+           rdfs:range :Person ;
+           rdfs:label "sympatisant"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#lead
+:lead rdf:type owl:ObjectProperty ;
+      rdfs:domain <http://xmlns.com/foaf/0.1/Project> ;
+      rdfs:range <http://xmlns.com/foaf/0.1/Person> ;
+      rdfs:label "responsable"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesIdea
+:likesIdea rdf:type owl:ObjectProperty ,
+                    owl:SymmetricProperty ;
+           rdfs:domain <http://xmlns.com/foaf/0.1/Organization> ;
+           rdfs:range :Idea ;
+           rdfs:label "aime l'idée"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesOrganization
+:likesOrganization rdf:type owl:ObjectProperty ;
+                   rdfs:domain <http://xmlns.com/foaf/0.1/Organization> ;
+                   rdfs:range <http://xmlns.com/foaf/0.1/Organization> ;
+                   rdfs:label "aime l'organisation"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesProject
+:likesProject rdf:type owl:ObjectProperty ;
+              rdfs:range :Project ;
+              rdfs:label "aime le projet"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#managedBy
+:managedBy rdf:type owl:ObjectProperty ;
+           rdfs:domain :Resource ;
+           rdfs:range <http://xmlns.com/foaf/0.1/Person> ;
+           rdfs:label "géré par"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByOrganization
+:neededByOrganization rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Resource ;
+                      rdfs:range <http://xmlns.com/foaf/0.1/Organization> ;
+                      rdfs:label "ressource nécessaire à l'organisation"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByPerson
+:neededByPerson rdf:type owl:ObjectProperty ;
+                rdfs:domain :Resource ;
+                rdfs:range <http://xmlns.com/foaf/0.1/Person> ;
+                rdfs:label "ressource nécessaire à l'individu"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByProject
+:neededByProject rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Resource ;
+                 rdfs:range <http://xmlns.com/foaf/0.1/Project> ;
+                 rdfs:label "ressource nécessaire au projet"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsDocument
+:needsDocument rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :needsResource ;
+               rdfs:domain :Organization ,
+                           :Person ;
+               rdfs:range owl:Thing ;
+               rdfs:label "recherche des documents ou des bonnes pratiques."@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsGoodOrSpace
+:needsGoodOrSpace rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :needsResource ;
+                  rdfs:domain :Organization ,
+                              :Person ;
+                  rdfs:range owl:Thing ;
+                  rdfs:label "recherche des biens ou des espaces."@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsResource
+:needsResource rdf:type owl:ObjectProperty .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsServices
+:needsServices rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :needsResource ;
+               rdfs:domain :Organization ,
+                           :Person ;
+               rdfs:range owl:Thing ;
+               rdfs:label "recherche des services."@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#opposedTo
+:opposedTo rdf:type owl:ObjectProperty ,
+                    owl:SymmetricProperty ;
+           rdfs:domain _:genid-nodeid-node1d40881arx9 ,
+                       <http://xmlns.com/foaf/0.1/Organization> ,
+                       <http://xmlns.com/foaf/0.1/Project> ;
+           rdfs:range :Idea ,
+                      [ rdf:type owl:Class ;
+                        owl:unionOf ( :Idea
+                                      :Project
+                                    )
+                      ] ;
+           rdfs:label "opposé à"@fr ,
+                      "opposé à l'idée"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#originator
+:originator rdf:type owl:ObjectProperty ;
+            rdfs:domain <http://xmlns.com/foaf/0.1/Organization> ;
+            rdfs:range :Person ;
+            rdfs:label "est à l'origine"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#ownedBy
+:ownedBy rdf:type owl:ObjectProperty ;
+         rdfs:domain :Resource ;
+         rdfs:range <http://xmlns.com/foaf/0.1/Agent> ;
+         rdfs:label "propriétaire"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#partOf
+:partOf rdf:type owl:ObjectProperty ;
+        rdfs:domain :Resource ;
+        rdfs:range :Resource ;
+        rdfs:comment "une partie contenant physiquement ou logiquement la ressource sujet"@fr ;
+        rdfs:label "ressource conteneur"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#partner
+:partner rdf:type owl:ObjectProperty ,
+                  owl:SymmetricProperty ;
+         rdfs:domain <http://xmlns.com/foaf/0.1/Organization> ;
+         rdfs:range <http://xmlns.com/foaf/0.1/Organization> ;
+         rdfs:label "partenaire"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#project
+:project rdf:type owl:ObjectProperty ;
+         rdfs:range :Project ;
+         rdfs:comment "projet associé"@fr ;
+         rdfs:label "projet"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#projectCategory
+:projectCategory rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Project ;
+                 rdfs:range [ rdf:type owl:Class ;
+                              owl:oneOf ( :event
+                                          :hardware
+                                          :society
+                                          :software
+                                        )
+                            ] ;
+                 rdfs:label "catégorie de projet"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#requires
+:requires rdf:type owl:ObjectProperty ;
+          rdfs:domain <http://xmlns.com/foaf/0.1/Project> ;
+          rdfs:range :Resource ;
+          rdfs:label "nécessite ressource"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#resource
+:resource rdf:type owl:ObjectProperty ;
+          rdfs:range :Resource ;
+          rdfs:comment "ressource associée"@fr ;
+          rdfs:label "ressource"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#resourceCategory
+:resourceCategory rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Resource ;
+                  rdfs:range [ rdf:type owl:Class ;
+                               owl:oneOf ( :competence
+                                           :document
+                                           :good
+                                           :services
+                                           :space
+                                         )
+                             ] ;
+                  rdfs:label "catégorie de ressource"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByOrganization
+:sharedByOrganization rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Resource ;
+                      rdfs:range <http://xmlns.com/foaf/0.1/Organization> ;
+                      rdfs:label "ressource partagée (proposée) par"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByPerson
+:sharedByPerson rdf:type owl:ObjectProperty ;
+                rdfs:domain :Resource ;
+                rdfs:range <http://xmlns.com/foaf/0.1/Person> ;
+                rdfs:label "ressource partagée (proposée) par"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByProject
+:sharedByProject rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Resource ;
+                 rdfs:range <http://xmlns.com/foaf/0.1/Project> ;
+                 rdfs:label "partagée (proposée) par projet"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesDocument
+:sharesDocument rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :sharesResource ;
+                rdfs:domain :Organization ,
+                            :Person ;
+                rdfs:range :Resource ;
+                rdfs:label "propose ou partage des documents ou des bonnes pratiques."@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesGoodOrSpace
+:sharesGoodOrSpace rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :sharesResource ;
+                   rdfs:domain :Organization ,
+                               :Person ;
+                   rdfs:range :Resource ;
+                   rdfs:label "propose ou partage des biens ou des espaces."@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesResource
+:sharesResource rdf:type owl:ObjectProperty ;
+                rdfs:range :Resource .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesServices
+:sharesServices rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :sharesResource ;
+                rdfs:domain :Organization ,
+                            :Person ;
+                rdfs:range :Resource ;
+                rdfs:label "propose des services."@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#specializedIn
+:specializedIn rdf:type owl:ObjectProperty ,
+                        owl:SymmetricProperty ;
+               rdfs:domain <http://xmlns.com/foaf/0.1/Organization> ;
+               rdfs:range :Idea ;
+               rdfs:label "spécialisé dans l'idée"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#supportedBy
+:supportedBy rdf:type owl:ObjectProperty ;
+             rdfs:domain :Idea ,
+                         :Projet ;
+             rdfs:range :Actor ;
+             rdfs:comment "soutenue par"@fr ;
+             rdfs:label "acteur"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#supports
+:supports rdf:type owl:ObjectProperty ;
+          rdfs:domain :Actor ;
+          rdfs:range <http://xmlns.com/foaf/0.1/Project> ;
+          rdfs:label "soutient"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#targetUser
+:targetUser rdf:type owl:ObjectProperty ;
+            rdfs:domain :Projet ;
+            rdfs:range owl:Thing ;
+            rdfs:comment "types d'utilisateurs ciblés: occasionnels, réguliers, administrateurs, développeurs, ..."@fr ;
+            rdfs:label "utilisateurs cibles"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#usedBy
+:usedBy rdf:type owl:ObjectProperty ;
+        rdfs:domain :Projet ,
+                    :Resource ;
+        rdfs:range <http://xmlns.com/foaf/0.1/Agent> ;
+        rdfs:label "utilisé par"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#worksWith
+:worksWith rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/knows> ;
+           rdf:type owl:SymmetricProperty ;
+           rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+           rdfs:range <http://xmlns.com/foaf/0.1/Person> ;
+           rdfs:label "travaille avec"@fr .
+
+
+###  http://xmlns.com/foaf/0.1/member
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#facebookId
+:facebookId rdf:type owl:DatatypeProperty ;
+            rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+            rdfs:label "Facebook"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#linkedinId
+:linkedinId rdf:type owl:DatatypeProperty ;
+            rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+            rdfs:label "LinkedIn"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#twitterId
+:twitterId rdf:type owl:DatatypeProperty ;
+           rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+           rdfs:label "Twitter"@fr .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  _:genid-nodeid-node1d40881arx9
+_:genid-nodeid-node1d40881arx9 rdf:type owl:Class .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor
+:Actor rdf:type owl:Class ;
+       rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> ;
+       owl:disjointWith :Idea ,
+                        :Project ;
+       rdfs:label "Acteur"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#Event
+:Event rdf:type owl:Class .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea
+:Idea rdf:type owl:Class ;
+      rdfs:comment """ Exemples d'idées: Développement Durable, social, économie, écologie, réflexions , analyse , critique, proposition  (l'intention peut être projet ou non); 
+relation entre idées: opposition, compatibilité , convergence ...
+approche systémique ( et combinatoire )
+faits ? c'est plus un sujet (Dublin core) qu'une ressource ou une idée
+catégories, thématiques : passer du micro au macro ( particulier au général ) """ ;
+      rdfs:label "Idée"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization
+:Organization rdf:type owl:Class ;
+              rdfs:subClassOf :Actor ,
+                              <http://xmlns.com/foaf/0.1/Organization> ;
+              rdfs:label "Organisation"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf :Actor ,
+                        <http://xmlns.com/foaf/0.1/Person> ;
+        rdfs:label "Individu"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project
+:Project rdf:type owl:Class ;
+         rdfs:subClassOf <http://xmlns.com/foaf/0.1/Project> ;
+         rdfs:comment """NOTES:
+	- foaf:Project is the simplest common denominator
+	- doap:Project is also a foaf:Project
+	"""@en ,
+                      "Un projet logiciel, sociétal, etc."@fr ;
+         rdfs:label "Projet"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#Projet
+:Projet rdf:type owl:Class .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource
+:Resource rdf:type owl:Class ;
+          rdfs:comment "Exemples de ressources: documents, matérielles, services, financières, lieux, outils, networking (carnet)" ;
+          rdfs:label "Ressource"@fr .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#competence
+:competence rdf:type owl:NamedIndividual ;
+            rdfs:label "Compétences"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#document
+:document rdf:type owl:NamedIndividual ;
+          rdfs:label "Ressource documentaire"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#event
+:event rdf:type owl:NamedIndividual ;
+       rdfs:label "Événementiel"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#good
+:good rdf:type owl:NamedIndividual ;
+      rdfs:label "Bien tangible"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#hardware
+:hardware rdf:type owl:NamedIndividual ;
+          rdfs:label "Matériel"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#services
+:services rdf:type owl:NamedIndividual ;
+          rdfs:label "Services"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#society
+:society rdf:type owl:NamedIndividual ;
+         rdfs:label "Sociétal"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#software
+:software rdf:type owl:NamedIndividual ;
+          rdfs:label "Immatériel (logiciel etc)"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#space
+:space rdf:type owl:NamedIndividual ;
+       rdfs:label "Espace"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#theme
+:theme rdf:type owl:NamedIndividual ;
+       rdfs:label "Thème"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#thesis
+:thesis rdf:type owl:NamedIndividual ;
+        rdfs:label "Thèse"@fr .
+
+
+###  Generated by the OWL API (version 5.1.9) https://github.com/owlcs/owlapi/

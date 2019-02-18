@@ -1,0 +1,262 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:v1="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:resource="http://dbpedia.org/resource/">
+    <Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#concretise -->
+
+
+    <AnnotationProperty rdf:about="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#concretise"/>
+    
+
+
+    <!-- file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#inspiredBy -->
+
+
+    <AnnotationProperty rdf:about="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#inspiredBy"/>
+    
+
+
+    <!-- file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#lead -->
+
+
+    <AnnotationProperty rdf:about="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#lead"/>
+    
+
+
+    <!-- file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#participant -->
+
+
+    <AnnotationProperty rdf:about="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#participant"/>
+    
+
+
+    <!-- file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#requires -->
+
+
+    <AnnotationProperty rdf:about="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#requires"/>
+    
+
+
+    <!-- http://dbpedia.org/resource/numberOfPeopleAttending -->
+
+
+    <AnnotationProperty rdf:about="http://dbpedia.org/resource/numberOfPeopleAttending"/>
+    
+
+
+    <!-- http://dbpedia.org/resource/startDate -->
+
+
+    <AnnotationProperty rdf:about="http://dbpedia.org/resource/startDate"/>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#comment -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#comment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Acteur -->
+
+
+    <Class rdf:about="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Acteur"/>
+    
+
+
+    <!-- file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Idea -->
+
+
+    <Class rdf:about="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Idea"/>
+    
+
+
+    <!-- file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Project -->
+
+
+    <Class rdf:about="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Project"/>
+    
+
+
+    <!-- file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Resource -->
+
+
+    <Class rdf:about="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Resource"/>
+    
+
+
+    <!-- http://dbpedia.org/resource/Event -->
+
+
+    <Class rdf:about="http://dbpedia.org/resource/Event"/>
+    
+
+
+    <!-- http://dbpedia.org/resource/Place -->
+
+
+    <Class rdf:about="http://dbpedia.org/resource/Place"/>
+    
+
+
+    <!-- http://dbpedia.org/resource/Technology -->
+
+
+    <Class rdf:about="http://dbpedia.org/resource/Technology"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Group -->
+
+
+    <Class rdf:about="http://xmlns.com/foaf/0.1/Group"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Assemblee#Virtuelle -->
+
+
+    <NamedIndividual rdf:about="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Assemblee#Virtuelle">
+        <rdf:type rdf:resource="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Acteur"/>
+        <v1:concretise rdf:resource="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/PAIRa#PAIR"/>
+        <v1:requires>
+            <rdf:Description rdf:nodeID="genid2">
+                <rdf:type rdf:resource="http://dbpedia.org/resource/Place"/>
+            </rdf:Description>
+        </v1:requires>
+    </NamedIndividual>
+    
+
+
+    <!-- file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Atelier#FilRouge -->
+
+
+    <NamedIndividual rdf:about="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Atelier#FilRouge">
+        <rdf:type rdf:resource="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Resource"/>
+        <v1:lead rdf:resource="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../people/gilberte#me"/>
+    </NamedIndividual>
+    
+
+
+    <!-- file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Co#Business -->
+
+
+    <NamedIndividual rdf:about="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Co#Business">
+        <rdf:type rdf:resource="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Project"/>
+        <v1:lead rdf:resource="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../people/Vincent#me"/>
+        <v1:participant>
+            <rdf:Description rdf:nodeID="genid3">
+                <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+            </rdf:Description>
+        </v1:participant>
+        <v1:requires>
+            <rdf:Description rdf:nodeID="genid4">
+                <rdf:type rdf:resource="http://dbpedia.org/resource/Place"/>
+            </rdf:Description>
+        </v1:requires>
+        <v1:requires>
+            <rdf:Description rdf:nodeID="genid5">
+                <rdf:type rdf:resource="http://dbpedia.org/resource/Technology"/>
+            </rdf:Description>
+        </v1:requires>
+    </NamedIndividual>
+    
+
+
+    <!-- file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Expo#WAVE -->
+
+
+    <NamedIndividual rdf:about="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Expo#WAVE">
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Event"/>
+        <v1:requires>
+            <rdf:Description rdf:nodeID="genid6">
+                <rdf:type rdf:resource="http://dbpedia.org/resource/Place"/>
+            </rdf:Description>
+        </v1:requires>
+        <resource:numberOfPeopleAttending rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</resource:numberOfPeopleAttending>
+        <resource:startDate>2014-10-01</resource:startDate>
+        <rdf:comment>L&apos;exposition WAVE a été l&apos;occasion d&apos;une première cartographie l&apos;écosystème P A I R de L&apos;Assemblée Virtuelle</rdf:comment>
+    </NamedIndividual>
+    
+
+
+    <!-- file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Ingeniosité#Collective -->
+
+
+    <NamedIndividual rdf:about="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Ingeniosité#Collective">
+        <rdf:type rdf:resource="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Idea"/>
+        <v1:lead rdf:resource="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../people/sylvain#me"/>
+    </NamedIndividual>
+    
+
+
+    <!-- file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/PAIRa#PAIR -->
+
+
+    <NamedIndividual rdf:about="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/PAIRa#PAIR">
+        <rdf:type rdf:resource="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Idea"/>
+        <v1:inspiredBy rdf:resource="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Peer2#Peer"/>
+    </NamedIndividual>
+    
+
+
+    <!-- file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Peer2#Peer -->
+
+
+    <NamedIndividual rdf:about="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Peer2#Peer">
+        <rdf:type rdf:resource="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Idea"/>
+    </NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.9) https://github.com/owlcs/owlapi/ -->
+
+

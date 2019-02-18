@@ -1,0 +1,133 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.fluidlog.com/2013/05/loglink/core#combien
+<http://www.fluidlog.com/2013/05/loglink/core#combien> rdf:type owl:ObjectProperty ;
+                                                       rdfs:range xsd:number .
+
+
+###  http://www.fluidlog.com/2013/05/loglink/core#comment
+<http://www.fluidlog.com/2013/05/loglink/core#comment> rdf:type owl:ObjectProperty ;
+                                                       rdfs:comment "lien vers un méthodologie, une bonne pratique, qui répond à la question \"Comment ?\" "@fr ;
+                                                       rdfs:label "comment"@fr ,
+                                                                  "how"@en .
+
+
+###  http://www.fluidlog.com/2013/05/loglink/core#linkedto
+<http://www.fluidlog.com/2013/05/loglink/core#linkedto> rdf:type owl:ObjectProperty ;
+                                                        rdfs:label "linked to"@en ,
+                                                                   "lié avec"@fr .
+
+
+###  http://www.fluidlog.com/2013/05/loglink/core#ou
+<http://www.fluidlog.com/2013/05/loglink/core#ou> rdf:type owl:ObjectProperty ;
+                                                  rdfs:comment "lien vers un lieu, une adresse, un établissement, une localisation informatique (uri), qui répond à la question \"Où ?\" "@fr ;
+                                                  rdfs:label "où"@fr ,
+                                                             "where"@en .
+
+
+###  http://www.fluidlog.com/2013/05/loglink/core#pourquoi
+<http://www.fluidlog.com/2013/05/loglink/core#pourquoi> rdf:type owl:ObjectProperty ;
+                                                        rdfs:comment "lien vers une raison d'être, une explication, qui répond à la question \"Pourquoi ?\" "@fr ;
+                                                        rdfs:label "pourquoi"@fr ,
+                                                                   "why"@en .
+
+
+###  http://www.fluidlog.com/2013/05/loglink/core#qui
+<http://www.fluidlog.com/2013/05/loglink/core#qui> rdf:type owl:ObjectProperty ;
+                                                   rdfs:range <http://www.virtual-assembly.org/ontologies/v1.owl#Actor> ;
+                                                   rdfs:comment "lien vers un acteur"@fr ;
+                                                   rdfs:label "qui"@fr ,
+                                                              "who"@en .
+
+
+###  http://www.fluidlog.com/2013/05/loglink/core#quoi
+<http://www.fluidlog.com/2013/05/loglink/core#quoi> rdf:type owl:ObjectProperty ;
+                                                    rdfs:comment "lien vers un objet, une description d'un objet, d'une chose qui répond à la question \"De quoi s'agit-il ?\" "@fr ;
+                                                    rdfs:label "quoi"@fr ,
+                                                               "what"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.fluidlog.com/2013/05/loglink/core#combien
+<http://www.fluidlog.com/2013/05/loglink/core#combien> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.fluidlog.com/2013/05/loglink/core#quand
+<http://www.fluidlog.com/2013/05/loglink/core#quand> rdf:type owl:DatatypeProperty ;
+                                                     rdfs:comment "lien vers une date, une durée, un horodatage, un intervalle de temps "@fr ;
+                                                     rdfs:label "quand"@fr ,
+                                                                "when"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.fluidlog.com/2013/05/loglink/core#Combien
+<http://www.fluidlog.com/2013/05/loglink/core#Combien> rdf:type owl:Class ;
+                                                       rdfs:label "combien"@fr .
+
+
+###  http://www.fluidlog.com/2013/05/loglink/core#Comment
+<http://www.fluidlog.com/2013/05/loglink/core#Comment> rdf:type owl:Class ;
+                                                       rdfs:label "comment"@fr .
+
+
+###  http://www.fluidlog.com/2013/05/loglink/core#Ou
+<http://www.fluidlog.com/2013/05/loglink/core#Ou> rdf:type owl:Class ;
+                                                  rdfs:label "où"@fr .
+
+
+###  http://www.fluidlog.com/2013/05/loglink/core#Pourquoi
+<http://www.fluidlog.com/2013/05/loglink/core#Pourquoi> rdf:type owl:Class ;
+                                                        rdfs:label "pourquoi"@fr .
+
+
+###  http://www.fluidlog.com/2013/05/loglink/core#Quand
+<http://www.fluidlog.com/2013/05/loglink/core#Quand> rdf:type owl:Class ;
+                                                     rdfs:label "quand"@fr .
+
+
+###  http://www.fluidlog.com/2013/05/loglink/core#Qui
+<http://www.fluidlog.com/2013/05/loglink/core#Qui> rdf:type owl:Class ;
+                                                   rdfs:label "Qui"@fr .
+
+
+###  http://www.fluidlog.com/2013/05/loglink/core#Quoi
+<http://www.fluidlog.com/2013/05/loglink/core#Quoi> rdf:type owl:Class ;
+                                                    rdfs:label "quoi"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/v1.owl#Actor
+<http://www.virtual-assembly.org/ontologies/v1.owl#Actor> rdf:type owl:Class .
+
+
+###  http://www.w3.org/2001/XMLSchema#number
+xsd:number rdf:type owl:Class .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://www.fluidlog.com/2013/05/loglink/core#combien> rdfs:comment "lien vers un prix, une valeur, une quantité, un numéraire, qui répond à la question \"Combien ?\" "@fr ;
+                                                       rdfs:label "combien"@fr ,
+                                                                  "how much"@en .
+
+
+###  Generated by the OWL API (version 5.1.9) https://github.com/owlcs/owlapi/

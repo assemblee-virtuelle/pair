@@ -1,0 +1,195 @@
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23actualizes
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23actualizes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23actualizes> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23actualizes> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea> .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23composesOf
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23composesOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23composesOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23composesOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Task> .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23dependsOn
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23dependsOn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23dependsOn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23dependsOn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource> .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23endsAt
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23endsAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23endsAt> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23endsAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23endsAt> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Task> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23endsAt> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Milestone> .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23hasAnArgumentOn
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23hasAnArgumentOn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23hasAnArgumentOn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23hasAnArgumentOn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23hasAnArgumentOn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea> .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23hasDialecticalRelationWith
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23hasDialecticalRelationWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23hasDialecticalRelationWith> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23hasDialecticalRelationWith> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea> .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23hasStructuralRelationWith
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23hasStructuralRelationWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23hasStructuralRelationWith> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23hasStructuralRelationWith> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor> .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23inFieldOf
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23inFieldOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23inFieldOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23inFieldOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23inFieldOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23inFieldOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Theme> .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23isFacetOf
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23isFacetOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23isFacetOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23isFacetOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23isFacetOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23isFacetOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity> .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23needs
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23needs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23needs> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23needs> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource> .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23products
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23products> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23products> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23products> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource> .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23sparks
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23sparks> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23sparks> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23sparks> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea> .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23suscites
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23suscites> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23suscites> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23suscites> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23suscites> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Argument> .
+# 
+# http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#carriesOut
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#carriesOut> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#carriesOut> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project> .
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#carriesOut> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea> .
+# 
+# http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#coOperatesWith
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#coOperatesWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#coOperatesWith> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#coOperatesWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#coOperatesWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#coOperatesWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#coOperatesWith> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor> .
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#coOperatesWith> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor> .
+# 
+# http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#coProducts
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#coProducts> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#coProducts> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#profitsTo> .
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#coProducts> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor> .
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#coProducts> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project> .
+# 
+# http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#disposesOf
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#disposesOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#disposesOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor> .
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#disposesOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource> .
+# 
+# http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#profitsTo
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#profitsTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Argument
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Argument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Competence
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Competence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Competence> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23HumanResources> .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Educational
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Educational> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Educational> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource> .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Event
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Event> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23HumanResources
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23HumanResources> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23HumanResources> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource> .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Immaterials
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Immaterials> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Immaterials> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource> .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Materials
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Materials> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Materials> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource> .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Milestone
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Milestone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Milestone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Event> .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23NaturalResources
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23NaturalResources> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23NaturalResources> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource> .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Task
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Task> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Task> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Theme
+<http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Theme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity> .
+# 
+# http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity> <http://www.w3.org/2000/01/rdf-schema#comment> "Concept englobant les quatre concepts-clefs de l'ontologie. Ce concept est principalement lié à la propritété 'facet' qui permet de décrire qu'un PAIR est une facette d'un autre PAIR"@fr .
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity> <http://www.w3.org/2000/01/rdf-schema#label> "Entité"@fr .
+# 
+# http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity> .
+# 
+# http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Organization
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor> .
+# 
+# http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Person
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor> .
+# 
+# http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity> .
+# 
+# http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity> .
+# 
+# http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Thesis
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Thesis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Thesis> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea> .
+# 
+# Generated by the OWL API (version 5.1.9) https://github.com/owlcs/owlapi/

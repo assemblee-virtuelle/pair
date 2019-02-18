@@ -1,0 +1,317 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
+}, {
+  "@id" : "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#classDomain",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToForm",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToProperty",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#showProperties",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#widgetClass",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/forms#EventForm",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification" ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#classDomain" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Event"
+  } ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#showProperties" : [ {
+    "@id" : "_:genid2"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Event AV"
+  }, {
+    "@language" : "fr",
+    "@value" : "Evènement AV"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/forms#EventForm-Completion",
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToForm" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/forms#EventForm"
+  } ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToProperty" : [ {
+    "@id" : "http://purl.org/dc/terms/subject"
+  }, {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#offersSkill"
+  }, {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#seeksSkill"
+  }, {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#town"
+  } ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#widgetClass" : [ {
+    "@id" : "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#DBPediaLookup"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/forms#GroupForm",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification" ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#classDomain" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Group"
+  } ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#showProperties" : [ {
+    "@id" : "_:genid3"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Group AV"
+  }, {
+    "@language" : "fr",
+    "@value" : "Groupe AV"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/forms#GroupForm-Completion",
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToForm" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/forms#GroupForm"
+  } ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToProperty" : [ {
+    "@id" : "http://purl.org/dc/terms/subject"
+  }, {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#offersSkill"
+  }, {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#seeksSkill"
+  }, {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#town"
+  } ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#widgetClass" : [ {
+    "@id" : "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#DBPediaLookup"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/forms#InitiativeOrMissionForm",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification" ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#classDomain" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission"
+  } ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#showProperties" : [ {
+    "@id" : "_:genid4"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Initiative or Mission AV"
+  }, {
+    "@language" : "fr",
+    "@value" : "Initiative ou Mission AV"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/forms#InitiativeOrMissionForm-Completion",
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToForm" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/forms#InitiativeOrMissionForm"
+  } ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToProperty" : [ {
+    "@id" : "http://purl.org/dc/terms/subject"
+  }, {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#offersSkill"
+  }, {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#seeksSkill"
+  }, {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#town"
+  } ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#widgetClass" : [ {
+    "@id" : "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#DBPediaLookup"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/forms#OrganizationForm",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification" ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#classDomain" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Organization"
+  } ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#showProperties" : [ {
+    "@id" : "_:genid5"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Organisation AV"
+  }, {
+    "@language" : "en",
+    "@value" : "Organization AV"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/forms#OrganizationForm-Completion",
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToForm" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/forms#OrganizationForm"
+  } ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToProperty" : [ {
+    "@id" : "http://purl.org/dc/terms/subject"
+  }, {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#offersSkill"
+  }, {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#seeksSkill"
+  }, {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#town"
+  } ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#widgetClass" : [ {
+    "@id" : "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#DBPediaLookup"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/forms#PersonForm",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification" ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#classDomain" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
+  } ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#showProperties" : [ {
+    "@id" : "_:genid6"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Person AV"
+  }, {
+    "@language" : "fr",
+    "@value" : "Personne AV"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/forms#PersonForm-Completion",
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToForm" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/forms#PersonForm"
+  } ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToProperty" : [ {
+    "@id" : "http://purl.org/dc/terms/subject"
+  }, {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#offersSkill"
+  }, {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#seeksSkill"
+  }, {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#town"
+  } ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#widgetClass" : [ {
+    "@id" : "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#DBPediaLookup"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/forms#ResourceForm",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification" ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#classDomain" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"
+  } ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#showProperties" : [ {
+    "@id" : "_:genid7"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Resource AV"
+  }, {
+    "@language" : "fr",
+    "@value" : "Ressource AV"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/forms#ResourceForm-Completion",
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToForm" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/forms#ResourceForm"
+  } ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToProperty" : [ {
+    "@id" : "http://purl.org/dc/terms/subject"
+  } ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#widgetClass" : [ {
+    "@id" : "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#DBPediaLookup"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/forms#SkillForm",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification" ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#classDomain" : [ {
+    "@id" : "http://purl.org/ontology/cco/core#Skill"
+  } ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#showProperties" : [ {
+    "@id" : "_:genid8"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Compétence AV"
+  }, {
+    "@language" : "en",
+    "@value" : "Skill AV"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/forms#SkillForm-Completion",
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToForm" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/forms#SkillForm"
+  } ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToProperty" : [ {
+    "@id" : "http://purl.org/dc/terms/subject"
+  } ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#widgetClass" : [ {
+    "@id" : "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#DBPediaLookup"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/forms#ThemeForm",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification" ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#classDomain" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Theme"
+  } ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#showProperties" : [ {
+    "@id" : "_:genid9"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Theme AV"
+  }, {
+    "@language" : "fr",
+    "@value" : "Thème AV"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/forms#ThemeForm-Completion",
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToForm" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/forms#ThemeForm"
+  } ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToProperty" : [ {
+    "@id" : "http://purl.org/dc/terms/subject"
+  }, {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#because"
+  }, {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#convergesWith"
+  }, {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#hasConsequence"
+  }, {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#opposedTo"
+  } ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#widgetClass" : [ {
+    "@id" : "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#DBPediaLookup"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/forms#ThesisForm",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification" ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#classDomain" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Thesis"
+  } ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#showProperties" : [ {
+    "@id" : "_:genid10"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Thesis AV"
+  }, {
+    "@language" : "fr",
+    "@value" : "Thèse AV"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/forms#ThesisForm-Completion",
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToForm" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/forms#ThesisForm"
+  } ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToProperty" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#because"
+  }, {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#convergesWith"
+  }, {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#hasConsequence"
+  }, {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#offersSkill"
+  }, {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#opposedTo"
+  }, {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#seeksSkill"
+  }, {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#town"
+  }, {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#dcterms:subject"
+  } ],
+  "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#widgetClass" : [ {
+    "@id" : "http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#DBPediaLookup"
+  } ]
+} ]

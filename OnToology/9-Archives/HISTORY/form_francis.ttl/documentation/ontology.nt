@@ -1,0 +1,74 @@
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://deductions-software.com/ontologies/forms.owl.ttl#classDomain
+<http://deductions-software.com/ontologies/forms.owl.ttl#classDomain> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToForm
+<http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToForm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToProperty
+<http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://deductions-software.com/ontologies/forms.owl.ttl#showProperties
+<http://deductions-software.com/ontologies/forms.owl.ttl#showProperties> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://deductions-software.com/ontologies/forms.owl.ttl#widgetClass
+<http://deductions-software.com/ontologies/forms.owl.ttl#widgetClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+<https://practishare.wordpress.com/forms#IdeaForm> <http://deductions-software.com/ontologies/forms.owl.ttl#classDomain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> .
+<https://practishare.wordpress.com/forms#IdeaForm> <http://deductions-software.com/ontologies/forms.owl.ttl#showProperties> _:genid2 .
+# 
+<https://practishare.wordpress.com/forms#IdeaForm-dc_subject2> <http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToForm> <https://practishare.wordpress.com/forms#IdeaForm> .
+<https://practishare.wordpress.com/forms#IdeaForm-dc_subject2> <http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToProperty> <http://purl.org/dc/terms/subject> .
+<https://practishare.wordpress.com/forms#IdeaForm-dc_subject2> <http://deductions-software.com/ontologies/forms.owl.ttl#widgetClass> <http://deductions-software.com/ontologies/forms.owl.ttl#DBPediaLookup> .
+# 
+<https://practishare.wordpress.com/forms#OrganizationForm> <http://deductions-software.com/ontologies/forms.owl.ttl#classDomain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization> .
+<https://practishare.wordpress.com/forms#OrganizationForm> <http://deductions-software.com/ontologies/forms.owl.ttl#showProperties> _:genid3 .
+# 
+<https://practishare.wordpress.com/forms#OrganizationForm-dc_subject3> <http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToForm> <https://practishare.wordpress.com/forms#OrganizationForm> .
+<https://practishare.wordpress.com/forms#OrganizationForm-dc_subject3> <http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToProperty> <http://purl.org/dc/terms/subject> .
+<https://practishare.wordpress.com/forms#OrganizationForm-dc_subject3> <http://deductions-software.com/ontologies/forms.owl.ttl#widgetClass> <http://deductions-software.com/ontologies/forms.owl.ttl#DBPediaLookup> .
+# 
+<https://practishare.wordpress.com/forms#RessourceForm> <http://deductions-software.com/ontologies/forms.owl.ttl#classDomain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource> .
+<https://practishare.wordpress.com/forms#RessourceForm> <http://deductions-software.com/ontologies/forms.owl.ttl#showProperties> _:genid4 .
+# 
+<https://practishare.wordpress.com/forms#RessourceForm-subject_field> <http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToForm> <https://practishare.wordpress.com/forms#RessourceForm> .
+<https://practishare.wordpress.com/forms#RessourceForm-subject_field> <http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToProperty> <http://purl.org/dc/terms/subject> .
+<https://practishare.wordpress.com/forms#RessourceForm-subject_field> <http://deductions-software.com/ontologies/forms.owl.ttl#widgetClass> <http://deductions-software.com/ontologies/forms.owl.ttl#DBPediaLookup> .
+# 
+<https://practishare.wordpress.com/forms#personForm> <http://deductions-software.com/ontologies/forms.owl.ttl#classDomain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person> .
+<https://practishare.wordpress.com/forms#personForm> <http://deductions-software.com/ontologies/forms.owl.ttl#showProperties> _:genid5 .
+# 
+<https://practishare.wordpress.com/forms#personForm-skill> <http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToForm> <https://practishare.wordpress.com/forms#personForm> .
+<https://practishare.wordpress.com/forms#personForm-skill> <http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToProperty> <http://purl.org/ontology/cco/core#expertise> .
+<https://practishare.wordpress.com/forms#personForm-skill> <http://deductions-software.com/ontologies/forms.owl.ttl#widgetClass> <http://deductions-software.com/ontologies/forms.owl.ttl#DBPediaLookup> .
+# 
+<https://practishare.wordpress.com/forms#personForm-topic_interest> <http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToForm> <https://practishare.wordpress.com/forms#personForm> .
+<https://practishare.wordpress.com/forms#personForm-topic_interest> <http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToProperty> <http://xmlns.com/foaf/0.1/topic_interest> .
+<https://practishare.wordpress.com/forms#personForm-topic_interest> <http://deductions-software.com/ontologies/forms.owl.ttl#widgetClass> <http://deductions-software.com/ontologies/forms.owl.ttl#DBPediaLookup> .
+# 
+<https://practishare.wordpress.com/forms#projectForm> <http://deductions-software.com/ontologies/forms.owl.ttl#classDomain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project> .
+<https://practishare.wordpress.com/forms#projectForm> <http://deductions-software.com/ontologies/forms.owl.ttl#showProperties> _:genid6 .
+# 
+<https://practishare.wordpress.com/forms#projectForm-dc_subject> <http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToForm> <https://practishare.wordpress.com/forms#projectForm> .
+<https://practishare.wordpress.com/forms#projectForm-dc_subject> <http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToProperty> <http://purl.org/dc/terms/subject> .
+<https://practishare.wordpress.com/forms#projectForm-dc_subject> <http://deductions-software.com/ontologies/forms.owl.ttl#widgetClass> <http://deductions-software.com/ontologies/forms.owl.ttl#DBPediaLookup> .
+# 
+# Generated by the OWL API (version 5.1.9) https://github.com/owlcs/owlapi/

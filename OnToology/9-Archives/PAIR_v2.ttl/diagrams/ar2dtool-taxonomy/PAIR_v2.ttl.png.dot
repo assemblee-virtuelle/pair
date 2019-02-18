@@ -1,0 +1,39 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "base:OrganizationType" "base:TangibleGood" "base:Room" "base:PlaceType" "base:Project" "base:Floor" "base:Town" "base:Document" "base:Thema" "base:IntangibleGood" "base:WHAT_SUBJECT" "base:WHO_SUBJECT" "base:Building" "base:Organization" "base:OBJECT" "base:PERSONALITY" "base:Event" "base:Place" "base:DocumentType" "base:Address" "base:Service" "base:WHEN_SUBJECT" "base:Person" "base:HOW_SUBJECT" "base:Skill" "base:Proposal" "base:HUBJECT" "base:MISC_SUBJECT" "base:WHERE_SUBJECT" "base:BUILDING_ITEM" "base:GOOD_OR_SERVICE" "base:GOOD" "base:SUBJECT" "base:WHY_SUBJECT" ; /*classes style*/
+	"base:PERSONALITY" -> "base:WHO_SUBJECT" [ label = "rdfs:subClassOf" ];
+	"base:DocumentType" -> "base:OBJECT" [ label = "rdfs:subClassOf" ];
+	"base:Floor" -> "base:BUILDING_ITEM" [ label = "rdfs:subClassOf" ];
+	"base:WHERE_SUBJECT" -> "base:SUBJECT" [ label = "rdfs:subClassOf" ];
+	"base:Thema" -> "base:WHAT_SUBJECT" [ label = "rdfs:subClassOf" ];
+	"base:TangibleGood" -> "base:GOOD" [ label = "rdfs:subClassOf" ];
+	"base:Service" -> "base:GOOD_OR_SERVICE" [ label = "rdfs:subClassOf" ];
+	"base:Building" -> "base:BUILDING_ITEM" [ label = "rdfs:subClassOf" ];
+	"base:Event" -> "base:MISC_SUBJECT" [ label = "rdfs:subClassOf" ];
+	"base:SUBJECT" -> "base:HUBJECT" [ label = "rdfs:subClassOf" ];
+	"base:Project" -> "base:HOW_SUBJECT" [ label = "rdfs:subClassOf" ];
+	"base:OBJECT" -> "base:HUBJECT" [ label = "rdfs:subClassOf" ];
+	"base:Organization" -> "base:PERSONALITY" [ label = "rdfs:subClassOf" ];
+	"base:IntangibleGood" -> "base:GOOD" [ label = "rdfs:subClassOf" ];
+	"base:WHAT_SUBJECT" -> "base:SUBJECT" [ label = "rdfs:subClassOf" ];
+	"base:HOW_SUBJECT" -> "base:SUBJECT" [ label = "rdfs:subClassOf" ];
+	"base:Address" -> "base:WHERE_SUBJECT" [ label = "rdfs:subClassOf" ];
+	"base:MISC_SUBJECT" -> "base:SUBJECT" [ label = "rdfs:subClassOf" ];
+	"base:Room" -> "base:BUILDING_ITEM" [ label = "rdfs:subClassOf" ];
+	"base:WHO_SUBJECT" -> "base:SUBJECT" [ label = "rdfs:subClassOf" ];
+	"base:WHEN_SUBJECT" -> "base:SUBJECT" [ label = "rdfs:subClassOf" ];
+	"base:OrganizationType" -> "base:WHO_SUBJECT" [ label = "rdfs:subClassOf" ];
+	"base:GOOD" -> "base:GOOD_OR_SERVICE" [ label = "rdfs:subClassOf" ];
+	"base:BUILDING_ITEM" -> "base:WHERE_SUBJECT" [ label = "rdfs:subClassOf" ];
+	"base:Document" -> "base:OBJECT" [ label = "rdfs:subClassOf" ];
+	"base:WHY_SUBJECT" -> "base:SUBJECT" [ label = "rdfs:subClassOf" ];
+	"base:Town" -> "base:WHERE_SUBJECT" [ label = "rdfs:subClassOf" ];
+	"base:Proposal" -> "base:WHY_SUBJECT" [ label = "rdfs:subClassOf" ];
+	"base:Place" -> "base:WHERE_SUBJECT" [ label = "rdfs:subClassOf" ];
+	"base:PlaceType" -> "base:WHERE_SUBJECT" [ label = "rdfs:subClassOf" ];
+	"base:GOOD_OR_SERVICE" -> "base:WHAT_SUBJECT" [ label = "rdfs:subClassOf" ];
+	"base:Person" -> "base:PERSONALITY" [ label = "rdfs:subClassOf" ];
+	"base:Skill" -> "base:WHAT_SUBJECT" [ label = "rdfs:subClassOf" ];
+
+}

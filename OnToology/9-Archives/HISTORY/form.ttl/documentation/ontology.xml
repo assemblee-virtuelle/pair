@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:forms="http://deductions-software.com/ontologies/forms.owl.ttl#">
+    <Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://deductions-software.com/ontologies/forms.owl.ttl#classDomain -->
+
+
+    <AnnotationProperty rdf:about="http://deductions-software.com/ontologies/forms.owl.ttl#classDomain"/>
+    
+
+
+    <!-- http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToForm -->
+
+
+    <AnnotationProperty rdf:about="http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToForm"/>
+    
+
+
+    <!-- http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToProperty -->
+
+
+    <AnnotationProperty rdf:about="http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToProperty"/>
+    
+
+
+    <!-- http://deductions-software.com/ontologies/forms.owl.ttl#showProperties -->
+
+
+    <AnnotationProperty rdf:about="http://deductions-software.com/ontologies/forms.owl.ttl#showProperties"/>
+    
+
+
+    <!-- http://deductions-software.com/ontologies/forms.owl.ttl#widgetClass -->
+
+
+    <AnnotationProperty rdf:about="http://deductions-software.com/ontologies/forms.owl.ttl#widgetClass"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="http://www.assemblee-virtuelle.org/forms#IdeaForm">
+        <forms:classDomain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"/>
+        <forms:showProperties>
+            <rdf:Description/>
+        </forms:showProperties>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.assemblee-virtuelle.org/forms#IdeaForm-dc_subject2">
+        <forms:fieldAppliesToForm rdf:resource="http://www.assemblee-virtuelle.org/forms#IdeaForm"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://purl.org/dc/terms/subject"/>
+        <forms:widgetClass rdf:resource="http://deductions-software.com/ontologies/forms.owl.ttl#DBPediaLookup"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.assemblee-virtuelle.org/forms#OrganizationForm">
+        <forms:classDomain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization"/>
+        <forms:showProperties>
+            <rdf:Description/>
+        </forms:showProperties>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.assemblee-virtuelle.org/forms#OrganizationForm-dc_subject3">
+        <forms:fieldAppliesToForm rdf:resource="http://www.assemblee-virtuelle.org/forms#OrganizationForm"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://purl.org/dc/terms/subject"/>
+        <forms:widgetClass rdf:resource="http://deductions-software.com/ontologies/forms.owl.ttl#DBPediaLookup"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.assemblee-virtuelle.org/forms#RessourceForm">
+        <forms:classDomain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"/>
+        <forms:showProperties>
+            <rdf:Description/>
+        </forms:showProperties>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.assemblee-virtuelle.org/forms#RessourceForm-subject_field">
+        <forms:fieldAppliesToForm rdf:resource="http://www.assemblee-virtuelle.org/forms#RessourceForm"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://purl.org/dc/terms/subject"/>
+        <forms:widgetClass rdf:resource="http://deductions-software.com/ontologies/forms.owl.ttl#DBPediaLookup"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.assemblee-virtuelle.org/forms#personForm">
+        <forms:classDomain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"/>
+        <forms:showProperties>
+            <rdf:Description/>
+        </forms:showProperties>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.assemblee-virtuelle.org/forms#personForm-skill">
+        <forms:fieldAppliesToForm rdf:resource="http://www.assemblee-virtuelle.org/forms#personForm"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://purl.org/ontology/cco/core#expertise"/>
+        <forms:widgetClass rdf:resource="http://deductions-software.com/ontologies/forms.owl.ttl#DBPediaLookup"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.assemblee-virtuelle.org/forms#personForm-topic_interest">
+        <forms:fieldAppliesToForm rdf:resource="http://www.assemblee-virtuelle.org/forms#personForm"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://xmlns.com/foaf/0.1/topic_interest"/>
+        <forms:widgetClass rdf:resource="http://deductions-software.com/ontologies/forms.owl.ttl#DBPediaLookup"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.assemblee-virtuelle.org/forms#projectForm">
+        <forms:classDomain rdf:resource="http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project"/>
+        <forms:showProperties>
+            <rdf:Description/>
+        </forms:showProperties>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.assemblee-virtuelle.org/forms#projectForm-dc_subject">
+        <forms:fieldAppliesToForm rdf:resource="http://www.assemblee-virtuelle.org/forms#projectForm"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://purl.org/dc/terms/subject"/>
+        <forms:widgetClass rdf:resource="http://deductions-software.com/ontologies/forms.owl.ttl#DBPediaLookup"/>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.9) https://github.com/owlcs/owlapi/ -->
+
+

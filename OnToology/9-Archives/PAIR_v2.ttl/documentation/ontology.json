@@ -1,0 +1,1770 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://virtual-assembly.org/pair_v2#Event"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Place"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid101",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Organization"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#affiliatedBy"
+  } ]
+}, {
+  "@id" : "_:genid102",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Proposal"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#brainstorms"
+  } ]
+}, {
+  "@id" : "_:genid103",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Organization"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#employedBy"
+  } ]
+}, {
+  "@id" : "_:genid104",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Project"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#involvedIn"
+  } ]
+}, {
+  "@id" : "_:genid105",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Person"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#knowedBy"
+  } ]
+}, {
+  "@id" : "_:genid106",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Person"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#knows"
+  } ]
+}, {
+  "@id" : "_:genid107",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Address"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#localizedBy"
+  } ]
+}, {
+  "@id" : "_:genid108",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Project"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#manages"
+  } ]
+}, {
+  "@id" : "_:genid109",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Organization"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#memberOf"
+  } ]
+}, {
+  "@id" : "_:genid110",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Organization"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#responsibleOf"
+  } ]
+}, {
+  "@id" : "_:genid111",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Project"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#deliveredBy"
+  } ]
+}, {
+  "@id" : "_:genid112",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#PlaceType"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#hasType"
+  } ]
+}, {
+  "@id" : "_:genid113",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Address"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#localizedBy"
+  } ]
+}, {
+  "@id" : "_:genid114",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Organization"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#neededBy"
+  } ]
+}, {
+  "@id" : "_:genid115",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Organization"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#offeredBy"
+  } ]
+}, {
+  "@id" : "_:genid116",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Place"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#typeOf"
+  } ]
+}, {
+  "@id" : "_:genid117",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Proposal"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#concretizes"
+  } ]
+}, {
+  "@id" : "_:genid118",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "_:genid119"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#delivers"
+  } ]
+}, {
+  "@id" : "_:genid119",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://virtual-assembly.org/pair_v2#Event"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Place"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid123",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Person"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#involves"
+  } ]
+}, {
+  "@id" : "_:genid124",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Person"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#managedBy"
+  } ]
+}, {
+  "@id" : "_:genid125",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "_:genid126"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#needs"
+  } ]
+}, {
+  "@id" : "_:genid126",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Skill"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid129",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Person"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#brainstormedBy"
+  } ]
+}, {
+  "@id" : "_:genid13",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Organization"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid130",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Project"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#concretizedBy"
+  } ]
+}, {
+  "@id" : "_:genid131",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "_:genid132"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#hosts"
+  } ]
+}, {
+  "@id" : "_:genid132",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Organization"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid135",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Floor"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#partOf"
+  } ]
+}, {
+  "@id" : "_:genid136",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#partOf"
+  } ]
+}, {
+  "@id" : "_:genid137",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "_:genid138"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#neededBy"
+  } ]
+}, {
+  "@id" : "_:genid138",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://virtual-assembly.org/pair_v2#Organization"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Person"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Project"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid142",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "_:genid143"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#offeredBy"
+  } ]
+}, {
+  "@id" : "_:genid143",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://virtual-assembly.org/pair_v2#Organization"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Person"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid146",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "_:genid147"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#interestOf"
+  } ]
+}, {
+  "@id" : "_:genid147",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://virtual-assembly.org/pair_v2#Organization"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Person"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid150",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Address"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#partOf"
+  } ]
+}, {
+  "@id" : "_:genid16",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://virtual-assembly.org/pair_v2#BUILDING_ITEM"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Room"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid19",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://virtual-assembly.org/pair_v2#Event"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Person"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Place"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid23",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Place"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Skill"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid27",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://virtual-assembly.org/pair_v2#PERSONALITY"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Project"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid30",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Place"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Skill"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid34",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://virtual-assembly.org/pair_v2#Floor"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Room"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Town"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid38",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://virtual-assembly.org/pair_v2#DocumentType"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#OrganizationType"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#PlaceType"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid42",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Town"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#hasPart"
+  } ]
+}, {
+  "@id" : "_:genid43",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "_:genid44"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#localizes"
+  } ]
+}, {
+  "@id" : "_:genid44",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://virtual-assembly.org/pair_v2#Event"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Person"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Place"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid48",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#hasPart"
+  } ]
+}, {
+  "@id" : "_:genid49",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Organization"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#hosts"
+  } ]
+}, {
+  "@id" : "_:genid5",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://virtual-assembly.org/pair_v2#Address"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Building"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Floor"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid50",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Floor"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#hasPart"
+  } ]
+}, {
+  "@id" : "_:genid51",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#SUBJECT"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#documents"
+  } ]
+}, {
+  "@id" : "_:genid52",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#DocumentType"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#hasType"
+  } ]
+}, {
+  "@id" : "_:genid53",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Document"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#references"
+  } ]
+}, {
+  "@id" : "_:genid54",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Document"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#referencesBy"
+  } ]
+}, {
+  "@id" : "_:genid55",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#SUBJECT"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#represents"
+  } ]
+}, {
+  "@id" : "_:genid56",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#hasType"
+  } ]
+}, {
+  "@id" : "_:genid57",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Document"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#typeOf"
+  } ]
+}, {
+  "@id" : "_:genid58",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Project"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#deliveredBy"
+  } ]
+}, {
+  "@id" : "_:genid59",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Address"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#localizedBy"
+  } ]
+}, {
+  "@id" : "_:genid60",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Room"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#hasPart"
+  } ]
+}, {
+  "@id" : "_:genid61",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Building"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#partOf"
+  } ]
+}, {
+  "@id" : "_:genid62",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#partOf"
+  } ]
+}, {
+  "@id" : "_:genid63",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Project"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#deliveredBy"
+  } ]
+}, {
+  "@id" : "_:genid64",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Room"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#hostedIn"
+  } ]
+}, {
+  "@id" : "_:genid65",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "_:genid66"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#neededBy"
+  } ]
+}, {
+  "@id" : "_:genid66",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://virtual-assembly.org/pair_v2#Organization"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Person"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Project"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid70",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "_:genid71"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#offeredBy"
+  } ]
+}, {
+  "@id" : "_:genid71",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://virtual-assembly.org/pair_v2#Organization"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Person"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid74",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Person"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#affiliates"
+  } ]
+}, {
+  "@id" : "_:genid75",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Person"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#employs"
+  } ]
+}, {
+  "@id" : "_:genid76",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Person"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#hasMember"
+  } ]
+}, {
+  "@id" : "_:genid77",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Person"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#hasResponsible"
+  } ]
+}, {
+  "@id" : "_:genid78",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#OrganizationType"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#hasType"
+  } ]
+}, {
+  "@id" : "_:genid79",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#BUILDING_ITEM"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#hostedIn"
+  } ]
+}, {
+  "@id" : "_:genid80",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "_:genid81"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#needs"
+  } ]
+}, {
+  "@id" : "_:genid81",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Place"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Skill"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid85",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "_:genid86"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#offers"
+  } ]
+}, {
+  "@id" : "_:genid86",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Place"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Skill"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid9",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://virtual-assembly.org/pair_v2#Document"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Organization"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Place"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid90",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#hasType"
+  } ]
+}, {
+  "@id" : "_:genid91",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Organization"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#typeOf"
+  } ]
+}, {
+  "@id" : "_:genid92",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Thema"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#hasInterest"
+  } ]
+}, {
+  "@id" : "_:genid93",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "_:genid94"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#needs"
+  } ]
+}, {
+  "@id" : "_:genid94",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Skill"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid97",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "_:genid98"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#offers"
+  } ]
+}, {
+  "@id" : "_:genid98",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE"
+    }, {
+      "@id" : "http://virtual-assembly.org/pair_v2#Skill"
+    } ]
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#Address",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#WHERE_SUBJECT"
+  }, {
+    "@id" : "_:genid42"
+  }, {
+    "@id" : "_:genid43"
+  }, {
+    "@id" : "_:genid48"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#BUILDING_ITEM",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#WHERE_SUBJECT"
+  }, {
+    "@id" : "_:genid49"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#Building",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#BUILDING_ITEM"
+  }, {
+    "@id" : "_:genid50"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#Document",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#OBJECT"
+  }, {
+    "@id" : "_:genid51"
+  }, {
+    "@id" : "_:genid52"
+  }, {
+    "@id" : "_:genid53"
+  }, {
+    "@id" : "_:genid54"
+  }, {
+    "@id" : "_:genid55"
+  }, {
+    "@id" : "_:genid56"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#DocumentType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#OBJECT"
+  }, {
+    "@id" : "_:genid57"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#Event",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#MISC_SUBJECT"
+  }, {
+    "@id" : "_:genid58"
+  }, {
+    "@id" : "_:genid59"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#Floor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#BUILDING_ITEM"
+  }, {
+    "@id" : "_:genid60"
+  }, {
+    "@id" : "_:genid61"
+  }, {
+    "@id" : "_:genid62"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#GOOD",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#WHAT_SUBJECT"
+  }, {
+    "@id" : "_:genid63"
+  }, {
+    "@id" : "_:genid64"
+  }, {
+    "@id" : "_:genid65"
+  }, {
+    "@id" : "_:genid70"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#HOW_SUBJECT",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#SUBJECT"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#HUBJECT",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#IntangibleGood",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#GOOD"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#MISC_SUBJECT",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#SUBJECT"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#OBJECT",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#HUBJECT"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#Organization",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#PERSONALITY"
+  }, {
+    "@id" : "_:genid74"
+  }, {
+    "@id" : "_:genid75"
+  }, {
+    "@id" : "_:genid76"
+  }, {
+    "@id" : "_:genid77"
+  }, {
+    "@id" : "_:genid78"
+  }, {
+    "@id" : "_:genid79"
+  }, {
+    "@id" : "_:genid80"
+  }, {
+    "@id" : "_:genid85"
+  }, {
+    "@id" : "_:genid90"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#OrganizationType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#WHO_SUBJECT"
+  }, {
+    "@id" : "_:genid91"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#PERSONALITY",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#WHO_SUBJECT"
+  }, {
+    "@id" : "_:genid92"
+  }, {
+    "@id" : "_:genid93"
+  }, {
+    "@id" : "_:genid97"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#Person",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#PERSONALITY"
+  }, {
+    "@id" : "_:genid101"
+  }, {
+    "@id" : "_:genid102"
+  }, {
+    "@id" : "_:genid103"
+  }, {
+    "@id" : "_:genid104"
+  }, {
+    "@id" : "_:genid105"
+  }, {
+    "@id" : "_:genid106"
+  }, {
+    "@id" : "_:genid107"
+  }, {
+    "@id" : "_:genid108"
+  }, {
+    "@id" : "_:genid109"
+  }, {
+    "@id" : "_:genid110"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#Place",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#WHERE_SUBJECT"
+  }, {
+    "@id" : "_:genid111"
+  }, {
+    "@id" : "_:genid112"
+  }, {
+    "@id" : "_:genid113"
+  }, {
+    "@id" : "_:genid114"
+  }, {
+    "@id" : "_:genid115"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#PlaceType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#WHERE_SUBJECT"
+  }, {
+    "@id" : "_:genid116"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#Project",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#HOW_SUBJECT"
+  }, {
+    "@id" : "_:genid117"
+  }, {
+    "@id" : "_:genid118"
+  }, {
+    "@id" : "_:genid123"
+  }, {
+    "@id" : "_:genid124"
+  }, {
+    "@id" : "_:genid125"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#Proposal",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#WHY_SUBJECT"
+  }, {
+    "@id" : "_:genid129"
+  }, {
+    "@id" : "_:genid130"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#Room",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#BUILDING_ITEM"
+  }, {
+    "@id" : "_:genid131"
+  }, {
+    "@id" : "_:genid135"
+  }, {
+    "@id" : "_:genid136"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#SUBJECT",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#HUBJECT"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#Service",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#Skill",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#WHAT_SUBJECT"
+  }, {
+    "@id" : "_:genid137"
+  }, {
+    "@id" : "_:genid142"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#TangibleGood",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#GOOD"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#Thema",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#WHAT_SUBJECT"
+  }, {
+    "@id" : "_:genid146"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#Town",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#WHERE_SUBJECT"
+  }, {
+    "@id" : "_:genid150"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#WHAT_SUBJECT",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#SUBJECT"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#WHEN_SUBJECT",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#SUBJECT"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#WHERE_SUBJECT",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#SUBJECT"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#WHO_SUBJECT",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#SUBJECT"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#WHY_SUBJECT",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#SUBJECT"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#_interObject_objectProperty",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#_object-subject_objectProperty",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#aboutPage",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#HUBJECT"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#webPage"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#affiliatedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#affiliates"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#affiliates",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#alternativeLabel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#HUBJECT"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#label"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#brainstormedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Proposal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#brainstorms"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#brainstorms",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#comment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#HUBJECT"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#concretizedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Proposal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#concretizes"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#concretizes",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Project"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#deliveredBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "_:genid1"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#delivers"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#delivers",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Project"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#HUBJECT"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#documentedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#SUBJECT"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_object-subject_objectProperty"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#documents"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#documents",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Document"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_object-subject_objectProperty"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#e-mail",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#PERSONALITY"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#employedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#affiliatedBy"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#employs"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#employs",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#affiliates"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#endDate",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Event"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#dateTime"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#firstName",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#label"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#hasInterest",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#PERSONALITY"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#interestOf"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#hasMember",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#affiliates"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#memberOf"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#hasPart",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "_:genid5"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#partOf"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#hasResponsible",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#affiliates"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#responsibleOf"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#hasSubject",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#SUBJECT"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#subjectOf"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#hasType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "_:genid9"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#typeOf"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#homePage",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#HUBJECT"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#webPage"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#hostedIn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "_:genid13"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#hosts"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#hosts",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "_:genid16"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#interestOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Thema"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#involvedIn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#involves"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#involves",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Project"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#knowedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#knows"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#knows",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#label",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#lastName",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#label"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#localizedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "_:genid19"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#localizes"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#localizes",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Address"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#managedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Project"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#involves"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#manages"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#manages",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#involvedIn"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#memberOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#affiliatedBy"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#neededBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "_:genid23"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#needs"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#needs",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "_:genid27"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#offeredBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "_:genid30"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#offers"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#offers",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#PERSONALITY"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#partOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "_:genid34"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#phone",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#PERSONALITY"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#preferedLabel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#HUBJECT"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#label"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#references",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Document"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interObject_objectProperty"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#referencesBy"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#referencesBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Document"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interObject_objectProperty"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#representedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#SUBJECT"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#documentedBy"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#represents"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#represents",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Document"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#documents"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#responsibleOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#affiliatedBy"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#startDate",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Event"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#dateTime"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#subjectIdentifier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#HUBJECT"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#subjectOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#SUBJECT"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#typeOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "_:genid38"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#_interSubject_objectProperty"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#webPage",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair_v2#zipCode",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://virtual-assembly.org/pair_v2#Town"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+} ]

@@ -1,0 +1,33 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+	"foaf:msnChatID" -> "foaf:nick" [ label = "rdfs:subPropertyOf" ];
+	"foaf:icqChatID" -> "foaf:nick" [ label = "rdfs:subPropertyOf" ];
+	"foaf:yahooChatID" -> "foaf:nick" [ label = "rdfs:subPropertyOf" ];
+	"foaf:aimChatID" -> "foaf:nick" [ label = "rdfs:subPropertyOf" ];
+	"foaf:name" -> "rdfs:label" [ label = "rdfs:subPropertyOf" ];
+	"foaf:skypeID" -> "foaf:nick" [ label = "rdfs:subPropertyOf" ];
+	"owl:Thing" -> "rdfs:Literal" [ label = "foaf:name" ];
+	"owl:Thing" -> "rdfs:Literal" [ label = "foaf:aimChatID" ];
+	"owl:Thing" -> "rdfs:Literal" [ label = "foaf:msnChatID" ];
+	"owl:Thing" -> "rdfs:Literal" [ label = "foaf:geekcode" ];
+	"owl:Thing" -> "rdfs:Literal" [ label = "foaf:plan" ];
+	"owl:Thing" -> "rdfs:Literal" [ label = "foaf:dnaChecksum" ];
+	"owl:Thing" -> "rdfs:Literal" [ label = "foaf:yahooChatID" ];
+	"owl:Thing" -> "rdfs:Literal" [ label = "foaf:family_name" ];
+	"owl:Thing" -> "rdfs:Literal" [ label = "foaf:gender" ];
+	"owl:Thing" -> "rdfs:Literal" [ label = "foaf:myersBriggs" ];
+	"owl:Thing" -> "rdfs:Literal" [ label = "foaf:jabberID" ];
+	"owl:Thing" -> "rdfs:Literal" [ label = "foaf:familyName" ];
+	"owl:Thing" -> "rdfs:Literal" [ label = "foaf:status" ];
+	"owl:Thing" -> "rdfs:Literal" [ label = "foaf:mbox_sha1sum" ];
+	"owl:Thing" -> "rdfs:Literal" [ label = "foaf:skypeID" ];
+	"owl:Thing" -> "rdfs:Literal" [ label = "foaf:lastName" ];
+	"owl:Thing" -> "rdfs:Literal" [ label = "foaf:accountName" ];
+	"owl:Thing" -> "rdfs:Literal" [ label = "foaf:birthday" ];
+	"owl:Thing" -> "rdfs:Literal" [ label = "foaf:icqChatID" ];
+	"owl:Thing" -> "rdfs:Literal" [ label = "foaf:firstName" ];
+	"owl:Thing" -> "rdfs:Literal" [ label = "foaf:surname" ];
+	"owl:Thing" -> "rdfs:Literal" [ label = "foaf:age" ];
+
+}

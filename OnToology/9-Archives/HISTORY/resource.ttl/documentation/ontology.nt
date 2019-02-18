@@ -1,0 +1,225 @@
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#includes
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#includes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#includes> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#partOf> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#includes> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#includes> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#includes> <http://www.w3.org/2000/01/rdf-schema#comment> "une partie contenue physiquement ou logiquement dans la ressource sujet"@fr .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#includes> <http://www.w3.org/2000/01/rdf-schema#label> "sous-partie de la ressource"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#managedBy
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#managedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#managedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#managedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Person> .
+<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#managedBy> <http://www.w3.org/2000/01/rdf-schema#label> "géré par"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByOrganization
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByOrganization> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByOrganization> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Organization> .
+<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByOrganization> <http://www.w3.org/2000/01/rdf-schema#label> "ressource nécessaire à l'organisation"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByPerson
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByPerson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByPerson> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByPerson> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Person> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByPerson> <http://www.w3.org/2000/01/rdf-schema#label> "ressource nécessaire à l'individu"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByProject
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByProject> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByProject> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Project> .
+<http://xmlns.com/foaf/0.1/Project> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByProject> <http://www.w3.org/2000/01/rdf-schema#label> "ressource nécessaire au projet"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsDocument
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsDocument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsDocument> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsResource> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsResource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsDocument> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsDocument> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsDocument> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2002/07/owl#Thing> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsDocument> <http://www.w3.org/2000/01/rdf-schema#label> "recherche des documents ou des bonnes pratiques."@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsGoodOrSpace
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsGoodOrSpace> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsGoodOrSpace> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsResource> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsGoodOrSpace> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsGoodOrSpace> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsGoodOrSpace> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2002/07/owl#Thing> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsGoodOrSpace> <http://www.w3.org/2000/01/rdf-schema#label> "recherche des biens ou des espaces."@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsResource
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsServices
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsServices> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsServices> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsResource> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsServices> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsServices> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsServices> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2002/07/owl#Thing> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsServices> <http://www.w3.org/2000/01/rdf-schema#label> "recherche des services."@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#ownedBy
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#ownedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#ownedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#ownedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Agent> .
+<http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#ownedBy> <http://www.w3.org/2000/01/rdf-schema#label> "propriétaire"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#partOf
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#partOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#partOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#partOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#partOf> <http://www.w3.org/2000/01/rdf-schema#comment> "une partie contenant physiquement ou logiquement la ressource sujet"@fr .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#partOf> <http://www.w3.org/2000/01/rdf-schema#label> "ressource conteneur"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#resource
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#resource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#resource> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#resource> <http://www.w3.org/2000/01/rdf-schema#comment> "ressource associée"@fr .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#resource> <http://www.w3.org/2000/01/rdf-schema#label> "ressource"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#resourceCategory
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#resourceCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#resourceCategory> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#resourceCategory> <http://www.w3.org/2000/01/rdf-schema#range> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid2 <http://www.w3.org/2002/07/owl#oneOf> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#competence> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#competence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#document> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#document> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#good> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#good> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#services> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#services> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#space> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#space> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#resourceCategory> <http://www.w3.org/2000/01/rdf-schema#label> "catégorie de ressource"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByOrganization
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByOrganization> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByOrganization> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Organization> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByOrganization> <http://www.w3.org/2000/01/rdf-schema#label> "ressource partagée (proposée) par"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByPerson
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByPerson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByPerson> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByPerson> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Person> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByPerson> <http://www.w3.org/2000/01/rdf-schema#label> "ressource partagée (proposée) par"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByProject
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByProject> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByProject> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Project> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByProject> <http://www.w3.org/2000/01/rdf-schema#label> "partagée (proposée) par projet"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesDocument
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesDocument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesDocument> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesResource> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesDocument> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesDocument> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesDocument> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesDocument> <http://www.w3.org/2000/01/rdf-schema#label> "propose ou partage des documents ou des bonnes pratiques."@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesGoodOrSpace
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesGoodOrSpace> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesGoodOrSpace> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesResource> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesGoodOrSpace> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesGoodOrSpace> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesGoodOrSpace> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesGoodOrSpace> <http://www.w3.org/2000/01/rdf-schema#label> "propose ou partage des biens ou des espaces."@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesResource
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesResource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesResource> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource> .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesServices
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesServices> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesServices> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesResource> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesServices> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesServices> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesServices> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesServices> <http://www.w3.org/2000/01/rdf-schema#label> "propose des services."@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#usedBy
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#usedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#usedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#usedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Agent> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#usedBy> <http://www.w3.org/2000/01/rdf-schema#label> "utilisé par"@fr .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource> <http://www.w3.org/2000/01/rdf-schema#comment> "Exemples de ressources: documents, matérielles, services, financières, lieux, outils, networking (carnet)" .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource> <http://www.w3.org/2000/01/rdf-schema#label> "Ressource"@fr .
+# 
+# http://xmlns.com/foaf/0.1/Agent
+# 
+# http://xmlns.com/foaf/0.1/Organization
+# 
+# http://xmlns.com/foaf/0.1/Person
+# 
+# http://xmlns.com/foaf/0.1/Project
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#competence
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#competence> <http://www.w3.org/2000/01/rdf-schema#label> "Compétences"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#document
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#document> <http://www.w3.org/2000/01/rdf-schema#label> "Ressource documentaire"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#good
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#good> <http://www.w3.org/2000/01/rdf-schema#label> "Bien tangible"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#services
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#services> <http://www.w3.org/2000/01/rdf-schema#label> "Services"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#space
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#space> <http://www.w3.org/2000/01/rdf-schema#label> "Espace"@fr .
+# 
+# Generated by the OWL API (version 5.1.9) https://github.com/owlcs/owlapi/

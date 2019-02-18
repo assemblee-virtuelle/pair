@@ -1,0 +1,135 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#compatibleWith
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#compatibleWith> rdf:type owl:ObjectProperty ;
+                                                                      rdfs:domain <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> ;
+                                                                      rdfs:range <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> ;
+                                                                      rdfs:label "compatible avec"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#convergentWith
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#convergentWith> rdf:type owl:ObjectProperty ;
+                                                                      rdfs:domain <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> ;
+                                                                      rdfs:range <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> ;
+                                                                      rdfs:label "convergent avec"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#foughtBy
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#foughtBy> rdf:type owl:ObjectProperty ;
+                                                                rdfs:domain <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> ;
+                                                                rdfs:range <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor> ;
+                                                                rdfs:label "combattue par"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#idea
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#idea> rdf:type owl:ObjectProperty ;
+                                                            rdfs:range <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> ;
+                                                            rdfs:comment "idée associée"@fr ;
+                                                            rdfs:label "idée"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#ideaCategory
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#ideaCategory> rdf:type owl:ObjectProperty ;
+                                                                    rdfs:domain <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> ;
+                                                                    rdfs:range [ rdf:type owl:Class ;
+                                                                                 owl:oneOf ( <http://www.assemblee-virtuelle.org/ontologies/v1.owl#theme>
+                                                                                             <http://www.assemblee-virtuelle.org/ontologies/v1.owl#thesis>
+                                                                                           )
+                                                                               ] ;
+                                                                    rdfs:label "catégorie d'idée"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#implementedBy
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#implementedBy> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:domain <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> ;
+                                                                     rdfs:range <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project> ;
+                                                                     rdfs:label "mise en oeuvre par"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#inspiredBy
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#inspiredBy> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:domain <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> ;
+                                                                  rdfs:range <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> ;
+                                                                  rdfs:label "inspiré par"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#isImplementedBy
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#isImplementedBy> rdf:type owl:ObjectProperty ;
+                                                                       rdfs:domain <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> ;
+                                                                       rdfs:range <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project> ;
+                                                                       rdfs:comment "l'idée est concrétisée par un projet"@fr ;
+                                                                       rdfs:label "projet"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#opposedTo
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#opposedTo> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:domain _:genid-nodeid-node1d408etp1x4 ;
+                                                                 rdfs:range [ rdf:type owl:Class ;
+                                                                              owl:unionOf ( <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea>
+                                                                                            <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project>
+                                                                                          )
+                                                                            ] ;
+                                                                 rdfs:label "opposé à"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#supportedBy
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#supportedBy> rdf:type owl:ObjectProperty ;
+                                                                   rdfs:domain <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> ;
+                                                                   rdfs:range <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor> ;
+                                                                   rdfs:comment "soutenue par"@fr ;
+                                                                   rdfs:label "acteur"@fr .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  _:genid-nodeid-node1d408etp1x4
+_:genid-nodeid-node1d408etp1x4 rdf:type owl:Class .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor> rdf:type owl:Class .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> rdf:type owl:Class ;
+                                                            rdfs:comment """ Exemples d'idées: Développement Durable, social, économie, écologie, réflexions , analyse , critique, proposition  (l'intention peut être projet ou non); 
+relation entre idées: opposition, compatibilité , convergence ...
+approche systémique ( et combinatoire )
+faits ? c'est plus un sujet (Dublin core) qu'une ressource ou une idée
+catégories, thématiques : passer du micro au macro ( particulier au général ) """ ;
+                                                            rdfs:label "Idée"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#theme
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#theme> rdf:type owl:NamedIndividual ;
+                                                             rdfs:label "Thème"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#thesis
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#thesis> rdf:type owl:NamedIndividual ;
+                                                              rdfs:label "Thèse"@fr .
+
+
+###  Generated by the OWL API (version 5.1.9) https://github.com/owlcs/owlapi/

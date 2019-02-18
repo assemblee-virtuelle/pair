@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:v1="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#concretise -->
+
+
+    <AnnotationProperty rdf:about="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#concretise"/>
+    
+
+
+    <!-- file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#lead -->
+
+
+    <AnnotationProperty rdf:about="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#lead"/>
+    
+
+
+    <!-- file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#participant -->
+
+
+    <AnnotationProperty rdf:about="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#participant"/>
+    
+
+
+    <!-- file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#requires -->
+
+
+    <AnnotationProperty rdf:about="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#requires"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+
+    <AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#comment -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#comment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#Idea -->
+
+
+    <Class rdf:about="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#Idea"/>
+    
+
+
+    <!-- file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#Project -->
+
+
+    <Class rdf:about="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#Project"/>
+    
+
+
+    <!-- http://dbpedia.org/resource/Car -->
+
+
+    <Class rdf:about="http://dbpedia.org/resource/Car"/>
+    
+
+
+    <!-- http://dbpedia.org/resource/Carriage -->
+
+
+    <Class rdf:about="http://dbpedia.org/resource/Carriage"/>
+    
+
+
+    <!-- http://dbpedia.org/resource/Sound_reinforcement_system -->
+
+
+    <Class rdf:about="http://dbpedia.org/resource/Sound_reinforcement_system"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Group -->
+
+
+    <Class rdf:about="http://xmlns.com/foaf/0.1/Group"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/#DynamiserMillemont -->
+
+
+    <NamedIndividual rdf:about="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/#DynamiserMillemont">
+        <rdf:type rdf:resource="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#Idea"/>
+        <rdf:comment>Comme discuté a l&apos;AV l&apos;autre jour</rdf:comment>
+    </NamedIndividual>
+    
+
+
+    <!-- file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/cabaret#p -->
+
+
+    <NamedIndividual rdf:about="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/cabaret#p">
+        <rdf:type rdf:resource="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#Project"/>
+        <v1:participant>
+            <rdf:Description rdf:nodeID="genid2">
+                <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+                <v1:requires>
+                    <rdf:Description>
+                        <dc:description>Medieval Costume</dc:description>
+                    </rdf:Description>
+                </v1:requires>
+            </rdf:Description>
+        </v1:participant>
+        <v1:requires>
+            <rdf:Description rdf:nodeID="genid4">
+                <rdf:type rdf:resource="http://dbpedia.org/resource/Car"/>
+            </rdf:Description>
+        </v1:requires>
+    </NamedIndividual>
+    
+
+
+    <!-- file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/party#reve -->
+
+
+    <NamedIndividual rdf:about="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/party#reve">
+        <rdf:type rdf:resource="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#Project"/>
+        <v1:concretise rdf:resource="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/#DynamiserMillemont"/>
+        <v1:lead rdf:resource="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../people/martin#me"/>
+        <v1:requires>
+            <rdf:Description rdf:nodeID="genid5">
+                <rdf:type rdf:resource="http://dbpedia.org/resource/Sound_reinforcement_system"/>
+            </rdf:Description>
+        </v1:requires>
+    </NamedIndividual>
+    
+
+
+    <!-- file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/visiteChateau#x -->
+
+
+    <NamedIndividual rdf:about="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/visiteChateau#x">
+        <rdf:type rdf:resource="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#Project"/>
+        <v1:lead rdf:resource="file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../people/sylvain#me"/>
+        <v1:requires>
+            <rdf:Description rdf:nodeID="genid6">
+                <rdf:type rdf:resource="http://dbpedia.org/resource/Carriage"/>
+            </rdf:Description>
+        </v1:requires>
+    </NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.9) https://github.com/owlcs/owlapi/ -->
+
+

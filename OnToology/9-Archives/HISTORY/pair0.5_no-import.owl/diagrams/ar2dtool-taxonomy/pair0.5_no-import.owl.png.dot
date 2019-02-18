@@ -1,0 +1,25 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "base:Group" "base:Thesis" "base:Event" "base:Organization" "base:Actor" "base:SocialCode" "base:NaturalResources" "base:Activity" "base:Proposition" "base:Work" "base:Skill" "base:Argument" "ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission" "base:Theme" "base:Good_or_Service" "base:Project" "base:Question" "base:Document" "base:Money" "base:Place" "base:Person" "base:Resource" "base:Idea" ; /*classes style*/
+	"base:Person" -> "base:Actor" [ label = "rdfs:subClassOf" ];
+	"base:Place" -> "base:Resource" [ label = "rdfs:subClassOf" ];
+	"base:Argument" -> "base:Thesis" [ label = "rdfs:subClassOf" ];
+	"base:SocialCode" -> "base:Document" [ label = "rdfs:subClassOf" ];
+	"base:NaturalResources" -> "base:Resource" [ label = "rdfs:subClassOf" ];
+	"base:Skill" -> "base:Resource" [ label = "rdfs:subClassOf" ];
+	"base:Thesis" -> "base:Idea" [ label = "rdfs:subClassOf" ];
+	"base:Theme" -> "base:Idea" [ label = "rdfs:subClassOf" ];
+	"base:Organization" -> "base:Actor" [ label = "rdfs:subClassOf" ];
+	"base:Question" -> "base:Thesis" [ label = "rdfs:subClassOf" ];
+	"base:Event" -> "base:Project" [ label = "rdfs:subClassOf" ];
+	"base:Activity" -> "base:Project" [ label = "rdfs:subClassOf" ];
+	"base:Proposition" -> "base:Thesis" [ label = "rdfs:subClassOf" ];
+	"base:Group" -> "base:Actor" [ label = "rdfs:subClassOf" ];
+	"base:Document" -> "base:Resource" [ label = "rdfs:subClassOf" ];
+	"ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission" -> "base:Project" [ label = "rdfs:subClassOf" ];
+	"base:Work" -> "base:Resource" [ label = "rdfs:subClassOf" ];
+	"base:Good_or_Service" -> "base:Resource" [ label = "rdfs:subClassOf" ];
+	"base:Money" -> "base:Resource" [ label = "rdfs:subClassOf" ];
+
+}

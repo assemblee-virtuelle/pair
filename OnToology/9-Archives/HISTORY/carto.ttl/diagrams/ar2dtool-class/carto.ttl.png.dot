@@ -1,0 +1,14 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+node [shape = rectangle, color="orange"]; "fl:Qui" ; /*classes style*/
+	"fl:ou" -> "fl:linkedto" [ label = "rdfs:subpropertyOf" ];
+	"fl:pourquoi" -> "fl:linkedto" [ label = "rdfs:subpropertyOf" ];
+	"fl:comment" -> "fl:linkedto" [ label = "rdfs:subpropertyOf" ];
+	"fl:quoi" -> "fl:linkedto" [ label = "rdfs:subpropertyOf" ];
+	"fl:Qui" -> "av:Actor" [ label = "owl:sameClassAs" ];
+	"fl:qui" -> "fl:linkedto" [ label = "rdfs:subpropertyOf" ];
+	"owl:Thing" -> "av:Actor" [ label = "fl:qui" ];
+	"owl:Thing" -> "xsd:number" [ label = "fl:combien" ];
+
+}

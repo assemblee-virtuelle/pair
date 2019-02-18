@@ -1,0 +1,21 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "base:Milestone" "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea" "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity" "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource" "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Thesis" "base:NaturalResources" "base:Task" "base:Immaterials" "base:Educational" "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Organization" "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Person" "base:Materials" "base:HumanResources" "base:Competence" "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor" "base:Event" "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project" ; /*classes style*/
+	"base:Competence" -> "base:HumanResources" [ label = "rdfs:subClassOf" ];
+	"base:Educational" -> "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource" [ label = "rdfs:subClassOf" ];
+	"base:Immaterials" -> "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource" [ label = "rdfs:subClassOf" ];
+	"http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea" -> "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity" [ label = "rdfs:subClassOf" ];
+	"base:Materials" -> "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource" [ label = "rdfs:subClassOf" ];
+	"http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Thesis" -> "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea" [ label = "rdfs:subClassOf" ];
+	"base:HumanResources" -> "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource" [ label = "rdfs:subClassOf" ];
+	"http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Organization" -> "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor" [ label = "rdfs:subClassOf" ];
+	"http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Person" -> "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor" [ label = "rdfs:subClassOf" ];
+	"http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor" -> "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity" [ label = "rdfs:subClassOf" ];
+	"base:Milestone" -> "base:Event" [ label = "rdfs:subClassOf" ];
+	"http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project" -> "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity" [ label = "rdfs:subClassOf" ];
+	"base:NaturalResources" -> "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource" [ label = "rdfs:subClassOf" ];
+	"base:Task" -> "owl:Thing" [ label = "rdfs:subClassOf" ];
+	"http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource" -> "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity" [ label = "rdfs:subClassOf" ];
+
+}

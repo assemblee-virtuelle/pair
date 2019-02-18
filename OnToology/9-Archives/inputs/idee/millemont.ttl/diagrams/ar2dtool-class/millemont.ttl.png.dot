@@ -1,0 +1,13 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+	"file:///home/ahmad/OnToology/party#reve" -> "file:///home/ahmad/people/martin#me" [ label = ":lead" ];
+	"file:///home/ahmad/OnToology/party#reve" -> "file:///home/ahmad/OnToology/#DynamiserMillemont" [ label = ":concretise" ];
+	"file:///home/ahmad/OnToology/party#reve" -> "91e64f9d739e084c3529a1425d4668d2" [ label = ":requires" ];
+	"NULL" -> "097aa4e3efc219214c07252b2e17f886" [ label = ":requires" ];
+	"file:///home/ahmad/OnToology/visiteChateau#x" -> "file:///home/ahmad/people/sylvain#me" [ label = ":lead" ];
+	"file:///home/ahmad/OnToology/visiteChateau#x" -> "cb0ae2345d2574b6d5f084b8250a7738" [ label = ":requires" ];
+	"file:///home/ahmad/OnToology/cabaret#p" -> "7a991e3871ad1ed4c5664ae9a59fc470" [ label = ":participant" ];
+	"file:///home/ahmad/OnToology/cabaret#p" -> "38051bec7791e8de80dbadba9fd2cd5c" [ label = ":requires" ];
+
+}

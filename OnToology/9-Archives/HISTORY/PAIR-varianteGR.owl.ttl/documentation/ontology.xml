@@ -1,0 +1,842 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#"
+     xml:base="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-10="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10">
+        <rdfs:comment>Ontologie PAIR de test réalisée par Guillaume R.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#est_ami_de -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#est_ami_de">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Individu"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Individu"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#finance -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#finance"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#A_venir -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#A_venir">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Etat"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Adresse -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Adresse">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Code_Postal -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Code_Postal">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Code_Social -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Code_Social">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Date -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Date">
+        <rdfs:domain rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Event"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Date_de_début -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Date_de_début">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Date_de_fin -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Date_de_fin">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Description -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Description">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Description_courte -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Description_courte">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Description"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Description_longue -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Description_longue">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Description"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Dénomination_sociale -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Dénomination_sociale">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Nom"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Email -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Email"/>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Email_de_contact -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Email_de_contact">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Email"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"/>
+        <rdfs:domain rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Event"/>
+        <rdfs:domain rdf:resource="ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#En_cours -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#En_cours">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Etat"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Etat -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Etat">
+        <rdfs:domain rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Event"/>
+        <rdfs:domain rdf:resource="ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Forme_juridique -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Forme_juridique">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Genre -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Genre">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Individu"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Heure -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Heure">
+        <rdfs:domain rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Event"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Heure_de_début -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Heure_de_début">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Heure"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Heure_de_fin -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Heure_de_fin">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Heure"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Historique -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Historique">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Informations_générales -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Informations_générales">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Code_Social"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_culturel_et_artistique -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_culturel_et_artistique">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Code_Social"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_juridique_et_financier -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_juridique_et_financier">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Code_Social"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_social_et_humain -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_social_et_humain">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Code_Social"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_technologique -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_technologique">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Code_Social"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_écologique -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_écologique">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Code_Social"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_économique -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_économique">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Code_Social"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Nom -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Nom">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Nom_de_famille -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Nom_de_famille">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Nom"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Individu"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Pays -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Pays">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Prénom -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Prénom">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Individu"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Pseudo -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Pseudo">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Nom"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Individu"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Raison_d_être -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Raison_d_être">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Code_Social"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Récurrence -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Récurrence">
+        <rdfs:domain rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Event"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Réseaux_sociaux -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Réseaux_sociaux">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Siret -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Siret">
+        <rdfs:comment>Je ne sais pas ici comment gérer les types ...
+
+Je fais un test cependant</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Site_web_ou_URL -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Site_web_ou_URL">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Terminé -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Terminé">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Etat"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type"/>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_d_événement -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_d_événement">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type"/>
+        <rdfs:domain rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Event"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_de_lieu -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_de_lieu">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_de_projet -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_de_projet">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type"/>
+        <rdfs:domain rdf:resource="ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_de_thèse -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_de_thèse">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Téléphone -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Téléphone">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ville -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ville">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#140_caractères -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#140_caractères">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Description"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Argent -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Argent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Association -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Association"/>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Association_non_déclarée -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Association_non_déclarée"/>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Bien -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Bien">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Bonne_pratique -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Bonne_pratique">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Collectivité -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Collectivité"/>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Compte_Rendu -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Compte_Rendu">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource_documentaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Compétence -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Compétence">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Entreprise -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Entreprise"/>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Individu -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Individu"/>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Institution -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Institution"/>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Langage -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Langage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Outil"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Lieu -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Lieu">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Logiciel -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Logiciel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Outil"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Méthodologie -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Méthodologie">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Outil"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Oeuvre -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Oeuvre">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Outil -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Outil">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Protocole -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Protocole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Outil"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"/>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource_documentaire -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource_documentaire">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Service -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Service">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Temps -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Temps">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Tutoriel -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Tutoriel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource_documentaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.virtual-assembly.org/ontologies/1.0/pair#Event -->
+
+
+    <owl:Class rdf:about="http://www.virtual-assembly.org/ontologies/1.0/pair#Event"/>
+    
+
+
+    <!-- ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission -->
+
+
+    <owl:Class rdf:about="ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Assemblée_Générale -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Assemblée_Générale">
+        <Type_d_événement></Type_d_événement>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Autre -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Autre">
+        <Type_d_événement></Type_d_événement>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Barcamp -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Barcamp">
+        <Type_d_événement></Type_d_événement>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Café_des_pixels -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Café_des_pixels">
+        <Type_d_événement></Type_d_événement>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Femme -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Femme">
+        <Genre></Genre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Festival -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Festival">
+        <Type_d_événement></Type_d_événement>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Homme -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Homme">
+        <Genre></Genre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Réunion -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Réunion">
+        <Type_d_événement></Type_d_événement>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#aPAIRo -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#aPAIRo">
+        <Type_d_événement></Type_d_événement>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Femme"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Homme"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.9) https://github.com/owlcs/owlapi/ -->
+
+

@@ -1,0 +1,95 @@
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#concretise
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#concretise> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#lead
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#lead> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#participant
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#participant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#requires
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#requires> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/1999/02/22-rdf-syntax-ns#comment
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#comment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#Idea
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#Idea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#Project
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#Project> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://dbpedia.org/resource/Car
+<http://dbpedia.org/resource/Car> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://dbpedia.org/resource/Carriage
+<http://dbpedia.org/resource/Carriage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://dbpedia.org/resource/Sound_reinforcement_system
+<http://dbpedia.org/resource/Sound_reinforcement_system> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://xmlns.com/foaf/0.1/Group
+<http://xmlns.com/foaf/0.1/Group> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/#DynamiserMillemont
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/#DynamiserMillemont> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/#DynamiserMillemont> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#Idea> .
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/#DynamiserMillemont> <http://www.w3.org/1999/02/22-rdf-syntax-ns#comment> "Comme discuté a l'AV l'autre jour" .
+# 
+# file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/cabaret#p
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/cabaret#p> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/cabaret#p> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#Project> .
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/cabaret#p> <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#participant> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Group> .
+_:genid2 <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#requires> _:genid3 .
+_:genid3 <http://purl.org/dc/elements/1.1/description> "Medieval Costume" .
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/cabaret#p> <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#requires> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/resource/Car> .
+# 
+# file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/party#reve
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/party#reve> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/party#reve> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#Project> .
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/party#reve> <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#concretise> <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/#DynamiserMillemont> .
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/party#reve> <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#lead> <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../people/martin#me> .
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/party#reve> <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#requires> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/resource/Sound_reinforcement_system> .
+# 
+# file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/visiteChateau#x
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/visiteChateau#x> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/visiteChateau#x> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#Project> .
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/visiteChateau#x> <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#lead> <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../people/sylvain#me> .
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/visiteChateau#x> <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/idee/../v1.owl#requires> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/resource/Carriage> .
+# 
+# Generated by the OWL API (version 5.1.9) https://github.com/owlcs/owlapi/

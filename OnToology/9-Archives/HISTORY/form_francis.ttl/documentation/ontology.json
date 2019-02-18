@@ -1,0 +1,125 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
+}, {
+  "@id" : "http://deductions-software.com/ontologies/forms.owl.ttl#classDomain",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToForm",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToProperty",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://deductions-software.com/ontologies/forms.owl.ttl#showProperties",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://deductions-software.com/ontologies/forms.owl.ttl#widgetClass",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://practishare.wordpress.com/forms#IdeaForm",
+  "http://deductions-software.com/ontologies/forms.owl.ttl#classDomain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  } ],
+  "http://deductions-software.com/ontologies/forms.owl.ttl#showProperties" : [ {
+    "@id" : "_:genid2"
+  } ]
+}, {
+  "@id" : "https://practishare.wordpress.com/forms#IdeaForm-dc_subject2",
+  "http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToForm" : [ {
+    "@id" : "https://practishare.wordpress.com/forms#IdeaForm"
+  } ],
+  "http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToProperty" : [ {
+    "@id" : "http://purl.org/dc/terms/subject"
+  } ],
+  "http://deductions-software.com/ontologies/forms.owl.ttl#widgetClass" : [ {
+    "@id" : "http://deductions-software.com/ontologies/forms.owl.ttl#DBPediaLookup"
+  } ]
+}, {
+  "@id" : "https://practishare.wordpress.com/forms#OrganizationForm",
+  "http://deductions-software.com/ontologies/forms.owl.ttl#classDomain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization"
+  } ],
+  "http://deductions-software.com/ontologies/forms.owl.ttl#showProperties" : [ {
+    "@id" : "_:genid3"
+  } ]
+}, {
+  "@id" : "https://practishare.wordpress.com/forms#OrganizationForm-dc_subject3",
+  "http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToForm" : [ {
+    "@id" : "https://practishare.wordpress.com/forms#OrganizationForm"
+  } ],
+  "http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToProperty" : [ {
+    "@id" : "http://purl.org/dc/terms/subject"
+  } ],
+  "http://deductions-software.com/ontologies/forms.owl.ttl#widgetClass" : [ {
+    "@id" : "http://deductions-software.com/ontologies/forms.owl.ttl#DBPediaLookup"
+  } ]
+}, {
+  "@id" : "https://practishare.wordpress.com/forms#RessourceForm",
+  "http://deductions-software.com/ontologies/forms.owl.ttl#classDomain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"
+  } ],
+  "http://deductions-software.com/ontologies/forms.owl.ttl#showProperties" : [ {
+    "@id" : "_:genid4"
+  } ]
+}, {
+  "@id" : "https://practishare.wordpress.com/forms#RessourceForm-subject_field",
+  "http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToForm" : [ {
+    "@id" : "https://practishare.wordpress.com/forms#RessourceForm"
+  } ],
+  "http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToProperty" : [ {
+    "@id" : "http://purl.org/dc/terms/subject"
+  } ],
+  "http://deductions-software.com/ontologies/forms.owl.ttl#widgetClass" : [ {
+    "@id" : "http://deductions-software.com/ontologies/forms.owl.ttl#DBPediaLookup"
+  } ]
+}, {
+  "@id" : "https://practishare.wordpress.com/forms#personForm",
+  "http://deductions-software.com/ontologies/forms.owl.ttl#classDomain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"
+  } ],
+  "http://deductions-software.com/ontologies/forms.owl.ttl#showProperties" : [ {
+    "@id" : "_:genid5"
+  } ]
+}, {
+  "@id" : "https://practishare.wordpress.com/forms#personForm-skill",
+  "http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToForm" : [ {
+    "@id" : "https://practishare.wordpress.com/forms#personForm"
+  } ],
+  "http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToProperty" : [ {
+    "@id" : "http://purl.org/ontology/cco/core#expertise"
+  } ],
+  "http://deductions-software.com/ontologies/forms.owl.ttl#widgetClass" : [ {
+    "@id" : "http://deductions-software.com/ontologies/forms.owl.ttl#DBPediaLookup"
+  } ]
+}, {
+  "@id" : "https://practishare.wordpress.com/forms#personForm-topic_interest",
+  "http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToForm" : [ {
+    "@id" : "https://practishare.wordpress.com/forms#personForm"
+  } ],
+  "http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToProperty" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/topic_interest"
+  } ],
+  "http://deductions-software.com/ontologies/forms.owl.ttl#widgetClass" : [ {
+    "@id" : "http://deductions-software.com/ontologies/forms.owl.ttl#DBPediaLookup"
+  } ]
+}, {
+  "@id" : "https://practishare.wordpress.com/forms#projectForm",
+  "http://deductions-software.com/ontologies/forms.owl.ttl#classDomain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project"
+  } ],
+  "http://deductions-software.com/ontologies/forms.owl.ttl#showProperties" : [ {
+    "@id" : "_:genid6"
+  } ]
+}, {
+  "@id" : "https://practishare.wordpress.com/forms#projectForm-dc_subject",
+  "http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToForm" : [ {
+    "@id" : "https://practishare.wordpress.com/forms#projectForm"
+  } ],
+  "http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToProperty" : [ {
+    "@id" : "http://purl.org/dc/terms/subject"
+  } ],
+  "http://deductions-software.com/ontologies/forms.owl.ttl#widgetClass" : [ {
+    "@id" : "http://deductions-software.com/ontologies/forms.owl.ttl#DBPediaLookup"
+  } ]
+} ]

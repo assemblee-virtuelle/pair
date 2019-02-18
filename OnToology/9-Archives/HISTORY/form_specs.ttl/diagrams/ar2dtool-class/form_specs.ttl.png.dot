@@ -1,0 +1,9 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+	"owl:" -> "semforms_github:owl.form.ttl" [ label = "form:ontologyHasFormSpecification" ];
+	"av:" -> "file:///home/ahmad/OnToology/form_guillaume.ttl" [ label = "form:ontologyHasFormSpecification" ];
+	"foaf:" -> "semforms_github:foaf.form.ttl" [ label = "form:ontologyHasFormSpecification" ];
+	"cob:" -> "semforms_github:cob.form.ttl" [ label = "form:ontologyHasFormSpecification" ];
+
+}

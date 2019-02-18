@@ -1,0 +1,568 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
+  "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
+    "@list" : [ {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Femme"
+    }, {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Homme"
+    } ]
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Ontologie PAIR de test réalisée par Guillaume R."
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#140_caractères",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Description"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#A_venir",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Etat"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Adresse",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Argent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Assemblée_Générale",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_d_événement" : [ {
+    "@value" : ""
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Association",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Association_non_déclarée",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Autre",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_d_événement" : [ {
+    "@value" : ""
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Barcamp",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_d_événement" : [ {
+    "@value" : ""
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Bien",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Bonne_pratique",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Café_des_pixels",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_d_événement" : [ {
+    "@value" : ""
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Code_Postal",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Code_Social",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Collectivité",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Compte_Rendu",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource_documentaire"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Compétence",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Date",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Event"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#dateTime"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Date_de_début",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Date"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Date_de_fin",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Date"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Description_courte",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Description"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Description_longue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Description"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Dénomination_sociale",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Nom"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Email",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Email_de_contact",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"
+  }, {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Event"
+  }, {
+    "@id" : "ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Email"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#En_cours",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Etat"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Entreprise",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Etat",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Event"
+  }, {
+    "@id" : "ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Femme",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Genre" : [ {
+    "@value" : ""
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Festival",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_d_événement" : [ {
+    "@value" : ""
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Forme_juridique",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Genre",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Individu"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Heure",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Event"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#dateTime"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Heure_de_début",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Heure"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Heure_de_fin",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Heure"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Historique",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Homme",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Genre" : [ {
+    "@value" : ""
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Individu",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Informations_générales",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Code_Social"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Institution",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Langage",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Outil"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Lieu",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Logiciel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Outil"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_culturel_et_artistique",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Code_Social"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_juridique_et_financier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Code_Social"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_social_et_humain",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Code_Social"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_technologique",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Code_Social"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_écologique",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Code_Social"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_économique",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Code_Social"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Méthodologie",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Outil"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Nom",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Nom_de_famille",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Individu"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Nom"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Oeuvre",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Outil",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Pays",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Protocole",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Outil"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Prénom",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Individu"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Pseudo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Individu"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Nom"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Raison_d_être",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Code_Social"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource_documentaire",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Récurrence",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Event"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#dateTime"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Réseaux_sociaux",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#anyURI"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Réunion",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_d_événement" : [ {
+    "@value" : ""
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Service",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Siret",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Je ne sais pas ici comment gérer les types ...\n\nJe fais un test cependant"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Site_web_ou_URL",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#anyURI"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Temps",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Terminé",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Etat"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Tutoriel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource_documentaire"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_d_événement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Event"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_de_lieu",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_de_projet",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_de_thèse",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Téléphone",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ville",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#aPAIRo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_d_événement" : [ {
+    "@value" : ""
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#est_ami_de",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Individu"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Individu"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#finance",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Event",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+} ]

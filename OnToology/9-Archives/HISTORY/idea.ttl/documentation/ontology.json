@@ -1,0 +1,196 @@
+[ {
+  "@id" : "_:genid-nodeid-node1d408etp1x4",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
+}, {
+  "@id" : "_:genid2",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#oneOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#theme"
+    }, {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#thesis"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid5",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+    }, {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project"
+    } ]
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : " Exemples d'idées: Développement Durable, social, économie, écologie, réflexions , analyse , critique, proposition  (l'intention peut être projet ou non); \nrelation entre idées: opposition, compatibilité , convergence ...\napproche systémique ( et combinatoire )\nfaits ? c'est plus un sujet (Dublin core) qu'une ressource ou une idée\ncatégories, thématiques : passer du micro au macro ( particulier au général ) "
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Idée"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#compatibleWith",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "compatible avec"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#convergentWith",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "convergent avec"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#foughtBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "combattue par"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#idea",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "fr",
+    "@value" : "idée associée"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "idée"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#ideaCategory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "catégorie d'idée"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "_:genid2"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#implementedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "mise en oeuvre par"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#inspiredBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "inspiré par"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#isImplementedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "fr",
+    "@value" : "l'idée est concrétisée par un projet"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "projet"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#opposedTo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "_:genid-nodeid-node1d408etp1x4"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "opposé à"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "_:genid5"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#supportedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "fr",
+    "@value" : "soutenue par"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "acteur"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#theme",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Thème"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#thesis",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Thèse"
+  } ]
+} ]

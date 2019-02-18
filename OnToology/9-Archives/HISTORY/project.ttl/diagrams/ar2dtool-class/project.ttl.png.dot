@@ -1,0 +1,27 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+node [shape = rectangle, color="orange"]; "av:Project" ; /*classes style*/
+	"NULL" -> "43e4177d:1690088957f:-7ffa" [ label = "rdf:rest" ];
+	"NULL" -> "av:event" [ label = "rdf:first" ];
+	"NULL" -> "43e4177d:1690088957f:-7ff9" [ label = "rdf:rest" ];
+	"NULL" -> "av:society" [ label = "rdf:first" ];
+	"NULL" -> "43e4177d:1690088957f:-7ffb" [ label = "rdf:rest" ];
+	"NULL" -> "av:software" [ label = "rdf:first" ];
+	"NULL" -> "rdf:nil" [ label = "rdf:rest" ];
+	"NULL" -> "av:hardware" [ label = "rdf:first" ];
+	"NULL" -> "43e4177d:1690088957f:-7ffc" [ label = "owl:oneOf" ];
+	"foaf:Project" -> "av:Idea" [ label = "av:implements" ];
+	"av:Project" -> "av:Event" [ label = "av:hasMeeting" ];
+	"owl:Thing" -> "av:Project" [ label = "av:project" ];
+	"foaf:Project" -> "foaf:Person" [ label = "av:lead" ];
+	"av:Projet" -> "foaf:Agent" [ label = "av:usedBy" ];
+	"foaf:Project" -> "owl:Thing" [ label = "av:inspiredBy" ];
+	"av:Projet" -> "owl:Thing" [ label = "av:targetUser" ];
+	"foaf:Project" -> "owl:Thing" [ label = "av:opposedTo" ];
+	"av:Project" -> "cd187251b2c17a7f1767b4b5acb7494e" [ label = "av:projectCategory" ];
+	"owl:Thing" -> "av:Project" [ label = "av:likesProject" ];
+	"foaf:Project" -> "av:Resource" [ label = "av:requires" ];
+	"av:Projet" -> "owl:Thing" [ label = "av:supportedBy" ];
+
+}

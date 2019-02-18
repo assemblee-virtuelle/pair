@@ -1,0 +1,22 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "base:Compte_Rendu" "base:Protocole" "base:Oeuvre" "base:Tutoriel" "base:Comp?tence" "base:Bien" "base:Logiciel" "base:Outil" "base:Argent" "base:M?thodologie" "base:Service" "base:Bonne_pratique" "base:Langage" "base:Lieu" "base:Ressource" "base:Temps" "base:Ressource_documentaire" ; /*classes style*/
+	"base:Protocole" -> "base:Outil" [ label = "rdfs:subClassOf" ];
+	"base:Tutoriel" -> "base:Ressource_documentaire" [ label = "rdfs:subClassOf" ];
+	"base:Bien" -> "base:Ressource" [ label = "rdfs:subClassOf" ];
+	"base:Oeuvre" -> "base:Ressource" [ label = "rdfs:subClassOf" ];
+	"base:Langage" -> "base:Outil" [ label = "rdfs:subClassOf" ];
+	"base:Outil" -> "base:Ressource" [ label = "rdfs:subClassOf" ];
+	"base:Temps" -> "base:Ressource" [ label = "rdfs:subClassOf" ];
+	"base:Comp?tence" -> "base:Ressource" [ label = "rdfs:subClassOf" ];
+	"base:Ressource_documentaire" -> "base:Ressource" [ label = "rdfs:subClassOf" ];
+	"base:Logiciel" -> "base:Outil" [ label = "rdfs:subClassOf" ];
+	"base:M?thodologie" -> "base:Outil" [ label = "rdfs:subClassOf" ];
+	"base:Compte_Rendu" -> "base:Ressource_documentaire" [ label = "rdfs:subClassOf" ];
+	"base:Argent" -> "base:Ressource" [ label = "rdfs:subClassOf" ];
+	"base:Lieu" -> "base:Ressource" [ label = "rdfs:subClassOf" ];
+	"base:Bonne_pratique" -> "base:Ressource" [ label = "rdfs:subClassOf" ];
+	"base:Service" -> "base:Ressource" [ label = "rdfs:subClassOf" ];
+
+}

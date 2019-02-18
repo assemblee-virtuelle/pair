@@ -1,0 +1,171 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#inspiredBy
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#inspiredBy> rdf:type owl:AnnotationProperty ;
+                                                                  rdfs:domain <http://xmlns.com/foaf/0.1/Project> .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#opposedTo
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#opposedTo> rdf:type owl:AnnotationProperty ;
+                                                                 rdfs:domain <http://xmlns.com/foaf/0.1/Project> .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#supportedBy
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#supportedBy> rdf:type owl:AnnotationProperty ;
+                                                                   rdfs:domain <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Projet> .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasMeeting
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasMeeting> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:domain <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project> ;
+                                                                  rdfs:range <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Event> ;
+                                                                  rdfs:label "Réunion"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#implements
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#implements> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:domain <http://xmlns.com/foaf/0.1/Project> ;
+                                                                  rdfs:range <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> ;
+                                                                  rdfs:comment "le projet concrétise une idée"@fr ;
+                                                                  rdfs:label "idée"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#lead
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#lead> rdf:type owl:ObjectProperty ;
+                                                            rdfs:domain <http://xmlns.com/foaf/0.1/Project> ;
+                                                            rdfs:range <http://xmlns.com/foaf/0.1/Person> ;
+                                                            rdfs:label "responsable"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesProject
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesProject> rdf:type owl:ObjectProperty ;
+                                                                    rdfs:range <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project> ;
+                                                                    rdfs:label "aime le projet"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#project
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#project> rdf:type owl:ObjectProperty ;
+                                                               rdfs:range <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project> ;
+                                                               rdfs:comment "projet associé"@fr ;
+                                                               rdfs:label "projet"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#projectCategory
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#projectCategory> rdf:type owl:ObjectProperty ;
+                                                                       rdfs:domain <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project> ;
+                                                                       rdfs:range [ rdf:type owl:Class ;
+                                                                                    owl:oneOf ( <http://www.assemblee-virtuelle.org/ontologies/v1.owl#event>
+                                                                                                <http://www.assemblee-virtuelle.org/ontologies/v1.owl#hardware>
+                                                                                                <http://www.assemblee-virtuelle.org/ontologies/v1.owl#society>
+                                                                                                <http://www.assemblee-virtuelle.org/ontologies/v1.owl#software>
+                                                                                              )
+                                                                                  ] ;
+                                                                       rdfs:label "catégorie de projet"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#requires
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#requires> rdf:type owl:ObjectProperty ;
+                                                                rdfs:domain <http://xmlns.com/foaf/0.1/Project> ;
+                                                                rdfs:range <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource> ;
+                                                                rdfs:label "nécessite ressource"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#targetUser
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#targetUser> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:domain <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Projet> ;
+                                                                  rdfs:range owl:Thing ;
+                                                                  rdfs:comment "types d'utilisateurs ciblés: occasionnels, réguliers, administrateurs, développeurs, ..."@fr ;
+                                                                  rdfs:label "utilisateurs cibles"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#usedBy
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#usedBy> rdf:type owl:ObjectProperty ;
+                                                              rdfs:domain <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Projet> ;
+                                                              rdfs:range <http://xmlns.com/foaf/0.1/Agent> ;
+                                                              rdfs:label "utilisé par"@fr .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#Event
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Event> rdf:type owl:Class .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> rdf:type owl:Class .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project> rdf:type owl:Class ;
+                                                               rdfs:subClassOf <http://xmlns.com/foaf/0.1/Project> ;
+                                                               rdfs:comment """NOTES:
+	- foaf:Project is the simplest common denominator
+	- doap:Project is also a foaf:Project
+	"""@en ,
+                                                                            "Un projet logiciel, sociétal, etc."@fr ;
+                                                               rdfs:label "Projet"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#Projet
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Projet> rdf:type owl:Class .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource> rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Agent
+<http://xmlns.com/foaf/0.1/Agent> rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Project
+<http://xmlns.com/foaf/0.1/Project> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#event
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#event> rdf:type owl:NamedIndividual ;
+                                                             rdfs:label "Événementiel"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#hardware
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#hardware> rdf:type owl:NamedIndividual ;
+                                                                rdfs:label "Matériel"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#society
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#society> rdf:type owl:NamedIndividual ;
+                                                               rdfs:label "Sociétal"@fr .
+
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#software
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#software> rdf:type owl:NamedIndividual ;
+                                                                rdfs:label "Immatériel (logiciel etc)"@fr .
+
+
+###  Generated by the OWL API (version 5.1.9) https://github.com/owlcs/owlapi/

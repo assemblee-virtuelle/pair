@@ -1,0 +1,127 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
+}, {
+  "@id" : "_:genid2",
+  "@type" : [ "http://dbpedia.org/resource/Place" ]
+}, {
+  "@id" : "_:genid3",
+  "@type" : [ "http://xmlns.com/foaf/0.1/Group" ]
+}, {
+  "@id" : "_:genid4",
+  "@type" : [ "http://dbpedia.org/resource/Place" ]
+}, {
+  "@id" : "_:genid5",
+  "@type" : [ "http://dbpedia.org/resource/Technology" ]
+}, {
+  "@id" : "_:genid6",
+  "@type" : [ "http://dbpedia.org/resource/Place" ]
+}, {
+  "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Acteur",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Idea",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Project",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Resource",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#concretise",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#inspiredBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#lead",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#participant",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#requires",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Assemblee#Virtuelle",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Acteur" ],
+  "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#concretise" : [ {
+    "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/PAIRa#PAIR"
+  } ],
+  "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#requires" : [ {
+    "@id" : "_:genid2"
+  } ]
+}, {
+  "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Atelier#FilRouge",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Resource" ],
+  "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#lead" : [ {
+    "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../people/gilberte#me"
+  } ]
+}, {
+  "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Co#Business",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Project" ],
+  "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#lead" : [ {
+    "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../people/Vincent#me"
+  } ],
+  "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#participant" : [ {
+    "@id" : "_:genid3"
+  } ],
+  "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#requires" : [ {
+    "@id" : "_:genid4"
+  }, {
+    "@id" : "_:genid5"
+  } ]
+}, {
+  "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Expo#WAVE",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://dbpedia.org/resource/Event" ],
+  "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#requires" : [ {
+    "@id" : "_:genid6"
+  } ],
+  "http://dbpedia.org/resource/numberOfPeopleAttending" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "50"
+  } ],
+  "http://dbpedia.org/resource/startDate" : [ {
+    "@value" : "2014-10-01"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#comment" : [ {
+    "@value" : "L'exposition WAVE a été l'occasion d'une première cartographie l'écosystème P A I R de L'Assemblée Virtuelle"
+  } ]
+}, {
+  "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Ingeniosité#Collective",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Idea" ],
+  "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#lead" : [ {
+    "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../people/sylvain#me"
+  } ]
+}, {
+  "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/PAIRa#PAIR",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Idea" ],
+  "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#inspiredBy" : [ {
+    "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Peer2#Peer"
+  } ]
+}, {
+  "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Peer2#Peer",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Idea" ]
+}, {
+  "@id" : "http://dbpedia.org/resource/Event",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://dbpedia.org/resource/Place",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://dbpedia.org/resource/Technology",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://dbpedia.org/resource/numberOfPeopleAttending",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://dbpedia.org/resource/startDate",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#comment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/Group",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+} ]

@@ -1,0 +1,11 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "av:Organization" "av:Person" "av:Actor" ; /*classes style*/
+	"av:Organization" -> "av:Actor" [ label = "rdfs:subClassOf" ];
+	"av:Organization" -> "foaf:Organization" [ label = "rdfs:subClassOf" ];
+	"av:Actor" -> "foaf:Agent" [ label = "rdfs:subClassOf" ];
+	"av:Person" -> "av:Actor" [ label = "rdfs:subClassOf" ];
+	"av:Person" -> "foaf:Person" [ label = "rdfs:subClassOf" ];
+
+}

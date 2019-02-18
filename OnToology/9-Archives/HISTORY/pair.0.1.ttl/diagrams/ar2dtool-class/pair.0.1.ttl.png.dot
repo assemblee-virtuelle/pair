@@ -1,0 +1,25 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+node [shape = rectangle, color="orange"]; "base:Milestone" "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea" "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity" "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource" "base:Task" "base:Theme" "base:Argument" "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor" "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project" ; /*classes style*/
+	"http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#coOperatesWith" -> "owl:topObjectProperty" [ label = "rdfs:subPropertyOf" ];
+	"base:endsAt" -> "owl:topObjectProperty" [ label = "rdfs:subPropertyOf" ];
+	"http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project" -> "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea" [ label = "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#carriesOut" ];
+	"http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project" -> "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea" [ label = "base:sparks" ];
+	"http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project" -> "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource" [ label = "base:products" ];
+	"http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor" -> "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor" [ label = "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#coOperatesWith" ];
+	"http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource" -> "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource" [ label = "base:dependsOn" ];
+	"http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project" -> "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource" [ label = "base:needs" ];
+	"http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea" -> "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea" [ label = "base:hasDialecticalRelationWith" ];
+	"http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor" -> "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource" [ label = "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#disposesOf" ];
+	"http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor" -> "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor" [ label = "base:hasStructuralRelationWith" ];
+	"base:Task" -> "base:Milestone" [ label = "base:endsAt" ];
+	"http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource" -> "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea" [ label = "base:actualizes" ];
+	"http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project" -> "base:Task" [ label = "base:composesOf" ];
+	"http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea" -> "base:Argument" [ label = "base:suscites" ];
+	"http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity" -> "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity" [ label = "base:isFacetOf" ];
+	"http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor" -> "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project" [ label = "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#coProducts" ];
+	"http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor" -> "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea" [ label = "base:hasAnArgumentOn" ];
+	"http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea" -> "base:Theme" [ label = "base:inFieldOf" ];
+
+}

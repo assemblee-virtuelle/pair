@@ -1,0 +1,239 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.fluidlog.com/2013/05/loglink/core#combien -->
+
+
+    <ObjectProperty rdf:about="http://www.fluidlog.com/2013/05/loglink/core#combien">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#number"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.fluidlog.com/2013/05/loglink/core#comment -->
+
+
+    <ObjectProperty rdf:about="http://www.fluidlog.com/2013/05/loglink/core#comment">
+        <rdfs:comment xml:lang="fr">lien vers un méthodologie, une bonne pratique, qui répond à la question &quot;Comment ?&quot; </rdfs:comment>
+        <rdfs:label xml:lang="fr">comment</rdfs:label>
+        <rdfs:label xml:lang="en">how</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.fluidlog.com/2013/05/loglink/core#linkedto -->
+
+
+    <ObjectProperty rdf:about="http://www.fluidlog.com/2013/05/loglink/core#linkedto">
+        <rdfs:label xml:lang="en">linked to</rdfs:label>
+        <rdfs:label xml:lang="fr">lié avec</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.fluidlog.com/2013/05/loglink/core#ou -->
+
+
+    <ObjectProperty rdf:about="http://www.fluidlog.com/2013/05/loglink/core#ou">
+        <rdfs:comment xml:lang="fr">lien vers un lieu, une adresse, un établissement, une localisation informatique (uri), qui répond à la question &quot;Où ?&quot; </rdfs:comment>
+        <rdfs:label xml:lang="fr">où</rdfs:label>
+        <rdfs:label xml:lang="en">where</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.fluidlog.com/2013/05/loglink/core#pourquoi -->
+
+
+    <ObjectProperty rdf:about="http://www.fluidlog.com/2013/05/loglink/core#pourquoi">
+        <rdfs:comment xml:lang="fr">lien vers une raison d&apos;être, une explication, qui répond à la question &quot;Pourquoi ?&quot; </rdfs:comment>
+        <rdfs:label xml:lang="fr">pourquoi</rdfs:label>
+        <rdfs:label xml:lang="en">why</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.fluidlog.com/2013/05/loglink/core#qui -->
+
+
+    <ObjectProperty rdf:about="http://www.fluidlog.com/2013/05/loglink/core#qui">
+        <rdfs:range rdf:resource="http://www.virtual-assembly.org/ontologies/v1.owl#Actor"/>
+        <rdfs:comment xml:lang="fr">lien vers un acteur</rdfs:comment>
+        <rdfs:label xml:lang="fr">qui</rdfs:label>
+        <rdfs:label xml:lang="en">who</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.fluidlog.com/2013/05/loglink/core#quoi -->
+
+
+    <ObjectProperty rdf:about="http://www.fluidlog.com/2013/05/loglink/core#quoi">
+        <rdfs:comment xml:lang="fr">lien vers un objet, une description d&apos;un objet, d&apos;une chose qui répond à la question &quot;De quoi s&apos;agit-il ?&quot; </rdfs:comment>
+        <rdfs:label xml:lang="fr">quoi</rdfs:label>
+        <rdfs:label xml:lang="en">what</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.fluidlog.com/2013/05/loglink/core#combien -->
+
+
+    <DatatypeProperty rdf:about="http://www.fluidlog.com/2013/05/loglink/core#combien"/>
+    
+
+
+    <!-- http://www.fluidlog.com/2013/05/loglink/core#quand -->
+
+
+    <DatatypeProperty rdf:about="http://www.fluidlog.com/2013/05/loglink/core#quand">
+        <rdfs:comment xml:lang="fr">lien vers une date, une durée, un horodatage, un intervalle de temps </rdfs:comment>
+        <rdfs:label xml:lang="fr">quand</rdfs:label>
+        <rdfs:label xml:lang="en">when</rdfs:label>
+    </DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.fluidlog.com/2013/05/loglink/core#Combien -->
+
+
+    <Class rdf:about="http://www.fluidlog.com/2013/05/loglink/core#Combien">
+        <rdfs:label xml:lang="fr">combien</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://www.fluidlog.com/2013/05/loglink/core#Comment -->
+
+
+    <Class rdf:about="http://www.fluidlog.com/2013/05/loglink/core#Comment">
+        <rdfs:label xml:lang="fr">comment</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://www.fluidlog.com/2013/05/loglink/core#Ou -->
+
+
+    <Class rdf:about="http://www.fluidlog.com/2013/05/loglink/core#Ou">
+        <rdfs:label xml:lang="fr">où</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://www.fluidlog.com/2013/05/loglink/core#Pourquoi -->
+
+
+    <Class rdf:about="http://www.fluidlog.com/2013/05/loglink/core#Pourquoi">
+        <rdfs:label xml:lang="fr">pourquoi</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://www.fluidlog.com/2013/05/loglink/core#Quand -->
+
+
+    <Class rdf:about="http://www.fluidlog.com/2013/05/loglink/core#Quand">
+        <rdfs:label xml:lang="fr">quand</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://www.fluidlog.com/2013/05/loglink/core#Qui -->
+
+
+    <Class rdf:about="http://www.fluidlog.com/2013/05/loglink/core#Qui">
+        <rdfs:label xml:lang="fr">Qui</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://www.fluidlog.com/2013/05/loglink/core#Quoi -->
+
+
+    <Class rdf:about="http://www.fluidlog.com/2013/05/loglink/core#Quoi">
+        <rdfs:label xml:lang="fr">quoi</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://www.virtual-assembly.org/ontologies/v1.owl#Actor -->
+
+
+    <Class rdf:about="http://www.virtual-assembly.org/ontologies/v1.owl#Actor"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#number -->
+
+
+    <Class rdf:about="http://www.w3.org/2001/XMLSchema#number"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="http://www.fluidlog.com/2013/05/loglink/core#combien">
+        <rdfs:comment xml:lang="fr">lien vers un prix, une valeur, une quantité, un numéraire, qui répond à la question &quot;Combien ?&quot; </rdfs:comment>
+        <rdfs:label xml:lang="fr">combien</rdfs:label>
+        <rdfs:label xml:lang="en">how much</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.9) https://github.com/owlcs/owlapi/ -->
+
+

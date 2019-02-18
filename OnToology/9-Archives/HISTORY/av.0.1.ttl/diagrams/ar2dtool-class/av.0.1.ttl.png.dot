@@ -1,0 +1,45 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+node [shape = rectangle, color="orange"]; "base:Person" "foaf:Project" "base:Project" "3b74d3b71ffaa01e4bfa732e4acd4e6e" "base:Resource" "base:Idea" "c4491188602f74b9f2dd3b4824177bce" "base:Actor" "foaf:Person" "foaf:Organization" "http://www.w3.org/2004/02/skos/core#Concept" "base:Organization" ; /*classes style*/
+	"base:likesIdea" -> "http://www.assemblee-virtuelle.org/ontologies/av.0.1.ttl##hasAnArgumentOn" [ label = "rdfs:subPropertyOf" ];
+	"base:authorof" -> "http://purl.org/dc/terms/creator" [ label = "rdfs:subPropertyOf" ];
+	"base:hasEmployee" -> "base:hasContributor" [ label = "rdfs:subPropertyOf" ];
+	"file:///home/ahmad/OnToology/" -> "file:///home/ahmad/OnToology/pair.0.1.ttl" [ label = "owl:imports" ];
+	"base:founderof" -> "http://purl.org/dc/terms/creator" [ label = "rdfs:subPropertyOf" ];
+	"base:contributesToOrganization" -> "http://www.assemblee-virtuelle.org/ontologies/av.0.1.ttl##hasStructuralRelationWith" [ label = "rdfs:subPropertyOf" ];
+	"base:worksWith" -> "foaf:knows" [ label = "rdfs:subPropertyOf" ];
+	"NULL" -> "-7b2d218a:1690084336e:-7ff8" [ label = "owl:unionOf" ];
+	"NULL" -> "-7b2d218a:1690084336e:-7ffb" [ label = "rdf:rest" ];
+	"NULL" -> "base:Actor" [ label = "rdf:first" ];
+	"NULL" -> "base:Resource" [ label = "rdf:first" ];
+	"NULL" -> "base:Idea" [ label = "rdf:first" ];
+	"NULL" -> "base:Project" [ label = "rdf:first" ];
+	"NULL" -> "-7b2d218a:1690084336e:-7ff7" [ label = "rdf:rest" ];
+	"NULL" -> "rdf:nil" [ label = "rdf:rest" ];
+	"NULL" -> "-7b2d218a:1690084336e:-7ffa" [ label = "rdf:rest" ];
+	"NULL" -> "base:Organization" [ label = "rdf:first" ];
+	"NULL" -> "-7b2d218a:1690084336e:-7ffc" [ label = "owl:unionOf" ];
+	"NULL" -> "-7b2d218a:1690084336e:-7ff9" [ label = "rdf:rest" ];
+	"base:Actor" -> "foaf:Project" [ label = "base:contributes" ];
+	"foaf:Organization" -> "http://www.w3.org/2004/02/skos/core#Concept" [ label = "base:opposedTo" ];
+	"foaf:Person" -> "foaf:Person" [ label = "base:worksWith" ];
+	"foaf:Person" -> "owl:Thing" [ label = "base:facebookId" ];
+	"base:Actor" -> "owl:Thing" [ label = "base:authorof" ];
+	"base:Actor" -> "foaf:Project" [ label = "base:supports" ];
+	"foaf:Person" -> "owl:Thing" [ label = "base:linkedinId" ];
+	"foaf:Organization" -> "base:Person" [ label = "base:isLikedBy" ];
+	"foaf:Organization" -> "base:Person" [ label = "base:originator" ];
+	"foaf:Organization" -> "base:Person" [ label = "base:hasEmployee" ];
+	"base:Person" -> "foaf:Organization" [ label = "base:employeeOf" ];
+	"base:Person" -> "foaf:Organization" [ label = "base:contributesToOrganization" ];
+	"base:Actor" -> "http://www.w3.org/2004/02/skos/core#Concept" [ label = "base:likesIdea" ];
+	"base:Person" -> "owl:Thing" [ label = "base:metAt" ];
+	"base:Actor" -> "c4491188602f74b9f2dd3b4824177bce" [ label = "base:founderof" ];
+	"foaf:Organization" -> "http://www.w3.org/2004/02/skos/core#Concept" [ label = "base:specializedIn" ];
+	"base:Actor" -> "3b74d3b71ffaa01e4bfa732e4acd4e6e" [ label = "http://rdfs.org/sioc/ns#follows" ];
+	"base:Organization" -> "base:Actor" [ label = "base:hasContributor" ];
+	"foaf:Person" -> "owl:Thing" [ label = "base:twitterId" ];
+	"foaf:Organization" -> "foaf:Organization" [ label = "base:partner" ];
+
+}

@@ -1,0 +1,272 @@
+{
+  "@context" : {
+    "implements" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#implements",
+      "@type" : "@id"
+    },
+    "opposedTo" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#opposedTo",
+      "@type" : "@id"
+    },
+    "likesOrganization" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesOrganization",
+      "@type" : "@id"
+    },
+    "resource" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#resource",
+      "@type" : "@id"
+    },
+    "supportedBy" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#supportedBy",
+      "@type" : "@id"
+    },
+    "member" : {
+      "@id" : "http://xmlns.com/foaf/0.1/member",
+      "@type" : "@id"
+    },
+    "includes" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#includes",
+      "@type" : "@id"
+    },
+    "neededByPerson" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByPerson",
+      "@type" : "@id"
+    },
+    "employeeOf" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#employeeOf",
+      "@type" : "@id"
+    },
+    "compatibleWith" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#compatibleWith",
+      "@type" : "@id"
+    },
+    "Organization" : {
+      "@id" : "http://xmlns.com/foaf/0.1/Organization"
+    },
+    "metAt" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#metAt"
+    },
+    "Thing" : {
+      "@id" : "http://www.w3.org/2002/07/owl#Thing"
+    },
+    "neededByProject" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByProject",
+      "@type" : "@id"
+    },
+    "Idea" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea"
+    },
+    "targetUser" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#targetUser",
+      "@type" : "@id"
+    },
+    "isLikedBy" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#isLikedBy",
+      "@type" : "@id"
+    },
+    "isImplementedBy" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#isImplementedBy",
+      "@type" : "@id"
+    },
+    "sharesDocument" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesDocument",
+      "@type" : "@id"
+    },
+    "sharesGoodOrSpace" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesGoodOrSpace",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "usedBy" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#usedBy",
+      "@type" : "@id"
+    },
+    "project" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#project",
+      "@type" : "@id"
+    },
+    "lead" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#lead",
+      "@type" : "@id"
+    },
+    "linkedinId" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#linkedinId"
+    },
+    "sharedByProject" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByProject",
+      "@type" : "@id"
+    },
+    "facebookId" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#facebookId"
+    },
+    "contributes" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributes",
+      "@type" : "@id"
+    },
+    "Event" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Event"
+    },
+    "convergentWith" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#convergentWith",
+      "@type" : "@id"
+    },
+    "hasMeeting" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasMeeting",
+      "@type" : "@id"
+    },
+    "sharesResource" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesResource",
+      "@type" : "@id"
+    },
+    "Person" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person"
+    },
+    "likesIdea" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesIdea",
+      "@type" : "@id"
+    },
+    "hasContributor" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasContributor",
+      "@type" : "@id"
+    },
+    "Actor" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor"
+    },
+    "ownedBy" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#ownedBy",
+      "@type" : "@id"
+    },
+    "Agent" : {
+      "@id" : "http://xmlns.com/foaf/0.1/Agent"
+    },
+    "needsResource" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsResource",
+      "@type" : "@id"
+    },
+    "sharesServices" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharesServices",
+      "@type" : "@id"
+    },
+    "implementedBy" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#implementedBy",
+      "@type" : "@id"
+    },
+    "needsServices" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsServices",
+      "@type" : "@id"
+    },
+    "sharedByPerson" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByPerson",
+      "@type" : "@id"
+    },
+    "partOf" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#partOf",
+      "@type" : "@id"
+    },
+    "twitterId" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#twitterId"
+    },
+    "inspiredBy" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#inspiredBy",
+      "@type" : "@id"
+    },
+    "sharedByOrganization" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#sharedByOrganization",
+      "@type" : "@id"
+    },
+    "knows" : {
+      "@id" : "http://xmlns.com/foaf/0.1/knows",
+      "@type" : "@id"
+    },
+    "Project" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project"
+    },
+    "needsDocument" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsDocument",
+      "@type" : "@id"
+    },
+    "managedBy" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#managedBy",
+      "@type" : "@id"
+    },
+    "projectCategory" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#projectCategory",
+      "@type" : "@id"
+    },
+    "supports" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#supports",
+      "@type" : "@id"
+    },
+    "neededByOrganization" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#neededByOrganization",
+      "@type" : "@id"
+    },
+    "needsGoodOrSpace" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#needsGoodOrSpace",
+      "@type" : "@id"
+    },
+    "Projet" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Projet"
+    },
+    "resourceCategory" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#resourceCategory",
+      "@type" : "@id"
+    },
+    "Resource" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource"
+    },
+    "partner" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#partner",
+      "@type" : "@id"
+    },
+    "likesProject" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesProject",
+      "@type" : "@id"
+    },
+    "ideaCategory" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#ideaCategory",
+      "@type" : "@id"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "originator" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#originator",
+      "@type" : "@id"
+    },
+    "contributesToOrganization" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributesToOrganization",
+      "@type" : "@id"
+    },
+    "requires" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#requires",
+      "@type" : "@id"
+    },
+    "foughtBy" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#foughtBy",
+      "@type" : "@id"
+    },
+    "specializedIn" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#specializedIn",
+      "@type" : "@id"
+    },
+    "hasEmployee" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasEmployee",
+      "@type" : "@id"
+    },
+    "worksWith" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#worksWith",
+      "@type" : "@id"
+    },
+    "actor" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#actor",
+      "@type" : "@id"
+    },
+    "idea" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#idea",
+      "@type" : "@id"
+    }
+  }
+}

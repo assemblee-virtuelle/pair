@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+
+    <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
+        <rdfs:label xml:lang="fr">Nom</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="http://open.vocab.org/terms/similarTo">
+        <rdfs:label xml:lang="fr">similaire à</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/terms/creator">
+        <rdfs:label xml:lang="fr">créateur de</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/terms/hasPart">
+        <rdfs:label xml:lang="fr">inclut</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/terms/isPartOf">
+        <rdfs:label xml:lang="fr">fait partie de</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/terms/subject">
+        <rdfs:label xml:lang="fr">thème, centre d&apos;intérêt</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/goodrelations/v1#offers">
+        <rdfs:label xml:lang="fr">dispose de, propose (compétences incluses)</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/goodrelations/v1#seeks">
+        <rdfs:label xml:lang="fr">a besoin de, recherche (compétences incluses)</rdfs:label>
+        <rdfs:label xml:lang="fr">ressources recherchées (hors compétences)</rdfs:label>
+        <rdfs:label xml:lang="en">seeks</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ontology/cco/core#expertise">
+        <rdfs:label xml:lang="fr">a pour compétence</rdfs:label>
+        <rdfs:label xml:lang="en">hasExpertise</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/spar/cito/likes">
+        <rdfs:label xml:lang="fr">aime</rdfs:label>
+        <rdfs:label xml:lang="en">likes</rdfs:label>
+        <rdfs:label xml:lang="fr">sympathisant(e) de</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://rdfs.org/sioc/follows">
+        <rdfs:label xml:lang="fr">suit</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://rdfs.org/sioc/ns#follows">
+        <rdfs:label xml:lang="en">follows</rdfs:label>
+        <rdfs:label xml:lang="fr">suit</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/attendee">
+        <rdfs:label xml:lang="fr">a pour participant</rdfs:label>
+        <rdfs:label xml:lang="en">has attendee</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#comment">
+        <rdfs:label xml:lang="fr">Description</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/currentProject">
+        <rdfs:label xml:lang="fr">contribue à</rdfs:label>
+        <rdfs:label xml:lang="en">contributes to</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/familyName">
+        <rdfs:label xml:lang="fr">Nom</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/homepage">
+        <rdfs:label xml:lang="fr">Site Web</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/img">
+        <rdfs:label xml:lang="fr">Photo, image</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/knows">
+        <rdfs:label xml:lang="fr">connait</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/mbox">
+        <rdfs:label xml:lang="fr">Email</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/member">
+        <rdfs:label xml:lang="fr">a pour membre</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/nick">
+        <rdfs:label xml:lang="fr">Pseudo</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/pastProject">
+        <rdfs:label xml:lang="fr">a contribué à</rdfs:label>
+        <rdfs:label xml:lang="en">has contributed to</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/weblog">
+        <rdfs:label xml:lang="fr">Site ou page web</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.9) https://github.com/owlcs/owlapi/ -->
+
+

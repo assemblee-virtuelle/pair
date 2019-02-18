@@ -1,0 +1,26 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+node [shape = rectangle, color="orange"]; "av:Person" "av:Actor" ; /*classes style*/
+	"av:hasEmployee" -> "av:hasContributor" [ label = "rdfs:subPropertyOf" ];
+	"av:worksWith" -> "foaf:knows" [ label = "rdfs:subPropertyOf" ];
+	"foaf:Organization" -> "foaf:Organization" [ label = "av:likesOrganization" ];
+	"foaf:Organization" -> "av:Idea" [ label = "av:specializedIn" ];
+	"foaf:Organization" -> "av:Person" [ label = "av:hasEmployee" ];
+	"av:Person" -> "foaf:Organization" [ label = "av:contributesToOrganization" ];
+	"foaf:Person" -> "owl:Thing" [ label = "av:facebookId" ];
+	"foaf:Organization" -> "av:Idea" [ label = "av:opposedTo" ];
+	"foaf:Organization" -> "av:Person" [ label = "av:isLikedBy" ];
+	"av:Person" -> "owl:Thing" [ label = "av:metAt" ];
+	"owl:Thing" -> "av:Actor" [ label = "av:actor" ];
+	"foaf:Person" -> "owl:Thing" [ label = "av:linkedinId" ];
+	"av:Person" -> "foaf:Organization" [ label = "av:employeeOf" ];
+	"foaf:Organization" -> "foaf:Organization" [ label = "av:partner" ];
+	"av:Actor" -> "foaf:Project" [ label = "av:supports" ];
+	"av:Actor" -> "foaf:Project" [ label = "av:contributes" ];
+	"foaf:Person" -> "owl:Thing" [ label = "av:twitterId" ];
+	"foaf:Person" -> "foaf:Person" [ label = "av:worksWith" ];
+	"foaf:Organization" -> "av:Person" [ label = "av:originator" ];
+	"foaf:Organization" -> "av:Idea" [ label = "av:likesIdea" ];
+
+}

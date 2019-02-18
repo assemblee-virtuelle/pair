@@ -1,0 +1,30 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+node [shape = rectangle, color="orange"]; "av:Idea" ; /*classes style*/
+	"av:isImplementedBy" -> "av:implements" [ label = "owl:inversePropertyOf" ];
+	"av:implementedBy" -> "av:implements" [ label = "owl:inversePropertyOf" ];
+	"NULL" -> "5936af22:16900876fb8:-7ffb" [ label = "rdf:rest" ];
+	"NULL" -> "5936af22:16900876fb8:-7ff7" [ label = "rdf:rest" ];
+	"NULL" -> "av:thesis" [ label = "rdf:first" ];
+	"NULL" -> "av:Idea" [ label = "rdf:first" ];
+	"NULL" -> "5936af22:16900876fb8:-7ff9" [ label = "rdf:rest" ];
+	"NULL" -> "5936af22:16900876fb8:-7ffc" [ label = "owl:oneOf" ];
+	"NULL" -> "5936af22:16900876fb8:-7ffa" [ label = "owl:unionOf" ];
+	"NULL" -> "av:Project" [ label = "rdf:first" ];
+	"NULL" -> "rdf:nil" [ label = "rdf:rest" ];
+	"NULL" -> "av:Actor" [ label = "rdf:first" ];
+	"NULL" -> "5936af22:16900876fb8:-7ff8" [ label = "owl:unionOf" ];
+	"NULL" -> "av:theme" [ label = "rdf:first" ];
+	"av:Idea" -> "av:Project" [ label = "av:implementedBy" ];
+	"av:Idea" -> "av:Idea" [ label = "av:compatibleWith" ];
+	"av:Idea" -> "av:Project" [ label = "av:isImplementedBy" ];
+	"av:Idea" -> "av:Idea" [ label = "av:inspiredBy" ];
+	"av:Idea" -> "819ddad3316e0531b57bc466f80e4ec0" [ label = "av:ideaCategory" ];
+	"ec5c5529f6c8edfe3bb3f1877645b082" -> "d77404df13169b5f67e56929432515bb" [ label = "av:opposedTo" ];
+	"av:Idea" -> "av:Idea" [ label = "av:convergentWith" ];
+	"owl:Thing" -> "av:Idea" [ label = "av:idea" ];
+	"av:Idea" -> "av:Actor" [ label = "av:foughtBy" ];
+	"av:Idea" -> "av:Actor" [ label = "av:supportedBy" ];
+
+}

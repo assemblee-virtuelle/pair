@@ -1,0 +1,386 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Actor"
+    }, {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Idea"
+    }, {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Project"
+    }, {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Resource"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid6",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Organization"
+    }, {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Project"
+    } ]
+  } ]
+}, {
+  "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/HISTORY/",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Ontologie AV version Michel"
+  } ],
+  "http://www.w3.org/2002/07/owl#imports" : [ {
+    "@id" : "file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/HISTORY/pair.0.1.ttl"
+  } ]
+}, {
+  "@id" : "http://creativecommons.org/ns#Work",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://rdfs.org/sioc/ns#follows",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Actor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "_:genid1"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/av.0.1.ttl##hasAnArgumentOn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/av.0.1.ttl##hasStructuralRelationWith",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Actor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Acteur"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor"
+  }, {
+    "@id" : "http://xmlns.com/foaf/0.1/Agent"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Idea",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Organization",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Organisation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Actor"
+  }, {
+    "@id" : "http://xmlns.com/foaf/0.1/Organization"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Person",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Individu"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Actor"
+  }, {
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Project",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Project"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Resource",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Work",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://creativecommons.org/ns#Work"
+  }, {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Resource"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#authorof",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Actor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.org/dc/terms/creator"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#contributes",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Actor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "contribue"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Project"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/member"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#contributesToOrganization",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#AsymmetricProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "fr",
+    "@value" : "Exprime le lien entre un individu et une organisation, dans laquelle l'individu se reconnaît dans l'action de l'organisation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "adhère"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/av.0.1.ttl##hasStructuralRelationWith"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#employeeOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "employé par"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Organization"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#hasEmployee"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#facebookId",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Facebook"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#founderof",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Actor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "_:genid6"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.org/dc/terms/creator"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#hasContributor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Organization"
+  }, {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Project"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Actor"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#hasEmployee",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "employé"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#hasContributor"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#isLikedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "sympatisant"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Person"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#likesIdea",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#AsymmetricProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Actor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "aime l'idée"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/av.0.1.ttl##hasAnArgumentOn"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#linkedinId",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "LinkedIn"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#metAt",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "rencontré à"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#opposedTo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#SymmetricProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "opposé à l'idée"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#originator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "est à l'origine"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Person"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#partner",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#SymmetricProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "partenaire"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Organization"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#specializedIn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#SymmetricProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "spécialisé dans l'idée"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#supports",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#Actor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "soutient"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Project"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#twitterId",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Twitter"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/1.0/av.0.1.ttl#worksWith",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#SymmetricProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "travaille avec"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/knows"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#Concept",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/Agent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/Organization",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/Person",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/Project",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/knows",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/member",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+} ]

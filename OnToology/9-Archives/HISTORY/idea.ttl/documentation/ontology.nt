@@ -1,0 +1,129 @@
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#compatibleWith
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#compatibleWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#compatibleWith> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#compatibleWith> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#compatibleWith> <http://www.w3.org/2000/01/rdf-schema#label> "compatible avec"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#convergentWith
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#convergentWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#convergentWith> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#convergentWith> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#convergentWith> <http://www.w3.org/2000/01/rdf-schema#label> "convergent avec"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#foughtBy
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#foughtBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#foughtBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#foughtBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#foughtBy> <http://www.w3.org/2000/01/rdf-schema#label> "combattue par"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#idea
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#idea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#idea> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#idea> <http://www.w3.org/2000/01/rdf-schema#comment> "idée associée"@fr .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#idea> <http://www.w3.org/2000/01/rdf-schema#label> "idée"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#ideaCategory
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#ideaCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#ideaCategory> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#ideaCategory> <http://www.w3.org/2000/01/rdf-schema#range> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid2 <http://www.w3.org/2002/07/owl#oneOf> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#theme> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#theme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#thesis> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#thesis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#ideaCategory> <http://www.w3.org/2000/01/rdf-schema#label> "catégorie d'idée"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#implementedBy
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#implementedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#implementedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#implementedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#implementedBy> <http://www.w3.org/2000/01/rdf-schema#label> "mise en oeuvre par"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#inspiredBy
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#inspiredBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#inspiredBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#inspiredBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#inspiredBy> <http://www.w3.org/2000/01/rdf-schema#label> "inspiré par"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#isImplementedBy
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#isImplementedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#isImplementedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#isImplementedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#isImplementedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "l'idée est concrétisée par un projet"@fr .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#isImplementedBy> <http://www.w3.org/2000/01/rdf-schema#label> "projet"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#opposedTo
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#opposedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#opposedTo> <http://www.w3.org/2000/01/rdf-schema#domain> <_:genid-nodeid-node1d408etp1x4> .
+<_:genid-nodeid-node1d408etp1x4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#opposedTo> <http://www.w3.org/2000/01/rdf-schema#range> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid5 <http://www.w3.org/2002/07/owl#unionOf> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#opposedTo> <http://www.w3.org/2000/01/rdf-schema#label> "opposé à"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#supportedBy
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#supportedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#supportedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#supportedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#supportedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "soutenue par"@fr .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#supportedBy> <http://www.w3.org/2000/01/rdf-schema#label> "acteur"@fr .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# _:genid-nodeid-node1d408etp1x4
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#Actor
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> <http://www.w3.org/2000/01/rdf-schema#comment> " Exemples d'idées: Développement Durable, social, économie, écologie, réflexions , analyse , critique, proposition  (l'intention peut être projet ou non); \nrelation entre idées: opposition, compatibilité , convergence ...\napproche systémique ( et combinatoire )\nfaits ? c'est plus un sujet (Dublin core) qu'une ressource ou une idée\ncatégories, thématiques : passer du micro au macro ( particulier au général ) " .
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> <http://www.w3.org/2000/01/rdf-schema#label> "Idée"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#theme
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#theme> <http://www.w3.org/2000/01/rdf-schema#label> "Thème"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#thesis
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#thesis> <http://www.w3.org/2000/01/rdf-schema#label> "Thèse"@fr .
+# 
+# Generated by the OWL API (version 5.1.9) https://github.com/owlcs/owlapi/

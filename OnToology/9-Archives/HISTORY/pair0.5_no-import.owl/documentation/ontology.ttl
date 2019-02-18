@@ -1,0 +1,764 @@
+@prefix : <http://www.virtual-assembly.org/ontologies/1.0/pair#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.virtual-assembly.org/ontologies/1.0/pair> .
+
+<http://www.virtual-assembly.org/ontologies/1.0/pair> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.assemblee-virtuelle.org/ontologies/v1.owl#metAt
+<http://www.assemblee-virtuelle.org/ontologies/v1.owl#metAt> rdf:type owl:AnnotationProperty ;
+                                                             rdfs:label "rencontré à"@fr ;
+                                                             rdfs:domain <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person> .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#actualizes
+:actualizes rdf:type owl:ObjectProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :Actor
+                                        :Idea
+                                        :Project
+                                        :Resource
+                                      )
+                        ] ;
+            rdfs:range :Idea ;
+            rdfs:label "actualise"@fr ,
+                       "actualizes"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#authorof
+:authorof rdf:type owl:ObjectProperty ;
+          rdfs:domain :Actor ;
+          rdfs:range :Work ;
+          rdfs:label "auteur de"@fr ,
+                     "author of"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#barters
+:barters rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :offers ;
+         owl:inverseOf :wantsToBarter ;
+         rdfs:label "barters"@en ,
+                    "troque"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#borrows
+:borrows rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :seeks ;
+         owl:inverseOf :lends ;
+         rdfs:label "souhaite emprunter"@fr ,
+                    "wants to borrow"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#buys
+:buys rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf :seeks ;
+      owl:inverseOf :sells ;
+      rdfs:label "souhaite acheter"@fr ,
+                 "wants to buy"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#carriesOut
+:carriesOut rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :actualizes ;
+            rdfs:label "carries out"@en ,
+                       "met en oeuvre"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#contributedTo
+:contributedTo rdf:type owl:ObjectProperty ;
+               rdfs:domain :Actor ;
+               rdfs:range [ rdf:type owl:Class ;
+                            owl:unionOf ( :Group
+                                          :Organization
+                                          :Project
+                                        )
+                          ] ;
+               rdfs:label "a contribué à"@fr ,
+                          "contributed to"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#contributesTo
+:contributesTo rdf:type owl:ObjectProperty ;
+               owl:inverseOf :hasContributor ;
+               rdfs:domain :Actor ;
+               rdfs:range [ rdf:type owl:Class ;
+                            owl:unionOf ( :Group
+                                          :Organization
+                                          :Project
+                                        )
+                          ] ;
+               rdfs:comment "The domain of foaf:currentProject is supposed to be a person but ... It could be a group or an organization isnt'it ?"@fr ;
+               rdfs:label "contribue à"@fr ,
+                          "contributes to"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#convergesWith
+:convergesWith rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :debate ;
+               rdfs:domain :Idea ;
+               rdfs:range :Idea ;
+               rdfs:comment "L'économie symbiotique est convergente avec le développement durable" ;
+               rdfs:label "converges with"@en ,
+                          "est convergent avec"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#creatorof
+:creatorof rdf:type owl:ObjectProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :Project
+                                       :Resource
+                                     )
+                       ] ;
+           rdfs:label "creator of"@en ,
+                      "créateur de"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#debate
+:debate rdf:type owl:ObjectProperty ;
+        rdfs:domain :Idea ;
+        rdfs:range :Idea .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#embodies
+:embodies rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :actualizes ;
+          rdfs:range :Idea ;
+          rdfs:label "embodies"@en ,
+                     "incarne"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#financialSupport
+:financialSupport rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :supports ;
+                  rdfs:label "soutient financièrement" .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#follows
+:follows rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :likes ;
+         rdfs:label "follows"@en ,
+                    "suit"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#founderof
+:founderof rdf:type owl:ObjectProperty ;
+           rdfs:domain :Actor ;
+           rdfs:range [ rdf:type owl:Class ;
+                        owl:unionOf ( :Group
+                                      :Organization
+                                      :Project
+                                    )
+                      ] ;
+           rdfs:label "fondateur de"@fr ,
+                      "founder of"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#gives
+:gives rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf :offers ;
+       owl:inverseOf :wouldLike ;
+       rdfs:label "donne"@fr ,
+                  "gives"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#hasAttendee
+:hasAttendee rdf:type owl:ObjectProperty ;
+             rdfs:domain :Event ;
+             rdfs:range :Actor ;
+             rdfs:label "a pour participant"@fr ,
+                        "has attendee"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#hasContributor
+:hasContributor rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasMember ;
+                rdfs:range :Actor ;
+                rdfs:label "a pour contributeur"@fr ,
+                           "has contributor"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#hasEmployee
+:hasEmployee rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :hasMember ;
+             rdfs:label "a pour employé"@fr ,
+                        "has employee"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#hasExpertise
+:hasExpertise rdf:type owl:ObjectProperty ;
+              rdfs:domain :Actor ;
+              rdfs:range [ rdf:type owl:Class ;
+                           owl:unionOf ( :Idea
+                                         :Skill
+                                       )
+                         ] ;
+              rdfs:label "a pour compétence"@fr ,
+                         "has expertise"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#hasMember
+:hasMember rdf:type owl:ObjectProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :Group
+                                       :Organization
+                                     )
+                       ] ;
+           rdfs:range :Actor ;
+           rdfs:label "a pour membre"@fr ,
+                      "has member"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#hasPartner
+:hasPartner rdf:type owl:ObjectProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :Actor
+                                        :Project
+                                      )
+                        ] ;
+            rdfs:range :Actor ;
+            rdfs:label "a pour partenaire"@fr ,
+                       "has partner"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#hasRecipient
+:hasRecipient rdf:type owl:ObjectProperty ;
+              rdfs:domain :Project ;
+              rdfs:range :Actor ;
+              rdfs:label "a pour bénéficiaire" .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#includes
+:includes rdf:type owl:ObjectProperty ;
+          owl:inverseOf :isPartOf ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :Actor
+                                      :Idea
+                                      :Project
+                                      :Resource
+                                    )
+                      ] ;
+          rdfs:range [ rdf:type owl:Class ;
+                       owl:unionOf ( :Actor
+                                     :Idea
+                                     :Project
+                                     :Resource
+                                   )
+                     ] ;
+          rdfs:label "includes"@en ,
+                     "inclut"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#isFamily
+:isFamily rdf:type owl:ObjectProperty ;
+          rdfs:domain :Person ;
+          rdfs:range :Person ;
+          rdfs:label "famille de"@fr ,
+                     "family of"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#isFriendOf
+:isFriendOf rdf:type owl:ObjectProperty ;
+            rdfs:domain :Person ;
+            rdfs:range :Person ;
+            rdfs:label "ami de"@fr ,
+                       "friend of"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#isPartOf
+:isPartOf rdf:type owl:ObjectProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :Actor
+                                      :Idea
+                                      :Project
+                                      :Resource
+                                    )
+                      ] ;
+          rdfs:range [ rdf:type owl:Class ;
+                       owl:unionOf ( :Actor
+                                     :Idea
+                                     :Project
+                                     :Resource
+                                   )
+                     ] ;
+          rdfs:label "fait partie de"@fr ,
+                     "is part of"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#lends
+:lends rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf :offers ;
+       rdfs:label "lends"@en ,
+                  "prête"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#likes
+:likes rdf:type owl:ObjectProperty ;
+       rdfs:domain :Actor ;
+       rdfs:range [ rdf:type owl:Class ;
+                    owl:unionOf ( :Actor
+                                  :Idea
+                                  :Project
+                                  :Resource
+                                )
+                  ] ;
+       rdfs:label "aime"@fr ,
+                  "likes"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#moralSupport
+:moralSupport rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :supports ;
+              rdfs:label "soutient (moralement)" .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#offers
+:offers rdf:type owl:ObjectProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain [ rdf:type owl:Class ;
+                      owl:unionOf ( :Actor
+                                    :Project
+                                  )
+                    ] ;
+        rdfs:range :Resource ;
+        rdfs:comment "hasOrPropose"@en ;
+        rdfs:label "has"@en ,
+                   "propose"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#opposedTo
+:opposedTo rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :debate ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :Actor
+                                       :Idea
+                                     )
+                       ] ;
+           rdfs:range :Idea ;
+           rdfs:label "opposed to"@en ,
+                      "opposé à"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#philosophicalSupport
+:philosophicalSupport rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :supports ;
+                      rdfs:label "soutient (philosophiquement)" .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#products
+:products rdf:type owl:ObjectProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :Actor
+                                      :Project
+                                    )
+                      ] ;
+          rdfs:range [ rdf:type owl:Class ;
+                       owl:unionOf ( :Idea
+                                     :Project
+                                     :Resource
+                                   )
+                     ] ;
+          rdfs:label "products"@en ,
+                     "produit"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#rents
+:rents rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf :offers ;
+       owl:inverseOf :wantsToRent ;
+       rdfs:label "loue"@fr ,
+                  "rents"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#seeks
+:seeks rdf:type owl:ObjectProperty ;
+       rdfs:domain [ rdf:type owl:Class ;
+                     owl:unionOf ( :Actor
+                                   :Project
+                                 )
+                   ] ;
+       rdfs:range :Resource ;
+       rdfs:label "recherche"@fr ,
+                  "seeks"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#sells
+:sells rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf :offers ;
+       rdfs:label "sells"@en ,
+                  "vend"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#subject
+:subject rdf:type owl:ObjectProperty ;
+         rdfs:domain [ rdf:type owl:Class ;
+                       owl:unionOf ( :Actor
+                                     :Idea
+                                     :Project
+                                     :Resource
+                                   )
+                     ] ;
+         rdfs:range :Idea ;
+         rdfs:comment """\"A pour sujet\" permet d'identifier de quoi un PAIR parle ou traite ... Il peut s'agir : 
+- d'un acteur (ex: ce document a pour sujet Monsanto), 
+- d'une idée (ex : Assemblée virtuelle) a pour sujet le peer to peer), 
+- d'un projet (ex: semantic forms a pour sujet l'interopérabilté)
+- d'une ressource (ex: économie symbiotique a pour sujet développement durable)""" ;
+         rdfs:label "a pour sujet"@fr ,
+                    "is about"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#supports
+:supports rdf:type owl:ObjectProperty ;
+          rdfs:domain :Actor ;
+          rdfs:range [ rdf:type owl:Class ;
+                       owl:unionOf ( :Actor
+                                     :Idea
+                                     :Project
+                                     :Resource
+                                   )
+                     ] ;
+          rdfs:label "soutient"@fr ,
+                     "supports"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#wantsToBarter
+:wantsToBarter rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :seeks ;
+               rdfs:label "souhaite troquer"@fr ,
+                          "wants to barter"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#wantsToRent
+:wantsToRent rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :seeks ;
+             rdfs:label "souhaite louer"@fr ,
+                        "wants to rent"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#worksWith
+:worksWith rdf:type owl:ObjectProperty ;
+           rdfs:domain :Person ;
+           rdfs:range :Person ;
+           rdfs:label "travaille avec"@fr ,
+                      "works with"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#wouldLike
+:wouldLike rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :seeks ;
+           rdfs:label "aimerait"@fr ,
+                      "would like"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Context
+:Context rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf :Description .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#CulturalArtisticModel
+:CulturalArtisticModel rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf :SocialCode .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Definition
+:Definition rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf :Description .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Description
+:Description rdf:type owl:DatatypeProperty .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#EcologicalModel
+:EcologicalModel rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf :SocialCode .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#EconomicalModel
+:EconomicalModel rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf :SocialCode .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#GeneralInformations
+:GeneralInformations rdf:type owl:DatatypeProperty ;
+                     rdfs:comment """Propriétés possibles :
+
+Forme Juridique
+Type de Licence
+Date de création
+Siège Social
+Autres Locaux
+Personnes référentes
+
+Public
+	Nombre de membres
+	Nombre d'adhérents
+	Nombre de contributeurs
+	Nombre d'employés
+	Nombre d'actionnaires
+	Nombre de sociétaires
+	Nombre de bénéficiaires
+	Nombre de participants
+	Nombre de clients
+	Publics visés
+	Références
+
+Système d'information
+	Externe
+	Interne
+
+Territoire d'intervention
+
+Sociologie des parties prenantes""" .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Issues
+:Issues rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf :Description .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#LegalFinancialModel
+:LegalFinancialModel rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf :SocialCode .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Objectives
+:Objectives rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf :Description .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#SocialCode
+:SocialCode rdf:type owl:DatatypeProperty .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#SocialHumanModel
+:SocialHumanModel rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf :SocialCode .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#TechnologicalModel
+:TechnologicalModel rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf :SocialCode .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Activity
+:Activity rdf:type owl:Class ;
+          rdfs:subClassOf :Project ;
+          rdfs:label "Activity"@en ,
+                     "Activité"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Actor
+:Actor rdf:type owl:Class ;
+       rdfs:label "Acteur"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Argument
+:Argument rdf:type owl:Class ;
+          rdfs:subClassOf :Thesis ;
+          rdfs:label "Argument"@en ,
+                     "Argument"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Document
+:Document rdf:type owl:Class ;
+          rdfs:subClassOf :Resource .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Event
+:Event rdf:type owl:Class ;
+       rdfs:subClassOf :Project ;
+       rdfs:comment "An event happening at a certain time and location,' property. Repeated events may be structured as separate Event objects."@en ;
+       rdfs:label "Event"@en ,
+                  "Évènement"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Good_or_Service
+:Good_or_Service rdf:type owl:Class ;
+                 rdfs:subClassOf :Resource ;
+                 rdfs:label "Bien ou Service"@fr ,
+                            "Good or Service"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Group
+:Group rdf:type owl:Class ;
+       rdfs:subClassOf :Actor ;
+       rdfs:label "Groupe"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Idea
+:Idea rdf:type owl:Class ;
+      rdfs:comment "Mettre une définition d'idée telle que conçue par AV" ;
+      rdfs:label "Idea"@en ,
+                 "Idée"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Money
+:Money rdf:type owl:Class ;
+       rdfs:subClassOf :Resource ;
+       rdfs:label "Money"@en ,
+                  "Monnaie"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#NaturalResources
+:NaturalResources rdf:type owl:Class ;
+                  rdfs:subClassOf :Resource ;
+                  rdfs:label "Natural resource"@en ,
+                             "Ressource naturelle"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Organization
+:Organization rdf:type owl:Class ;
+              rdfs:subClassOf :Actor ;
+              rdfs:label "Organisation"@fr ,
+                         "Organization"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf :Actor ;
+        rdfs:label "Individu"@fr ,
+                   "Person"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Place
+:Place rdf:type owl:Class ;
+       rdfs:subClassOf :Resource ;
+       rdfs:label "Lieu"@fr ,
+                  "Place"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Project
+:Project rdf:type owl:Class ;
+         rdfs:label "Project"@en ,
+                    "Projet"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Proposition
+:Proposition rdf:type owl:Class ;
+             rdfs:subClassOf :Thesis ;
+             rdfs:label "Proposition"@en ,
+                        "Proposition"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Question
+:Question rdf:type owl:Class ;
+          rdfs:subClassOf :Thesis ;
+          rdfs:label "Issue or question"@en ,
+                     "Problème ou question"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Resource
+:Resource rdf:type owl:Class ;
+          rdfs:label "Resource"@en ,
+                     "Ressource"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Skill
+:Skill rdf:type owl:Class ;
+       rdfs:subClassOf :Resource ;
+       rdfs:label "Compétence"@fr ,
+                  "Skill"@en .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#SocialCode
+:SocialCode rdf:type owl:Class ;
+            rdfs:subClassOf :Document .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Theme
+:Theme rdf:type owl:Class ;
+       rdfs:subClassOf :Idea ;
+       rdfs:comment "Themes are equivalent to \"tags\" or \"topic interests\""@fr ;
+       rdfs:label "Theme or topic interest"@en ,
+                  "Thème ou centre d'intérêt"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Thesis
+:Thesis rdf:type owl:Class ;
+        rdfs:subClassOf :Idea ;
+        rdfs:label "Thesis"@en ,
+                   "Thèse"@fr .
+
+
+###  http://www.virtual-assembly.org/ontologies/1.0/pair#Work
+:Work rdf:type owl:Class ;
+      rdfs:subClassOf :Resource ;
+      rdfs:label "Oeuvre"@fr ,
+                 "Work"@en .
+
+
+###  ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission
+<ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf :Project ;
+                                                                         rdfs:label "Initiative or Mission"@en ,
+                                                                                    "Initiative ou Mission"@fr .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Assemblée_Générale
+<http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Assemblée_Générale> rdf:type owl:NamedIndividual ,
+                                                                                                       :Event .
+
+
+###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Autre
+<http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Autre> rdf:type owl:NamedIndividual ,
+                                                                                          :Event .
+
+
+###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Barcamp
+<http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Barcamp> rdf:type owl:NamedIndividual ,
+                                                                                            :Event .
+
+
+###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Café_des_pixels
+<http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Café_des_pixels> rdf:type owl:NamedIndividual ,
+                                                                                                    :Event .
+
+
+###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Festival
+<http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Festival> rdf:type owl:NamedIndividual ,
+                                                                                             :Event .
+
+
+###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Réunion
+<http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Réunion> rdf:type owl:NamedIndividual ,
+                                                                                            :Event .
+
+
+###  http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#aPAIRo
+<http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#aPAIRo> rdf:type owl:NamedIndividual ,
+                                                                                           :Event .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:SocialCode rdfs:label "Code Social"@fr ,
+                       "Social Code"@en .
+
+
+###  Generated by the OWL API (version 5.1.9) https://github.com/owlcs/owlapi/

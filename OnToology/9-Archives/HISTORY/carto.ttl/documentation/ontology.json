@@ -1,0 +1,173 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
+}, {
+  "@id" : "http://www.fluidlog.com/2013/05/loglink/core#Combien",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "combien"
+  } ]
+}, {
+  "@id" : "http://www.fluidlog.com/2013/05/loglink/core#Comment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "comment"
+  } ]
+}, {
+  "@id" : "http://www.fluidlog.com/2013/05/loglink/core#Ou",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "où"
+  } ]
+}, {
+  "@id" : "http://www.fluidlog.com/2013/05/loglink/core#Pourquoi",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "pourquoi"
+  } ]
+}, {
+  "@id" : "http://www.fluidlog.com/2013/05/loglink/core#Quand",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "quand"
+  } ]
+}, {
+  "@id" : "http://www.fluidlog.com/2013/05/loglink/core#Qui",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Qui"
+  } ]
+}, {
+  "@id" : "http://www.fluidlog.com/2013/05/loglink/core#Quoi",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "quoi"
+  } ]
+}, {
+  "@id" : "http://www.fluidlog.com/2013/05/loglink/core#combien",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "fr",
+    "@value" : "lien vers un prix, une valeur, une quantité, un numéraire, qui répond à la question \"Combien ?\" "
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "combien"
+  }, {
+    "@language" : "en",
+    "@value" : "how much"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#number"
+  } ]
+}, {
+  "@id" : "http://www.fluidlog.com/2013/05/loglink/core#comment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "fr",
+    "@value" : "lien vers un méthodologie, une bonne pratique, qui répond à la question \"Comment ?\" "
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "comment"
+  }, {
+    "@language" : "en",
+    "@value" : "how"
+  } ]
+}, {
+  "@id" : "http://www.fluidlog.com/2013/05/loglink/core#linkedto",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "linked to"
+  }, {
+    "@language" : "fr",
+    "@value" : "lié avec"
+  } ]
+}, {
+  "@id" : "http://www.fluidlog.com/2013/05/loglink/core#ou",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "fr",
+    "@value" : "lien vers un lieu, une adresse, un établissement, une localisation informatique (uri), qui répond à la question \"Où ?\" "
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "où"
+  }, {
+    "@language" : "en",
+    "@value" : "where"
+  } ]
+}, {
+  "@id" : "http://www.fluidlog.com/2013/05/loglink/core#pourquoi",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "fr",
+    "@value" : "lien vers une raison d'être, une explication, qui répond à la question \"Pourquoi ?\" "
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "pourquoi"
+  }, {
+    "@language" : "en",
+    "@value" : "why"
+  } ]
+}, {
+  "@id" : "http://www.fluidlog.com/2013/05/loglink/core#quand",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "fr",
+    "@value" : "lien vers une date, une durée, un horodatage, un intervalle de temps "
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "quand"
+  }, {
+    "@language" : "en",
+    "@value" : "when"
+  } ]
+}, {
+  "@id" : "http://www.fluidlog.com/2013/05/loglink/core#qui",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "fr",
+    "@value" : "lien vers un acteur"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "qui"
+  }, {
+    "@language" : "en",
+    "@value" : "who"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.virtual-assembly.org/ontologies/v1.owl#Actor"
+  } ]
+}, {
+  "@id" : "http://www.fluidlog.com/2013/05/loglink/core#quoi",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "fr",
+    "@value" : "lien vers un objet, une description d'un objet, d'une chose qui répond à la question \"De quoi s'agit-il ?\" "
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "quoi"
+  }, {
+    "@language" : "en",
+    "@value" : "what"
+  } ]
+}, {
+  "@id" : "http://www.virtual-assembly.org/ontologies/v1.owl#Actor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/2001/XMLSchema#number",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+} ]

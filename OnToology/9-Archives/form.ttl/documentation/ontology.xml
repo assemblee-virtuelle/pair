@@ -1,0 +1,313 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:forms="http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#">
+    <Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#classDomain -->
+
+
+    <AnnotationProperty rdf:about="http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#classDomain"/>
+    
+
+
+    <!-- http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToForm -->
+
+
+    <AnnotationProperty rdf:about="http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToForm"/>
+    
+
+
+    <!-- http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToProperty -->
+
+
+    <AnnotationProperty rdf:about="http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#fieldAppliesToProperty"/>
+    
+
+
+    <!-- http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#showProperties -->
+
+
+    <AnnotationProperty rdf:about="http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#showProperties"/>
+    
+
+
+    <!-- http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#widgetClass -->
+
+
+    <AnnotationProperty rdf:about="http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#widgetClass"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification -->
+
+
+    <Class rdf:about="http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.virtual-assembly.org/ontologies/1.0/forms#EventForm -->
+
+
+    <NamedIndividual rdf:about="http://www.virtual-assembly.org/ontologies/1.0/forms#EventForm">
+        <rdf:type rdf:resource="http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification"/>
+        <forms:classDomain rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Event"/>
+        <forms:showProperties>
+            <rdf:Description/>
+        </forms:showProperties>
+        <rdfs:label xml:lang="en">Event AV</rdfs:label>
+        <rdfs:label xml:lang="fr">Evènement AV</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.virtual-assembly.org/ontologies/1.0/forms#GroupForm -->
+
+
+    <NamedIndividual rdf:about="http://www.virtual-assembly.org/ontologies/1.0/forms#GroupForm">
+        <rdf:type rdf:resource="http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification"/>
+        <forms:classDomain rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+        <forms:showProperties>
+            <rdf:Description/>
+        </forms:showProperties>
+        <rdfs:label xml:lang="en">Group AV</rdfs:label>
+        <rdfs:label xml:lang="fr">Groupe AV</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.virtual-assembly.org/ontologies/1.0/forms#InitiativeOrMissionForm -->
+
+
+    <NamedIndividual rdf:about="http://www.virtual-assembly.org/ontologies/1.0/forms#InitiativeOrMissionForm">
+        <rdf:type rdf:resource="http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification"/>
+        <forms:classDomain rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission"/>
+        <forms:showProperties>
+            <rdf:Description/>
+        </forms:showProperties>
+        <rdfs:label xml:lang="en">Initiative or Mission AV</rdfs:label>
+        <rdfs:label xml:lang="fr">Initiative ou Mission AV</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.virtual-assembly.org/ontologies/1.0/forms#OrganizationForm -->
+
+
+    <NamedIndividual rdf:about="http://www.virtual-assembly.org/ontologies/1.0/forms#OrganizationForm">
+        <rdf:type rdf:resource="http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification"/>
+        <forms:classDomain rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <forms:showProperties>
+            <rdf:Description/>
+        </forms:showProperties>
+        <rdfs:label xml:lang="fr">Organisation AV</rdfs:label>
+        <rdfs:label xml:lang="en">Organization AV</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.virtual-assembly.org/ontologies/1.0/forms#PersonForm -->
+
+
+    <NamedIndividual rdf:about="http://www.virtual-assembly.org/ontologies/1.0/forms#PersonForm">
+        <rdf:type rdf:resource="http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification"/>
+        <forms:classDomain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <forms:showProperties>
+            <rdf:Description/>
+        </forms:showProperties>
+        <rdfs:label xml:lang="en">Person AV</rdfs:label>
+        <rdfs:label xml:lang="fr">Personne AV</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.virtual-assembly.org/ontologies/1.0/forms#ResourceForm -->
+
+
+    <NamedIndividual rdf:about="http://www.virtual-assembly.org/ontologies/1.0/forms#ResourceForm">
+        <rdf:type rdf:resource="http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification"/>
+        <forms:classDomain rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Resource"/>
+        <forms:showProperties>
+            <rdf:Description/>
+        </forms:showProperties>
+        <rdfs:label xml:lang="en">Resource AV</rdfs:label>
+        <rdfs:label xml:lang="fr">Ressource AV</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.virtual-assembly.org/ontologies/1.0/forms#SkillForm -->
+
+
+    <NamedIndividual rdf:about="http://www.virtual-assembly.org/ontologies/1.0/forms#SkillForm">
+        <rdf:type rdf:resource="http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification"/>
+        <forms:classDomain rdf:resource="http://purl.org/ontology/cco/core#Skill"/>
+        <forms:showProperties>
+            <rdf:Description/>
+        </forms:showProperties>
+        <rdfs:label xml:lang="fr">Compétence AV</rdfs:label>
+        <rdfs:label xml:lang="en">Skill AV</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.virtual-assembly.org/ontologies/1.0/forms#ThemeForm -->
+
+
+    <NamedIndividual rdf:about="http://www.virtual-assembly.org/ontologies/1.0/forms#ThemeForm">
+        <rdf:type rdf:resource="http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification"/>
+        <forms:classDomain rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Theme"/>
+        <forms:showProperties>
+            <rdf:Description/>
+        </forms:showProperties>
+        <rdfs:label xml:lang="en">Theme AV</rdfs:label>
+        <rdfs:label xml:lang="fr">Thème AV</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.virtual-assembly.org/ontologies/1.0/forms#ThesisForm -->
+
+
+    <NamedIndividual rdf:about="http://www.virtual-assembly.org/ontologies/1.0/forms#ThesisForm">
+        <rdf:type rdf:resource="http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#specification"/>
+        <forms:classDomain rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#Thesis"/>
+        <forms:showProperties>
+            <rdf:Description/>
+        </forms:showProperties>
+        <rdfs:label xml:lang="en">Thesis AV</rdfs:label>
+        <rdfs:label xml:lang="fr">Thèse AV</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/forms#EventForm-Completion">
+        <forms:fieldAppliesToForm rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/forms#EventForm"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://purl.org/dc/terms/subject"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#offersSkill"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#seeksSkill"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#town"/>
+        <forms:widgetClass rdf:resource="http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#DBPediaLookup"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/forms#GroupForm-Completion">
+        <forms:fieldAppliesToForm rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/forms#GroupForm"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://purl.org/dc/terms/subject"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#offersSkill"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#seeksSkill"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#town"/>
+        <forms:widgetClass rdf:resource="http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#DBPediaLookup"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/forms#InitiativeOrMissionForm-Completion">
+        <forms:fieldAppliesToForm rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/forms#InitiativeOrMissionForm"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://purl.org/dc/terms/subject"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#offersSkill"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#seeksSkill"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#town"/>
+        <forms:widgetClass rdf:resource="http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#DBPediaLookup"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/forms#OrganizationForm-Completion">
+        <forms:fieldAppliesToForm rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/forms#OrganizationForm"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://purl.org/dc/terms/subject"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#offersSkill"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#seeksSkill"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#town"/>
+        <forms:widgetClass rdf:resource="http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#DBPediaLookup"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/forms#PersonForm-Completion">
+        <forms:fieldAppliesToForm rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/forms#PersonForm"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://purl.org/dc/terms/subject"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#offersSkill"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#seeksSkill"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#town"/>
+        <forms:widgetClass rdf:resource="http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#DBPediaLookup"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/forms#ResourceForm-Completion">
+        <forms:fieldAppliesToForm rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/forms#ResourceForm"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://purl.org/dc/terms/subject"/>
+        <forms:widgetClass rdf:resource="http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#DBPediaLookup"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/forms#SkillForm-Completion">
+        <forms:fieldAppliesToForm rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/forms#SkillForm"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://purl.org/dc/terms/subject"/>
+        <forms:widgetClass rdf:resource="http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#DBPediaLookup"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/forms#ThemeForm-Completion">
+        <forms:fieldAppliesToForm rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/forms#ThemeForm"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://purl.org/dc/terms/subject"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#because"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#convergesWith"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#hasConsequence"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#opposedTo"/>
+        <forms:widgetClass rdf:resource="http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#DBPediaLookup"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.virtual-assembly.org/ontologies/1.0/forms#ThesisForm-Completion">
+        <forms:fieldAppliesToForm rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/forms#ThesisForm"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#because"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#convergesWith"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#hasConsequence"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#offersSkill"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#opposedTo"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#seeksSkill"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#town"/>
+        <forms:fieldAppliesToProperty rdf:resource="http://www.virtual-assembly.org/ontologies/1.0/pair#dcterms:subject"/>
+        <forms:widgetClass rdf:resource="http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#DBPediaLookup"/>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.9) https://github.com/owlcs/owlapi/ -->
+
+

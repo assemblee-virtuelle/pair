@@ -1,0 +1,7 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "av:Project" ; /*classes style*/
+	"av:Project" -> "foaf:Project" [ label = "rdfs:subClassOf" ];
+
+}

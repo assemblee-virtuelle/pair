@@ -1,0 +1,279 @@
+[ {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Argument",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Competence",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23HumanResources"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Educational",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Event",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23HumanResources",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Immaterials",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Materials",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Milestone",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Event"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23NaturalResources",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Task",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Theme",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23actualizes",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23composesOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Task"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23dependsOn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23endsAt",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#AsymmetricProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Task"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Milestone"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23hasAnArgumentOn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#AsymmetricProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23hasDialecticalRelationWith",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23hasStructuralRelationWith",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23inFieldOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#AsymmetricProperty", "http://www.w3.org/2002/07/owl#IrreflexiveProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Theme"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23isFacetOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#SymmetricProperty", "http://www.w3.org/2002/07/owl#TransitiveProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23needs",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23products",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23sparks",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea"
+  } ]
+}, {
+  "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23suscites",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#AsymmetricProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.assemblee-virtuelle.org/ontologies/pair.0.1.ttl#%23Argument"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "fr",
+    "@value" : "Concept englobant les quatre concepts-clefs de l'ontologie. Ce concept est principalement lié à la propritété 'facet' qui permet de décrire qu'un PAIR est une facette d'un autre PAIR"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fr",
+    "@value" : "Entité"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Organization",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Person",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Entity"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Thesis",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#carriesOut",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Idea"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#coOperatesWith",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#SymmetricProperty", "http://www.w3.org/2002/07/owl#TransitiveProperty", "http://www.w3.org/2002/07/owl#IrreflexiveProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#coProducts",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Project"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#profitsTo"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#disposesOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Actor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#Resource"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/ferdydurke/ontologies/2016/4/untitled-ontology-17#profitsTo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+} ]

@@ -1,0 +1,71 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.w3.org/2001/XMLSchema#anyURI"
+    }, {
+      "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    } ]
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair/document",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair/document#AdministrativeDocument",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair/document#Article",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair/document#AudioReport",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair/document#Report"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair/document#Book",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair/document#FinancialDocument",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair/document#Newsletter",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair/document#PresentationPaper",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair/document#Report",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair/document#ScientificPaper",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair/document#SocialCode",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair/document#Tutorial",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair/document#VideoReport",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://virtual-assembly.org/pair/document#Report"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair/document#WorkingPaper",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "On peut envisager un statut \"Etat\" : Work In Progress / Compte Rendu ?"
+  } ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair/document#abstract",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "http://virtual-assembly.org/pair/document#bibliography",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "_:genid1"
+  } ]
+} ]

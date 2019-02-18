@@ -1,0 +1,145 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#concretise
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#concretise> rdf:type owl:AnnotationProperty .
+
+
+###  file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#inspiredBy
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#inspiredBy> rdf:type owl:AnnotationProperty .
+
+
+###  file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#lead
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#lead> rdf:type owl:AnnotationProperty .
+
+
+###  file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#participant
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#participant> rdf:type owl:AnnotationProperty .
+
+
+###  file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#requires
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#requires> rdf:type owl:AnnotationProperty .
+
+
+###  http://dbpedia.org/resource/numberOfPeopleAttending
+<http://dbpedia.org/resource/numberOfPeopleAttending> rdf:type owl:AnnotationProperty .
+
+
+###  http://dbpedia.org/resource/startDate
+<http://dbpedia.org/resource/startDate> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#comment
+rdf:comment rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Acteur
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Acteur> rdf:type owl:Class .
+
+
+###  file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Idea
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Idea> rdf:type owl:Class .
+
+
+###  file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Project
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Project> rdf:type owl:Class .
+
+
+###  file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Resource
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Resource> rdf:type owl:Class .
+
+
+###  http://dbpedia.org/resource/Event
+<http://dbpedia.org/resource/Event> rdf:type owl:Class .
+
+
+###  http://dbpedia.org/resource/Place
+<http://dbpedia.org/resource/Place> rdf:type owl:Class .
+
+
+###  http://dbpedia.org/resource/Technology
+<http://dbpedia.org/resource/Technology> rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Group
+<http://xmlns.com/foaf/0.1/Group> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Assemblee#Virtuelle
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Assemblee#Virtuelle> rdf:type owl:NamedIndividual ,
+                                                                                                              <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Acteur> ;
+                                                                                                     <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#concretise> <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/PAIRa#PAIR> ;
+                                                                                                     <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#requires> _:genid2 .
+
+_:genid2 rdf:type <http://dbpedia.org/resource/Place> .
+
+
+###  file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Atelier#FilRouge
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Atelier#FilRouge> rdf:type owl:NamedIndividual ,
+                                                                                                           <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Resource> ;
+                                                                                                  <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#lead> <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../people/gilberte#me> .
+
+
+###  file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Co#Business
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Co#Business> rdf:type owl:NamedIndividual ,
+                                                                                                      <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Project> ;
+                                                                                             <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#lead> <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../people/Vincent#me> ;
+                                                                                             <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#participant> _:genid3 ;
+                                                                                             <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#requires> _:genid4 ,
+                                                                                                                                                                                                 _:genid5 .
+
+_:genid3 rdf:type <http://xmlns.com/foaf/0.1/Group> .
+
+_:genid4 rdf:type <http://dbpedia.org/resource/Place> .
+
+_:genid5 rdf:type <http://dbpedia.org/resource/Technology> .
+
+
+###  file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Expo#WAVE
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Expo#WAVE> rdf:type owl:NamedIndividual ,
+                                                                                                    <http://dbpedia.org/resource/Event> ;
+                                                                                           <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#requires> _:genid6 ;
+                                                                                           <http://dbpedia.org/resource/numberOfPeopleAttending> 50 ;
+                                                                                           <http://dbpedia.org/resource/startDate> "2014-10-01" ;
+                                                                                           rdf:comment "L'exposition WAVE a été l'occasion d'une première cartographie l'écosystème P A I R de L'Assemblée Virtuelle" .
+
+_:genid6 rdf:type <http://dbpedia.org/resource/Place> .
+
+
+###  file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Ingeniosité#Collective
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Ingeniosité#Collective> rdf:type owl:NamedIndividual ,
+                                                                                                                 <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Idea> ;
+                                                                                                        <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#lead> <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../people/sylvain#me> .
+
+
+###  file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/PAIRa#PAIR
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/PAIRa#PAIR> rdf:type owl:NamedIndividual ,
+                                                                                                     <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Idea> ;
+                                                                                            <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#inspiredBy> <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Peer2#Peer> .
+
+
+###  file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Peer2#Peer
+<file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/Peer2#Peer> rdf:type owl:NamedIndividual ,
+                                                                                                     <file:/home/ahmad/repos/contact@assemblee-virtuelle.org/9-Archives/inputs/event/../v1.owl#Idea> .
+
+
+###  Generated by the OWL API (version 5.1.9) https://github.com/owlcs/owlapi/

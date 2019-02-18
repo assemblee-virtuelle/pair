@@ -1,0 +1,251 @@
+{
+  "@context" : {
+    "Entreprise" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Entreprise"
+    },
+    "Modèle_technologique" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_technologique"
+    },
+    "Heure_de_fin" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Heure_de_fin"
+    },
+    "Récurrence" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Récurrence"
+    },
+    "Ressource" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource"
+    },
+    "Nom" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Nom",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Modèle_juridique_et_financier" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_juridique_et_financier"
+    },
+    "Informations_générales" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Informations_générales"
+    },
+    "Date_de_fin" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Date_de_fin"
+    },
+    "A_venir" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#A_venir"
+    },
+    "Compte_Rendu" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Compte_Rendu"
+    },
+    "Lieu" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Lieu"
+    },
+    "Email" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Email"
+    },
+    "Description_longue" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Description_longue"
+    },
+    "Type" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type"
+    },
+    "Oeuvre" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Oeuvre"
+    },
+    "En_cours" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#En_cours"
+    },
+    "Modèle_social_et_humain" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_social_et_humain"
+    },
+    "Collectivité" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Collectivité"
+    },
+    "Langage" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Langage"
+    },
+    "est_ami_de" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#est_ami_de",
+      "@type" : "@id"
+    },
+    "Institution" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Institution"
+    },
+    "Heure_de_début" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Heure_de_début"
+    },
+    "Pseudo" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Pseudo",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Description_courte" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Description_courte"
+    },
+    "Tutoriel" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Tutoriel"
+    },
+    "Méthodologie" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Méthodologie"
+    },
+    "Code_Postal" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Code_Postal",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Ressource_documentaire" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ressource_documentaire"
+    },
+    "Terminé" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Terminé"
+    },
+    "Protocole" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Protocole"
+    },
+    "Modèle_écologique" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_écologique"
+    },
+    "Event" : {
+      "@id" : "http://www.virtual-assembly.org/ontologies/1.0/pair#Event"
+    },
+    "Téléphone" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Téléphone",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "Outil" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Outil"
+    },
+    "InitiativeOrMission" : {
+      "@id" : "ttp://www.virtual-assembly.org/ontologies/1.0/pair#InitiativeOrMission"
+    },
+    "Date" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Date",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Etat" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Etat"
+    },
+    "Prénom" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Prénom",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Siret" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Siret"
+    },
+    "Compétence" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Compétence"
+    },
+    "Type_de_thèse" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_de_thèse",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Modèle_économique" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_économique"
+    },
+    "Nom_de_famille" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Nom_de_famille",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Type_de_lieu" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_de_lieu"
+    },
+    "Réseaux_sociaux" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Réseaux_sociaux",
+      "@type" : "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "Description" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Pays" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Pays",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Adresse" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Adresse",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Temps" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Temps"
+    },
+    "Ville" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Ville"
+    },
+    "Argent" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Argent"
+    },
+    "Site_web_ou_URL" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Site_web_ou_URL",
+      "@type" : "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "Date_de_début" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Date_de_début"
+    },
+    "Bien" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Bien"
+    },
+    "Code_Social" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Code_Social",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Historique" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Historique",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Email_de_contact" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Email_de_contact",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Logiciel" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Logiciel"
+    },
+    "Modèle_culturel_et_artistique" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Modèle_culturel_et_artistique"
+    },
+    "Association_non_déclarée" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Association_non_déclarée"
+    },
+    "Type_d_événement" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_d_événement"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "Service" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Service"
+    },
+    "Genre" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Genre"
+    },
+    "_caractères" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#140_caractères"
+    },
+    "finance" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#finance",
+      "@type" : "@id"
+    },
+    "Association" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Association"
+    },
+    "Forme_juridique" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Forme_juridique",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Bonne_pratique" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Bonne_pratique"
+    },
+    "Individu" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Individu"
+    },
+    "Raison_d_être" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Raison_d_être"
+    },
+    "Type_de_projet" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Type_de_projet",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Heure" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Heure",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Dénomination_sociale" : {
+      "@id" : "http://www.semanticweb.org/guitou/ontologies/2016/1/untitled-ontology-10#Dénomination_sociale",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    }
+  }
+}

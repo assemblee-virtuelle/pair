@@ -1,0 +1,72 @@
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://deductions-software.com/ontologies/forms.owl.ttl#classDomain
+<http://deductions-software.com/ontologies/forms.owl.ttl#classDomain> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToForm
+<http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToForm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToProperty
+<http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://deductions-software.com/ontologies/forms.owl.ttl#showProperties
+<http://deductions-software.com/ontologies/forms.owl.ttl#showProperties> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://deductions-software.com/ontologies/forms.owl.ttl#widgetClass
+<http://deductions-software.com/ontologies/forms.owl.ttl#widgetClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+<http://www.assemblee-virtuelle.org/forms#EventForm_Guillaume> <http://deductions-software.com/ontologies/forms.owl.ttl#classDomain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Event> .
+<http://www.assemblee-virtuelle.org/forms#EventForm_Guillaume> <http://deductions-software.com/ontologies/forms.owl.ttl#showProperties> _:genid2 .
+# 
+<http://www.assemblee-virtuelle.org/forms#IdeaForm-dc_subject2> <http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToForm> <http://www.assemblee-virtuelle.org/forms#IdeaForm_Guillaume> .
+<http://www.assemblee-virtuelle.org/forms#IdeaForm-dc_subject2> <http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToProperty> <http://purl.org/dc/terms/subject> .
+<http://www.assemblee-virtuelle.org/forms#IdeaForm-dc_subject2> <http://deductions-software.com/ontologies/forms.owl.ttl#widgetClass> <http://deductions-software.com/ontologies/forms.owl.ttl#DBPediaLookup> .
+# 
+<http://www.assemblee-virtuelle.org/forms#IdeaForm_Guillaume> <http://deductions-software.com/ontologies/forms.owl.ttl#classDomain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Idea> .
+<http://www.assemblee-virtuelle.org/forms#IdeaForm_Guillaume> <http://deductions-software.com/ontologies/forms.owl.ttl#showProperties> _:genid3 .
+# 
+<http://www.assemblee-virtuelle.org/forms#OrganizationForm_Guillaume> <http://deductions-software.com/ontologies/forms.owl.ttl#classDomain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Organization> .
+<http://www.assemblee-virtuelle.org/forms#OrganizationForm_Guillaume> <http://deductions-software.com/ontologies/forms.owl.ttl#showProperties> _:genid4 .
+# 
+<http://www.assemblee-virtuelle.org/forms#RessourceForm-subject_field> <http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToForm> <http://www.assemblee-virtuelle.org/forms#RessourceForm_Guillaume> .
+<http://www.assemblee-virtuelle.org/forms#RessourceForm-subject_field> <http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToProperty> <http://purl.org/dc/terms/subject> .
+<http://www.assemblee-virtuelle.org/forms#RessourceForm-subject_field> <http://deductions-software.com/ontologies/forms.owl.ttl#widgetClass> <http://deductions-software.com/ontologies/forms.owl.ttl#DBPediaLookup> .
+# 
+<http://www.assemblee-virtuelle.org/forms#RessourceForm_Guillaume> <http://deductions-software.com/ontologies/forms.owl.ttl#classDomain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Resource> .
+<http://www.assemblee-virtuelle.org/forms#RessourceForm_Guillaume> <http://deductions-software.com/ontologies/forms.owl.ttl#showProperties> _:genid5 .
+# 
+<http://www.assemblee-virtuelle.org/forms#TaskForm_Guillaume> <http://deductions-software.com/ontologies/forms.owl.ttl#classDomain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Task> .
+<http://www.assemblee-virtuelle.org/forms#TaskForm_Guillaume> <http://deductions-software.com/ontologies/forms.owl.ttl#showProperties> _:genid6 .
+# 
+<http://www.assemblee-virtuelle.org/forms#personForm-skill> <http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToForm> <http://www.assemblee-virtuelle.org/forms#personForm_Guillaume> .
+<http://www.assemblee-virtuelle.org/forms#personForm-skill> <http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToProperty> <http://purl.org/ontology/cco/core#expertise> .
+<http://www.assemblee-virtuelle.org/forms#personForm-skill> <http://deductions-software.com/ontologies/forms.owl.ttl#widgetClass> <http://deductions-software.com/ontologies/forms.owl.ttl#DBPediaLookup> .
+# 
+<http://www.assemblee-virtuelle.org/forms#personForm-topic_interest> <http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToForm> <http://www.assemblee-virtuelle.org/forms#personForm_Guillaume> .
+<http://www.assemblee-virtuelle.org/forms#personForm-topic_interest> <http://deductions-software.com/ontologies/forms.owl.ttl#fieldAppliesToProperty> <http://xmlns.com/foaf/0.1/topic_interest> .
+<http://www.assemblee-virtuelle.org/forms#personForm-topic_interest> <http://deductions-software.com/ontologies/forms.owl.ttl#widgetClass> <http://deductions-software.com/ontologies/forms.owl.ttl#DBPediaLookup> .
+# 
+<http://www.assemblee-virtuelle.org/forms#personForm_Guillaume> <http://deductions-software.com/ontologies/forms.owl.ttl#classDomain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Person> .
+<http://www.assemblee-virtuelle.org/forms#personForm_Guillaume> <http://deductions-software.com/ontologies/forms.owl.ttl#showProperties> _:genid7 .
+# 
+<http://www.assemblee-virtuelle.org/forms#projectForm_Guillaume> <http://deductions-software.com/ontologies/forms.owl.ttl#classDomain> <http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project> .
+<http://www.assemblee-virtuelle.org/forms#projectForm_Guillaume> <http://deductions-software.com/ontologies/forms.owl.ttl#showProperties> _:genid8 .
+# 
+# Generated by the OWL API (version 5.1.9) https://github.com/owlcs/owlapi/

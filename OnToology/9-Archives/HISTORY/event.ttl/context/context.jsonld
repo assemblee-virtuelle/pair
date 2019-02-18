@@ -1,0 +1,31 @@
+{
+  "@context" : {
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "participant" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#participant",
+      "@type" : "@id"
+    },
+    "place" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#place",
+      "@type" : "@id"
+    },
+    "date" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#date",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Place" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Place"
+    },
+    "Project" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Project"
+    },
+    "Agent" : {
+      "@id" : "http://xmlns.com/foaf/0.1/Agent"
+    },
+    "Event" : {
+      "@id" : "http://www.assemblee-virtuelle.org/ontologies/v1.owl#Event"
+    }
+  }
+}
