@@ -1,0 +1,301 @@
+@prefix : <http://www.virtual-assembly.org/ontologies/1.0/pair#> .
+@prefix av: <http://www.assemblee-virtuelle.org/ontologies/v1.owl#> .
+@prefix cv: <http://rdfs.org/resume-rdf/cv.rdfs#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.virtual-assembly.org/ontologies/1.0/pair> a owl:Ontology .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#metAt
+
+av:metAt a owl:AnnotationProperty ;
+	rdfs:label "rencontré à"@fr ;
+	rdfs:domain av:Person .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/creator
+
+<http://purl.org/dc/terms/creator> a owl:ObjectProperty .
+# 
+# http://rdfs.org/sioc/ns#follows
+
+<http://rdfs.org/sioc/ns#follows> a owl:ObjectProperty ;
+	rdfs:domain :Actor ;
+	rdfs:range _:genid1 .
+
+_:genid1 a owl:Class ;
+	owl:unionOf _:genid5 .
+
+_:genid5 a rdf:List ;
+	rdf:first :Actor ;
+	rdf:rest _:genid4 .
+
+_:genid4 a rdf:List ;
+	rdf:first :Idea ;
+	rdf:rest _:genid3 .
+
+_:genid3 a rdf:List ;
+	rdf:first :Project ;
+	rdf:rest _:genid2 .
+
+_:genid2 a rdf:List ;
+	rdf:first :Resource ;
+	rdf:rest rdf:nil .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributes
+
+av:contributes a owl:ObjectProperty ;
+	owl:inverseOf foaf:member ;
+	rdfs:domain :Actor ;
+	rdfs:range foaf:Project ;
+	rdfs:label "contribue"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#contributesToOrganization
+
+av:contributesToOrganization a owl:ObjectProperty ;
+	rdfs:domain :Person ;
+	rdfs:range foaf:Organization ;
+	rdfs:label "adhère"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#employeeOf
+
+av:employeeOf a owl:ObjectProperty ;
+	owl:inverseOf av:hasEmployee ;
+	rdfs:domain :Person ;
+	rdfs:range foaf:Organization ;
+	rdfs:label "employé par"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasContributor
+
+av:hasContributor a owl:ObjectProperty ;
+	rdfs:domain :Organization , :Project ;
+	rdfs:range :Actor .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#hasEmployee
+
+av:hasEmployee a owl:ObjectProperty ;
+	rdfs:subPropertyOf av:hasContributor ;
+	rdfs:domain foaf:Organization ;
+	rdfs:range :Person ;
+	rdfs:label "employé"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#isLikedBy
+
+av:isLikedBy a owl:ObjectProperty ;
+	rdfs:domain foaf:Organization ;
+	rdfs:range :Person ;
+	rdfs:label "sympatisant"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#likesIdea
+
+av:likesIdea a owl:ObjectProperty , owl:SymmetricProperty ;
+	rdfs:domain foaf:Organization ;
+	rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> ;
+	rdfs:label "aime l'idée"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#opposedTo
+
+av:opposedTo a owl:ObjectProperty , owl:SymmetricProperty ;
+	rdfs:domain foaf:Organization ;
+	rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> ;
+	rdfs:label "opposé à l'idée"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#originator
+
+av:originator a owl:ObjectProperty ;
+	rdfs:domain foaf:Organization ;
+	rdfs:range :Person ;
+	rdfs:label "est à l'origine"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#partner
+
+av:partner a owl:ObjectProperty , owl:SymmetricProperty ;
+	rdfs:domain foaf:Organization ;
+	rdfs:range foaf:Organization ;
+	rdfs:label "partenaire"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#specializedIn
+
+av:specializedIn a owl:ObjectProperty , owl:SymmetricProperty ;
+	rdfs:domain foaf:Organization ;
+	rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> ;
+	rdfs:label "spécialisé dans l'idée"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#supports
+
+av:supports a owl:ObjectProperty ;
+	rdfs:domain :Actor ;
+	rdfs:range foaf:Project ;
+	rdfs:label "soutient"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#worksWith
+
+av:worksWith a owl:ObjectProperty ;
+	rdfs:subPropertyOf foaf:knows ;
+	a owl:SymmetricProperty ;
+	rdfs:domain foaf:Person ;
+	rdfs:range foaf:Person ;
+	rdfs:label "travaille avec"@fr .
+# 
+# http://www.virtual-assembly.org/ontologies/1.0/pair#authorof
+
+:authorof a owl:ObjectProperty ;
+	rdfs:subPropertyOf <http://purl.org/dc/terms/creator> ;
+	rdfs:domain :Actor .
+# 
+# http://www.virtual-assembly.org/ontologies/1.0/pair#founderof
+
+:founderof a owl:ObjectProperty ;
+	rdfs:subPropertyOf <http://purl.org/dc/terms/creator> ;
+	rdfs:domain :Actor ;
+	rdfs:range _:genid6 .
+
+_:genid6 a owl:Class ;
+	owl:unionOf _:genid8 .
+
+_:genid8 a rdf:List ;
+	rdf:first :Organization ;
+	rdf:rest _:genid7 .
+
+_:genid7 a rdf:List ;
+	rdf:first :Project ;
+	rdf:rest rdf:nil .
+# 
+# http://xmlns.com/foaf/0.1/knows
+
+foaf:knows a owl:ObjectProperty .
+# 
+# http://xmlns.com/foaf/0.1/member
+
+foaf:member a owl:ObjectProperty .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#facebookId
+
+av:facebookId a owl:DatatypeProperty ;
+	rdfs:domain foaf:Person ;
+	rdfs:label "Facebook"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#linkedinId
+
+av:linkedinId a owl:DatatypeProperty ;
+	rdfs:domain foaf:Person ;
+	rdfs:label "LinkedIn"@fr .
+# 
+# http://www.assemblee-virtuelle.org/ontologies/v1.owl#twitterId
+
+av:twitterId a owl:DatatypeProperty ;
+	rdfs:domain foaf:Person ;
+	rdfs:label "Twitter"@fr .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://creativecommons.org/ns#Work
+
+<http://creativecommons.org/ns#Work> a owl:Class .
+# 
+# http://www.virtual-assembly.org/ontologies/0.1/pair#theme
+
+<http://www.virtual-assembly.org/ontologies/0.1/pair#theme> a owl:Class ;
+	rdfs:subClassOf :Idea .
+# 
+# http://www.virtual-assembly.org/ontologies/0.1/pair#thesis
+
+<http://www.virtual-assembly.org/ontologies/0.1/pair#thesis> a owl:Class ;
+	rdfs:subClassOf :Idea .
+# 
+# http://www.virtual-assembly.org/ontologies/1.0/pair#Actor
+
+:Actor a owl:Class ;
+	rdfs:subClassOf foaf:Agent ;
+	rdfs:label "Acteur"@fr .
+# 
+# http://www.virtual-assembly.org/ontologies/1.0/pair#Idea
+
+:Idea a owl:Class ;
+	rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> .
+# 
+# http://www.virtual-assembly.org/ontologies/1.0/pair#Organization
+
+:Organization a owl:Class ;
+	rdfs:subClassOf :Actor , foaf:Organization ;
+	rdfs:label "Organization"@fr .
+# 
+# http://www.virtual-assembly.org/ontologies/1.0/pair#Person
+
+:Person a owl:Class ;
+	rdfs:subClassOf :Actor , foaf:Person ;
+	rdfs:label "Person"@fr .
+# 
+# http://www.virtual-assembly.org/ontologies/1.0/pair#Project
+
+:Project a owl:Class ;
+	rdfs:subClassOf foaf:Project .
+# 
+# http://www.virtual-assembly.org/ontologies/1.0/pair#Resource
+
+:Resource a owl:Class .
+# 
+# http://www.virtual-assembly.org/ontologies/1.0/pair#Work
+
+:Work a owl:Class ;
+	rdfs:subClassOf <http://creativecommons.org/ns#Work> , :Resource .
+# 
+# http://www.w3.org/2004/02/skos/core#Concept
+
+<http://www.w3.org/2004/02/skos/core#Concept> a owl:Class .
+# 
+# http://xmlns.com/foaf/0.1/Agent
+
+foaf:Agent a owl:Class .
+# 
+# http://xmlns.com/foaf/0.1/Organization
+
+foaf:Organization a owl:Class .
+# 
+# http://xmlns.com/foaf/0.1/Person
+
+foaf:Person a owl:Class .
+# 
+# http://xmlns.com/foaf/0.1/Project
+
+foaf:Project a owl:Class .
+# 
+# Generated by the OWL API (version 4.2.1.20160306-0033) https://github.com/owlcs/owlapi

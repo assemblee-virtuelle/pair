@@ -1,0 +1,87 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl:  <http://www.w3.org/2002/07/owl#>.
+@prefix foaf:  <http://xmlns.com/foaf/0.1/>.
+
+@prefix fl: <http://www.fluidlog.com/2013/05/loglink/core#> .
+@prefix av: <http://www.virtual-assembly.org/ontologies/v1.owl#> .
+@base <http://www.virtual-assembly.org/ontologies/v1.owl> .
+
+
+fl:linkedto  a owl:ObjectProperty ;
+        rdfs:label    "lié avec"@fr ;
+        rdfs:label    "linked to"@en
+.
+
+fl:qui  a owl:ObjectProperty ;
+        rdfs:label    "qui"@fr ;
+        rdfs:comment    "lien vers un acteur"@fr ;
+        rdfs:label    "who"@en ;
+        rdfs:range av:Actor ;
+        rdfs:subpropertyOf fl:linkedto
+.
+
+fl:quoi  a owl:ObjectProperty ;
+        rdfs:label    "quoi"@fr ;
+        rdfs:comment    """lien vers un objet, une description d'un objet, d'une chose qui répond à la question "De quoi s'agit-il ?" """@fr ;
+        rdfs:label    "what"@en ;
+        rdfs:subpropertyOf fl:linkedto
+.
+
+fl:pourquoi  a owl:ObjectProperty ;
+        rdfs:label    "pourquoi"@fr ;
+        rdfs:comment   """lien vers une raison d'être, une explication, qui répond à la question "Pourquoi ?" """@fr ;
+        rdfs:label    "why"@en ;
+        rdfs:subpropertyOf fl:linkedto
+.
+
+fl:ou  a owl:ObjectProperty ;
+        rdfs:label    "où"@fr ;
+        rdfs:comment   """lien vers un lieu, une adresse, un établissement, une localisation informatique (uri), qui répond à la question "Où ?" """@fr ;
+        rdfs:label    "where"@en ;
+        rdfs:subpropertyOf fl:linkedto
+.
+
+fl:comment  a owl:ObjectProperty ;
+        rdfs:label    "comment"@fr ;
+        rdfs:comment   """lien vers un méthodologie, une bonne pratique, qui répond à la question "Comment ?" """@fr ;
+        rdfs:label    "how"@en ;
+        rdfs:subpropertyOf fl:linkedto
+.
+
+fl:combien  a owl:DatatypeProperty ;
+        rdfs:label    "combien"@fr ;
+        rdfs:comment   """lien vers un prix, une valeur, une quantité, un numéraire, qui répond à la question "Combien ?" """@fr ;
+        rdfs:label    "how much"@en ;
+        rdfs:range xsd:number
+.
+
+fl:quand  a owl:DatatypeProperty ;
+        rdfs:label    "quand"@fr ;
+        rdfs:comment   """lien vers une date, une durée, un horodatage, un intervalle de temps """@fr ;
+        rdfs:label    "when"@en
+.
+
+fl:Qui a owl:Class ;
+	owl:sameClassAs av:Actor ;
+        rdfs:label    "Qui"@fr .
+
+fl:Quoi a owl:Class ;
+        rdfs:label    "quoi"@fr .
+
+fl:Pourquoi a owl:Class ;
+        rdfs:label    "pourquoi"@fr .
+
+fl:Ou a owl:Class ;
+        rdfs:label    "où"@fr .
+
+fl:Comment a owl:Class ;
+        rdfs:label    "comment"@fr .
+
+fl:Combien a owl:Class ;
+        rdfs:label    "combien"@fr .
+
+fl:Quand a owl:Class ;
+        rdfs:label    "quand"@fr .
+

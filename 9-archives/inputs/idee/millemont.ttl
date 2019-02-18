@@ -1,0 +1,30 @@
+@prefix av: <../v1.owl#> .
+
+@prefix dbpedia: <http://dbpedia.org/resource/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix rdfs: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+
+<#DynamiserMillemont> a av:Idea ;
+   rdfs:comment "Comme discuté a l'AV l'autre jour" .
+
+<party#reve> a av:Project;
+   av:requires [ a dbpedia:Sound_reinforcement_system ] ; 
+   av:concretise <#DynamiserMillemont> ;
+   av:lead <../people/martin#me> .
+
+# [ a foaf:Person;
+#             foaf:name "Martin";
+#             foaf:mbox < ] . 
+
+<visiteChateau#x> a av:Project;
+    av:requires [ a dbpedia:Carriage ];
+    av:lead <../people/sylvain#me> .
+
+<cabaret#p> a av:Project;
+    av:requires [ a dbpedia:Car ];
+    av:participant [ a foaf:Group;
+                    av:requires [ dc:description "Medieval Costume" ]  
+                    ] . #only dancers in this group
+

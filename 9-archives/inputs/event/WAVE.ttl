@@ -1,0 +1,34 @@
+@prefix av: <../v1.owl#> .
+
+@prefix dbpedia: <http://dbpedia.org/resource/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix rdfs: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+
+<Peer2#Peer> a av:Idea .
+
+<PAIRa#PAIR> a av:Idea;
+  av:inspiredBy <Peer2#Peer> .
+
+<Expo#WAVE> a dbpedia:Event ;
+  dbpedia:startDate "2014-10-01" ;
+  dbpedia:numberOfPeopleAttending 50 ;
+  av:requires [ a dbpedia:Place ];
+  rdfs:comment "L'exposition WAVE a été l'occasion d'une première cartographie l'écosystème P A I R de L'Assemblée Virtuelle" .
+
+<Co#Business> a av:Project;
+  av:lead <../people/Vincent#me> ;
+  av:requires [ a dbpedia:Place ];
+  av:requires [ a dbpedia:Technology ];
+  av:participant [ a foaf:Group ] .
+
+<Assemblee#Virtuelle> a av:Acteur;
+  av:requires [ a dbpedia:Place ]; 
+  av:concretise <PAIRa#PAIR>.
+
+<Ingeniosité#Collective> a av:Idea;
+  av:lead <../people/sylvain#me> .
+
+<Atelier#FilRouge> a av:Resource;
+  av:lead <../people/gilberte#me> .

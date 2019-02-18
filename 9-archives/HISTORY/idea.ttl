@@ -1,0 +1,86 @@
+@prefix sioc: <http://rdfs.org/sioc/ns#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix doap: <http://usefulinc.com/ns/doap#>.
+
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl:  <http://www.w3.org/2002/07/owl#>.
+@prefix foaf:  <http://xmlns.com/foaf/0.1/>.
+
+@prefix av: <http://www.assemblee-virtuelle.org/ontologies/v1.owl#> .
+@base <http://www.assemblee-virtuelle.org/ontologies/v1.owl> .
+
+av:Idea a owl:Class ;
+	rdfs:label "Idée"@fr ;
+	rdfs:comment """ Exemples d'idées: Développement Durable, social, économie, écologie, réflexions , analyse , critique, proposition  (l'intention peut être projet ou non); 
+relation entre idées: opposition, compatibilité , convergence ...
+approche systémique ( et combinatoire )
+faits ? c'est plus un sujet (Dublin core) qu'une ressource ou une idée
+catégories, thématiques : passer du micro au macro ( particulier au général ) """
+.
+
+# ==== Propriétés de Idée ====
+
+av:ideaCategory   a owl:ObjectProperty ;
+        rdfs:label    "catégorie d'idée"@fr ;
+        rdfs:domain   av:Idea ;
+	rdfs:range [ owl:oneOf ( av:theme av:thesis ) ] .
+av:theme	rdfs:label "Thème"@fr .
+av:thesis	rdfs:label "Thèse"@fr .
+
+# relation entre idées: opposition, compatibilité, convergence ...
+
+av:opposedTo a owl:ObjectProperty ;
+	rdfs:label "opposé à"@fr ;
+	rdfs:domain [owl:unionOf( av:Idea av:Actor )] ;
+	rdfs:range [owl:unionOf( av:Idea av:Project )] .
+
+av:inspiredBy a owl:ObjectProperty ;
+	rdfs:label "inspiré par"@fr ;
+	rdfs:domain av:Idea ;
+	rdfs:range av:Idea . # TODO [owl:unionOf ( Idea, Project )] <<<<<
+
+av:compatibleWith a owl:ObjectProperty ;
+	rdfs:label "compatible avec"@fr ;
+	rdfs:domain av:Idea ;
+	rdfs:range av:Idea .
+
+av:convergentWith  a owl:ObjectProperty ;
+	rdfs:label "convergent avec"@fr ;
+	rdfs:domain av:Idea ;
+	rdfs:range av:Idea .
+
+# relation entre idées et PAIR
+
+av:supportedBy  a owl:ObjectProperty ;
+	rdfs:label "acteur"@fr ;
+	rdfs:comment "soutenue par"@fr ;
+	rdfs:domain av:Idea ;  # TODO [owl:unionOf ( av:Idea av:Project )]
+	rdfs:range av:Actor .
+
+av:isImplementedBy
+	rdfs:label "projet"@fr ;
+	rdfs:comment  "l'idée est concrétisée par un projet"@fr ;
+	owl:inversePropertyOf av:implements ;
+	rdfs:domain av:Idea ;
+	rdfs:range av:Project .
+
+av:foughtBy  a owl:ObjectProperty ;
+	rdfs:label "combattue par"@fr ;
+	rdfs:domain av:Idea ;
+	rdfs:range av:Actor .
+
+av:implementedBy  a owl:ObjectProperty ;
+	rdfs:label "mise en oeuvre par"@fr ;
+	owl:inversePropertyOf av:implements ;
+	rdfs:domain av:Idea ;
+	rdfs:range av:Project .
+
+
+# ==== Propriété générique vers Idée ====
+
+av:idea   a owl:ObjectProperty ;
+        rdfs:label    "idée"@fr ;
+	rdfs:comment  "idée associée"@fr ;
+        rdfs:range    av:Idea .
+

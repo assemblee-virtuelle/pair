@@ -1,0 +1,54 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+# @prefix form: <http://deductions-software.com/ontologies/forms.owl.ttl#> .
+@prefix form: <http://raw.githubusercontent.com/jmvanel/semantic_forms/master/vocabulary/forms.owl.ttl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix cco: <http://purl.org/ontology/cco/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix cv: <http://rdfs.org/resume-rdf/cv.rdfs#>.
+@prefix gr: <http://purl.org/goodrelations/v1#> .
+@prefix schema: <http://schema.org/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix sioc: <http://rdfs.org/sioc/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+
+# @prefix pair: <http://www.virtual-assembly.org/ontologies/1.0/pair#> .
+
+# Spécifications de formulaires pour AV : changements de labels par rapport aux vocabulaires d'origine
+
+# Data properties
+rdfs:label rdfs:label "Nom"@fr .
+rdfs:comment rdfs:label "Description"@fr . # Dans l'ontologie PAIR, description devrait idéalement ne pas dépasser 1000 caractères
+foaf:homepage rdfs:label "Site Web"@fr .
+foaf:mbox rdfs:label "Email"@fr .
+foaf:familyName rdfs:label "Nom"@fr .
+foaf:nick rdfs:label "Pseudo"@fr .
+
+foaf:img rdfs:label "Photo, image"@fr .
+foaf:weblog rdfs:label "Site ou page web"@fr .
+
+
+# Object properties
+gr:seeks rdfs:label "a besoin de, recherche (compétences incluses)"@fr . #pas traduit pour les sous propriétés ...
+foaf:pastProject rdfs:label "a contribué à"@fr , "has contributed to"@en .
+cco:expertise rdfs:label "a pour compétence"@fr .
+foaf:member rdfs:label "a pour membre"@fr .
+foaf:currentProject rdfs:label "contribue à"@fr , "contributes to"@en .
+schema:attendee rdfs:label "a pour participant"@fr .
+cito:likes rdfs:label "sympathisant(e) de"@fr .
+sioc:follows rdfs:label "suit"@fr .
+foaf:knows rdfs:label "connait"@fr .
+dcterms:subject rdfs:label "thème, centre d'intérêt"@fr . # cas particulier des idées et ressources lorsqu'elles sont en domain ...
+dcterms:creator rdfs:label "créateur de"@fr .
+gr:offers rdfs:label "dispose de, propose (compétences incluses)"@fr . #pas traduit pour les sous propriétés ...
+dcterms:isPartOf rdfs:label "fait partie de"@fr .
+dcterms:hasPart rdfs:label "inclut"@fr .
+ov:similarTo rdfs:label "similaire à"@fr .
+
+<http://purl.org/ontology/cco/core#expertise> rdfs:label "a pour compétence"@fr , "hasExpertise"@en .
+gr:seeks rdfs:label "ressources recherchées (hors compétences)"@fr , "seeks"@en .
+<http://purl.org/spar/cito/likes> rdfs:label "aime"@fr , "likes"@en .
+<http://rdfs.org/sioc/ns#follows> rdfs:label "follows"@en , "suit"@fr .
+<http://schema.org/attendee> rdfs:label "a pour participant"@fr , "has attendee"@en .

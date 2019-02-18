@@ -1,0 +1,1327 @@
+@prefix : <http://virtual-assembly.org/pair_v2#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsp: <http://www.owl-ontologies.com/2005/08/07/xsp.owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix protege: <http://protege.stanford.edu/plugins/owl/protege#> .
+@base <http://virtual-assembly.org/pair_v2> .
+
+<http://virtual-assembly.org/pair_v2> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://virtual-assembly.org/pair_v2#_interObject_objectProperty
+
+:_interObject_objectProperty rdf:type owl:ObjectProperty .
+
+
+
+###  http://virtual-assembly.org/pair_v2#_interSubject_objectProperty
+
+:_interSubject_objectProperty rdf:type owl:ObjectProperty .
+
+
+
+###  http://virtual-assembly.org/pair_v2#_object-subject_objectProperty
+
+:_object-subject_objectProperty rdf:type owl:ObjectProperty .
+
+
+
+###  http://virtual-assembly.org/pair_v2#affiliatedBy
+
+:affiliatedBy rdf:type owl:ObjectProperty ;
+              
+              rdfs:subPropertyOf :_interSubject_objectProperty ;
+              
+              owl:inverseOf :affiliates ;
+              
+              rdfs:domain :Person .
+
+
+
+###  http://virtual-assembly.org/pair_v2#affiliates
+
+:affiliates rdf:type owl:ObjectProperty ;
+            
+            rdfs:subPropertyOf :_interSubject_objectProperty ;
+            
+            rdfs:domain :Organization .
+
+
+
+###  http://virtual-assembly.org/pair_v2#brainstormedBy
+
+:brainstormedBy rdf:type owl:ObjectProperty ;
+                
+                rdfs:subPropertyOf :_interSubject_objectProperty ;
+                
+                owl:inverseOf :brainstorms ;
+                
+                rdfs:domain :Proposal .
+
+
+
+###  http://virtual-assembly.org/pair_v2#brainstorms
+
+:brainstorms rdf:type owl:ObjectProperty ;
+             
+             rdfs:subPropertyOf :_interSubject_objectProperty ;
+             
+             rdfs:domain :Person .
+
+
+
+###  http://virtual-assembly.org/pair_v2#concretizedBy
+
+:concretizedBy rdf:type owl:ObjectProperty ;
+               
+               rdfs:subPropertyOf :_interSubject_objectProperty ;
+               
+               owl:inverseOf :concretizes ;
+               
+               rdfs:domain :Proposal .
+
+
+
+###  http://virtual-assembly.org/pair_v2#concretizes
+
+:concretizes rdf:type owl:ObjectProperty ;
+             
+             rdfs:subPropertyOf :_interSubject_objectProperty ;
+             
+             rdfs:domain :Project .
+
+
+
+###  http://virtual-assembly.org/pair_v2#deliveredBy
+
+:deliveredBy rdf:type owl:ObjectProperty ;
+             
+             rdfs:subPropertyOf :_interSubject_objectProperty ;
+             
+             owl:inverseOf :delivers ;
+             
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :Event
+                                         :GOOD_OR_SERVICE
+                                         :Place
+                                       )
+                         ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#delivers
+
+:delivers rdf:type owl:ObjectProperty ;
+          
+          rdfs:subPropertyOf :_interSubject_objectProperty ;
+          
+          rdfs:domain :Project .
+
+
+
+###  http://virtual-assembly.org/pair_v2#documentedBy
+
+:documentedBy rdf:type owl:ObjectProperty ;
+              
+              rdfs:subPropertyOf :_object-subject_objectProperty ;
+              
+              owl:inverseOf :documents ;
+              
+              rdfs:domain :SUBJECT .
+
+
+
+###  http://virtual-assembly.org/pair_v2#documents
+
+:documents rdf:type owl:ObjectProperty ;
+           
+           rdfs:subPropertyOf :_object-subject_objectProperty ;
+           
+           rdfs:domain :Document .
+
+
+
+###  http://virtual-assembly.org/pair_v2#employedBy
+
+:employedBy rdf:type owl:ObjectProperty ;
+            
+            rdfs:subPropertyOf :affiliatedBy ;
+            
+            owl:inverseOf :employs ;
+            
+            rdfs:domain :Person .
+
+
+
+###  http://virtual-assembly.org/pair_v2#employs
+
+:employs rdf:type owl:ObjectProperty ;
+         
+         rdfs:subPropertyOf :affiliates ;
+         
+         rdfs:domain :Organization .
+
+
+
+###  http://virtual-assembly.org/pair_v2#hasInterest
+
+:hasInterest rdf:type owl:ObjectProperty ;
+             
+             rdfs:subPropertyOf :_interSubject_objectProperty ;
+             
+             owl:inverseOf :interestOf ;
+             
+             rdfs:domain :PERSONALITY .
+
+
+
+###  http://virtual-assembly.org/pair_v2#hasMember
+
+:hasMember rdf:type owl:ObjectProperty ;
+           
+           rdfs:subPropertyOf :affiliates ;
+           
+           owl:inverseOf :memberOf ;
+           
+           rdfs:domain :Organization .
+
+
+
+###  http://virtual-assembly.org/pair_v2#hasPart
+
+:hasPart rdf:type owl:ObjectProperty ;
+         
+         rdfs:subPropertyOf :_interSubject_objectProperty ;
+         
+         owl:inverseOf :partOf ;
+         
+         rdfs:domain [ rdf:type owl:Class ;
+                       owl:unionOf ( :Address
+                                     :Building
+                                     :Floor
+                                   )
+                     ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#hasResponsible
+
+:hasResponsible rdf:type owl:ObjectProperty ;
+                
+                rdfs:subPropertyOf :affiliates ;
+                
+                owl:inverseOf :responsibleOf ;
+                
+                rdfs:domain :Organization .
+
+
+
+###  http://virtual-assembly.org/pair_v2#hasSubject
+
+:hasSubject rdf:type owl:ObjectProperty ;
+            
+            rdfs:subPropertyOf :_interSubject_objectProperty ;
+            
+            owl:inverseOf :subjectOf ;
+            
+            rdfs:domain :SUBJECT .
+
+
+
+###  http://virtual-assembly.org/pair_v2#hasType
+
+:hasType rdf:type owl:ObjectProperty ;
+         
+         rdfs:subPropertyOf :_interSubject_objectProperty ;
+         
+         owl:inverseOf :typeOf ;
+         
+         rdfs:domain [ rdf:type owl:Class ;
+                       owl:unionOf ( :Document
+                                     :Organization
+                                     :Place
+                                   )
+                     ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#hostedIn
+
+:hostedIn rdf:type owl:ObjectProperty ;
+          
+          rdfs:subPropertyOf :_interSubject_objectProperty ;
+          
+          owl:inverseOf :hosts ;
+          
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :GOOD_OR_SERVICE
+                                      :Organization
+                                    )
+                      ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#hosts
+
+:hosts rdf:type owl:ObjectProperty ;
+       
+       rdfs:subPropertyOf :_interSubject_objectProperty ;
+       
+       rdfs:domain [ rdf:type owl:Class ;
+                     owl:unionOf ( :BUILDING_ITEM
+                                   :Room
+                                 )
+                   ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#interestOf
+
+:interestOf rdf:type owl:ObjectProperty ;
+            
+            rdfs:subPropertyOf :_interSubject_objectProperty ;
+            
+            rdfs:domain :Thema .
+
+
+
+###  http://virtual-assembly.org/pair_v2#involvedIn
+
+:involvedIn rdf:type owl:ObjectProperty ;
+            
+            rdfs:subPropertyOf :_interSubject_objectProperty ;
+            
+            owl:inverseOf :involves ;
+            
+            rdfs:domain :Person .
+
+
+
+###  http://virtual-assembly.org/pair_v2#involves
+
+:involves rdf:type owl:ObjectProperty ;
+          
+          rdfs:subPropertyOf :_interSubject_objectProperty ;
+          
+          rdfs:domain :Project .
+
+
+
+###  http://virtual-assembly.org/pair_v2#knowedBy
+
+:knowedBy rdf:type owl:ObjectProperty ;
+          
+          rdfs:subPropertyOf :_interSubject_objectProperty ;
+          
+          owl:inverseOf :knows ;
+          
+          rdfs:domain :Person .
+
+
+
+###  http://virtual-assembly.org/pair_v2#knows
+
+:knows rdf:type owl:ObjectProperty ;
+       
+       rdfs:subPropertyOf :_interSubject_objectProperty ;
+       
+       rdfs:domain :Person .
+
+
+
+###  http://virtual-assembly.org/pair_v2#localizedBy
+
+:localizedBy rdf:type owl:ObjectProperty ;
+             
+             rdfs:subPropertyOf :_interSubject_objectProperty ;
+             
+             owl:inverseOf :localizes ;
+             
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :Event
+                                         :Person
+                                         :Place
+                                       )
+                         ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#localizes
+
+:localizes rdf:type owl:ObjectProperty ;
+           
+           rdfs:subPropertyOf :_interSubject_objectProperty ;
+           
+           rdfs:domain :Address .
+
+
+
+###  http://virtual-assembly.org/pair_v2#managedBy
+
+:managedBy rdf:type owl:ObjectProperty ;
+           
+           rdfs:subPropertyOf :involves ;
+           
+           owl:inverseOf :manages ;
+           
+           rdfs:domain :Project .
+
+
+
+###  http://virtual-assembly.org/pair_v2#manages
+
+:manages rdf:type owl:ObjectProperty ;
+         
+         rdfs:subPropertyOf :involvedIn ;
+         
+         rdfs:domain :Person .
+
+
+
+###  http://virtual-assembly.org/pair_v2#memberOf
+
+:memberOf rdf:type owl:ObjectProperty ;
+          
+          rdfs:subPropertyOf :affiliatedBy ;
+          
+          rdfs:domain :Person .
+
+
+
+###  http://virtual-assembly.org/pair_v2#neededBy
+
+:neededBy rdf:type owl:ObjectProperty ;
+          
+          rdfs:subPropertyOf :_interSubject_objectProperty ;
+          
+          owl:inverseOf :needs ;
+          
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :GOOD_OR_SERVICE
+                                      :Place
+                                      :Skill
+                                    )
+                      ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#needs
+
+:needs rdf:type owl:ObjectProperty ;
+       
+       rdfs:subPropertyOf :_interSubject_objectProperty ;
+       
+       rdfs:domain [ rdf:type owl:Class ;
+                     owl:unionOf ( :PERSONALITY
+                                   :Project
+                                 )
+                   ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#offeredBy
+
+:offeredBy rdf:type owl:ObjectProperty ;
+           
+           rdfs:subPropertyOf :_interSubject_objectProperty ;
+           
+           owl:inverseOf :offers ;
+           
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :GOOD_OR_SERVICE
+                                       :Place
+                                       :Skill
+                                     )
+                       ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#offers
+
+:offers rdf:type owl:ObjectProperty ;
+        
+        rdfs:subPropertyOf :_interSubject_objectProperty ;
+        
+        rdfs:domain :PERSONALITY .
+
+
+
+###  http://virtual-assembly.org/pair_v2#partOf
+
+:partOf rdf:type owl:ObjectProperty ;
+        
+        rdfs:subPropertyOf :_interSubject_objectProperty ;
+        
+        rdfs:domain [ rdf:type owl:Class ;
+                      owl:unionOf ( :Floor
+                                    :Room
+                                    :Town
+                                  )
+                    ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#references
+
+:references rdf:type owl:ObjectProperty ;
+            
+            rdfs:subPropertyOf :_interObject_objectProperty ;
+            
+            owl:inverseOf :referencesBy ;
+            
+            rdfs:domain :Document .
+
+
+
+###  http://virtual-assembly.org/pair_v2#referencesBy
+
+:referencesBy rdf:type owl:ObjectProperty ;
+              
+              rdfs:subPropertyOf :_interObject_objectProperty ;
+              
+              rdfs:domain :Document .
+
+
+
+###  http://virtual-assembly.org/pair_v2#representedBy
+
+:representedBy rdf:type owl:ObjectProperty ;
+               
+               rdfs:subPropertyOf :documentedBy ;
+               
+               owl:inverseOf :represents ;
+               
+               rdfs:domain :SUBJECT .
+
+
+
+###  http://virtual-assembly.org/pair_v2#represents
+
+:represents rdf:type owl:ObjectProperty ;
+            
+            rdfs:subPropertyOf :documents ;
+            
+            rdfs:domain :Document .
+
+
+
+###  http://virtual-assembly.org/pair_v2#responsibleOf
+
+:responsibleOf rdf:type owl:ObjectProperty ;
+               
+               rdfs:subPropertyOf :affiliatedBy ;
+               
+               rdfs:domain :Person .
+
+
+
+###  http://virtual-assembly.org/pair_v2#subjectOf
+
+:subjectOf rdf:type owl:ObjectProperty ;
+           
+           rdfs:subPropertyOf :_interSubject_objectProperty ;
+           
+           rdfs:domain :SUBJECT .
+
+
+
+###  http://virtual-assembly.org/pair_v2#typeOf
+
+:typeOf rdf:type owl:ObjectProperty ;
+        
+        rdfs:subPropertyOf :_interSubject_objectProperty ;
+        
+        rdfs:domain [ rdf:type owl:Class ;
+                      owl:unionOf ( :DocumentType
+                                    :OrganizationType
+                                    :PlaceType
+                                  )
+                    ] .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://virtual-assembly.org/pair_v2#aboutPage
+
+:aboutPage rdf:type owl:DatatypeProperty ;
+           
+           rdfs:subPropertyOf :webPage ;
+           
+           rdfs:domain :HUBJECT .
+
+
+
+###  http://virtual-assembly.org/pair_v2#alternativeLabel
+
+:alternativeLabel rdf:type owl:DatatypeProperty ;
+                  
+                  rdfs:subPropertyOf :label ;
+                  
+                  rdfs:domain :HUBJECT .
+
+
+
+###  http://virtual-assembly.org/pair_v2#comment
+
+:comment rdf:type owl:DatatypeProperty ;
+         
+         rdfs:domain :HUBJECT ;
+         
+         rdfs:range xsd:string .
+
+
+
+###  http://virtual-assembly.org/pair_v2#description
+
+:description rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             
+             rdfs:domain :HUBJECT ;
+             
+             rdfs:range xsd:string .
+
+
+
+###  http://virtual-assembly.org/pair_v2#e-mail
+
+:e-mail rdf:type owl:DatatypeProperty ;
+        
+        rdfs:domain :PERSONALITY ;
+        
+        rdfs:range xsd:string .
+
+
+
+###  http://virtual-assembly.org/pair_v2#endDate
+
+:endDate rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         
+         rdfs:domain :Event ;
+         
+         rdfs:range xsd:dateTime .
+
+
+
+###  http://virtual-assembly.org/pair_v2#firstName
+
+:firstName rdf:type owl:DatatypeProperty ;
+           
+           rdfs:subPropertyOf :label ;
+           
+           rdf:type owl:FunctionalProperty ;
+           
+           rdfs:domain :Person .
+
+
+
+###  http://virtual-assembly.org/pair_v2#homePage
+
+:homePage rdf:type owl:DatatypeProperty ;
+          
+          rdfs:subPropertyOf :webPage ;
+          
+          rdf:type owl:FunctionalProperty ;
+          
+          rdfs:domain :HUBJECT .
+
+
+
+###  http://virtual-assembly.org/pair_v2#label
+
+:label rdf:type owl:DatatypeProperty ;
+       
+       rdfs:range xsd:string .
+
+
+
+###  http://virtual-assembly.org/pair_v2#lastName
+
+:lastName rdf:type owl:DatatypeProperty ;
+          
+          rdfs:subPropertyOf :label ;
+          
+          rdf:type owl:FunctionalProperty ;
+          
+          rdfs:domain :Person .
+
+
+
+###  http://virtual-assembly.org/pair_v2#phone
+
+:phone rdf:type owl:DatatypeProperty ;
+       
+       rdfs:domain :PERSONALITY ;
+       
+       rdfs:range xsd:string .
+
+
+
+###  http://virtual-assembly.org/pair_v2#preferedLabel
+
+:preferedLabel rdf:type owl:DatatypeProperty ;
+               
+               rdfs:subPropertyOf :label ;
+               
+               rdf:type owl:FunctionalProperty ;
+               
+               rdfs:domain :HUBJECT .
+
+
+
+###  http://virtual-assembly.org/pair_v2#startDate
+
+:startDate rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           
+           rdfs:domain :Event ;
+           
+           rdfs:range xsd:dateTime .
+
+
+
+###  http://virtual-assembly.org/pair_v2#subjectIdentifier
+
+:subjectIdentifier rdf:type owl:DatatypeProperty ;
+                   
+                   rdfs:domain :HUBJECT ;
+                   
+                   rdfs:range xsd:string .
+
+
+
+###  http://virtual-assembly.org/pair_v2#webPage
+
+:webPage rdf:type owl:DatatypeProperty ;
+         
+         rdfs:range xsd:string .
+
+
+
+###  http://virtual-assembly.org/pair_v2#zipCode
+
+:zipCode rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         
+         rdfs:domain :Town ;
+         
+         rdfs:range xsd:string .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://virtual-assembly.org/pair_v2#Address
+
+:Address rdf:type owl:Class ;
+         
+         rdfs:subClassOf :WHERE_SUBJECT ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasPart ;
+                           owl:allValuesFrom :Town
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :localizes ;
+                           owl:allValuesFrom [ rdf:type owl:Class ;
+                                               owl:unionOf ( :Event
+                                                             :Person
+                                                             :Place
+                                                           )
+                                             ]
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasPart ;
+                           owl:cardinality "1"^^xsd:nonNegativeInteger
+                         ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#BUILDING_ITEM
+
+:BUILDING_ITEM rdf:type owl:Class ;
+               
+               rdfs:subClassOf :WHERE_SUBJECT ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hosts ;
+                                 owl:allValuesFrom :Organization
+                               ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#Building
+
+:Building rdf:type owl:Class ;
+          
+          rdfs:subClassOf :BUILDING_ITEM ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasPart ;
+                            owl:allValuesFrom :Floor
+                          ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#Document
+
+:Document rdf:type owl:Class ;
+          
+          rdfs:subClassOf :OBJECT ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :documents ;
+                            owl:allValuesFrom :SUBJECT
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasType ;
+                            owl:allValuesFrom :DocumentType
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :references ;
+                            owl:allValuesFrom :Document
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :referencesBy ;
+                            owl:allValuesFrom :Document
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :represents ;
+                            owl:allValuesFrom :SUBJECT
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasType ;
+                            owl:cardinality "1"^^xsd:nonNegativeInteger
+                          ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#DocumentType
+
+:DocumentType rdf:type owl:Class ;
+              
+              rdfs:subClassOf :OBJECT ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :typeOf ;
+                                owl:allValuesFrom :Document
+                              ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#Event
+
+:Event rdf:type owl:Class ;
+       
+       rdfs:subClassOf :MISC_SUBJECT ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :deliveredBy ;
+                         owl:allValuesFrom :Project
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :localizedBy ;
+                         owl:allValuesFrom :Address
+                       ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#Floor
+
+:Floor rdf:type owl:Class ;
+       
+       rdfs:subClassOf :BUILDING_ITEM ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasPart ;
+                         owl:allValuesFrom :Room
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :partOf ;
+                         owl:allValuesFrom :Building
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :partOf ;
+                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                       ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#GOOD
+
+:GOOD rdf:type owl:Class ;
+      
+      rdfs:subClassOf :GOOD_OR_SERVICE .
+
+
+
+###  http://virtual-assembly.org/pair_v2#GOOD_OR_SERVICE
+
+:GOOD_OR_SERVICE rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :WHAT_SUBJECT ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :deliveredBy ;
+                                   owl:allValuesFrom :Project
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hostedIn ;
+                                   owl:allValuesFrom :Room
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :neededBy ;
+                                   owl:allValuesFrom [ rdf:type owl:Class ;
+                                                       owl:unionOf ( :Organization
+                                                                     :Person
+                                                                     :Project
+                                                                   )
+                                                     ]
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :offeredBy ;
+                                   owl:allValuesFrom [ rdf:type owl:Class ;
+                                                       owl:unionOf ( :Organization
+                                                                     :Person
+                                                                   )
+                                                     ]
+                                 ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#HOW_SUBJECT
+
+:HOW_SUBJECT rdf:type owl:Class ;
+             
+             rdfs:subClassOf :SUBJECT .
+
+
+
+###  http://virtual-assembly.org/pair_v2#HUBJECT
+
+:HUBJECT rdf:type owl:Class .
+
+
+
+###  http://virtual-assembly.org/pair_v2#IntangibleGood
+
+:IntangibleGood rdf:type owl:Class ;
+                
+                rdfs:subClassOf :GOOD .
+
+
+
+###  http://virtual-assembly.org/pair_v2#MISC_SUBJECT
+
+:MISC_SUBJECT rdf:type owl:Class ;
+              
+              rdfs:subClassOf :SUBJECT .
+
+
+
+###  http://virtual-assembly.org/pair_v2#OBJECT
+
+:OBJECT rdf:type owl:Class ;
+        
+        rdfs:subClassOf :HUBJECT .
+
+
+
+###  http://virtual-assembly.org/pair_v2#Organization
+
+:Organization rdf:type owl:Class ;
+              
+              rdfs:subClassOf :PERSONALITY ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :affiliates ;
+                                owl:allValuesFrom :Person
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :employs ;
+                                owl:allValuesFrom :Person
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasMember ;
+                                owl:allValuesFrom :Person
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasResponsible ;
+                                owl:allValuesFrom :Person
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasType ;
+                                owl:allValuesFrom :OrganizationType
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hostedIn ;
+                                owl:allValuesFrom :BUILDING_ITEM
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :needs ;
+                                owl:allValuesFrom [ rdf:type owl:Class ;
+                                                    owl:unionOf ( :GOOD_OR_SERVICE
+                                                                  :Place
+                                                                  :Skill
+                                                                )
+                                                  ]
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :offers ;
+                                owl:allValuesFrom [ rdf:type owl:Class ;
+                                                    owl:unionOf ( :GOOD_OR_SERVICE
+                                                                  :Place
+                                                                  :Skill
+                                                                )
+                                                  ]
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasType ;
+                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                              ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#OrganizationType
+
+:OrganizationType rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :WHO_SUBJECT ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :typeOf ;
+                                    owl:allValuesFrom :Organization
+                                  ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#PERSONALITY
+
+:PERSONALITY rdf:type owl:Class ;
+             
+             rdfs:subClassOf :WHO_SUBJECT ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasInterest ;
+                               owl:allValuesFrom :Thema
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :needs ;
+                               owl:allValuesFrom [ rdf:type owl:Class ;
+                                                   owl:unionOf ( :GOOD_OR_SERVICE
+                                                                 :Skill
+                                                               )
+                                                 ]
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :offers ;
+                               owl:allValuesFrom [ rdf:type owl:Class ;
+                                                   owl:unionOf ( :GOOD_OR_SERVICE
+                                                                 :Skill
+                                                               )
+                                                 ]
+                             ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#Person
+
+:Person rdf:type owl:Class ;
+        
+        rdfs:subClassOf :PERSONALITY ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :affiliatedBy ;
+                          owl:allValuesFrom :Organization
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :brainstorms ;
+                          owl:allValuesFrom :Proposal
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :employedBy ;
+                          owl:allValuesFrom :Organization
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :involvedIn ;
+                          owl:allValuesFrom :Project
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :knowedBy ;
+                          owl:allValuesFrom :Person
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :knows ;
+                          owl:allValuesFrom :Person
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :localizedBy ;
+                          owl:allValuesFrom :Address
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :manages ;
+                          owl:allValuesFrom :Project
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :memberOf ;
+                          owl:allValuesFrom :Organization
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :responsibleOf ;
+                          owl:allValuesFrom :Organization
+                        ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#Place
+
+:Place rdf:type owl:Class ;
+       
+       rdfs:subClassOf :WHERE_SUBJECT ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :deliveredBy ;
+                         owl:allValuesFrom :Project
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasType ;
+                         owl:allValuesFrom :PlaceType
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :localizedBy ;
+                         owl:allValuesFrom :Address
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :neededBy ;
+                         owl:allValuesFrom :Organization
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :offeredBy ;
+                         owl:allValuesFrom :Organization
+                       ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#PlaceType
+
+:PlaceType rdf:type owl:Class ;
+           
+           rdfs:subClassOf :WHERE_SUBJECT ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :typeOf ;
+                             owl:allValuesFrom :Place
+                           ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#Project
+
+:Project rdf:type owl:Class ;
+         
+         rdfs:subClassOf :HOW_SUBJECT ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :concretizes ;
+                           owl:allValuesFrom :Proposal
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :delivers ;
+                           owl:allValuesFrom [ rdf:type owl:Class ;
+                                               owl:unionOf ( :Event
+                                                             :GOOD_OR_SERVICE
+                                                             :Place
+                                                           )
+                                             ]
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :involves ;
+                           owl:allValuesFrom :Person
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :managedBy ;
+                           owl:allValuesFrom :Person
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :needs ;
+                           owl:allValuesFrom [ rdf:type owl:Class ;
+                                               owl:unionOf ( :GOOD_OR_SERVICE
+                                                             :Skill
+                                                           )
+                                             ]
+                         ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#Proposal
+
+:Proposal rdf:type owl:Class ;
+          
+          rdfs:subClassOf :WHY_SUBJECT ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :brainstormedBy ;
+                            owl:allValuesFrom :Person
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :concretizedBy ;
+                            owl:allValuesFrom :Project
+                          ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#Room
+
+:Room rdf:type owl:Class ;
+      
+      rdfs:subClassOf :BUILDING_ITEM ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hosts ;
+                        owl:allValuesFrom [ rdf:type owl:Class ;
+                                            owl:unionOf ( :GOOD_OR_SERVICE
+                                                          :Organization
+                                                        )
+                                          ]
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :partOf ;
+                        owl:allValuesFrom :Floor
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :partOf ;
+                        owl:cardinality "1"^^xsd:nonNegativeInteger
+                      ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#SUBJECT
+
+:SUBJECT rdf:type owl:Class ;
+         
+         rdfs:subClassOf :HUBJECT .
+
+
+
+###  http://virtual-assembly.org/pair_v2#Service
+
+:Service rdf:type owl:Class ;
+         
+         rdfs:subClassOf :GOOD_OR_SERVICE .
+
+
+
+###  http://virtual-assembly.org/pair_v2#Skill
+
+:Skill rdf:type owl:Class ;
+       
+       rdfs:subClassOf :WHAT_SUBJECT ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :neededBy ;
+                         owl:allValuesFrom [ rdf:type owl:Class ;
+                                             owl:unionOf ( :Organization
+                                                           :Person
+                                                           :Project
+                                                         )
+                                           ]
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :offeredBy ;
+                         owl:allValuesFrom [ rdf:type owl:Class ;
+                                             owl:unionOf ( :Organization
+                                                           :Person
+                                                         )
+                                           ]
+                       ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#TangibleGood
+
+:TangibleGood rdf:type owl:Class ;
+              
+              rdfs:subClassOf :GOOD .
+
+
+
+###  http://virtual-assembly.org/pair_v2#Thema
+
+:Thema rdf:type owl:Class ;
+       
+       rdfs:subClassOf :WHAT_SUBJECT ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :interestOf ;
+                         owl:allValuesFrom [ rdf:type owl:Class ;
+                                             owl:unionOf ( :Organization
+                                                           :Person
+                                                         )
+                                           ]
+                       ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#Town
+
+:Town rdf:type owl:Class ;
+      
+      rdfs:subClassOf :WHERE_SUBJECT ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :partOf ;
+                        owl:allValuesFrom :Address
+                      ] .
+
+
+
+###  http://virtual-assembly.org/pair_v2#WHAT_SUBJECT
+
+:WHAT_SUBJECT rdf:type owl:Class ;
+              
+              rdfs:subClassOf :SUBJECT .
+
+
+
+###  http://virtual-assembly.org/pair_v2#WHEN_SUBJECT
+
+:WHEN_SUBJECT rdf:type owl:Class ;
+              
+              rdfs:subClassOf :SUBJECT .
+
+
+
+###  http://virtual-assembly.org/pair_v2#WHERE_SUBJECT
+
+:WHERE_SUBJECT rdf:type owl:Class ;
+               
+               rdfs:subClassOf :SUBJECT .
+
+
+
+###  http://virtual-assembly.org/pair_v2#WHO_SUBJECT
+
+:WHO_SUBJECT rdf:type owl:Class ;
+             
+             rdfs:subClassOf :SUBJECT .
+
+
+
+###  http://virtual-assembly.org/pair_v2#WHY_SUBJECT
+
+:WHY_SUBJECT rdf:type owl:Class ;
+             
+             rdfs:subClassOf :SUBJECT .
+
+
+
+
+###  Generated by the OWL API (version 4.2.1.20160306-0033) https://github.com/owlcs/owlapi
+
