@@ -1,0 +1,24 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "base:Personality" "base:Organization" "base:TangibleGood" "base:Person" "base:Good" "base:GoodOrService" "base:DocumentType" "base:Service" "base:IntangibleGood" "foaf:Image" "foaf:Agent" "foaf:Document" "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing" "foaf:OnlineAccount" "foaf:Person" "foaf:OnlineChatAccount" "foaf:PersonalProfileDocument" "foaf:OnlineGamingAccount" "foaf:Organization" "foaf:Group" "foaf:OnlineEcommerceAccount" "skos:OrderedCollection" "skos:Collection" "skos:Concept" ; /*classes style*/
+	"base:DocumentType" -> "skos:Concept" [ label = "rdfs:subClassOf" ];
+	"foaf:OnlineGamingAccount" -> "foaf:OnlineAccount" [ label = "rdfs:subClassOf" ];
+	"base:Good" -> "base:GoodOrService" [ label = "rdfs:subClassOf" ];
+	"foaf:PersonalProfileDocument" -> "foaf:Document" [ label = "rdfs:subClassOf" ];
+	"foaf:Group" -> "foaf:Agent" [ label = "rdfs:subClassOf" ];
+	"base:Organization" -> "base:Personality" [ label = "rdfs:subClassOf" ];
+	"foaf:OnlineChatAccount" -> "foaf:OnlineAccount" [ label = "rdfs:subClassOf" ];
+	"base:Person" -> "base:Personality" [ label = "rdfs:subClassOf" ];
+	"foaf:Image" -> "foaf:Document" [ label = "rdfs:subClassOf" ];
+	"foaf:Person" -> "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing" [ label = "rdfs:subClassOf" ];
+	"foaf:Person" -> "foaf:Agent" [ label = "rdfs:subClassOf" ];
+	"skos:OrderedCollection" -> "skos:Collection" [ label = "rdfs:subClassOf" ];
+	"base:IntangibleGood" -> "base:Good" [ label = "rdfs:subClassOf" ];
+	"foaf:Organization" -> "foaf:Agent" [ label = "rdfs:subClassOf" ];
+	"foaf:OnlineAccount" -> "owl:Thing" [ label = "rdfs:subClassOf" ];
+	"base:Service" -> "base:GoodOrService" [ label = "rdfs:subClassOf" ];
+	"base:TangibleGood" -> "base:Good" [ label = "rdfs:subClassOf" ];
+	"foaf:OnlineEcommerceAccount" -> "foaf:OnlineAccount" [ label = "rdfs:subClassOf" ];
+
+}
