@@ -1,13 +1,9 @@
 # Model
 
-## Objectif
+## Generic Model
 
-Documents mettant en relation les concepts métiers
+![alt text](1-Conception/3-Semantic/2-Model/GenericModel.png)
 
-## Description
+## Specific Model
 
-Mise en relation des concept métiers (et propriétés)
-
-## Comment
-
-Graphes, Tables de propriétés, ...
+![alt text](https://github.com/assemblee-virtuelle/pair/blob/master/1-Conception/3-Semantic/2-Model/SpecificModel.png)
