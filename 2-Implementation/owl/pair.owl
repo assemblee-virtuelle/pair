@@ -200,7 +200,9 @@
 
     <!-- http://virtual-assembly.org/ontologies/pair#entityConceptProperties -->
 
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#entityConceptProperties"/>
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#entityConceptProperties">
+        <rdfs:comment xml:lang="fr">Relie les PairEntity aux Concepts</rdfs:comment>
+    </owl:ObjectProperty>
     
 
 
@@ -386,13 +388,21 @@
 
     <!-- http://virtual-assembly.org/ontologies/pair#interObjectProperty -->
 
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#interObjectProperty"/>
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#interObjectProperty">
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Object"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Object"/>
+        <rdfs:comment xml:lang="fr">Relie les Objects entre eux</rdfs:comment>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://virtual-assembly.org/ontologies/pair#interSubjectProperty -->
 
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#interSubjectProperty">
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
+        <rdfs:comment xml:lang="fr">Relie les Subjects entre eux</rdfs:comment>
+    </owl:ObjectProperty>
     
 
 
@@ -603,7 +613,9 @@
 
     <!-- http://virtual-assembly.org/ontologies/pair#objectSubjectProperty -->
 
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#objectSubjectProperty"/>
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#objectSubjectProperty">
+        <rdfs:comment xml:lang="fr">Relie les Subjects et les Objects</rdfs:comment>
+    </owl:ObjectProperty>
     
 
 
@@ -1452,8 +1464,8 @@
 
     <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair#PairEntity">
         <rdfs:comment xml:lang="fr">Classe abstraite ayant pour unique rôle de définir des propriétes communes à l&apos;ensemble des classes de l&apos;ontologie PAIR</rdfs:comment>
-        <rdfs:label xml:lang="en">Hubject</rdfs:label>
-        <rdfs:label xml:lang="fr">Hubject</rdfs:label>
+        <rdfs:label xml:lang="fr">Entité Pair</rdfs:label>
+        <rdfs:label xml:lang="en">Pair entity</rdfs:label>
     </owl:Class>
     
 
