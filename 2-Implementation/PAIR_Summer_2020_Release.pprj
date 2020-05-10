@@ -1,4 +1,4 @@
-; Sun May 10 16:25:54 CEST 2020
+; Sun May 10 18:04:22 CEST 2020
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -6,11 +6,11 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[PAIR_Summer_2020_Release_ProjectKB_Class92088]
-		[PAIR_Summer_2020_Release_ProjectKB_Class92089]
-		[PAIR_Summer_2020_Release_ProjectKB_Class92090]
-		[PAIR_Summer_2020_Release_ProjectKB_Class92091]
-		[PAIR_Summer_2020_Release_ProjectKB_Class92092]))
+		[PAIR_Summer_2020_Release_ProjectKB_Class9028]
+		[PAIR_Summer_2020_Release_ProjectKB_Class9029]
+		[PAIR_Summer_2020_Release_ProjectKB_Class9030]
+		[PAIR_Summer_2020_Release_ProjectKB_Class9031]
+		[PAIR_Summer_2020_Release_ProjectKB_Class9032]))
 
 ([CLSES_TAB] of  Widget
 
@@ -778,6 +778,9 @@
 
 	(boolean_value FALSE)
 	(name "DisabledByUser"))
+
+([KB_633018_Class0] of  Map
+)
 
 ([KB_635552_Instance_0] of  Widget
 
@@ -3012,9 +3015,6 @@
 	(name "http://www.w3.org/2002/07/owl#Ontology")
 	(property_list [XY_Instance_195])
 	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.OWLFormWidget"))
-
-([KB_828338_Class0] of  Map
-)
 
 ([KB_865583_Instance_10] of  Widget
 
@@ -5340,16 +5340,118 @@
 ([PAIR_Summer_2020_Release_ProjectKB_Class10] of  Property_List
 )
 
+([PAIR_Summer_2020_Release_ProjectKB_Class100] of  Widget
+
+	(height 0)
+	(is_hidden FALSE)
+	(label "Name")
+	(name ":NAME")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class101])
+	(width 0)
+	(x 0)
+	(y 0))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class101] of  Property_List
+
+	(properties [PAIR_Summer_2020_Release_ProjectKB_Class102]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class102] of  Boolean
+
+	(boolean_value TRUE)
+	(name "DisabledByUser"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class103] of  Property_List
+
+	(name "layout properties")
+	(properties
+		[PAIR_Summer_2020_Release_ProjectKB_Class104]
+		[PAIR_Summer_2020_Release_ProjectKB_Class105]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class104] of  String
+
+	(name "horizontal_stretcher")
+	(string_value "<<all>>"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class105] of  String
+
+	(name "vertical_stretcher")
+	(string_value "<<none>>"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class106] of  Widget
+
+	(height 180)
+	(is_hidden FALSE)
+	(name "http://protege.stanford.edu/plugins/owl/protege#inferredType")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class107])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.HeaderWidget")
+	(width 550)
+	(x 0)
+	(y 0))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class107] of  Property_List
+
+	(properties [PAIR_Summer_2020_Release_ProjectKB_Class108]))
+
 ([PAIR_Summer_2020_Release_ProjectKB_Class10704] of  String
 
 	(name "RenameAcrossFiles")
 	(string_value "/home/guitou/Protege_3.5"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class108] of  Boolean
+
+	(boolean_value FALSE)
+	(name "DisabledByUser"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class109] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2002/07/owl#versionInfo")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class110]))
 
 ([PAIR_Summer_2020_Release_ProjectKB_Class11] of  Widget
 
 	(is_hidden TRUE)
 	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class12])
 	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalConstraintsTab"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class110] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class111] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2000/01/rdf-schema#isDefinedBy")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class112]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class112] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class113] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2000/01/rdf-schema#comment")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class114]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class114] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class115] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2000/01/rdf-schema#seeAlso")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class116]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class116] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class117] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2000/01/rdf-schema#label")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class118]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class118] of  Property_List
+)
 
 ([PAIR_Summer_2020_Release_ProjectKB_Class12] of  Property_List
 )
@@ -5417,14 +5519,135 @@
 	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class26])
 	(widget_class_name "TGViztab.TGVizTab"))
 
+([PAIR_Summer_2020_Release_ProjectKB_Class250] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2002/07/owl#NamedIndividual")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class253])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.OWLFormWidget"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class253] of  Property_List
+
+	(properties
+		[PAIR_Summer_2020_Release_ProjectKB_Class254]
+		[PAIR_Summer_2020_Release_ProjectKB_Class257]
+		[PAIR_Summer_2020_Release_ProjectKB_Class260]
+		[PAIR_Summer_2020_Release_ProjectKB_Class263]
+		[PAIR_Summer_2020_Release_ProjectKB_Class265]
+		[PAIR_Summer_2020_Release_ProjectKB_Class267]
+		[PAIR_Summer_2020_Release_ProjectKB_Class269]
+		[PAIR_Summer_2020_Release_ProjectKB_Class271]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class254] of  Widget
+
+	(height 0)
+	(is_hidden FALSE)
+	(label "Name")
+	(name ":NAME")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class255])
+	(width 0)
+	(x 0)
+	(y 0))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class255] of  Property_List
+
+	(properties [PAIR_Summer_2020_Release_ProjectKB_Class256]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class256] of  Boolean
+
+	(boolean_value TRUE)
+	(name "DisabledByUser"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class257] of  Property_List
+
+	(name "layout properties")
+	(properties
+		[PAIR_Summer_2020_Release_ProjectKB_Class258]
+		[PAIR_Summer_2020_Release_ProjectKB_Class259]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class258] of  String
+
+	(name "horizontal_stretcher")
+	(string_value "<<all>>"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class259] of  String
+
+	(name "vertical_stretcher")
+	(string_value "<<none>>"))
+
 ([PAIR_Summer_2020_Release_ProjectKB_Class26] of  Property_List
 )
+
+([PAIR_Summer_2020_Release_ProjectKB_Class260] of  Widget
+
+	(height 180)
+	(is_hidden FALSE)
+	(name "http://protege.stanford.edu/plugins/owl/protege#inferredType")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class261])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.HeaderWidget")
+	(width 550)
+	(x 0)
+	(y 0))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class261] of  Property_List
+
+	(properties [PAIR_Summer_2020_Release_ProjectKB_Class262]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class262] of  Boolean
+
+	(boolean_value FALSE)
+	(name "DisabledByUser"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class263] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2002/07/owl#versionInfo")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class264]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class264] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class265] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2000/01/rdf-schema#isDefinedBy")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class266]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class266] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class267] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2000/01/rdf-schema#comment")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class268]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class268] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class269] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2000/01/rdf-schema#seeAlso")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class270]))
 
 ([PAIR_Summer_2020_Release_ProjectKB_Class27] of  Widget
 
 	(is_hidden TRUE)
 	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class28])
 	(widget_class_name "edu.stanford.smi.protegex.changes.changesKBViewTab.ChangesKBViewTab"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class270] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class271] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2000/01/rdf-schema#label")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class272]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class272] of  Property_List
+)
 
 ([PAIR_Summer_2020_Release_ProjectKB_Class28] of  Property_List
 )
@@ -5579,30 +5802,49 @@
 	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class10])
 	(widget_class_name "edu.stanford.smi.protegex.server_changes.prompt.UsersTab"))
 
-([PAIR_Summer_2020_Release_ProjectKB_Class92088] of  String
-
-	(name "http://www.w3.org/2002/07/owl#Class")
-	(string_value "%3ANAME"))
-
-([PAIR_Summer_2020_Release_ProjectKB_Class92089] of  String
+([PAIR_Summer_2020_Release_ProjectKB_Class9028] of  String
 
 	(name ":INSTANCE-ANNOTATION")
 	(string_value "%3AANNOTATION-TEXT"))
 
-([PAIR_Summer_2020_Release_ProjectKB_Class92090] of  String
+([PAIR_Summer_2020_Release_ProjectKB_Class9029] of  String
 
-	(name ":META-CLASS")
+	(name "http://www.w3.org/2002/07/owl#Class")
 	(string_value "%3ANAME"))
 
-([PAIR_Summer_2020_Release_ProjectKB_Class92091] of  String
+([PAIR_Summer_2020_Release_ProjectKB_Class9030] of  String
 
 	(name ":PAL-CONSTRAINT")
 	(string_value "%3APAL-NAME"))
 
-([PAIR_Summer_2020_Release_ProjectKB_Class92092] of  String
+([PAIR_Summer_2020_Release_ProjectKB_Class9031] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class9032] of  String
 
 	(name "http://www.w3.org/2002/07/owl#Thing")
 	(string_value "%3ANAME"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class96] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#IdeaStatus")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class99])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.OWLFormWidget"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class99] of  Property_List
+
+	(properties
+		[PAIR_Summer_2020_Release_ProjectKB_Class100]
+		[PAIR_Summer_2020_Release_ProjectKB_Class103]
+		[PAIR_Summer_2020_Release_ProjectKB_Class106]
+		[PAIR_Summer_2020_Release_ProjectKB_Class109]
+		[PAIR_Summer_2020_Release_ProjectKB_Class111]
+		[PAIR_Summer_2020_Release_ProjectKB_Class113]
+		[PAIR_Summer_2020_Release_ProjectKB_Class115]
+		[PAIR_Summer_2020_Release_ProjectKB_Class117]))
 
 ([PAL_FORM_WIDGET] of  Widget
 
@@ -5620,9 +5862,9 @@
 	(browser_slot_names [BROWSER_SLOT_NAMES])
 	(customized_instance_widgets
 		[KB_713803_Instance_477]
-		[KB_313796_Instance_852]
-		[KB_691299_Instance_398]
 		[PAL_FORM_WIDGET]
+		[KB_691299_Instance_398]
+		[KB_313796_Instance_852]
 		[Instance_581]
 		[KB_713803_Instance_693]
 		[INSTANCE_ANNOTATION_FORM_WIDGET]
@@ -5644,8 +5886,8 @@
 		[KB_938545_Instance_329]
 		[KB_764103_Instance_545]
 		[KB_301165_Instance_1013]
-		[KB_713803_Instance_390]
-		[Instance_443])
+		[Instance_443]
+		[KB_713803_Instance_390])
 	(default_cls_metaclass "http://www.w3.org/2002/07/owl#Class")
 	(default_facet_metaclass ":STANDARD-FACET")
 	(default_instance_widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.OWLFormWidget")
@@ -5659,8 +5901,8 @@
 		":MODIFIER"
 		"http://protege.stanford.edu/plugins/owl/protege#SLOT-CONSTRAINTS"
 		"http://www.w3.org/2000/01/rdf-schema#Container"
-		"http://www.w3.org/2001/XMLSchema#integer"
 		":SLOT-NUMERIC-MINIMUM"
+		"http://www.w3.org/2001/XMLSchema#integer"
 		"http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"
 		"http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"
 		":NUMERIC-MAXIMUM"
@@ -5698,22 +5940,22 @@
 		"http://www.w3.org/2002/07/owl#equivalentClass"
 		"http://www.w3.org/2002/07/owl#FunctionalProperty"
 		"http://protege.stanford.edu/plugins/owl/protege#inferredSubclassOf"
-		"http://www.w3.org/2003/11/swrl#SameIndividualAtom"
 		":PAL-DESCRIPTION"
-		"http://www.w3.org/2002/07/owl#MinCardinalityRestriction"
-		"http://www.w3.org/2002/07/owl#AnonymousClass"
+		"http://www.w3.org/2003/11/swrl#SameIndividualAtom"
 		"http://www.w3.org/2001/XMLSchema#anyURI"
+		"http://www.w3.org/2002/07/owl#AnonymousClass"
+		"http://www.w3.org/2002/07/owl#MinCardinalityRestriction"
 		"http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
 		":CLASS"
 		"http://www.w3.org/2002/07/owl#complementOf"
 		":ROLE"
-		"http://www.w3.org/2002/07/owl#TransitiveProperty"
-		"http://www.w3.org/2002/07/owl#IntersectionClass"
 		":DOCUMENTATION-IN-FRAME"
+		"http://www.w3.org/2002/07/owl#IntersectionClass"
+		"http://www.w3.org/2002/07/owl#TransitiveProperty"
 		"http://www.w3.org/2000/01/rdf-schema#range"
 		"http://www.w3.org/2001/XMLSchema#gYearMonth"
-		"http://www.w3.org/2002/07/owl#ComplementClass"
 		":CREATOR"
+		"http://www.w3.org/2002/07/owl#ComplementClass"
 		":ASSOCIATED-FACET"
 		":DOCUMENTATION"
 		":DIRECT-SUPERCLASSES"
@@ -5725,8 +5967,8 @@
 		":MODIFICATION-TIMESTAMP"
 		"http://www.w3.org/2001/XMLSchema#gYear"
 		"http://www.w3.org/2001/XMLSchema#gMonthDay"
-		"http://www.w3.org/2001/XMLSchema#normalizedString"
 		"http://www.w3.org/1999/02/22-rdf-syntax-ns#value"
+		"http://www.w3.org/2001/XMLSchema#normalizedString"
 		"http://protege.stanford.edu/plugins/owl/protege#FROM"
 		"http://www.w3.org/2001/XMLSchema#nonPositiveInteger"
 		"http://www.w3.org/2002/07/owl#someValuesFrom"
@@ -5739,15 +5981,15 @@
 		"http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
 		"http://www.w3.org/2003/11/swrl#Variable"
 		":DIRECT-INSTANCES"
-		"http://protege.stanford.edu/plugins/owl/protege#DIRECTED-BINARY-RELATION"
 		"http://www.w3.org/2002/07/owl#unionOf"
+		"http://protege.stanford.edu/plugins/owl/protege#DIRECTED-BINARY-RELATION"
 		":SLOT"
 		"http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
 		"http://www.w3.org/2002/07/owl#minCardinality"
 		"http://www.w3.org/2002/07/owl#allValuesFrom"
 		":INVERSE"
-		"http://www.w3.org/2003/11/swrl#DataRangeAtom"
 		"http://www.w3.org/2002/07/owl#priorVersion"
+		"http://www.w3.org/2003/11/swrl#DataRangeAtom"
 		"http://www.w3.org/2001/XMLSchema#token"
 		"http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"
 		":DIRECT-TEMPLATE-SLOTS"
