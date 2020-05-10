@@ -17,11 +17,6 @@
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
     <rdfs:comment xml:lang="fr">PAIR Summer 2020 Release - Work in Progress</rdfs:comment>
   </owl:Ontology>
-  <owl:Class rdf:ID="MethodType">
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="ResourceType"/>
-    </rdfs:subClassOf>
-  </owl:Class>
   <owl:Class rdf:ID="ObjectType">
     <rdfs:subClassOf>
       <owl:Class rdf:ID="Type"/>
@@ -30,115 +25,9 @@
     <rdfs:label xml:lang="fr">Type d'objet</rdfs:label>
     <rdfs:label xml:lang="en">Object type</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="BuildingItem">
-    <rdfs:label xml:lang="fr">Elément d'immeuble</rdfs:label>
-    <rdfs:label xml:lang="en">Building Item</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="PhysicalPlace"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="hosts"/>
-        </owl:onProperty>
-        <owl:allValuesFrom>
-          <owl:Class rdf:ID="Organization"/>
-        </owl:allValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
   <owl:Class rdf:ID="IdeaType">
     <rdfs:subClassOf>
       <owl:Class rdf:ID="SubjectType"/>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="SkillType">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#ResourceType"/>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="Agent">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:allValuesFrom>
-          <owl:Class rdf:ID="Project"/>
-        </owl:allValuesFrom>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="involvedIn"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="Subject"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Personnality</rdfs:label>
-    <rdfs:label xml:lang="fr">Personnalité</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="operates"/>
-        </owl:onProperty>
-        <owl:allValuesFrom>
-          <owl:Class rdf:about="#PhysicalPlace"/>
-        </owl:allValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:allValuesFrom>
-          <owl:Class rdf:ID="ActorInvolvement"/>
-        </owl:allValuesFrom>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="actor_involvement"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="fr">Agent</rdfs:label>
-    <rdfs:label xml:lang="en">Agent</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:allValuesFrom>
-          <owl:Class rdf:ID="Proposal"/>
-        </owl:allValuesFrom>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="brainstorms"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="offers"/>
-        </owl:onProperty>
-        <owl:allValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:ID="AtomBasedResource"/>
-              <owl:Class rdf:ID="Skill"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:allValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="needs"/>
-        </owl:onProperty>
-        <owl:allValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:about="#AtomBasedResource"/>
-              <owl:Class rdf:about="#Skill"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:allValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="Time">
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="PairEntity"/>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="GroupType">
@@ -146,25 +35,35 @@
       <owl:Class rdf:ID="AgentType"/>
     </rdfs:subClassOf>
   </owl:Class>
+  <owl:Class rdf:ID="Time">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="PairEntity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SkillType">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ResourceType"/>
+    </rdfs:subClassOf>
+  </owl:Class>
   <owl:Class rdf:ID="Software">
     <rdfs:subClassOf>
       <owl:Class rdf:ID="BitBasedResource"/>
     </rdfs:subClassOf>
   </owl:Class>
-  <owl:Class rdf:about="#Skill">
+  <owl:Class rdf:ID="Skill">
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="offeredBy"/>
-        </owl:onProperty>
         <owl:allValuesFrom>
           <owl:Class>
             <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:about="#Organization"/>
+              <owl:Class rdf:ID="Organization"/>
               <owl:Class rdf:ID="Person"/>
             </owl:unionOf>
           </owl:Class>
         </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="offeredBy"/>
+        </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
@@ -177,7 +76,7 @@
             <owl:unionOf rdf:parseType="Collection">
               <owl:Class rdf:about="#Organization"/>
               <owl:Class rdf:about="#Person"/>
-              <owl:Class rdf:about="#Project"/>
+              <owl:Class rdf:ID="Project"/>
             </owl:unionOf>
           </owl:Class>
         </owl:allValuesFrom>
@@ -195,69 +94,50 @@
       <owl:Class rdf:about="#SubjectType"/>
     </rdfs:subClassOf>
   </owl:Class>
-  <owl:Class rdf:ID="What">
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="Intention"/>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="Thema">
-    <rdfs:comment xml:lang="fr">Thème réfère à ce dont on parle, au sujet qui nous anime. Les thèmes rassemblent les notions, les concepts, les centres d'intérêts, les "tags".</rdfs:comment>
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="Concept"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Topic</rdfs:label>
-    <rdfs:label xml:lang="fr">Thème</rdfs:label>
-    <rdfs:label xml:lang="en">Thema</rdfs:label>
-  </owl:Class>
-  <owl:Class rdf:ID="Event">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:InverseFunctionalProperty rdf:ID="event_involvement"/>
-        </owl:onProperty>
-        <owl:allValuesFrom>
-          <owl:Class rdf:ID="EventInvolvement"/>
-        </owl:allValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Subject"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="localizedBy"/>
-        </owl:onProperty>
-        <owl:allValuesFrom>
-          <owl:Class rdf:ID="Address"/>
-        </owl:allValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="deliveredBy"/>
-        </owl:onProperty>
-        <owl:allValuesFrom>
-          <owl:Class rdf:about="#Project"/>
-        </owl:allValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="fr">Evèvement</rdfs:label>
-    <rdfs:comment xml:lang="fr">Un événement est ici une manifestation organisée par des personnes et / ou des organisations, qui se déroule à un certain endroit, à un certain moment.</rdfs:comment>
-  </owl:Class>
   <owl:Class rdf:ID="TaskType">
     <rdfs:subClassOf>
       <owl:Class rdf:about="#SubjectType"/>
     </rdfs:subClassOf>
   </owl:Class>
-  <owl:Class rdf:ID="Service">
+  <owl:Class rdf:ID="ActorInvolvement">
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="EnergyBasedResource"/>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:SymmetricProperty rdf:ID="involvement_agent"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="Agent"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:label xml:lang="fr">Service</rdfs:label>
-    <rdfs:label xml:lang="en">Service</rdfs:label>
-    <rdfs:comment xml:lang="fr">Un service est une prestation qui consiste en « la mise à disposition d'une capacité physique, technique ou intellectuelle</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:ID="ActorRole"/>
+              <owl:Class rdf:ID="Role"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="involvement_actorRole"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Association"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="involvement_actor"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Agent"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="#SubjectType">
     <rdfs:label xml:lang="en">Types applicable to subjects for "loose typing"</rdfs:label>
@@ -267,49 +147,794 @@
       <owl:Class rdf:about="#Type"/>
     </rdfs:subClassOf>
   </owl:Class>
-  <owl:Class rdf:about="#ActorInvolvement">
+  <owl:Class rdf:ID="TimeRole">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Role"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Association">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#PairEntity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Idea">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Subject"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Resource">
+    <rdfs:label xml:lang="en">What Subject</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Subject"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ConceptType">
+    <rdfs:label xml:lang="en">Types applicable to concepts for "loose typing"</rdfs:label>
+    <rdfs:label xml:lang="fr">Type de concept</rdfs:label>
+    <rdfs:label xml:lang="en">Concept type</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Type"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Group">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Agent"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Date">
+    <rdfs:subClassOf rdf:resource="#Time"/>
+  </owl:Class>
+  <owl:Class rdf:ID="DataBaseType">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ResourceType"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Floor">
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:allValuesFrom rdf:resource="#Agent"/>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
         <owl:onProperty>
-          <owl:SymmetricProperty rdf:ID="involvement_agent"/>
+          <owl:ObjectProperty rdf:ID="partOfSpace"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="Building"/>
+        </owl:allValuesFrom>
         <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="involvement_actorRole"/>
+          <owl:ObjectProperty rdf:about="#partOfSpace"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="Room"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasPartSpace"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="BuildingItem"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Floor</rdfs:label>
+    <rdfs:label xml:lang="fr">Etage</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#Type">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Concept"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="fr">Type</rdfs:label>
+    <rdfs:label xml:lang="en">Type</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="GoodType">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ResourceType"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="TaskRole">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Role"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="taskRole_involvement"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="TaskInvolvement"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Town">
+    <rdfs:label xml:lang="fr">Ville</rdfs:label>
+    <rdfs:label xml:lang="en">Town</rdfs:label>
+    <rdfs:label xml:lang="en">City</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="Address"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#partOfSpace"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="PhysicalPlace"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Project">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="involves"/>
         </owl:onProperty>
         <owl:allValuesFrom>
           <owl:Class>
             <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:ID="ActorRole"/>
-              <owl:Class rdf:ID="Role"/>
+              <owl:Class rdf:about="#Organization"/>
+              <owl:Class rdf:about="#Person"/>
             </owl:unionOf>
           </owl:Class>
         </owl:allValuesFrom>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="Association"/>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="basedOn"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="Proposal"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Project</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:allValuesFrom rdf:resource="#Agent"/>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:ID="AtomBasedResource"/>
+              <owl:Class rdf:about="#Skill"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
         <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="involvement_actor"/>
+          <owl:ObjectProperty rdf:ID="needs"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Subject"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:InverseFunctionalProperty rdf:ID="project_involvement"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="ProjectInvolvement"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="fr">Un projet est une action temporaire entreprise pour atteindre des objectifs définis.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="delivers"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#AtomBasedResource"/>
+              <owl:Class rdf:ID="Event"/>
+              <owl:Class rdf:about="#PhysicalPlace"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="fr">Projet</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Task">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Subject"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="task_involvement"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#TaskInvolvement"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Document">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="referencedBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Document"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="DocumentType"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasType"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Document"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="references"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Object"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="represents"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Subject"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="documents"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Subject"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasType"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Document</rdfs:label>
+    <rdfs:label xml:lang="fr">Document</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Good">
+    <rdfs:label xml:lang="en">Good</rdfs:label>
+    <rdfs:label xml:lang="fr">Bien</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#AtomBasedResource"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="How">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Intention"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="EventStatus">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Status"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Proposal">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="concretizedBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Project"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#Organization"/>
+              <owl:Class rdf:about="#Person"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="brainstormedBy"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Idea"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Proposition</rdfs:label>
+    <rdfs:label xml:lang="en">Proposal</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#PairEntity">
+    <rdfs:label xml:lang="en">Pair entity</rdfs:label>
+    <rdfs:label xml:lang="fr">Entité Pair</rdfs:label>
+    <rdfs:comment xml:lang="fr">Classe abstraite ayant pour unique rôle de définir des propriétes communes à l'ensemble des classes de l'ontologie PAIR</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="TutorialType">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ResourceType"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Place">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Subject"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="fr">Where Subject</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="SoftwareType">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ResourceType"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ProcessType">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ResourceType"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="PlaceType">
+    <rdfs:label xml:lang="fr">Type d'endroit</rdfs:label>
+    <rdfs:label xml:lang="en">Place Type</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#SubjectType"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="typeOf"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#PhysicalPlace"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Place"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Why">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Intention"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Room">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#partOfSpace"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Floor"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#partOfSpace"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#AtomBasedResource"/>
+              <owl:Class rdf:about="#Organization"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hosts"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#BuildingItem"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Room</rdfs:label>
+    <rdfs:label xml:lang="fr">Pièce</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="ServiceType">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ResourceType"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="EventInvolvement">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:ID="EventRole"/>
+              <owl:Class rdf:about="#Role"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:ID="involvement_eventRole"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Event"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:ID="involvement_event"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Agent"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:SymmetricProperty rdf:about="#involvement_agent"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Association"/>
+  </owl:Class>
+  <owl:Class rdf:about="#DocumentType">
+    <rdfs:subClassOf rdf:resource="#ObjectType"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Object"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#typeOf"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Document"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="fr">Type de document</rdfs:label>
+    <rdfs:label xml:lang="en">Document Type</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#Subject">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sujet</rdfs:label>
+    <rdfs:label xml:lang="en">Subject</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Classe abstraite permettant de regrouper les classes directement concernées par le domaine de connaissance de l'ontologie PAIR</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="representedBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Document"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Document"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="documentedBy"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#PairEntity"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Person">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >(...)</rdfs:comment>
+    <rdfs:label xml:lang="fr">Personne</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="localizedBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Address"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="fr">Individu</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="affiliatedBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Organization"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Agent"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Person</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasFollower"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Person"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Person"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="follows"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Method">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ConceptBasedResource"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="EventType">
+    <rdfs:subClassOf rdf:resource="#SubjectType"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Address">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#PhysicalPlace"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasPartSpace"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="localizes"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#Event"/>
+              <owl:Class rdf:about="#Person"/>
+              <owl:Class rdf:about="#PhysicalPlace"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Town"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasPartSpace"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="fr">Adresse</rdfs:label>
+    <rdfs:label xml:lang="en">Address</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#ConceptBasedResource">
+    <rdfs:comment xml:lang="fr">Biens ayant une réalité matérielle : Un vidéo-projecteur, un vélo par exemple</rdfs:comment>
+    <rdfs:label xml:lang="en">Intangible Good</rdfs:label>
+    <rdfs:label xml:lang="fr">Bien tangible</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Resource"/>
+  </owl:Class>
+  <owl:Class rdf:ID="DigitalPlace">
+    <rdfs:subClassOf rdf:resource="#Place"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Folder">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Object"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="IdeaStatus">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Status"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Tutorial">
+    <rdfs:subClassOf rdf:resource="#ConceptBasedResource"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Process">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="EnergyBasedResource"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Object">
+    <rdfs:label xml:lang="fr">Objet</rdfs:label>
+    <rdfs:label xml:lang="en">Object</rdfs:label>
+    <rdfs:comment xml:lang="fr">Classe abstraite permettant de regrouper les classes destinées à la gestion des documents relatifs aux sujets de l'ontologie PAIR</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#PairEntity"/>
+  </owl:Class>
+  <owl:Class rdf:about="#AgentType">
+    <rdfs:subClassOf rdf:resource="#SubjectType"/>
+  </owl:Class>
+  <owl:Class rdf:about="#BitBasedResource">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >&lt;p style="margin-top: 0"&gt;
+      Des biens n'yant pas vraiment de r&amp;#233;alit&amp;#233; mat&amp;#233;rielle. Logiciels, 
+      m&amp;#233;thodologies par exemple. 
+    &lt;/p&gt;</rdfs:comment>
+    <rdfs:label xml:lang="en">Intangible Good</rdfs:label>
+    <rdfs:label xml:lang="fr">Bien intangible</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Resource"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Concept">
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:subClassOf rdf:resource="#PairEntity"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MethodType">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ResourceType"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#BuildingItem">
+    <rdfs:label xml:lang="fr">Elément d'immeuble</rdfs:label>
+    <rdfs:label xml:lang="en">Building Item</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#PhysicalPlace"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hosts"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Organization"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Agent">
+    <rdfs:subClassOf rdf:resource="#Subject"/>
+    <rdfs:label xml:lang="en">Personnality</rdfs:label>
+    <rdfs:label xml:lang="fr">Personnalité</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Proposal"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="brainstorms"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="fr">Agent</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="operates"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#PhysicalPlace"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="offers"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#AtomBasedResource"/>
+              <owl:Class rdf:about="#Skill"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Agent</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#needs"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#AtomBasedResource"/>
+              <owl:Class rdf:about="#Skill"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Project"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="involvedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="actor_involvement"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#ActorInvolvement"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Thema">
+    <rdfs:comment xml:lang="fr">Thème réfère à ce dont on parle, au sujet qui nous anime. Les thèmes rassemblent les notions, les concepts, les centres d'intérêts, les "tags".</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Concept"/>
+    <rdfs:label xml:lang="en">Topic</rdfs:label>
+    <rdfs:label xml:lang="fr">Thème</rdfs:label>
+    <rdfs:label xml:lang="en">Thema</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="What">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Intention"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ProjectOrActivityStatus">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Status"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Event">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#EventInvolvement"/>
+        <owl:onProperty>
+          <owl:InverseFunctionalProperty rdf:ID="event_involvement"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Subject"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Address"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#localizedBy"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Project"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="deliveredBy"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="fr">Evèvement</rdfs:label>
+    <rdfs:comment xml:lang="fr">Un événement est ici une manifestation organisée par des personnes et / ou des organisations, qui se déroule à un certain endroit, à un certain moment.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Service">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#EnergyBasedResource"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="fr">Service</rdfs:label>
+    <rdfs:label xml:lang="en">Service</rdfs:label>
+    <rdfs:comment xml:lang="fr">Un service est une prestation qui consiste en « la mise à disposition d'une capacité physique, technique ou intellectuelle</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Status">
+    <rdfs:subClassOf rdf:resource="#PairEntity"/>
   </owl:Class>
   <owl:Class rdf:about="#AtomBasedResource">
     <rdfs:comment xml:lang="fr"></rdfs:comment>
     <rdfs:label xml:lang="en">Good or Service</rdfs:label>
     <rdfs:label xml:lang="fr">Bien ou Service</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Resource"/>
-    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Resource"/>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -343,33 +968,19 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Room"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:ID="hostedIn"/>
         </owl:onProperty>
-        <owl:allValuesFrom>
-          <owl:Class rdf:ID="Room"/>
-        </owl:allValuesFrom>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:allValuesFrom>
-          <owl:Class rdf:about="#Project"/>
-        </owl:allValuesFrom>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#deliveredBy"/>
         </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Project"/>
       </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="TimeRole">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Role"/>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="#Association">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#PairEntity"/>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="TheoryType">
@@ -377,91 +988,17 @@
       <owl:Class rdf:about="#ResourceType"/>
     </rdfs:subClassOf>
   </owl:Class>
-  <owl:Class rdf:ID="Idea">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Subject"/>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="#Resource">
-    <rdfs:label xml:lang="en">What Subject</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Subject"/>
-    </rdfs:subClassOf>
-  </owl:Class>
   <owl:Class rdf:ID="Theory">
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="ConceptBasedResource"/>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="ConceptType">
-    <rdfs:label xml:lang="en">Types applicable to concepts for "loose typing"</rdfs:label>
-    <rdfs:label xml:lang="fr">Type de concept</rdfs:label>
-    <rdfs:label xml:lang="en">Concept type</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Type"/>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="Date">
-    <rdfs:subClassOf rdf:resource="#Time"/>
+    <rdfs:subClassOf rdf:resource="#ConceptBasedResource"/>
   </owl:Class>
   <owl:Class rdf:ID="Dataset">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#BitBasedResource"/>
-    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#BitBasedResource"/>
   </owl:Class>
-  <owl:Class rdf:ID="Group">
-    <rdfs:subClassOf rdf:resource="#Agent"/>
-  </owl:Class>
-  <owl:Class rdf:ID="DataBaseType">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#ResourceType"/>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="Floor">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="partOfSpace"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:allValuesFrom>
-          <owl:Class rdf:ID="Building"/>
-        </owl:allValuesFrom>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#partOfSpace"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:allValuesFrom>
-          <owl:Class rdf:about="#Room"/>
-        </owl:allValuesFrom>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="hasPartSpace"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="#BuildingItem"/>
-    <rdfs:label xml:lang="en">Floor</rdfs:label>
-    <rdfs:label xml:lang="fr">Etage</rdfs:label>
+  <owl:Class rdf:ID="AgentStatus">
+    <rdfs:subClassOf rdf:resource="#Status"/>
   </owl:Class>
   <owl:Class rdf:ID="Branch">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Concept"/>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="#Type">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Concept"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="fr">Type</rdfs:label>
-    <rdfs:label xml:lang="en">Type</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Concept"/>
   </owl:Class>
   <owl:Class rdf:ID="OrganizationType">
     <rdfs:label xml:lang="fr">Type d'organisation</rdfs:label>
@@ -469,7 +1006,7 @@
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="typeOf"/>
+          <owl:ObjectProperty rdf:about="#typeOf"/>
         </owl:onProperty>
         <owl:allValuesFrom>
           <owl:Class rdf:about="#Organization"/>
@@ -477,30 +1014,8 @@
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="#Agent"/>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#AgentType"/>
-    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#AgentType"/>
     <rdfs:comment xml:lang="fr">Type d'organisation permet de caractériser les organisations : Par exemple, Entreprise / SARL ou Association ...</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:ID="GoodType">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#ResourceType"/>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="TaskRole">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Role"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="taskRole_involvement"/>
-        </owl:onProperty>
-        <owl:allValuesFrom>
-          <owl:Class rdf:ID="TaskInvolvement"/>
-        </owl:allValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="Activity">
     <rdfs:subClassOf>
@@ -513,38 +1028,19 @@
         </owl:allValuesFrom>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Subject"/>
-    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Subject"/>
   </owl:Class>
   <owl:Class rdf:about="#Intention">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#PairEntity"/>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="Town">
-    <rdfs:label xml:lang="fr">Ville</rdfs:label>
-    <rdfs:label xml:lang="en">Town</rdfs:label>
-    <rdfs:label xml:lang="en">City</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:allValuesFrom>
-          <owl:Class rdf:about="#Address"/>
-        </owl:allValuesFrom>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#partOfSpace"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#PhysicalPlace"/>
-    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#PairEntity"/>
   </owl:Class>
   <owl:Class rdf:ID="Currency">
     <rdfs:subClassOf rdf:resource="#Resource"/>
   </owl:Class>
   <owl:Class rdf:about="#EnergyBasedResource">
     <rdfs:subClassOf rdf:resource="#Resource"/>
+  </owl:Class>
+  <owl:Class rdf:ID="TaskStatus">
+    <rdfs:subClassOf rdf:resource="#Status"/>
   </owl:Class>
   <owl:Class rdf:about="#Building">
     <rdfs:subClassOf rdf:resource="#BuildingItem"/>
@@ -559,223 +1055,22 @@
     <rdfs:label xml:lang="fr">Immeuble</rdfs:label>
     <rdfs:label xml:lang="en">Building</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:about="#Project">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="involves"/>
-        </owl:onProperty>
-        <owl:allValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:about="#Organization"/>
-              <owl:Class rdf:about="#Person"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:allValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Project</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Subject"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="basedOn"/>
-        </owl:onProperty>
-        <owl:allValuesFrom>
-          <owl:Class rdf:about="#Proposal"/>
-        </owl:allValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:comment xml:lang="fr">Un projet est une action temporaire entreprise pour atteindre des objectifs définis.</rdfs:comment>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#needs"/>
-        </owl:onProperty>
-        <owl:allValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:about="#AtomBasedResource"/>
-              <owl:Class rdf:about="#Skill"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:allValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="delivers"/>
-        </owl:onProperty>
-        <owl:allValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:about="#AtomBasedResource"/>
-              <owl:Class rdf:about="#Event"/>
-              <owl:Class rdf:about="#PhysicalPlace"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:allValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:InverseFunctionalProperty rdf:ID="project_involvement"/>
-        </owl:onProperty>
-        <owl:allValuesFrom>
-          <owl:Class rdf:ID="ProjectInvolvement"/>
-        </owl:allValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="fr">Projet</rdfs:label>
-  </owl:Class>
   <owl:Class rdf:about="#Role">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#PairEntity"/>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="Task">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Subject"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="task_involvement"/>
-        </owl:onProperty>
-        <owl:allValuesFrom>
-          <owl:Class rdf:about="#TaskInvolvement"/>
-        </owl:allValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#PairEntity"/>
   </owl:Class>
   <owl:Class rdf:ID="Ecosystem">
     <rdfs:subClassOf rdf:resource="#Agent"/>
   </owl:Class>
   <owl:Class rdf:ID="DataModel">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#BitBasedResource"/>
-    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#BitBasedResource"/>
   </owl:Class>
   <owl:Class rdf:ID="Domain">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Concept"/>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="Document">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:allValuesFrom>
-          <owl:Class rdf:about="#Subject"/>
-        </owl:allValuesFrom>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="documents"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:allValuesFrom>
-          <owl:Class rdf:about="#Subject"/>
-        </owl:allValuesFrom>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="represents"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="Object"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="hasType"/>
-        </owl:onProperty>
-        <owl:allValuesFrom>
-          <owl:Class rdf:ID="DocumentType"/>
-        </owl:allValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="references"/>
-        </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="#Document"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:allValuesFrom rdf:resource="#Document"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="referencedBy"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Document</rdfs:label>
-    <rdfs:label xml:lang="fr">Document</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasType"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Concept"/>
   </owl:Class>
   <owl:Class rdf:about="#Organization">
     <rdfs:subClassOf rdf:resource="#Agent"/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:allValuesFrom rdf:resource="#BuildingItem"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hostedIn"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:allValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:about="#AtomBasedResource"/>
-              <owl:Class rdf:about="#PhysicalPlace"/>
-              <owl:Class rdf:about="#Skill"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:allValuesFrom>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#needs"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
     <rdfs:label xml:lang="fr">Organisation</rdfs:label>
     <rdfs:comment xml:lang="fr">Organisation désigne un groupe d'individus s'étant rassemblés autour d'un objectif commun. Une organisation peut être formelle (structure juridique) ou informelle (groupe).</rdfs:comment>
-    <rdfs:label xml:lang="en">Organization</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:allValuesFrom>
-          <owl:Class rdf:about="#Person"/>
-        </owl:allValuesFrom>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="affiliates"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasType"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -795,17 +1090,59 @@
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasType"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#OrganizationType"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Organization</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#AtomBasedResource"/>
+              <owl:Class rdf:about="#PhysicalPlace"/>
+              <owl:Class rdf:about="#Skill"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#needs"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Organization"/>
+        <owl:onProperty>
           <owl:SymmetricProperty rdf:ID="partnerOf"/>
         </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="#Organization"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="affiliates"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Person"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
           <owl:ObjectProperty rdf:about="#hasType"/>
         </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="#OrganizationType"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hostedIn"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#BuildingItem"/>
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
@@ -820,55 +1157,8 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="#Role"/>
   </owl:Class>
-  <owl:Class rdf:ID="How">
-    <rdfs:subClassOf rdf:resource="#Intention"/>
-  </owl:Class>
-  <owl:Class rdf:ID="Good">
-    <rdfs:label xml:lang="en">Good</rdfs:label>
-    <rdfs:label xml:lang="fr">Bien</rdfs:label>
-    <rdfs:subClassOf rdf:resource="#AtomBasedResource"/>
-  </owl:Class>
   <owl:Class rdf:ID="ProjectType">
     <rdfs:subClassOf rdf:resource="#SubjectType"/>
-  </owl:Class>
-  <owl:Class rdf:about="#Proposal">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="concretizedBy"/>
-        </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="#Project"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:allValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:about="#Organization"/>
-              <owl:Class rdf:about="#Person"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:allValuesFrom>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="brainstormedBy"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="#Idea"/>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Proposition</rdfs:label>
-    <rdfs:label xml:lang="en">Proposal</rdfs:label>
-  </owl:Class>
-  <owl:Class rdf:ID="TutorialType">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#ResourceType"/>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="#PairEntity">
-    <rdfs:label xml:lang="en">Pair entity</rdfs:label>
-    <rdfs:label xml:lang="fr">Entité Pair</rdfs:label>
-    <rdfs:comment xml:lang="fr">Classe abstraite ayant pour unique rôle de définir des propriétes communes à l'ensemble des classes de l'ontologie PAIR</rdfs:comment>
   </owl:Class>
   <owl:Class rdf:about="#TaskInvolvement">
     <rdfs:subClassOf rdf:resource="#Association"/>
@@ -904,29 +1194,12 @@
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
-  <owl:Class rdf:ID="Place">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Subject"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="fr">Where Subject</rdfs:label>
-  </owl:Class>
-  <owl:Class rdf:ID="SoftwareType">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#ResourceType"/>
-    </rdfs:subClassOf>
-  </owl:Class>
   <owl:Class rdf:about="#ResourceType">
     <rdfs:subClassOf rdf:resource="#SubjectType"/>
-  </owl:Class>
-  <owl:Class rdf:ID="ProcessType">
-    <rdfs:subClassOf rdf:resource="#ResourceType"/>
   </owl:Class>
   <owl:Class rdf:about="#ProjectInvolvement">
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty>
-          <owl:FunctionalProperty rdf:ID="involvement_projectRole"/>
-        </owl:onProperty>
         <owl:allValuesFrom>
           <owl:Class>
             <owl:unionOf rdf:parseType="Collection">
@@ -935,6 +1208,9 @@
             </owl:unionOf>
           </owl:Class>
         </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:ID="involvement_projectRole"/>
+        </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
@@ -947,10 +1223,10 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Agent"/>
         <owl:onProperty>
           <owl:SymmetricProperty rdf:about="#involvement_agent"/>
         </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="#Agent"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="#Association"/>
@@ -971,239 +1247,13 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:allValuesFrom rdf:resource="#ProjectInvolvement"/>
         <owl:onProperty>
           <owl:InverseFunctionalProperty rdf:ID="projectRole_involvement"/>
         </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#ProjectInvolvement"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="#Role"/>
-  </owl:Class>
-  <owl:Class rdf:ID="PlaceType">
-    <rdfs:label xml:lang="fr">Type d'endroit</rdfs:label>
-    <rdfs:label xml:lang="en">Place Type</rdfs:label>
-    <rdfs:subClassOf rdf:resource="#SubjectType"/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#typeOf"/>
-        </owl:onProperty>
-        <owl:allValuesFrom>
-          <owl:Class rdf:about="#PhysicalPlace"/>
-        </owl:allValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="#Place"/>
-  </owl:Class>
-  <owl:Class rdf:about="#Room">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#partOfSpace"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#partOfSpace"/>
-        </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="#Floor"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hosts"/>
-        </owl:onProperty>
-        <owl:allValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:about="#AtomBasedResource"/>
-              <owl:Class rdf:about="#Organization"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:allValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="#BuildingItem"/>
-    <rdfs:label xml:lang="en">Room</rdfs:label>
-    <rdfs:label xml:lang="fr">Pièce</rdfs:label>
-  </owl:Class>
-  <owl:Class rdf:ID="Why">
-    <rdfs:subClassOf rdf:resource="#Intention"/>
-  </owl:Class>
-  <owl:Class rdf:ID="ServiceType">
-    <rdfs:subClassOf rdf:resource="#ResourceType"/>
-  </owl:Class>
-  <owl:Class rdf:about="#EventInvolvement">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:allValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:ID="EventRole"/>
-              <owl:Class rdf:about="#Role"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:allValuesFrom>
-        <owl:onProperty>
-          <owl:FunctionalProperty rdf:ID="involvement_eventRole"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:allValuesFrom rdf:resource="#Event"/>
-        <owl:onProperty>
-          <owl:FunctionalProperty rdf:ID="involvement_event"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:allValuesFrom rdf:resource="#Agent"/>
-        <owl:onProperty>
-          <owl:SymmetricProperty rdf:about="#involvement_agent"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="#Association"/>
-  </owl:Class>
-  <owl:Class rdf:about="#Subject">
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Sujet</rdfs:label>
-    <rdfs:label xml:lang="en">Subject</rdfs:label>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Classe abstraite permettant de regrouper les classes directement concernées par le domaine de connaissance de l'ontologie PAIR</rdfs:comment>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:allValuesFrom rdf:resource="#Document"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="representedBy"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:allValuesFrom rdf:resource="#Document"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="documentedBy"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="#PairEntity"/>
-  </owl:Class>
-  <owl:Class rdf:about="#DocumentType">
-    <rdfs:subClassOf rdf:resource="#ObjectType"/>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Object"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#typeOf"/>
-        </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="#Document"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="fr">Type de document</rdfs:label>
-    <rdfs:label xml:lang="en">Document Type</rdfs:label>
-  </owl:Class>
-  <owl:Class rdf:about="#Person">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >(...)</rdfs:comment>
-    <rdfs:label xml:lang="fr">Personne</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="affiliatedBy"/>
-        </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="#Organization"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="hasFollower"/>
-        </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="#Person"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="fr">Individu</rdfs:label>
-    <rdfs:subClassOf rdf:resource="#Agent"/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:allValuesFrom rdf:resource="#Person"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="follows"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Person</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:allValuesFrom>
-          <owl:Class rdf:about="#Address"/>
-        </owl:allValuesFrom>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#localizedBy"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="Method">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#ConceptBasedResource"/>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="EventType">
-    <rdfs:subClassOf rdf:resource="#SubjectType"/>
-  </owl:Class>
-  <owl:Class rdf:about="#Address">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#PhysicalPlace"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasPartSpace"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:allValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:about="#Event"/>
-              <owl:Class rdf:about="#Person"/>
-              <owl:Class rdf:about="#PhysicalPlace"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:allValuesFrom>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="localizes"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasPartSpace"/>
-        </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="#Town"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="fr">Adresse</rdfs:label>
-    <rdfs:label xml:lang="en">Address</rdfs:label>
-  </owl:Class>
-  <owl:Class rdf:ID="CurrencyType">
-    <rdfs:subClassOf rdf:resource="#ResourceType"/>
   </owl:Class>
   <owl:Class rdf:about="#ActivityInvolvement">
     <rdfs:subClassOf>
@@ -1231,49 +1281,38 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Activity"/>
         <owl:onProperty>
           <owl:FunctionalProperty rdf:ID="involvement_activity"/>
         </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="#Activity"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="#Association"/>
   </owl:Class>
-  <owl:Class rdf:about="#ConceptBasedResource">
-    <rdfs:comment xml:lang="fr">Biens ayant une réalité matérielle : Un vidéo-projecteur, un vélo par exemple</rdfs:comment>
-    <rdfs:label xml:lang="en">Intangible Good</rdfs:label>
-    <rdfs:label xml:lang="fr">Bien tangible</rdfs:label>
-    <rdfs:subClassOf rdf:resource="#Resource"/>
+  <owl:Class rdf:ID="CurrencyType">
+    <rdfs:subClassOf rdf:resource="#ResourceType"/>
   </owl:Class>
   <owl:Class rdf:ID="Material">
     <rdfs:subClassOf rdf:resource="#AtomBasedResource"/>
   </owl:Class>
-  <owl:Class rdf:ID="DigitalPlace">
-    <rdfs:subClassOf rdf:resource="#Place"/>
-  </owl:Class>
   <owl:Class rdf:about="#PhysicalPlace">
     <rdfs:label xml:lang="fr">Endroit</rdfs:label>
+    <rdfs:label xml:lang="en">Place</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Place"/>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:allValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:about="#Organization"/>
-              <owl:Class rdf:about="#Person"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:allValuesFrom>
         <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="operatedBy"/>
+          <owl:ObjectProperty rdf:about="#neededBy"/>
         </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Organization"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:allValuesFrom rdf:resource="#Organization"/>
         <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#neededBy"/>
+          <owl:ObjectProperty rdf:about="#offeredBy"/>
         </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Organization"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
@@ -1286,43 +1325,41 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#offeredBy"/>
-        </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="#Organization"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Place</rdfs:label>
-    <rdfs:subClassOf rdf:resource="#Place"/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:allValuesFrom rdf:resource="#Project"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#deliveredBy"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Address"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#localizedBy"/>
         </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="#Address"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#deliveredBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Project"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="operatedBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#Organization"/>
+              <owl:Class rdf:about="#Person"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="Sector">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Concept"/>
-    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Concept"/>
   </owl:Class>
   <owl:Class rdf:ID="DataModelType">
     <rdfs:subClassOf rdf:resource="#ResourceType"/>
-  </owl:Class>
-  <owl:Class rdf:ID="Folder">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Object"/>
-    </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="TImeRelation">
     <rdfs:subClassOf rdf:resource="#Association"/>
@@ -1336,10 +1373,10 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:allValuesFrom rdf:resource="#Time"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:ID="relation_time"/>
         </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Time"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
@@ -1354,30 +1391,11 @@
   <owl:Class rdf:ID="ForWhat">
     <rdfs:subClassOf rdf:resource="#Intention"/>
   </owl:Class>
-  <owl:Class rdf:ID="Tutorial">
-    <rdfs:subClassOf rdf:resource="#ConceptBasedResource"/>
-  </owl:Class>
-  <owl:Class rdf:ID="Process">
-    <rdfs:subClassOf rdf:resource="#EnergyBasedResource"/>
+  <owl:Class rdf:ID="DocumentStatus">
+    <rdfs:subClassOf rdf:resource="#Status"/>
   </owl:Class>
   <owl:Class rdf:ID="ForWhom">
     <rdfs:subClassOf rdf:resource="#Intention"/>
-  </owl:Class>
-  <owl:Class rdf:about="#Object">
-    <rdfs:label xml:lang="fr">Objet</rdfs:label>
-    <rdfs:label xml:lang="en">Object</rdfs:label>
-    <rdfs:comment xml:lang="fr">Classe abstraite permettant de regrouper les classes destinées à la gestion des documents relatifs aux sujets de l'ontologie PAIR</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="#PairEntity"/>
-  </owl:Class>
-  <owl:Class rdf:about="#BitBasedResource">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >&lt;p style="margin-top: 0"&gt;
-      Des biens n'yant pas vraiment de r&amp;#233;alit&amp;#233; mat&amp;#233;rielle. Logiciels, 
-      m&amp;#233;thodologies par exemple. 
-    &lt;/p&gt;</rdfs:comment>
-    <rdfs:label xml:lang="en">Intangible Good</rdfs:label>
-    <rdfs:label xml:lang="fr">Bien intangible</rdfs:label>
-    <rdfs:subClassOf rdf:resource="#Resource"/>
   </owl:Class>
   <owl:Class rdf:about="#EventRole">
     <rdfs:subClassOf>
@@ -1389,13 +1407,6 @@
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="#Role"/>
-  </owl:Class>
-  <owl:Class rdf:about="#AgentType">
-    <rdfs:subClassOf rdf:resource="#SubjectType"/>
-  </owl:Class>
-  <owl:Class rdf:about="#Concept">
-    <owl:equivalentClass rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:subClassOf rdf:resource="#PairEntity"/>
   </owl:Class>
   <owl:ObjectProperty rdf:ID="partOfGroup">
     <rdfs:range rdf:resource="#Group"/>
@@ -1453,6 +1464,13 @@
     <rdfs:label xml:lang="en">interest of</rdfs:label>
     <rdfs:label xml:lang="fr">centre d'intérêt de</rdfs:label>
   </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="typeOfObject">
+    <rdfs:domain rdf:resource="#ObjectType"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#typeOf"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="#Object"/>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#activity_involvement">
     <rdfs:domain rdf:resource="#Activity"/>
     <rdfs:subPropertyOf>
@@ -1464,13 +1482,24 @@
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#subjectConceptProperties">
     <rdfs:comment xml:lang="fr">Relie les PairEntity aux Concepts</rdfs:comment>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:ID="typeOfObject">
-    <rdfs:domain rdf:resource="#ObjectType"/>
     <rdfs:subPropertyOf>
-      <owl:ObjectProperty rdf:about="#typeOf"/>
+      <owl:ObjectProperty rdf:ID="interPairEntityProperty"/>
     </rdfs:subPropertyOf>
-    <rdfs:range rdf:resource="#Object"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasProjectOrActivityStatus">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Activity"/>
+          <owl:Class rdf:about="#Project"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:subPropertyOf rdf:resource="#interPairEntityProperty"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="ProjectOrActivvityStatusOf"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#ProjectOrActivityStatus"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#actor_involvement">
     <rdfs:domain rdf:resource="#Agent"/>
@@ -1664,7 +1693,9 @@
     <owl:inverseOf>
       <owl:ObjectProperty rdf:ID="hasSolution"/>
     </owl:inverseOf>
-    <rdfs:subPropertyOf rdf:resource="#interIntentions_Property"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#interIntentions_Property"/>
+    </rdfs:subPropertyOf>
     <rdfs:domain rdf:resource="#How"/>
     <rdfs:range rdf:resource="#What"/>
   </owl:ObjectProperty>
@@ -1680,7 +1711,9 @@
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#extendedBy">
     <rdfs:domain rdf:resource="#Sector"/>
-    <rdfs:subPropertyOf rdf:resource="#interConceptProperty"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#interConceptProperty"/>
+    </rdfs:subPropertyOf>
     <rdfs:range rdf:resource="#Branch"/>
     <owl:inverseOf rdf:resource="#extends"/>
   </owl:ObjectProperty>
@@ -1721,7 +1754,9 @@
       <owl:ObjectProperty rdf:ID="intendedBy"/>
     </owl:inverseOf>
     <rdfs:range rdf:resource="#Sector"/>
-    <rdfs:subPropertyOf rdf:resource="#interConceptProperty"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#interConceptProperty"/>
+    </rdfs:subPropertyOf>
     <rdfs:domain rdf:resource="#Domain"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="about">
@@ -1874,6 +1909,10 @@
       <owl:ObjectProperty rdf:about="#interSubjectProperty"/>
     </rdfs:subPropertyOf>
   </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#interIntentions_Property">
+    <rdfs:range rdf:resource="#Intention"/>
+    <rdfs:domain rdf:resource="#Intention"/>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#offeredBy">
     <rdfs:subPropertyOf>
       <owl:ObjectProperty rdf:about="#interSubjectProperty"/>
@@ -1980,6 +2019,19 @@
     <rdfs:domain rdf:resource="#Activity"/>
     <rdfs:range rdf:resource="#Activity"/>
   </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#ProjectOrActivvityStatusOf">
+    <rdfs:subPropertyOf rdf:resource="#interPairEntityProperty"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Activity"/>
+          <owl:Class rdf:about="#Project"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <owl:inverseOf rdf:resource="#hasProjectOrActivityStatus"/>
+    <rdfs:domain rdf:resource="#ProjectOrActivityStatus"/>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="subject_relation">
     <rdfs:subPropertyOf>
       <owl:ObjectProperty rdf:about="#timeRoleProperty"/>
@@ -1999,7 +2051,13 @@
     <rdfs:domain rdf:resource="#DigitalPlace"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#actorRoleProperty">
-    <rdfs:subPropertyOf rdf:resource="#roleProperty"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#roleProperty"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#interConceptProperty">
+    <rdfs:range rdf:resource="#Concept"/>
+    <rdfs:domain rdf:resource="#Concept"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="partOfService">
     <rdfs:subPropertyOf rdf:resource="#partOf"/>
@@ -2015,11 +2073,6 @@
     <rdfs:subPropertyOf rdf:resource="#hasPart"/>
     <rdfs:domain rdf:resource="#Task"/>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:ID="typeOfSubject">
-    <rdfs:domain rdf:resource="#SubjectType"/>
-    <rdfs:subPropertyOf rdf:resource="#typeOf"/>
-    <rdfs:range rdf:resource="#Subject"/>
-  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="partOfSoftware">
     <rdfs:domain rdf:resource="#Software"/>
     <owl:inverseOf>
@@ -2027,6 +2080,11 @@
     </owl:inverseOf>
     <rdfs:subPropertyOf rdf:resource="#partOf"/>
     <rdfs:range rdf:resource="#Software"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="typeOfSubject">
+    <rdfs:domain rdf:resource="#SubjectType"/>
+    <rdfs:subPropertyOf rdf:resource="#typeOf"/>
+    <rdfs:range rdf:resource="#Subject"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#roleOf">
     <rdfs:domain rdf:resource="#Role"/>
@@ -2175,6 +2233,9 @@
     <rdfs:domain rdf:resource="#ProjectOrActivityRole"/>
     <rdfs:subPropertyOf rdf:resource="#activityRoleProperty"/>
   </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#subjectIntentionsProperty">
+    <rdfs:subPropertyOf rdf:resource="#interPairEntityProperty"/>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#hostedIn">
     <rdfs:domain>
       <owl:Class>
@@ -2227,6 +2288,9 @@
     <owl:inverseOf rdf:resource="#ObjectiveOf"/>
     <rdfs:range rdf:resource="#ForWhat"/>
     <rdfs:subPropertyOf rdf:resource="#interIntentions_Property"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#roleProperty">
+    <rdfs:subPropertyOf rdf:resource="#interPairEntityProperty"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#branchOf">
     <rdfs:subPropertyOf rdf:resource="#subjectConceptProperties"/>
@@ -2283,6 +2347,7 @@
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="objectSubjectProperty">
     <rdfs:comment xml:lang="fr">Relie les Subjects et les Objects</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#interPairEntityProperty"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#brainstormedBy">
     <rdfs:subPropertyOf>
@@ -2956,6 +3021,13 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </owl:SymmetricProperty>
+  <owl:SymmetricProperty rdf:ID="cooperateWith">
+    <owl:inverseOf rdf:resource="#cooperateWith"/>
+    <rdfs:domain rdf:resource="#Project"/>
+    <rdfs:range rdf:resource="#Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="#interSubjectProperty"/>
+  </owl:SymmetricProperty>
   <owl:SymmetricProperty rdf:about="#partnerOf">
     <owl:inverseOf rdf:resource="#partnerOf"/>
     <rdfs:subPropertyOf rdf:resource="#interSubjectProperty"/>
@@ -3494,6 +3566,13 @@
                                     </involvement_projectRole>
                                   </ProjectInvolvement>
                                 </project_involvement>
+                                <hasProjectOrActivityStatus>
+                                  <ProjectOrActivityStatus rdf:ID="Ongoing">
+                                    <rdfs:label xml:lang="fr"
+                                    >En cours</rdfs:label>
+                                    <ProjectOrActivvityStatusOf rdf:resource="#Pair_Ontology"/>
+                                  </ProjectOrActivityStatus>
+                                </hasProjectOrActivityStatus>
                               </Project>
                             </involvement_project>
                             <involvement_agent rdf:resource="#Virtual_Assembly"/>
@@ -3838,8 +3917,24 @@
   <Why rdf:ID="Too_much_centralisation_in_this_world"/>
   <PlaceType rdf:ID="Office"/>
   <Software rdf:ID="SemApps_v1"/>
+  <ProjectOrActivityStatus rdf:ID="Processing">
+    <rdfs:label xml:lang="fr">En réflexion</rdfs:label>
+  </ProjectOrActivityStatus>
   <ForWhom rdf:ID="Ecologists"/>
   <ProjectType rdf:ID="BitBased"/>
+  <ProjectOrActivityStatus rdf:ID="Abandoned">
+    <rdfs:label xml:lang="fr">Abandonné</rdfs:label>
+  </ProjectOrActivityStatus>
+  <ProjectOrActivityStatus rdf:ID="Sleeping">
+    <preferedLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >En sommeil</preferedLabel>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >En sommeil</rdfs:label>
+    <label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >En sommeil</label>
+    <label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></label>
+  </ProjectOrActivityStatus>
   <Sector rdf:ID="Agricuture_Alimentation"/>
   <Organization rdf:ID="Mnemotix"/>
   <Branch rdf:ID="Oasis_communes_imaginées"/>
