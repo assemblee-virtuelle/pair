@@ -99,6 +99,14 @@
       <owl:Class rdf:about="#SubjectType"/>
     </rdfs:subClassOf>
   </owl:Class>
+  <owl:Class rdf:about="#SubjectType">
+    <rdfs:label xml:lang="en">Types applicable to subjects for "loose typing"</rdfs:label>
+    <rdfs:label xml:lang="fr">Type de sujet</rdfs:label>
+    <rdfs:label xml:lang="en">Subject type</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Type"/>
+    </rdfs:subClassOf>
+  </owl:Class>
   <owl:Class rdf:ID="ActorInvolvement">
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -137,14 +145,6 @@
           <owl:Class rdf:about="#Agent"/>
         </owl:allValuesFrom>
       </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="#SubjectType">
-    <rdfs:label xml:lang="en">Types applicable to subjects for "loose typing"</rdfs:label>
-    <rdfs:label xml:lang="fr">Type de sujet</rdfs:label>
-    <rdfs:label xml:lang="en">Subject type</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Type"/>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="#Association">
@@ -206,12 +206,12 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:allValuesFrom>
-          <owl:Class rdf:ID="Room"/>
-        </owl:allValuesFrom>
         <owl:onProperty>
           <owl:ObjectProperty rdf:ID="hasPartSpace"/>
         </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="Room"/>
+        </owl:allValuesFrom>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
@@ -238,12 +238,12 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="taskRole_involvement"/>
-        </owl:onProperty>
         <owl:allValuesFrom>
           <owl:Class rdf:ID="TaskInvolvement"/>
         </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="taskRole_involvement"/>
+        </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
@@ -253,12 +253,12 @@
     <rdfs:label xml:lang="en">City</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:allValuesFrom>
-          <owl:Class rdf:ID="Address"/>
-        </owl:allValuesFrom>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#partOfSpace"/>
         </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="Address"/>
+        </owl:allValuesFrom>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
@@ -266,31 +266,6 @@
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="#Project">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="involves"/>
-        </owl:onProperty>
-        <owl:allValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:about="#Organization"/>
-              <owl:Class rdf:about="#Person"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:allValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="basedOn"/>
-        </owl:onProperty>
-        <owl:allValuesFrom>
-          <owl:Class rdf:ID="Proposal"/>
-        </owl:allValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
     <rdfs:label xml:lang="en">Project</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -298,12 +273,13 @@
           <owl:Class>
             <owl:unionOf rdf:parseType="Collection">
               <owl:Class rdf:ID="AtomBasedResource"/>
-              <owl:Class rdf:about="#Skill"/>
+              <owl:Class rdf:ID="Event"/>
+              <owl:Class rdf:about="#PhysicalPlace"/>
             </owl:unionOf>
           </owl:Class>
         </owl:allValuesFrom>
         <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="needs"/>
+          <owl:ObjectProperty rdf:ID="delivers"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -323,18 +299,42 @@
     <rdfs:comment xml:lang="fr">Un projet est une action temporaire entreprise pour atteindre des objectifs définis.</rdfs:comment>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="delivers"/>
-        </owl:onProperty>
         <owl:allValuesFrom>
           <owl:Class>
             <owl:unionOf rdf:parseType="Collection">
               <owl:Class rdf:about="#AtomBasedResource"/>
-              <owl:Class rdf:ID="Event"/>
-              <owl:Class rdf:about="#PhysicalPlace"/>
+              <owl:Class rdf:about="#Skill"/>
             </owl:unionOf>
           </owl:Class>
         </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="needs"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="basedOn"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="Proposal"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#Organization"/>
+              <owl:Class rdf:about="#Person"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="involves"/>
+        </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="fr">Projet</rdfs:label>
@@ -345,23 +345,26 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="task_involvement"/>
-        </owl:onProperty>
         <owl:allValuesFrom>
           <owl:Class rdf:about="#TaskInvolvement"/>
         </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="task_involvement"/>
+        </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="Document">
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Document"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:ID="referencedBy"/>
         </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="#Document"/>
       </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Object"/>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -375,23 +378,29 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:allValuesFrom rdf:resource="#Document"/>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Subject"/>
+        </owl:allValuesFrom>
         <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="references"/>
+          <owl:ObjectProperty rdf:ID="represents"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="Object"/>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasType"/>
+        </owl:onProperty>
+      </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Document"/>
         <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="represents"/>
+          <owl:ObjectProperty rdf:ID="references"/>
         </owl:onProperty>
-        <owl:allValuesFrom>
-          <owl:Class rdf:about="#Subject"/>
-        </owl:allValuesFrom>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
@@ -402,15 +411,6 @@
         <owl:allValuesFrom>
           <owl:Class rdf:about="#Subject"/>
         </owl:allValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasType"/>
-        </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="en">Document</rdfs:label>
@@ -444,6 +444,9 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="brainstormedBy"/>
+        </owl:onProperty>
         <owl:allValuesFrom>
           <owl:Class>
             <owl:unionOf rdf:parseType="Collection">
@@ -452,9 +455,6 @@
             </owl:unionOf>
           </owl:Class>
         </owl:allValuesFrom>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="brainstormedBy"/>
-        </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="#Idea"/>
@@ -512,19 +512,19 @@
   <owl:Class rdf:about="#Room">
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#partOfSpace"/>
         </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:allValuesFrom rdf:resource="#Floor"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#partOfSpace"/>
         </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Floor"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
@@ -581,12 +581,12 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:allValuesFrom>
-          <owl:Class rdf:about="#Agent"/>
-        </owl:allValuesFrom>
         <owl:onProperty>
           <owl:SymmetricProperty rdf:about="#involvement_agent"/>
         </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Agent"/>
+        </owl:allValuesFrom>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="#Association"/>
@@ -598,10 +598,10 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Document"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#typeOf"/>
         </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="#Document"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="fr">Type de document</rdfs:label>
@@ -623,10 +623,10 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:allValuesFrom rdf:resource="#Document"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:ID="documentedBy"/>
         </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Document"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="#PairEntity"/>
@@ -637,35 +637,24 @@
     <rdfs:label xml:lang="fr">Personne</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Person"/>
         <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="localizedBy"/>
+          <owl:ObjectProperty rdf:ID="hasFollower"/>
         </owl:onProperty>
-        <owl:allValuesFrom>
-          <owl:Class rdf:about="#Address"/>
-        </owl:allValuesFrom>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="fr">Individu</rdfs:label>
     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="affiliatedBy"/>
-        </owl:onProperty>
-        <owl:allValuesFrom>
-          <owl:Class rdf:about="#Organization"/>
-        </owl:allValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
       <owl:Class rdf:about="#Agent"/>
     </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Person</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Address"/>
+        </owl:allValuesFrom>
         <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="hasFollower"/>
+          <owl:ObjectProperty rdf:ID="localizedBy"/>
         </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="#Person"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
@@ -673,6 +662,17 @@
         <owl:allValuesFrom rdf:resource="#Person"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:ID="follows"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Person</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Organization"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="affiliatedBy"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -691,11 +691,11 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#hasPartSpace"/>
         </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
@@ -716,10 +716,10 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:allValuesFrom rdf:resource="#Town"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#hasPartSpace"/>
         </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Town"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="fr">Adresse</rdfs:label>
@@ -735,6 +735,7 @@
     <rdfs:subClassOf rdf:resource="#Place"/>
   </owl:Class>
   <owl:Class rdf:ID="Folder">
+    <rdfs:label xml:lang="fr">Dossier</rdfs:label>
     <rdfs:subClassOf>
       <owl:Class rdf:about="#Object"/>
     </rdfs:subClassOf>
@@ -793,28 +794,32 @@
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="#Agent">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#AtomBasedResource"/>
+              <owl:Class rdf:about="#Skill"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#needs"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="#Subject"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Project"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="involvedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
     <rdfs:label xml:lang="en">Personnality</rdfs:label>
     <rdfs:label xml:lang="fr">Personnalité</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:allValuesFrom rdf:resource="#Proposal"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="brainstorms"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="fr">Agent</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="operates"/>
-        </owl:onProperty>
-        <owl:allValuesFrom>
-          <owl:Class rdf:about="#PhysicalPlace"/>
-        </owl:allValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -830,38 +835,38 @@
         </owl:allValuesFrom>
       </owl:Restriction>
     </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Proposal"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="brainstorms"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="fr">Agent</rdfs:label>
     <rdfs:label xml:lang="en">Agent</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#needs"/>
+          <owl:ObjectProperty rdf:ID="operates"/>
         </owl:onProperty>
         <owl:allValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:about="#AtomBasedResource"/>
-              <owl:Class rdf:about="#Skill"/>
-            </owl:unionOf>
-          </owl:Class>
+          <owl:Class rdf:about="#PhysicalPlace"/>
         </owl:allValuesFrom>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:allValuesFrom rdf:resource="#Project"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="involvedIn"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#ActorInvolvement"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:ID="actor_involvement"/>
         </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="#ActorInvolvement"/>
       </owl:Restriction>
     </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="FolderType">
+    <rdfs:subClassOf rdf:resource="#Object"/>
+    <rdfs:subClassOf rdf:resource="#ObjectType"/>
   </owl:Class>
   <owl:Class rdf:ID="Thema">
     <rdfs:comment xml:lang="fr">Thème réfère à ce dont on parle, au sujet qui nous anime. Les thèmes rassemblent les notions, les concepts, les centres d'intérêts, les "tags".</rdfs:comment>
@@ -900,10 +905,10 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:allValuesFrom rdf:resource="#Project"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:ID="deliveredBy"/>
         </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Project"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="fr">Evèvement</rdfs:label>
@@ -942,9 +947,6 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#neededBy"/>
-        </owl:onProperty>
         <owl:allValuesFrom>
           <owl:Class>
             <owl:unionOf rdf:parseType="Collection">
@@ -954,6 +956,9 @@
             </owl:unionOf>
           </owl:Class>
         </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#neededBy"/>
+        </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
@@ -972,6 +977,13 @@
         <owl:allValuesFrom rdf:resource="#Project"/>
       </owl:Restriction>
     </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class>
+    <owl:unionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="#Project"/>
+      <owl:Class rdf:ID="Activity"/>
+      <owl:Class rdf:about="#Agent"/>
+    </owl:unionOf>
   </owl:Class>
   <owl:Class rdf:ID="TheoryType">
     <rdfs:subClassOf>
@@ -998,36 +1010,39 @@
     <rdfs:label xml:lang="en">Organization Type</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#typeOf"/>
-        </owl:onProperty>
         <owl:allValuesFrom>
           <owl:Class rdf:about="#Organization"/>
         </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#typeOf"/>
+        </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="#Agent"/>
     <rdfs:subClassOf rdf:resource="#AgentType"/>
     <rdfs:comment xml:lang="fr">Type d'organisation permet de caractériser les organisations : Par exemple, Entreprise / SARL ou Association ...</rdfs:comment>
   </owl:Class>
-  <owl:Class rdf:ID="Activity">
+  <owl:Class rdf:about="#Activity">
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="activity_involvement"/>
-        </owl:onProperty>
         <owl:allValuesFrom>
           <owl:Class rdf:ID="ActivityInvolvement"/>
         </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="activity_involvement"/>
+        </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="#Subject"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MoneyBasedResource">
+    <rdfs:subClassOf rdf:resource="#Resource"/>
   </owl:Class>
   <owl:Class rdf:about="#Intention">
     <rdfs:subClassOf rdf:resource="#PairEntity"/>
   </owl:Class>
   <owl:Class rdf:ID="Currency">
-    <rdfs:subClassOf rdf:resource="#Resource"/>
+    <rdfs:subClassOf rdf:resource="#MoneyBasedResource"/>
   </owl:Class>
   <owl:Class rdf:about="#EnergyBasedResource">
     <rdfs:subClassOf rdf:resource="#Resource"/>
@@ -1039,10 +1054,10 @@
     <rdfs:subClassOf rdf:resource="#BuildingItem"/>
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Floor"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#hasPartSpace"/>
         </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="#Floor"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="fr">Immeuble</rdfs:label>
@@ -1062,8 +1077,14 @@
   </owl:Class>
   <owl:Class rdf:about="#Organization">
     <rdfs:subClassOf rdf:resource="#Agent"/>
-    <rdfs:label xml:lang="fr">Organisation</rdfs:label>
-    <rdfs:comment xml:lang="fr">Organisation désigne un groupe d'individus s'étant rassemblés autour d'un objectif commun. Une organisation peut être formelle (structure juridique) ou informelle (groupe).</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hostedIn"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#BuildingItem"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -1080,15 +1101,16 @@
         </owl:allValuesFrom>
       </owl:Restriction>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="fr">Organisation</rdfs:label>
+    <rdfs:comment xml:lang="fr">Organisation désigne un groupe d'individus s'étant rassemblés autour d'un objectif commun. Une organisation peut être formelle (structure juridique) ou informelle (groupe).</rdfs:comment>
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Person"/>
         <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasType"/>
+          <owl:ObjectProperty rdf:ID="affiliates"/>
         </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="#OrganizationType"/>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Organization</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:allValuesFrom>
@@ -1105,20 +1127,13 @@
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Organization</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:allValuesFrom rdf:resource="#Organization"/>
         <owl:onProperty>
           <owl:SymmetricProperty rdf:ID="partnerOf"/>
         </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="affiliates"/>
-        </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="#Person"/>
+        <owl:allValuesFrom rdf:resource="#Organization"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
@@ -1133,9 +1148,9 @@
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hostedIn"/>
+          <owl:ObjectProperty rdf:about="#hasType"/>
         </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="#BuildingItem"/>
+        <owl:allValuesFrom rdf:resource="#OrganizationType"/>
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
@@ -1193,6 +1208,9 @@
   <owl:Class rdf:about="#ProjectInvolvement">
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:ID="involvement_projectRole"/>
+        </owl:onProperty>
         <owl:allValuesFrom>
           <owl:Class>
             <owl:unionOf rdf:parseType="Collection">
@@ -1201,41 +1219,39 @@
             </owl:unionOf>
           </owl:Class>
         </owl:allValuesFrom>
-        <owl:onProperty>
-          <owl:FunctionalProperty rdf:ID="involvement_projectRole"/>
-        </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Project"/>
         <owl:onProperty>
           <owl:FunctionalProperty rdf:ID="involvement_project"/>
         </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="#Project"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:allValuesFrom rdf:resource="#Agent"/>
         <owl:onProperty>
           <owl:SymmetricProperty rdf:about="#involvement_agent"/>
         </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Agent"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="#Association"/>
   </owl:Class>
+  <owl:Class rdf:ID="Class_1"/>
   <owl:Class rdf:ID="MaterialType">
     <rdfs:subClassOf rdf:resource="#ResourceType"/>
   </owl:Class>
   <owl:Class rdf:about="#ProjectOrActivityRole">
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:allValuesFrom>
-          <owl:Class rdf:about="#ActivityInvolvement"/>
-        </owl:allValuesFrom>
         <owl:onProperty>
           <owl:ObjectProperty rdf:ID="activityRole_involvement"/>
         </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#ActivityInvolvement"/>
+        </owl:allValuesFrom>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
@@ -1266,10 +1282,10 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:allValuesFrom rdf:resource="#Agent"/>
         <owl:onProperty>
           <owl:SymmetricProperty rdf:about="#involvement_agent"/>
         </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Agent"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
@@ -1290,48 +1306,32 @@
   </owl:Class>
   <owl:Class rdf:about="#PhysicalPlace">
     <rdfs:label xml:lang="fr">Endroit</rdfs:label>
-    <rdfs:label xml:lang="en">Place</rdfs:label>
-    <rdfs:subClassOf rdf:resource="#Place"/>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#neededBy"/>
-        </owl:onProperty>
         <owl:allValuesFrom rdf:resource="#Organization"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#offeredBy"/>
         </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="#Organization"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasType"/>
-        </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="#PlaceType"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:allValuesFrom rdf:resource="#Address"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#localizedBy"/>
         </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Address"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Organization"/>
         <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#deliveredBy"/>
+          <owl:ObjectProperty rdf:about="#neededBy"/>
         </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="#Project"/>
       </owl:Restriction>
     </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Place</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Place"/>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -1347,6 +1347,22 @@
         </owl:allValuesFrom>
       </owl:Restriction>
     </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasType"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#PlaceType"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#deliveredBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#Project"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="Sector">
     <rdfs:subClassOf rdf:resource="#Concept"/>
@@ -1357,16 +1373,19 @@
   <owl:Class rdf:ID="ForWhat">
     <rdfs:subClassOf rdf:resource="#Intention"/>
   </owl:Class>
+  <owl:Class rdf:ID="CallForProposal">
+    <rdfs:subClassOf rdf:resource="#MoneyBasedResource"/>
+  </owl:Class>
   <owl:Class rdf:ID="ForWhom">
     <rdfs:subClassOf rdf:resource="#Intention"/>
   </owl:Class>
   <owl:Class rdf:about="#EventRole">
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:allValuesFrom rdf:resource="#EventInvolvement"/>
         <owl:onProperty>
           <owl:InverseFunctionalProperty rdf:ID="eventRole_involvement"/>
         </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#EventInvolvement"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="#Role"/>
@@ -1533,6 +1552,15 @@
       <owl:ObjectProperty rdf:ID="extendedBy"/>
     </owl:inverseOf>
   </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="what">
+    <rdfs:range rdf:resource="#What"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:ID="hasMotivation"/>
+    </rdfs:subPropertyOf>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="inverse_of_what"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#partOf">
     <rdfs:subPropertyOf>
       <owl:ObjectProperty rdf:ID="interSubjectProperty"/>
@@ -1542,8 +1570,8 @@
     <rdfs:range>
       <owl:Class>
         <owl:unionOf rdf:parseType="Collection">
-          <owl:Class rdf:about="#Project"/>
           <owl:Class rdf:about="#Activity"/>
+          <owl:Class rdf:about="#Project"/>
         </owl:unionOf>
       </owl:Class>
     </rdfs:range>
@@ -1688,7 +1716,7 @@
       <owl:ObjectProperty rdf:about="#task_involvement"/>
     </owl:inverseOf>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:ID="hasMotivation">
+  <owl:ObjectProperty rdf:about="#hasMotivation">
     <rdfs:subPropertyOf>
       <owl:ObjectProperty rdf:ID="subjectIntentionsProperty"/>
     </rdfs:subPropertyOf>
@@ -1795,9 +1823,6 @@
         </owl:unionOf>
       </owl:Class>
     </rdfs:range>
-    <owl:inverseOf>
-      <owl:ObjectProperty rdf:ID="hasMilestone"/>
-    </owl:inverseOf>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#timePairEntityProperty">
     <rdfs:subPropertyOf rdf:resource="#interPairEntityProperty"/>
@@ -1847,6 +1872,14 @@
     <owl:inverseOf>
       <owl:ObjectProperty rdf:ID="hasPartEcosystem"/>
     </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="inverse_of_forWhom">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="forWhom"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#motivates"/>
+    </rdfs:subPropertyOf>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="hasPartTutorial">
     <owl:inverseOf>
@@ -1942,6 +1975,14 @@
     </owl:inverseOf>
     <rdfs:subPropertyOf rdf:resource="#hasPart"/>
   </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="inverse_of_why">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#motivates"/>
+    </rdfs:subPropertyOf>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="why"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#involvement_actorRole">
     <rdfs:subPropertyOf>
       <owl:ObjectProperty rdf:about="#actorRoleProperty"/>
@@ -1951,6 +1992,24 @@
     </owl:inverseOf>
     <rdfs:domain rdf:resource="#ActorInvolvement"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasMember">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#interSubjectProperty"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="#Agent"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="memberOf"/>
+    </owl:inverseOf>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Ecosystem"/>
+          <owl:Class rdf:about="#Organization"/>
+          <owl:Class rdf:about="#Group"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="partOfActivity">
     <rdfs:domain rdf:resource="#Activity"/>
@@ -1968,7 +2027,7 @@
     <owl:inverseOf>
       <owl:ObjectProperty rdf:ID="hasTask"/>
     </owl:inverseOf>
-    <rdfs:range rdf:resource="#Subject"/>
+    <rdfs:range rdf:resource="#Agent"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="partOfTask">
     <owl:inverseOf>
@@ -1998,6 +2057,14 @@
     <rdfs:subPropertyOf rdf:resource="#partOf"/>
     <owl:inverseOf rdf:resource="#hasPartOrganization"/>
   </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="inverse_of_how">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#motivates"/>
+    </rdfs:subPropertyOf>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="how"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="hasPartProject">
     <rdfs:subPropertyOf rdf:resource="#hasPart"/>
     <rdfs:range rdf:resource="#Project"/>
@@ -2011,6 +2078,12 @@
     <rdfs:subPropertyOf rdf:resource="#hasPart"/>
     <rdfs:domain rdf:resource="#Activity"/>
     <rdfs:range rdf:resource="#Activity"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#inverse_of_what">
+    <owl:inverseOf rdf:resource="#what"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#motivates"/>
+    </rdfs:subPropertyOf>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="partOfDigitalPlace">
     <rdfs:subPropertyOf rdf:resource="#partOf"/>
@@ -2055,6 +2128,11 @@
     <rdfs:domain rdf:resource="#SubjectType"/>
     <rdfs:subPropertyOf rdf:resource="#typeOf"/>
     <rdfs:range rdf:resource="#Subject"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#why">
+    <owl:inverseOf rdf:resource="#inverse_of_why"/>
+    <rdfs:subPropertyOf rdf:resource="#hasMotivation"/>
+    <rdfs:range rdf:resource="#Why"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#roleOf">
     <rdfs:domain rdf:resource="#Role"/>
@@ -2260,6 +2338,11 @@
     <rdfs:range rdf:resource="#What"/>
     <rdfs:subPropertyOf rdf:resource="#interIntentions_Property"/>
   </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#how">
+    <rdfs:subPropertyOf rdf:resource="#hasMotivation"/>
+    <rdfs:range rdf:resource="#How"/>
+    <owl:inverseOf rdf:resource="#inverse_of_how"/>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#engagedTo">
     <rdfs:range rdf:resource="#Task"/>
     <owl:inverseOf rdf:resource="#engages"/>
@@ -2434,20 +2517,13 @@
     <rdfs:label xml:lang="fr">documente</rdfs:label>
     <rdfs:domain rdf:resource="#Object"/>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#hasMilestone">
-    <rdfs:range rdf:resource="#Date"/>
-    <rdfs:comment xml:lang="fr">Temporaire - on pourra éventuellement créer une classe Milestone dans le cadre d'un module gestion de projet ?</rdfs:comment>
-    <owl:inverseOf rdf:resource="#milestoneOf"/>
-    <rdfs:subPropertyOf rdf:resource="#timePairEntityProperty"/>
-    <rdfs:domain>
-      <owl:Class>
-        <owl:unionOf rdf:parseType="Collection">
-          <owl:Class rdf:about="#Project"/>
-          <owl:Class rdf:about="#Activity"/>
-          <owl:Class rdf:about="#Agent"/>
-        </owl:unionOf>
-      </owl:Class>
-    </rdfs:domain>
+  <owl:ObjectProperty rdf:ID="inverse_of_forWhat">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="forWhat"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#motivates"/>
+    </rdfs:subPropertyOf>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#representedBy">
     <rdfs:domain rdf:resource="#Subject"/>
@@ -2466,6 +2542,21 @@
     </owl:inverseOf>
     <rdfs:range rdf:resource="#TaskStatus"/>
     <rdfs:subPropertyOf rdf:resource="#statusProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#forWhat">
+    <owl:inverseOf rdf:resource="#inverse_of_forWhat"/>
+    <rdfs:range rdf:resource="#ForWhat"/>
+    <rdfs:subPropertyOf rdf:resource="#hasMotivation"/>
+    <rdfs:domain rdf:resource="#Subject"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="concerns">
+    <rdfs:domain rdf:resource="#Task"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#interSubjectProperty"/>
+    </rdfs:subPropertyOf>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="concernedBy"/>
+    </owl:inverseOf>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#interSubjectProperty">
     <rdfs:domain rdf:resource="#Subject"/>
@@ -2817,7 +2908,7 @@
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#hasTask">
     <rdfs:subPropertyOf rdf:resource="#interSubjectProperty"/>
-    <rdfs:domain rdf:resource="#Subject"/>
+    <rdfs:domain rdf:resource="#Agent"/>
     <owl:inverseOf rdf:resource="#taskOf"/>
     <rdfs:range rdf:resource="#Task"/>
   </owl:ObjectProperty>
@@ -2887,6 +2978,21 @@
     <rdfs:domain rdf:resource="#ActorInvolvement"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#memberOf">
+    <rdfs:subPropertyOf rdf:resource="#interSubjectProperty"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Subject"/>
+          <owl:Class rdf:about="#Ecosystem"/>
+          <owl:Class rdf:about="#Organization"/>
+          <owl:Class rdf:about="#Group"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#Agent"/>
+    <owl:inverseOf rdf:resource="#hasMember"/>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#hasPartDataModel">
     <rdfs:range>
       <owl:Class>
@@ -2926,6 +3032,12 @@
     <rdfs:subPropertyOf rdf:resource="#taskRoleProperty"/>
     <owl:inverseOf rdf:resource="#involvement_taskRole"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#forWhom">
+    <rdfs:subPropertyOf rdf:resource="#hasMotivation"/>
+    <rdfs:range rdf:resource="#ForWhom"/>
+    <owl:inverseOf rdf:resource="#inverse_of_forWhom"/>
+    <rdfs:domain rdf:resource="#Subject"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#hasPartEcosystem">
     <owl:inverseOf rdf:resource="#partOfEcosystem"/>
@@ -3012,16 +3124,15 @@
   <owl:ObjectProperty rdf:ID="eventRoleProperty">
     <rdfs:subPropertyOf rdf:resource="#roleProperty"/>
   </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#concernedBy">
+    <rdfs:range rdf:resource="#Task"/>
+    <rdfs:subPropertyOf rdf:resource="#interSubjectProperty"/>
+    <owl:inverseOf rdf:resource="#concerns"/>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#hasPartProcess">
     <owl:inverseOf rdf:resource="#partOfProcess"/>
     <rdfs:subPropertyOf rdf:resource="#hasPart"/>
     <rdfs:domain rdf:resource="#Process"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#task_involvement">
-    <rdfs:domain rdf:resource="#Task"/>
-    <rdfs:subPropertyOf rdf:resource="#taskRoleProperty"/>
-    <owl:inverseOf rdf:resource="#involvement_task"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#ideaOrDocumentStatusOf">
     <rdfs:subPropertyOf rdf:resource="#statusProperty"/>
@@ -3035,6 +3146,12 @@
       </owl:Class>
     </rdfs:range>
     <owl:inverseOf rdf:resource="#hasIdeaOrDocumentStatus"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#task_involvement">
+    <rdfs:domain rdf:resource="#Task"/>
+    <rdfs:subPropertyOf rdf:resource="#taskRoleProperty"/>
+    <owl:inverseOf rdf:resource="#involvement_task"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
   </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:ID="raison_Etre">
     <rdfs:domain rdf:resource="#Role"/>
@@ -3284,10 +3401,8 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:domain rdf:resource="#Event"/>
   </owl:InverseFunctionalProperty>
-  <Domain rdf:ID="Etudes_Recherches_Expérimentations"/>
   <Group rdf:ID="CoreTeam_DFC"/>
   <Activity rdf:ID="Awareness_and_lobbying_on_decentralised_infrastructures"/>
-  <ForWhom rdf:ID="Social_activists"/>
   <Service rdf:ID="SemApps_As_A_Service"/>
   <Sector rdf:ID="Santé_Bien-être"/>
   <Date rdf:ID="May20"/>
@@ -3310,7 +3425,6 @@
   <Method rdf:ID="Semantic_Concept_modeling"/>
   <Organization rdf:ID="Startin_Blox"/>
   <PlaceType rdf:ID="Farm"/>
-  <What rdf:ID="Developping_SOLID_compliant_software"/>
   <Skill rdf:ID="Web_development"/>
   <Activity rdf:ID="P2P_software_Development"/>
   <IdeaStatus rdf:ID="IdeaStatus_32"/>
@@ -3334,9 +3448,7 @@
   <OrganizationType rdf:ID="Association_de_fait"/>
   <IdeaStatus rdf:ID="IdeaStatus_30"/>
   <IdeaStatus rdf:ID="IdeaStatus_31"/>
-  <Domain rdf:ID="Programmation"/>
   <Date rdf:ID="June12"/>
-  <ForWhom rdf:ID="Grassroots_communities"/>
   <Person rdf:ID="Sébastien_Rosset"/>
   <TaskType rdf:ID="Admin">
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -3348,7 +3460,6 @@
     >Bullshit</rdfs:comment>
   </TaskType>
   <Domain rdf:ID="Marketing_Publicité"/>
-  <ForWhat rdf:ID="Decentralisasing_the_web_architecture"/>
   <Why rdf:ID="Too_much_inequalities_in_this_world"/>
   <PlaceType rdf:ID="Fablab"/>
   <Role rdf:ID="Administrator">
@@ -3357,7 +3468,6 @@
   </Role>
   <DocumentType rdf:ID="Social_Code"/>
   <Building rdf:ID="Oratoire"/>
-  <Why rdf:ID="Too_much_silos_in_this_world"/>
   <ActorRole rdf:ID="StakeHolder"/>
   <Service rdf:ID="PAIR_As_A_Service"/>
   <Role rdf:ID="Helper">
@@ -3388,6 +3498,10 @@
     >Bullshit</rdfs:comment>
   </TaskType>
   <Branch rdf:ID="Blockchain"/>
+  <ActorInvolvement rdf:ID="ActorInvolvement_27">
+    <involvement_actor rdf:resource="#CoreTeam_Ontologies"/>
+    <involvement_actorRole rdf:resource="#Member"/>
+  </ActorInvolvement>
   <GroupType rdf:ID="Finance"/>
   <EventRole rdf:ID="Player"/>
   <Domain rdf:ID="Sensibilisation_Plaidoyer"/>
@@ -3399,6 +3513,7 @@
     <involvement_actor rdf:resource="#CoreTeam_Ontologies"/>
   </ActorInvolvement>
   <Sector rdf:ID="Artisanat_Industrie"/>
+  <FolderType rdf:ID="Bibliography"/>
   <OrganizationType rdf:ID="Association_loi_1901"/>
   <Domain rdf:ID="Recyclage"/>
   <Domain rdf:ID="Assurance_Gestion_du_risque"/>
@@ -3413,543 +3528,768 @@
           <Person rdf:ID="Guillaume_Rouyer">
             <hasTopic>
               <Thema rdf:ID="Peer_to_peer">
+                <topicOf>
+                  <Project rdf:ID="Reshaping_Frameworks_For_Research_And_Action">
+                    <forWhat>
+                      <ForWhat rdf:ID="Struggling_climate_change">
+                        <inverse_of_forWhat rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                      </ForWhat>
+                    </forWhat>
+                    <forWhom>
+                      <ForWhom rdf:ID="Grassroots_communities">
+                        <inverse_of_forWhom rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                      </ForWhom>
+                    </forWhom>
+                    <hostedIn>
+                      <DigitalPlace rdf:about="#https://github.com/assemblee-virtuelle/pair/">
+                        <hosts rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                        <hosts>
+                          <Idea rdf:ID="What_if_we_propose_a_new_version_of_FOAF">
+                            <hostedIn rdf:resource="#https://github.com/assemblee-virtuelle/pair/"/>
+                            <inspiredBy>
+                              <Project rdf:ID="Pair_Ontology">
+                                <project_involvement>
+                                  <ProjectInvolvement rdf:ID="ProjectInvolvement_17">
+                                    <involvement_project rdf:resource="#Pair_Ontology"/>
+                                    <involvement_agent rdf:resource="#Guillaume_Rouyer"/>
+                                    <involvement_projectRole>
+                                      <ProjectOrActivityRole rdf:ID="ProductOwner">
+                                        <projectRole_involvement rdf:resource="#ProjectInvolvement_17"/>
+                                      </ProjectOrActivityRole>
+                                    </involvement_projectRole>
+                                  </ProjectInvolvement>
+                                </project_involvement>
+                                <project_involvement>
+                                  <ProjectInvolvement rdf:ID="ProjectInvolvement_23">
+                                    <involvement_agent>
+                                      <Ecosystem rdf:ID="Digital_Commons_Consortium">
+                                        <supports>
+                                          <Event rdf:ID="Réunions_SemApps_Gouvernance">
+                                            <hasSubjectType>
+                                              <EventType rdf:ID="Réunion">
+                                                <typeOfSubject rdf:resource="#Réunions_SemApps_Gouvernance"/>
+                                                <typeOf rdf:resource="#Réunions_SemApps_Gouvernance"/>
+                                              </EventType>
+                                            </hasSubjectType>
+                                            <hasSector>
+                                              <Sector rdf:ID="Informatique_Internet">
+                                                <sectorOf rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                                                <sectorOf rdf:resource="#What_if_we_propose_a_new_version_of_FOAF"/>
+                                                <sectorOf>
+                                                  <Organization rdf:ID="CoopVirtualAssembly">
+                                                    <hasSector rdf:resource="#Informatique_Internet"/>
+                                                    <hasAgentStatus>
+                                                      <AgentStatus rdf:ID="UnderDevelopment">
+                                                        <rdfs:label
+                                                         rdf:datatype=
+                                                        "http://www.w3.org/2001/XMLSchema#string"
+                                                        >En cours de création</rdfs:label>
+                                                        <agentStatusOf rdf:resource="#CoopVirtualAssembly"/>
+                                                      </AgentStatus>
+                                                    </hasAgentStatus>
+                                                  </Organization>
+                                                </sectorOf>
+                                                <sectorOf rdf:resource="#Réunions_SemApps_Gouvernance"/>
+                                                <sectorOf>
+                                                  <CallForProposal rdf:ID="AAP_Fonds_national_pour_la_science_ouverte">
+                                                    <hasMotivation>
+                                                      <ForWhat rdf:ID="Opening_Data">
+                                                        <inverse_of_forWhat rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                                                        <inverse_of_forWhat rdf:resource="#AAP_Fonds_national_pour_la_science_ouverte"/>
+                                                        <motivates rdf:resource="#AAP_Fonds_national_pour_la_science_ouverte"/>
+                                                      </ForWhat>
+                                                    </hasMotivation>
+                                                    <how>
+                                                      <How rdf:ID="Implementing_semantic_web_standards">
+                                                        <activityRoleProperty rdf:resource="#AAP_Fonds_national_pour_la_science_ouverte"/>
+                                                        <inverse_of_how rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                                                      </How>
+                                                    </how>
+                                                    <hasDomain>
+                                                      <Branch rdf:ID="Décentralisation_P2P_fédération">
+                                                        <domainOf rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                                                        <domainOf rdf:resource="#Réunions_SemApps_Gouvernance"/>
+                                                        <domainOf rdf:resource="#AAP_Fonds_national_pour_la_science_ouverte"/>
+                                                      </Branch>
+                                                    </hasDomain>
+                                                    <hasDomain>
+                                                      <Branch rdf:ID="Semantic_web">
+                                                        <domainOf rdf:resource="#AAP_Fonds_national_pour_la_science_ouverte"/>
+                                                      </Branch>
+                                                    </hasDomain>
+                                                    <forWhat rdf:resource="#Opening_Data"/>
+                                                    <offeredBy>
+                                                      <Organization rdf:ID="CNRS">
+                                                        <offers rdf:resource="#AAP_Fonds_national_pour_la_science_ouverte"/>
+                                                      </Organization>
+                                                    </offeredBy>
+                                                    <why>
+                                                      <Why rdf:ID="Too_much_silos_in_this_world">
+                                                        <inverse_of_why rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                                                        <inverse_of_why rdf:resource="#AAP_Fonds_national_pour_la_science_ouverte"/>
+                                                      </Why>
+                                                    </why>
+                                                    <how>
+                                                      <How rdf:ID="Using_free_licences">
+                                                        <activityRoleProperty rdf:resource="#AAP_Fonds_national_pour_la_science_ouverte"/>
+                                                      </How>
+                                                    </how>
+                                                    <hasBranch>
+                                                      <Domain rdf:ID="Etudes_Recherches_Expérimentations">
+                                                        <branchOf rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                                                        <branchOf rdf:resource="#AAP_Fonds_national_pour_la_science_ouverte"/>
+                                                      </Domain>
+                                                    </hasBranch>
+                                                    <hasBranch>
+                                                      <Domain rdf:ID="Programmation">
+                                                        <branchOf rdf:resource="#AAP_Fonds_national_pour_la_science_ouverte"/>
+                                                      </Domain>
+                                                    </hasBranch>
+                                                    <hasMotivation>
+                                                      <ForWhat rdf:ID="Decentralisasing_the_web_architecture">
+                                                        <motivates rdf:resource="#AAP_Fonds_national_pour_la_science_ouverte"/>
+                                                        <inverse_of_forWhat rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                                                      </ForWhat>
+                                                    </hasMotivation>
+                                                    <hasSector rdf:resource="#Informatique_Internet"/>
+                                                    <forWhom>
+                                                      <ForWhom rdf:ID="Tech_Activists">
+                                                        <inverse_of_forWhom rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                                                        <inverse_of_forWhom rdf:resource="#AAP_Fonds_national_pour_la_science_ouverte"/>
+                                                      </ForWhom>
+                                                    </forWhom>
+                                                    <documentedBy>
+                                                      <Document rdf:ID="Plan_national_pour_la_science_ouverte">
+                                                        <containedIn>
+                                                          <Folder rdf:ID="Bibliographie_OpenScience">
+                                                            <contains rdf:resource="#Plan_national_pour_la_science_ouverte"/>
+                                                          </Folder>
+                                                        </containedIn>
+                                                        <containedIn>
+                                                          <Folder rdf:ID="Veille_Financements">
+                                                            <contains rdf:resource="#Plan_national_pour_la_science_ouverte"/>
+                                                          </Folder>
+                                                        </containedIn>
+                                                        <documents rdf:resource="#AAP_Fonds_national_pour_la_science_ouverte"/>
+                                                      </Document>
+                                                    </documentedBy>
+                                                    <hasMotivation>
+                                                      <ForWhat rdf:ID="Decentralising_power_and_wealth">
+                                                        <motivates rdf:resource="#Réunions_SemApps_Gouvernance"/>
+                                                        <motivates rdf:resource="#AAP_Fonds_national_pour_la_science_ouverte"/>
+                                                        <inverse_of_forWhat rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                                                      </ForWhat>
+                                                    </hasMotivation>
+                                                  </CallForProposal>
+                                                </sectorOf>
+                                                <intendedBy>
+                                                  <Domain rdf:ID="Production">
+                                                    <intends rdf:resource="#Informatique_Internet"/>
+                                                    <branchOf rdf:resource="#Réunions_SemApps_Gouvernance"/>
+                                                  </Domain>
+                                                </intendedBy>
+                                              </Sector>
+                                            </hasSector>
+                                            <uses>
+                                              <Theory rdf:ID="PAIR_model">
+                                                <usedBy rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                                                <usedBy rdf:resource="#Réunions_SemApps_Gouvernance"/>
+                                                <deliveredBy rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                                              </Theory>
+                                            </uses>
+                                            <preferedLabel rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#string"
+                                            >Réunion SemApps Gouvernance</preferedLabel>
+                                            <hasBranch rdf:resource="#Production"/>
+                                            <hasType rdf:resource="#Réunion"/>
+                                            <hasEventStatus>
+                                              <EventStatus rdf:ID="OngoingEvent">
+                                                <eventStatusOf rdf:resource="#Réunions_SemApps_Gouvernance"/>
+                                              </EventStatus>
+                                            </hasEventStatus>
+                                            <hasTask>
+                                              <Task rdf:ID="Plannifier_ODJ">
+                                                <taskOf rdf:resource="#Réunions_SemApps_Gouvernance"/>
+                                              </Task>
+                                            </hasTask>
+                                            <hasTopic>
+                                              <Thema rdf:ID="Stigmergy">
+                                                <topicOf rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                                                <topicOf rdf:resource="#Guillaume_Rouyer"/>
+                                                <topicOf rdf:resource="#Réunions_SemApps_Gouvernance"/>
+                                              </Thema>
+                                            </hasTopic>
+                                            <comment rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#string"
+                                            >On arrive à l'heure cette fois-ci hein ;-)</comment>
+                                            <hasDomain rdf:resource="#Décentralisation_P2P_fédération"/>
+                                            <supportedBy rdf:resource="#Digital_Commons_Consortium"/>
+                                            <hasMotivation rdf:resource="#Decentralising_power_and_wealth"/>
+                                            <homePage rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#anyURI"
+                                            >https://hackmd.io/SfSueIZlQmeD_ijfSyGtUw?both</homePage>
+                                            <documentedBy>
+                                              <Document rdf:ID="CR_SemApps">
+                                                <documents rdf:resource="#Réunions_SemApps_Gouvernance"/>
+                                              </Document>
+                                            </documentedBy>
+                                            <hostedIn rdf:resource="#https://github.com/assemblee-virtuelle/pair/"/>
+                                          </Event>
+                                        </supports>
+                                        <agent_involvement rdf:resource="#ProjectInvolvement_23"/>
+                                      </Ecosystem>
+                                    </involvement_agent>
+                                    <involvement_project rdf:resource="#Pair_Ontology"/>
+                                    <involvement_projectRole>
+                                      <Role rdf:ID="User">
+                                        <rdfs:label rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#string"
+                                        >Utilisateur</rdfs:label>
+                                        <projectRole_involvement rdf:resource="#ProjectInvolvement_23"/>
+                                      </Role>
+                                    </involvement_projectRole>
+                                  </ProjectInvolvement>
+                                </project_involvement>
+                                <project_involvement>
+                                  <ProjectInvolvement rdf:ID="ProjectInvolvement_22">
+                                    <involvement_project rdf:resource="#Pair_Ontology"/>
+                                    <involvement_agent>
+                                      <owl:NamedIndividual rdf:ID="Virtual_Assembly">
+                                        <partnerOf>
+                                          <owl:NamedIndividual rdf:ID="Coop_des_territoires">
+                                            <rdf:type rdf:resource="#Organization"/>
+                                            <partnerOf rdf:resource="#Virtual_Assembly"/>
+                                          </owl:NamedIndividual>
+                                        </partnerOf>
+                                        <agent_involvement rdf:resource="#ProjectInvolvement_22"/>
+                                        <involvement_agent>
+                                          <TaskInvolvement rdf:ID="TaskInvolvement_3">
+                                            <involvement_task>
+                                              <Task rdf:ID="OrganiserResidenceAV">
+                                                <hasPartTask>
+                                                  <Task rdf:ID="ReserverElCapitan">
+                                                    <partOfTask rdf:resource="#OrganiserResidenceAV"/>
+                                                  </Task>
+                                                </hasPartTask>
+                                                <hasTopic>
+                                                  <Thema rdf:ID="Interoperability">
+                                                    <topicOf rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                                                    <topicOf rdf:resource="#Guillaume_Rouyer"/>
+                                                    <topicOf rdf:resource="#OrganiserResidenceAV"/>
+                                                  </Thema>
+                                                </hasTopic>
+                                                <hasTopic>
+                                                  <Thema rdf:ID="Decentralization">
+                                                    <topicOf rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                                                    <topicOf rdf:resource="#Guillaume_Rouyer"/>
+                                                    <topicOf rdf:resource="#OrganiserResidenceAV"/>
+                                                  </Thema>
+                                                </hasTopic>
+                                                <task_involvement rdf:resource="#TaskInvolvement_3"/>
+                                                <taskOf rdf:resource="#Virtual_Assembly"/>
+                                                <taskOf>
+                                                  <Project rdf:ID="SemApps">
+                                                    <involves rdf:resource="#Guillaume_Rouyer"/>
+                                                    <involves>
+                                                      <Person rdf:ID="Gabriel_Henry">
+                                                        <offers>
+                                                          <Skill rdf:ID="Project_management"/>
+                                                        </offers>
+                                                        <affiliatedBy rdf:resource="#Virtual_Assembly"/>
+                                                        <hasFollower rdf:resource="#Guillaume_Rouyer"/>
+                                                        <involvedIn rdf:resource="#Pair_Ontology"/>
+                                                        <offers>
+                                                          <Skill rdf:ID="Semantic_modeling"/>
+                                                        </offers>
+                                                        <brainstorms>
+                                                          <Proposal rdf:ID="Proposal_for_a_new_version_of_FOAF"/>
+                                                        </brainstorms>
+                                                        <involvement_agent>
+                                                          <ProjectInvolvement rdf:ID="ProjectInvolvement_28">
+                                                            <involvement_agent rdf:resource="#Gabriel_Henry"/>
+                                                            <involvement_project rdf:resource="#SemApps"/>
+                                                            <involvement_projectRole>
+                                                              <ProjectOrActivityRole rdf:ID="Greeter">
+    <roleOf rdf:resource="#Gabriel_Henry"/>
+    <raison_Etre rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></raison_Etre>
+    <critères rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Capacité à transmettre les connaissances</critères>
+    <critères rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Connaissance de l'organisation</critères>
+    <alternativeLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Onboarding</alternativeLabel>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Accueillant</rdfs:label>
+    <moyens_possibles rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pour chaque nouveau venu, l’“interviewer” après 2 semaines pour savoir où il en est.</moyens_possibles>
+    <critères rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Connaissance de la culture d'entreprise</critères>
+    <critères rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Empathie</critères>
+    <projectRole_involvement rdf:resource="#ProjectInvolvement_28"/>
+    <critères rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Capacité à transmettre les outils internes et les méthodologies</critères>
+    <critères rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Connaissance du projet</critères>
+    <critères rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >La joie de vivre</critères>
+    <raison_Etre rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Faciliter l’inclusion des personnes</raison_Etre>
+    <redevabilités rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Répondre de l’accueil et de l’inclusion des nouvelles personnes</redevabilités>
+    <redevabilités rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >S’assurer que la documentation est à jour</redevabilités>
+    <raison_Etre rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Aider à s’approprier la culture/ le cadre de SemApps, ainsi que les outils qui nous permettent de travailler ensemble</raison_Etre>
+                                                              </ProjectOrActivityRole>
+                                                            </involvement_projectRole>
+                                                          </ProjectInvolvement>
+                                                        </involvement_agent>
+                                                        <operates>
+                                                          <PhysicalPlace rdf:ID="Virtual_Assembly_place">
+                                                            <hosts rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                                                            <hosts rdf:resource="#Guillaume_Rouyer"/>
+                                                          </PhysicalPlace>
+                                                        </operates>
+                                                        <involvedIn rdf:resource="#SemApps"/>
+                                                        <needs>
+                                                          <Material rdf:ID="straw_bale_set"/>
+                                                        </needs>
+                                                        <follows>
+                                                          <Person rdf:ID="Bernard_Chabot">
+                                                            <involvement_agent>
+                                                              <TaskInvolvement rdf:ID="TaskInvolvement_76">
+    <involvement_agent rdf:resource="#Bernard_Chabot"/>
+    <involvement_taskRole>
+      <TaskRole rdf:ID="Reviewer">
+        <taskRole_involvement>
+          <TaskInvolvement rdf:ID="TaskInvolvement_82">
+            <involvement_taskRole rdf:resource="#Reviewer"/>
+            <involvement_task>
+              <Task rdf:ID="ActualiserPAIR">
+                <task_involvement rdf:resource="#TaskInvolvement_76"/>
+                <task_involvement rdf:resource="#TaskInvolvement_82"/>
+                <task_involvement>
+                  <TaskInvolvement rdf:ID="TaskInvolvement_13">
+                    <involvement_taskRole rdf:resource="#Reviewer"/>
+                    <involvement_agent>
+                      <Person rdf:ID="Thomas_Francart">
+                        <agent_involvement>
+                          <EventInvolvement rdf:ID="EventInvolvement_46">
+                            <involvement_eventRole>
+                              <EventRole rdf:ID="Attendee">
+                                <eventRole_involvement rdf:resource="#EventInvolvement_46"/>
+                              </EventRole>
+                            </involvement_eventRole>
+                            <involvement_agent rdf:resource="#Thomas_Francart"/>
+                            <involvement_event>
+                              <Event rdf:ID="SemWebPro_2020">
+                                <hasEventStatus>
+                                  <EventStatus rdf:ID="Planned">
+                                    <eventStatusOf rdf:resource="#SemWebPro_2020"/>
+                                  </EventStatus>
+                                </hasEventStatus>
+                                <event_involvement rdf:resource="#EventInvolvement_46"/>
+                                <event_involvement>
+                                  <EventInvolvement rdf:ID="EventInvolvement_41">
+                                    <involvement_event rdf:resource="#SemWebPro_2020"/>
+                                    <involvement_eventRole>
+                                      <EventRole rdf:ID="Organizer">
+                                        <eventRole_involvement>
+                                          <EventInvolvement rdf:ID="EventInvolvement_48">
+                                            <involvement_agent rdf:resource="#Guillaume_Rouyer"/>
+                                            <involvement_event>
+                                              <Event rdf:ID="Faire_Systèmes_1">
+                                                <event_involvement rdf:resource="#EventInvolvement_48"/>
+                                                <hasEventStatus>
+                                                  <EventStatus rdf:ID="Finished">
+                                                    <eventStatusOf>
+                                                      <Event rdf:ID="Foresight_workshop_around_SOLID_1">
+                                                        <hasEventStatus rdf:resource="#Finished"/>
+                                                      </Event>
+                                                    </eventStatusOf>
+                                                    <eventStatusOf rdf:resource="#Faire_Systèmes_1"/>
+                                                    <eventStatusOf>
+                                                      <Event rdf:ID="Faire_Systèmes_2">
+                                                        <hasEventStatus rdf:resource="#Finished"/>
+                                                      </Event>
+                                                    </eventStatusOf>
+                                                    <eventStatusOf>
+                                                      <Event rdf:ID="Faire_Systèmes_3">
+                                                        <hasEventStatus rdf:resource="#Finished"/>
+                                                      </Event>
+                                                    </eventStatusOf>
+                                                  </EventStatus>
+                                                </hasEventStatus>
+                                              </Event>
+                                            </involvement_event>
+                                            <involvement_eventRole rdf:resource="#Organizer"/>
+                                          </EventInvolvement>
+                                        </eventRole_involvement>
+                                        <eventRole_involvement rdf:resource="#EventInvolvement_41"/>
+                                      </EventRole>
+                                    </involvement_eventRole>
+                                    <involvement_agent>
+                                      <Organization rdf:ID="Logilab">
+                                        <agent_involvement rdf:resource="#EventInvolvement_41"/>
+                                      </Organization>
+                                    </involvement_agent>
+                                  </EventInvolvement>
+                                </event_involvement>
+                              </Event>
+                            </involvement_event>
+                          </EventInvolvement>
+                        </agent_involvement>
+                        <hasFollower rdf:resource="#Guillaume_Rouyer"/>
+                        <involvement_agent rdf:resource="#TaskInvolvement_13"/>
+                      </Person>
+                    </involvement_agent>
+                    <involvement_task rdf:resource="#ActualiserPAIR"/>
+                  </TaskInvolvement>
+                </task_involvement>
+                <hasDueDate>
+                  <Date rdf:ID="May19">
+                    <startDateOf>
+                      <Event rdf:ID="Reunion_CdlT_Pleniere">
+                        <endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+                        >2020-05-10T00:00:00</endDate>
+                        <hasStartDate rdf:resource="#May19"/>
+                      </Event>
+                    </startDateOf>
+                    <dueDateOf rdf:resource="#ActualiserPAIR"/>
+                  </Date>
+                </hasDueDate>
+              </Task>
+            </involvement_task>
+          </TaskInvolvement>
+        </taskRole_involvement>
+        <taskRole_involvement rdf:resource="#TaskInvolvement_13"/>
+        <taskRole_involvement rdf:resource="#TaskInvolvement_76"/>
+        <redevabilités rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Les engagements doivent être tenus</redevabilités>
+        <critères rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Opérationalité</critères>
+      </TaskRole>
+    </involvement_taskRole>
+    <involvement_task rdf:resource="#ActualiserPAIR"/>        </TaskInvolvement>
+                                                            </involvement_agent>
+                                                            <agent_involvement>
+                                                              <ProjectInvolvement rdf:ID="ProjectInvolvement_16">
+    <involvement_agent rdf:resource="#Bernard_Chabot"/>
+    <involvement_project rdf:resource="#Pair_Ontology"/>
+    <involvement_projectRole>
+      <ProjectOrActivityRole rdf:ID="LeadDeveloper">
+        <projectRole_involvement>
+          <ProjectInvolvement rdf:ID="RolesGuillaumeReshapingFrameworks">
+            <involvement_projectRole rdf:resource="#LeadDeveloper"/>
+            <involvement_project rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+            <involvement_agent rdf:resource="#Guillaume_Rouyer"/>
+          </ProjectInvolvement>
+        </projectRole_involvement>
+        <projectRole_involvement rdf:resource="#ProjectInvolvement_16"/>
+      </ProjectOrActivityRole>
+    </involvement_projectRole>                                </ProjectInvolvement>
+                                                            </agent_involvement>
+                                                            <hasFollower rdf:resource="#Guillaume_Rouyer"/>
+                                                            <hasFollower rdf:resource="#Gabriel_Henry"/>
+                                                          </Person>
+                                                        </follows>
+                                                        <documentedBy>
+                                                          <Document rdf:ID="CV_Guillaume_Rouyer">
+                                                            <documents rdf:resource="#Guillaume_Rouyer"/>
+                                                            <documents rdf:resource="#Gabriel_Henry"/>
+                                                          </Document>
+                                                        </documentedBy>
+                                                      </Person>
+                                                    </involves>
+                                                    <involves>
+                                                      <Organization rdf:ID="Reconnexion">
+                                                        <description
+                                                         rdf:datatype=
+                                                        "http://www.w3.org/2001/XMLSchema#string"
+                                                        >Association loi1901</description>
+                                                        <involvedIn rdf:resource="#SemApps"/>
+                                                      </Organization>
+                                                    </involves>
+                                                    <hasTask rdf:resource="#OrganiserResidenceAV"/>
+                                                    <project_involvement>
+                                                      <ProjectInvolvement rdf:ID="ProjectInvolvement_4">
+                                                        <involvement_project rdf:resource="#SemApps"/>
+                                                        <involvement_projectRole>
+                                                          <ProjectOrActivityRole rdf:ID="FocusOnInteroperability">
+                                                            <projectRole_involvement rdf:resource="#ProjectInvolvement_4"/>
+                                                            <critères
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >Expertise dans les normes W3C</critères>
+                                                            <roleOf>
+                                                              <Person rdf:ID="Simon_Louvet">
+    <involvement_agent rdf:resource="#ProjectInvolvement_4"/>
+    <hasRole rdf:resource="#FocusOnInteroperability"/>        </Person>
+                                                            </roleOf>
+                                                            <raison_Etre
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >S'assurer que SemApps s'intègre dans l'écosystème des logiciels existants.</raison_Etre>
+                                                            <redevabilités
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >Maintenir la relation avec les autres acteurs du web sémantique, en France et à l'étranger.</redevabilités>
+                                                            <critères
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >Qualités humaines</critères>
+                                                            <critères
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >Capacité à représenter SemApps</critères>
+                                                            <redevabilités
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >Faire une veille technique.</redevabilités>
+                                                            <redevabilités
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >S'assurer que les standards du W3C sont bien respectés.</redevabilités>
+                                                            <raison_Etre
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >S'assurer que SemApps assure la plus haute interopérabilité possible avec les autres logiciels.</raison_Etre>
+                                                            <critères
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >Connaissance experte de l'écosystème</critères>
+                                                            <critères
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >Capacité de communication</critères>
+                                                            <raison_Etre
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >Faciliter le décloisonnement des logiciels.</raison_Etre>
+                                                          </ProjectOrActivityRole>
+                                                        </involvement_projectRole>
+                                                        <involvement_agent rdf:resource="#Simon_Louvet"/>
+                                                      </ProjectInvolvement>
+                                                    </project_involvement>
+                                                    <project_involvement rdf:resource="#ProjectInvolvement_28"/>
+                                                    <project_involvement>
+                                                      <ProjectInvolvement rdf:ID="ProjectInvolvement_1">
+                                                        <involvement_agent>
+                                                          <Person rdf:ID="Pierre_Bouvier_Muller">
+                                                            <involvement_agent rdf:resource="#ProjectInvolvement_1"/>
+                                                          </Person>
+                                                        </involvement_agent>
+                                                        <involvement_project rdf:resource="#SemApps"/>
+                                                        <involvement_projectRole>
+                                                          <Role rdf:ID="Facilitator">
+                                                            <projectRole_involvement rdf:resource="#ProjectInvolvement_1"/>
+                                                            <rdfs:label
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >Facilitateur</rdfs:label>
+                                                          </Role>
+                                                        </involvement_projectRole>
+                                                      </ProjectInvolvement>
+                                                    </project_involvement>
+                                                  </Project>
+                                                </taskOf>
+                                              </Task>
+                                            </involvement_task>
+                                            <involvement_taskRole>
+                                              <Role rdf:ID="Coordinator">
+                                                <taskRole_involvement rdf:resource="#TaskInvolvement_3"/>
+                                                <rdfs:label rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#string"
+                                                >Coordinateur</rdfs:label>
+                                              </Role>
+                                            </involvement_taskRole>
+                                            <involvement_agent rdf:resource="#Virtual_Assembly"/>
+                                          </TaskInvolvement>
+                                        </involvement_agent>
+                                        <hasTask rdf:resource="#OrganiserResidenceAV"/>
+                                        <affiliates rdf:resource="#Guillaume_Rouyer"/>
+                                        <hasAgentStatus>
+                                          <AgentStatus rdf:ID="Active">
+                                            <agentStatusOf rdf:resource="#Virtual_Assembly"/>
+                                            <agentStatusOf>
+                                              <Group rdf:ID="Cercle_Ontologies">
+                                                <agent_involvement>
+                                                  <ActivityInvolvement rdf:ID="ActivityInvolvement_33">
+                                                    <involvement_agent rdf:resource="#Cercle_Ontologies"/>
+                                                    <involvement_activity>
+                                                      <Activity rdf:ID="Ontology_development">
+                                                        <activity_involvement rdf:resource="#ActivityInvolvement_33"/>
+                                                      </Activity>
+                                                    </involvement_activity>
+                                                    <involvement_activityRole>
+                                                      <Role rdf:ID="Host">
+                                                        <activityRole_involvement rdf:resource="#ActivityInvolvement_33"/>
+                                                        <projectRole_involvement>
+                                                          <ProjectInvolvement rdf:ID="ProjectInvolvement_21">
+                                                            <involvement_projectRole rdf:resource="#Host"/>
+                                                            <involvement_agent rdf:resource="#Cercle_Ontologies"/>
+                                                            <involvement_project rdf:resource="#Pair_Ontology"/>
+                                                          </ProjectInvolvement>
+                                                        </projectRole_involvement>
+                                                        <rdfs:label
+                                                         rdf:datatype=
+                                                        "http://www.w3.org/2001/XMLSchema#string"
+                                                        >Hote</rdfs:label>
+                                                      </Role>
+                                                    </involvement_activityRole>
+                                                  </ActivityInvolvement>
+                                                </agent_involvement>
+                                                <agent_involvement rdf:resource="#ProjectInvolvement_21"/>
+                                                <hasAgentStatus rdf:resource="#Active"/>
+                                              </Group>
+                                            </agentStatusOf>
+                                          </AgentStatus>
+                                        </hasAgentStatus>
+                                        <supports rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                                        <affiliates rdf:resource="#Gabriel_Henry"/>
+                                        <rdf:type rdf:resource="#Organization"/>
+                                      </owl:NamedIndividual>
+                                    </involvement_agent>
+                                    <involvement_projectRole>
+                                      <Role rdf:ID="Owner">
+                                        <projectRole_involvement rdf:resource="#ProjectInvolvement_22"/>
+                                        <rdfs:label rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#string"
+                                        >Propiétaire</rdfs:label>
+                                      </Role>
+                                    </involvement_projectRole>
+                                  </ProjectInvolvement>
+                                </project_involvement>
+                                <involves rdf:resource="#Gabriel_Henry"/>
+                                <cooperateWith rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                                <project_involvement rdf:resource="#ProjectInvolvement_21"/>
+                                <hasInspired rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                                <involves rdf:resource="#Guillaume_Rouyer"/>
+                                <project_involvement rdf:resource="#ProjectInvolvement_16"/>
+                                <hasInspired rdf:resource="#What_if_we_propose_a_new_version_of_FOAF"/>
+                                <hasProjectOrActivityStatus>
+                                  <ProjectOrActivityStatus rdf:ID="OngoingActivityOrProject">
+                                    <projectOrActivvityStatusOf rdf:resource="#Pair_Ontology"/>
+                                    <rdfs:label xml:lang="fr"
+                                    >En cours</rdfs:label>
+                                  </ProjectOrActivityStatus>
+                                </hasProjectOrActivityStatus>
+                              </Project>
+                            </inspiredBy>
+                            <brainstormedBy rdf:resource="#Guillaume_Rouyer"/>
+                            <hasSector rdf:resource="#Informatique_Internet"/>
+                            <hasIdeaOrDocumentStatus>
+                              <IdeaOrDocumentStatus rdf:ID="InitialWork">
+                                <ideaOrDocumentStatusOf rdf:resource="#What_if_we_propose_a_new_version_of_FOAF"/>
+                              </IdeaOrDocumentStatus>
+                            </hasIdeaOrDocumentStatus>
+                          </Idea>
+                        </hosts>
+                        <hosts rdf:resource="#Réunions_SemApps_Gouvernance"/>
+                      </DigitalPlace>
+                    </hostedIn>
+                    <cooperateWith rdf:resource="#Pair_Ontology"/>
+                    <needs rdf:resource="#Semantic_modeling"/>
+                    <delivers rdf:resource="#PAIR_model"/>
+                    <how>
+                      <How rdf:ID="Federating_our_dynamics">
+                        <inverse_of_how rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                      </How>
+                    </how>
+                    <basedOn>
+                      <Proposal rdf:ID="PAIR_model_a_new_framework_for_research"/>
+                    </basedOn>
+                    <hasTopic rdf:resource="#Interoperability"/>
+                    <hasTopic rdf:resource="#Peer_to_peer"/>
+                    <hasDomain>
+                      <Branch rdf:ID="SOLID">
+                        <domainOf rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                      </Branch>
+                    </hasDomain>
+                    <involves rdf:resource="#Guillaume_Rouyer"/>
+                    <hasDomain rdf:resource="#Décentralisation_P2P_fédération"/>
+                    <hasSector>
+                      <Sector rdf:ID="Modes_organisation">
+                        <sectorOf rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                      </Sector>
+                    </hasSector>
+                    <hasSector rdf:resource="#Informatique_Internet"/>
+                    <hostedIn rdf:resource="#Virtual_Assembly_place"/>
+                    <uses rdf:resource="#PAIR_model"/>
+                    <hasType>
+                      <ProjectType rdf:ID="ConceptBased">
+                        <typeOf rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                      </ProjectType>
+                    </hasType>
+                    <how rdf:resource="#Implementing_semantic_web_standards"/>
+                    <what>
+                      <What rdf:ID="Developping_SOLID_compliant_software">
+                        <inverse_of_what rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                      </What>
+                    </what>
+                    <forWhat rdf:resource="#Opening_Data"/>
+                    <forWhat rdf:resource="#Decentralising_power_and_wealth"/>
+                    <forWhom>
+                      <ForWhom rdf:ID="Ecologists">
+                        <inverse_of_forWhom rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                      </ForWhom>
+                    </forWhom>
+                    <what>
+                      <What rdf:ID="Developping_ontology_driven_applications">
+                        <inverse_of_what rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                      </What>
+                    </what>
+                    <forWhat rdf:resource="#Decentralisasing_the_web_architecture"/>
+                    <forWhom>
+                      <ForWhom rdf:ID="Social_activists">
+                        <inverse_of_forWhom rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                      </ForWhom>
+                    </forWhom>
+                    <hasProjectOrActivityStatus>
+                      <ProjectOrActivityStatus rdf:ID="Processing">
+                        <rdfs:label xml:lang="fr">En réflexion</rdfs:label>
+                        <projectOrActivvityStatusOf rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                      </ProjectOrActivityStatus>
+                    </hasProjectOrActivityStatus>
+                    <forWhat>
+                      <ForWhat rdf:ID="Preserving_biodiversity">
+                        <inverse_of_forWhat rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                      </ForWhat>
+                    </forWhat>
+                    <documentedBy>
+                      <Document rdf:ID="ReshapingFrameworksApplicationForm">
+                        <documents rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                      </Document>
+                    </documentedBy>
+                    <project_involvement rdf:resource="#RolesGuillaumeReshapingFrameworks"/>
+                    <forWhom rdf:resource="#Tech_Activists"/>
+                    <forWhom>
+                      <ForWhom rdf:ID="Transition_movements">
+                        <inverse_of_forWhom rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                      </ForWhom>
+                    </forWhom>
+                    <why rdf:resource="#Too_much_silos_in_this_world"/>
+                    <hasBranch rdf:resource="#Etudes_Recherches_Expérimentations"/>
+                    <hasTopic rdf:resource="#Decentralization"/>
+                    <inspiredBy rdf:resource="#Pair_Ontology"/>
+                    <hasTopic rdf:resource="#Stigmergy"/>
+                    <supportedBy rdf:resource="#Virtual_Assembly"/>
+                    <uses>
+                      <Software rdf:ID="SemApps_v1">
+                        <usedBy rdf:resource="#Reshaping_Frameworks_For_Research_And_Action"/>
+                      </Software>
+                    </uses>
+                  </Project>
+                </topicOf>
                 <topicOf rdf:resource="#Guillaume_Rouyer"/>
               </Thema>
             </hasTopic>
-            <offers>
-              <Material rdf:ID="straw_bale_set"/>
-            </offers>
-            <involvedIn>
-              <Project rdf:ID="SemApps">
-                <involves rdf:resource="#Guillaume_Rouyer"/>
-                <involves>
-                  <Person rdf:ID="Gabriel_Henry">
-                    <offers>
-                      <Skill rdf:ID="Project_management"/>
-                    </offers>
-                    <affiliatedBy>
-                      <owl:NamedIndividual rdf:ID="Virtual_Assembly">
-                        <affiliates rdf:resource="#Gabriel_Henry"/>
-                        <affiliates rdf:resource="#Guillaume_Rouyer"/>
-                        <partnerOf>
-                          <owl:NamedIndividual rdf:ID="Coop_des_territoires">
-                            <rdf:type rdf:resource="#Organization"/>
-                            <partnerOf rdf:resource="#Virtual_Assembly"/>
-                          </owl:NamedIndividual>
-                        </partnerOf>
-                        <hasAgentStatus>
-                          <AgentStatus rdf:ID="Active">
-                            <agentStatusOf rdf:resource="#Virtual_Assembly"/>
-                            <agentStatusOf>
-                              <Group rdf:ID="Cercle_Ontologies">
-                                <agent_involvement>
-                                  <ActivityInvolvement rdf:ID="ActivityInvolvement_33">
-                                    <involvement_agent rdf:resource="#Cercle_Ontologies"/>
-                                    <involvement_activity>
-                                      <Activity rdf:ID="Ontology_development">
-                                        <activity_involvement rdf:resource="#ActivityInvolvement_33"/>
-                                      </Activity>
-                                    </involvement_activity>
-                                    <involvement_activityRole>
-                                      <Role rdf:ID="Host">
-                                        <activityRole_involvement rdf:resource="#ActivityInvolvement_33"/>
-                                        <projectRole_involvement>
-                                          <ProjectInvolvement rdf:ID="ProjectInvolvement_21">
-                                            <involvement_projectRole rdf:resource="#Host"/>
-                                            <involvement_agent rdf:resource="#Cercle_Ontologies"/>
-                                            <involvement_project>
-                                              <Project rdf:ID="Pair_Ontology">
-                                                <hasMilestone>
-                                                  <Date rdf:ID="June21">
-                                                    <milestoneOf rdf:resource="#Pair_Ontology"/>
-                                                  </Date>
-                                                </hasMilestone>
-                                                <project_involvement>
-                                                  <ProjectInvolvement rdf:ID="ProjectInvolvement_17">
-                                                    <involvement_project rdf:resource="#Pair_Ontology"/>
-                                                    <involvement_agent rdf:resource="#Guillaume_Rouyer"/>
-                                                    <involvement_projectRole>
-                                                      <ProjectOrActivityRole rdf:ID="ProductOwner">
-                                                        <projectRole_involvement rdf:resource="#ProjectInvolvement_17"/>
-                                                      </ProjectOrActivityRole>
-                                                    </involvement_projectRole>
-                                                  </ProjectInvolvement>
-                                                </project_involvement>
-                                                <project_involvement>
-                                                  <ProjectInvolvement rdf:ID="ProjectInvolvement_23">
-                                                    <involvement_agent>
-                                                      <Ecosystem rdf:ID="Digital_Commons_Consortium">
-                                                        <supports>
-                                                          <Event rdf:ID="Réunions_SemApps_Gouvernance">
-                                                            <hasSubjectType>
-                                                              <EventType rdf:ID="Réunion">
-    <typeOfSubject rdf:resource="#Réunions_SemApps_Gouvernance"/>
-    <typeOf rdf:resource="#Réunions_SemApps_Gouvernance"/>    </EventType>
-                                                            </hasSubjectType>
-                                                            <hasSector>
-                                                              <Sector rdf:ID="Informatique_Internet">
-    <sectorOf>
-      <Idea rdf:ID="What_if_we_propose_a_new_version_of_FOAF">
-        <hostedIn>
-          <DigitalPlace rdf:about="#https://github.com/assemblee-virtuelle/pair/">
-            <hosts rdf:resource="#What_if_we_propose_a_new_version_of_FOAF"/>
-            <hosts rdf:resource="#Réunions_SemApps_Gouvernance"/>
-          </DigitalPlace>
-        </hostedIn>
-        <inspiredBy rdf:resource="#Pair_Ontology"/>
-        <brainstormedBy rdf:resource="#Guillaume_Rouyer"/>
-        <hasSector rdf:resource="#Informatique_Internet"/>
-        <hasIdeaOrDocumentStatus>
-          <IdeaOrDocumentStatus rdf:ID="InitialWork">
-            <ideaOrDocumentStatusOf rdf:resource="#What_if_we_propose_a_new_version_of_FOAF"/>
-          </IdeaOrDocumentStatus>
-        </hasIdeaOrDocumentStatus>
-      </Idea>
-    </sectorOf>
-    <sectorOf>
-      <Organization rdf:ID="CoopVirtualAssembly">
-        <hasSector rdf:resource="#Informatique_Internet"/>
-        <hasAgentStatus>
-          <AgentStatus rdf:ID="UnderDevelopment">
-            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-            >En cours de création</rdfs:label>
-            <agentStatusOf rdf:resource="#CoopVirtualAssembly"/>
-          </AgentStatus>
-        </hasAgentStatus>
-      </Organization>
-    </sectorOf>
-    <sectorOf rdf:resource="#Réunions_SemApps_Gouvernance"/>
-    <intendedBy>
-      <Domain rdf:ID="Production">
-        <intends rdf:resource="#Informatique_Internet"/>
-        <branchOf rdf:resource="#Réunions_SemApps_Gouvernance"/>
-      </Domain>
-    </intendedBy>                                             </Sector>
-                                                            </hasSector>
-                                                            <uses>
-                                                              <Theory rdf:ID="PAIR_model">
-    <usedBy rdf:resource="#Réunions_SemApps_Gouvernance"/>    </Theory>
-                                                            </uses>
-                                                            <preferedLabel
-                                                             rdf:datatype=
-                                                            "http://www.w3.org/2001/XMLSchema#string"
-                                                            >Réunion SemApps Gouvernance</preferedLabel>
-                                                            <hasBranch rdf:resource="#Production"/>
-                                                            <hasType rdf:resource="#Réunion"/>
-                                                            <hasEventStatus>
-                                                              <EventStatus rdf:ID="OngoingEvent">
-    <eventStatusOf rdf:resource="#Réunions_SemApps_Gouvernance"/>
-                                                              </EventStatus>
-                                                            </hasEventStatus>
-                                                            <hasTask>
-                                                              <Task rdf:ID="Plannifier_ODJ">
-    <taskOf rdf:resource="#Réunions_SemApps_Gouvernance"/>    </Task>
-                                                            </hasTask>
-                                                            <hasTopic>
-                                                              <Thema rdf:ID="Stigmergy">
-    <topicOf rdf:resource="#Guillaume_Rouyer"/>
-    <topicOf rdf:resource="#Réunions_SemApps_Gouvernance"/>   </Thema>
-                                                            </hasTopic>
-                                                            <comment
-                                                             rdf:datatype=
-                                                            "http://www.w3.org/2001/XMLSchema#string"
-                                                            >On arrive à l'heure cette fois-ci hein ;-)</comment>
-                                                            <hasDomain>
-                                                              <Branch rdf:ID="Décentralisation_P2P_fédération">
-    <domainOf rdf:resource="#Réunions_SemApps_Gouvernance"/>  </Branch>
-                                                            </hasDomain>
-                                                            <supportedBy rdf:resource="#Digital_Commons_Consortium"/>
-                                                            <hasMotivation>
-                                                              <ForWhat rdf:ID="Decentralising_power_and_wealth">
-    <motivates rdf:resource="#Réunions_SemApps_Gouvernance"/> </ForWhat>
-                                                            </hasMotivation>
-                                                            <homePage
-                                                             rdf:datatype=
-                                                            "http://www.w3.org/2001/XMLSchema#anyURI"
-                                                            >https://hackmd.io/SfSueIZlQmeD_ijfSyGtUw?both</homePage>
-                                                            <documentedBy>
-                                                              <Document rdf:ID="CR_SemApps">
-    <documents rdf:resource="#Réunions_SemApps_Gouvernance"/> </Document>
-                                                            </documentedBy>
-                                                            <hostedIn rdf:resource="#https://github.com/assemblee-virtuelle/pair/"/>
-                                                          </Event>
-                                                        </supports>
-                                                        <agent_involvement rdf:resource="#ProjectInvolvement_23"/>
-                                                      </Ecosystem>
-                                                    </involvement_agent>
-                                                    <involvement_project rdf:resource="#Pair_Ontology"/>
-                                                    <involvement_projectRole>
-                                                      <Role rdf:ID="User">
-                                                        <rdfs:label
-                                                         rdf:datatype=
-                                                        "http://www.w3.org/2001/XMLSchema#string"
-                                                        >Utilisateur</rdfs:label>
-                                                        <projectRole_involvement rdf:resource="#ProjectInvolvement_23"/>
-                                                      </Role>
-                                                    </involvement_projectRole>
-                                                  </ProjectInvolvement>
-                                                </project_involvement>
-                                                <project_involvement>
-                                                  <ProjectInvolvement rdf:ID="ProjectInvolvement_22">
-                                                    <involvement_project rdf:resource="#Pair_Ontology"/>
-                                                    <involvement_agent rdf:resource="#Virtual_Assembly"/>
-                                                    <involvement_projectRole>
-                                                      <Role rdf:ID="Owner">
-                                                        <projectRole_involvement rdf:resource="#ProjectInvolvement_22"/>
-                                                        <rdfs:label
-                                                         rdf:datatype=
-                                                        "http://www.w3.org/2001/XMLSchema#string"
-                                                        >Propiétaire</rdfs:label>
-                                                      </Role>
-                                                    </involvement_projectRole>
-                                                  </ProjectInvolvement>
-                                                </project_involvement>
-                                                <involves rdf:resource="#Gabriel_Henry"/>
-                                                <project_involvement rdf:resource="#ProjectInvolvement_21"/>
-                                                <involves rdf:resource="#Guillaume_Rouyer"/>
-                                                <project_involvement>
-                                                  <ProjectInvolvement rdf:ID="ProjectInvolvement_16">
-                                                    <involvement_agent>
-                                                      <Person rdf:ID="Bernard_Chabot">
-                                                        <involvement_agent>
-                                                          <TaskInvolvement rdf:ID="TaskInvolvement_76">
-                                                            <involvement_agent rdf:resource="#Bernard_Chabot"/>
-                                                            <involvement_taskRole>
-                                                              <TaskRole rdf:ID="Reviewer">
-    <taskRole_involvement>
-      <TaskInvolvement rdf:ID="TaskInvolvement_82">
-        <involvement_taskRole rdf:resource="#Reviewer"/>
-        <involvement_task>
-          <Task rdf:ID="ActualiserPAIR">
-            <task_involvement rdf:resource="#TaskInvolvement_76"/>
-            <task_involvement rdf:resource="#TaskInvolvement_82"/>
-            <task_involvement>
-              <TaskInvolvement rdf:ID="TaskInvolvement_13">
-                <involvement_taskRole rdf:resource="#Reviewer"/>
-                <involvement_agent>
-                  <Person rdf:ID="Thomas_Francart">
-                    <agent_involvement>
-                      <EventInvolvement rdf:ID="EventInvolvement_46">
-                        <involvement_eventRole>
-                          <EventRole rdf:ID="Attendee">
-                            <eventRole_involvement rdf:resource="#EventInvolvement_46"/>
-                          </EventRole>
-                        </involvement_eventRole>
-                        <involvement_agent rdf:resource="#Thomas_Francart"/>
-                        <involvement_event>
-                          <Event rdf:ID="SemWebPro_2020">
-                            <hasEventStatus>
-                              <EventStatus rdf:ID="Planned">
-                                <eventStatusOf rdf:resource="#SemWebPro_2020"/>
-                              </EventStatus>
-                            </hasEventStatus>
-                            <event_involvement rdf:resource="#EventInvolvement_46"/>
-                            <event_involvement>
-                              <EventInvolvement rdf:ID="EventInvolvement_41">
-                                <involvement_event rdf:resource="#SemWebPro_2020"/>
-                                <involvement_eventRole>
-                                  <EventRole rdf:ID="Organizer">
-                                    <eventRole_involvement>
-                                      <EventInvolvement rdf:ID="EventInvolvement_48">
-                                        <involvement_agent rdf:resource="#Guillaume_Rouyer"/>
-                                        <involvement_event>
-                                          <Event rdf:ID="Faire_Systèmes_1">
-                                            <event_involvement rdf:resource="#EventInvolvement_48"/>
-                                            <hasEventStatus>
-                                              <EventStatus rdf:ID="Finished">
-                                                <eventStatusOf>
-                                                  <Event rdf:ID="Foresight_workshop_around_SOLID_1">
-                                                    <hasEventStatus rdf:resource="#Finished"/>
-                                                  </Event>
-                                                </eventStatusOf>
-                                                <eventStatusOf rdf:resource="#Faire_Systèmes_1"/>
-                                                <eventStatusOf>
-                                                  <Event rdf:ID="Faire_Systèmes_2">
-                                                    <hasEventStatus rdf:resource="#Finished"/>
-                                                  </Event>
-                                                </eventStatusOf>
-                                                <eventStatusOf>
-                                                  <Event rdf:ID="Faire_Systèmes_3">
-                                                    <hasEventStatus rdf:resource="#Finished"/>
-                                                  </Event>
-                                                </eventStatusOf>
-                                              </EventStatus>
-                                            </hasEventStatus>
-                                          </Event>
-                                        </involvement_event>
-                                        <involvement_eventRole rdf:resource="#Organizer"/>
-                                      </EventInvolvement>
-                                    </eventRole_involvement>
-                                    <eventRole_involvement rdf:resource="#EventInvolvement_41"/>
-                                  </EventRole>
-                                </involvement_eventRole>
-                                <involvement_agent>
-                                  <Organization rdf:ID="Logilab">
-                                    <agent_involvement rdf:resource="#EventInvolvement_41"/>
-                                  </Organization>
-                                </involvement_agent>
-                              </EventInvolvement>
-                            </event_involvement>
-                          </Event>
-                        </involvement_event>
-                      </EventInvolvement>
-                    </agent_involvement>
-                    <hasFollower rdf:resource="#Guillaume_Rouyer"/>
-                    <involvement_agent rdf:resource="#TaskInvolvement_13"/>
-                  </Person>
-                </involvement_agent>
-                <involvement_task rdf:resource="#ActualiserPAIR"/>
-              </TaskInvolvement>
-            </task_involvement>
-            <hasDueDate>
-              <Date rdf:ID="May19">
-                <startDateOf>
-                  <Event rdf:ID="Reunion_CdlT_Pleniere">
-                    <endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
-                    >2020-05-10T00:00:00</endDate>
-                    <hasStartDate rdf:resource="#May19"/>
-                  </Event>
-                </startDateOf>
-                <dueDateOf rdf:resource="#ActualiserPAIR"/>
-              </Date>
-            </hasDueDate>
-          </Task>
-        </involvement_task>
-      </TaskInvolvement>
-    </taskRole_involvement>
-    <taskRole_involvement rdf:resource="#TaskInvolvement_13"/>
-    <taskRole_involvement rdf:resource="#TaskInvolvement_76"/>
-    <redevabilités rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Les engagements doivent être tenus</redevabilités>
-    <critères rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Opérationalité</critères>                                </TaskRole>
-                                                            </involvement_taskRole>
-                                                            <involvement_task rdf:resource="#ActualiserPAIR"/>
-                                                          </TaskInvolvement>
-                                                        </involvement_agent>
-                                                        <agent_involvement rdf:resource="#ProjectInvolvement_16"/>
-                                                        <hasFollower rdf:resource="#Guillaume_Rouyer"/>
-                                                        <hasFollower rdf:resource="#Gabriel_Henry"/>
-                                                      </Person>
-                                                    </involvement_agent>
-                                                    <involvement_project rdf:resource="#Pair_Ontology"/>
-                                                    <involvement_projectRole>
-                                                      <ProjectOrActivityRole rdf:ID="LeadDeveloper">
-                                                        <projectRole_involvement rdf:resource="#ProjectInvolvement_16"/>
-                                                      </ProjectOrActivityRole>
-                                                    </involvement_projectRole>
-                                                  </ProjectInvolvement>
-                                                </project_involvement>
-                                                <hasInspired rdf:resource="#What_if_we_propose_a_new_version_of_FOAF"/>
-                                                <hasProjectOrActivityStatus>
-                                                  <ProjectOrActivityStatus rdf:ID="OngoingActivityOrProject">
-                                                    <projectOrActivvityStatusOf rdf:resource="#Pair_Ontology"/>
-                                                    <rdfs:label
-                                                     xml:lang="fr"
-                                                    >En cours</rdfs:label>
-                                                  </ProjectOrActivityStatus>
-                                                </hasProjectOrActivityStatus>
-                                              </Project>
-                                            </involvement_project>
-                                          </ProjectInvolvement>
-                                        </projectRole_involvement>
-                                        <rdfs:label rdf:datatype=
-                                        "http://www.w3.org/2001/XMLSchema#string"
-                                        >Hote</rdfs:label>
-                                      </Role>
-                                    </involvement_activityRole>
-                                  </ActivityInvolvement>
-                                </agent_involvement>
-                                <agent_involvement rdf:resource="#ProjectInvolvement_21"/>
-                                <hasAgentStatus rdf:resource="#Active"/>
-                              </Group>
-                            </agentStatusOf>
-                          </AgentStatus>
-                        </hasAgentStatus>
-                        <agent_involvement rdf:resource="#ProjectInvolvement_22"/>
-                        <hasTask>
-                          <Task rdf:ID="OrganiserResidenceAV">
-                            <hasPartTask>
-                              <Task rdf:ID="ReserverElCapitan">
-                                <partOfTask rdf:resource="#OrganiserResidenceAV"/>
-                              </Task>
-                            </hasPartTask>
-                            <hasTopic>
-                              <Thema rdf:ID="Interoperability">
-                                <topicOf rdf:resource="#Guillaume_Rouyer"/>
-                                <topicOf rdf:resource="#OrganiserResidenceAV"/>
-                              </Thema>
-                            </hasTopic>
-                            <hasTopic>
-                              <Thema rdf:ID="Decentralization">
-                                <topicOf rdf:resource="#Guillaume_Rouyer"/>
-                                <topicOf rdf:resource="#OrganiserResidenceAV"/>
-                              </Thema>
-                            </hasTopic>
-                            <task_involvement>
-                              <TaskInvolvement rdf:ID="TaskInvolvement_3">
-                                <involvement_task rdf:resource="#OrganiserResidenceAV"/>
-                                <involvement_taskRole>
-                                  <Role rdf:ID="Coordinator">
-                                    <taskRole_involvement rdf:resource="#TaskInvolvement_3"/>
-                                    <rdfs:label rdf:datatype=
-                                    "http://www.w3.org/2001/XMLSchema#string"
-                                    >Coordinateur</rdfs:label>
-                                  </Role>
-                                </involvement_taskRole>
-                                <involvement_agent rdf:resource="#Virtual_Assembly"/>
-                              </TaskInvolvement>
-                            </task_involvement>
-                            <taskOf rdf:resource="#Virtual_Assembly"/>
-                            <taskOf rdf:resource="#SemApps"/>
-                          </Task>
-                        </hasTask>
-                        <rdf:type rdf:resource="#Organization"/>
-                        <involvement_agent rdf:resource="#TaskInvolvement_3"/>
-                      </owl:NamedIndividual>
-                    </affiliatedBy>
-                    <hasFollower rdf:resource="#Guillaume_Rouyer"/>
-                    <involvedIn rdf:resource="#Pair_Ontology"/>
-                    <offers>
-                      <Skill rdf:ID="Semantic_modeling"/>
-                    </offers>
-                    <brainstorms>
-                      <Proposal rdf:ID="Proposal_for_a_new_version_of_FOAF"/>
-                    </brainstorms>
-                    <involvement_agent>
-                      <ProjectInvolvement rdf:ID="ProjectInvolvement_28">
-                        <involvement_agent rdf:resource="#Gabriel_Henry"/>
-                        <involvement_project rdf:resource="#SemApps"/>
-                        <involvement_projectRole>
-                          <ProjectOrActivityRole rdf:ID="Greeter">
-                            <roleOf rdf:resource="#Gabriel_Henry"/>
-                            <raison_Etre rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                            ></raison_Etre>
-                            <critères rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                            >Capacité à transmettre les connaissances</critères>
-                            <critères rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                            >Connaissance de l'organisation</critères>
-                            <alternativeLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                            >Onboarding</alternativeLabel>
-                            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                            >Accueillant</rdfs:label>
-                            <moyens_possibles rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                            >Pour chaque nouveau venu, l’“interviewer” après 2 semaines pour savoir où il en est.</moyens_possibles>
-                            <critères rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                            >Connaissance de la culture d'entreprise</critères>
-                            <critères rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                            >Empathie</critères>
-                            <projectRole_involvement rdf:resource="#ProjectInvolvement_28"/>
-                            <critères rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                            >Capacité à transmettre les outils internes et les méthodologies</critères>
-                            <critères rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                            >Connaissance du projet</critères>
-                            <critères rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                            >La joie de vivre</critères>
-                            <raison_Etre rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                            >Faciliter l’inclusion des personnes</raison_Etre>
-                            <redevabilités rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                            >Répondre de l’accueil et de l’inclusion des nouvelles personnes</redevabilités>
-                            <redevabilités rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                            >S’assurer que la documentation est à jour</redevabilités>
-                            <raison_Etre rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                            >Aider à s’approprier la culture/ le cadre de SemApps, ainsi que les outils qui nous permettent de travailler ensemble</raison_Etre>
-                          </ProjectOrActivityRole>
-                        </involvement_projectRole>
-                      </ProjectInvolvement>
-                    </involvement_agent>
-                    <operates>
-                      <PhysicalPlace rdf:ID="Virtual_Assembly_place">
-                        <hosts rdf:resource="#Guillaume_Rouyer"/>
-                      </PhysicalPlace>
-                    </operates>
-                    <involvedIn rdf:resource="#SemApps"/>
-                    <needs rdf:resource="#straw_bale_set"/>
-                    <follows rdf:resource="#Bernard_Chabot"/>
-                    <documentedBy>
-                      <Document rdf:ID="CV_Guillaume_Rouyer">
-                        <documents rdf:resource="#Guillaume_Rouyer"/>
-                        <documents rdf:resource="#Gabriel_Henry"/>
-                      </Document>
-                    </documentedBy>
-                  </Person>
-                </involves>
-                <involves>
-                  <Organization rdf:ID="Reconnexion">
-                    <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                    >Association loi1901</description>
-                    <involvedIn rdf:resource="#SemApps"/>
-                  </Organization>
-                </involves>
-                <hasTask rdf:resource="#OrganiserResidenceAV"/>
-                <project_involvement>
-                  <ProjectInvolvement rdf:ID="ProjectInvolvement_4">
-                    <involvement_project rdf:resource="#SemApps"/>
-                    <involvement_projectRole>
-                      <ProjectOrActivityRole rdf:ID="FocusOnInteroperability">
-                        <projectRole_involvement rdf:resource="#ProjectInvolvement_4"/>
-                        <critères rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                        >Expertise dans les normes W3C</critères>
-                        <roleOf>
-                          <Person rdf:ID="Simon_Louvet">
-                            <involvement_agent rdf:resource="#ProjectInvolvement_4"/>
-                            <hasRole rdf:resource="#FocusOnInteroperability"/>
-                          </Person>
-                        </roleOf>
-                        <raison_Etre rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                        >S'assurer que SemApps s'intègre dans l'écosystème des logiciels existants.</raison_Etre>
-                        <redevabilités rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                        >Maintenir la relation avec les autres acteurs du web sémantique, en France et à l'étranger.</redevabilités>
-                        <critères rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                        >Qualités humaines</critères>
-                        <critères rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                        >Capacité à représenter SemApps</critères>
-                        <redevabilités rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                        >Faire une veille technique.</redevabilités>
-                        <redevabilités rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                        >S'assurer que les standards du W3C sont bien respectés.</redevabilités>
-                        <raison_Etre rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                        >S'assurer que SemApps assure la plus haute interopérabilité possible avec les autres logiciels.</raison_Etre>
-                        <critères rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                        >Connaissance experte de l'écosystème</critères>
-                        <critères rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                        >Capacité de communication</critères>
-                        <raison_Etre rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                        >Faciliter le décloisonnement des logiciels.</raison_Etre>
-                      </ProjectOrActivityRole>
-                    </involvement_projectRole>
-                    <involvement_agent rdf:resource="#Simon_Louvet"/>
-                  </ProjectInvolvement>
-                </project_involvement>
-                <project_involvement rdf:resource="#ProjectInvolvement_28"/>
-                <project_involvement>
-                  <ProjectInvolvement rdf:ID="ProjectInvolvement_1">
-                    <involvement_agent>
-                      <Person rdf:ID="Pierre_Bouvier_Muller">
-                        <involvement_agent rdf:resource="#ProjectInvolvement_1"/>
-                      </Person>
-                    </involvement_agent>
-                    <involvement_project rdf:resource="#SemApps"/>
-                    <involvement_projectRole>
-                      <Role rdf:ID="Facilitator">
-                        <projectRole_involvement rdf:resource="#ProjectInvolvement_1"/>
-                        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                        >Facilitateur</rdfs:label>
-                      </Role>
-                    </involvement_projectRole>
-                  </ProjectInvolvement>
-                </project_involvement>
-              </Project>
-            </involvedIn>
+            <offers rdf:resource="#straw_bale_set"/>
+            <involvedIn rdf:resource="#SemApps"/>
             <documentedBy rdf:resource="#CV_Guillaume_Rouyer"/>
             <operates rdf:resource="#Virtual_Assembly_place"/>
-            <involvement_agent>
-              <ActorInvolvement rdf:ID="ActorInvolvement_27">
-                <involvement_actor rdf:resource="#CoreTeam_Ontologies"/>
-                <involvement_agent rdf:resource="#Guillaume_Rouyer"/>
-                <involvement_actorRole rdf:resource="#Member"/>
-              </ActorInvolvement>
-            </involvement_agent>
             <hasTopic>
               <Thema rdf:ID="Collapse">
                 <topicOf rdf:resource="#Guillaume_Rouyer"/>
@@ -3959,6 +4299,7 @@
             <agent_involvement rdf:resource="#EventInvolvement_48"/>
             <hostedIn rdf:resource="#Virtual_Assembly_place"/>
             <hasFollower rdf:resource="#Bernard_Chabot"/>
+            <involvement_agent rdf:resource="#RolesGuillaumeReshapingFrameworks"/>
             <follows>
               <Person rdf:ID="Alice_Poggioli">
                 <hasFollower rdf:resource="#Guillaume_Rouyer"/>
@@ -4044,6 +4385,7 @@
     <involvement_actorRole rdf:resource="#Member"/>
   </ActorInvolvement>
   <GroupType rdf:ID="Administration"/>
+  <FolderType rdf:ID="ContentCuration"/>
   <PlaceType rdf:ID="Coworking"/>
   <Branch rdf:ID="Eco-conception_Green_IT"/>
   <ProjectType rdf:ID="EnergyBased"/>
@@ -4059,12 +4401,10 @@
     >Bullshit</rdfs:comment>
   </TaskType>
   <Domain rdf:ID="Régénération_Soin"/>
-  <How rdf:ID="Federating_our_dynamics"/>
   <Date rdf:ID="May10"/>
   <TaskStatus rdf:ID="Done"/>
   <TaskStatus rdf:ID="Reviewing"/>
   <Domain rdf:ID="Conseil_Accompagnement"/>
-  <Sector rdf:ID="Modes_organisation"/>
   <TaskStatus rdf:ID="Doing"/>
   <Role rdf:ID="InternalLink">
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -4072,12 +4412,11 @@
   </Role>
   <IdeaType rdf:ID="Revelation"/>
   <ProjectOrActivityRole rdf:ID="FocusOnDevX"/>
-  <What rdf:ID="Developping_ontology_driven_applications"/>
   <Ecosystem rdf:ID="Data_Food_Consortium"/>
   <DocumentType rdf:ID="Articles_of_association"/>
+  <Date rdf:ID="June21"/>
   <ProjectOrActivityRole rdf:ID="AdminSys"/>
   <GroupType rdf:ID="Communication"/>
-  <ForWhom rdf:ID="Transition_movements"/>
   <Domain rdf:ID="Transformation"/>
   <Room rdf:ID="Room_28"/>
   <Tutorial rdf:ID="PAIR_Conceptionnary"/>
@@ -4086,9 +4425,7 @@
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >Contributeur</rdfs:label>
   </Role>
-  <ForWhat rdf:ID="Struggling_climate_change"/>
   <Sector rdf:ID="Mobilités"/>
-  <Branch rdf:ID="Semantic_web"/>
   <ProjectType rdf:ID="AtomBased"/>
   <Dataset rdf:ID="Virtual_Assembly_Database"/>
   <EventType rdf:ID="Résidence"/>
@@ -4097,11 +4434,6 @@
   <Floor rdf:ID="Rez-de-chaussée"/>
   <Why rdf:ID="Too_much_centralisation_in_this_world"/>
   <PlaceType rdf:ID="Office"/>
-  <Software rdf:ID="SemApps_v1"/>
-  <ProjectOrActivityStatus rdf:ID="Processing">
-    <rdfs:label xml:lang="fr">En réflexion</rdfs:label>
-  </ProjectOrActivityStatus>
-  <ForWhom rdf:ID="Ecologists"/>
   <ProjectType rdf:ID="BitBased"/>
   <ProjectOrActivityStatus rdf:ID="Abandoned">
     <rdfs:label xml:lang="fr">Abandonné</rdfs:label>
@@ -4120,14 +4452,12 @@
   <Organization rdf:ID="Mnemotix"/>
   <Branch rdf:ID="Oasis_communes_imaginées"/>
   <Domain rdf:ID="Commerce"/>
-  <ProjectType rdf:ID="ConceptBased"/>
   <DocumentType rdf:ID="Presentation"/>
   <Role rdf:ID="Developer">
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >Développeur</rdfs:label>
   </Role>
   <Activity rdf:ID="Research_Development_on_decentralised_infrastructures"/>
-  <Branch rdf:ID="SOLID"/>
   <Domain rdf:ID="Mise_en_Oeuvre"/>
   <ProjectOrActivityRole rdf:ID="FocusOnQuality"/>
   <Role rdf:ID="ExternalCommunityManager">
@@ -4135,10 +4465,8 @@
     >Communiquant externe</rdfs:label>
   </Role>
   <AgentStatus rdf:ID="Inactive"/>
-  <How rdf:ID="Implementing_semantic_web_standards"/>
   <Sector rdf:ID="Tourisme_Sport_Loisirs"/>
   <Role rdf:ID="ExternalCommunication"/>
-  <ForWhat rdf:ID="Preserving_biodiversity"/>
   <IdeaOrDocumentStatus rdf:ID="Mature"/>
   <Domain rdf:ID="Réparation"/>
   <Folder rdf:ID="Documentation_Assemblee_Virtuelle">
