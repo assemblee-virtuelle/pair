@@ -1,4 +1,4 @@
-; Sun May 10 10:58:46 CEST 2020
+; Sun May 10 13:07:34 CEST 2020
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -6,11 +6,11 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[PAIR_Summer_2020_Release_ProjectKB_Class11042]
-		[PAIR_Summer_2020_Release_ProjectKB_Class11043]
-		[PAIR_Summer_2020_Release_ProjectKB_Class11044]
-		[PAIR_Summer_2020_Release_ProjectKB_Class11045]
-		[PAIR_Summer_2020_Release_ProjectKB_Class11046]))
+		[PAIR_Summer_2020_Release_ProjectKB_Class51253]
+		[PAIR_Summer_2020_Release_ProjectKB_Class51254]
+		[PAIR_Summer_2020_Release_ProjectKB_Class51255]
+		[PAIR_Summer_2020_Release_ProjectKB_Class51256]
+		[PAIR_Summer_2020_Release_ProjectKB_Class51257]))
 
 ([CLSES_TAB] of  Widget
 
@@ -5342,38 +5342,14 @@
 
 ([PAIR_Summer_2020_Release_ProjectKB_Class10704] of  String
 
-	(name "RenameAcrossFiles"))
+	(name "RenameAcrossFiles")
+	(string_value "/home/guitou/Protege_3.5"))
 
 ([PAIR_Summer_2020_Release_ProjectKB_Class11] of  Widget
 
 	(is_hidden TRUE)
 	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class12])
 	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalConstraintsTab"))
-
-([PAIR_Summer_2020_Release_ProjectKB_Class11042] of  String
-
-	(name "http://www.w3.org/2002/07/owl#Class")
-	(string_value "%3ANAME"))
-
-([PAIR_Summer_2020_Release_ProjectKB_Class11043] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([PAIR_Summer_2020_Release_ProjectKB_Class11044] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
-([PAIR_Summer_2020_Release_ProjectKB_Class11045] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([PAIR_Summer_2020_Release_ProjectKB_Class11046] of  String
-
-	(name "http://www.w3.org/2002/07/owl#Thing")
-	(string_value "%3ANAME"))
 
 ([PAIR_Summer_2020_Release_ProjectKB_Class12] of  Property_List
 )
@@ -5387,11 +5363,32 @@
 ([PAIR_Summer_2020_Release_ProjectKB_Class14] of  Property_List
 )
 
+([PAIR_Summer_2020_Release_ProjectKB_Class14938] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#TimeRelation")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class51193])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.OWLFormWidget"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class14993] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#TImeRelation")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47522])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.OWLFormWidget"))
+
 ([PAIR_Summer_2020_Release_ProjectKB_Class15] of  Widget
 
 	(is_hidden TRUE)
 	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class16])
 	(widget_class_name "edu.stanford.smi.protegex.evaluation.MetaAnalysis"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class15083] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#DateTest")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47650])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.OWLFormWidget"))
 
 ([PAIR_Summer_2020_Release_ProjectKB_Class16] of  Property_List
 )
@@ -5549,6 +5546,591 @@
 	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class48])
 	(widget_class_name "edu.stanford.smi.protegex.datamaster.DataMasterTab"))
 
+([PAIR_Summer_2020_Release_ProjectKB_Class47522] of  Property_List
+
+	(properties
+		[PAIR_Summer_2020_Release_ProjectKB_Class47523]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47526]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47529]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47532]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47534]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47536]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47538]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47540]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47542]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47544]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47546]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47550]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47552]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47554]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47556]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47562]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47564]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47523] of  Widget
+
+	(height 0)
+	(is_hidden FALSE)
+	(label "Name")
+	(name ":NAME")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47524])
+	(width 0)
+	(x 0)
+	(y 0))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47524] of  Property_List
+
+	(properties [PAIR_Summer_2020_Release_ProjectKB_Class47525]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47525] of  Boolean
+
+	(boolean_value TRUE)
+	(name "DisabledByUser"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47526] of  Property_List
+
+	(name "layout properties")
+	(properties
+		[PAIR_Summer_2020_Release_ProjectKB_Class47527]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47528]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47527] of  String
+
+	(name "horizontal_stretcher")
+	(string_value "<<all>>"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47528] of  String
+
+	(name "vertical_stretcher")
+	(string_value "<<none>>"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47529] of  Widget
+
+	(height 180)
+	(is_hidden FALSE)
+	(name "http://protege.stanford.edu/plugins/owl/protege#inferredType")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47530])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.HeaderWidget")
+	(width 550)
+	(x 0)
+	(y 0))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47530] of  Property_List
+
+	(properties [PAIR_Summer_2020_Release_ProjectKB_Class47531]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47531] of  Boolean
+
+	(boolean_value FALSE)
+	(name "DisabledByUser"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47532] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2002/07/owl#versionInfo")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47533]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47533] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47534] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2000/01/rdf-schema#isDefinedBy")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47535]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47535] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47536] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2000/01/rdf-schema#comment")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47537]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47537] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47538] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2000/01/rdf-schema#seeAlso")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47539]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47539] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47540] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2000/01/rdf-schema#label")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47541]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47541] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47542] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#label")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47543])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.MultiLiteralWidget")
+	(width 200)
+	(x 400)
+	(y 180))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47543] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47544] of  Widget
+
+	(height 180)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#aboutPage")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47545])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.MultiLiteralWidget")
+	(width 200)
+	(x 0)
+	(y 360))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47545] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47546] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#alternativeLabel")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47547])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.MultiLiteralWidget")
+	(width 200)
+	(x 200)
+	(y 180))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47547] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47548] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#timeRelation_subject")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47549]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47549] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47550] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#preferedLabel")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47551])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.SingleLiteralWidget")
+	(width 200)
+	(x 0)
+	(y 300))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47551] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47552] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#comment")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47553])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.MultiLiteralWidget")
+	(width 200)
+	(x 200)
+	(y 300))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47553] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47554] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#identifier")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47555])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.MultiLiteralWidget")
+	(width 200)
+	(x 200)
+	(y 420))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47555] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47556] of  Widget
+
+	(height 240)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#hasType")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47557])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.MultiResourceWidget")
+	(width 200)
+	(x 400)
+	(y 300))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47557] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47558] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#relation_time")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47559]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47559] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47560] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#relation_timeRole")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47561]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47561] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47562] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#description")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47563])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.SingleLiteralWidget")
+	(width 200)
+	(x 0)
+	(y 180))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47563] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47564] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#homePage")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47565])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.SingleLiteralWidget")
+	(width 200)
+	(x 0)
+	(y 240))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47565] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47650] of  Property_List
+
+	(properties
+		[PAIR_Summer_2020_Release_ProjectKB_Class47651]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47654]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47657]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47660]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47662]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47664]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47666]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47668]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47670]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47672]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47674]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47676]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47678]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47680]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47682]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47684]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47686]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47688]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47690]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47692]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47694]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47651] of  Widget
+
+	(height 0)
+	(is_hidden FALSE)
+	(label "Name")
+	(name ":NAME")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47652])
+	(width 0)
+	(x 0)
+	(y 0))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47652] of  Property_List
+
+	(properties [PAIR_Summer_2020_Release_ProjectKB_Class47653]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47653] of  Boolean
+
+	(boolean_value TRUE)
+	(name "DisabledByUser"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47654] of  Property_List
+
+	(name "layout properties")
+	(properties
+		[PAIR_Summer_2020_Release_ProjectKB_Class47655]
+		[PAIR_Summer_2020_Release_ProjectKB_Class47656]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47655] of  String
+
+	(name "horizontal_stretcher")
+	(string_value "<<all>>"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47656] of  String
+
+	(name "vertical_stretcher")
+	(string_value "<<none>>"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47657] of  Widget
+
+	(height 180)
+	(is_hidden FALSE)
+	(name "http://protege.stanford.edu/plugins/owl/protege#inferredType")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47658])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.HeaderWidget")
+	(width 550)
+	(x 0)
+	(y 0))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47658] of  Property_List
+
+	(properties [PAIR_Summer_2020_Release_ProjectKB_Class47659]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47659] of  Boolean
+
+	(boolean_value FALSE)
+	(name "DisabledByUser"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47660] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2002/07/owl#versionInfo")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47661]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47661] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47662] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2000/01/rdf-schema#isDefinedBy")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47663]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47663] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47664] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2000/01/rdf-schema#comment")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47665]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47665] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47666] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2000/01/rdf-schema#seeAlso")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47667]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47667] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47668] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2000/01/rdf-schema#label")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47669]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47669] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47670] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#label")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47671])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.MultiLiteralWidget")
+	(width 200)
+	(x 400)
+	(y 180))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47671] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47672] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#aboutPage")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47673])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.MultiLiteralWidget")
+	(width 200)
+	(x 0)
+	(y 540))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47673] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47674] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#alternativeLabel")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47675])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.MultiLiteralWidget")
+	(width 200)
+	(x 200)
+	(y 180))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47675] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47676] of  Widget
+
+	(height 240)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#identifier")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47677])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.MultiLiteralWidget")
+	(width 200)
+	(x 200)
+	(y 420))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47677] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47678] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#comment")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47679])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.MultiLiteralWidget")
+	(width 200)
+	(x 200)
+	(y 300))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47679] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47680] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#preferedLabel")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47681])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.SingleLiteralWidget")
+	(width 200)
+	(x 0)
+	(y 300))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47681] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47682] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#timeRelation_subject")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47683])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.SingleResourceWidget")
+	(width 200)
+	(x 0)
+	(y 480))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47683] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47684] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#hasType")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47685])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.MultiResourceWidget")
+	(width 200)
+	(x 400)
+	(y 300))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47685] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47686] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#relation_time")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47687])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.SingleResourceWidget")
+	(width 200)
+	(x 0)
+	(y 360))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47687] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47688] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#description")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47689])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.SingleLiteralWidget")
+	(width 200)
+	(x 0)
+	(y 180))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47689] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47690] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#relation_timeRole")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47691])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.SingleResourceWidget")
+	(width 200)
+	(x 0)
+	(y 420))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47691] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47692] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#homePage")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47693])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.SingleLiteralWidget")
+	(width 200)
+	(x 0)
+	(y 240))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47693] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47694] of  Widget
+
+	(height 240)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#subject_relation")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class47695])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.MultiResourceWidget")
+	(width 200)
+	(x 400)
+	(y 420))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class47695] of  Property_List
+)
+
 ([PAIR_Summer_2020_Release_ProjectKB_Class48] of  Property_List
 )
 
@@ -5572,6 +6154,370 @@
 	(is_hidden TRUE)
 	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class52])
 	(widget_class_name "edu.stanford.smi.protegex.changes.stats.ChangeStatisticsTab"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51193] of  Property_List
+
+	(properties
+		[PAIR_Summer_2020_Release_ProjectKB_Class51194]
+		[PAIR_Summer_2020_Release_ProjectKB_Class51197]
+		[PAIR_Summer_2020_Release_ProjectKB_Class51200]
+		[PAIR_Summer_2020_Release_ProjectKB_Class51203]
+		[PAIR_Summer_2020_Release_ProjectKB_Class51205]
+		[PAIR_Summer_2020_Release_ProjectKB_Class51207]
+		[PAIR_Summer_2020_Release_ProjectKB_Class51209]
+		[PAIR_Summer_2020_Release_ProjectKB_Class51211]
+		[PAIR_Summer_2020_Release_ProjectKB_Class51213]
+		[PAIR_Summer_2020_Release_ProjectKB_Class51215]
+		[PAIR_Summer_2020_Release_ProjectKB_Class51217]
+		[PAIR_Summer_2020_Release_ProjectKB_Class51219]
+		[PAIR_Summer_2020_Release_ProjectKB_Class51221]
+		[PAIR_Summer_2020_Release_ProjectKB_Class51223]
+		[PAIR_Summer_2020_Release_ProjectKB_Class51225]
+		[PAIR_Summer_2020_Release_ProjectKB_Class51227]
+		[PAIR_Summer_2020_Release_ProjectKB_Class51229]
+		[PAIR_Summer_2020_Release_ProjectKB_Class51231]
+		[PAIR_Summer_2020_Release_ProjectKB_Class51233]
+		[PAIR_Summer_2020_Release_ProjectKB_Class51235]
+		[PAIR_Summer_2020_Release_ProjectKB_Class51237]
+		[PAIR_Summer_2020_Release_ProjectKB_Class51239]
+		[PAIR_Summer_2020_Release_ProjectKB_Class51241]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51194] of  Widget
+
+	(height 0)
+	(is_hidden FALSE)
+	(label "Name")
+	(name ":NAME")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class51195])
+	(width 0)
+	(x 0)
+	(y 0))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51195] of  Property_List
+
+	(properties [PAIR_Summer_2020_Release_ProjectKB_Class51196]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51196] of  Boolean
+
+	(boolean_value TRUE)
+	(name "DisabledByUser"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51197] of  Property_List
+
+	(name "layout properties")
+	(properties
+		[PAIR_Summer_2020_Release_ProjectKB_Class51198]
+		[PAIR_Summer_2020_Release_ProjectKB_Class51199]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51198] of  String
+
+	(name "horizontal_stretcher")
+	(string_value "<<all>>"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51199] of  String
+
+	(name "vertical_stretcher")
+	(string_value "<<none>>"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51200] of  Widget
+
+	(height 180)
+	(is_hidden FALSE)
+	(name "http://protege.stanford.edu/plugins/owl/protege#inferredType")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class51201])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.HeaderWidget")
+	(width 550)
+	(x 0)
+	(y 0))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51201] of  Property_List
+
+	(properties [PAIR_Summer_2020_Release_ProjectKB_Class51202]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51202] of  Boolean
+
+	(boolean_value FALSE)
+	(name "DisabledByUser"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51203] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2002/07/owl#versionInfo")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class51204]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51204] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51205] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2000/01/rdf-schema#isDefinedBy")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class51206]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51206] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51207] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2000/01/rdf-schema#comment")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class51208]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51208] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51209] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2000/01/rdf-schema#seeAlso")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class51210]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51210] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51211] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2000/01/rdf-schema#label")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class51212]))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51212] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51213] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#label")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class51214])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.MultiLiteralWidget")
+	(width 200)
+	(x 200)
+	(y 300))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51214] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51215] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#aboutPage")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class51216])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.MultiLiteralWidget")
+	(width 200)
+	(x 0)
+	(y 360))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51216] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51217] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#moyens_possibles")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class51218])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.MultiLiteralWidget")
+	(width 200)
+	(x 400)
+	(y 180))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51218] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51219] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#alternativeLabel")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class51220])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.MultiLiteralWidget")
+	(width 200)
+	(x 0)
+	(y 480))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51220] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51221] of  Widget
+
+	(height 240)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#redevabilités")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class51222])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.MultiLiteralWidget")
+	(width 200)
+	(x 400)
+	(y 540))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51222] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51223] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#périmètre")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class51224])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.MultiLiteralWidget")
+	(width 200)
+	(x 400)
+	(y 300))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51224] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51225] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#roleOf")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class51226])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.MultiResourceWidget")
+	(width 200)
+	(x 200)
+	(y 540))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51226] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51227] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#critères")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class51228])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.MultiLiteralWidget")
+	(width 200)
+	(x 200)
+	(y 660))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51228] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51229] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#identifier")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class51230])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.MultiLiteralWidget")
+	(width 200)
+	(x 200)
+	(y 180))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51230] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51231] of  Widget
+
+	(height 180)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#comment")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class51232])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.MultiLiteralWidget")
+	(width 200)
+	(x 0)
+	(y 600))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51232] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51233] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#preferedLabel")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class51234])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.SingleLiteralWidget")
+	(width 200)
+	(x 0)
+	(y 300))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51234] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51235] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#hasType")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class51236])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.MultiResourceWidget")
+	(width 200)
+	(x 200)
+	(y 420))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51236] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51237] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#description")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class51238])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.SingleLiteralWidget")
+	(width 200)
+	(x 0)
+	(y 180))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51238] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51239] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#homePage")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class51240])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.SingleLiteralWidget")
+	(width 200)
+	(x 0)
+	(y 240))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51240] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51241] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "http://virtual-assembly.org/ontologies/pair#raison_Etre")
+	(property_list [PAIR_Summer_2020_Release_ProjectKB_Class51242])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.MultiLiteralWidget")
+	(width 200)
+	(x 400)
+	(y 420))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51242] of  Property_List
+)
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51253] of  String
+
+	(name "http://www.w3.org/2002/07/owl#Class")
+	(string_value "%3ANAME"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51254] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51255] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51256] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([PAIR_Summer_2020_Release_ProjectKB_Class51257] of  String
+
+	(name "http://www.w3.org/2002/07/owl#Thing")
+	(string_value "%3ANAME"))
 
 ([PAIR_Summer_2020_Release_ProjectKB_Class52] of  Property_List
 )
@@ -5618,33 +6564,33 @@
 
 	(browser_slot_names [BROWSER_SLOT_NAMES])
 	(customized_instance_widgets
-		[KB_713803_Instance_477]
-		[PAL_FORM_WIDGET]
 		[KB_691299_Instance_398]
-		[KB_313796_Instance_852]
-		[Instance_581]
+		[PAL_FORM_WIDGET]
 		[KB_713803_Instance_693]
 		[INSTANCE_ANNOTATION_FORM_WIDGET]
 		[KB_938545_Instance_166]
-		[STANDARD_SLOT_FORM_WIDGET]
-		[KB_313796_Instance_943]
 		[KB_938545_Instance_661]
 		[KB_713803_Instance_648]
 		[KB_301165_Instance_856]
 		[KB_691299_Instance_537]
-		[KB_303942_Instance_68]
-		[KB_465546_Instance_567]
 		[STANDARD_FACET_FORM_WIDGET]
-		[KB_713803_Instance_780]
 		[KB_868747_Instance_76]
 		[STANDARD_CLASS_FORM_WIDGET]
 		[KB_713803_Instance_303]
 		[Instance_1005]
-		[KB_938545_Instance_329]
 		[KB_764103_Instance_545]
+		[KB_713803_Instance_477]
+		[KB_313796_Instance_852]
+		[Instance_581]
+		[STANDARD_SLOT_FORM_WIDGET]
+		[KB_313796_Instance_943]
+		[KB_303942_Instance_68]
+		[KB_465546_Instance_567]
+		[KB_713803_Instance_780]
+		[KB_938545_Instance_329]
 		[KB_301165_Instance_1013]
-		[Instance_443]
-		[KB_713803_Instance_390])
+		[KB_713803_Instance_390]
+		[Instance_443])
 	(default_cls_metaclass "http://www.w3.org/2002/07/owl#Class")
 	(default_facet_metaclass ":STANDARD-FACET")
 	(default_instance_widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.OWLFormWidget")

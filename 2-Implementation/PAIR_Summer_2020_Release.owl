@@ -30,14 +30,14 @@
       <owl:Class rdf:ID="SubjectType"/>
     </rdfs:subClassOf>
   </owl:Class>
-  <owl:Class rdf:ID="GroupType">
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="AgentType"/>
-    </rdfs:subClassOf>
-  </owl:Class>
   <owl:Class rdf:ID="Time">
     <rdfs:subClassOf>
       <owl:Class rdf:ID="PairEntity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="GroupType">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="AgentType"/>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="SkillType">
@@ -145,11 +145,6 @@
     <rdfs:label xml:lang="en">Subject type</rdfs:label>
     <rdfs:subClassOf>
       <owl:Class rdf:about="#Type"/>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="TimeRole">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Role"/>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="#Association">
@@ -744,11 +739,6 @@
       <owl:Class rdf:about="#Object"/>
     </rdfs:subClassOf>
   </owl:Class>
-  <owl:Class rdf:ID="IdeaStatus">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Status"/>
-    </rdfs:subClassOf>
-  </owl:Class>
   <owl:Class rdf:ID="Tutorial">
     <rdfs:subClassOf rdf:resource="#ConceptBasedResource"/>
   </owl:Class>
@@ -987,6 +977,9 @@
     <rdfs:subClassOf>
       <owl:Class rdf:about="#ResourceType"/>
     </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="IdeaOrDocumentStatus">
+    <rdfs:subClassOf rdf:resource="#Status"/>
   </owl:Class>
   <owl:Class rdf:ID="Theory">
     <rdfs:subClassOf rdf:resource="#ConceptBasedResource"/>
@@ -1361,38 +1354,8 @@
   <owl:Class rdf:ID="DataModelType">
     <rdfs:subClassOf rdf:resource="#ResourceType"/>
   </owl:Class>
-  <owl:Class rdf:ID="TImeRelation">
-    <rdfs:subClassOf rdf:resource="#Association"/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="relation_subject"/>
-        </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="#Subject"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="relation_time"/>
-        </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="#Time"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="relation_timeRole"/>
-        </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="#TimeRole"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
   <owl:Class rdf:ID="ForWhat">
     <rdfs:subClassOf rdf:resource="#Intention"/>
-  </owl:Class>
-  <owl:Class rdf:ID="DocumentStatus">
-    <rdfs:subClassOf rdf:resource="#Status"/>
   </owl:Class>
   <owl:Class rdf:ID="ForWhom">
     <rdfs:subClassOf rdf:resource="#Intention"/>
@@ -1447,6 +1410,24 @@
     </owl:inverseOf>
     <rdfs:range rdf:resource="#Good"/>
   </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasDateOfEdition">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Subject"/>
+          <owl:Class rdf:about="#Intention"/>
+          <owl:Class rdf:about="#Object"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:ID="timePairEntityProperty"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="#Date"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="dateOfEditionOf"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="topicOf">
     <rdfs:subPropertyOf>
       <owl:ObjectProperty rdf:ID="subjectConceptProperties"/>
@@ -1471,6 +1452,12 @@
     </rdfs:subPropertyOf>
     <rdfs:range rdf:resource="#Object"/>
   </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#subjectConceptProperties">
+    <rdfs:comment xml:lang="fr">Relie les PairEntity aux Concepts</rdfs:comment>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:ID="interPairEntityProperty"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#activity_involvement">
     <rdfs:domain rdf:resource="#Activity"/>
     <rdfs:subPropertyOf>
@@ -1479,12 +1466,6 @@
     <owl:inverseOf>
       <owl:FunctionalProperty rdf:about="#involvement_activity"/>
     </owl:inverseOf>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#subjectConceptProperties">
-    <rdfs:comment xml:lang="fr">Relie les PairEntity aux Concepts</rdfs:comment>
-    <rdfs:subPropertyOf>
-      <owl:ObjectProperty rdf:ID="interPairEntityProperty"/>
-    </rdfs:subPropertyOf>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="hasProjectOrActivityStatus">
     <rdfs:domain>
@@ -1495,9 +1476,11 @@
         </owl:unionOf>
       </owl:Class>
     </rdfs:domain>
-    <rdfs:subPropertyOf rdf:resource="#interPairEntityProperty"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:ID="statusProperty"/>
+    </rdfs:subPropertyOf>
     <owl:inverseOf>
-      <owl:ObjectProperty rdf:ID="ProjectOrActivvityStatusOf"/>
+      <owl:ObjectProperty rdf:ID="projectOrActivvityStatusOf"/>
     </owl:inverseOf>
     <rdfs:range rdf:resource="#ProjectOrActivityStatus"/>
   </owl:ObjectProperty>
@@ -1529,6 +1512,16 @@
     </owl:inverseOf>
     <rdfs:domain rdf:resource="#ForWhat"/>
     <rdfs:range rdf:resource="#What"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="startDateOf">
+    <rdfs:range rdf:resource="#Event"/>
+    <rdfs:domain rdf:resource="#Date"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="hasStartDate"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#timePairEntityProperty"/>
+    </rdfs:subPropertyOf>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="extends">
     <rdfs:range rdf:resource="#Sector"/>
@@ -1582,6 +1575,9 @@
       <owl:ObjectProperty rdf:ID="partOfOrganization"/>
     </owl:inverseOf>
   </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#statusProperty">
+    <rdfs:subPropertyOf rdf:resource="#interPairEntityProperty"/>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="hasRole">
     <rdfs:domain rdf:resource="#Agent"/>
     <rdfs:range rdf:resource="#Role"/>
@@ -1601,6 +1597,29 @@
     <owl:inverseOf rdf:resource="#relatedTo"/>
     <rdfs:domain rdf:resource="#Idea"/>
   </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasDocumentStatus">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="documentStatusOf"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="#Document"/>
+    <rdfs:subPropertyOf rdf:resource="#statusProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSector">
+    <rdfs:subPropertyOf rdf:resource="#subjectConceptProperties"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Subject"/>
+          <owl:Class rdf:about="#Intention"/>
+          <owl:Class rdf:about="#Object"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="sectorOf"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#Sector"/>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="hasConceptType">
     <rdfs:range rdf:resource="#ConceptType"/>
     <rdfs:domain rdf:resource="#Concept"/>
@@ -1612,6 +1631,14 @@
       <owl:ObjectProperty rdf:about="#hasType"/>
     </rdfs:subPropertyOf>
   </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="partOfDataModel">
+    <rdfs:domain rdf:resource="#DataModel"/>
+    <rdfs:range rdf:resource="#DataModel"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="hasPartDataModel"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf rdf:resource="#partOf"/>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="hasPartModel">
     <owl:inverseOf>
       <owl:ObjectProperty rdf:ID="partOfModel"/>
@@ -1622,14 +1649,6 @@
     <rdfs:domain rdf:resource="#Theory"/>
     <rdfs:range rdf:resource="#Theory"/>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:ID="partOfDataModel">
-    <rdfs:domain rdf:resource="#DataModel"/>
-    <rdfs:range rdf:resource="#DataModel"/>
-    <owl:inverseOf>
-      <owl:ObjectProperty rdf:ID="hasPartDataModel"/>
-    </owl:inverseOf>
-    <rdfs:subPropertyOf rdf:resource="#partOf"/>
-  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#represents">
     <rdfs:label xml:lang="fr">représente</rdfs:label>
     <rdfs:label xml:lang="en">represents</rdfs:label>
@@ -1639,16 +1658,6 @@
       <owl:ObjectProperty rdf:about="#documents"/>
     </rdfs:subPropertyOf>
     <rdfs:comment xml:lang="en">Indicates that an document "strongly denotes" a business subject, e.g. an invoice "represents" a commercial deal.</rdfs:comment>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:ID="timeRole_relation">
-    <rdfs:subPropertyOf>
-      <owl:ObjectProperty rdf:ID="timeRoleProperty"/>
-    </rdfs:subPropertyOf>
-    <rdfs:domain rdf:resource="#TimeRole"/>
-    <owl:inverseOf>
-      <owl:ObjectProperty rdf:about="#relation_timeRole"/>
-    </owl:inverseOf>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#typeOf">
     <rdfs:label xml:lang="en">type of</rdfs:label>
@@ -1771,21 +1780,27 @@
     <rdfs:domain rdf:resource="#ConceptType"/>
     <rdfs:subPropertyOf rdf:resource="#typeOf"/>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:ID="hasArea">
-    <rdfs:range rdf:resource="#Sector"/>
-    <rdfs:subPropertyOf rdf:resource="#subjectConceptProperties"/>
-    <owl:inverseOf>
-      <owl:ObjectProperty rdf:ID="areaOf"/>
-    </owl:inverseOf>
-    <rdfs:domain>
+  <owl:ObjectProperty rdf:ID="milestoneOf">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#timePairEntityProperty"/>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="#Date"/>
+    <rdfs:comment xml:lang="fr">Temporaire - on pourra éventuellement créer une classe Milestone dans le cadre d'un module gestion de projet ?</rdfs:comment>
+    <rdfs:range>
       <owl:Class>
         <owl:unionOf rdf:parseType="Collection">
-          <owl:Class rdf:about="#Subject"/>
-          <owl:Class rdf:about="#Intention"/>
-          <owl:Class rdf:about="#Object"/>
+          <owl:Class rdf:about="#Activity"/>
+          <owl:Class rdf:about="#Project"/>
+          <owl:Class rdf:about="#Agent"/>
         </owl:unionOf>
       </owl:Class>
-    </rdfs:domain>
+    </rdfs:range>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="hasMilestone"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#timePairEntityProperty">
+    <rdfs:subPropertyOf rdf:resource="#interPairEntityProperty"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="hasObjectType">
     <rdfs:comment xml:lang="en">Links an Object to an ObjectType, for "loose typing".</rdfs:comment>
@@ -1795,20 +1810,6 @@
     <rdfs:domain rdf:resource="#Object"/>
     <rdfs:range rdf:resource="#ObjectType"/>
     <owl:inverseOf rdf:resource="#typeOfObject"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#areaOf">
-    <rdfs:subPropertyOf rdf:resource="#subjectConceptProperties"/>
-    <rdfs:range>
-      <owl:Class>
-        <owl:unionOf rdf:parseType="Collection">
-          <owl:Class rdf:about="#Subject"/>
-          <owl:Class rdf:about="#Object"/>
-          <owl:Class rdf:about="#Intention"/>
-        </owl:unionOf>
-      </owl:Class>
-    </rdfs:range>
-    <rdfs:domain rdf:resource="#Sector"/>
-    <owl:inverseOf rdf:resource="#hasArea"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#operatedBy">
     <rdfs:label xml:lang="en">operated by</rdfs:label>
@@ -1821,14 +1822,6 @@
     </owl:inverseOf>
     <rdfs:range rdf:resource="#Agent"/>
     <rdfs:domain rdf:resource="#Place"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:ID="partOfEcosystem">
-    <rdfs:domain rdf:resource="#Ecosystem"/>
-    <rdfs:range rdf:resource="#Ecosystem"/>
-    <rdfs:subPropertyOf rdf:resource="#partOf"/>
-    <owl:inverseOf>
-      <owl:ObjectProperty rdf:ID="hasPartEcosystem"/>
-    </owl:inverseOf>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="containedIn">
     <owl:inverseOf>
@@ -1846,6 +1839,14 @@
       </owl:Class>
     </rdfs:domain>
     <rdfs:range rdf:resource="#Folder"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="partOfEcosystem">
+    <rdfs:domain rdf:resource="#Ecosystem"/>
+    <rdfs:range rdf:resource="#Ecosystem"/>
+    <rdfs:subPropertyOf rdf:resource="#partOf"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="hasPartEcosystem"/>
+    </owl:inverseOf>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="hasPartTutorial">
     <owl:inverseOf>
@@ -1997,14 +1998,6 @@
     <rdfs:subPropertyOf rdf:resource="#partOf"/>
     <owl:inverseOf rdf:resource="#hasPartOrganization"/>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#relation_timeRole">
-    <owl:inverseOf rdf:resource="#timeRole_relation"/>
-    <rdfs:domain rdf:resource="#TImeRelation"/>
-    <rdfs:subPropertyOf>
-      <owl:ObjectProperty rdf:about="#timeRoleProperty"/>
-    </rdfs:subPropertyOf>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="hasPartProject">
     <rdfs:subPropertyOf rdf:resource="#hasPart"/>
     <rdfs:range rdf:resource="#Project"/>
@@ -2018,29 +2011,6 @@
     <rdfs:subPropertyOf rdf:resource="#hasPart"/>
     <rdfs:domain rdf:resource="#Activity"/>
     <rdfs:range rdf:resource="#Activity"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#ProjectOrActivvityStatusOf">
-    <rdfs:subPropertyOf rdf:resource="#interPairEntityProperty"/>
-    <rdfs:range>
-      <owl:Class>
-        <owl:unionOf rdf:parseType="Collection">
-          <owl:Class rdf:about="#Activity"/>
-          <owl:Class rdf:about="#Project"/>
-        </owl:unionOf>
-      </owl:Class>
-    </rdfs:range>
-    <owl:inverseOf rdf:resource="#hasProjectOrActivityStatus"/>
-    <rdfs:domain rdf:resource="#ProjectOrActivityStatus"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:ID="subject_relation">
-    <rdfs:subPropertyOf>
-      <owl:ObjectProperty rdf:about="#timeRoleProperty"/>
-    </rdfs:subPropertyOf>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-    <owl:inverseOf>
-      <owl:ObjectProperty rdf:about="#relation_time"/>
-    </owl:inverseOf>
-    <rdfs:domain rdf:resource="#Time"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="partOfDigitalPlace">
     <rdfs:subPropertyOf rdf:resource="#partOf"/>
@@ -2112,6 +2082,21 @@
     <owl:inverseOf>
       <owl:ObjectProperty rdf:ID="supports"/>
     </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasIdeaOrDocumentStatus">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="ideaOrDocumentStatusOf"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#IdeaOrDocumentStatus"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Idea"/>
+          <owl:Class rdf:about="#Document"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:subPropertyOf rdf:resource="#statusProperty"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#operates">
     <rdfs:label xml:lang="en">operates</rdfs:label>
@@ -2218,13 +2203,13 @@
     <rdfs:subPropertyOf rdf:resource="#subjectConceptProperties"/>
     <rdfs:range rdf:resource="#Domain"/>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#relation_time">
-    <rdfs:subPropertyOf>
-      <owl:ObjectProperty rdf:about="#timeRoleProperty"/>
-    </rdfs:subPropertyOf>
-    <rdfs:domain rdf:resource="#TImeRelation"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <owl:inverseOf rdf:resource="#subject_relation"/>
+  <owl:ObjectProperty rdf:ID="agentStatusOf">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="hasAgentStatus"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf rdf:resource="#statusProperty"/>
+    <rdfs:range rdf:resource="#Agent"/>
+    <rdfs:domain rdf:resource="#AgentStatus"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#activityRole_involvement">
     <owl:inverseOf>
@@ -2232,9 +2217,6 @@
     </owl:inverseOf>
     <rdfs:domain rdf:resource="#ProjectOrActivityRole"/>
     <rdfs:subPropertyOf rdf:resource="#activityRoleProperty"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#subjectIntentionsProperty">
-    <rdfs:subPropertyOf rdf:resource="#interPairEntityProperty"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#hostedIn">
     <rdfs:domain>
@@ -2260,6 +2242,9 @@
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="#hosts"/>
     </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#subjectIntentionsProperty">
+    <rdfs:subPropertyOf rdf:resource="#interPairEntityProperty"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#partOfTutorial">
     <rdfs:subPropertyOf rdf:resource="#partOf"/>
@@ -2349,6 +2334,26 @@
     <rdfs:comment xml:lang="fr">Relie les Subjects et les Objects</rdfs:comment>
     <rdfs:subPropertyOf rdf:resource="#interPairEntityProperty"/>
   </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#dateOfEditionOf">
+    <rdfs:domain rdf:resource="#Date"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Subject"/>
+          <owl:Class rdf:about="#Intention"/>
+          <owl:Class rdf:about="#Object"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <owl:inverseOf rdf:resource="#hasDateOfEdition"/>
+    <rdfs:subPropertyOf rdf:resource="#timePairEntityProperty"/>
+    <rdfs:comment xml:lang="fr">Peut servir pour le versionnning ...</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#documentStatusOf">
+    <rdfs:subPropertyOf rdf:resource="#statusProperty"/>
+    <rdfs:range rdf:resource="#Document"/>
+    <owl:inverseOf rdf:resource="#hasDocumentStatus"/>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#brainstormedBy">
     <rdfs:subPropertyOf>
       <owl:ObjectProperty rdf:about="#interSubjectProperty"/>
@@ -2408,6 +2413,12 @@
     <rdfs:label xml:lang="fr">nécessité par</rdfs:label>
     <rdfs:label xml:lang="en">needed by</rdfs:label>
   </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasAgentStatus">
+    <owl:inverseOf rdf:resource="#agentStatusOf"/>
+    <rdfs:subPropertyOf rdf:resource="#statusProperty"/>
+    <rdfs:range rdf:resource="#AgentStatus"/>
+    <rdfs:domain rdf:resource="#Agent"/>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#documents">
     <rdfs:comment xml:lang="en">Indicates that a document "somehow documents" a business subject, e.g. a brochure "documents" the company it is about.</rdfs:comment>
     <rdfs:subPropertyOf rdf:resource="#objectSubjectProperty"/>
@@ -2423,15 +2434,20 @@
     <rdfs:label xml:lang="fr">documente</rdfs:label>
     <rdfs:domain rdf:resource="#Object"/>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#relation_subject">
-    <rdfs:domain rdf:resource="#TImeRelation"/>
-    <rdfs:subPropertyOf>
-      <owl:ObjectProperty rdf:about="#timeRoleProperty"/>
-    </rdfs:subPropertyOf>
-    <owl:inverseOf>
-      <owl:ObjectProperty rdf:ID="time_relation"/>
-    </owl:inverseOf>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <owl:ObjectProperty rdf:about="#hasMilestone">
+    <rdfs:range rdf:resource="#Date"/>
+    <rdfs:comment xml:lang="fr">Temporaire - on pourra éventuellement créer une classe Milestone dans le cadre d'un module gestion de projet ?</rdfs:comment>
+    <owl:inverseOf rdf:resource="#milestoneOf"/>
+    <rdfs:subPropertyOf rdf:resource="#timePairEntityProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Project"/>
+          <owl:Class rdf:about="#Activity"/>
+          <owl:Class rdf:about="#Agent"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#representedBy">
     <rdfs:domain rdf:resource="#Subject"/>
@@ -2442,6 +2458,14 @@
       <owl:ObjectProperty rdf:about="#documentedBy"/>
     </rdfs:subPropertyOf>
     <rdfs:range rdf:resource="#Document"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasTaskStatus">
+    <rdfs:domain rdf:resource="#Task"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="taskStatusOf"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#TaskStatus"/>
+    <rdfs:subPropertyOf rdf:resource="#statusProperty"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#interSubjectProperty">
     <rdfs:domain rdf:resource="#Subject"/>
@@ -2482,6 +2506,12 @@
     <rdfs:range rdf:resource="#Resource"/>
     <rdfs:subPropertyOf rdf:resource="#interSubjectProperty"/>
   </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasStartDate">
+    <rdfs:domain rdf:resource="#Event"/>
+    <rdfs:range rdf:resource="#Date"/>
+    <rdfs:subPropertyOf rdf:resource="#timePairEntityProperty"/>
+    <owl:inverseOf rdf:resource="#startDateOf"/>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#partOfEvent">
     <rdfs:domain rdf:resource="#Event"/>
     <owl:inverseOf rdf:resource="#hasPartEvent"/>
@@ -2493,6 +2523,12 @@
     <rdfs:range rdf:resource="#Service"/>
     <rdfs:domain rdf:resource="#Service"/>
     <rdfs:subPropertyOf rdf:resource="#hasPart"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#taskStatusOf">
+    <rdfs:domain rdf:resource="#TaskStatus"/>
+    <rdfs:range rdf:resource="#Task"/>
+    <owl:inverseOf rdf:resource="#hasTaskStatus"/>
+    <rdfs:subPropertyOf rdf:resource="#statusProperty"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="hasPartMaterial">
     <rdfs:subPropertyOf rdf:resource="#hasPart"/>
@@ -2507,6 +2543,14 @@
     <owl:inverseOf rdf:resource="#hasPartData"/>
     <rdfs:range rdf:resource="#Dataset"/>
     <rdfs:subPropertyOf rdf:resource="#partOf"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasEndDate">
+    <rdfs:domain rdf:resource="#Event"/>
+    <rdfs:range rdf:resource="#Date"/>
+    <rdfs:subPropertyOf rdf:resource="#timePairEntityProperty"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="endDateOf"/>
+    </owl:inverseOf>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="domainOf">
     <rdfs:subPropertyOf rdf:resource="#subjectConceptProperties"/>
@@ -2524,6 +2568,14 @@
       </owl:Class>
     </rdfs:range>
   </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasDueDate">
+    <rdfs:domain rdf:resource="#Task"/>
+    <rdfs:range rdf:resource="#Date"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="dueDateOf"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf rdf:resource="#timePairEntityProperty"/>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#basedOn">
     <rdfs:domain rdf:resource="#Project"/>
     <rdfs:range rdf:resource="#Idea"/>
@@ -2537,6 +2589,12 @@
     <rdfs:domain rdf:resource="#PhysicalPlace"/>
     <owl:inverseOf rdf:resource="#hasPartPhysicalPlace"/>
   </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#endDateOf">
+    <rdfs:domain rdf:resource="#Date"/>
+    <rdfs:subPropertyOf rdf:resource="#timePairEntityProperty"/>
+    <owl:inverseOf rdf:resource="#hasEndDate"/>
+    <rdfs:range rdf:resource="#Event"/>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="hasInspired">
     <rdfs:subPropertyOf rdf:resource="#interSubjectProperty"/>
     <rdfs:domain rdf:resource="#Subject"/>
@@ -2544,6 +2602,12 @@
     <owl:inverseOf>
       <owl:ObjectProperty rdf:ID="inspiredBy"/>
     </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#dueDateOf">
+    <rdfs:domain rdf:resource="#Date"/>
+    <rdfs:subPropertyOf rdf:resource="#timePairEntityProperty"/>
+    <owl:inverseOf rdf:resource="#hasDueDate"/>
+    <rdfs:range rdf:resource="#Task"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#hasDomain">
     <rdfs:subPropertyOf rdf:resource="#subjectConceptProperties"/>
@@ -2692,6 +2756,20 @@
     <rdfs:subPropertyOf rdf:resource="#partOf"/>
     <rdfs:domain rdf:resource="#Material"/>
   </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#sectorOf">
+    <owl:inverseOf rdf:resource="#hasSector"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Subject"/>
+          <owl:Class rdf:about="#Object"/>
+          <owl:Class rdf:about="#Intention"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#Sector"/>
+    <rdfs:subPropertyOf rdf:resource="#subjectConceptProperties"/>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#contains">
     <rdfs:subPropertyOf>
       <owl:ObjectProperty rdf:about="#interObjectProperty"/>
@@ -2737,17 +2815,17 @@
   <owl:ObjectProperty rdf:about="#taskRoleProperty">
     <rdfs:subPropertyOf rdf:resource="#roleProperty"/>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#partOfIdea">
-    <rdfs:domain rdf:resource="#Idea"/>
-    <owl:inverseOf rdf:resource="#hasPartIdea"/>
-    <rdfs:subPropertyOf rdf:resource="#partOf"/>
-    <rdfs:range rdf:resource="#Idea"/>
-  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#hasTask">
     <rdfs:subPropertyOf rdf:resource="#interSubjectProperty"/>
     <rdfs:domain rdf:resource="#Subject"/>
     <owl:inverseOf rdf:resource="#taskOf"/>
     <rdfs:range rdf:resource="#Task"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#partOfIdea">
+    <rdfs:domain rdf:resource="#Idea"/>
+    <owl:inverseOf rdf:resource="#hasPartIdea"/>
+    <rdfs:subPropertyOf rdf:resource="#partOf"/>
+    <rdfs:range rdf:resource="#Idea"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#hasType">
     <rdfs:label xml:lang="fr">à pour type</rdfs:label>
@@ -2779,24 +2857,10 @@
       </owl:Class>
     </rdfs:range>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#time_relation">
-    <rdfs:subPropertyOf>
-      <owl:ObjectProperty rdf:about="#timeRoleProperty"/>
-    </rdfs:subPropertyOf>
-    <owl:inverseOf rdf:resource="#relation_subject"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-    <rdfs:domain rdf:resource="#Subject"/>
-  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="produces">
     <rdfs:domain rdf:resource="#Activity"/>
     <rdfs:range rdf:resource="#Resource"/>
     <rdfs:subPropertyOf rdf:resource="#interSubjectProperty"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#involvement_actor">
-    <owl:inverseOf rdf:resource="#actor_involvement"/>
-    <rdfs:subPropertyOf rdf:resource="#actorRoleProperty"/>
-    <rdfs:domain rdf:resource="#ActorInvolvement"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#hosts">
     <rdfs:range>
@@ -2817,6 +2881,12 @@
     <rdfs:subPropertyOf rdf:resource="#interSubjectProperty"/>
     <rdfs:domain rdf:resource="#Place"/>
   </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#involvement_actor">
+    <owl:inverseOf rdf:resource="#actor_involvement"/>
+    <rdfs:subPropertyOf rdf:resource="#actorRoleProperty"/>
+    <rdfs:domain rdf:resource="#ActorInvolvement"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#hasPartDataModel">
     <rdfs:range>
       <owl:Class>
@@ -2829,6 +2899,27 @@
     <rdfs:domain rdf:resource="#DataModel"/>
     <owl:inverseOf rdf:resource="#partOfDataModel"/>
     <rdfs:subPropertyOf rdf:resource="#hasPart"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="eventStatusOf">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="hasEventStatus"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#Event"/>
+    <rdfs:domain rdf:resource="#EventStatus"/>
+    <rdfs:subPropertyOf rdf:resource="#statusProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#projectOrActivvityStatusOf">
+    <owl:inverseOf rdf:resource="#hasProjectOrActivityStatus"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Activity"/>
+          <owl:Class rdf:about="#Project"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:subPropertyOf rdf:resource="#statusProperty"/>
+    <rdfs:domain rdf:resource="#ProjectOrActivityStatus"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#taskRole_involvement">
     <rdfs:domain rdf:resource="#TaskRole"/>
@@ -2865,9 +2956,6 @@
     </rdfs:range>
     <rdfs:subPropertyOf rdf:resource="#partOf"/>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#timeRoleProperty">
-    <rdfs:subPropertyOf rdf:resource="#roleProperty"/>
-  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#hasSolution">
     <owl:inverseOf rdf:resource="#solutionOf"/>
     <rdfs:range rdf:resource="#How"/>
@@ -2891,6 +2979,12 @@
     <rdfs:range rdf:resource="#Domain"/>
     <owl:inverseOf rdf:resource="#intends"/>
     <rdfs:subPropertyOf rdf:resource="#interConceptProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasEventStatus">
+    <owl:inverseOf rdf:resource="#eventStatusOf"/>
+    <rdfs:subPropertyOf rdf:resource="#statusProperty"/>
+    <rdfs:range rdf:resource="#EventStatus"/>
+    <rdfs:domain rdf:resource="#Event"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#hasMethod">
     <owl:inverseOf rdf:resource="#methodOf"/>
@@ -2928,6 +3022,19 @@
     <rdfs:subPropertyOf rdf:resource="#taskRoleProperty"/>
     <owl:inverseOf rdf:resource="#involvement_task"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#ideaOrDocumentStatusOf">
+    <rdfs:subPropertyOf rdf:resource="#statusProperty"/>
+    <rdfs:domain rdf:resource="#IdeaOrDocumentStatus"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Idea"/>
+          <owl:Class rdf:about="#Document"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <owl:inverseOf rdf:resource="#hasIdeaOrDocumentStatus"/>
   </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:ID="raison_Etre">
     <rdfs:domain rdf:resource="#Role"/>
@@ -3183,6 +3290,7 @@
   <ForWhom rdf:ID="Social_activists"/>
   <Service rdf:ID="SemApps_As_A_Service"/>
   <Sector rdf:ID="Santé_Bien-être"/>
+  <Date rdf:ID="May20"/>
   <ActorRole rdf:ID="Partner"/>
   <Role rdf:ID="Regulator">
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -3190,27 +3298,22 @@
   </Role>
   <Domain rdf:ID="Fabrication"/>
   <Branch rdf:ID="Holochain"/>
+  <IdeaOrDocumentStatus rdf:ID="ToBeReviewed"/>
   <Sector rdf:ID="Engagement_citoyen"/>
   <OrganizationType rdf:ID="SCOP"/>
   <What rdf:ID="Fostering_structuration_of_transition_networks"/>
+  <IdeaOrDocumentStatus rdf:ID="WorkInProgress"/>
   <Thema rdf:ID="Covid19"/>
   <Domain rdf:ID="Upcycling"/>
   <Currency rdf:ID="Proteine"/>
   <Town rdf:ID="Pris"/>
   <Method rdf:ID="Semantic_Concept_modeling"/>
   <Organization rdf:ID="Startin_Blox"/>
-  <Date rdf:ID="Premier_juin_2020">
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >2020-06-01</rdfs:label>
-  </Date>
   <PlaceType rdf:ID="Farm"/>
   <What rdf:ID="Developping_SOLID_compliant_software"/>
   <Skill rdf:ID="Web_development"/>
-  <Date rdf:ID="date_4">
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >2020-05-06</rdfs:label>
-  </Date>
   <Activity rdf:ID="P2P_software_Development"/>
+  <IdeaStatus rdf:ID="IdeaStatus_32"/>
   <Role rdf:ID="InternalCommunityManager">
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >Communiquant interne</rdfs:label>
@@ -3223,36 +3326,37 @@
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >Lien externe</rdfs:label>
   </Role>
+  <IdeaStatus rdf:ID="IdeaStatus_33"/>
   <DataModel rdf:ID="PAIR_Release_2019-06-21"/>
   <Domain rdf:ID="Construction"/>
   <Domain rdf:ID="Cuisine"/>
   <Sector rdf:ID="Habitat_Batiments"/>
   <OrganizationType rdf:ID="Association_de_fait"/>
+  <IdeaStatus rdf:ID="IdeaStatus_30"/>
+  <IdeaStatus rdf:ID="IdeaStatus_31"/>
   <Domain rdf:ID="Programmation"/>
+  <Date rdf:ID="June12"/>
   <ForWhom rdf:ID="Grassroots_communities"/>
   <Person rdf:ID="Sébastien_Rosset"/>
   <TaskType rdf:ID="Admin">
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >Bullshit</rdfs:comment>
   </TaskType>
+  <ActivityType rdf:ID="Métiers_de_la_forêt"/>
   <TaskType rdf:ID="Action">
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >Bullshit</rdfs:comment>
   </TaskType>
-  <ActivityType rdf:ID="Métiers_de_la_forêt"/>
   <Domain rdf:ID="Marketing_Publicité"/>
   <ForWhat rdf:ID="Decentralisasing_the_web_architecture"/>
   <Why rdf:ID="Too_much_inequalities_in_this_world"/>
   <PlaceType rdf:ID="Fablab"/>
-  <Event rdf:ID="Foresight_workshop_around_SOLID_1"/>
   <Role rdf:ID="Administrator">
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >Administrateur</rdfs:label>
   </Role>
   <DocumentType rdf:ID="Social_Code"/>
-  <Event rdf:ID="Foresight_workshop_around_SOLID_2"/>
   <Building rdf:ID="Oratoire"/>
-  <TimeRole rdf:ID="Passé"/>
   <Why rdf:ID="Too_much_silos_in_this_world"/>
   <ActorRole rdf:ID="StakeHolder"/>
   <Service rdf:ID="PAIR_As_A_Service"/>
@@ -3288,6 +3392,7 @@
   <EventRole rdf:ID="Player"/>
   <Domain rdf:ID="Sensibilisation_Plaidoyer"/>
   <Currency rdf:ID="G1"/>
+  <Date rdf:ID="June8"/>
   <PlaceType rdf:ID="Coliving"/>
   <ActorInvolvement rdf:ID="ActorInvolvement_29">
     <involvement_actorRole rdf:resource="#Member"/>
@@ -3332,259 +3437,336 @@
                             <partnerOf rdf:resource="#Virtual_Assembly"/>
                           </owl:NamedIndividual>
                         </partnerOf>
-                        <agent_involvement>
-                          <ProjectInvolvement rdf:ID="ProjectInvolvement_22">
-                            <involvement_project>
-                              <Project rdf:ID="Pair_Ontology">
-                                <involves rdf:resource="#Guillaume_Rouyer"/>
-                                <involves rdf:resource="#Gabriel_Henry"/>
-                                <project_involvement>
-                                  <ProjectInvolvement rdf:ID="ProjectInvolvement_23">
-                                    <involvement_agent>
-                                      <Ecosystem rdf:ID="Digital_Commons_Consortium">
-                                        <supports>
-                                          <Event rdf:ID="Réunion_SemApps_Gouvernance">
-                                            <uses>
-                                              <Theory rdf:ID="PAIR_model">
-                                                <usedBy rdf:resource="#Réunion_SemApps_Gouvernance"/>
-                                              </Theory>
-                                            </uses>
-                                            <comment rdf:datatype=
-                                            "http://www.w3.org/2001/XMLSchema#string"
-                                            >On arrive à l'heure cette fois-ci hein ;-)</comment>
-                                            <supportedBy rdf:resource="#Digital_Commons_Consortium"/>
-                                            <hasDomain>
-                                              <Branch rdf:ID="Décentralisation_P2P_fédération">
-                                                <domainOf rdf:resource="#Réunion_SemApps_Gouvernance"/>
-                                              </Branch>
-                                            </hasDomain>
-                                            <documentedBy>
-                                              <Document rdf:ID="CR_SemApps">
-                                                <documents rdf:resource="#Réunion_SemApps_Gouvernance"/>
-                                              </Document>
-                                            </documentedBy>
-                                            <hasSubjectType>
-                                              <EventType rdf:ID="Réunion">
-                                                <typeOfSubject rdf:resource="#Réunion_SemApps_Gouvernance"/>
-                                                <typeOf rdf:resource="#Réunion_SemApps_Gouvernance"/>
-                                              </EventType>
-                                            </hasSubjectType>
-                                            <hasArea>
-                                              <Sector rdf:ID="Informatique_Internet">
-                                                <intendedBy>
-                                                  <Domain rdf:ID="Production">
-                                                    <intends rdf:resource="#Informatique_Internet"/>
-                                                    <branchOf rdf:resource="#Réunion_SemApps_Gouvernance"/>
-                                                  </Domain>
-                                                </intendedBy>
-                                                <areaOf rdf:resource="#Réunion_SemApps_Gouvernance"/>
-                                              </Sector>
-                                            </hasArea>
-                                            <hasTask>
-                                              <Task rdf:ID="Plannifier_ODJ">
-                                                <taskOf rdf:resource="#Réunion_SemApps_Gouvernance"/>
-                                              </Task>
-                                            </hasTask>
-                                            <preferedLabel rdf:datatype=
-                                            "http://www.w3.org/2001/XMLSchema#string"
-                                            >Réunion SemApps Gouvernance</preferedLabel>
-                                            <homePage rdf:datatype=
-                                            "http://www.w3.org/2001/XMLSchema#anyURI"
-                                            >https://hackmd.io/SfSueIZlQmeD_ijfSyGtUw?both</homePage>
-                                            <hasMotivation>
-                                              <ForWhat rdf:ID="Decentralising_power_and_wealth">
-                                                <motivates rdf:resource="#Réunion_SemApps_Gouvernance"/>
-                                              </ForWhat>
-                                            </hasMotivation>
-                                            <hasType rdf:resource="#Réunion"/>
-                                            <hasBranch rdf:resource="#Production"/>
-                                            <hasTopic>
-                                              <Thema rdf:ID="Stigmergy">
-                                                <topicOf rdf:resource="#Guillaume_Rouyer"/>
-                                                <topicOf rdf:resource="#Réunion_SemApps_Gouvernance"/>
-                                              </Thema>
-                                            </hasTopic>
-                                            <hostedIn>
-                                              <DigitalPlace rdf:about="#https://github.com/assemblee-virtuelle/pair/">
-                                                <hosts rdf:resource="#Réunion_SemApps_Gouvernance"/>
-                                              </DigitalPlace>
-                                            </hostedIn>
-                                          </Event>
-                                        </supports>
-                                        <agent_involvement rdf:resource="#ProjectInvolvement_23"/>
-                                      </Ecosystem>
-                                    </involvement_agent>
-                                    <involvement_project rdf:resource="#Pair_Ontology"/>
-                                    <involvement_projectRole>
-                                      <Role rdf:ID="User">
-                                        <rdfs:label rdf:datatype=
-                                        "http://www.w3.org/2001/XMLSchema#string"
-                                        >Utilisateur</rdfs:label>
-                                        <projectRole_involvement rdf:resource="#ProjectInvolvement_23"/>
-                                      </Role>
-                                    </involvement_projectRole>
-                                  </ProjectInvolvement>
-                                </project_involvement>
-                                <project_involvement rdf:resource="#ProjectInvolvement_22"/>
-                                <project_involvement>
-                                  <ProjectInvolvement rdf:ID="ProjectInvolvement_21">
-                                    <involvement_projectRole>
+                        <hasAgentStatus>
+                          <AgentStatus rdf:ID="Active">
+                            <agentStatusOf rdf:resource="#Virtual_Assembly"/>
+                            <agentStatusOf>
+                              <Group rdf:ID="Cercle_Ontologies">
+                                <agent_involvement>
+                                  <ActivityInvolvement rdf:ID="ActivityInvolvement_33">
+                                    <involvement_agent rdf:resource="#Cercle_Ontologies"/>
+                                    <involvement_activity>
+                                      <Activity rdf:ID="Ontology_development">
+                                        <activity_involvement rdf:resource="#ActivityInvolvement_33"/>
+                                      </Activity>
+                                    </involvement_activity>
+                                    <involvement_activityRole>
                                       <Role rdf:ID="Host">
-                                        <activityRole_involvement>
-                                          <ActivityInvolvement rdf:ID="ActivityInvolvement_33">
-                                            <involvement_agent>
-                                              <Group rdf:ID="Cercle_Ontologies">
-                                                <agent_involvement rdf:resource="#ActivityInvolvement_33"/>
-                                                <agent_involvement rdf:resource="#ProjectInvolvement_21"/>
-                                              </Group>
-                                            </involvement_agent>
-                                            <involvement_activity>
-                                              <Activity rdf:ID="Ontology_development">
-                                                <activity_involvement rdf:resource="#ActivityInvolvement_33"/>
-                                              </Activity>
-                                            </involvement_activity>
-                                            <involvement_activityRole rdf:resource="#Host"/>
-                                          </ActivityInvolvement>
-                                        </activityRole_involvement>
-                                        <projectRole_involvement rdf:resource="#ProjectInvolvement_21"/>
+                                        <activityRole_involvement rdf:resource="#ActivityInvolvement_33"/>
+                                        <projectRole_involvement>
+                                          <ProjectInvolvement rdf:ID="ProjectInvolvement_21">
+                                            <involvement_projectRole rdf:resource="#Host"/>
+                                            <involvement_agent rdf:resource="#Cercle_Ontologies"/>
+                                            <involvement_project>
+                                              <Project rdf:ID="Pair_Ontology">
+                                                <hasMilestone>
+                                                  <Date rdf:ID="June21">
+                                                    <milestoneOf rdf:resource="#Pair_Ontology"/>
+                                                  </Date>
+                                                </hasMilestone>
+                                                <project_involvement>
+                                                  <ProjectInvolvement rdf:ID="ProjectInvolvement_17">
+                                                    <involvement_project rdf:resource="#Pair_Ontology"/>
+                                                    <involvement_agent rdf:resource="#Guillaume_Rouyer"/>
+                                                    <involvement_projectRole>
+                                                      <ProjectOrActivityRole rdf:ID="ProductOwner">
+                                                        <projectRole_involvement rdf:resource="#ProjectInvolvement_17"/>
+                                                      </ProjectOrActivityRole>
+                                                    </involvement_projectRole>
+                                                  </ProjectInvolvement>
+                                                </project_involvement>
+                                                <project_involvement>
+                                                  <ProjectInvolvement rdf:ID="ProjectInvolvement_23">
+                                                    <involvement_agent>
+                                                      <Ecosystem rdf:ID="Digital_Commons_Consortium">
+                                                        <supports>
+                                                          <Event rdf:ID="Réunions_SemApps_Gouvernance">
+                                                            <hasSubjectType>
+                                                              <EventType rdf:ID="Réunion">
+    <typeOfSubject rdf:resource="#Réunions_SemApps_Gouvernance"/>
+    <typeOf rdf:resource="#Réunions_SemApps_Gouvernance"/>    </EventType>
+                                                            </hasSubjectType>
+                                                            <hasSector>
+                                                              <Sector rdf:ID="Informatique_Internet">
+    <sectorOf>
+      <Idea rdf:ID="What_if_we_propose_a_new_version_of_FOAF">
+        <hostedIn>
+          <DigitalPlace rdf:about="#https://github.com/assemblee-virtuelle/pair/">
+            <hosts rdf:resource="#What_if_we_propose_a_new_version_of_FOAF"/>
+            <hosts rdf:resource="#Réunions_SemApps_Gouvernance"/>
+          </DigitalPlace>
+        </hostedIn>
+        <inspiredBy rdf:resource="#Pair_Ontology"/>
+        <brainstormedBy rdf:resource="#Guillaume_Rouyer"/>
+        <hasSector rdf:resource="#Informatique_Internet"/>
+        <hasIdeaOrDocumentStatus>
+          <IdeaOrDocumentStatus rdf:ID="InitialWork">
+            <ideaOrDocumentStatusOf rdf:resource="#What_if_we_propose_a_new_version_of_FOAF"/>
+          </IdeaOrDocumentStatus>
+        </hasIdeaOrDocumentStatus>
+      </Idea>
+    </sectorOf>
+    <sectorOf>
+      <Organization rdf:ID="CoopVirtualAssembly">
+        <hasSector rdf:resource="#Informatique_Internet"/>
+        <hasAgentStatus>
+          <AgentStatus rdf:ID="UnderDevelopment">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >En cours de création</rdfs:label>
+            <agentStatusOf rdf:resource="#CoopVirtualAssembly"/>
+          </AgentStatus>
+        </hasAgentStatus>
+      </Organization>
+    </sectorOf>
+    <sectorOf rdf:resource="#Réunions_SemApps_Gouvernance"/>
+    <intendedBy>
+      <Domain rdf:ID="Production">
+        <intends rdf:resource="#Informatique_Internet"/>
+        <branchOf rdf:resource="#Réunions_SemApps_Gouvernance"/>
+      </Domain>
+    </intendedBy>                                             </Sector>
+                                                            </hasSector>
+                                                            <uses>
+                                                              <Theory rdf:ID="PAIR_model">
+    <usedBy rdf:resource="#Réunions_SemApps_Gouvernance"/>    </Theory>
+                                                            </uses>
+                                                            <preferedLabel
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >Réunion SemApps Gouvernance</preferedLabel>
+                                                            <hasBranch rdf:resource="#Production"/>
+                                                            <hasType rdf:resource="#Réunion"/>
+                                                            <hasEventStatus>
+                                                              <EventStatus rdf:ID="OngoingEvent">
+    <eventStatusOf rdf:resource="#Réunions_SemApps_Gouvernance"/>
+                                                              </EventStatus>
+                                                            </hasEventStatus>
+                                                            <hasTask>
+                                                              <Task rdf:ID="Plannifier_ODJ">
+    <taskOf rdf:resource="#Réunions_SemApps_Gouvernance"/>    </Task>
+                                                            </hasTask>
+                                                            <hasTopic>
+                                                              <Thema rdf:ID="Stigmergy">
+    <topicOf rdf:resource="#Guillaume_Rouyer"/>
+    <topicOf rdf:resource="#Réunions_SemApps_Gouvernance"/>   </Thema>
+                                                            </hasTopic>
+                                                            <comment
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >On arrive à l'heure cette fois-ci hein ;-)</comment>
+                                                            <hasDomain>
+                                                              <Branch rdf:ID="Décentralisation_P2P_fédération">
+    <domainOf rdf:resource="#Réunions_SemApps_Gouvernance"/>  </Branch>
+                                                            </hasDomain>
+                                                            <supportedBy rdf:resource="#Digital_Commons_Consortium"/>
+                                                            <hasMotivation>
+                                                              <ForWhat rdf:ID="Decentralising_power_and_wealth">
+    <motivates rdf:resource="#Réunions_SemApps_Gouvernance"/> </ForWhat>
+                                                            </hasMotivation>
+                                                            <homePage
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#anyURI"
+                                                            >https://hackmd.io/SfSueIZlQmeD_ijfSyGtUw?both</homePage>
+                                                            <documentedBy>
+                                                              <Document rdf:ID="CR_SemApps">
+    <documents rdf:resource="#Réunions_SemApps_Gouvernance"/> </Document>
+                                                            </documentedBy>
+                                                            <hostedIn rdf:resource="#https://github.com/assemblee-virtuelle/pair/"/>
+                                                          </Event>
+                                                        </supports>
+                                                        <agent_involvement rdf:resource="#ProjectInvolvement_23"/>
+                                                      </Ecosystem>
+                                                    </involvement_agent>
+                                                    <involvement_project rdf:resource="#Pair_Ontology"/>
+                                                    <involvement_projectRole>
+                                                      <Role rdf:ID="User">
+                                                        <rdfs:label
+                                                         rdf:datatype=
+                                                        "http://www.w3.org/2001/XMLSchema#string"
+                                                        >Utilisateur</rdfs:label>
+                                                        <projectRole_involvement rdf:resource="#ProjectInvolvement_23"/>
+                                                      </Role>
+                                                    </involvement_projectRole>
+                                                  </ProjectInvolvement>
+                                                </project_involvement>
+                                                <project_involvement>
+                                                  <ProjectInvolvement rdf:ID="ProjectInvolvement_22">
+                                                    <involvement_project rdf:resource="#Pair_Ontology"/>
+                                                    <involvement_agent rdf:resource="#Virtual_Assembly"/>
+                                                    <involvement_projectRole>
+                                                      <Role rdf:ID="Owner">
+                                                        <projectRole_involvement rdf:resource="#ProjectInvolvement_22"/>
+                                                        <rdfs:label
+                                                         rdf:datatype=
+                                                        "http://www.w3.org/2001/XMLSchema#string"
+                                                        >Propiétaire</rdfs:label>
+                                                      </Role>
+                                                    </involvement_projectRole>
+                                                  </ProjectInvolvement>
+                                                </project_involvement>
+                                                <involves rdf:resource="#Gabriel_Henry"/>
+                                                <project_involvement rdf:resource="#ProjectInvolvement_21"/>
+                                                <involves rdf:resource="#Guillaume_Rouyer"/>
+                                                <project_involvement>
+                                                  <ProjectInvolvement rdf:ID="ProjectInvolvement_16">
+                                                    <involvement_agent>
+                                                      <Person rdf:ID="Bernard_Chabot">
+                                                        <involvement_agent>
+                                                          <TaskInvolvement rdf:ID="TaskInvolvement_76">
+                                                            <involvement_agent rdf:resource="#Bernard_Chabot"/>
+                                                            <involvement_taskRole>
+                                                              <TaskRole rdf:ID="Reviewer">
+    <taskRole_involvement>
+      <TaskInvolvement rdf:ID="TaskInvolvement_82">
+        <involvement_taskRole rdf:resource="#Reviewer"/>
+        <involvement_task>
+          <Task rdf:ID="ActualiserPAIR">
+            <task_involvement rdf:resource="#TaskInvolvement_76"/>
+            <task_involvement rdf:resource="#TaskInvolvement_82"/>
+            <task_involvement>
+              <TaskInvolvement rdf:ID="TaskInvolvement_13">
+                <involvement_taskRole rdf:resource="#Reviewer"/>
+                <involvement_agent>
+                  <Person rdf:ID="Thomas_Francart">
+                    <agent_involvement>
+                      <EventInvolvement rdf:ID="EventInvolvement_46">
+                        <involvement_eventRole>
+                          <EventRole rdf:ID="Attendee">
+                            <eventRole_involvement rdf:resource="#EventInvolvement_46"/>
+                          </EventRole>
+                        </involvement_eventRole>
+                        <involvement_agent rdf:resource="#Thomas_Francart"/>
+                        <involvement_event>
+                          <Event rdf:ID="SemWebPro_2020">
+                            <hasEventStatus>
+                              <EventStatus rdf:ID="Planned">
+                                <eventStatusOf rdf:resource="#SemWebPro_2020"/>
+                              </EventStatus>
+                            </hasEventStatus>
+                            <event_involvement rdf:resource="#EventInvolvement_46"/>
+                            <event_involvement>
+                              <EventInvolvement rdf:ID="EventInvolvement_41">
+                                <involvement_event rdf:resource="#SemWebPro_2020"/>
+                                <involvement_eventRole>
+                                  <EventRole rdf:ID="Organizer">
+                                    <eventRole_involvement>
+                                      <EventInvolvement rdf:ID="EventInvolvement_48">
+                                        <involvement_agent rdf:resource="#Guillaume_Rouyer"/>
+                                        <involvement_event>
+                                          <Event rdf:ID="Faire_Systèmes_1">
+                                            <event_involvement rdf:resource="#EventInvolvement_48"/>
+                                            <hasEventStatus>
+                                              <EventStatus rdf:ID="Finished">
+                                                <eventStatusOf>
+                                                  <Event rdf:ID="Foresight_workshop_around_SOLID_1">
+                                                    <hasEventStatus rdf:resource="#Finished"/>
+                                                  </Event>
+                                                </eventStatusOf>
+                                                <eventStatusOf rdf:resource="#Faire_Systèmes_1"/>
+                                                <eventStatusOf>
+                                                  <Event rdf:ID="Faire_Systèmes_2">
+                                                    <hasEventStatus rdf:resource="#Finished"/>
+                                                  </Event>
+                                                </eventStatusOf>
+                                                <eventStatusOf>
+                                                  <Event rdf:ID="Faire_Systèmes_3">
+                                                    <hasEventStatus rdf:resource="#Finished"/>
+                                                  </Event>
+                                                </eventStatusOf>
+                                              </EventStatus>
+                                            </hasEventStatus>
+                                          </Event>
+                                        </involvement_event>
+                                        <involvement_eventRole rdf:resource="#Organizer"/>
+                                      </EventInvolvement>
+                                    </eventRole_involvement>
+                                    <eventRole_involvement rdf:resource="#EventInvolvement_41"/>
+                                  </EventRole>
+                                </involvement_eventRole>
+                                <involvement_agent>
+                                  <Organization rdf:ID="Logilab">
+                                    <agent_involvement rdf:resource="#EventInvolvement_41"/>
+                                  </Organization>
+                                </involvement_agent>
+                              </EventInvolvement>
+                            </event_involvement>
+                          </Event>
+                        </involvement_event>
+                      </EventInvolvement>
+                    </agent_involvement>
+                    <hasFollower rdf:resource="#Guillaume_Rouyer"/>
+                    <involvement_agent rdf:resource="#TaskInvolvement_13"/>
+                  </Person>
+                </involvement_agent>
+                <involvement_task rdf:resource="#ActualiserPAIR"/>
+              </TaskInvolvement>
+            </task_involvement>
+            <hasDueDate>
+              <Date rdf:ID="May19">
+                <startDateOf>
+                  <Event rdf:ID="Reunion_CdlT_Pleniere">
+                    <endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+                    >2020-05-10T00:00:00</endDate>
+                    <hasStartDate rdf:resource="#May19"/>
+                  </Event>
+                </startDateOf>
+                <dueDateOf rdf:resource="#ActualiserPAIR"/>
+              </Date>
+            </hasDueDate>
+          </Task>
+        </involvement_task>
+      </TaskInvolvement>
+    </taskRole_involvement>
+    <taskRole_involvement rdf:resource="#TaskInvolvement_13"/>
+    <taskRole_involvement rdf:resource="#TaskInvolvement_76"/>
+    <redevabilités rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Les engagements doivent être tenus</redevabilités>
+    <critères rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Opérationalité</critères>                                </TaskRole>
+                                                            </involvement_taskRole>
+                                                            <involvement_task rdf:resource="#ActualiserPAIR"/>
+                                                          </TaskInvolvement>
+                                                        </involvement_agent>
+                                                        <agent_involvement rdf:resource="#ProjectInvolvement_16"/>
+                                                        <hasFollower rdf:resource="#Guillaume_Rouyer"/>
+                                                        <hasFollower rdf:resource="#Gabriel_Henry"/>
+                                                      </Person>
+                                                    </involvement_agent>
+                                                    <involvement_project rdf:resource="#Pair_Ontology"/>
+                                                    <involvement_projectRole>
+                                                      <ProjectOrActivityRole rdf:ID="LeadDeveloper">
+                                                        <projectRole_involvement rdf:resource="#ProjectInvolvement_16"/>
+                                                      </ProjectOrActivityRole>
+                                                    </involvement_projectRole>
+                                                  </ProjectInvolvement>
+                                                </project_involvement>
+                                                <hasInspired rdf:resource="#What_if_we_propose_a_new_version_of_FOAF"/>
+                                                <hasProjectOrActivityStatus>
+                                                  <ProjectOrActivityStatus rdf:ID="OngoingActivityOrProject">
+                                                    <projectOrActivvityStatusOf rdf:resource="#Pair_Ontology"/>
+                                                    <rdfs:label
+                                                     xml:lang="fr"
+                                                    >En cours</rdfs:label>
+                                                  </ProjectOrActivityStatus>
+                                                </hasProjectOrActivityStatus>
+                                              </Project>
+                                            </involvement_project>
+                                          </ProjectInvolvement>
+                                        </projectRole_involvement>
                                         <rdfs:label rdf:datatype=
                                         "http://www.w3.org/2001/XMLSchema#string"
                                         >Hote</rdfs:label>
                                       </Role>
-                                    </involvement_projectRole>
-                                    <involvement_agent rdf:resource="#Cercle_Ontologies"/>
-                                    <involvement_project rdf:resource="#Pair_Ontology"/>
-                                  </ProjectInvolvement>
-                                </project_involvement>
-                                <project_involvement>
-                                  <ProjectInvolvement rdf:ID="ProjectInvolvement_17">
-                                    <involvement_project rdf:resource="#Pair_Ontology"/>
-                                    <involvement_agent rdf:resource="#Guillaume_Rouyer"/>
-                                    <involvement_projectRole>
-                                      <ProjectOrActivityRole rdf:ID="ProductOwner">
-                                        <projectRole_involvement rdf:resource="#ProjectInvolvement_17"/>
-                                      </ProjectOrActivityRole>
-                                    </involvement_projectRole>
-                                  </ProjectInvolvement>
-                                </project_involvement>
-                                <project_involvement>
-                                  <ProjectInvolvement rdf:ID="ProjectInvolvement_16">
-                                    <involvement_agent>
-                                      <Person rdf:ID="Bernard_Chabot">
-                                        <involvement_agent>
-                                          <TaskInvolvement rdf:ID="TaskInvolvement_76">
-                                            <involvement_agent rdf:resource="#Bernard_Chabot"/>
-                                            <involvement_taskRole>
-                                              <TaskRole rdf:ID="Reviewer">
-                                                <taskRole_involvement>
-                                                  <TaskInvolvement rdf:ID="TaskInvolvement_82">
-                                                    <involvement_taskRole rdf:resource="#Reviewer"/>
-                                                    <involvement_task>
-                                                      <Task rdf:ID="ActualiserPAIR">
-                                                        <task_involvement rdf:resource="#TaskInvolvement_76"/>
-                                                        <task_involvement rdf:resource="#TaskInvolvement_82"/>
-                                                        <task_involvement>
-                                                          <TaskInvolvement rdf:ID="TaskInvolvement_13">
-                                                            <involvement_taskRole rdf:resource="#Reviewer"/>
-                                                            <involvement_agent>
-                                                              <Person rdf:ID="Thomas_Francart">
-    <agent_involvement>
-      <EventInvolvement rdf:ID="EventInvolvement_46">
-        <involvement_eventRole>
-          <EventRole rdf:ID="Attendee">
-            <eventRole_involvement rdf:resource="#EventInvolvement_46"/>
-          </EventRole>
-        </involvement_eventRole>
-        <involvement_agent rdf:resource="#Thomas_Francart"/>
-        <involvement_event>
-          <Event rdf:ID="SemWebPro">
-            <event_involvement rdf:resource="#EventInvolvement_46"/>
-            <event_involvement>
-              <EventInvolvement rdf:ID="EventInvolvement_41">
-                <involvement_event rdf:resource="#SemWebPro"/>
-                <involvement_eventRole>
-                  <EventRole rdf:ID="Organizer">
-                    <eventRole_involvement>
-                      <EventInvolvement rdf:ID="EventInvolvement_48">
-                        <involvement_agent rdf:resource="#Guillaume_Rouyer"/>
-                        <involvement_event>
-                          <Event rdf:ID="Faire_Systèmes_1">
-                            <event_involvement rdf:resource="#EventInvolvement_48"/>
-                          </Event>
-                        </involvement_event>
-                        <involvement_eventRole rdf:resource="#Organizer"/>
-                      </EventInvolvement>
-                    </eventRole_involvement>
-                    <eventRole_involvement rdf:resource="#EventInvolvement_41"/>
-                  </EventRole>
-                </involvement_eventRole>
-                <involvement_agent>
-                  <Organization rdf:ID="Logilab">
-                    <agent_involvement rdf:resource="#EventInvolvement_41"/>
-                  </Organization>
-                </involvement_agent>
-              </EventInvolvement>
-            </event_involvement>
-          </Event>
-        </involvement_event>
-      </EventInvolvement>
-    </agent_involvement>
-    <hasFollower rdf:resource="#Guillaume_Rouyer"/>
-    <involvement_agent rdf:resource="#TaskInvolvement_13"/>   </Person>
-                                                            </involvement_agent>
-                                                            <involvement_task rdf:resource="#ActualiserPAIR"/>
-                                                          </TaskInvolvement>
-                                                        </task_involvement>
-                                                      </Task>
-                                                    </involvement_task>
-                                                  </TaskInvolvement>
-                                                </taskRole_involvement>
-                                                <taskRole_involvement rdf:resource="#TaskInvolvement_13"/>
-                                                <taskRole_involvement rdf:resource="#TaskInvolvement_76"/>
-                                                <redevabilités
-                                                 rdf:datatype=
-                                                "http://www.w3.org/2001/XMLSchema#string"
-                                                >Les engagements doivent être tenus</redevabilités>
-                                                <critères rdf:datatype=
-                                                "http://www.w3.org/2001/XMLSchema#string"
-                                                >Opérationalité</critères>
-                                              </TaskRole>
-                                            </involvement_taskRole>
-                                            <involvement_task rdf:resource="#ActualiserPAIR"/>
-                                          </TaskInvolvement>
-                                        </involvement_agent>
-                                        <agent_involvement rdf:resource="#ProjectInvolvement_16"/>
-                                        <hasFollower rdf:resource="#Guillaume_Rouyer"/>
-                                        <hasFollower rdf:resource="#Gabriel_Henry"/>
-                                      </Person>
-                                    </involvement_agent>
-                                    <involvement_project rdf:resource="#Pair_Ontology"/>
-                                    <involvement_projectRole>
-                                      <ProjectOrActivityRole rdf:ID="LeadDeveloper">
-                                        <projectRole_involvement rdf:resource="#ProjectInvolvement_16"/>
-                                      </ProjectOrActivityRole>
-                                    </involvement_projectRole>
-                                  </ProjectInvolvement>
-                                </project_involvement>
-                                <hasProjectOrActivityStatus>
-                                  <ProjectOrActivityStatus rdf:ID="Ongoing">
-                                    <rdfs:label xml:lang="fr"
-                                    >En cours</rdfs:label>
-                                    <ProjectOrActivvityStatusOf rdf:resource="#Pair_Ontology"/>
-                                  </ProjectOrActivityStatus>
-                                </hasProjectOrActivityStatus>
-                              </Project>
-                            </involvement_project>
-                            <involvement_agent rdf:resource="#Virtual_Assembly"/>
-                            <involvement_projectRole>
-                              <Role rdf:ID="Owner">
-                                <projectRole_involvement rdf:resource="#ProjectInvolvement_22"/>
-                                <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                                >Propiétaire</rdfs:label>
-                              </Role>
-                            </involvement_projectRole>
-                          </ProjectInvolvement>
-                        </agent_involvement>
+                                    </involvement_activityRole>
+                                  </ActivityInvolvement>
+                                </agent_involvement>
+                                <agent_involvement rdf:resource="#ProjectInvolvement_21"/>
+                                <hasAgentStatus rdf:resource="#Active"/>
+                              </Group>
+                            </agentStatusOf>
+                          </AgentStatus>
+                        </hasAgentStatus>
+                        <agent_involvement rdf:resource="#ProjectInvolvement_22"/>
                         <hasTask>
                           <Task rdf:ID="OrganiserResidenceAV">
                             <hasPartTask>
@@ -3822,11 +4004,7 @@
                 <localizes rdf:resource="#Guillaume_Rouyer"/>
               </Address>
             </localizedBy>
-            <brainstorms>
-              <Idea rdf:ID="What_if_we_propose_a_new_version_of_FOAF">
-                <brainstormedBy rdf:resource="#Guillaume_Rouyer"/>
-              </Idea>
-            </brainstorms>
+            <brainstorms rdf:resource="#What_if_we_propose_a_new_version_of_FOAF"/>
             <preferedLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >Guillaume_AV</preferedLabel>
             <needs>
@@ -3853,9 +4031,11 @@
       </Organization>
     </involvement_actor>
   </ActorInvolvement>
+  <TaskStatus rdf:ID="Todo"/>
   <EventType rdf:ID="Conférence"/>
   <OrganizationType rdf:ID="Fondation_Fond_de_dotation"/>
   <Sector rdf:ID="Education_Formation"/>
+  <TaskStatus rdf:ID="Reviewed"/>
   <ProjectOrActivityRole rdf:ID="ScrumMaster"/>
   <Sector rdf:ID="Culture_Media_Lien_Social"/>
   <Currency rdf:ID="HoloFuel"/>
@@ -3873,7 +4053,6 @@
   <Project rdf:ID="Solid_Box"/>
   <Domain rdf:ID="Logistique_Distribution"/>
   <EventRole rdf:ID="Sponsor"/>
-  <TimeRole rdf:ID="Présent"/>
   <Sector rdf:ID="Modes_de_vies"/>
   <TaskType rdf:ID="Supervision">
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -3881,9 +4060,12 @@
   </TaskType>
   <Domain rdf:ID="Régénération_Soin"/>
   <How rdf:ID="Federating_our_dynamics"/>
+  <Date rdf:ID="May10"/>
+  <TaskStatus rdf:ID="Done"/>
+  <TaskStatus rdf:ID="Reviewing"/>
   <Domain rdf:ID="Conseil_Accompagnement"/>
-  <TimeRole rdf:ID="Futur"/>
   <Sector rdf:ID="Modes_organisation"/>
+  <TaskStatus rdf:ID="Doing"/>
   <Role rdf:ID="InternalLink">
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >Lien interne</rdfs:label>
@@ -3895,7 +4077,6 @@
   <DocumentType rdf:ID="Articles_of_association"/>
   <ProjectOrActivityRole rdf:ID="AdminSys"/>
   <GroupType rdf:ID="Communication"/>
-  <Event rdf:ID="Faire_Systèmes_2"/>
   <ForWhom rdf:ID="Transition_movements"/>
   <Domain rdf:ID="Transformation"/>
   <Room rdf:ID="Room_28"/>
@@ -3953,47 +4134,13 @@
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >Communiquant externe</rdfs:label>
   </Role>
+  <AgentStatus rdf:ID="Inactive"/>
   <How rdf:ID="Implementing_semantic_web_standards"/>
   <Sector rdf:ID="Tourisme_Sport_Loisirs"/>
   <Role rdf:ID="ExternalCommunication"/>
   <ForWhat rdf:ID="Preserving_biodiversity"/>
+  <IdeaOrDocumentStatus rdf:ID="Mature"/>
   <Domain rdf:ID="Réparation"/>
-  <Event rdf:ID="Faire_Systèmes_3">
-    <time_relation>
-      <TImeRelation rdf:ID="TImeRelation_10">
-        <relation_timeRole>
-          <TimeRole rdf:ID="Fin">
-            <timeRole_relation rdf:resource="#TImeRelation_10"/>
-          </TimeRole>
-        </relation_timeRole>
-        <relation_subject rdf:resource="#Faire_Systèmes_3"/>
-        <relation_time>
-          <Date rdf:ID="Trois_juillet_2020">
-            <subject_relation rdf:resource="#TImeRelation_10"/>
-            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-            >2020-07-03</rdfs:label>
-          </Date>
-        </relation_time>
-      </TImeRelation>
-    </time_relation>
-    <time_relation>
-      <TImeRelation rdf:ID="TImeRelation_1">
-        <relation_time>
-          <Date rdf:ID="Vingt_mai_2020">
-            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-            >2020-05-20</rdfs:label>
-            <subject_relation rdf:resource="#TImeRelation_1"/>
-          </Date>
-        </relation_time>
-        <relation_subject rdf:resource="#Faire_Systèmes_3"/>
-        <relation_timeRole>
-          <TimeRole rdf:ID="Début">
-            <timeRole_relation rdf:resource="#TImeRelation_1"/>
-          </TimeRole>
-        </relation_timeRole>
-      </TImeRelation>
-    </time_relation>
-  </Event>
   <Folder rdf:ID="Documentation_Assemblee_Virtuelle">
     <contains>
       <Document rdf:ID="Virtual_Assembly_Presentation">
@@ -4013,6 +4160,20 @@
       </Document>
     </contains>
   </Folder>
+  <EventStatus rdf:ID="ComingSoon">
+    <eventStatusOf>
+      <Event rdf:ID="Foresight_workshop_around_SOLID_2">
+        <hasEventStatus rdf:resource="#ComingSoon"/>
+      </Event>
+    </eventStatusOf>
+  </EventStatus>
+  <Date rdf:ID="June17">
+    <startDateOf>
+      <Event rdf:ID="AG_CdlT">
+        <hasStartDate rdf:resource="#June17"/>
+      </Event>
+    </startDateOf>
+  </Date>
 </rdf:RDF>
 
 <!-- Created with Protege (with OWL Plugin 3.5, Build 663)  http://protege.stanford.edu -->
