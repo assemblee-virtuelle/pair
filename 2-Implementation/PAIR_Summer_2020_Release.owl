@@ -47,15 +47,7 @@
         <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#affiliates"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Person"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Ecosystem"/>
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Group"/>
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Organization"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Organization"/>
         <rdfs:label xml:lang="en">affiliated by</rdfs:label>
         <rdfs:label xml:lang="fr">affilié par</rdfs:label>
     </owl:ObjectProperty>
@@ -66,24 +58,8 @@
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#affiliates">
         <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Ecosystem"/>
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Group"/>
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Organization"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Group"/>
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Organization"/>
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Person"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Organization"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Agent"/>
         <rdfs:label xml:lang="en">affiliate</rdfs:label>
         <rdfs:label xml:lang="fr">affilie</rdfs:label>
     </owl:ObjectProperty>
@@ -93,7 +69,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#agentOfInvolvement -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#agentOfInvolvement">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#associationProperties"/>
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#involvementAgent"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Agent"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#AgentInvolvement"/>
@@ -108,6 +84,15 @@
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasAgentStatus"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#AgentStatus"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Agent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair#associationProperties -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#associationProperties">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
+        <rdfs:comment xml:lang="fr">Catégorie de propriétés utilisées pour structurer des Associations</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -155,11 +140,10 @@
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#branchOf">
         <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasBranch"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Domain"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Branch"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#IntentionalSubject"/>
                     <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Object"/>
                     <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Subject"/>
                 </owl:unionOf>
@@ -357,11 +341,10 @@
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#domainOf">
         <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasDomain"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Branch"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Domain"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#IntentionalSubject"/>
                     <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Object"/>
                     <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Subject"/>
                 </owl:unionOf>
@@ -534,13 +517,12 @@
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#IntentionalSubject"/>
                     <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Object"/>
                     <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Subject"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Domain"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Branch"/>
     </owl:ObjectProperty>
     
 
@@ -573,13 +555,12 @@
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#IntentionalSubject"/>
                     <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Object"/>
                     <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Subject"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Branch"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Domain"/>
     </owl:ObjectProperty>
     
 
@@ -733,286 +714,9 @@
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasPart">
         <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#hasPartActivity -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasPartActivity">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasPart"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOfActivity"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Activity"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Activity"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#hasPartData -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasPartData">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasPart"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOfData"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Dataset"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Dataset"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#hasPartDataModel -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasPartDataModel">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasPart"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOfDataModel"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#DataModel"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#DataModel"/>
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Subject"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#hasPartDigitalPlace -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasPartDigitalPlace">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasPart"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOfDigitalPlace"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#DigitalPlace"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#DigitalPlace"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#hasPartEcosystem -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasPartEcosystem">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasPart"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOfEcosystem"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Ecosystem"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Ecosystem"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#hasPartEvent -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasPartEvent">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasPart"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOfEvent"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Event"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Event"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#hasPartGood -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasPartGood">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasPart"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOfGood"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Good"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Good"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#hasPartGroup -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasPartGroup">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasPart"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOfGroup"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Group"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Group"/>
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Subject"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#hasPartIdea -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasPartIdea">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasPart"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOfIdea"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Idea"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Idea"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#hasPartMaterial -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasPartMaterial">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasPart"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOfMaterial"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Material"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Material"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#hasPartMethod -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasPartMethod">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasPart"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOfMethod"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Method"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Method"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#hasPartModel -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasPartModel">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasPart"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOfModel"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Theory"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Theory"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#hasPartOrganization -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasPartOrganization">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasPart"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOfOrganization"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Organization"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Organization"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#hasPartPhysicalPlace -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasPartPhysicalPlace">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasPart"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOfPhysicalPlace"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#PhysicalPlace"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#PhysicalPlace"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#hasPartProcess -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasPartProcess">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasPart"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOfProcess"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Process"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#hasPartProject -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasPartProject">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasPart"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOfProject"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Project"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Project"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#hasPartService -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasPartService">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasPart"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOfService"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Service"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Service"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#hasPartSkill -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasPartSkill">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasPart"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOfSkill"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Skill"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Skill"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#hasPartSoftware -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasPartSoftware">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasPart"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOfSoftware"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Software"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Software"/>
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Subject"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#hasPartSpace -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasPartSpace">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasPart"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOfSpace"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Address"/>
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Building"/>
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Floor"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Floor"/>
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Room"/>
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Town"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
-        <rdfs:label xml:lang="en">has part</rdfs:label>
-        <rdfs:label xml:lang="fr">à pour partie</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#hasPartTask -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasPartTask">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasPart"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOfTask"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Task"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Task"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#hasPartTutorial -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasPartTutorial">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasPart"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOfTutorial"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Tutorial"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Tutorial"/>
+        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOf"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
     </owl:ObjectProperty>
     
 
@@ -1054,7 +758,6 @@
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#IntentionalSubject"/>
                     <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Object"/>
                     <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Subject"/>
                 </owl:unionOf>
@@ -1070,14 +773,7 @@
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasSkill">
         <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Person"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Skill"/>
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Subject"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Skill"/>
     </owl:ObjectProperty>
     
 
@@ -1345,7 +1041,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#involvementAgent -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#involvementAgent">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#associationProperties"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#AgentInvolvement"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Agent"/>
     </owl:ObjectProperty>
@@ -1365,7 +1061,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#involvementTarget -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#involvementTarget">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#associationProperties"/>
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#targetOfInvolvement"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#AgentInvolvement"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Involvable"/>
@@ -1605,244 +1301,8 @@
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#partOf">
         <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#partOfActivity -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#partOfActivity">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOf"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Activity"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Activity"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#partOfData -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#partOfData">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOf"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Dataset"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Dataset"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#partOfDataModel -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#partOfDataModel">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOf"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#DataModel"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#DataModel"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#partOfDigitalPlace -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#partOfDigitalPlace">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOf"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#DigitalPlace"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#DigitalPlace"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#partOfEcosystem -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#partOfEcosystem">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOf"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Ecosystem"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Ecosystem"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#partOfEvent -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#partOfEvent">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOf"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Event"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Event"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#partOfGood -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#partOfGood">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOf"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Good"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Good"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#partOfGroup -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#partOfGroup">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOf"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Group"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Group"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#partOfIdea -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#partOfIdea">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOf"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Idea"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Idea"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#partOfMaterial -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#partOfMaterial">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOf"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Material"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Material"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#partOfMethod -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#partOfMethod">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOf"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Method"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Method"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#partOfModel -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#partOfModel">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOf"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Theory"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Theory"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#partOfOrganization -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#partOfOrganization">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOf"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Organization"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Organization"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#partOfPhysicalPlace -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#partOfPhysicalPlace">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOf"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#PhysicalPlace"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#PhysicalPlace"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#partOfProcess -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#partOfProcess">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOf"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Process"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Process"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#partOfProject -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#partOfProject">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOf"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Project"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Project"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#partOfService -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#partOfService">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOf"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Service"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Service"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#partOfSkill -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#partOfSkill">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOf"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Skill"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Skill"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#partOfSoftware -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#partOfSoftware">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOf"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Software"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Software"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#partOfSpace -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#partOfSpace">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOf"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Floor"/>
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Room"/>
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Town"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Address"/>
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Building"/>
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Floor"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
-        <rdfs:label xml:lang="en">part of</rdfs:label>
-        <rdfs:label xml:lang="fr">partie de</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#partOfTask -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#partOfTask">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOf"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Task"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Task"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#partOfTutorial -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#partOfTutorial">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOf"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Tutorial"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Tutorial"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
     </owl:ObjectProperty>
     
 
@@ -1967,7 +1427,6 @@
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#IntentionalSubject"/>
                     <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Object"/>
                     <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Subject"/>
                 </owl:unionOf>
@@ -2046,7 +1505,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#targetOfInvolvement -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#targetOfInvolvement">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#associationProperties"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Involvable"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#AgentInvolvement"/>
     </owl:ObjectProperty>
@@ -2507,12 +1966,6 @@
         <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#PhysicalPlace"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#hasPartSpace"/>
-                <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair#Town"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#localizes"/>
                 <owl:allValuesFrom>
                     <owl:Class>
@@ -2523,12 +1976,6 @@
                         </owl:unionOf>
                     </owl:Class>
                 </owl:allValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#hasPartSpace"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">Address</rdfs:label>
@@ -2657,7 +2104,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#AgentInvolvement -->
 
     <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair#AgentInvolvement">
-        <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
+        <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Association"/>
     </owl:Class>
     
 
@@ -2722,6 +2169,14 @@
 
     <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair#AgentType">
         <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#SubjectType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair#Association -->
+
+    <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair#Association">
+        <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
     </owl:Class>
     
 
@@ -2802,12 +2257,6 @@
 
     <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair#Building">
         <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#BuildingItem"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#hasPartSpace"/>
-                <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair#Floor"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">Building</rdfs:label>
         <rdfs:label xml:lang="fr">Immeuble</rdfs:label>
     </owl:Class>
@@ -3007,7 +2456,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#Ecosystem -->
 
     <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair#Ecosystem">
-        <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Agent"/>
+        <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Organization"/>
     </owl:Class>
     
 
@@ -3071,24 +2520,6 @@
 
     <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair#Floor">
         <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#BuildingItem"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#hasPartSpace"/>
-                <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair#Room"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#partOfSpace"/>
-                <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair#Building"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#partOfSpace"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:label xml:lang="fr">Etage</rdfs:label>
         <rdfs:label xml:lang="en">Floor</rdfs:label>
     </owl:Class>
@@ -3150,7 +2581,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#Group -->
 
     <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair#Group">
-        <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Agent"/>
+        <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Organization"/>
     </owl:Class>
     
 
@@ -3652,18 +3083,6 @@
                 </owl:allValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#partOfSpace"/>
-                <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair#Floor"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#partOfSpace"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:label xml:lang="fr">Pièce</rdfs:label>
         <rdfs:label xml:lang="en">Room</rdfs:label>
     </owl:Class>
@@ -3874,12 +3293,6 @@
 
     <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair#Town">
         <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#PhysicalPlace"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#partOfSpace"/>
-                <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair#Address"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">City</rdfs:label>
         <rdfs:label xml:lang="en">Town</rdfs:label>
         <rdfs:label xml:lang="fr">Ville</rdfs:label>
@@ -4278,8 +3691,6 @@
 
     <owl:NamedIndividual rdf:about="http://virtual-assembly.org/ontologies/pair#Cercle_SemApps">
         <rdf:type rdf:resource="http://virtual-assembly.org/ontologies/pair#Group"/>
-        <hasPartGroup rdf:resource="http://virtual-assembly.org/ontologies/pair#CoreTeam_Ontologies"/>
-        <hasPartGroup rdf:resource="http://virtual-assembly.org/ontologies/pair#CoreTeam_SemApps"/>
     </owl:NamedIndividual>
     
 
@@ -4424,7 +3835,6 @@
 
     <owl:NamedIndividual rdf:about="http://virtual-assembly.org/ontologies/pair#CoreTeam_Ontologies">
         <rdf:type rdf:resource="http://virtual-assembly.org/ontologies/pair#Group"/>
-        <partOfGroup rdf:resource="http://virtual-assembly.org/ontologies/pair#Cercle_SemApps"/>
     </owl:NamedIndividual>
     
 
@@ -4433,7 +3843,6 @@
 
     <owl:NamedIndividual rdf:about="http://virtual-assembly.org/ontologies/pair#CoreTeam_SemApps">
         <rdf:type rdf:resource="http://virtual-assembly.org/ontologies/pair#Group"/>
-        <partOfGroup rdf:resource="http://virtual-assembly.org/ontologies/pair#Cercle_SemApps"/>
     </owl:NamedIndividual>
     
 
@@ -5359,7 +4768,6 @@
 
     <owl:NamedIndividual rdf:about="http://virtual-assembly.org/ontologies/pair#OrganiserResidenceAV">
         <rdf:type rdf:resource="http://virtual-assembly.org/ontologies/pair#Task"/>
-        <hasPartTask rdf:resource="http://virtual-assembly.org/ontologies/pair#ReserverElCapitan"/>
         <hasTopic rdf:resource="http://virtual-assembly.org/ontologies/pair#Decentralization"/>
         <hasTopic rdf:resource="http://virtual-assembly.org/ontologies/pair#Interoperability"/>
         <taskOf rdf:resource="http://virtual-assembly.org/ontologies/pair#SemApps"/>
@@ -5453,7 +4861,6 @@
 
     <owl:NamedIndividual rdf:about="http://virtual-assembly.org/ontologies/pair#Paris">
         <rdf:type rdf:resource="http://virtual-assembly.org/ontologies/pair#Town"/>
-        <partOfSpace rdf:resource="http://virtual-assembly.org/ontologies/pair#74_avenue_Denfert_Rochereau_75014"/>
     </owl:NamedIndividual>
     
 
@@ -5719,7 +5126,6 @@
 
     <owl:NamedIndividual rdf:about="http://virtual-assembly.org/ontologies/pair#ReserverElCapitan">
         <rdf:type rdf:resource="http://virtual-assembly.org/ontologies/pair#Task"/>
-        <partOfTask rdf:resource="http://virtual-assembly.org/ontologies/pair#OrganiserResidenceAV"/>
     </owl:NamedIndividual>
     
 
@@ -6411,7 +5817,6 @@
 
     <owl:NamedIndividual rdf:about="http://virtual-assembly.org/ontologies/pair#74_avenue_Denfert_Rochereau_75014">
         <rdf:type rdf:resource="http://virtual-assembly.org/ontologies/pair#Address"/>
-        <hasPartSpace rdf:resource="http://virtual-assembly.org/ontologies/pair#Paris"/>
         <localizes rdf:resource="http://virtual-assembly.org/ontologies/pair#Guillaume_Rouyer"/>
     </owl:NamedIndividual>
     
