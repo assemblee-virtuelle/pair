@@ -98,6 +98,29 @@
     
 
 
+    <!-- http://virtual-assembly.org/ontologies/pair#assignedTo -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#assignedTo">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#involves"/>
+        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#assigneeOf"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Task"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Agent"/>
+        <rdfs:comment xml:lang="fr">Sens plus fort que &quot;involves&quot; pour les responsables de tâches</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair#assigneeOf -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#assigneeOf">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#involvedIn"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Agent"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Task"/>
+        <rdfs:comment xml:lang="fr">Sens plus fort que &quot;involved in&quot; pour les responsables de tâches</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://virtual-assembly.org/ontologies/pair#associationProperties -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#associationProperties">
@@ -336,27 +359,6 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#engagedTo -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#engagedTo">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#engages"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Agent"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Task"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#engages -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#engages">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Task"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Agent"/>
     </owl:ObjectProperty>
     
 
@@ -643,17 +645,6 @@
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#SubjectType"/>
         <rdfs:comment xml:lang="en">Links a Subject to a SubjectType, for &quot;loose typing&quot;.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#hasTask -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasTask">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#taskOf"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Agent"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Task"/>
     </owl:ObjectProperty>
     
 
@@ -1242,16 +1233,6 @@
         <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Agent"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#taskOf -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#taskOf">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Task"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Agent"/>
     </owl:ObjectProperty>
     
 
@@ -4097,9 +4078,9 @@
 
     <owl:NamedIndividual rdf:about="http://virtual-assembly.org/ontologies/pair#OrganiserResidenceAV">
         <rdf:type rdf:resource="http://virtual-assembly.org/ontologies/pair#Task"/>
+        <assignedTo rdf:resource="http://virtual-assembly.org/ontologies/pair#SemApps"/>
         <hasTopic rdf:resource="http://virtual-assembly.org/ontologies/pair#Decentralization"/>
         <hasTopic rdf:resource="http://virtual-assembly.org/ontologies/pair#Interoperability"/>
-        <taskOf rdf:resource="http://virtual-assembly.org/ontologies/pair#SemApps"/>
     </owl:NamedIndividual>
     
 
@@ -4235,7 +4216,7 @@
 
     <owl:NamedIndividual rdf:about="http://virtual-assembly.org/ontologies/pair#Plannifier_ODJ">
         <rdf:type rdf:resource="http://virtual-assembly.org/ontologies/pair#Task"/>
-        <taskOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Réunions_SemApps_Gouvernance"/>
+        <assignedTo rdf:resource="http://virtual-assembly.org/ontologies/pair#Réunions_SemApps_Gouvernance"/>
     </owl:NamedIndividual>
     
 
@@ -4613,13 +4594,13 @@
 
     <owl:NamedIndividual rdf:about="http://virtual-assembly.org/ontologies/pair#Réunions_SemApps_Gouvernance">
         <rdf:type rdf:resource="http://virtual-assembly.org/ontologies/pair#Event"/>
+        <assigneeOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Plannifier_ODJ"/>
         <documentedBy rdf:resource="http://virtual-assembly.org/ontologies/pair#CR_SemApps"/>
         <hasBranch rdf:resource="http://virtual-assembly.org/ontologies/pair#Production"/>
         <hasDomain rdf:resource="http://virtual-assembly.org/ontologies/pair#Décentralisation_P2P_fédération"/>
         <hasMotivation rdf:resource="http://virtual-assembly.org/ontologies/pair#Decentralising_power_and_wealth"/>
         <hasSector rdf:resource="http://virtual-assembly.org/ontologies/pair#Informatique_Internet"/>
         <hasSubjectType rdf:resource="http://virtual-assembly.org/ontologies/pair#Réunion"/>
-        <hasTask rdf:resource="http://virtual-assembly.org/ontologies/pair#Plannifier_ODJ"/>
         <hasTopic rdf:resource="http://virtual-assembly.org/ontologies/pair#Stigmergy"/>
         <hasType rdf:resource="http://virtual-assembly.org/ontologies/pair#Réunion"/>
         <hostedIn rdf:resource="http://virtual-assembly.org/ontologies/pair#https://github.com/assemblee-virtuelle/pair/"/>
@@ -4677,7 +4658,7 @@
 
     <owl:NamedIndividual rdf:about="http://virtual-assembly.org/ontologies/pair#SemApps">
         <rdf:type rdf:resource="http://virtual-assembly.org/ontologies/pair#Project"/>
-        <hasTask rdf:resource="http://virtual-assembly.org/ontologies/pair#OrganiserResidenceAV"/>
+        <assigneeOf rdf:resource="http://virtual-assembly.org/ontologies/pair#OrganiserResidenceAV"/>
         <involves rdf:resource="http://virtual-assembly.org/ontologies/pair#Gabriel_Henry"/>
         <involves rdf:resource="http://virtual-assembly.org/ontologies/pair#Guillaume_Rouyer"/>
         <involves rdf:resource="http://virtual-assembly.org/ontologies/pair#Reconnexion"/>
