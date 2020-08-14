@@ -1,6 +1,6 @@
 # Finality
+## Objectifs
 
-## Objectifs
 - Documenter les communautés (organisations et / ou écosystèmes) : contenus statiques (descriptifs) et contenus dynamiques (actualités, évenements)
 - Documenter les liens (interdépendances) et les flux (activités) qui traversent des communautés
 - Explorer les communautés cibles
