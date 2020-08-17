@@ -17,7 +17,7 @@
 ### Cas d'usage
 #### Documenter les communautés : contenus statiques (descriptifs) et contenus dynamiques (actualités, évenements)
 - En tant que membre ou visiteur d'une organisation ou d'un écosystème, je souhaite pouvoir : 
-  - Accéder à la description de ses parties prenantes et de leurs activités (Individus, groupes de travail, organisations affiliées, membres ou partenaires)
+  - Accéder à la description de ses parties prenantes (Individus, groupes de travail, organisations affiliées, membres ou partenaires) et de leurs activités
     - Quelle est leur raison d'être 
       - Qui sont-ils
       - Que font-ils 
