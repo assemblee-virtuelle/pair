@@ -1,10 +1,37 @@
 # Objectifs
 
-- Documenter les communautés (organisations et / ou écosystèmes) : contenus statiques (descriptifs) et contenus dynamiques (actualités, évenements)
-- Documenter les liens (interdépendances) et les flux (activités) qui traversent des communautés
+## Décrire les communautés 
+### Qui
+Personnes, organisations, groupes de travail, écosystèmes ...
+
+### Quoi
+Projets, événements, domaines d'activités, concepts (centres d'intérêts etc.), idées, ressources (compétences, biens, services)   ...
+
+### Pourquoi
+Problèmes, finalités 
+
+### Comment 
+Modèles du code social .. 
+
+### Ou
+Lieux 
+
+### Quand
+Dates 
+
+## Décrire les interactions au sein des communautés
+Documenter les liens (interdépendances) et les flux (activités) qui traversent des communautés
+Qui fait quoi avec qui comment pourquoi pour quoi où quand ?
+
+## Décrire les actualités  des communautés 
+C'est quoi les actus ?
+
+---- 
+## Axes transversaux
+
 - Explorer les communautés cibles
 - Favoriser la création de liens, de collaborations et de synergies entre acteurs d'une même communauté
-- Favoriser la création de liens et de synergies entre les communauté
+- Favoriser la création de liens et de synergies entre les communautés
 - Favoriser l'interconnexion des projets 
 - Favoriser l'identification et l'accès aux ressources 
 - Favoriser leur mutualisation 
@@ -12,8 +39,7 @@
 
 
 # Cas d'usage
-## Documenter les communautés : contenus statiques (descriptifs) et contenus dynamiques (actualités, évenements)
-
+## Décrire les communautés 
 ### En tant que membre ou visiteur d'une organisation ou d'un écosystème, je souhaite pouvoir accéder à la description de ses parties prenantes (Individus, groupes de travail, organisations affiliées, membres ou partenaires) et de leurs activités
 
 #### Qui sont-ils
@@ -40,7 +66,7 @@
 #### Que font-ils, quels sont leurs activités et leurs projets
 - Guillaume anime Les Chemins de la Transition | "Personne" anime "Projet" // Rôle  => "Personne" a pour rôle [Animateur] dans "Projet"
 - L'Assemblée Virtuelle" porte le projet "SemApps | "Organisation" porte "projet" // Rôle => "Organisation" a pour rôle [Coordinateur] dans "Projet"
-- Le projet Ontologie PAIR" maintient la ressource Ontologie PAIR | "Projet" maintient "Ressource // Rôle => "Projet" a pour rôle [Mainteneur] dans "Ressource"
+- Le projet Ontologie PAIR" délivre la ressource Ontologie PAIR | "Projet" délivre "Ressource
 
 #### Pourquoi s'engagent ils ?
 - Guillaume contribue au projet des Chemins de la Transition parce qu'il pense que l'éducation et la formation sont au coeur des enjeux de la transition | **Relation ternaire** à modéliser : Personne / Projet / Thèse  
@@ -98,7 +124,7 @@
   - Qu'ont-ils à offrir (Idées, Ressources)
   - De quoi ont-ils besoin (Ex : Nous recherchons un développeur Node JS)
   
-### En tant que membre ou visiteur d'une organisation ou d'un écosystème, je souhaite identifier quelles sont les réponses à mes problèmes 
+#"## Face à un problème, quelles sont les solutions ?  
  - 
 
 ### Documenter les liens (interdépendances) et les flux (échanges et activités) qui traversent les communautés 
