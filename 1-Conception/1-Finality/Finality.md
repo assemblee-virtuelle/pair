@@ -27,20 +27,24 @@
 - L'Assemblée Virtuelle fait partie de Digital Commons Consortium | "Organisation" fait partie de "Ecosystème" 
 - L'Ontologie PAIR est un projet de l'Assemblée Virtuelle | "Projet" est affilié à "Organisation"
 - L'ontologie PAIR implique Bernard, Thomas, Gabriel | "Projet" implique "Personne"
-- Data Food Consortium implique Assemblée Virtuelle | "Projet" implique "Personne" 
+- Data Food Consortium implique Assemblée Virtuelle | "Projet" implique "Personne"
 
 #### Quelle est leur raison d'être 
 - Guillaume souhaite résoudre le problème de l'entropie ;) | "Personne" résoud "Problème"
-- Guillaume souhaite a pour objectif de changer le monde ;) | "Personne" a pour finalité "Finalité" 
+- Guillaume souhaite a pour objectif de changer le monde ;) | "Personne" a pour finalité "Finalité"
 - L'Assemblée Virtuelle souhaite résoudre le problème de la fragmentation du web et du monde de la transition | "Organisation" résoud "Problème"
-- L'Assemblée Virtuelle souhaite résoudre le problème de la fragmentation du web et du monde de la transition | "Projet" résoud "Problème"
+- SemApps souhaite résoudre le problème de la fragmentation du web et du monde de la transition | "Projet" résoud "Problème"
 - L'Assemblée Virtuelle a pour objectif de favoriser la mise en réseau des acteurs de la transition grâce à la mise en synergie de leurs systèmes d'information. | "Organisation"  a pour finalité "Finalité"
-- Ontologie Pair a pour objectif de favoriser la mise en réseau des acteurs de la transition grâce à la mise en synergie de leurs systèmes d'information. | "Projet"  a pour finalité "Finalité" 
+- Ontologie Pair a pour objectif de favoriser la mise en réseau des acteurs de la transition grâce à la mise en synergie de leurs systèmes d'information. | "Projet"  a pour finalité "Finalité"
 
 #### Que font-ils, quels sont leurs activités et leurs projets
 - Guillaume anime Les Chemins de la Transition | "Personne" anime "Projet" // Rôle  => "Personne" a pour rôle [Animateur] dans "Projet"
-- L'Assemnblée Virtuelle" porte le projet "SemApps | "Organisaton" porte "projet" // Rôle => "Organisation" a pour rôle [Coordinateur] dans "Projet"
-- Le projet Ontologie PAIR" maintient la ressource Ontologie PAIR "Projet" maintient "Ressource // Rôle => "Projet" a pour rôle [Mainteneur] dans "Ressource"
+- L'Assemblée Virtuelle" porte le projet "SemApps | "Organisation" porte "projet" // Rôle => "Organisation" a pour rôle [Coordinateur] dans "Projet"
+- Le projet Ontologie PAIR" maintient la ressource Ontologie PAIR | "Projet" maintient "Ressource // Rôle => "Projet" a pour rôle [Mainteneur] dans "Ressource"
+
+#### Pourquoi s'engagent ils ?
+- Guillaume contribue au projet des Chemins de la Transition parce qu'il pense que l'éducation et la formation sont au coeur des enjeux de la transition | **Relation ternaire** à modéliser : Personne / Projet / Thèse  
+- AV contribue à Transiscope parce qu'elle pense que l'accès à l'information est fondamental | **Relation ternaire** à modéliser : Organisation / Projet / Thèse  
 
 #### Ont-ils des choses à partager (Idées, Ressources)
 - Guillaume propose "Proteine : Vers une monnaie néguentropique" | "Personne" propose "Idée" // Rôle => "Personne" a pour rôle [Auteur / contributeur / promoteur] dans "Idée"
@@ -52,38 +56,50 @@
 - Assemblée Virtuelle a besoin d'un développeur JS | "Organisation" demande "Human Based Resource"
 - SemApps a besoin d'un développeur JS | "Projet" demande "Human Based Resource"
 
-#### Comment fonctionnent-ils ? (Code Social)
-
-##### Avec quel imaginaires, sources d'inspiration, selon quel système de valeurs (Modèle Culturel)
-- Guillaume est inspiré par la théorie des systèmes complexes | "Personne" est inspiré par "Concept"
+##### Quels sont leurs imaginaires, sources d'inspiration, selon quel système de valeurs (Modèle Culturel - Code Social)
+- Guillaume est inspiré par  a pour modèle technologiqueie des systèmes complexes | "Personne" est inspiré par "Concept"
 - Assemblée Virtuelle est inspirée par Tim Berners Lee | "Organisation" est inspiré par "Personne" 
 - Assemblée Virtuelle est inspirée par les architectures pair à pair  | "Organisation" est inspiré par "Concept"
-- Guillaume a pour valeur l'amour | "Personne" a pour valeur "Concept"
-- Assemblée Virtuelle a pour valeur le coopérativisme | "Organisation" a pour valeur "Concept"
 - Ontologie PAIR s'inspire du Linked Open Data | "Projet" est inspiré par "Concept"
-- Ontologie PAIR a pour valeur le FLOSS | "Projet" a pour valeur "Concept"
 - Ontologie PAIR est inspiré par Value Flows | "Projet" est inspiré par "Projet"
 
-##### Selon quel mode de gouvernance
-- 
+##### Quel est leur modèle de gouvernance (Modèle social et humain - Code Social)
+- AV a  a pour modèle social et humain la stigmergie | "Organisation" a pour modèle social et humain "Mode de gouvernance"
+- SemApps  a pour modèle social et humain la sociocratie | "Projet" a pour modèle social et humain "Mode de gouvernance"
 
-##### Avec quelles technologies
+##### Quelles technologies utilisent-ils (Modèle technologique - Code Social)
+- AV utilise les technologies du web sémantique | "Organisation" utilise "Technologie"
+- SemApps utilise SOLID | "Projet" utilise "Technologie"
+- Lillian utilise les low tech | "Personne" utilise "Technologie"
 
-##### Comment intègrent ils les enjeux écologiques
+##### Comment intègrent-ils les enjeux écologiques
+- Guillaume a pour modèle écologique le végétarianisme | "Personne" a pour modèle écologique "Concept"
+- AV a pour modèle écologique le télétravail | "Organisation" a pour modèle écologique "Concept"
+- SemApps a pour modèle écologique low carbon web principles | "Projet"  a pour modèle écologique "Concept"
 
-##### Quel est leur modèle économique 
+##### Quel est leur modèle économique (Code Social)
+- Guillaume a pour source de revenus Chômage | "Personne" a pour source de revenus "Source de revenus"
+- AV a pour source de revenus don / adhésions / subventions | "Organisation" a pour source de revenus "Source de revenus"
+- SemApps a pour source de revenus don / adhésions / subventions | "Projet" a pour source de revenus "Source de revenus"
 
 ##### Quel est leur modèle juridique
-
+- Guillaume est auto-entrepreneur | "Personne" a pour statut juridique "Statut juridique"
+- AV est une association Loi 1901 |"Organisation" a pour statut juridique "Statut juridique"
+- SemApps est sous licence Apache | "Projet" a pour licence "Licence"
 
 ### En tant que membre ou visiteur d'une organisation ou d'un écosystème, je souhaite accéder aux actualités de ses parties prenantes
-  - Quelles sont les dernières nouvelles
-  - Quels sont les prochains événements (et quels événements y a t'il eu)
+#### Quelles sont les dernières nouvelles
+- Guillaume est devenu ami avec Sébastien
+- AV a créé le projet Transiscope V3
+- SemApps a créé une nouvelle fonctionnalité
+
+#### Quels sont les prochains événements (et quels événements y a t'il eu)
+
   - Qu'ont-ils à offrir (Idées, Ressources)
   - De quoi ont-ils besoin (Ex : Nous recherchons un développeur Node JS)
   
 ### En tant que membre ou visiteur d'une organisation ou d'un écosystème, je souhaite identifier quelles sont les réponses à mes problèmes 
-  
+ - 
 
 ### Documenter les liens (interdépendances) et les flux (échanges et activités) qui traversent les communautés 
 - En tant que membre ou visiteur d'une organisation ou d'un écosystème, je souhaite pouvoir identifier :
