@@ -37,21 +37,28 @@ Liste de référence des concepts métiers
 * **Exemples** : Mettre en réseau les acteurs de la Transition ; Lutter contre le changement climatique ; Remplir le frigo.
 
 ### Lieu
-* **Termes alternatifs** :
-* **Description**:
+* **Termes alternatifs** : Site, espace
+* **Description**: Un lieu est un espace situé dans le monde physique ou dans le monde numérique. Il peut héberger des acteurs, des activités, des ressources ; être public, privé, commun ; avoir une finalité, répondre à une problématique.
 * **Commentaire** : On peut envisager un triple héritage : Localisation + acteur / Organisation + Activité / Projet. 
-* **Exemples** :
+* **Exemples** : Grands Voisins, Coliving El Capitan, OASIS 21
 * **Classification** :
 
 
+### Idée 
+* **Termes alternatifs** : Pensée, notion, perspective, vision
+* **Description**: Ce que l'esprit conçoit ou peut concevoir : Thèmes, notions, concepts - Thèses, pensées, perspectives, visions..
+* **Commentaire** :
+* **Exemples** :
+* **Classification** :
 
-
-###
+### 
 * **Termes alternatifs** :
 * **Description**:
 * **Commentaire** :
 * **Exemples** :
 * **Classification** :
+
+
 
 ## Relations
 
