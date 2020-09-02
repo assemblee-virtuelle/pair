@@ -3,7 +3,7 @@
 ## Décrire les communautés 
 #### Qui & quoi
 * Personnes, organisations, groupes de travail, écosystèmes ...
-* Projets, événements, domaines d'activités, concepts (centres d'intérêts etc.), idées, ressources (compétences, biens, services, argent)   ...
+* Projets, événements, domaines d'activités, idées (notions, thèses), ressources (compétences, biens, services, argent)   ...
 
 #### Pourquoi
 * Problèmes, finalités 
@@ -84,7 +84,7 @@ C'est quoi les actualités ?
 - Bernard est affilié à l'Assemblée Virtuelle | "Personne" est affilié à "Organisation"
 - Bernard habite à Aix en Provence | "Personne" a pour adresse "Ville" / "Adresse"
 - Bernard a pour domaine d'activité PLM | "Personne" a pour domaine d'activité "Domaine d'activité" 
-- Bernard s'intéresse au web sémantique| "Personne" a pour centre d'intérêt de "Concept"
+- Bernard s'intéresse au web sémantique| "Personne" a pour centre d'intérêt de "Idée"
 
 **Organisations / Groupes de travail / Ecosystèmes**
 - L'Assemblée Virtuelle est une association Loi 1901 | "Organisation" a pour forme juridique "Forme juridique" 
@@ -126,7 +126,7 @@ C'est quoi les actualités ?
 - Bernard contribute aux Chemins de la Transition | "Personne" contribue "Projet" // Rôle  => "Personne" a pour rôle [Contributeur] dans "Projet"
 - L'Assemblée Virtuelle" coordonne le projet "SemApps | "Organisation" coordonne "projet" // Rôle => "Organisation" a pour rôle [Coordinateur] dans "Projet"
 
-## [Pourquoi & Pour Quoi] En tant que membre ou visiteur d'une communauté, je souhaite pouvoir connaitre les problèmatiques et les finalités de ses parties prenantes (Personnes, organisations, groupes de travail, écosystèmes), de leurs activités, de leurs projets, de leurs évenements, de leurs idées & de leurs ressources
+## [Pourquoi & Pour Quoi (finalité)] En tant que membre ou visiteur d'une communauté, je souhaite pouvoir connaitre les problèmatiques et les finalités de ses parties prenantes (Personnes, organisations, groupes de travail, écosystèmes), de leurs activités, de leurs projets, de leurs évenements, de leurs idées & de leurs ressources
 - Guillaume adresse l'entropie ;) | "Personne" adresse "Problème"
 - Guillaume a pour finalité la transition ;) | "Personne" a pour finalité "Finalité"
 - L'Assemblée Virtuelle adresse la fragmentation du web et du monde de la transition | "Organisation" adresse "Problème"
@@ -139,7 +139,7 @@ C'est quoi les actualités ?
 - Guillaume contribue au projet des Chemins de la Transition parce qu'il pense que l'éducation et la formation sont au coeur des enjeux de la transition | Relation ternaire à modéliser : Personne / Projet / Idée  
 - AV contribue à Transiscope parce qu'elle pense que l'accès à l'information est fondamental | **Relation ternaire** à modéliser : Organisation / Projet / Idée
 
-**Quelles relations entre pourquoi et pourquoi**
+**Quelles relations entre pourquoi et pour quoi (finalité)**
 - Favoriser la mise en réseau des acteurs de la transition a pour origine Fragmentation du monde la transition | "Finalité" a pour origine "Problème"
 
 
@@ -148,10 +148,10 @@ C'est quoi les actualités ?
 ### En tant que membre ou visiteur d'une communauté, je souhaite savoir comment les acteurs et les choses fonctionnent
 
 **Quels sont leurs imaginaires, sources d'inspiration système de valeurs (Modèle Culturel - Code Social)**
-- Guillaume est inspiré par la théorie des systèmes complexes | "Personne" est inspiré par "Concept"
+- Guillaume est inspiré par la théorie des systèmes complexes | "Personne" est inspiré par "Idée"
 - Assemblée Virtuelle est inspirée par Tim Berners Lee | "Organisation" est inspiré par "Personne" 
-- Assemblée Virtuelle est inspirée par les architectures pair à pair  | "Organisation" est inspiré par "Concept"
-- Ontologie PAIR s'inspire du Linked Open Data | "Projet" est inspiré par "Concept"
+- Assemblée Virtuelle est inspirée par les architectures pair à pair  | "Organisation" est inspiré par "Idée"
+- Ontologie PAIR s'inspire du Linked Open Data | "Projet" est inspiré par "Idée"
 - Ontologie PAIR est inspiré par Value Flows | "Projet" est inspiré par "Projet"
 
 **Quel est leur modèle de gouvernance (Modèle social et humain - Code Social)**
@@ -163,9 +163,9 @@ C'est quoi les actualités ?
 - AV conçoit des technologies interopérables | "Personne" conçoit "Type de technologie"
 
 **Comment intègrent-ils les enjeux écologiques**
-- Guillaume a pour modèle écologique le végétarianisme | "Personne" a pour modèle écologique "Concept"
-- AV a pour modèle écologique le télétravail | "Organisation" a pour modèle écologique "Concept"
-- SemApps a pour modèle écologique low carbon web principles | "Projet"  a pour modèle écologique "Concept"
+- Guillaume a pour modèle écologique le végétarianisme | "Personne" a pour modèle écologique "Idée"
+- AV a pour modèle écologique le télétravail | "Organisation" a pour modèle écologique "Idée"
+- SemApps a pour modèle écologique low carbon web principles | "Projet"  a pour modèle écologique "Idée"
 
 **Quel est leur modèle économique (Code Social)**
 - Guillaume a pour source de revenus Chômage | "Personne" a pour source de revenus "Source de revenus"
