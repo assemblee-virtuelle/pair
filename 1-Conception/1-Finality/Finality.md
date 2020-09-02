@@ -84,7 +84,7 @@ C'est quoi les actualités ?
 - Bernard est affilié à l'Assemblée Virtuelle | "Personne" est affilié à "Organisation"
 - Bernard habite à Aix en Provence | "Personne" a pour adresse "Ville" / "Adresse"
 - Bernard a pour domaine d'activité PLM | "Personne" a pour domaine d'activité "Domaine d'activité" 
-- Bernard s'intéresse au web sémantique| "Personne" a pour centre d'intérêt de "Idée"
+- Bernard s'intéresse au web sémantique| "Personne" a pour centre d'intérêt "Idée"
 
 **Organisations / Groupes de travail / Ecosystèmes**
 - L'Assemblée Virtuelle est une association Loi 1901 | "Organisation" a pour forme juridique "Forme juridique" 
@@ -123,7 +123,7 @@ C'est quoi les actualités ?
 - Etc.
 
 #### [Qui fait quoi] En tant que membre ou visiteur d'une communauté, je souhaite savoir qui fait quoi dans quoi ?? 
-- Bernard contribute aux Chemins de la Transition | "Personne" contribue "Projet" // Rôle  => "Personne" a pour rôle [Contributeur] dans "Projet"
+- Bernard contribue aux Chemins de la Transition | "Personne" contribue "Projet" // Rôle  => "Personne" a pour rôle [Contributeur] dans "Projet"
 - L'Assemblée Virtuelle" coordonne le projet "SemApps | "Organisation" coordonne "projet" // Rôle => "Organisation" a pour rôle [Coordinateur] dans "Projet"
 
 ## [Pourquoi & Pour Quoi (finalité)] En tant que membre ou visiteur d'une communauté, je souhaite pouvoir connaitre les problèmatiques et les finalités de ses parties prenantes (Personnes, organisations, groupes de travail, écosystèmes), de leurs activités, de leurs projets, de leurs évenements, de leurs idées & de leurs ressources
