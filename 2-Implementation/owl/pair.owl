@@ -1487,6 +1487,8 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
 
     <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair#ActivityInvolvementAssociation">
         <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Association"/>
+        <rdfs:comment xml:lang="fr">Implication d&apos;un Acteur dans une Activité</rdfs:comment>
+        <rdfs:label xml:lang="fr">Association d&apos;implication</rdfs:label>
     </owl:Class>
     
 
@@ -1563,8 +1565,8 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
 
     <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair#Association">
         <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
+        <rdfs:comment xml:lang="fr">Classe abstraite générique permettant de réifier les relations binaires.</rdfs:comment>
         <rdfs:label xml:lang="fr">Association</rdfs:label>
-        <rdfs:label xml:lang="fr">Classe abstraite générique permettant de réifier les relations binaires.</rdfs:label>
     </owl:Class>
     
 
@@ -1945,6 +1947,8 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
 
     <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair#MembershipAssociation">
         <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Association"/>
+        <rdfs:comment xml:lang="fr">Appartenance d&apos;un Acteur dans une Organisation</rdfs:comment>
+        <rdfs:label xml:lang="fr">Association d&apos;appartenance</rdfs:label>
     </owl:Class>
     
 
