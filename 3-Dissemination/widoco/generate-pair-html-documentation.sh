@@ -1,0 +1,1 @@
+java -jar widoco-1.4.14-jar-with-dependencies.jar -ontFile ../../2-Implementation/owl/pair.owl -outFolder pair -rewriteAll -uniteSections -confFile widoco.properties -lang fr-en -htaccess
