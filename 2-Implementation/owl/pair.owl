@@ -1537,6 +1537,8 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
     <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair#Agent">
         <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#PAIR"/>
         <rdfs:comment xml:lang="fr">un Agent est &quot;tout ce qui agit&quot;, en particulier tout ce qui peut entretenir des liens avec des Ressources. A ce titre, les Activités, typiquement les Projets, sont considérées comme des sous-classes d&apos;Agent.</rdfs:comment>
+        <rdfs:label xml:lang="en">Agent</rdfs:label>
+        <rdfs:label xml:lang="fr">Agent</rdfs:label>
     </owl:Class>
     
 
@@ -1561,6 +1563,8 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
 
     <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair#Association">
         <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
+        <rdfs:label xml:lang="fr">Association</rdfs:label>
+        <rdfs:label xml:lang="fr">Classe abstraite générique permettant de réifier les relations binaires.</rdfs:label>
     </owl:Class>
     
 
@@ -1617,6 +1621,9 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
     <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair#Concept">
         <owl:equivalentClass rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#PairEntity"/>
+        <rdfs:comment xml:lang="fr">Un Concept est entendu au sens de SKOS comme une entrée dans un système de classification.</rdfs:comment>
+        <rdfs:label xml:lang="en">Concept</rdfs:label>
+        <rdfs:label xml:lang="fr">Concept</rdfs:label>
     </owl:Class>
     
 
@@ -1888,6 +1895,8 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
                 <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair#IdeaStatus"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Idea</rdfs:label>
+        <rdfs:label xml:lang="fr">Idée</rdfs:label>
     </owl:Class>
     
 
@@ -2029,6 +2038,8 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
     <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair#PAIR">
         <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
         <rdfs:comment xml:lang="fr">Un PAIR est un élément d&apos;un écosystème : Projet, Acteur, Idée ou Ressource.</rdfs:comment>
+        <rdfs:label xml:lang="en">PAIR</rdfs:label>
+        <rdfs:label xml:lang="fr">PAIR</rdfs:label>
     </owl:Class>
     
 
@@ -2099,7 +2110,8 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
                 <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair#Place"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label xml:lang="fr">Where Subject</rdfs:label>
+        <rdfs:label xml:lang="fr">Lieu</rdfs:label>
+        <rdfs:label xml:lang="en">Place</rdfs:label>
     </owl:Class>
     
 
@@ -2249,6 +2261,9 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
 
     <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair#Role">
         <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Concept"/>
+        <rdfs:comment xml:lang="fr">un Role d&apos;Agent. &quot;... en tant que ...&quot;</rdfs:comment>
+        <rdfs:label xml:lang="en">Role</rdfs:label>
+        <rdfs:label xml:lang="fr">Role</rdfs:label>
     </owl:Class>
     
 
