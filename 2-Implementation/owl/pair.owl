@@ -34,7 +34,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#about -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#about">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Idea"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
     </owl:ObjectProperty>
@@ -76,7 +76,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#affiliatedBy -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#affiliatedBy">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#affiliates"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Person"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Organization"/>
@@ -89,7 +89,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#affiliates -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#affiliates">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Organization"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Person"/>
         <rdfs:label xml:lang="en">affiliate</rdfs:label>
@@ -101,7 +101,8 @@
     <!-- http://virtual-assembly.org/ontologies/pair#agentResourceProperty -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#agentResourceProperty">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
+        <rdfs:comment xml:lang="fr">Catégorie de propriétés reliant un Agent à une Ressource</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -109,7 +110,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#aimedBy -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#aimedBy">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#extentionalIntentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#pairIntentionProperty"/>
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#aims"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Finality"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#PAIR"/>
@@ -120,7 +121,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#aims -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#aims">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#extentionalIntentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#pairIntentionProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#PAIR"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Finality"/>
     </owl:ObjectProperty>
@@ -130,7 +131,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#allowedBy -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#allowedBy">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interIntentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interIntentionProperty"/>
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#allows"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Finality"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Means"/>
@@ -141,7 +142,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#allows -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#allows">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interIntentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interIntentionProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Means"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Finality"/>
     </owl:ObjectProperty>
@@ -174,7 +175,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#associationProperties -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#associationProperties">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <rdfs:comment xml:lang="fr">Catégorie de propriétés utilisées pour structurer des Associations</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -183,7 +184,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#basedOn -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#basedOn">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#concretizedBy"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Activity"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Idea"/>
@@ -196,7 +197,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#brainstormedBy -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#brainstormedBy">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#brainstorms"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Idea"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Actor"/>
@@ -209,7 +210,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#brainstorms -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#brainstorms">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Actor"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Idea"/>
         <rdfs:label xml:lang="en">brainstorms</rdfs:label>
@@ -232,7 +233,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#challengeOf -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#challengeOf">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#extentionalIntentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#pairIntentionProperty"/>
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasChallenge"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Challenge"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#PAIR"/>
@@ -243,7 +244,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#concernedBy -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#concernedBy">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#concerns"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Actor"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Task"/>
@@ -254,7 +255,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#concerns -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#concerns">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Task"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Actor"/>
     </owl:ObjectProperty>
@@ -264,7 +265,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#concretizedBy -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#concretizedBy">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Idea"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Activity"/>
         <rdfs:label xml:lang="en">concretized by</rdfs:label>
@@ -332,7 +333,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#cooperatesWith -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#cooperatesWith">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#cooperatesWith"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Project"/>
@@ -405,16 +406,10 @@
     
 
 
-    <!-- http://virtual-assembly.org/ontologies/pair#extentionalIntentionalSubjectProperty -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#extentionalIntentionalSubjectProperty"/>
-    
-
-
     <!-- http://virtual-assembly.org/ontologies/pair#follows -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#follows">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasFollower"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Actor"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Actor"/>
@@ -447,7 +442,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#hasChallenge -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasChallenge">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#extentionalIntentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#pairIntentionProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#PAIR"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Challenge"/>
     </owl:ObjectProperty>
@@ -479,7 +474,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#hasFollower -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasFollower">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Actor"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Actor"/>
         <rdfs:label xml:lang="fr">connais</rdfs:label>
@@ -491,7 +486,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#hasInspired -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasInspired">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#inspiredBy"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
@@ -514,7 +509,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#hasOrigin -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasOrigin">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interIntentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interIntentionProperty"/>
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#originOf"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Finality"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Challenge"/>
@@ -525,7 +520,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#hasPart -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasPart">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#partOf"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
@@ -547,7 +542,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#hasSkill -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasSkill">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Person"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Skill"/>
     </owl:ObjectProperty>
@@ -622,7 +617,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#hostedIn -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hostedIn">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hosts"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#PAIR"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Place"/>
@@ -635,7 +630,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#hosts -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hosts">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Place"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#PAIR"/>
         <rdfs:label xml:lang="en">hosts</rdfs:label>
@@ -647,7 +642,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#inspiredBy -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#inspiredBy">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
     </owl:ObjectProperty>
@@ -675,19 +670,12 @@
     
 
 
-    <!-- http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty -->
+    <!-- http://virtual-assembly.org/ontologies/pair#interIntentionProperty -->
 
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty">
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
-        <rdfs:comment xml:lang="fr">Relie les Subjects entre eux</rdfs:comment>
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#interIntentionProperty">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
+        <rdfs:comment xml:lang="fr">Catégorie de propriétés reliant des intentions entre elles</rdfs:comment>
     </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#interIntentionalSubjectProperty -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#interIntentionalSubjectProperty"/>
     
 
 
@@ -701,10 +689,20 @@
     
 
 
+    <!-- http://virtual-assembly.org/ontologies/pair#interSubjectProperty -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#interSubjectProperty">
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
+        <rdfs:comment xml:lang="fr">Relie les Subjects entre eux</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://virtual-assembly.org/ontologies/pair#involvedIn -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#involvedIn">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#involves"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Actor"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Activity"/>
@@ -747,7 +745,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#involves -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#involves">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Activity"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Actor"/>
         <rdfs:label xml:lang="fr">implique</rdfs:label>
@@ -789,7 +787,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#mobilizes -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#mobilizes">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#extentionalIntentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#pairIntentionProperty"/>
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#moblizedBy"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#PAIR"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Means"/>
@@ -800,7 +798,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#moblizedBy -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#moblizedBy">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#extentionalIntentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#pairIntentionProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Means"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#PAIR"/>
     </owl:ObjectProperty>
@@ -835,7 +833,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#nourishes -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#nourishes">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Idea"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Idea"/>
@@ -880,7 +878,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#operatedBy -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#operatedBy">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#operates"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Place"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Actor"/>
@@ -893,7 +891,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#operates -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#operates">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Actor"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Place"/>
         <rdfs:label xml:lang="fr">exploite</rdfs:label>
@@ -915,9 +913,18 @@
     <!-- http://virtual-assembly.org/ontologies/pair#originOf -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#originOf">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interIntentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interIntentionProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Challenge"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Finality"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair#pairIntentionProperty -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#pairIntentionProperty">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
+        <rdfs:comment xml:lang="fr">Catégorie de propriétés reliant un PAIR à une intentaion</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -925,7 +932,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#partOf -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#partOf">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
     </owl:ObjectProperty>
@@ -935,7 +942,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#partnerOf -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#partnerOf">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Organization"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Organization"/>
@@ -1032,7 +1039,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#solvedBy -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#solvedBy">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interIntentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interIntentionProperty"/>
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#solves"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Challenge"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Means"/>
@@ -1043,7 +1050,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#solves -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#solves">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interIntentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interIntentionProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Means"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Challenge"/>
     </owl:ObjectProperty>
@@ -1072,7 +1079,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#supportedBy -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#supportedBy">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#supports"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Actor"/>
@@ -1083,7 +1090,7 @@
     <!-- http://virtual-assembly.org/ontologies/pair#supports -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#supports">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interExtentionalSubjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Actor"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
     </owl:ObjectProperty>
