@@ -14,5 +14,4 @@ Contient les documents de conception, l'implementation OWL et les fichiers de do
 
 ---
 
-
-![](3-Dissemination/Diagrammes-PAIR-Winter-2020/PAIR Core Subjects-2020-WinterEdition.png)
+![](3-Dissemination/Diagrammes-PAIR-Winter-2020/PAIR%20Core%20Subjects-2020-WinterEdition.png)
