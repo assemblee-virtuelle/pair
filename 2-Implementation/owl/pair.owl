@@ -67,6 +67,7 @@
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#actorOfMembership">
         <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#associationProperties"/>
+        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#membershipActor"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Actor"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#MembershipAssociation"/>
     </owl:ObjectProperty>
@@ -801,6 +802,7 @@
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#membershipOrganization">
         <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#associationProperties"/>
+        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#organizationOfMembership"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#MembershipAssociation"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Organization"/>
     </owl:ObjectProperty>
@@ -2506,7 +2508,7 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
 
     <!-- http://www.w3.org/2004/02/skos/core#Concept -->
 
-    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:RDF>
 
 
