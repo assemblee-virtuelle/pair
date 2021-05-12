@@ -11,3 +11,7 @@ Contient les documents de conception, l'implementation OWL et les fichiers de do
 
 - [Ontologie PAIR - Aperçu global](https://www.virtual-assembly.org/ontologie-pair/) sur le site de l'Assemblée Virtuelle;
 - [La méthodologie PAIR](https://www.virtual-assembly.org/pair-a-pair/) sur le site de l'Assemblée Virtuelle;
+
+---
+
+![](3-Dissemination/Diagrammes-PAIR-Winter-2020/PAIR%20Core%20Subjects-2020-WinterEdition.png)
