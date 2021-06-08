@@ -2476,9 +2476,19 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
     <!-- http://virtual-assembly.org/ontologies/pair#Theme -->
 
     <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair#Theme">
+        <owl:equivalentClass rdf:resource="http://virtual-assembly.org/ontologies/pair#Topic"/>
+        <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Concept"/>
+        <rdfs:comment xml:lang="fr">Cet identifiant est déprécié en faveur de pair:Topic</rdfs:comment>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair#Topic -->
+
+    <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair#Topic">
         <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Concept"/>
         <rdfs:comment xml:lang="fr">Thème réfère à ce dont on parle, au sujet qui nous anime. Les thèmes rassemblent les notions, les concepts, les centres d&apos;intérêts, les &quot;tags&quot;.</rdfs:comment>
-        <rdfs:label xml:lang="en">Thema</rdfs:label>
         <rdfs:label xml:lang="fr">Thème</rdfs:label>
         <rdfs:label xml:lang="en">Topic</rdfs:label>
     </owl:Class>
