@@ -567,6 +567,7 @@
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasSkill">
         <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
+        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#skillOf"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Person"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Skill"/>
     </owl:ObjectProperty>
@@ -1067,6 +1068,16 @@
         <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#subjectConceptProperties"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Sector"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair#skillOf -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#skillOf">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Skill"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Person"/>
     </owl:ObjectProperty>
     
 
