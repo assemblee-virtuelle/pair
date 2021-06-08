@@ -335,7 +335,6 @@
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#cooperatesWith">
         <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#cooperatesWith"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Project"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Project"/>
@@ -414,8 +413,6 @@
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasFollower"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Actor"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Actor"/>
-        <rdfs:label xml:lang="fr">connu par</rdfs:label>
-        <rdfs:label xml:lang="en">knowed by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -478,8 +475,6 @@
         <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Actor"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Actor"/>
-        <rdfs:label xml:lang="fr">connais</rdfs:label>
-        <rdfs:label xml:lang="en">knows</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -590,6 +585,7 @@
         <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasPart"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Activity"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Activity"/>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:ObjectProperty>
     
 
