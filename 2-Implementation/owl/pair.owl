@@ -1752,6 +1752,7 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
     <!-- http://virtual-assembly.org/ontologies/pair#Document -->
 
     <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair#Document">
+        <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#ConceptBasedResource"/>
         <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Object"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -2312,6 +2313,12 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#hasPart"/>
                 <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair#Resource"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#hasSubjectType"/>
+                <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair#ResourceType"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">Resource</rdfs:label>
