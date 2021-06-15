@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://virtual-assembly.org/ontologies/pair#"
      xml:base="http://virtual-assembly.org/ontologies/pair"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
      xmlns:p1="http://www.owl-ontologies.com/Ontology1588582345.owl#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -10,10 +12,12 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#">
     <owl:Ontology rdf:about="http://virtual-assembly.org/ontologies/pair">
+        <owl:imports rdf:resource="http://www.w3.org/2003/06/sw-vocab-status/ns"/>
         <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
         <rdfs:comment xml:lang="fr">Ontologie PAIR - Projet Acteur Idée Ressource</rdfs:comment>
     </owl:Ontology>
@@ -115,6 +119,7 @@
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#aims"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Finality"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#PAIR"/>
+        <ns:term_status>unstable</ns:term_status>
     </owl:ObjectProperty>
     
 
@@ -125,27 +130,7 @@
         <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#pairIntentionProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#PAIR"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Finality"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#allowedBy -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#allowedBy">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interIntentionProperty"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#allows"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Finality"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Means"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#allows -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#allows">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interIntentionProperty"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Means"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Finality"/>
+        <ns:term_status>unstable</ns:term_status>
     </owl:ObjectProperty>
     
 
@@ -238,6 +223,7 @@
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasChallenge"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Challenge"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#PAIR"/>
+        <ns:term_status>unstable</ns:term_status>
     </owl:ObjectProperty>
     
 
@@ -406,6 +392,18 @@
     
 
 
+    <!-- http://virtual-assembly.org/ontologies/pair#finalityOf -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#finalityOf">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interIntentionProperty"/>
+        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasFinality"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Finality"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Challenge"/>
+        <ns:term_status>unstable</ns:term_status>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://virtual-assembly.org/ontologies/pair#follows -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#follows">
@@ -443,6 +441,7 @@
         <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#pairIntentionProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#PAIR"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Challenge"/>
+        <ns:term_status>unstable</ns:term_status>
     </owl:ObjectProperty>
     
 
@@ -465,6 +464,17 @@
         <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#subjectConceptProperties"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Domain"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair#hasFinality -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasFinality">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interIntentionProperty"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Challenge"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Finality"/>
+        <ns:term_status>unstable</ns:term_status>
     </owl:ObjectProperty>
     
 
@@ -501,6 +511,18 @@
     
 
 
+    <!-- http://virtual-assembly.org/ontologies/pair#hasMean -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasMean">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interIntentionProperty"/>
+        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#meanOf"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Challenge"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair/Mean"/>
+        <ns:term_status>unstable</ns:term_status>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://virtual-assembly.org/ontologies/pair#hasObjectType -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasObjectType">
@@ -509,17 +531,6 @@
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Object"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#ObjectType"/>
         <rdfs:comment xml:lang="en">Links an Object to an ObjectType, for &quot;loose typing&quot;.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#hasOrigin -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasOrigin">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interIntentionProperty"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#originOf"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Finality"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Challenge"/>
     </owl:ObjectProperty>
     
 
@@ -565,6 +576,18 @@
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#skillOf"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Person"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Skill"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair#hasSolution -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasSolution">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interIntentionProperty"/>
+        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#isSolutionFor"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Finality"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair/Mean"/>
+        <ns:term_status>unstable</ns:term_status>
     </owl:ObjectProperty>
     
 
@@ -762,12 +785,34 @@
     
 
 
+    <!-- http://virtual-assembly.org/ontologies/pair#isSolutionFor -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#isSolutionFor">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interIntentionProperty"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair/Mean"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Finality"/>
+        <ns:term_status>unstable</ns:term_status>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://virtual-assembly.org/ontologies/pair#locationOf -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#locationOf">
         <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Place"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#PAIR"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair#meanOf -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#meanOf">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interIntentionProperty"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair/Mean"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Challenge"/>
+        <ns:term_status>unstable</ns:term_status>
     </owl:ObjectProperty>
     
 
@@ -809,7 +854,8 @@
         <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#pairIntentionProperty"/>
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#moblizedBy"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#PAIR"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Means"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair/Mean"/>
+        <ns:term_status>unstable</ns:term_status>
     </owl:ObjectProperty>
     
 
@@ -818,8 +864,9 @@
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#moblizedBy">
         <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#pairIntentionProperty"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Means"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair/Mean"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#PAIR"/>
+        <ns:term_status>unstable</ns:term_status>
     </owl:ObjectProperty>
     
 
@@ -925,16 +972,6 @@
         <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#associationProperties"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Organization"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#MembershipAssociation"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#originOf -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#originOf">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interIntentionProperty"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Challenge"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Finality"/>
     </owl:ObjectProperty>
     
 
@@ -1061,27 +1098,6 @@
         <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#offeredBy"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Skill"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Person"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#solvedBy -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#solvedBy">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interIntentionProperty"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#solves"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Challenge"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Means"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#solves -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#solves">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interIntentionProperty"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Means"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Challenge"/>
     </owl:ObjectProperty>
     
 
@@ -1758,6 +1774,7 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
 
     <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair#Challenge">
         <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Intention"/>
+        <ns:term_status>unstable</ns:term_status>
     </owl:Class>
     
 
@@ -1957,6 +1974,7 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
 
     <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair#Finality">
         <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Intention"/>
+        <ns:term_status>unstable</ns:term_status>
     </owl:Class>
     
 
@@ -2060,6 +2078,7 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
 
     <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair#Means">
         <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Intention"/>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -2605,6 +2624,15 @@ Un lien direct entre une personne et une compétence existe également, mais san
 
     <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair/ImageType">
         <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#DocumentType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair/Mean -->
+
+    <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair/Mean">
+        <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Intention"/>
+        <ns:term_status>unstable</ns:term_status>
     </owl:Class>
     
 
