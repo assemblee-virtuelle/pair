@@ -15,7 +15,7 @@
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#">
     <owl:Ontology rdf:about="http://virtual-assembly.org/ontologies/pair">
         <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
-        <rdfs:comment xml:lang="fr">PAIR Summer 2020 Release - Work in Progress</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Ontologie PAIR - Projet Acteur Idée Ressource</rdfs:comment>
     </owl:Ontology>
     
 
@@ -1229,48 +1229,6 @@
     
 
 
-    <!-- http://virtual-assembly.org/ontologies/pair/hasDocumentType -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair/hasDocumentType">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasObjectType"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair/typeOfDocument"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Document"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#DocumentType"/>
-        <rdfs:comment xml:lang="en">Links a document to a document type</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair/hasImageType -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair/hasImageType">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair/hasDocumentType"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair/Image"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair/ImageType"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair/typeOfDocument -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair/typeOfDocument">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#typeOfObject"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#DocumentType"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Document"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair/typeOfImage -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair/typeOfImage">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair/typeOfDocument"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair/ImageType"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair/Image"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1797,8 +1755,8 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
         <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Object"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#documents"/>
-                <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
+                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#hasObjectType"/>
+                <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair#DocumentType"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1809,31 +1767,7 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#hasType"/>
-                <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair#DocumentType"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#referencedBy"/>
-                <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair#Document"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#references"/>
-                <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair#Document"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#represents"/>
-                <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#hasType"/>
+                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#hasObjectType"/>
                 <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2442,18 +2376,6 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
 
     <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair#Subject">
         <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#PairEntity"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#documentedBy"/>
-                <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair#Document"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#representedBy"/>
-                <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair#Document"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Classe abstraite permettant de regrouper les classes directement concernées par le domaine de connaissance de l&apos;ontologie PAIR</rdfs:comment>
         <rdfs:label xml:lang="en">Subject</rdfs:label>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sujet</rdfs:label>
@@ -2577,6 +2499,12 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
 
     <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair/Image">
         <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Document"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#hasType"/>
+                <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair/ImageType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">Image</rdfs:label>
         <rdfs:label xml:lang="fr">Image</rdfs:label>
     </owl:Class>
