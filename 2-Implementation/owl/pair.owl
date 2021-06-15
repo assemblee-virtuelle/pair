@@ -579,17 +579,6 @@
     
 
 
-    <!-- http://virtual-assembly.org/ontologies/pair#hasSubactivity -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasSubactivity">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasPart"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Activity"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Activity"/>
-        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://virtual-assembly.org/ontologies/pair#hasSubjectType -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasSubjectType">
