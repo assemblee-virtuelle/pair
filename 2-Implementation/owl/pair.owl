@@ -616,8 +616,6 @@
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Theme"/>
-        <rdfs:label xml:lang="en">has interest</rdfs:label>
-        <rdfs:label xml:lang="fr">à pour intérêt</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1152,8 +1150,6 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
-        <rdfs:label xml:lang="fr">centre d&apos;intérêt de</rdfs:label>
-        <rdfs:label xml:lang="en">interest of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1217,6 +1213,71 @@
         <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#agentResourceProperty"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Agent"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair/depictedBy -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair/depictedBy">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#representedBy"/>
+        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair/depicts"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair/Image"/>
+        <rdfs:comment xml:lang="fr">indique qu&apos;un Sujet a une représentation principale sous forme d&apos;image</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair/depicts -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair/depicts">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#represents"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair/Image"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
+        <rdfs:comment xml:lang="en">Used to indicate an image gives a visual representation of any subject</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair/hasDocumentType -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair/hasDocumentType">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#hasObjectType"/>
+        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair/typeOfDocument"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Document"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#DocumentType"/>
+        <rdfs:comment xml:lang="en">Links a document to a document type</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair/hasImageType -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair/hasImageType">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair/hasDocumentType"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair/Image"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair/ImageType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair/typeOfDocument -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair/typeOfDocument">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#typeOfObject"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#DocumentType"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Document"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair/typeOfImage -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair/typeOfImage">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair/typeOfDocument"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair/ImageType"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair/Image"/>
     </owl:ObjectProperty>
     
 
@@ -2519,6 +2580,24 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
         <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Concept"/>
         <rdfs:label xml:lang="en">Type</rdfs:label>
         <rdfs:label xml:lang="fr">Type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair/Image -->
+
+    <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair/Image">
+        <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Document"/>
+        <rdfs:label xml:lang="en">Image</rdfs:label>
+        <rdfs:label xml:lang="fr">Image</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair/ImageType -->
+
+    <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair/ImageType">
+        <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#DocumentType"/>
     </owl:Class>
     
 
