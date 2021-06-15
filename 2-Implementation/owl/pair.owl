@@ -1229,6 +1229,69 @@
     
 
 
+    <!-- http://virtual-assembly.org/ontologies/pair/experienceGrade -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair/experienceGrade">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#subjectConceptProperties"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair/ExperienceAssociation"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair/Grade"/>
+        <rdfs:comment xml:lang="fr">Indique le niveau de l&apos;expérience</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair/experienceSkill -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair/experienceSkill">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#associationProperties"/>
+        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair/skillOfExperience"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair/ExperienceAssociation"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Skill"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair/gradeOfExperience -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair/gradeOfExperience">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#subjectConceptProperties"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair/Grade"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair/ExperienceAssociation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair/hasExperience -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair/hasExperience">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#associationProperties"/>
+        <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair/isExperienceOf"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Person"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair/ExperienceAssociation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair/isExperienceOf -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair/isExperienceOf">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#associationProperties"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair/ExperienceAssociation"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair/skillOfExperience -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair/skillOfExperience">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#associationProperties"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Skill"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair/ExperienceAssociation"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -2498,6 +2561,26 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
         <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Concept"/>
         <rdfs:label xml:lang="en">Type</rdfs:label>
         <rdfs:label xml:lang="fr">Type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair/ExperienceAssociation -->
+
+    <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair/ExperienceAssociation">
+        <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Association"/>
+        <rdfs:comment xml:lang="fr">Expérience d&apos;un individu dans une compétence, avec un certain niveau (&quot;grade&quot;).
+Un lien direct entre une personne et une compétence existe également, mais sans possibilité de préciser le niveau.</rdfs:comment>
+        <rdfs:label xml:lang="fr">Expérience</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair/Grade -->
+
+    <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair/Grade">
+        <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Concept"/>
+        <rdfs:comment xml:lang="fr">Un niveau d&apos;expérience d&apos;une personne dans une compétence (débutant, confirmé, avancé, expert, etc...)</rdfs:comment>
     </owl:Class>
     
 
