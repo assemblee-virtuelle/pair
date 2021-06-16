@@ -1600,6 +1600,16 @@
     
 
 
+    <!-- http://virtual-assembly.org/ontologies/pair/documentDate -->
+
+    <owl:DatatypeProperty rdf:about="http://virtual-assembly.org/ontologies/pair/documentDate">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#date"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Document"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
