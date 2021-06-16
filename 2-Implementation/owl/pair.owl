@@ -619,15 +619,8 @@
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#hasTopic">
         <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#entityConceptProperty"/>
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair#topicOf"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Object"/>
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Subject"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Theme"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Document"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Topic"/>
     </owl:ObjectProperty>
     
 
@@ -1146,15 +1139,8 @@
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#topicOf">
         <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#entityConceptProperty"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Theme"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Object"/>
-                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Subject"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Topic"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Document"/>
     </owl:ObjectProperty>
     
 
@@ -1284,6 +1270,29 @@
         <owl:inverseOf rdf:resource="http://virtual-assembly.org/ontologies/pair/isExperienceOf"/>
         <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Person"/>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair/ExperienceAssociation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair/hasInterest -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair/hasInterest">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#subjectConceptProperties"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Agent"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Topic"/>
+        <rdfs:comment xml:lang="fr">Indique l&apos;intérêt d&apos;un Agent pour un sujet, un topic particulier</rdfs:comment>
+        <rdfs:label xml:lang="en">has interest</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair/interestOf -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair/interestOf">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#subjectConceptProperties"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Topic"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Agent"/>
+        <rdfs:label xml:lang="en">interest of</rdfs:label>
     </owl:ObjectProperty>
     
 
