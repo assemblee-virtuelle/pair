@@ -1708,7 +1708,7 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#hasStatus"/>
-                <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair#AgentStatus"/>
+                <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair#ActorStatus"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="fr">Un Acteur est entendu comme une personne morale ou physique.</rdfs:comment>
@@ -1720,6 +1720,14 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
     
 
 
+    <!-- http://virtual-assembly.org/ontologies/pair#ActorStatus -->
+
+    <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair#ActorStatus">
+        <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Status"/>
+    </owl:Class>
+    
+
+
     <!-- http://virtual-assembly.org/ontologies/pair#Agent -->
 
     <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair#Agent">
@@ -1727,14 +1735,6 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
         <rdfs:comment xml:lang="fr">un Agent est &quot;tout ce qui agit&quot;, en particulier tout ce qui peut entretenir des liens avec des Ressources. A ce titre, les Activités, typiquement les Projets, sont considérées comme des sous-classes d&apos;Agent.</rdfs:comment>
         <rdfs:label xml:lang="en">Agent</rdfs:label>
         <rdfs:label xml:lang="fr">Agent</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://virtual-assembly.org/ontologies/pair#AgentStatus -->
-
-    <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair#AgentStatus">
-        <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Status"/>
     </owl:Class>
     
 
@@ -2169,6 +2169,12 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
         <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Actor"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#hasStatus"/>
+                <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair/OrganizationStatus"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#hasSubjectType"/>
                 <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair#OrganizationType"/>
             </owl:Restriction>
@@ -2226,6 +2232,12 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#affiliatedBy"/>
                 <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair#Organization"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#hasStatus"/>
+                <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair/PersonStatus"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2653,6 +2665,22 @@ Un lien direct entre une personne et une compétence existe également, mais san
     <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair/Mean">
         <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Intention"/>
         <ns:term_status>unstable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair/OrganizationStatus -->
+
+    <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair/OrganizationStatus">
+        <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#ActorStatus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair/PersonStatus -->
+
+    <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair/PersonStatus">
+        <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#ActorStatus"/>
     </owl:Class>
     
 
