@@ -1647,6 +1647,12 @@
                 <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair#Activity"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#hasSubjectType"/>
+                <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair#ActivityType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="fr">Une activité est entendue au sens très générique comme toute action entreprise par un Acteur avec une certaine finalité, à un certain moment, en un certain lieu.
 Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de la petite bourdaisière a pour activité Permaculture&quot;.</rdfs:comment>
         <rdfs:label xml:lang="fr">Activité</rdfs:label>
@@ -2056,6 +2062,12 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
                 <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair#IdeaStatus"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#hasSubjectType"/>
+                <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair#IdeaType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">Idea</rdfs:label>
         <rdfs:label xml:lang="fr">Idée</rdfs:label>
     </owl:Class>
@@ -2157,20 +2169,8 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
         <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Actor"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#affiliates"/>
-                <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair#Person"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#hasType"/>
+                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#hasSubjectType"/>
                 <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair#OrganizationType"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#hasType"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="fr">Organisation désigne un groupe d&apos;individus s&apos;étant rassemblés autour d&apos;un objectif commun. Une organisation peut être formelle (structure juridique) ou informelle (groupe).</rdfs:comment>
@@ -2230,8 +2230,8 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#follows"/>
-                <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair#Person"/>
+                <owl:onProperty rdf:resource="http://virtual-assembly.org/ontologies/pair#hasSubjectType"/>
+                <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/ontologies/pair/PersonType"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(...)</rdfs:comment>
@@ -2653,6 +2653,16 @@ Un lien direct entre une personne et une compétence existe également, mais san
     <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair/Mean">
         <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#Intention"/>
         <ns:term_status>unstable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://virtual-assembly.org/ontologies/pair/PersonType -->
+
+    <owl:Class rdf:about="http://virtual-assembly.org/ontologies/pair/PersonType">
+        <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/ontologies/pair#AgentType"/>
+        <rdfs:label xml:lang="en">Person type</rdfs:label>
+        <rdfs:label xml:lang="fr">Type de personne</rdfs:label>
     </owl:Class>
     
 
