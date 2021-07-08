@@ -1,0 +1,611 @@
+@prefix : <http://hubject.net/iPlumb3r/EcosystemMapping/Extentional.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://hubject.net/iPlumb3r/EcosystemMapping/Extentional.owl> .
+
+<http://hubject.net/iPlumb3r/EcosystemMapping/Extentional.owl> rdf:type owl:Ontology ;
+                                                                owl:imports <http://hubject.net/iPlumb3r/EcosystemMapping/Intentional.owl> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#hasPart
+<http://www.owl-ontologies.com/Ontology1581687425.owl#hasPart> rdf:type owl:AnnotationProperty ;
+                                                               rdfs:domain _:genid2147483657 .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#hasType
+<http://www.owl-ontologies.com/Ontology1581687425.owl#hasType> rdf:type owl:AnnotationProperty ;
+                                                               rdfs:domain _:genid2147483664 .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#partOf
+<http://www.owl-ontologies.com/Ontology1581687425.owl#partOf> rdf:type owl:AnnotationProperty ;
+                                                              rdfs:domain _:genid2147483670 .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#typeOf
+<http://www.owl-ontologies.com/Ontology1581687425.owl#typeOf> rdf:type owl:AnnotationProperty ;
+                                                              rdfs:domain _:genid2147483687 .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#affiliatedBy
+<http://www.owl-ontologies.com/Ontology1581687425.owl#affiliatedBy> rdf:type owl:ObjectProperty ;
+                                                                    rdfs:subPropertyOf <http://www.owl-ontologies.com/Ontology1581687425.owl#extentionalObjectProperty> ;
+                                                                    owl:inverseOf <http://www.owl-ontologies.com/Ontology1581687425.owl#affiliates> ;
+                                                                    rdfs:domain <http://www.owl-ontologies.com/Ontology1581687425.owl#Personality> .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#affiliates
+<http://www.owl-ontologies.com/Ontology1581687425.owl#affiliates> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:subPropertyOf <http://www.owl-ontologies.com/Ontology1581687425.owl#extentionalObjectProperty> ;
+                                                                  rdfs:domain <http://www.owl-ontologies.com/Ontology1581687425.owl#Organization> .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#authoredBy
+<http://www.owl-ontologies.com/Ontology1581687425.owl#authoredBy> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:subPropertyOf <http://www.owl-ontologies.com/Ontology1581687425.owl#extentionalObjectProperty> ;
+                                                                  owl:inverseOf <http://www.owl-ontologies.com/Ontology1581687425.owl#authors> ;
+                                                                  rdfs:domain <http://www.owl-ontologies.com/Ontology1581687425.owl#Document> .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#authors
+<http://www.owl-ontologies.com/Ontology1581687425.owl#authors> rdf:type owl:ObjectProperty ;
+                                                               rdfs:subPropertyOf <http://www.owl-ontologies.com/Ontology1581687425.owl#extentionalObjectProperty> ;
+                                                               rdfs:domain <http://www.owl-ontologies.com/Ontology1581687425.owl#Personality> .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#extendedBy
+<http://www.owl-ontologies.com/Ontology1581687425.owl#extendedBy> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:subPropertyOf <http://www.owl-ontologies.com/Ontology1581687425.owl#extentionalObjectProperty> ;
+                                                                  rdfs:domain <http://www.owl-ontologies.com/Ontology1581687425.owl#Area> .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#extends
+<http://www.owl-ontologies.com/Ontology1581687425.owl#extends> rdf:type owl:ObjectProperty ;
+                                                               rdfs:subPropertyOf <http://www.owl-ontologies.com/Ontology1581687425.owl#extentionalObjectProperty> ;
+                                                               owl:inverseOf <http://www.owl-ontologies.com/Ontology1581687425.owl#extendedBy> ;
+                                                               rdfs:domain <http://www.owl-ontologies.com/Ontology1581687425.owl#Branch> .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#extentionalObjectProperty
+<http://www.owl-ontologies.com/Ontology1581687425.owl#extentionalObjectProperty> rdf:type owl:ObjectProperty .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#intendedBy
+<http://www.owl-ontologies.com/Ontology1581687425.owl#intendedBy> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:subPropertyOf <http://www.owl-ontologies.com/Ontology1581687425.owl#extentionalObjectProperty> ;
+                                                                  rdfs:domain <http://www.owl-ontologies.com/Ontology1581687425.owl#Area> .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#intends
+<http://www.owl-ontologies.com/Ontology1581687425.owl#intends> rdf:type owl:ObjectProperty ;
+                                                               rdfs:subPropertyOf <http://www.owl-ontologies.com/Ontology1581687425.owl#extentionalObjectProperty> ;
+                                                               owl:inverseOf <http://www.owl-ontologies.com/Ontology1581687425.owl#intendedBy> ;
+                                                               rdfs:domain <http://www.owl-ontologies.com/Ontology1581687425.owl#Domain> .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#involvedIn
+<http://www.owl-ontologies.com/Ontology1581687425.owl#involvedIn> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:subPropertyOf <http://www.owl-ontologies.com/Ontology1581687425.owl#extentionalObjectProperty> ;
+                                                                  owl:inverseOf <http://www.owl-ontologies.com/Ontology1581687425.owl#involves> ;
+                                                                  rdfs:domain [ rdf:type owl:Class ;
+                                                                                owl:unionOf ( <http://www.owl-ontologies.com/Ontology1581687425.owl#Personality>
+                                                                                              <http://www.owl-ontologies.com/Ontology1581687425.owl#Project>
+                                                                                            )
+                                                                              ] .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#involves
+<http://www.owl-ontologies.com/Ontology1581687425.owl#involves> rdf:type owl:ObjectProperty ;
+                                                                rdfs:subPropertyOf <http://www.owl-ontologies.com/Ontology1581687425.owl#extentionalObjectProperty> ;
+                                                                rdfs:domain <http://www.owl-ontologies.com/Ontology1581687425.owl#Project> .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#qualifiedBy
+<http://www.owl-ontologies.com/Ontology1581687425.owl#qualifiedBy> rdf:type owl:ObjectProperty ;
+                                                                   rdfs:subPropertyOf <http://www.owl-ontologies.com/Ontology1581687425.owl#extentionalObjectProperty> ;
+                                                                   owl:inverseOf <http://www.owl-ontologies.com/Ontology1581687425.owl#qualifies> .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#qualifies
+<http://www.owl-ontologies.com/Ontology1581687425.owl#qualifies> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.owl-ontologies.com/Ontology1581687425.owl#extentionalObjectProperty> ;
+                                                                 rdfs:domain <http://www.owl-ontologies.com/Ontology1581687425.owl#Objective> .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#quantifiedBy
+<http://www.owl-ontologies.com/Ontology1581687425.owl#quantifiedBy> rdf:type owl:ObjectProperty ;
+                                                                    rdfs:subPropertyOf <http://www.owl-ontologies.com/Ontology1581687425.owl#extentionalObjectProperty> ;
+                                                                    rdfs:domain [ rdf:type owl:Class ;
+                                                                                  owl:unionOf ( <http://www.owl-ontologies.com/Ontology1581687425.owl#BasicNeed>
+                                                                                                <http://www.owl-ontologies.com/Ontology1581687425.owl#Goal>
+                                                                                              )
+                                                                                ] .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#quantifies
+<http://www.owl-ontologies.com/Ontology1581687425.owl#quantifies> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:subPropertyOf <http://www.owl-ontologies.com/Ontology1581687425.owl#extentionalObjectProperty> ;
+                                                                  owl:inverseOf <http://www.owl-ontologies.com/Ontology1581687425.owl#quantifiedBy> ;
+                                                                  rdfs:domain <http://www.owl-ontologies.com/Ontology1581687425.owl#Goal> .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#Area
+<http://www.owl-ontologies.com/Ontology1581687425.owl#Area> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#ForWhatThing> ,
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#extendedBy> ;
+                                                                              owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Branch>
+                                                                            ] ,
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#intendedBy> ;
+                                                                              owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Domain>
+                                                                            ] ;
+                                                            rdfs:comment "Exact intersection between a §Branch and a §Domain."@en ,
+                                                                         "Exacte intersection entre une §Branch et un §Domain."@fr ;
+                                                            rdfs:label "Aire"@fr ,
+                                                                       "Area"@en .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#Atom-Based_Resource
+<http://www.owl-ontologies.com/Ontology1581687425.owl#Atom-Based_Resource> rdf:type owl:Class ;
+                                                                           rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#Resource> .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#BasicNeed
+<http://www.owl-ontologies.com/Ontology1581687425.owl#BasicNeed> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#WhyThing> ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#quantifiedBy> ;
+                                                                                   owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Goal>
+                                                                                 ] ;
+                                                                 rdfs:comment "A need to provide for the essential functions of human beings."@en ,
+                                                                              "Besoin permettant subvenir aux fonctions essentielles des être humains."@fr ;
+                                                                 rdfs:label "Basic Need"@en ,
+                                                                            "Besoin basique"@fr .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#Bit-Based_Resource
+<http://www.owl-ontologies.com/Ontology1581687425.owl#Bit-Based_Resource> rdf:type owl:Class ;
+                                                                          rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#Resource> .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#Branch
+<http://www.owl-ontologies.com/Ontology1581687425.owl#Branch> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#ForWhatThing> ,
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#extends> ;
+                                                                                owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Area>
+                                                                              ] ,
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#hasPart> ;
+                                                                                owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Branch>
+                                                                              ] ,
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#partOf> ;
+                                                                                owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Branch>
+                                                                              ] ;
+                                                              rdfs:comment "Business, IS-IT or Representation-Visualization set of activities related to a given thing/object/product."@en ,
+                                                                           "Ensemble d'activités métier, IS-IT ou liés à la Representation-Visualisation d'information et associé à une chose/object/produit particulièr(e)."@fr ;
+                                                              rdfs:label "Branch"@en ,
+                                                                         "Branche"@fr .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#Business_Area
+<http://www.owl-ontologies.com/Ontology1581687425.owl#Business_Area> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#Area> ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#extendedBy> ;
+                                                                                       owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Business_Branch>
+                                                                                     ] ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#intendedBy> ;
+                                                                                       owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Business_Domain>
+                                                                                     ] ;
+                                                                     rdfs:comment "Set of business activities at the - exact - intersection of a §DomainBusiness and a §BranchBusiness."@en ,
+                                                                                  "Ensemble d'activités métiers à l'exacte intersection entre un §DomainBusiness et une §BranchBusiness." ;
+                                                                     rdfs:label "Aire métier"@fr ,
+                                                                                "Business Area"@en .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#Business_Branch
+<http://www.owl-ontologies.com/Ontology1581687425.owl#Business_Branch> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#Branch> ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#extends> ;
+                                                                                         owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Business_Area>
+                                                                                       ] ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#hasPart> ;
+                                                                                         owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Business_Branch>
+                                                                                       ] ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#partOf> ;
+                                                                                         owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Business_Branch>
+                                                                                       ] ;
+                                                                       rdfs:comment "Ensemble d'activités métiers relatives à un type de produit particulier."@fr ,
+                                                                                    "Set of business activities related to a given type of product."@en ;
+                                                                       rdfs:label "Branche métier"@fr ,
+                                                                                  "Business Branch"@en .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#Business_Domain
+<http://www.owl-ontologies.com/Ontology1581687425.owl#Business_Domain> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#Domain> ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#hasPart> ;
+                                                                                         owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Business_Domain>
+                                                                                       ] ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#intends> ;
+                                                                                         owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Business_Area>
+                                                                                       ] ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#partOf> ;
+                                                                                         owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Business_Domain>
+                                                                                       ] ;
+                                                                       rdfs:comment "Ensemble d'activités métiers qui partagent une même finalité globale. Cette finalité est la même quelque soit la §BranchBusiness."@fr ;
+                                                                       rdfs:label "Business Domain"@en ,
+                                                                                  "Domaine métier"@fr ,
+                                                                                  "Set of business activities which are sharing a common global finality. This finality is the same regardless the §BranchBusiness."@en .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#Concept-Based_Resource
+<http://www.owl-ontologies.com/Ontology1581687425.owl#Concept-Based_Resource> rdf:type owl:Class ;
+                                                                              rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#Resource> .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#DigitalInformation
+<http://www.owl-ontologies.com/Ontology1581687425.owl#DigitalInformation> rdf:type owl:Class ;
+                                                                          rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#Bit-Based_Resource> .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#Document
+<http://www.owl-ontologies.com/Ontology1581687425.owl#Document> rdf:type owl:Class ;
+                                                                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#authoredBy> ;
+                                                                                  owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Personality>
+                                                                                ] .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#Domain
+<http://www.owl-ontologies.com/Ontology1581687425.owl#Domain> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#ForWhatThing> ,
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#hasPart> ;
+                                                                                owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Domain>
+                                                                              ] ,
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#intends> ;
+                                                                                owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Area>
+                                                                              ] ,
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#partOf> ;
+                                                                                owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Domain>
+                                                                              ] ;
+                                                              rdfs:comment "Business, IS-IT or Representation-Visualization set of activities related to a given finality."@en ,
+                                                                           "Ensemble d'activités métier, IS-IT ou liés à la Representation-Visualisation d'information et associé à une finalité particulière."@fr ;
+                                                              rdfs:label "Domain"@en ,
+                                                                         "Domaine"@fr .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#Energy-Based_Resource
+<http://www.owl-ontologies.com/Ontology1581687425.owl#Energy-Based_Resource> rdf:type owl:Class ;
+                                                                             rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#Resource> .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#ExtensionalThing
+<http://www.owl-ontologies.com/Ontology1581687425.owl#ExtensionalThing> rdf:type owl:Class ;
+                                                                        rdfs:comment "Chose définie par sa nature (En réponse à la question : de quoi est-elle faite ?)"@fr ,
+                                                                                     "Thing defined by its nature (In answer to the question : what is it made of ?)"@en ;
+                                                                        rdfs:label "Chose extensionelle"@fr ,
+                                                                                   "Extentional Thing"@en .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#ForWhatThing
+<http://www.owl-ontologies.com/Ontology1581687425.owl#ForWhatThing> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#ExtensionalThing> .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#Goal
+<http://www.owl-ontologies.com/Ontology1581687425.owl#Goal> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#WhyThing> ,
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#quantifiedBy> ;
+                                                                              owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Objective>
+                                                                            ] ,
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#quantifies> ;
+                                                                              owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#BasicNeed>
+                                                                            ] ;
+                                                            rdfs:comment "Finalité globale (non chiffré) recherché par une organisation, un produit, ..."@fr ,
+                                                                         "Global finality (not quantified) sought by an organization, a product, ..."@en ;
+                                                            rdfs:label "But"@fr ,
+                                                                       "Goal"@en .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#IS-IT_Area
+<http://www.owl-ontologies.com/Ontology1581687425.owl#IS-IT_Area> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#Area> ,
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#extendedBy> ;
+                                                                                    owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#IS-IT_Branch>
+                                                                                  ] ,
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#intendedBy> ;
+                                                                                    owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#IS-IT_Domain>
+                                                                                  ] .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#IS-IT_Branch
+<http://www.owl-ontologies.com/Ontology1581687425.owl#IS-IT_Branch> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#Branch> ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#extends> ;
+                                                                                      owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#IS-IT_Area>
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#hasPart> ;
+                                                                                      owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#IS-IT_Branch>
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#partOf> ;
+                                                                                      owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#IS-IT_Branch>
+                                                                                    ] .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#IS-IT_Domain
+<http://www.owl-ontologies.com/Ontology1581687425.owl#IS-IT_Domain> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#Domain> ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#hasPart> ;
+                                                                                      owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#IS-IT_Domain>
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#intends> ;
+                                                                                      owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#IS-IT_Area>
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#partOf> ;
+                                                                                      owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#IS-IT_Domain>
+                                                                                    ] .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#KnowledgeElement
+<http://www.owl-ontologies.com/Ontology1581687425.owl#KnowledgeElement> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#Concept-Based_Resource> .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#KnowledgeStructure
+<http://www.owl-ontologies.com/Ontology1581687425.owl#KnowledgeStructure> rdf:type owl:Class ;
+                                                                          rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#Concept-Based_Resource> .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#Matter
+<http://www.owl-ontologies.com/Ontology1581687425.owl#Matter> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#Atom-Based_Resource> .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#Objective
+<http://www.owl-ontologies.com/Ontology1581687425.owl#Objective> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#WhyThing> ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#qualifies> ;
+                                                                                   owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Goal>
+                                                                                 ] ;
+                                                                 rdfs:comment "Expression quantifié d'un but recherché par une organisation, un produit, ..."@fr ,
+                                                                              "Quantified expression of a goal pursued by an organization, a product, ..."@en ;
+                                                                 rdfs:label "Objectif"@fr ,
+                                                                            "Objective"@en .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#Organization
+<http://www.owl-ontologies.com/Ontology1581687425.owl#Organization> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#Personality> ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#affiliates> ;
+                                                                                      owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Personality>
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#hasPart> ;
+                                                                                      owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Organization>
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#hasType> ;
+                                                                                      owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#OrganizationType>
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#partOf> ;
+                                                                                      owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Organization>
+                                                                                    ] ;
+                                                                    rdfs:comment "Formal or informal union of §Person or §Organization in order to reach one (or several) goal(s)"@en ,
+                                                                                 "Union formelle ou informelle de§Person ou d'§Organization unis pour un but par le but particulier."@fr ;
+                                                                    rdfs:label "Organisation"@fr ,
+                                                                               "Organization"@en .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#OrganizationType
+<http://www.owl-ontologies.com/Ontology1581687425.owl#OrganizationType> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#WhoThing> ,
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#typeOf> ;
+                                                                                          owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Organization>
+                                                                                        ] ;
+                                                                        rdfs:comment "Catégorie d'organisation."@fr ,
+                                                                                     "Organization category"@en ;
+                                                                        rdfs:label "Organization Type"@en ,
+                                                                                   "Type d'organisation"@fr .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#Person
+<http://www.owl-ontologies.com/Ontology1581687425.owl#Person> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#Personality> ;
+                                                              rdfs:comment "Etre humain. (Peut jouer le rôle d'un @Agent.)"@fr ,
+                                                                           "Human being. (Can play the role of an @Agent.)"@en ;
+                                                              rdfs:label "Person"@en ,
+                                                                         "Personne"@fr .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#Personality
+<http://www.owl-ontologies.com/Ontology1581687425.owl#Personality> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#WhoThing> ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#affiliatedBy> ;
+                                                                                     owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Organization>
+                                                                                   ] ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#authors> ;
+                                                                                     owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Document>
+                                                                                   ] ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#involvedIn> ;
+                                                                                     owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Project>
+                                                                                   ] ;
+                                                                   rdfs:comment "Classe abstraite permettant de manipuler §Person et §Organization en même temps."@fr ;
+                                                                   rdfs:label "Abstract classe which allows to manipulate §Person et §Organization at the same time."@en ,
+                                                                              "Personality"@en ,
+                                                                              "Personalité"@fr .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#Process
+<http://www.owl-ontologies.com/Ontology1581687425.owl#Process> rdf:type owl:Class ;
+                                                               rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#Energy-Based_Resource> .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#Product
+<http://www.owl-ontologies.com/Ontology1581687425.owl#Product> rdf:type owl:Class ;
+                                                               rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#Atom-Based_Resource> .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#Project
+<http://www.owl-ontologies.com/Ontology1581687425.owl#Project> rdf:type owl:Class ;
+                                                               rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#WhoThing> ,
+                                                                               [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#hasPart> ;
+                                                                                 owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Project>
+                                                                               ] ,
+                                                                               [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#hasType> ;
+                                                                                 owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#ProjectType>
+                                                                               ] ,
+                                                                               [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#involvedIn> ;
+                                                                                 owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Project>
+                                                                               ] ,
+                                                                               [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#involves> ;
+                                                                                 owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                                                     owl:unionOf ( <http://www.owl-ontologies.com/Ontology1581687425.owl#Personality>
+                                                                                                                   <http://www.owl-ontologies.com/Ontology1581687425.owl#Project>
+                                                                                                                 )
+                                                                                                   ]
+                                                                               ] ,
+                                                                               [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#partOf> ;
+                                                                                 owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Project>
+                                                                               ] ;
+                                                               rdfs:comment "Ensemble d'action réalisées (ou à réaliser) dans un but précis."@fr ,
+                                                                            "Set of actions realized (or to be realized) for a specific purpose."@en ;
+                                                               rdfs:label "Project"@en ,
+                                                                          "Projet"@fr .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#ProjectType
+<http://www.owl-ontologies.com/Ontology1581687425.owl#ProjectType> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#WhoThing> ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#typeOf> ;
+                                                                                     owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#Project>
+                                                                                   ] ;
+                                                                   rdfs:comment "Catégorie de projet"@fr ,
+                                                                                "Project category"@en ;
+                                                                   rdfs:label "Project Type"@en ,
+                                                                              "Type de projet"@fr .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#RepViz_Area
+<http://www.owl-ontologies.com/Ontology1581687425.owl#RepViz_Area> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#Area> ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#extendedBy> ;
+                                                                                     owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#RepViz_Branch>
+                                                                                   ] ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#intendedBy> ;
+                                                                                     owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#RepViz_Domain>
+                                                                                   ] .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#RepViz_Branch
+<http://www.owl-ontologies.com/Ontology1581687425.owl#RepViz_Branch> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#Branch> ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#extends> ;
+                                                                                       owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#RepViz_Area>
+                                                                                     ] ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#hasPart> ;
+                                                                                       owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#RepViz_Branch>
+                                                                                     ] ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#partOf> ;
+                                                                                       owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#RepViz_Branch>
+                                                                                     ] .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#RepViz_Domain
+<http://www.owl-ontologies.com/Ontology1581687425.owl#RepViz_Domain> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#Domain> ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#hasPart> ;
+                                                                                       owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#RepViz_Domain>
+                                                                                     ] ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://www.owl-ontologies.com/Ontology1581687425.owl#intends> ;
+                                                                                       owl:allValuesFrom <http://www.owl-ontologies.com/Ontology1581687425.owl#RepViz_Area>
+                                                                                     ] .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#Resource
+<http://www.owl-ontologies.com/Ontology1581687425.owl#Resource> rdf:type owl:Class ;
+                                                                rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#ExtensionalThing> ;
+                                                                rdfs:comment "Elément tangible ou intangible succeptible d'être produit et/ou consommé dans le context de processus métiers."@fr ,
+                                                                             "Tangible or intangible element that could be produced and/or consumed in the context of buisness processes."@en ;
+                                                                rdfs:label "Resource"@en ,
+                                                                           "Ressource"@fr .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#Service
+<http://www.owl-ontologies.com/Ontology1581687425.owl#Service> rdf:type owl:Class ;
+                                                               rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#Energy-Based_Resource> .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#Software
+<http://www.owl-ontologies.com/Ontology1581687425.owl#Software> rdf:type owl:Class ;
+                                                                rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#Bit-Based_Resource> .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#WhoThing
+<http://www.owl-ontologies.com/Ontology1581687425.owl#WhoThing> rdf:type owl:Class ;
+                                                                rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#ExtensionalThing> .
+
+
+###  http://www.owl-ontologies.com/Ontology1581687425.owl#WhyThing
+<http://www.owl-ontologies.com/Ontology1581687425.owl#WhyThing> rdf:type owl:Class ;
+                                                                rdfs:subClassOf <http://www.owl-ontologies.com/Ontology1581687425.owl#ExtensionalThing> .
+
+
+###  Generated by the OWL API (version 5.1.11) https://github.com/owlcs/owlapi/
