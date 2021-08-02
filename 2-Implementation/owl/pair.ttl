@@ -1,0 +1,1905 @@
+@prefix : <http://virtual-assembly.org/ontologies/pair#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ns: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix p1: <http://www.owl-ontologies.com/Ontology1588582345.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsp: <http://www.owl-ontologies.com/2005/08/07/xsp.owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix protege: <http://protege.stanford.edu/plugins/owl/protege#> .
+@base <http://virtual-assembly.org/ontologies/pair> .
+
+<http://virtual-assembly.org/ontologies/pair> rdf:type owl:Ontology ;
+                                               owl:imports <http://www.w3.org/2003/06/sw-vocab-status/ns> ,
+                                                           <http://www.w3.org/2004/02/skos/core> ;
+                                               rdfs:comment "Ontologie PAIR - Projet Acteur Idée Ressource"@fr .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://virtual-assembly.org/ontologies/pair#about
+:about rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf :interSubjectProperty ;
+       rdfs:domain :Idea ;
+       rdfs:range :Subject .
+
+
+###  http://virtual-assembly.org/ontologies/pair#activityOfInvolvement
+:activityOfInvolvement rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :associationProperties ;
+                       owl:inverseOf :involvementActivity ;
+                       rdfs:domain :Activity ;
+                       rdfs:range :ActivityInvolvementAssociation .
+
+
+###  http://virtual-assembly.org/ontologies/pair#actorOfInvolvement
+:actorOfInvolvement rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :associationProperties ;
+                    owl:inverseOf :involvementActor ;
+                    rdfs:domain :Actor ;
+                    rdfs:range :ActivityInvolvementAssociation .
+
+
+###  http://virtual-assembly.org/ontologies/pair#actorOfMembership
+:actorOfMembership rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :associationProperties ;
+                   owl:inverseOf :membershipActor ;
+                   rdfs:domain :Actor ;
+                   rdfs:range :MembershipAssociation .
+
+
+###  http://virtual-assembly.org/ontologies/pair#affiliatedBy
+:affiliatedBy rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :interSubjectProperty ;
+              owl:inverseOf :affiliates ;
+              rdfs:domain :Person ;
+              rdfs:range :Organization ;
+              rdfs:label "affiliated by"@en ,
+                         "affilié par"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#affiliates
+:affiliates rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :interSubjectProperty ;
+            rdfs:domain :Organization ;
+            rdfs:range :Person ;
+            rdfs:label "affiliate"@en ,
+                       "affilie"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#agentResourceProperty
+:agentResourceProperty rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :interSubjectProperty ;
+                       rdfs:comment "Catégorie de propriétés reliant un Agent à une Ressource"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#aimedBy
+:aimedBy rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :pairIntentionProperty ;
+         owl:inverseOf :aims ;
+         rdfs:domain :Finality ;
+         rdfs:range :PAIR ;
+         ns:term_status "unstable" .
+
+
+###  http://virtual-assembly.org/ontologies/pair#aims
+:aims rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf :pairIntentionProperty ;
+      rdfs:domain :PAIR ;
+      rdfs:range :Finality ;
+      ns:term_status "unstable" .
+
+
+###  http://virtual-assembly.org/ontologies/pair#assignedTo
+:assignedTo rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :involves ;
+            owl:inverseOf :assigneeOf ;
+            rdfs:domain :Task ;
+            rdfs:range :Actor ;
+            rdfs:comment "Sens plus fort que \"involves\" pour les responsables de tâches"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#assigneeOf
+:assigneeOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :involvedIn ;
+            rdfs:domain :Actor ;
+            rdfs:range :Task ;
+            rdfs:comment "Sens plus fort que \"involved in\" pour les responsables de tâches"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#associationProperties
+:associationProperties rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :interSubjectProperty ;
+                       rdfs:comment "Catégorie de propriétés utilisées pour structurer des Associations"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#basedOn
+:basedOn rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :interSubjectProperty ;
+         owl:inverseOf :concretizedBy ;
+         rdfs:domain :Activity ;
+         rdfs:range :Idea ;
+         rdfs:label "concretizes"@en ,
+                    "concrétise"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#brainstormedBy
+:brainstormedBy rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :interSubjectProperty ;
+                owl:inverseOf :brainstorms ;
+                rdfs:domain :Idea ;
+                rdfs:range :Actor ;
+                rdfs:label "brainstormed by"@en ,
+                           "imaginé par"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#brainstorms
+:brainstorms rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :interSubjectProperty ;
+             rdfs:domain :Actor ;
+             rdfs:range :Idea ;
+             rdfs:label "brainstorms"@en ,
+                        "imagine"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#branchOf
+:branchOf rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :subjectConceptProperties ;
+          owl:inverseOf :hasBranch ;
+          rdfs:domain :Branch ;
+          rdfs:range :Subject .
+
+
+###  http://virtual-assembly.org/ontologies/pair#challengeOf
+:challengeOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :pairIntentionProperty ;
+             owl:inverseOf :hasChallenge ;
+             rdfs:domain :Challenge ;
+             rdfs:range :PAIR ;
+             ns:term_status "unstable" .
+
+
+###  http://virtual-assembly.org/ontologies/pair#concernedBy
+:concernedBy rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :interSubjectProperty ;
+             owl:inverseOf :concerns ;
+             rdfs:domain :Actor ;
+             rdfs:range :Task .
+
+
+###  http://virtual-assembly.org/ontologies/pair#concerns
+:concerns rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :interSubjectProperty ;
+          rdfs:domain :Task ;
+          rdfs:range :Actor .
+
+
+###  http://virtual-assembly.org/ontologies/pair#concretizedBy
+:concretizedBy rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :interSubjectProperty ;
+               rdfs:domain :Idea ;
+               rdfs:range :Activity ;
+               rdfs:label "concretized by"@en ,
+                          "concrétisé par"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#consumedBy
+:consumedBy rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :agentResourceProperty ;
+            owl:inverseOf :consumes ;
+            rdfs:domain :Resource ;
+            rdfs:range :Agent .
+
+
+###  http://virtual-assembly.org/ontologies/pair#consumes
+:consumes rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :agentResourceProperty ;
+          rdfs:domain :Agent ;
+          rdfs:range :Resource .
+
+
+###  http://virtual-assembly.org/ontologies/pair#containedIn
+:containedIn rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :interObjectProperty ;
+             owl:inverseOf :contains ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :Document
+                                         :Folder
+                                       )
+                         ] ;
+             rdfs:range :Folder .
+
+
+###  http://virtual-assembly.org/ontologies/pair#contains
+:contains rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :interObjectProperty ;
+          rdfs:domain :Folder ;
+          rdfs:range [ rdf:type owl:Class ;
+                       owl:unionOf ( :Document
+                                     :Folder
+                                   )
+                     ] .
+
+
+###  http://virtual-assembly.org/ontologies/pair#cooperatesWith
+:cooperatesWith rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :interSubjectProperty ;
+                rdf:type owl:SymmetricProperty ;
+                rdfs:domain :Project ;
+                rdfs:range :Project .
+
+
+###  http://virtual-assembly.org/ontologies/pair#documentedBy
+:documentedBy rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :objectSubjectProperty ;
+              owl:inverseOf :documents ;
+              rdfs:domain :Subject ;
+              rdfs:range :Object ;
+              rdfs:label "documented by"@en ,
+                         "documenté par"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#documents
+:documents rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :objectSubjectProperty ;
+           rdfs:domain :Object ;
+           rdfs:range :Subject ;
+           rdfs:comment "Indicates that a document \"somehow documents\" a business subject, e.g. a brochure \"documents\" the company it is about."@en ;
+           rdfs:label "documente"@fr ,
+                      "documents"@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#domainOf
+:domainOf rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :subjectConceptProperties ;
+          owl:inverseOf :hasDomain ;
+          rdfs:domain :Domain ;
+          rdfs:range :Subject .
+
+
+###  http://virtual-assembly.org/ontologies/pair#entityConceptProperty
+:entityConceptProperty rdf:type owl:ObjectProperty .
+
+
+###  http://virtual-assembly.org/ontologies/pair#extendedBy
+:extendedBy rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :interObjectProperty ;
+            owl:inverseOf :extends ;
+            rdfs:domain :Sector ;
+            rdfs:range :Branch .
+
+
+###  http://virtual-assembly.org/ontologies/pair#extends
+:extends rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :interObjectProperty ;
+         rdfs:domain :Branch ;
+         rdfs:range :Sector .
+
+
+###  http://virtual-assembly.org/ontologies/pair#finalityOf
+:finalityOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :interIntentionProperty ;
+            owl:inverseOf :hasFinality ;
+            rdfs:domain :Finality ;
+            rdfs:range :Challenge ;
+            ns:term_status "unstable" .
+
+
+###  http://virtual-assembly.org/ontologies/pair#follows
+:follows rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :interSubjectProperty ;
+         owl:inverseOf :hasFollower ;
+         rdfs:domain :Actor ;
+         rdfs:range :Actor .
+
+
+###  http://virtual-assembly.org/ontologies/pair#hasActivityField
+:hasActivityField rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :subjectConceptProperties ;
+                  rdfs:domain :Actor ;
+                  rdfs:range :ActivityField .
+
+
+###  http://virtual-assembly.org/ontologies/pair#hasBranch
+:hasBranch rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :subjectConceptProperties ;
+           rdfs:domain :Subject ;
+           rdfs:range :Branch .
+
+
+###  http://virtual-assembly.org/ontologies/pair#hasChallenge
+:hasChallenge rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :pairIntentionProperty ;
+              rdfs:domain :PAIR ;
+              rdfs:range :Challenge ;
+              ns:term_status "unstable" .
+
+
+###  http://virtual-assembly.org/ontologies/pair#hasConceptType
+:hasConceptType rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasType ;
+                owl:inverseOf :typeOfConcept ;
+                rdfs:domain :Concept ;
+                rdfs:range :ConceptType ;
+                rdfs:comment "Links a Concept to a ConceptType, for \"loose typing\"."@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#hasDomain
+:hasDomain rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :subjectConceptProperties ;
+           rdfs:domain :Subject ;
+           rdfs:range :Domain .
+
+
+###  http://virtual-assembly.org/ontologies/pair#hasFinality
+:hasFinality rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :interIntentionProperty ;
+             rdfs:domain :Challenge ;
+             rdfs:range :Finality ;
+             ns:term_status "unstable" .
+
+
+###  http://virtual-assembly.org/ontologies/pair#hasFollower
+:hasFollower rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :interSubjectProperty ;
+             rdfs:domain :Actor ;
+             rdfs:range :Actor .
+
+
+###  http://virtual-assembly.org/ontologies/pair#hasInspired
+:hasInspired rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :interSubjectProperty ;
+             owl:inverseOf :inspiredBy ;
+             rdfs:domain :Subject ;
+             rdfs:range :Subject .
+
+
+###  http://virtual-assembly.org/ontologies/pair#hasLocation
+:hasLocation rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :interSubjectProperty ;
+             owl:inverseOf :locationOf ;
+             rdfs:domain :PAIR ;
+             rdfs:range :Place .
+
+
+###  http://virtual-assembly.org/ontologies/pair#hasMean
+:hasMean rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :interIntentionProperty ;
+         owl:inverseOf :meanOf ;
+         rdfs:domain :Challenge ;
+         rdfs:range <http://virtual-assembly.org/ontologies/pair/Mean> ;
+         ns:term_status "unstable" .
+
+
+###  http://virtual-assembly.org/ontologies/pair#hasObjectType
+:hasObjectType rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :hasType ;
+               owl:inverseOf :typeOfObject ;
+               rdfs:domain :Object ;
+               rdfs:range :ObjectType ;
+               rdfs:comment "Links an Object to an ObjectType, for \"loose typing\"."@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#hasPart
+:hasPart rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :interSubjectProperty ;
+         owl:inverseOf :partOf ;
+         rdfs:domain :Subject ;
+         rdfs:range :Subject .
+
+
+###  http://virtual-assembly.org/ontologies/pair#hasPostalAddress
+:hasPostalAddress rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :interSubjectProperty ;
+                  rdfs:domain :PhysicalPlace ;
+                  rdfs:range :PostalAddress ;
+                  rdfs:label "adresse postale"@fr ,
+                             "postal address"@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#hasSector
+:hasSector rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :subjectConceptProperties ;
+           owl:inverseOf :sectorOf ;
+           rdfs:domain :Subject ;
+           rdfs:range :Sector .
+
+
+###  http://virtual-assembly.org/ontologies/pair#hasSkill
+:hasSkill rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :offers ;
+          owl:inverseOf :skillOf ;
+          rdfs:domain :Person ;
+          rdfs:range :Skill .
+
+
+###  http://virtual-assembly.org/ontologies/pair#hasSolution
+:hasSolution rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :interIntentionProperty ;
+             owl:inverseOf :isSolutionFor ;
+             rdfs:domain :Finality ;
+             rdfs:range <http://virtual-assembly.org/ontologies/pair/Mean> ;
+             ns:term_status "unstable" .
+
+
+###  http://virtual-assembly.org/ontologies/pair#hasStatus
+:hasStatus rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :entityConceptProperty ;
+           rdfs:domain :PairEntity ;
+           rdfs:range :Status .
+
+
+###  http://virtual-assembly.org/ontologies/pair#hasSubjectType
+:hasSubjectType rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasType ;
+                owl:inverseOf :typeOfSubject ;
+                rdfs:domain :Subject ;
+                rdfs:range :SubjectType ;
+                rdfs:comment "Links a Subject to a SubjectType, for \"loose typing\"."@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#hasTopic
+:hasTopic rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :entityConceptProperty ;
+          owl:inverseOf :topicOf ;
+          rdfs:domain :Document ;
+          rdfs:range :Topic .
+
+
+###  http://virtual-assembly.org/ontologies/pair#hasType
+:hasType rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :entityConceptProperty ;
+         owl:inverseOf :typeOf ;
+         rdfs:domain :PairEntity ;
+         rdfs:range :Type ;
+         rdfs:label "has type"@en ,
+                    "à pour type"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#hostedIn
+:hostedIn rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :hasLocation ;
+          owl:inverseOf :hosts ;
+          rdfs:domain :PAIR ;
+          rdfs:range :Place ;
+          rdfs:label "hosted in"@en ,
+                     "hébergé dans"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#hosts
+:hosts rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf :locationOf ;
+       rdfs:domain :Place ;
+       rdfs:range :PAIR ;
+       rdfs:label "hosts"@en ,
+                  "héberge"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#inspiredBy
+:inspiredBy rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :interSubjectProperty ;
+            rdfs:domain :Subject ;
+            rdfs:range :Subject .
+
+
+###  http://virtual-assembly.org/ontologies/pair#intendedBy
+:intendedBy rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :interObjectProperty ;
+            owl:inverseOf :intends ;
+            rdfs:domain :Sector ;
+            rdfs:range :Domain .
+
+
+###  http://virtual-assembly.org/ontologies/pair#intends
+:intends rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :interObjectProperty ;
+         rdfs:domain :Domain ;
+         rdfs:range :Sector .
+
+
+###  http://virtual-assembly.org/ontologies/pair#interIntentionProperty
+:interIntentionProperty rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :interSubjectProperty ;
+                        rdfs:comment "Catégorie de propriétés reliant des intentions entre elles"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#interObjectProperty
+:interObjectProperty rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Object ;
+                     rdfs:range :Object ;
+                     rdfs:comment "Relie les Objects entre eux"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#interSubjectProperty
+:interSubjectProperty rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Subject ;
+                      rdfs:range :Subject ;
+                      rdfs:comment "Relie les Subjects entre eux"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#involvedIn
+:involvedIn rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :interSubjectProperty ;
+            owl:inverseOf :involves ;
+            rdfs:domain :Actor ;
+            rdfs:range :Activity ;
+            rdfs:label "impliqué dans"@fr ,
+                       "involved in"@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#involvementActivity
+:involvementActivity rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :associationProperties ;
+                     rdfs:domain :ActivityInvolvementAssociation ;
+                     rdfs:range :Activity .
+
+
+###  http://virtual-assembly.org/ontologies/pair#involvementActor
+:involvementActor rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :associationProperties ;
+                  rdfs:domain :ActivityInvolvementAssociation ;
+                  rdfs:range :Actor .
+
+
+###  http://virtual-assembly.org/ontologies/pair#involvementRole
+:involvementRole rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :subjectConceptProperties ;
+                 rdfs:domain :ActivityInvolvementAssociation ;
+                 rdfs:range :Role .
+
+
+###  http://virtual-assembly.org/ontologies/pair#involves
+:involves rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :interSubjectProperty ;
+          rdfs:domain :Activity ;
+          rdfs:range :Actor ;
+          rdfs:label "implique"@fr ,
+                     "involves"@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#isSolutionFor
+:isSolutionFor rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :interIntentionProperty ;
+               rdfs:domain <http://virtual-assembly.org/ontologies/pair/Mean> ;
+               rdfs:range :Finality ;
+               ns:term_status "unstable" .
+
+
+###  http://virtual-assembly.org/ontologies/pair#locationOf
+:locationOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :interSubjectProperty ;
+            rdfs:domain :Place ;
+            rdfs:range :PAIR .
+
+
+###  http://virtual-assembly.org/ontologies/pair#meanOf
+:meanOf rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :interIntentionProperty ;
+        rdfs:domain <http://virtual-assembly.org/ontologies/pair/Mean> ;
+        rdfs:range :Challenge ;
+        ns:term_status "unstable" .
+
+
+###  http://virtual-assembly.org/ontologies/pair#membershipActor
+:membershipActor rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :associationProperties ;
+                 rdfs:domain :MembershipAssociation ;
+                 rdfs:range :Actor .
+
+
+###  http://virtual-assembly.org/ontologies/pair#membershipOrganization
+:membershipOrganization rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :associationProperties ;
+                        owl:inverseOf :organizationOfMembership ;
+                        rdfs:domain :MembershipAssociation ;
+                        rdfs:range :Organization .
+
+
+###  http://virtual-assembly.org/ontologies/pair#membershipRole
+:membershipRole rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :subjectConceptProperties ;
+                rdfs:domain :MembershipAssociation ;
+                rdfs:range :MembershipRole .
+
+
+###  http://virtual-assembly.org/ontologies/pair#mobilizes
+:mobilizes rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :pairIntentionProperty ;
+           owl:inverseOf :moblizedBy ;
+           rdfs:domain :PAIR ;
+           rdfs:range <http://virtual-assembly.org/ontologies/pair/Mean> ;
+           ns:term_status "unstable" .
+
+
+###  http://virtual-assembly.org/ontologies/pair#moblizedBy
+:moblizedBy rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :pairIntentionProperty ;
+            rdfs:domain <http://virtual-assembly.org/ontologies/pair/Mean> ;
+            rdfs:range :PAIR ;
+            ns:term_status "unstable" .
+
+
+###  http://virtual-assembly.org/ontologies/pair#neededBy
+:neededBy rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :agentResourceProperty ;
+          owl:inverseOf :needs ;
+          rdfs:domain :Resource ;
+          rdfs:range :Agent ;
+          rdfs:label "needed by"@en ,
+                     "nécessité par"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#needs
+:needs rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf :agentResourceProperty ;
+       rdfs:domain :Agent ;
+       rdfs:range :Resource ;
+       rdfs:label "needs"@en ,
+                  "nécessite"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#nourishes
+:nourishes rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :interSubjectProperty ;
+           rdf:type owl:SymmetricProperty ;
+           rdfs:domain :Idea ;
+           rdfs:range :Idea .
+
+
+###  http://virtual-assembly.org/ontologies/pair#objectSubjectProperty
+:objectSubjectProperty rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf owl:topObjectProperty ;
+                       rdfs:comment "Relie les Subjects et les Objects"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#offeredBy
+:offeredBy rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :agentResourceProperty ;
+           owl:inverseOf :offers ;
+           rdfs:domain :Resource ;
+           rdfs:range :Actor ;
+           rdfs:label "offered by"@en ,
+                      "proposé par"^^xsd:string .
+
+
+###  http://virtual-assembly.org/ontologies/pair#offers
+:offers rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :agentResourceProperty ;
+        rdfs:domain :Actor ;
+        rdfs:range :Resource ;
+        rdfs:label "offers"@en ,
+                   "propose"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#operatedBy
+:operatedBy rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :interSubjectProperty ;
+            owl:inverseOf :operates ;
+            rdfs:domain :Place ;
+            rdfs:range :Actor ;
+            rdfs:label "exploité par"@fr ,
+                       "operated by"@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#operates
+:operates rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :interSubjectProperty ;
+          rdfs:domain :Actor ;
+          rdfs:range :Place ;
+          rdfs:label "exploite"@fr ,
+                     "operates"@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#organizationOfMembership
+:organizationOfMembership rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf :associationProperties ;
+                          rdfs:domain :Organization ;
+                          rdfs:range :MembershipAssociation .
+
+
+###  http://virtual-assembly.org/ontologies/pair#pairIntentionProperty
+:pairIntentionProperty rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :interSubjectProperty ;
+                       rdfs:comment "Catégorie de propriétés reliant un PAIR à une intentaion"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#partOf
+:partOf rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :interSubjectProperty ;
+        rdfs:domain :Subject ;
+        rdfs:range :Subject .
+
+
+###  http://virtual-assembly.org/ontologies/pair#partnerOf
+:partnerOf rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :interSubjectProperty ;
+           rdf:type owl:SymmetricProperty ;
+           rdfs:domain :Organization ;
+           rdfs:range :Organization .
+
+
+###  http://virtual-assembly.org/ontologies/pair#producedBy
+:producedBy rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :agentResourceProperty ;
+            owl:inverseOf :produces ;
+            rdfs:domain :Resource ;
+            rdfs:range :Agent ;
+            rdfs:label "delivered by"@en ,
+                       "délivré par"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#produces
+:produces rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :agentResourceProperty ;
+          rdfs:domain :Agent ;
+          rdfs:range :Resource ;
+          rdfs:label "produces"@en ,
+                     "produit"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#referencedBy
+:referencedBy rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :interObjectProperty ;
+              owl:inverseOf :references ;
+              rdfs:domain :Document ;
+              rdfs:range :Document ;
+              rdfs:label "referenced by"@en ,
+                         "référencé par"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#references
+:references rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :interObjectProperty ;
+            rdfs:domain :Document ;
+            rdfs:range :Document ;
+            rdfs:label "references"@en ,
+                       "rérérence"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#representedBy
+:representedBy rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :documentedBy ;
+               owl:inverseOf :represents ;
+               rdfs:domain :Subject ;
+               rdfs:range :Document ;
+               rdfs:label "represented by"@en ,
+                          "représenté par"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#represents
+:represents rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :documents ;
+            rdfs:domain :Document ;
+            rdfs:range :Subject ;
+            rdfs:comment "Indicates that an document \"strongly denotes\" a business subject, e.g. an invoice \"represents\" a commercial deal."@en ;
+            rdfs:label "represents"@en ,
+                       "représente"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#sectorOf
+:sectorOf rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :subjectConceptProperties ;
+          rdfs:domain :Sector ;
+          rdfs:range :Subject .
+
+
+###  http://virtual-assembly.org/ontologies/pair#skillOf
+:skillOf rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :offeredBy ;
+         rdfs:domain :Skill ;
+         rdfs:range :Person .
+
+
+###  http://virtual-assembly.org/ontologies/pair#subactivityOf
+:subactivityOf rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :partOf ;
+               rdfs:domain :Activity ;
+               rdfs:range :Activity .
+
+
+###  http://virtual-assembly.org/ontologies/pair#subjectConceptProperties
+:subjectConceptProperties rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf owl:topObjectProperty ;
+                          rdfs:comment "Relie les PairEntity aux Concepts"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#supportedBy
+:supportedBy rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :interSubjectProperty ;
+             owl:inverseOf :supports ;
+             rdfs:domain :Subject ;
+             rdfs:range :Actor .
+
+
+###  http://virtual-assembly.org/ontologies/pair#supports
+:supports rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :interSubjectProperty ;
+          rdfs:domain :Actor ;
+          rdfs:range :Subject .
+
+
+###  http://virtual-assembly.org/ontologies/pair#topicOf
+:topicOf rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :entityConceptProperty ;
+         rdfs:domain :Topic ;
+         rdfs:range :Document .
+
+
+###  http://virtual-assembly.org/ontologies/pair#typeOf
+:typeOf rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :entityConceptProperty ;
+        rdfs:domain :Type ;
+        rdfs:range :PairEntity ;
+        rdfs:label "type de"@fr ,
+                   "type of"@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#typeOfConcept
+:typeOfConcept rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :typeOf ;
+               rdfs:domain :ConceptType ;
+               rdfs:range :Concept .
+
+
+###  http://virtual-assembly.org/ontologies/pair#typeOfObject
+:typeOfObject rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :typeOf ;
+              rdfs:domain :ObjectType ;
+              rdfs:range :Object .
+
+
+###  http://virtual-assembly.org/ontologies/pair#typeOfSubject
+:typeOfSubject rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :typeOf ;
+               rdfs:domain :SubjectType ;
+               rdfs:range :Subject .
+
+
+###  http://virtual-assembly.org/ontologies/pair#usedBy
+:usedBy rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :agentResourceProperty ;
+        owl:inverseOf :uses ;
+        rdfs:domain :Resource ;
+        rdfs:range :Agent .
+
+
+###  http://virtual-assembly.org/ontologies/pair#uses
+:uses rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf :agentResourceProperty ;
+      rdfs:domain :Agent ;
+      rdfs:range :Resource .
+
+
+###  http://virtual-assembly.org/ontologies/pair/depictedBy
+<http://virtual-assembly.org/ontologies/pair/depictedBy> rdf:type owl:ObjectProperty ;
+                                                         rdfs:subPropertyOf :representedBy ;
+                                                         owl:inverseOf <http://virtual-assembly.org/ontologies/pair/depicts> ;
+                                                         rdfs:domain :Subject ;
+                                                         rdfs:range <http://virtual-assembly.org/ontologies/pair/Image> ;
+                                                         rdfs:comment "indique qu'un Sujet a une représentation principale sous forme d'image"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair/depicts
+<http://virtual-assembly.org/ontologies/pair/depicts> rdf:type owl:ObjectProperty ;
+                                                      rdfs:subPropertyOf :represents ;
+                                                      rdfs:domain <http://virtual-assembly.org/ontologies/pair/Image> ;
+                                                      rdfs:range :Subject ;
+                                                      rdfs:comment "Used to indicate an image gives a visual representation of any subject"@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair/experienceGrade
+<http://virtual-assembly.org/ontologies/pair/experienceGrade> rdf:type owl:ObjectProperty ;
+                                                              rdfs:subPropertyOf :subjectConceptProperties ;
+                                                              rdfs:domain <http://virtual-assembly.org/ontologies/pair/ExperienceAssociation> ;
+                                                              rdfs:range <http://virtual-assembly.org/ontologies/pair/Grade> ;
+                                                              rdfs:comment "Indique le niveau de l'expérience"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair/experienceSkill
+<http://virtual-assembly.org/ontologies/pair/experienceSkill> rdf:type owl:ObjectProperty ;
+                                                              rdfs:subPropertyOf :associationProperties ;
+                                                              owl:inverseOf <http://virtual-assembly.org/ontologies/pair/skillOfExperience> ;
+                                                              rdfs:domain <http://virtual-assembly.org/ontologies/pair/ExperienceAssociation> ;
+                                                              rdfs:range :Skill .
+
+
+###  http://virtual-assembly.org/ontologies/pair/gradeOfExperience
+<http://virtual-assembly.org/ontologies/pair/gradeOfExperience> rdf:type owl:ObjectProperty ;
+                                                                rdfs:subPropertyOf :subjectConceptProperties ;
+                                                                rdfs:domain <http://virtual-assembly.org/ontologies/pair/Grade> ;
+                                                                rdfs:range <http://virtual-assembly.org/ontologies/pair/ExperienceAssociation> .
+
+
+###  http://virtual-assembly.org/ontologies/pair/hasExperience
+<http://virtual-assembly.org/ontologies/pair/hasExperience> rdf:type owl:ObjectProperty ;
+                                                            rdfs:subPropertyOf :associationProperties ;
+                                                            owl:inverseOf <http://virtual-assembly.org/ontologies/pair/isExperienceOf> ;
+                                                            rdfs:domain :Person ;
+                                                            rdfs:range <http://virtual-assembly.org/ontologies/pair/ExperienceAssociation> .
+
+
+###  http://virtual-assembly.org/ontologies/pair/hasInterest
+<http://virtual-assembly.org/ontologies/pair/hasInterest> rdf:type owl:ObjectProperty ;
+                                                          rdfs:subPropertyOf :subjectConceptProperties ;
+                                                          rdfs:domain :Agent ;
+                                                          rdfs:range :Topic ;
+                                                          rdfs:comment "Indique l'intérêt d'un Agent pour un sujet, un topic particulier"@fr ;
+                                                          rdfs:label "has interest"@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair/interestOf
+<http://virtual-assembly.org/ontologies/pair/interestOf> rdf:type owl:ObjectProperty ;
+                                                         rdfs:subPropertyOf :subjectConceptProperties ;
+                                                         rdfs:domain :Topic ;
+                                                         rdfs:range :Agent ;
+                                                         rdfs:label "interest of"@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair/isExperienceOf
+<http://virtual-assembly.org/ontologies/pair/isExperienceOf> rdf:type owl:ObjectProperty ;
+                                                             rdfs:subPropertyOf :associationProperties ;
+                                                             rdfs:domain <http://virtual-assembly.org/ontologies/pair/ExperienceAssociation> ;
+                                                             rdfs:range :Person .
+
+
+###  http://virtual-assembly.org/ontologies/pair/skillOfExperience
+<http://virtual-assembly.org/ontologies/pair/skillOfExperience> rdf:type owl:ObjectProperty ;
+                                                                rdfs:subPropertyOf :associationProperties ;
+                                                                rdfs:domain :Skill ;
+                                                                rdfs:range <http://virtual-assembly.org/ontologies/pair/ExperienceAssociation> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://virtual-assembly.org/ontologies/pair#aboutPage
+:aboutPage rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :webPage ;
+           rdfs:domain :PairEntity ;
+           rdfs:label "about page"@en ,
+                      "page \"à propos de\""@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#address
+:address rdf:type owl:DatatypeProperty ;
+         rdfs:domain :PhysicalPlace ;
+         rdfs:range xsd:string ;
+         rdfs:label "adress"@en ,
+                    "adresse"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#addressCountry
+:addressCountry rdf:type owl:DatatypeProperty ;
+                rdfs:domain :PostalAddress ;
+                rdfs:range xsd:string ;
+                rdfs:label "country"@en ,
+                           "pays"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#addressLocality
+:addressLocality rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :PostalAddress ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "locality"@en ,
+                            "ville"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#addressStreet
+:addressStreet rdf:type owl:DatatypeProperty ;
+               rdfs:domain :PostalAddress ;
+               rdfs:range xsd:string ;
+               rdfs:label "numéro et nom de rue"@fr ,
+                          "street address (number and street name)"@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#addressZipCode
+:addressZipCode rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain :PostalAddress ;
+                rdfs:range xsd:string ;
+                rdfs:label "code postal"@fr ,
+                           "zip code"@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#alternativeLabel
+:alternativeLabel rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf :label ;
+                  rdfs:domain :PairEntity ;
+                  rdfs:label "alternative label"@en ,
+                             "label alternatif"@fr ,
+                             "libellé alternatif"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#comment
+:comment rdf:type owl:DatatypeProperty ;
+         rdfs:domain :PairEntity ;
+         rdfs:range xsd:string ;
+         rdfs:label "comment"@en ,
+                    "commentaire"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#date
+:date rdf:type owl:DatatypeProperty .
+
+
+###  http://virtual-assembly.org/ontologies/pair#description
+:description rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :PairEntity ;
+             rdfs:range xsd:string ;
+             rdfs:label "description"@en ,
+                        "description"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#dueDate
+:dueDate rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf :date ;
+         rdfs:domain :Task ;
+         rdfs:range xsd:dateTime .
+
+
+###  http://virtual-assembly.org/ontologies/pair#e-mail
+:e-mail rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Actor ;
+        rdfs:range xsd:string ;
+        rdfs:label "e-mail"@en ,
+                   "mel"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#endDate
+:endDate rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf :date ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:domain :Activity ;
+         rdfs:range xsd:dateTime ;
+         rdfs:label "date de fin"@fr ,
+                    "end date"@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#firstName
+:firstName rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :label ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain :Person ;
+           rdfs:label "first name"@en ,
+                      "prénom"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#homePage
+:homePage rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf :webPage ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :PairEntity ;
+          rdfs:label "home page"@en ,
+                     "page \"de référence\""@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#identifier
+:identifier rdf:type owl:DatatypeProperty ;
+            rdfs:domain :PairEntity ;
+            rdfs:range xsd:string ;
+            rdfs:label "identifiant"@fr ,
+                       "identifier"@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#label
+:label rdf:type owl:DatatypeProperty ;
+       rdfs:domain :PairEntity ;
+       rdfs:range xsd:string ;
+       rdfs:label "label"@en ,
+                  "label"@fr ,
+                  "libellé"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#lastName
+:lastName rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf :label ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :Person ;
+          rdfs:label "family name"@en ,
+                     "last name"@en ,
+                     "nom de famille"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#latitude
+:latitude rdf:type owl:DatatypeProperty ;
+          rdfs:domain :PhysicalPlace ;
+          rdfs:label "latitude"@en ,
+                     "latitude"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#longitude
+:longitude rdf:type owl:DatatypeProperty ;
+           rdfs:domain :PhysicalPlace ;
+           rdfs:label "longitude"@en ,
+                      "longitude"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#openingHours
+:openingHours rdf:type owl:DatatypeProperty ;
+              rdfs:domain :PhysicalPlace ;
+              rdfs:range xsd:string ;
+              rdfs:label "horaires d'ouverture"@fr ,
+                         "opening hours"@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#phone
+:phone rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Actor ;
+       rdfs:range xsd:string ;
+       rdfs:label "phone"@en ,
+                  "téléphone"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#preferedLabel
+:preferedLabel rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf :label ;
+               rdf:type owl:FunctionalProperty ;
+               rdfs:domain :PairEntity ;
+               rdfs:range xsd:string ;
+               rdfs:label "label préféré"@fr ,
+                          "libellé préféré"@fr ,
+                          "prefered label"@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#startDate
+:startDate rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :date ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain :Activity ;
+           rdfs:range xsd:dateTime ;
+           rdfs:label "date de départ"@fr ,
+                      "start date"@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#webPage
+:webPage rdf:type owl:DatatypeProperty ;
+         rdfs:range xsd:string ;
+         rdfs:label "page web"@fr ,
+                    "web page"@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair/documentDate
+<http://virtual-assembly.org/ontologies/pair/documentDate> rdf:type owl:DatatypeProperty ;
+                                                           rdfs:subPropertyOf :date ;
+                                                           rdfs:domain :Document ;
+                                                           rdfs:range xsd:dateTime ;
+                                                           rdfs:comment "Une date associée à un document"@fr .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://virtual-assembly.org/ontologies/pair#Activity
+:Activity rdf:type owl:Class ;
+          rdfs:subClassOf :Agent ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasStatus ;
+                            owl:someValuesFrom :ActivityStatus
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasPart ;
+                            owl:allValuesFrom :Activity
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasSubjectType ;
+                            owl:allValuesFrom :ActivityType
+                          ] ;
+          rdfs:comment """Une activité est entendue au sens très générique comme toute action entreprise par un Acteur avec une certaine finalité, à un certain moment, en un certain lieu.
+Ce n'est _PAS_ une catégorie socio-économique au sens \"La ferme de la petite bourdaisière a pour activité Permaculture\"."""@fr ;
+          rdfs:label "Activité"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#ActivityField
+:ActivityField rdf:type owl:Class ;
+               rdfs:subClassOf :Concept ;
+               rdfs:label "Champ d'activité"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#ActivityInvolvementAssociation
+:ActivityInvolvementAssociation rdf:type owl:Class ;
+                                rdfs:subClassOf :Association ;
+                                rdfs:comment "Implication d'un Acteur dans une Activité"@fr ;
+                                rdfs:label "Association d'implication"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#ActivityStatus
+:ActivityStatus rdf:type owl:Class ;
+                rdfs:subClassOf :Status .
+
+
+###  http://virtual-assembly.org/ontologies/pair#ActivityType
+:ActivityType rdf:type owl:Class ;
+              rdfs:subClassOf :SubjectType .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Actor
+:Actor rdf:type owl:Class ;
+       rdfs:subClassOf :Agent ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasPart ;
+                         owl:allValuesFrom :Actor
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasStatus ;
+                         owl:allValuesFrom :ActorStatus
+                       ] ;
+       rdfs:comment "Un Acteur est entendu comme une personne morale ou physique."@fr ;
+       rdfs:label "Acteur"@fr ,
+                  "Actor"@en ,
+                  "Personnality"@en ,
+                  "Personnalité"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#ActorStatus
+:ActorStatus rdf:type owl:Class ;
+             rdfs:subClassOf :Status .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Agent
+:Agent rdf:type owl:Class ;
+       rdfs:subClassOf :PAIR ;
+       rdfs:comment "un Agent est \"tout ce qui agit\", en particulier tout ce qui peut entretenir des liens avec des Ressources. A ce titre, les Activités, typiquement les Projets, sont considérées comme des sous-classes d'Agent."@fr ;
+       rdfs:label "Agent"@en ,
+                  "Agent"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#AgentType
+:AgentType rdf:type owl:Class ;
+           rdfs:subClassOf :SubjectType .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Association
+:Association rdf:type owl:Class ;
+             rdfs:subClassOf :Subject ;
+             rdfs:comment "Classe abstraite générique permettant de réifier les relations binaires."@fr ;
+             rdfs:label "Association"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#AtomBasedResource
+:AtomBasedResource rdf:type owl:Class ;
+                   rdfs:subClassOf :Resource ;
+                   rdfs:comment ""@fr ;
+                   rdfs:label "Bien ou Service"@fr ,
+                              "Good or Service"@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#BitBasedResource
+:BitBasedResource rdf:type owl:Class ;
+                  rdfs:subClassOf :Resource ;
+                  rdfs:comment """<p style=\"margin-top: 0\">
+      Des biens n'yant pas vraiment de r&#233;alit&#233; mat&#233;rielle. Logiciels, 
+      m&#233;thodologies par exemple. 
+    </p>"""^^xsd:string ;
+                  rdfs:label "Bien intangible"@fr ,
+                             "Intangible Good"@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Branch
+:Branch rdf:type owl:Class ;
+        rdfs:subClassOf :ActivityField ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasPart ;
+                          owl:allValuesFrom :Branch
+                        ] .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Challenge
+:Challenge rdf:type owl:Class ;
+           rdfs:subClassOf :Intention ;
+           ns:term_status "unstable" .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Concept
+:Concept rdf:type owl:Class ;
+         owl:equivalentClass skos:Concept ;
+         rdfs:subClassOf :PairEntity ;
+         rdfs:comment "Un Concept est entendu au sens de SKOS comme une entrée dans un système de classification."@fr ;
+         rdfs:label "Concept"@en ,
+                    "Concept"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#ConceptBasedResource
+:ConceptBasedResource rdf:type owl:Class ;
+                      rdfs:subClassOf :Resource ;
+                      rdfs:comment "Biens ayant une réalité matérielle : Un vidéo-projecteur, un vélo par exemple"@fr ;
+                      rdfs:label "Bien tangible"@fr ,
+                                 "Intangible Good"@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#ConceptType
+:ConceptType rdf:type owl:Class ;
+             rdfs:subClassOf :Type ;
+             rdfs:label "Concept type"@en ,
+                        "Type de concept"@fr ,
+                        "Types applicable to concepts for \"loose typing\""@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Debate
+:Debate rdf:type owl:Class ;
+        rdfs:subClassOf :Idea .
+
+
+###  http://virtual-assembly.org/ontologies/pair#DigitalPlace
+:DigitalPlace rdf:type owl:Class ;
+              rdfs:subClassOf :Place .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Document
+:Document rdf:type owl:Class ;
+          rdfs:subClassOf :ConceptBasedResource ,
+                          :Object ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasObjectType ;
+                            owl:allValuesFrom :DocumentType
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasStatus ;
+                            owl:allValuesFrom :DocumentStatus
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasObjectType ;
+                            owl:cardinality "1"^^xsd:nonNegativeInteger
+                          ] ;
+          rdfs:label "Document"@en ,
+                     "Document"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#DocumentStatus
+:DocumentStatus rdf:type owl:Class ;
+                rdfs:subClassOf :Status .
+
+
+###  http://virtual-assembly.org/ontologies/pair#DocumentType
+:DocumentType rdf:type owl:Class ;
+              rdfs:subClassOf :ObjectType ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :typeOf ;
+                                owl:allValuesFrom :Document
+                              ] ;
+              rdfs:label "Document Type"@en ,
+                         "Type de document"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Domain
+:Domain rdf:type owl:Class ;
+        rdfs:subClassOf :ActivityField ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasPart ;
+                          owl:allValuesFrom :Domain
+                        ] .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Ecosystem
+:Ecosystem rdf:type owl:Class ;
+           rdfs:subClassOf :Organization .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Event
+:Event rdf:type owl:Class ;
+       rdfs:subClassOf :Activity ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasStatus ;
+                         owl:someValuesFrom :EventStatus
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :producedBy ;
+                         owl:allValuesFrom :Project
+                       ] ;
+       rdfs:comment "Un événement est ici une manifestation organisée par des personnes et / ou des organisations, qui se déroule à un certain endroit, à un certain moment."@fr ;
+       rdfs:label "Evèvement"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#EventInvolvementAssociation
+:EventInvolvementAssociation rdf:type owl:Class ;
+                             rdfs:subClassOf :ActivityInvolvementAssociation ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :involvementActivity ;
+                                               owl:allValuesFrom :Event
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :involvementRole ;
+                                               owl:allValuesFrom :EventInvolvementRole
+                                             ] .
+
+
+###  http://virtual-assembly.org/ontologies/pair#EventInvolvementRole
+:EventInvolvementRole rdf:type owl:Class ;
+                      rdfs:subClassOf :InvolvementRole .
+
+
+###  http://virtual-assembly.org/ontologies/pair#EventStatus
+:EventStatus rdf:type owl:Class ;
+             rdfs:subClassOf :ActivityStatus .
+
+
+###  http://virtual-assembly.org/ontologies/pair#EventType
+:EventType rdf:type owl:Class ;
+           rdfs:subClassOf :ActivityType .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Finality
+:Finality rdf:type owl:Class ;
+          rdfs:subClassOf :Intention ;
+          ns:term_status "unstable" .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Folder
+:Folder rdf:type owl:Class ;
+        rdfs:subClassOf :Object ;
+        rdfs:label "Dossier"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#FolderType
+:FolderType rdf:type owl:Class ;
+            rdfs:subClassOf :ObjectType .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Group
+:Group rdf:type owl:Class ;
+       rdfs:subClassOf :Organization .
+
+
+###  http://virtual-assembly.org/ontologies/pair#GroupType
+:GroupType rdf:type owl:Class ;
+           rdfs:subClassOf :OrganizationType .
+
+
+###  http://virtual-assembly.org/ontologies/pair#HumanBasedResource
+:HumanBasedResource rdf:type owl:Class ;
+                    rdfs:subClassOf :Resource .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Idea
+:Idea rdf:type owl:Class ;
+      rdfs:subClassOf :PAIR ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasPart ;
+                        owl:allValuesFrom :Idea
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasStatus ;
+                        owl:allValuesFrom :IdeaStatus
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasSubjectType ;
+                        owl:allValuesFrom :IdeaType
+                      ] ;
+      rdfs:label "Idea"@en ,
+                 "Idée"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#IdeaStatus
+:IdeaStatus rdf:type owl:Class ;
+            rdfs:subClassOf :Status .
+
+
+###  http://virtual-assembly.org/ontologies/pair#IdeaType
+:IdeaType rdf:type owl:Class ;
+          rdfs:subClassOf :SubjectType .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Intention
+:Intention rdf:type owl:Class ;
+           rdfs:subClassOf :Subject .
+
+
+###  http://virtual-assembly.org/ontologies/pair#InvolvementRole
+:InvolvementRole rdf:type owl:Class ;
+                 rdfs:subClassOf :Role .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Means
+:Means rdf:type owl:Class ;
+       rdfs:subClassOf :Intention ;
+       owl:deprecated "true"^^xsd:boolean .
+
+
+###  http://virtual-assembly.org/ontologies/pair#MembershipAssociation
+:MembershipAssociation rdf:type owl:Class ;
+                       rdfs:subClassOf :Association ;
+                       rdfs:comment "Appartenance d'un Acteur dans une Organisation"@fr ;
+                       rdfs:label "Association d'appartenance"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#MembershipRole
+:MembershipRole rdf:type owl:Class ;
+                rdfs:subClassOf :Role .
+
+
+###  http://virtual-assembly.org/ontologies/pair#MoneyBasedResource
+:MoneyBasedResource rdf:type owl:Class ;
+                    rdfs:subClassOf :Resource .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Object
+:Object rdf:type owl:Class ;
+        rdfs:subClassOf :PairEntity ;
+        rdfs:comment "Classe abstraite permettant de regrouper les classes destinées à la gestion des documents relatifs aux sujets de l'ontologie PAIR"@fr ;
+        rdfs:label "Object"@en ,
+                   "Objet"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#ObjectType
+:ObjectType rdf:type owl:Class ;
+            rdfs:subClassOf :Type ;
+            rdfs:label "Object type"@en ,
+                       "Type d'objet"@fr ,
+                       "Types applicable to objects for \"loose typing\""@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Organization
+:Organization rdf:type owl:Class ;
+              rdfs:subClassOf :Actor ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasStatus ;
+                                owl:allValuesFrom <http://virtual-assembly.org/ontologies/pair/OrganizationStatus>
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasSubjectType ;
+                                owl:allValuesFrom :OrganizationType
+                              ] ;
+              rdfs:comment "Organisation désigne un groupe d'individus s'étant rassemblés autour d'un objectif commun. Une organisation peut être formelle (structure juridique) ou informelle (groupe)."@fr ;
+              rdfs:label "Organisation"@fr ,
+                         "Organization"@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#OrganizationType
+:OrganizationType rdf:type owl:Class ;
+                  rdfs:subClassOf :AgentType ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :typeOf ;
+                                    owl:allValuesFrom :Organization
+                                  ] ;
+                  rdfs:comment "Type d'organisation permet de caractériser les organisations : Par exemple, Entreprise / SARL ou Association ..."@fr ;
+                  rdfs:label "Organization Type"@en ,
+                             "Type d'organisation"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#PAIR
+:PAIR rdf:type owl:Class ;
+      rdfs:subClassOf :Subject ;
+      rdfs:comment "Un PAIR est un élément d'un écosystème : Projet, Acteur, Idée ou Ressource."@fr ;
+      rdfs:label "PAIR"@en ,
+                 "PAIR"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#PairEntity
+:PairEntity rdf:type owl:Class ;
+            rdfs:comment "Classe abstraite ayant pour unique rôle de définir des propriétes communes à l'ensemble des classes de l'ontologie PAIR"@fr ;
+            rdfs:label "Entité Pair"@fr ,
+                       "Pair entity"@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf :Actor ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :affiliatedBy ;
+                          owl:allValuesFrom :Organization
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasStatus ;
+                          owl:allValuesFrom <http://virtual-assembly.org/ontologies/pair/PersonStatus>
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasSubjectType ;
+                          owl:allValuesFrom <http://virtual-assembly.org/ontologies/pair/PersonType>
+                        ] ;
+        rdfs:comment "(...)"^^xsd:string ;
+        rdfs:label "Individu"@fr ,
+                   "Person"@en ,
+                   "Personne"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#PhysicalPlace
+:PhysicalPlace rdf:type owl:Class ;
+               rdfs:subClassOf :Place ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasType ;
+                                 owl:allValuesFrom :PlaceType
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :producedBy ;
+                                 owl:allValuesFrom :Project
+                               ] ;
+               rdfs:label "Endroit"@fr ,
+                          "Place"@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Place
+:Place rdf:type owl:Class ;
+       rdfs:subClassOf :Subject ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasPart ;
+                         owl:allValuesFrom :Place
+                       ] ;
+       rdfs:label "Lieu"@fr ,
+                  "Place"@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#PlaceType
+:PlaceType rdf:type owl:Class ;
+           rdfs:subClassOf :SubjectType ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :typeOf ;
+                             owl:allValuesFrom :PhysicalPlace
+                           ] ;
+           rdfs:label "Place Type"@en ,
+                      "Type d'endroit"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#PostalAddress
+:PostalAddress rdf:type owl:Class ;
+               rdfs:subClassOf :Subject ;
+               rdfs:label "Adresse postale"@fr ,
+                          "Postal Address"@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Project
+:Project rdf:type owl:Class ;
+         rdfs:subClassOf :Activity ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasStatus ;
+                           owl:someValuesFrom :ProjectStatus
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :involves ;
+                           owl:allValuesFrom [ rdf:type owl:Class ;
+                                               owl:unionOf ( :Organization
+                                                             :Person
+                                                           )
+                                             ]
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :needs ;
+                           owl:allValuesFrom [ rdf:type owl:Class ;
+                                               owl:unionOf ( :AtomBasedResource
+                                                             :Skill
+                                                           )
+                                             ]
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :produces ;
+                           owl:allValuesFrom [ rdf:type owl:Class ;
+                                               owl:unionOf ( :AtomBasedResource
+                                                             :Event
+                                                             :PhysicalPlace
+                                                           )
+                                             ]
+                         ] ;
+         rdfs:comment "Un projet est une action temporaire entreprise pour atteindre des objectifs définis."@fr ;
+         rdfs:label "Project"@en ,
+                    "Projet"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#ProjectInvolvementAssociation
+:ProjectInvolvementAssociation rdf:type owl:Class ;
+                               rdfs:subClassOf :ActivityInvolvementAssociation ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :involvementActivity ;
+                                                 owl:allValuesFrom :Project
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :involvementRole ;
+                                                 owl:allValuesFrom :ProjectInvolvementRole
+                                               ] .
+
+
+###  http://virtual-assembly.org/ontologies/pair#ProjectInvolvementRole
+:ProjectInvolvementRole rdf:type owl:Class ;
+                        rdfs:subClassOf :InvolvementRole .
+
+
+###  http://virtual-assembly.org/ontologies/pair#ProjectStatus
+:ProjectStatus rdf:type owl:Class ;
+               rdfs:subClassOf :ActivityStatus .
+
+
+###  http://virtual-assembly.org/ontologies/pair#ProjectType
+:ProjectType rdf:type owl:Class ;
+             rdfs:subClassOf :ActivityType .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Resource
+:Resource rdf:type owl:Class ;
+          rdfs:subClassOf :PAIR ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasPart ;
+                            owl:allValuesFrom :Resource
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasSubjectType ;
+                            owl:allValuesFrom :ResourceType
+                          ] ;
+          rdfs:label "Resource"@en ,
+                     "Ressource"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#ResourceType
+:ResourceType rdf:type owl:Class ;
+              rdfs:subClassOf :SubjectType .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Role
+:Role rdf:type owl:Class ;
+      rdfs:subClassOf :Concept ;
+      rdfs:comment "un Role d'Agent. \"... en tant que ...\""@fr ;
+      rdfs:label "Role"@en ,
+                 "Role"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Sector
+:Sector rdf:type owl:Class ;
+        rdfs:subClassOf :ActivityField ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasPart ;
+                          owl:allValuesFrom :Sector
+                        ] .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Skill
+:Skill rdf:type owl:Class ;
+       rdfs:subClassOf :HumanBasedResource ;
+       rdfs:comment "Aptitude d’une personne physique (voire d’une personne morale) dans un domaine particulier"@fr ;
+       rdfs:label "Compétence"@fr ,
+                  "Skill"@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Status
+:Status rdf:type owl:Class ;
+        rdfs:subClassOf :Concept .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Subject
+:Subject rdf:type owl:Class ;
+         rdfs:subClassOf :PairEntity ;
+         rdfs:comment "Classe abstraite permettant de regrouper les classes directement concernées par le domaine de connaissance de l'ontologie PAIR"^^xsd:string ;
+         rdfs:label "Subject"@en ,
+                    "Sujet"^^xsd:string .
+
+
+###  http://virtual-assembly.org/ontologies/pair#SubjectType
+:SubjectType rdf:type owl:Class ;
+             rdfs:subClassOf :Type ;
+             rdfs:label "Subject type"@en ,
+                        "Type de sujet"@fr ,
+                        "Types applicable to subjects for \"loose typing\""@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Task
+:Task rdf:type owl:Class ;
+      rdfs:subClassOf :Activity ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasStatus ;
+                        owl:someValuesFrom :TaskStatus
+                      ] .
+
+
+###  http://virtual-assembly.org/ontologies/pair#TaskInvolvementAssociation
+:TaskInvolvementAssociation rdf:type owl:Class ;
+                            rdfs:subClassOf :ActivityInvolvementAssociation ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :involvementActivity ;
+                                              owl:allValuesFrom :Task
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :involvementRole ;
+                                              owl:allValuesFrom :TaskInvolvementRole
+                                            ] .
+
+
+###  http://virtual-assembly.org/ontologies/pair#TaskInvolvementRole
+:TaskInvolvementRole rdf:type owl:Class ;
+                     rdfs:subClassOf :InvolvementRole .
+
+
+###  http://virtual-assembly.org/ontologies/pair#TaskStatus
+:TaskStatus rdf:type owl:Class ;
+            rdfs:subClassOf :ActivityStatus .
+
+
+###  http://virtual-assembly.org/ontologies/pair#TaskType
+:TaskType rdf:type owl:Class ;
+          rdfs:subClassOf :ActivityType .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Theme
+:Theme rdf:type owl:Class ;
+       owl:equivalentClass :Topic ;
+       rdfs:subClassOf :Concept ;
+       rdfs:comment "Cet identifiant est déprécié en faveur de pair:Topic"@fr ;
+       owl:deprecated "true"^^xsd:boolean .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Topic
+:Topic rdf:type owl:Class ;
+       rdfs:subClassOf :Concept ;
+       rdfs:comment "Thème réfère à ce dont on parle, au sujet qui nous anime. Les thèmes rassemblent les notions, les concepts, les centres d'intérêts, les \"tags\"."@fr ;
+       rdfs:label "Thème"@fr ,
+                  "Topic"@en .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Town
+:Town rdf:type owl:Class ;
+      rdfs:subClassOf :PhysicalPlace ;
+      rdfs:label "City"@en ,
+                 "Town"@en ,
+                 "Ville"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair#Type
+:Type rdf:type owl:Class ;
+      rdfs:subClassOf :Concept ;
+      rdfs:label "Type"@en ,
+                 "Type"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair/ExperienceAssociation
+<http://virtual-assembly.org/ontologies/pair/ExperienceAssociation> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf :Association ;
+                                                                    rdfs:comment """Expérience d'un individu dans une compétence, avec un certain niveau (\"grade\").
+Un lien direct entre une personne et une compétence existe également, mais sans possibilité de préciser le niveau."""@fr ;
+                                                                    rdfs:label "Expérience"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair/Grade
+<http://virtual-assembly.org/ontologies/pair/Grade> rdf:type owl:Class ;
+                                                    rdfs:subClassOf :Concept ;
+                                                    rdfs:comment "Un niveau d'expérience d'une personne dans une compétence (débutant, confirmé, avancé, expert, etc...)"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair/Image
+<http://virtual-assembly.org/ontologies/pair/Image> rdf:type owl:Class ;
+                                                    rdfs:subClassOf :Document ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :hasType ;
+                                                                      owl:allValuesFrom <http://virtual-assembly.org/ontologies/pair/ImageType>
+                                                                    ] ;
+                                                    rdfs:label "Image"@en ,
+                                                               "Image"@fr .
+
+
+###  http://virtual-assembly.org/ontologies/pair/ImageType
+<http://virtual-assembly.org/ontologies/pair/ImageType> rdf:type owl:Class ;
+                                                        rdfs:subClassOf :DocumentType .
+
+
+###  http://virtual-assembly.org/ontologies/pair/Mean
+<http://virtual-assembly.org/ontologies/pair/Mean> rdf:type owl:Class ;
+                                                   rdfs:subClassOf :Intention ;
+                                                   ns:term_status "unstable" .
+
+
+###  http://virtual-assembly.org/ontologies/pair/OrganizationStatus
+<http://virtual-assembly.org/ontologies/pair/OrganizationStatus> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf :ActorStatus .
+
+
+###  http://virtual-assembly.org/ontologies/pair/PersonStatus
+<http://virtual-assembly.org/ontologies/pair/PersonStatus> rdf:type owl:Class ;
+                                                           rdfs:subClassOf :ActorStatus .
+
+
+###  http://virtual-assembly.org/ontologies/pair/PersonType
+<http://virtual-assembly.org/ontologies/pair/PersonType> rdf:type owl:Class ;
+                                                         rdfs:subClassOf :AgentType ;
+                                                         rdfs:label "Person type"@en ,
+                                                                    "Type de personne"@fr .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+skos:Concept rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
