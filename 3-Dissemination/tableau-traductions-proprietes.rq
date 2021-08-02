@@ -1,0 +1,23 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT DISTINCT 
+(REPLACE(STR(?parent), "http://virtual-assembly.org/ontologies/pair#", "pair:") AS ?id_parent)
+(REPLACE(STR(?propriete), "http://virtual-assembly.org/ontologies/pair#", "pair:") AS ?id_propriete)
+?propriete
+(REPLACE(STR(?domain), "http://virtual-assembly.org/ontologies/pair#", "pair:") AS ?id_domain)
+(REPLACE(REPLACE(STR(?range), "http://virtual-assembly.org/ontologies/pair#", "pair:"), "http://www.w3.org/2001/XMLSchema#", "xsd:") AS ?id_range)
+(STR(?libelle_fr) AS ?label_francais)
+(STR(?definition_fr) AS ?definition_francais)
+(STR(?libelle_en) AS ?libelle_anglais)
+(STR(?definition_en) AS ?definition_anglais)
+WHERE {
+	{ { ?propriete a owl:DatatypeProperty . } UNION { ?propriete a owl:ObjectProperty . } }
+    OPTIONAL { ?propriete rdfs:subPropertyOf ?parent . FILTER(isIRI(?parent)) }
+    OPTIONAL { ?propriete rdfs:domain ?domain . }
+    OPTIONAL { ?propriete rdfs:range ?range . }
+	OPTIONAL { ?propriete rdfs:label ?libelle_fr FILTER(lang(?libelle_fr) = "fr") . }
+	OPTIONAL { ?propriete rdfs:comment ?definition_fr FILTER(lang(?definition_fr) = "fr") . }
+	OPTIONAL { ?propriete rdfs:label ?libelle_en FILTER(lang(?libelle_en) = "en") . }
+	OPTIONAL { ?propriete rdfs:comment ?definition_en FILTER(lang(?definitiodefinition_enn_anglais) = "en") . }
+}
+ORDER BY ?id_parent ?propriete

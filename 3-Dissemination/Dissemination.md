@@ -1,6 +1,6 @@
 # Dissemination
 
-## Objectif
+## Objectif
 
 Les fichiers de documentation publique de l'ontologie.
 
