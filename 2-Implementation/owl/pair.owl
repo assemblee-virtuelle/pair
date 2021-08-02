@@ -35,32 +35,18 @@
     
 
 
-    <!-- http://data.esante.gouv.fr/cnam/ccam/eventIsAbout -->
-
-    <owl:ObjectProperty rdf:about="http://data.esante.gouv.fr/cnam/ccam/eventIsAbout">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
-        <owl:inverseOf rdf:resource="http://data.esante.gouv.fr/cnam/ccam/isSubjectOfEvent"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Event"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://data.esante.gouv.fr/cnam/ccam/isSubjectOfEvent -->
-
-    <owl:ObjectProperty rdf:about="http://data.esante.gouv.fr/cnam/ccam/isSubjectOfEvent">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Event"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://virtual-assembly.org/ontologies/pair#about -->
 
     <owl:ObjectProperty rdf:about="http://virtual-assembly.org/ontologies/pair#about">
         <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/ontologies/pair#interSubjectProperty"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/ontologies/pair#Idea"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Event"/>
+                    <rdf:Description rdf:about="http://virtual-assembly.org/ontologies/pair#Idea"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://virtual-assembly.org/ontologies/pair#Subject"/>
     </owl:ObjectProperty>
     
@@ -1968,7 +1954,7 @@ Ce n&apos;est _PAS_ une catégorie socio-économique au sens &quot;La ferme de l
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="fr">Un événement est ici une manifestation organisée par des personnes et / ou des organisations, qui se déroule à un certain endroit, à un certain moment.</rdfs:comment>
-        <rdfs:label xml:lang="fr">Evèvement</rdfs:label>
+        <rdfs:label xml:lang="fr">Evènement</rdfs:label>
     </owl:Class>
     
 
