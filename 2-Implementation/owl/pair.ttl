@@ -28,7 +28,11 @@
 ###  http://virtual-assembly.org/ontologies/pair#about
 :about rdf:type owl:ObjectProperty ;
        rdfs:subPropertyOf :interSubjectProperty ;
-       rdfs:domain :Idea ;
+       rdfs:domain [ rdf:type owl:Class ;
+                     owl:unionOf ( :Event
+                                   :Idea
+                                 )
+                   ] ;
        rdfs:range :Subject .
 
 
