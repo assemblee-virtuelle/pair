@@ -1,25 +1,47 @@
 @prefix : <http://virtual-assembly.org/ontologies/pair#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix gn: <http://www.geonames.org/ontology#> .
 @prefix ns: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix p1: <http://www.owl-ontologies.com/Ontology1588582345.owl#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix xsp: <http://www.owl-ontologies.com/2005/08/07/xsp.owl#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix swrl: <http://www.w3.org/2003/11/swrl#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
 @prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
-@prefix terms: <http://purl.org/dc/terms/> .
+@prefix schema: <http://schema.org/> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 @prefix protege: <http://protege.stanford.edu/plugins/owl/protege#> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
 @base <http://virtual-assembly.org/ontologies/pair> .
 
 <http://virtual-assembly.org/ontologies/pair> rdf:type owl:Ontology ;
                                                owl:imports <http://www.w3.org/2003/06/sw-vocab-status/ns> ,
                                                            <http://www.w3.org/2004/02/skos/core> ;
+                                               dct:hasVersion <http://xls2rdf.sparna.fr/rest/convert?noPostProcessings=true&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1PMAB6WCNzRUrmxLwNvdSYrrrVESIwIP1QXT5FSwMS8g%2Fexport%3Fformat%3Dxlsx> ,
+                                                              <https://docs.google.com/spreadsheets/d/1PMAB6WCNzRUrmxLwNvdSYrrrVESIwIP1QXT5FSwMS8g/export?format=xlsx> ;
                                                rdfs:comment "Ontologie PAIR - Projet Acteur Idée Ressource"@fr .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/hasVersion
+dct:hasVersion rdf:type owl:AnnotationProperty .
+
 
 #################################################################
 #    Object Properties
@@ -671,7 +693,7 @@
            rdfs:domain :Resource ;
            rdfs:range :Actor ;
            rdfs:label "offered by"@en ,
-                      "proposé par"^^xsd:string .
+                      "proposé par" .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#offers
@@ -1199,32 +1221,40 @@
                             owl:onProperty :hasSubjectType ;
                             owl:allValuesFrom :ActivityType
                           ] ;
-          rdfs:comment """Une activité est entendue au sens très générique comme toute action entreprise par un Acteur avec une certaine finalité, à un certain moment, en un certain lieu.
+          rdfs:comment "Activité"@en ,
+                       """Une activité est entendue au sens très générique comme toute action entreprise par un Acteur avec une certaine finalité, à un certain moment, en un certain lieu.
 Ce n'est _PAS_ une catégorie socio-économique au sens \"La ferme de la petite bourdaisière a pour activité Permaculture\"."""@fr ;
-          rdfs:label "Activité"@fr .
+          rdfs:label "Activity"@en ,
+                     "Activité"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#ActivityField
 :ActivityField rdf:type owl:Class ;
                rdfs:subClassOf :Concept ;
-               rdfs:label "Champ d'activité"@fr .
+               rdfs:comment "A high-level class of sectors, fields and branches of activity."@en ,
+                            "Classe de haut niveau rassemblant les secteurs, domaines et branches d'activité."@fr ;
+               rdfs:label "Activity field"@en ,
+                          "Champ d'activité"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#ActivityInvolvementAssociation
 :ActivityInvolvementAssociation rdf:type owl:Class ;
                                 rdfs:subClassOf :Association ;
                                 rdfs:comment "Implication d'un Acteur dans une Activité"@fr ;
-                                rdfs:label "Association d'implication"@fr .
+                                rdfs:label "Association d'implication"@fr ,
+                                           "Involvement association"@en .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#ActivityStatus
 :ActivityStatus rdf:type owl:Class ;
-                rdfs:subClassOf :Status .
+                rdfs:subClassOf :Status ;
+                rdfs:label "Statut d'activité"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#ActivityType
 :ActivityType rdf:type owl:Class ;
-              rdfs:subClassOf :SubjectType .
+              rdfs:subClassOf :SubjectType ;
+              rdfs:label "Type d'activité"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#Actor
@@ -1260,14 +1290,16 @@ Ce n'est _PAS_ une catégorie socio-économique au sens \"La ferme de la petite 
 
 ###  http://virtual-assembly.org/ontologies/pair#AgentType
 :AgentType rdf:type owl:Class ;
-           rdfs:subClassOf :SubjectType .
+           rdfs:subClassOf :SubjectType ;
+           rdfs:label "Type d'agent"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#Association
 :Association rdf:type owl:Class ;
              rdfs:subClassOf :Subject ;
              rdfs:comment "Classe abstraite générique permettant de réifier les relations binaires."@fr ;
-             rdfs:label "Association"@fr .
+             rdfs:label "Association"@en ,
+                        "Association"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#AtomBasedResource
@@ -1284,9 +1316,9 @@ Ce n'est _PAS_ une catégorie socio-économique au sens \"La ferme de la petite 
                   rdfs:comment """<p style=\"margin-top: 0\">
       Des biens n'yant pas vraiment de r&#233;alit&#233; mat&#233;rielle. Logiciels, 
       m&#233;thodologies par exemple. 
-    </p>"""^^xsd:string ;
+    </p>""" ;
                   rdfs:label "Bien intangible"@fr ,
-                             "Intangible Good"@en .
+                             "Intangible good"@en .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#Branch
@@ -1295,12 +1327,20 @@ Ce n'est _PAS_ une catégorie socio-économique au sens \"La ferme de la petite 
                         [ rdf:type owl:Restriction ;
                           owl:onProperty :hasPart ;
                           owl:allValuesFrom :Branch
-                        ] .
+                        ] ;
+        rdfs:comment "A branch specifies the sector of activity concerned. Example: Agriculture sector has viticulture as its branch."@en ,
+                     "Une branche spécifie le secteur d'activité concerné. Exemple : Secteur Agriculture a pour branche Viticulture."@fr ;
+        rdfs:label "Branch"@en ,
+                   "Branche"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#Challenge
 :Challenge rdf:type owl:Class ;
            rdfs:subClassOf :Intention ;
+           rdfs:comment "A challenge is an issue to be tackled"@en ,
+                        "Un enjeu est un défi à relever"@fr ;
+           rdfs:label "Challenge"@en ,
+                      "Enjeu"@fr ;
            ns:term_status "unstable" .
 
 
@@ -1318,25 +1358,33 @@ Ce n'est _PAS_ une catégorie socio-économique au sens \"La ferme de la petite 
                       rdfs:subClassOf :Resource ;
                       rdfs:comment "Biens ayant une réalité matérielle : Un vidéo-projecteur, un vélo par exemple"@fr ;
                       rdfs:label "Bien tangible"@fr ,
-                                 "Intangible Good"@en .
+                                 "Tangible good"@en .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#ConceptType
 :ConceptType rdf:type owl:Class ;
              rdfs:subClassOf :Type ;
+             rdfs:comment "Types applicable to concepts for \"loose typing\""@en ;
              rdfs:label "Concept type"@en ,
-                        "Type de concept"@fr ,
-                        "Types applicable to concepts for \"loose typing\""@en .
+                        "Type de concept"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#Debate
 :Debate rdf:type owl:Class ;
-        rdfs:subClassOf :Idea .
+        rdfs:subClassOf :Idea ;
+        rdfs:comment "A debate brings together several positions around an idea or a divide"@en ,
+                     "Un débat fait interagir plusieurs positionnements autour d'une idée ou d'un clivage"@fr ;
+        rdfs:label "Debate"@en ,
+                   "Débat"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#DigitalPlace
 :DigitalPlace rdf:type owl:Class ;
-              rdfs:subClassOf :Place .
+              rdfs:subClassOf :Place ;
+              rdfs:comment "A digital place is a space where actors can come together to carry out activities"@en ,
+                           "Un lieu numérique est un espace au sein duquel des acteurs peuvent se retrouver pour mener à bien des activités"@fr ;
+              rdfs:label "Digital place"@en ,
+                         "Lieu numérique"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#Document
@@ -1355,13 +1403,16 @@ Ce n'est _PAS_ une catégorie socio-économique au sens \"La ferme de la petite 
                             owl:onProperty :hasObjectType ;
                             owl:cardinality "1"^^xsd:nonNegativeInteger
                           ] ;
+          rdfs:comment "Un document est un support scriptural destiné à documenter un ou plusieurs sujets au sens de PAIR"@fr ;
           rdfs:label "Document"@en ,
                      "Document"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#DocumentStatus
 :DocumentStatus rdf:type owl:Class ;
-                rdfs:subClassOf :Status .
+                rdfs:subClassOf :Status ;
+                rdfs:label "Document status"@en ,
+                           "Statut de document"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#DocumentType
@@ -1371,7 +1422,7 @@ Ce n'est _PAS_ une catégorie socio-économique au sens \"La ferme de la petite 
                                 owl:onProperty :typeOf ;
                                 owl:allValuesFrom :Document
                               ] ;
-              rdfs:label "Document Type"@en ,
+              rdfs:label "Document type"@en ,
                          "Type de document"@fr .
 
 
@@ -1381,12 +1432,19 @@ Ce n'est _PAS_ une catégorie socio-économique au sens \"La ferme de la petite 
                         [ rdf:type owl:Restriction ;
                           owl:onProperty :hasPart ;
                           owl:allValuesFrom :Domain
-                        ] .
+                        ] ;
+        rdfs:comment "Subdivision du champ des activités socio-économiques. Les domaines d'activités (ex : Production agricole, Commerce, Conseil etc.) permettent de caractériser la nature d'une activité relative à un secteur (ex: Agriculture) et à une branche (ex : Viticulture)."@fr ;
+        rdfs:label "Domain"@en ,
+                   "Domaine"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#Ecosystem
 :Ecosystem rdf:type owl:Class ;
-           rdfs:subClassOf :Organization .
+           rdfs:subClassOf :Organization ;
+           rdfs:comment "An ecosystem involves the interaction of several actors. It is more than the sum of its parts."@en ,
+                        "Un écosystème fait interagir plusieurs acteurs. Il est plus que la somme de ses parties."@fr ;
+           rdfs:label "Ecosystem"@en ,
+                      "Ecosystème"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#Event
@@ -1401,7 +1459,8 @@ Ce n'est _PAS_ une catégorie socio-économique au sens \"La ferme de la petite 
                          owl:allValuesFrom :Project
                        ] ;
        rdfs:comment "Un événement est ici une manifestation organisée par des personnes et / ou des organisations, qui se déroule à un certain endroit, à un certain moment."@fr ;
-       rdfs:label "Evènement"@fr .
+       rdfs:label "Event"@en ,
+                  "Evénement"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#EventInvolvementAssociation
@@ -1414,49 +1473,70 @@ Ce n'est _PAS_ une catégorie socio-économique au sens \"La ferme de la petite 
                                              [ rdf:type owl:Restriction ;
                                                owl:onProperty :involvementRole ;
                                                owl:allValuesFrom :EventInvolvementRole
-                                             ] .
+                                             ] ;
+                             rdfs:label "Event involvement association"@en .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#EventInvolvementRole
 :EventInvolvementRole rdf:type owl:Class ;
-                      rdfs:subClassOf :InvolvementRole .
+                      rdfs:subClassOf :InvolvementRole ;
+                      rdfs:label "Event involvement role"@en .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#EventStatus
 :EventStatus rdf:type owl:Class ;
-             rdfs:subClassOf :ActivityStatus .
+             rdfs:subClassOf :ActivityStatus ;
+             rdfs:label "Event status"@en ,
+                        "Statut d'événement"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#EventType
 :EventType rdf:type owl:Class ;
-           rdfs:subClassOf :ActivityType .
+           rdfs:subClassOf :ActivityType ;
+           rdfs:label "Event type"@en ,
+                      "Type d'événement"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#Finality
 :Finality rdf:type owl:Class ;
           rdfs:subClassOf :Intention ;
+          rdfs:comment "A purpose is a goal in itself, an objective to be achieved"@en ,
+                       "Une finalité est un but en soi, un objectif à atteindre"@fr ;
+          rdfs:label "Finality"@en ,
+                     "Finalité"@fr ;
           ns:term_status "unstable" .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#Folder
 :Folder rdf:type owl:Class ;
         rdfs:subClassOf :Object ;
-        rdfs:label "Dossier"@fr .
+        rdfs:comment "Folders allow documents to be arranged according to an arbitrary logic"@en ,
+                     "Les dossiers permettent de ranger les documents selon une logique arbitraire"@fr ;
+        rdfs:label "Dossier"@fr ,
+                   "Folder"@en .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#FolderType
 :FolderType rdf:type owl:Class ;
-            rdfs:subClassOf :ObjectType .
+            rdfs:subClassOf :ObjectType ;
+            rdfs:label "Folder type"@en ,
+                       "Type de dossier"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#Group
 :Group rdf:type owl:Class ;
-       rdfs:subClassOf :Organization .
+       rdfs:subClassOf :Organization ;
+       rdfs:comment "A group is a subdivision of an organisation"@en ,
+                    "Un groupe est une subdivision d'une organisation"@fr ;
+       rdfs:label "Group"@en ,
+                  "Groupe"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#GroupType
 :GroupType rdf:type owl:Class ;
-           rdfs:subClassOf :OrganizationType .
+           rdfs:subClassOf :OrganizationType ;
+           rdfs:label "Group type"@en ,
+                      "Type de groupe"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#HumanBasedResource
@@ -1479,46 +1559,70 @@ Ce n'est _PAS_ une catégorie socio-économique au sens \"La ferme de la petite 
                         owl:onProperty :hasSubjectType ;
                         owl:allValuesFrom :IdeaType
                       ] ;
+      rdfs:comment "An idea is a new and adapted solution to the interlocutor's problem"@en ,
+                   "Une idée est une solution nouvelle et adaptée à un problème identifié"@fr ;
       rdfs:label "Idea"@en ,
-                 "Idée"@fr .
+                 "Idée"@fr ;
+      skos:altLabel "Pensée"@fr ,
+                    "Thought"@en .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#IdeaStatus
 :IdeaStatus rdf:type owl:Class ;
-            rdfs:subClassOf :Status .
+            rdfs:subClassOf :Status ;
+            rdfs:label "Idea status"@en ,
+                       "Statut d'idée"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#IdeaType
 :IdeaType rdf:type owl:Class ;
-          rdfs:subClassOf :SubjectType .
+          rdfs:subClassOf :SubjectType ;
+          rdfs:label "Idea type"@en ,
+                     "Type d'idée"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#Intention
 :Intention rdf:type owl:Class ;
-           rdfs:subClassOf :Subject .
+           rdfs:subClassOf :Subject ;
+           rdfs:comment "Abstract class allowing to group the classes intended to specify the problems, means, purposes of the PAIRs"@en ,
+                        "Classe abstraite permettant de regrouper les classes destinées à spécifier les problèmes, moyens, finalités des PAIRs"@fr ;
+           rdfs:label "Intention"@en ,
+                      "Intention"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#InvolvementRole
 :InvolvementRole rdf:type owl:Class ;
-                 rdfs:subClassOf :Role .
+                 rdfs:subClassOf :Role ;
+                 rdfs:label "Involvement role"@en .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#Means
 :Means rdf:type owl:Class ;
        rdfs:subClassOf :Intention ;
-       owl:deprecated "true"^^xsd:boolean .
+       rdfs:comment "Le moyen est l'instrument de la réalisation de la finalité"@fr ,
+                    "The means is the instrument for the realization of the finality"@en ;
+       rdfs:label "Mean"@en ,
+                  "Moyen"@fr ;
+       owl:deprecated "true"^^xsd:boolean ;
+       skos:altLabel "méthode"@fr ,
+                     "processus"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#MembershipAssociation
 :MembershipAssociation rdf:type owl:Class ;
                        rdfs:subClassOf :Association ;
-                       rdfs:comment "Appartenance d'un Acteur dans une Organisation"@fr ;
-                       rdfs:label "Association d'appartenance"@fr .
+                       rdfs:comment "Appartenance d'un Acteur dans une Organisation"@fr ,
+                                    "Membership of an Actor in an Organization"@en ;
+                       rdfs:label "Association d'appartenance"@fr ,
+                                  "Membership association"@en .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#MembershipRole
 :MembershipRole rdf:type owl:Class ;
-                rdfs:subClassOf :Role .
+                rdfs:subClassOf :Role ;
+                rdfs:comment "Role of an actor in an organization"@en ,
+                             "Rôle d'un acteur dans une organisation"@fr ;
+                rdfs:label "Membership role"@en .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#MoneyBasedResource
@@ -1529,7 +1633,8 @@ Ce n'est _PAS_ une catégorie socio-économique au sens \"La ferme de la petite 
 ###  http://virtual-assembly.org/ontologies/pair#Object
 :Object rdf:type owl:Class ;
         rdfs:subClassOf :PairEntity ;
-        rdfs:comment "Classe abstraite permettant de regrouper les classes destinées à la gestion des documents relatifs aux sujets de l'ontologie PAIR"@fr ;
+        rdfs:comment "Abstract class allowing to group the classes intended for the management of the documents relating to the subjects of the PAIR ontology"@en ,
+                     "Classe abstraite permettant de regrouper les classes destinées à la gestion des documents relatifs aux sujets de l'ontologie PAIR"@fr ;
         rdfs:label "Object"@en ,
                    "Objet"@fr .
 
@@ -1537,9 +1642,10 @@ Ce n'est _PAS_ une catégorie socio-économique au sens \"La ferme de la petite 
 ###  http://virtual-assembly.org/ontologies/pair#ObjectType
 :ObjectType rdf:type owl:Class ;
             rdfs:subClassOf :Type ;
+            rdfs:comment "Classe permettant un typage souple des objets"@fr ,
+                         "Types applicable to objects for \"loose typing\""@en ;
             rdfs:label "Object type"@en ,
-                       "Type d'objet"@fr ,
-                       "Types applicable to objects for \"loose typing\""@en .
+                       "Type d'objet"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#Organization
@@ -1553,7 +1659,8 @@ Ce n'est _PAS_ une catégorie socio-économique au sens \"La ferme de la petite 
                                 owl:onProperty :hasSubjectType ;
                                 owl:allValuesFrom :OrganizationType
                               ] ;
-              rdfs:comment "Organisation désigne un groupe d'individus s'étant rassemblés autour d'un objectif commun. Une organisation peut être formelle (structure juridique) ou informelle (groupe)."@fr ;
+              rdfs:comment "Organisation désigne un groupe d'individus s'étant rassemblés autour d'un objectif commun. Une organisation peut être formelle (structure juridique) ou informelle (groupe)."@fr ,
+                           "Organization means a group of individuals who have come together for a common purpose. An organization can be formal (legal structure) or informal (group)."@en ;
               rdfs:label "Organisation"@fr ,
                          "Organization"@en .
 
@@ -1565,15 +1672,18 @@ Ce n'est _PAS_ une catégorie socio-économique au sens \"La ferme de la petite 
                                     owl:onProperty :typeOf ;
                                     owl:allValuesFrom :Organization
                                   ] ;
-                  rdfs:comment "Type d'organisation permet de caractériser les organisations : Par exemple, Entreprise / SARL ou Association ..."@fr ;
-                  rdfs:label "Organization Type"@en ,
+                  rdfs:comment "Type d'organisation permet de caractériser les organisations : Par exemple, Entreprise / SARL ou Association ..."@fr ,
+                               "Type of organization allows to characterize the organizations: For example, Company or Association ..."@en ;
+                  rdfs:label "Organization type"@en ,
                              "Type d'organisation"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#PAIR
 :PAIR rdf:type owl:Class ;
       rdfs:subClassOf :Subject ;
-      rdfs:comment "Un PAIR est un élément d'un écosystème : Projet, Acteur, Idée ou Ressource."@fr ;
+      rdfs:comment "A PAIR is an element of an ecosystem: Project, Actor, Idea or Resource. But also, a task, or an event etc."@en ,
+                   "Un PAIR est un élément d'un écosystème : Projet, Acteur, Idée ou Ressource."@fr ,
+                   "Un PAIR est un élément d'un écosystème : Projet, Acteur, Idée ou Ressource. Mais également, une tâche, ou un événement etc."@fr ;
       rdfs:label "PAIR"@en ,
                  "PAIR"@fr .
 
@@ -1600,10 +1710,12 @@ Ce n'est _PAS_ une catégorie socio-économique au sens \"La ferme de la petite 
                           owl:onProperty :hasSubjectType ;
                           owl:allValuesFrom <http://virtual-assembly.org/ontologies/pair/PersonType>
                         ] ;
-        rdfs:comment "(...)"^^xsd:string ;
+        rdfs:comment "A human being"@en ,
+                     "Un être humain"@fr ;
         rdfs:label "Individu"@fr ,
-                   "Person"@en ,
-                   "Personne"@fr .
+                   "Person"@en ;
+        skos:altLabel "Individual"@en ,
+                      "Personne"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#PhysicalPlace
@@ -1617,8 +1729,11 @@ Ce n'est _PAS_ une catégorie socio-économique au sens \"La ferme de la petite 
                                  owl:onProperty :producedBy ;
                                  owl:allValuesFrom :Project
                                ] ;
+               rdfs:comment "A place with an address somewhere in the physical world"@en ,
+                            "Un endroit avec une adresse quelque part dans le monde physique"@fr ;
                rdfs:label "Endroit"@fr ,
-                          "Place"@en .
+                          "Place"@en ;
+               skos:altLabel "Lieu"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#Place
@@ -1628,6 +1743,8 @@ Ce n'est _PAS_ une catégorie socio-économique au sens \"La ferme de la petite 
                          owl:onProperty :hasPart ;
                          owl:allValuesFrom :Place
                        ] ;
+       rdfs:comment "A place with an address somewhere in the physical or digital world"@en ,
+                    "Un endroit avec une adresse quelque part dans le monde physique ou numérique"@fr ;
        rdfs:label "Lieu"@fr ,
                   "Place"@en .
 
@@ -1639,15 +1756,19 @@ Ce n'est _PAS_ une catégorie socio-économique au sens \"La ferme de la petite 
                              owl:onProperty :typeOf ;
                              owl:allValuesFrom :PhysicalPlace
                            ] ;
-           rdfs:label "Place Type"@en ,
+           rdfs:comment "Classe permettant un typage souple des lieux"@fr ,
+                        "Types applicable to places for \"loose typing\""@en ;
+           rdfs:label "Place type"@en ,
                       "Type d'endroit"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#PostalAddress
 :PostalAddress rdf:type owl:Class ;
                rdfs:subClassOf :Subject ;
+               rdfs:comment "Allows you to enter the mailing address of a PAIR"@en ,
+                            "Permet de renseigner l'adresse postale d'un PAIR"@fr ;
                rdfs:label "Adresse postale"@fr ,
-                          "Postal Address"@en .
+                          "Postal address"@en .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#Project
@@ -1682,7 +1803,8 @@ Ce n'est _PAS_ une catégorie socio-économique au sens \"La ferme de la petite 
                                                            )
                                              ]
                          ] ;
-         rdfs:comment "Un projet est une action temporaire entreprise pour atteindre des objectifs définis."@fr ;
+         rdfs:comment "A project is a temporary action initiated to achieve defined objectives."@en ,
+                      "Un projet est une action temporaire entreprise pour atteindre des objectifs définis."@fr ;
          rdfs:label "Project"@en ,
                     "Projet"@fr .
 
@@ -1707,12 +1829,20 @@ Ce n'est _PAS_ une catégorie socio-économique au sens \"La ferme de la petite 
 
 ###  http://virtual-assembly.org/ontologies/pair#ProjectStatus
 :ProjectStatus rdf:type owl:Class ;
-               rdfs:subClassOf :ActivityStatus .
+               rdfs:subClassOf :ActivityStatus ;
+               rdfs:comment "Class allowing to define project statuses in a flexible way. Ex : In progress / Completed"@en ,
+                            "Classe permettant de définir de manière souple des statuts de projet. Ex : En cours / Terminé"@fr ;
+               rdfs:label "Project status"@en ,
+                          "Statut de projet"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#ProjectType
 :ProjectType rdf:type owl:Class ;
-             rdfs:subClassOf :ActivityType .
+             rdfs:subClassOf :ActivityType ;
+             rdfs:comment "Class allowing to define project types in a flexible way. Ex : IT / Territorial"@en ,
+                          "Classe permettant de définir de manière souple des types de projet. Ex : Informatique / Territorial"@fr ;
+             rdfs:label "Project type"@en ,
+                        "Type de projet"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#Resource
@@ -1726,13 +1856,19 @@ Ce n'est _PAS_ une catégorie socio-économique au sens \"La ferme de la petite 
                             owl:onProperty :hasSubjectType ;
                             owl:allValuesFrom :ResourceType
                           ] ;
+          rdfs:comment "Ensemble de choses dont on dispose pour agir avec efficacité"@fr ,
+                       "Set of things available for effective action"@en ;
           rdfs:label "Resource"@en ,
                      "Ressource"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#ResourceType
 :ResourceType rdf:type owl:Class ;
-              rdfs:subClassOf :SubjectType .
+              rdfs:subClassOf :SubjectType ;
+              rdfs:comment "Class allowing to define in a flexible way types of resources. Ex : software / documentary resources ..."@en ,
+                           "Classe permettant de définir de manière souple des types de ressources. Ex : logiciels / ressources documentaires ..."@fr ;
+              rdfs:label "Resource type"@en ,
+                         "Type de ressource"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#Role
@@ -1749,7 +1885,9 @@ Ce n'est _PAS_ une catégorie socio-économique au sens \"La ferme de la petite 
                         [ rdf:type owl:Restriction ;
                           owl:onProperty :hasPart ;
                           owl:allValuesFrom :Sector
-                        ] .
+                        ] ;
+        rdfs:comment "Subdivision du champ des activités socio-économiques. Un secteur (ex : Agriculture) peut avoir plusieurs branches (ex : Viticulture). Les notions de Secteur et de Branche sont orthogonales avec les domaines d'activités (ex : Production agricole, Commerce, Conseil etc.)"@fr ;
+        rdfs:label "Secteur"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#Skill
@@ -1762,23 +1900,26 @@ Ce n'est _PAS_ une catégorie socio-économique au sens \"La ferme de la petite 
 
 ###  http://virtual-assembly.org/ontologies/pair#Status
 :Status rdf:type owl:Class ;
-        rdfs:subClassOf :Concept .
+        rdfs:subClassOf :Concept ;
+        rdfs:label "Status"@en ,
+                   "Statut"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#Subject
 :Subject rdf:type owl:Class ;
          rdfs:subClassOf :PairEntity ;
-         rdfs:comment "Classe abstraite permettant de regrouper les classes directement concernées par le domaine de connaissance de l'ontologie PAIR"^^xsd:string ;
+         rdfs:comment "Classe abstraite permettant de regrouper les classes directement concernées par le domaine de connaissance de l'ontologie PAIR" ,
+                      "Les sujets regroupent les concepts clés de l'ontologie PAIR"@fr ;
          rdfs:label "Subject"@en ,
-                    "Sujet"^^xsd:string .
+                    "Sujet"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#SubjectType
 :SubjectType rdf:type owl:Class ;
              rdfs:subClassOf :Type ;
+             rdfs:comment "Types applicable to subjects for \"loose typing\""@en ;
              rdfs:label "Subject type"@en ,
-                        "Type de sujet"@fr ,
-                        "Types applicable to subjects for \"loose typing\""@en .
+                        "Type de sujet"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#Task
@@ -1787,7 +1928,11 @@ Ce n'est _PAS_ une catégorie socio-économique au sens \"La ferme de la petite 
                       [ rdf:type owl:Restriction ;
                         owl:onProperty :hasStatus ;
                         owl:someValuesFrom :TaskStatus
-                      ] .
+                      ] ;
+      rdfs:comment "A task is an action to be carried out in order to complete an activity"@en ,
+                   "Une tâche est une action à réaliser en vue de mener à bien une activité"@fr ;
+      rdfs:label "Task"@en ,
+                 "Tâche"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#TaskInvolvementAssociation
@@ -1810,41 +1955,46 @@ Ce n'est _PAS_ une catégorie socio-économique au sens \"La ferme de la petite 
 
 ###  http://virtual-assembly.org/ontologies/pair#TaskStatus
 :TaskStatus rdf:type owl:Class ;
-            rdfs:subClassOf :ActivityStatus .
+            rdfs:subClassOf :ActivityStatus ;
+            rdfs:label "Statut de tâche"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#TaskType
 :TaskType rdf:type owl:Class ;
-          rdfs:subClassOf :ActivityType .
+          rdfs:subClassOf :ActivityType ;
+          rdfs:label "Type de tâche"@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#Theme
 :Theme rdf:type owl:Class ;
        owl:equivalentClass :Topic ;
        rdfs:subClassOf :Concept ;
-       rdfs:comment "Cet identifiant est déprécié en faveur de pair:Topic"@fr ;
+       rdfs:comment "Cet identifiant est déprécié en faveur de pair:Topic"@fr ,
+                    "Thème réfère à ce dont on parle, au sujet qui nous anime. Les thèmes rassemblent les notions, les concepts, les centres d'intérêts, les \"tags\"."@fr ;
+       rdfs:label "Thème"@fr ,
+                  "Topic"@en ;
        owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#Topic
 :Topic rdf:type owl:Class ;
        rdfs:subClassOf :Concept ;
-       rdfs:comment "Thème réfère à ce dont on parle, au sujet qui nous anime. Les thèmes rassemblent les notions, les concepts, les centres d'intérêts, les \"tags\"."@fr ;
-       rdfs:label "Thème"@fr ,
-                  "Topic"@en .
+       rdfs:comment "Thème réfère à ce dont on parle, au sujet qui nous anime. Les thèmes rassemblent les notions, les concepts, les centres d'intérêts, les \"tags\"."@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#Town
 :Town rdf:type owl:Class ;
       rdfs:subClassOf :PhysicalPlace ;
       rdfs:label "City"@en ,
-                 "Town"@en ,
-                 "Ville"@fr .
+                 "Ville"@fr ;
+      skos:altLabel "Town"@en .
 
 
 ###  http://virtual-assembly.org/ontologies/pair#Type
 :Type rdf:type owl:Class ;
       rdfs:subClassOf :Concept ;
+      rdfs:comment "Les types sont utilisés pour spécifier de manière souple la nature des entités concernées"@fr ,
+                   "Types are used to specify the nature of the entities concerned"@en ;
       rdfs:label "Type"@en ,
                  "Type"@fr .
 
@@ -1853,8 +2003,7 @@ Ce n'est _PAS_ une catégorie socio-économique au sens \"La ferme de la petite 
 <http://virtual-assembly.org/ontologies/pair/ExperienceAssociation> rdf:type owl:Class ;
                                                                     rdfs:subClassOf :Association ;
                                                                     rdfs:comment """Expérience d'un individu dans une compétence, avec un certain niveau (\"grade\").
-Un lien direct entre une personne et une compétence existe également, mais sans possibilité de préciser le niveau."""@fr ;
-                                                                    rdfs:label "Expérience"@fr .
+Un lien direct entre une personne et une compétence existe également, mais sans possibilité de préciser le niveau."""@fr .
 
 
 ###  http://virtual-assembly.org/ontologies/pair/Grade
@@ -1869,9 +2018,7 @@ Un lien direct entre une personne et une compétence existe également, mais san
                                                                     [ rdf:type owl:Restriction ;
                                                                       owl:onProperty :hasType ;
                                                                       owl:allValuesFrom <http://virtual-assembly.org/ontologies/pair/ImageType>
-                                                                    ] ;
-                                                    rdfs:label "Image"@en ,
-                                                               "Image"@fr .
+                                                                    ] .
 
 
 ###  http://virtual-assembly.org/ontologies/pair/ImageType
@@ -1897,13 +2044,19 @@ Un lien direct entre une personne et une compétence existe également, mais san
 
 ###  http://virtual-assembly.org/ontologies/pair/PersonType
 <http://virtual-assembly.org/ontologies/pair/PersonType> rdf:type owl:Class ;
-                                                         rdfs:subClassOf :AgentType ;
-                                                         rdfs:label "Person type"@en ,
-                                                                    "Type de personne"@fr .
+                                                         rdfs:subClassOf :AgentType .
 
 
 ###  http://www.w3.org/2004/02/skos/core#Concept
 skos:Concept rdf:type owl:Class .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:AgentStatus rdfs:label "Statut d'agent"@fr ,
+                        "Agent status"@en .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
