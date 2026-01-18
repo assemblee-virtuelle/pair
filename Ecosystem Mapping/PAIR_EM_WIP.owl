@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns="http://www.owl-ontologies.com/PAIR_EM_1.owl#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:p1="http://www.owl-ontologies.com/Ontology1581687425.owl#"
+  xml:base="http://www.owl-ontologies.com/PAIR_EM_1.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://hubject.net/iPlumb3r/EcosystemMapping/Extentional.owl"/>
+    <owl:imports rdf:resource="http://hubject.net/iPlumb3r/EcosystemMapping/Intentional.owl"/>
+  </owl:Ontology>
+  <p1:Organization rdf:ID="Sparna"/>
+  <p1:ProjectType rdf:ID="Software"/>
+  <p1:KnowledgeStructure rdf:ID="Ontologie_Pair">
+    <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Concept-Based_Resource"/>
+    <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Project"/>
+  </p1:KnowledgeStructure>
+  <p1:AsToBeBuiltDeliverable rdf:ID="Project_14">
+    <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#KnowledgeStructure"/>
+  </p1:AsToBeBuiltDeliverable>
+  <p1:Person rdf:ID="Gabriel_Henry"/>
+  <p1:Person rdf:ID="Thomas_Francart"/>
+  <p1:KnowledgeStructure rdf:ID="Project_15"/>
+  <p1:Organization rdf:ID="Open_Food_France"/>
+  <p1:OrganizationType rdf:ID="NonProfit_Organization"/>
+  <p1:Person rdf:ID="Bernard_Chabot"/>
+  <p1:Project rdf:ID="Ontologie_EcosystemMapping"/>
+  <p1:Agent rdf:ID="Guillaume_Rouyer">
+    <p1:involvedIn>
+      <p1:AsDefinedDeliverable rdf:ID="Data_Food_Consortium">
+        <p1:involves rdf:resource="#Guillaume_Rouyer"/>
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Project"/>
+      </p1:AsDefinedDeliverable>
+    </p1:involvedIn>
+    <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Person"/>
+    <p1:affiliatedBy>
+      <p1:Organization rdf:ID="Virtual_Assembly">
+        <p1:affiliates rdf:resource="#Guillaume_Rouyer"/>
+      </p1:Organization>
+    </p1:affiliatedBy>
+  </p1:Agent>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.5, Build 663)  http://protege.stanford.edu -->

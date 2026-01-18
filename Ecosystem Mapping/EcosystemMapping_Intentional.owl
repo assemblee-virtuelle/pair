@@ -1,0 +1,839 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns="http://www.owl-ontologies.com/Ontology1581687425.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://hubject.net/iPlumb3r/EcosystemMapping/Intentional.owl">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#AsBuiltDeliverable">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#Deliverable"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#builtBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#Agent"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#hasPart"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#AsBuiltDeliverable"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#AsBuiltDeliverable"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#partOf"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">@Deliverable that describes a (good, service, ...) by its own, as it is embodied in the real world</rdfs:comment>
+    <rdfs:label xml:lang="en">As Built Deliverable</rdfs:label>
+    <rdfs:label xml:lang="fr">@Deliverable réalisé dans un temps particulier, dans un lieu particulier et selon un mode de réalisation particulier</rdfs:label>
+    <rdfs:label xml:lang="fr">Livrable "tel que fabriqué"</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#IntentionalThing">
+    <rdfs:label xml:lang="en">Intentional Thing</rdfs:label>
+    <rdfs:label xml:lang="fr">Chose intentionelle</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#documents"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#Document"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:comment xml:lang="fr">Chose qui se définie par son intention (En réponse à la question : à quoi sert-elle ?)</rdfs:comment>
+    <rdfs:comment xml:lang="en">Thing that is defined by its intention (In answer to the question: what is it used for ?)</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#Market">
+    <rdfs:label xml:lang="en">Market</rdfs:label>
+    <rdfs:label xml:lang="fr">Marché</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#IntentionalSubject"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#answeredBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#Deliverable"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#Agent"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#pulls"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="fr">Cible d'une @Deliverable incarné par une §Branch, un §Domain ou une §Area (= exacte intersection entre une §Branch et un §Domain)</rdfs:comment>
+    <rdfs:comment xml:lang="en">Target of a @Deliverable represented by a §Branch, a §Domain or an §Area (= exact intersection between a §Branch and a §Domain)</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#DocumentType">
+    <rdfs:label xml:lang="fr">Type de document</rdfs:label>
+    <rdfs:label xml:lang="en">Document Type</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#IntentionalObject"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Typology of @Document relating to its purpose</rdfs:comment>
+    <rdfs:comment xml:lang="fr">Typologie de @Document relatif à sa finalité</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#Agent">
+    <rdfs:comment xml:lang="fr">§Person, §Organization or §Project qui agit (c-à-d potentiellement impliqué dans une activité d'un processus métier). Ils produisent des @Deliverable en utilisant certaine(s) @Technology pour répondre à certain(s) @Market dans le cadre d'une @Finality donnée.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#specifies_technically"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#AsDesignedDeliverable"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#develops"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#AsToBeBuiltDeliverable"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Agent</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#built"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#AsBuiltDeliverable"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="fr">Agent</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#pushedBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#Technology"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Market"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#pulledBy"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#Deliverable"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#produces"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">§Person, §Organization or §Project who act (i.e. potentialy involved in an activity of a business process). They are producing @Deliverable by using certain @Technology for answering to certain @Market according a given @Finality.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#consumes"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#Deliverable"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#Deliverable"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#valuates"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#IntentionalSubject"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#Finality"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#pursues"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#specifies_functionally"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#AsDefinedDeliverable"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#IntentionalObject">
+    <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#IntentionalThing"/>
+    <rdfs:label xml:lang="fr">Object intentionnel</rdfs:label>
+    <rdfs:label xml:lang="en">Intentional Object</rdfs:label>
+    <rdfs:comment xml:lang="fr">Elément qui représente un sujet intentionel</rdfs:comment>
+    <rdfs:comment xml:lang="en">Element which represents an intentional subject</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#Finality">
+    <rdfs:label xml:lang="en">Finality</rdfs:label>
+    <rdfs:label xml:lang="fr">Finalité</rdfs:label>
+    <rdfs:label xml:lang="fr">Décrit ce pourquoi les @Agent font les choses, en terme de réponse à un §BasicNeed, §Goal ou §Objective à atteindre.</rdfs:label>
+    <rdfs:comment xml:lang="en">Describes why things are done by @Agent, in term answered §BasicNeed, §Goal and/or §Objective to be reached.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#IntentionalSubject"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#pursuedBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Agent"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#supportedBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#Deliverable"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#AsDesignedDeliverable">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#Deliverable"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#specifiedBy_technically"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Agent"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#hasPart"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#AsDesignedDeliverable"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#AsDesignedDeliverable"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#partOf"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">A product that can be described by "what it is", regardless of "how it is made".</rdfs:comment>
+    <rdfs:comment xml:lang="fr">Produit qui se décrit par "ce qu'il est", indépendement de son "mode d'obtention"</rdfs:comment>
+    <rdfs:label xml:lang="en">As Designed Deliverable</rdfs:label>
+    <rdfs:label xml:lang="fr">Livrable "tel que conçu"</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#Document">
+    <rdfs:comment xml:lang="en">Documentation related to a @IntentionalObject (regardless of its nature)</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#hasType"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#DocumentType"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#IntentionalObject"/>
+    <rdfs:label xml:lang="fr">Documentation relative à un @IntentionalObject (Indépendamment de sa nature)</rdfs:label>
+    <rdfs:label xml:lang="fr">Document</rdfs:label>
+    <rdfs:label xml:lang="en">Document</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#AsToBeBuiltDeliverable">
+    <rdfs:label xml:lang="en">As To Be Built Deliverable</rdfs:label>
+    <rdfs:label xml:lang="fr">Livrable "tel que à fabriquer"</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#Deliverable"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#developedBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Agent"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#hasPart"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#AsToBeBuiltDeliverable"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#AsToBeBuiltDeliverable"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#partOf"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">@Deliverable which includes in this description the manner in which it is manufactured</rdfs:comment>
+    <rdfs:comment xml:lang="fr">@Deliverable dont la description inclue la manière dont il est fabriqué / obtenu</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#Technology">
+    <rdfs:label xml:lang="fr">Technologie</rdfs:label>
+    <rdfs:label xml:lang="en">Technology</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#IntentionalSubject"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#pushes"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Agent"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#Deliverable"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#utilizedBy"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Mean (Process and/or Machine) utilized for obtaining a given @Deliverable (More often an @AsBuiltDeliverable or an @AsToBeBuiltDeliverable)</rdfs:comment>
+    <rdfs:comment xml:lang="fr">Moyen (Procédé et/ou Machine) utilisé pour obtenir un @Deliverable donné (Le plus souvent un @AsBuiltDeliverable ou un @AsToBeBuiltDeliverable)</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#IntentionalSubject">
+    <rdfs:label xml:lang="en">Intentional Subject</rdfs:label>
+    <rdfs:label xml:lang="fr">Sujet intentionnel</rdfs:label>
+    <rdfs:comment xml:lang="en">"Primary" concept of the knowledge domain.</rdfs:comment>
+    <rdfs:comment xml:lang="fr">Concept "primaire" du domaine de conaissance.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#IntentionalThing"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#AsDefinedDeliverable">
+    <rdfs:label xml:lang="en">As Defined Deliverable</rdfs:label>
+    <rdfs:label xml:lang="fr">Livrable "tel que défini"</rdfs:label>
+    <rdfs:comment xml:lang="en">A product that is described by "what it does," regardless of "what it is."</rdfs:comment>
+    <rdfs:comment xml:lang="fr">Produit qui se décrit par "ce qu'il fait", indépendement de "ce qu'il est"</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#Deliverable"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#specifiedBy_functionally"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Agent"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#AsDefinedDeliverable"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#hasPart"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#AsDefinedDeliverable"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#partOf"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#Deliverable">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Deliverable"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#partOf"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#hasPart"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Deliverable"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#IntentionalSubject"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#utilizes"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Technology"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Tangible ("As Built") or intangible ("As To Be Built", "As Designed" or "As Defined") §Resource produced by a @Agent in order to target certain @Market.</rdfs:comment>
+    <rdfs:label xml:lang="en">Deliverable</rdfs:label>
+    <rdfs:label xml:lang="fr">Livrable</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Agent"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#producedBy"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#requires"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Deliverable"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#supports"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Finality"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Agent"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#consumedBy"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#requiredBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Deliverable"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Deliverable"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#satisfiedBy"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="fr">§Resource tangible ("Tel Que Fabriqué") ou intangible ("Tel Que A Fabriquer", "Tel Que Conçu" ou "Tel Que Defini") produite par un @Agent dans le but de cibler certains @Market.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Deliverable"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#satisfies"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#valuatedBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Agent"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Market"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#answerTo"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#hasType">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#globalObjectProperty"/>
+    </rdfs:subPropertyOf>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#typeOf"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Document"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#pursues">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#targets"/>
+    </rdfs:subPropertyOf>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#pursuedBy"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Agent"/>
+    <rdfs:label xml:lang="en">pursues</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#partOf">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Deliverable"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#hasPart"/>
+    </owl:inverseOf>
+    <rdfs:label xml:lang="en">part of</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#globalObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#builtBy">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#producedBy"/>
+    </rdfs:subPropertyOf>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#built"/>
+    </owl:inverseOf>
+    <rdfs:label xml:lang="en">built by</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#AsBuiltDeliverable"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#supports">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#targets"/>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Deliverable"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#supportedBy"/>
+    </owl:inverseOf>
+    <rdfs:label xml:lang="en">supports</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#specifiedBy_technically">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#specifies_technically"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#producedBy"/>
+    </rdfs:subPropertyOf>
+    <rdfs:label xml:lang="en">specified by (technically)</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#AsDesignedDeliverable"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#pushedBy">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Agent"/>
+    <rdfs:label xml:lang="en">pushed by</rdfs:label>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#targets"/>
+    </rdfs:subPropertyOf>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#pushes"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#supportedBy">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#supports"/>
+    <rdfs:label xml:lang="en">supported by</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Finality"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#targetedBy"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#intentionalObjectProperty"/>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#specifiedBy_functionally">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#specifies_functionally"/>
+    </owl:inverseOf>
+    <rdfs:label xml:lang="en">specified by (functionally)</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#AsDefinedDeliverable"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#producedBy"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#pushes">
+    <rdfs:label xml:lang="en">push</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Technology"/>
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#pushedBy"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#targetedBy"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#consumedBy">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#consumes"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#who-whatObjectProperty"/>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Deliverable"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#develops">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#produces"/>
+    </rdfs:subPropertyOf>
+    <rdfs:label xml:lang="en">develops</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Agent"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#developedBy"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#specifies_technically">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Agent"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#produces"/>
+    </rdfs:subPropertyOf>
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#specifiedBy_technically"/>
+    <rdfs:label xml:lang="en">specifies (functionally)</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#producedBy">
+    <rdfs:label xml:lang="en">delivered by</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Deliverable"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#produces"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#who-whatObjectProperty"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#produces">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#who-whatObjectProperty"/>
+    </rdfs:subPropertyOf>
+    <rdfs:label xml:lang="en">delivers</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Agent"/>
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#producedBy"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#pursuedBy">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Finality"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#targetedBy"/>
+    </rdfs:subPropertyOf>
+    <rdfs:label xml:lang="en">pursued by</rdfs:label>
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#pursues"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#consumes">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#consumedBy"/>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Agent"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#who-whatObjectProperty"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#developedBy">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#develops"/>
+    <rdfs:label xml:lang="en">developed by</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#AsToBeBuiltDeliverable"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#producedBy"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#answerTo">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Deliverable"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#targets"/>
+    </rdfs:subPropertyOf>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#answeredBy"/>
+    </owl:inverseOf>
+    <rdfs:label xml:lang="en">answers to</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#targets">
+    <rdfs:subPropertyOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#intentionalObjectProperty"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#targetedBy"/>
+    </owl:inverseOf>
+    <rdfs:label xml:lang="en">targets</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#valuatedBy">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Deliverable"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#who-whatObjectProperty"/>
+    </rdfs:subPropertyOf>
+    <rdfs:label xml:lang="en">valuated by</rdfs:label>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#valuates"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#requires">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Deliverable"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#requiredBy"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#intentionalObjectProperty"/>
+    <rdfs:label xml:lang="en">requires</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#satisfiedBy">
+    <rdfs:label xml:lang="en">implemented by</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#intentionalObjectProperty"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#satisfies"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Deliverable"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#built">
+    <rdfs:label xml:lang="en">built</rdfs:label>
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#builtBy"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#produces"/>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Agent"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#answeredBy">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Market"/>
+    <rdfs:label xml:lang="en">answered by</rdfs:label>
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#answerTo"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#targetedBy"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#satisfies">
+    <rdfs:label xml:lang="en">implements</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Deliverable"/>
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#satisfiedBy"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#intentionalObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#requiredBy">
+    <rdfs:label xml:lang="en">required by</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Deliverable"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#intentionalObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#requires"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#hasPart">
+    <rdfs:label xml:lang="en">has part</rdfs:label>
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#partOf"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#globalObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Deliverable"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#utilizedBy">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Technology"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#targetedBy"/>
+    </rdfs:subPropertyOf>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#utilizes"/>
+    </owl:inverseOf>
+    <rdfs:label xml:lang="en">used by</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#documents">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#IntentionalThing"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#intentionalObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#targetedBy">
+    <rdfs:subPropertyOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#intentionalObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#targets"/>
+    <rdfs:label xml:lang="en">targeted by</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#utilizes">
+    <rdfs:subPropertyOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#targets"/>
+    <rdfs:label xml:lang="en">used by</rdfs:label>
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#utilizedBy"/>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Deliverable"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#pulls">
+    <rdfs:label xml:lang="en">pulls</rdfs:label>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#pulledBy"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#targetedBy"/>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Market"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#valuates">
+    <rdfs:label xml:lang="en">valuates</rdfs:label>
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#valuatedBy"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#who-whatObjectProperty"/>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Agent"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#who-whatObjectProperty">
+    <rdfs:subPropertyOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#intentionalObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#pulledBy">
+    <rdfs:label xml:lang="en">pulled by</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#targets"/>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Agent"/>
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#pulls"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#specifies_functionally">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Agent"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#produces"/>
+    <rdfs:label xml:lang="en">specifies (functionally)</rdfs:label>
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#specifiedBy_functionally"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#typeOf">
+    <rdfs:subPropertyOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#globalObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#DocumentType"/>
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#hasType"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#documentedBy">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#Document"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#intentionalObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#label">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#IntentionalDatatypeProperty"/>
+    </rdfs:subPropertyOf>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#aboutPage">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#webPage"/>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#IntentionalSubject"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#text">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#IntentionalDatatypeProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#alternativeLabel">
+    <rdfs:subPropertyOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#label"/>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#IntentionalSubject"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#webPage">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#IntentionalDatatypeProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#comment">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#IntentionalSubject"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#text"/>
+  </owl:DatatypeProperty>
+  <owl:FunctionalProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#description">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#IntentionalSubject"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#text"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#preferedLabel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#IntentionalSubject"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#label"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.owl-ontologies.com/Ontology1581687425.owl#homePage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#webPage"/>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581687425.owl#IntentionalSubject"/>
+  </owl:FunctionalProperty>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.5, Build 663)  http://protege.stanford.edu -->
